@@ -2,7 +2,7 @@ PORTNAME=	aether
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.30.0
 CATEGORIES=	x11-themes
-MASTER_SITES+=	LOCAL/ports:npmcache
+MASTER_SITES+=	https://github.com/jordanhubbard/freebsd-ports/releases/download/${PORTNAME}-${DISTVERSION}-npm-cache/:npmcache
 DISTFILES+=	${PORTNAME}-${DISTVERSION}-npm-cache.tar.gz:npmcache
 
 MAINTAINER=	ports@FreeBSD.org
@@ -44,7 +44,8 @@ OPTIONS_DEFINE=	DOCS
 #   fetch https://github.com/omacom/aether/archive/refs/tags/v${DISTVERSION}.tar.gz
 #   cd aether-${DISTVERSION}/frontend && npm ci --cache ${PWD}/npm-cache
 #   tar -czf aether-${DISTVERSION}-npm-cache.tar.gz npm-cache/_cacache
-# The resulting file has to be uploaded to the LOCAL/ports distfile site.
+# The resulting file is published as a release asset named after it (see
+# MASTER_SITES); upload a new one for each DISTVERSION.
 
 # Wails v2 only supports Linux, Darwin and Windows.  The vendored sources are
 # patched to accept freebsd in their build constraints (files/patch-vendor_*),
