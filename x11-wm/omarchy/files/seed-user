@@ -1,0 +1,22 @@
+#!%%LOCALBASE%%/bin/bash
+
+# Seed a user's home with Omarchy's defaults on FreeBSD.
+#
+# On Arch these files ship in /etc/skel and useradd copies them when a user is
+# created. FreeBSD's skeleton lives in the base system, so the port stages the
+# same tree under %%DATADIR%%/skel and this copies it in on the user's first
+# Omarchy session. Existing files are never overwritten; use
+# omarchy-reinstall-configs to reset to the shipped defaults.
+
+set -e
+
+skel="%%DATADIR%%/skel"
+marker="$HOME/.local/state/omarchy/freebsd-seeded"
+
+[[ ${1:-} == --force ]] || [[ ! -e $marker ]] || exit 0
+
+# cp -n keeps any file the user already has, such as an existing ~/.bashrc.
+cp -Rn "$skel/." "$HOME/"
+
+mkdir -p "$(dirname "$marker")"
+touch "$marker"

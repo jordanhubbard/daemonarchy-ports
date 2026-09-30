@@ -1,0 +1,12 @@
+[Unit]
+Description=Multimedia Service Session Manager
+After=pipewire.service
+
+[Service]
+Type=simple
+ExecStart=%%PREFIX%%/bin/wireplumber
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=graphical-session.target
