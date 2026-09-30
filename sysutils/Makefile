@@ -649,6 +649,7 @@
     SUBDIR += kustomize
     SUBDIR += kvmclock-kmod
     SUBDIR += lava
+    SUBDIR += lazydocker
     SUBDIR += lazyssh
     SUBDIR += lbl-cf
     SUBDIR += lbl-hf
