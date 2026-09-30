@@ -31,7 +31,6 @@ RUN_DEPENDS=	omarchy>0:x11-wm/omarchy \
 		node>0:www/node \
 		noto>0:x11-fonts/noto \
 		pamixer>0:audio/pamixer \
-		pipewire-spa-oss>0:audio/pipewire-spa-oss \
 		pulseaudio>0:audio/pulseaudio \
 		${PYTHON_PKGNAMEPREFIX}pygobject>0:devel/py-pygobject@${PY_FLAVOR} \
 		qt6-imageformats>0:graphics/qt6-imageformats \
@@ -46,7 +45,8 @@ RUN_DEPENDS=	omarchy>0:x11-wm/omarchy \
 		wtype>0:x11/wtype \
 		xdg-desktop-portal>0:deskutils/xdg-desktop-portal \
 		xdg-desktop-portal-gtk>0:x11/xdg-desktop-portal-gtk \
-		yaru-icon-theme>0:x11-themes/yaru-icon-theme
+		yaru-icon-theme>0:x11-themes/yaru-icon-theme \
+		${LOCALBASE}/lib/spa-0.2/libspa_freebsd_oss.so:audio/pipewire-spa-oss
 
 USES=		metaport python:run
 
