@@ -50,13 +50,14 @@ RUN_DEPENDS=	omarchy>0:x11-wm/omarchy \
 
 USES=		metaport python:run
 
-OPTIONS_DEFINE=		APPS CLI DEV INPUT OMAAPPS PRINT VAAPI
+OPTIONS_DEFINE=		APPS CLI DEV INPUT OBSIDIAN OMAAPPS PRINT VAAPI
 OPTIONS_DEFAULT=	APPS CLI DEV INPUT OMAAPPS PRINT VAAPI
 
 APPS_DESC=	Default applications (browser, office, media, notes)
 CLI_DESC=	Terminal tools Omarchy's shell setup expects
 DEV_DESC=	Development languages, database clients and container tools
 INPUT_DESC=	Fcitx5 input method (XCompose and CJK input)
+OBSIDIAN_DESC=	Obsidian notes (proprietary EULA; must be accepted to build)
 OMAAPPS_DESC=	Omarchy's own applications (Aether, Omacalc, Omasnap, ...)
 PRINT_DESC=	Printing and network service discovery
 VAAPI_DESC=	Hardware video decoding drivers
@@ -75,7 +76,6 @@ APPS_RUN_DEPENDS=	chromium>0:www/chromium \
 			nautilus>0:x11-fm/nautilus \
 			nautilus-python>0:x11-fm/nautilus-python \
 			obs-studio>0:multimedia/obs-studio \
-			obsidian>0:textproc/obsidian \
 			pinta>0:graphics/pinta \
 			sushi>0:x11-fm/sushi \
 			tesseract>0:graphics/tesseract \
@@ -128,6 +128,7 @@ DEV_RUN_DEPENDS=	autoconf-archive>0:devel/autoconf-archive \
 INPUT_RUN_DEPENDS=	fcitx5>0:textproc/fcitx5 \
 			fcitx5-gtk3>0:textproc/fcitx5-gtk \
 			fcitx5-qt6>0:textproc/fcitx5-qt
+OBSIDIAN_RUN_DEPENDS=	obsidian>0:textproc/obsidian
 OMAAPPS_RUN_DEPENDS=	aether>0:x11-themes/aether \
 			cliamp>0:audio/cliamp \
 			herdr>0:sysutils/herdr \
