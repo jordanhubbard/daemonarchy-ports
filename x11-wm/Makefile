@@ -82,6 +82,7 @@
     SUBDIR += obconf-qt
     SUBDIR += obpager
     SUBDIR += omarchy
+    SUBDIR += omarchy-desktop
     SUBDIR += openbox
     SUBDIR += oroborus
     SUBDIR += peksystray
