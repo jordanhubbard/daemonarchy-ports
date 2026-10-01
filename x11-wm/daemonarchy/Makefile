@@ -1,4 +1,4 @@
-PORTNAME=	omarchy-desktop
+PORTNAME=	daemonarchy
 PORTVERSION=	4.0.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	# empty
@@ -6,8 +6,8 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Omarchy desktop with its complete application set (meta-port)
-WWW=		https://omarchy.org/
+COMMENT=	Omarchy desktop on FreeBSD with its complete application set
+WWW=		https://github.com/jordanhubbard/daemonarchy
 
 # The Omarchy runtime, the Hyprland session stack and the tools the desktop
 # relies on. Arch packages without a FreeBSD equivalent (kernels, firmware,
