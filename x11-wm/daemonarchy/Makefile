@@ -110,7 +110,7 @@ CLI_RUN_DEPENDS=	bash-completion>0:shells/bash-completion \
 			usage>0:devel/usage \
 			whois>0:net/whois \
 			zoxide>0:sysutils/zoxide
-DEV_USES=		lua:51,run ruby:run
+DEV_USES=		llvm:run lua:51,run ruby:run
 DEV_RUN_DEPENDS=	autoconf-archive>0:devel/autoconf-archive \
 			docker-buildx>0:sysutils/docker-buildx \
 			docker-compose>0:sysutils/docker-compose \
@@ -118,7 +118,6 @@ DEV_RUN_DEPENDS=	autoconf-archive>0:devel/autoconf-archive \
 			fakeroot>0:security/fakeroot \
 			lazydocker>0:sysutils/lazydocker \
 			libyaml>0:textproc/libyaml \
-			llvm>0:devel/llvm \
 			${LUA_PKGNAMEPREFIX}luarocks>0:devel/lua-luarocks@${LUA_FLAVOR} \
 			mariadb118-client>0:databases/mariadb118-client \
 			mise>0:sysutils/mise \
