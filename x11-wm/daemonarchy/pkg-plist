@@ -1,0 +1,14 @@
+etc/sddm.conf.d/20-daemonarchy-theme.conf
+share/icons/hicolor/scalable/apps/daemonarchy.svg
+share/omarchy/skel.d/daemonarchy/.config/omarchy/backgrounds/tokyo-night/0-daemonarchy.jpg
+share/omarchy/skel.d/daemonarchy/.config/omarchy/branding/about.txt
+share/omarchy/skel.d/daemonarchy/.config/omarchy/branding/screensaver.txt
+share/sddm/themes/daemonarchy/Main.qml
+share/sddm/themes/daemonarchy/bullet.png
+share/sddm/themes/daemonarchy/entry-failed.png
+share/sddm/themes/daemonarchy/entry.png
+share/sddm/themes/daemonarchy/lock-failed.png
+share/sddm/themes/daemonarchy/lock.png
+share/sddm/themes/daemonarchy/logo.png
+share/sddm/themes/daemonarchy/metadata.desktop
+share/sddm/themes/daemonarchy/theme.conf

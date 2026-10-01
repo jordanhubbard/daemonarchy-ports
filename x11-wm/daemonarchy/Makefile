@@ -1,13 +1,19 @@
 PORTNAME=	daemonarchy
 PORTVERSION=	4.0.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Omarchy desktop on FreeBSD with its complete application set
+COMMENT=	Omarchy desktop on FreeBSD, with Daemonarchy branding and applications
 WWW=		https://github.com/jordanhubbard/daemonarchy
+
+LICENSE=	MIT
+
+BUILD_DEPENDS=	magick:graphics/ImageMagick7 \
+		rsvg-convert:graphics/librsvg2-rust
 
 # The Omarchy runtime, the Hyprland session stack and the tools the desktop
 # relies on. Arch packages without a FreeBSD equivalent (kernels, firmware,
@@ -48,7 +54,9 @@ RUN_DEPENDS=	omarchy>0:x11-wm/omarchy \
 		yaru-icon-theme>0:x11-themes/yaru-icon-theme \
 		${LOCALBASE}/lib/spa-0.2/libspa_freebsd_oss.so:audio/pipewire-spa-oss
 
-USES=		metaport python:run
+USES=		python:run
+NO_ARCH=	yes
+NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=		APPS CLI DEV INPUT OBSIDIAN OMAAPPS PRINT VAAPI
 OPTIONS_DEFAULT=	APPS CLI DEV INPUT OMAAPPS PRINT VAAPI
@@ -152,5 +160,35 @@ RUN_DEPENDS+=	libva-intel-driver>0:multimedia/libva-intel-driver \
 		libva-intel-media-driver>0:multimedia/libva-intel-media-driver \
 		libvpl>0:multimedia/libvpl
 .endif
+
+# Daemonarchy's own identity. Omarchy's files stay as Omarchy ships them; these
+# sit beside them: defaults that seed-user copies into a new home ahead of
+# Omarchy's, and a login theme that reuses Omarchy's with its own wordmark.
+SKEL=		${PREFIX}/share/omarchy/skel.d/daemonarchy
+SDDM_THEME=	${PREFIX}/share/sddm/themes/daemonarchy
+SDDM_SHARED=	Main.qml theme.conf bullet.png entry.png entry-failed.png \
+		lock.png lock-failed.png
+
+do-build:
+	rsvg-convert -w 3840 -h 2160 ${FILESDIR}/wallpaper.svg | \
+		magick png:- -quality 92 ${WRKDIR}/0-daemonarchy.jpg
+	rsvg-convert -w 800 ${FILESDIR}/wordmark.svg -o ${WRKDIR}/logo.png
+
+do-install:
+	${MKDIR} ${STAGEDIR}${SKEL}/.config/omarchy/branding \
+		${STAGEDIR}${SKEL}/.config/omarchy/backgrounds/tokyo-night
+	${INSTALL_DATA} ${FILESDIR}/screensaver.txt ${FILESDIR}/about.txt \
+		${STAGEDIR}${SKEL}/.config/omarchy/branding
+	${INSTALL_DATA} ${WRKDIR}/0-daemonarchy.jpg \
+		${STAGEDIR}${SKEL}/.config/omarchy/backgrounds/tokyo-night
+	${MKDIR} ${STAGEDIR}${SDDM_THEME}
+	${INSTALL_DATA} ${WRKDIR}/logo.png ${FILESDIR}/metadata.desktop ${STAGEDIR}${SDDM_THEME}
+.for f in ${SDDM_SHARED}
+	${LN} -s ../omarchy/${f} ${STAGEDIR}${SDDM_THEME}/${f}
+.endfor
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/sddm.conf.d
+	${INSTALL_DATA} ${FILESDIR}/20-daemonarchy-theme.conf ${STAGEDIR}${PREFIX}/etc/sddm.conf.d
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${FILESDIR}/mark.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/daemonarchy.svg
 
 .include <bsd.port.mk>
