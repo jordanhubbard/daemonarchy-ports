@@ -5,7 +5,7 @@
        "key": "\ue900 OS",
        "keyColor": "blue",
 -      "text": "version=$(omarchy-version) && echo \"Omarchy $version\""
-+      "text": "version=$(omarchy-version) && echo \"Daemonarchy (Omarchy $version)\""
++      "text": "version=$(omarchy-version) && echo \"Omarchy $version on $(uname -sr)\""
      },
      {
        "type": "command",
