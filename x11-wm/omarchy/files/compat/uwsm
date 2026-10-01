@@ -142,6 +142,10 @@ cmd_start() {
   # A fresh session: forget units recorded by a previous one.
   rm -rf "$XDG_RUNTIME_DIR/omarchy-units"
 
+  # The first Omarchy session copies Omarchy's defaults into the home
+  # directory, as /etc/skel would on Arch.
+  "%%PREFIX%%/libexec/omarchy/seed-user" || echo "uwsm: seeding Omarchy defaults failed" >&2
+
   # Everything the session starts is reaped with it, as systemd stops the
   # session scope: session-reaper signals any process left once the
   # compositor exits.
