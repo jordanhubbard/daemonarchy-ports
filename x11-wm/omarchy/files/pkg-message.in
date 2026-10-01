@@ -3,11 +3,13 @@
   message: <<EOM
 Omarchy needs a few system services and permissions on FreeBSD:
 
-1. Enable D-Bus and seatd, and let your user use the seat and graphics:
+1. Enable D-Bus and seatd, and let your user use the seat, graphics, and
+   sound (FreeBSD 16 restricts the sound devices to the audio group):
 
      sysrc dbus_enable=YES seatd_enable=YES
      service dbus start; service seatd start
      pw groupmod video -m <user>
+     pw groupmod audio -m <user>
 
 2. Load the DRM driver for your GPU (see graphics/drm-kmod), e.g.:
 
