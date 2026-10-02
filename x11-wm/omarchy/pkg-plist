@@ -2160,3 +2160,7 @@ bin/omarchy-dev-sync
 %%DATADIR%%/bin/omarchy-dev-sync
 %%DATADIR%%/freebsd/bin/omarchy-dev-link
 %%DATADIR%%/freebsd/bin/omarchy-dev-sync
+bin/omarchy-agent-install-linux
+%%DATADIR%%/bin/omarchy-agent-install-linux
+%%DATADIR%%/freebsd/bin/omarchy-agent-install-linux
+%%DATADIR%%/freebsd/bin/omarchy-mise-install
