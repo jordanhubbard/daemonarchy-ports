@@ -2,7 +2,7 @@ PORTNAME=	omarchy-nvim
 DISTVERSION=	2026.9.21
 CATEGORIES=	editors
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	LazyVim based Neovim configuration from Omarchy
 WWW=		https://github.com/omacom/omarchy-pkgs
 

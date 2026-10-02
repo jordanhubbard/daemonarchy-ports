@@ -3,7 +3,7 @@ DISTVERSION=	2.7.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Removable disk automounter using the UDisks2 D-Bus API
 WWW=		https://github.com/coldfix/udiskie
 

@@ -4,7 +4,7 @@ DISTVERSION=	4.0.4
 PORTREVISION=	5
 CATEGORIES=	x11-wm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Beautiful, modern, and opinionated Hyprland desktop by DHH
 WWW=		https://omarchy.org/
 

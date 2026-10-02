@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.0
 CATEGORIES=	audio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Retro terminal music player inspired by Winamp 2.x
 WWW=		https://github.com/bjarneo/cliamp
 

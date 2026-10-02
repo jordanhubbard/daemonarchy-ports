@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.29.0
 CATEGORIES=	graphics wayland
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Screenshot annotation tool for Wayland
 WWW=		https://github.com/jondkinney/tensaku
 

@@ -5,7 +5,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES+=	https://github.com/jordanhubbard/freebsd-ports/releases/download/${PORTNAME}-${DISTVERSION}-npm-cache/:npmcache
 DISTFILES+=	${PORTNAME}-${DISTVERSION}-npm-cache.tar.gz:npmcache
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Desktop theming application that extracts colors from wallpapers
 WWW=		https://github.com/omacom/aether
 

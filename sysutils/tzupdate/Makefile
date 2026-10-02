@@ -2,7 +2,7 @@ PORTNAME=	tzupdate
 DISTVERSION=	3.1.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Set the system timezone based on IP geolocation
 WWW=		https://github.com/cdown/tzupdate
 

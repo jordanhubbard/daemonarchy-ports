@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.7
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	High-performance wallpaper engine for Omarchy (video, GIF, stills)
 WWW=		https://github.com/omacom/owe
 

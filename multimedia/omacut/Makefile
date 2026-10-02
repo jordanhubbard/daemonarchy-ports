@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
 CATEGORIES=	multimedia
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Dead-simple video length trimmer built with Qt Quick and FFmpeg
 WWW=		https://github.com/omacom-io/omacut
 

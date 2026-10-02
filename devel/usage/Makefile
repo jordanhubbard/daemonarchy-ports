@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	6.12.0
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Specification and toolkit for CLI argument parsing and completions
 WWW=		https://usage.jdx.dev/
 

@@ -4,7 +4,7 @@ DISTVERSION=	0.2.7
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-lockfeed
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Lock screen video feed QML module for the owe wallpaper engine
 WWW=		https://github.com/omacom/owe
 

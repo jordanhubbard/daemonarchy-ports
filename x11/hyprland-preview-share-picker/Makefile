@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.1
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Hyprland screen share picker with window and monitor previews
 WWW=		https://github.com/WhySoBad/hyprland-preview-share-picker
 

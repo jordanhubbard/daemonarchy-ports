@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
 CATEGORIES=	misc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Terminal text effects, a Rust port of terminaltexteffects
 WWW=		https://github.com/omacom/ttfx
 

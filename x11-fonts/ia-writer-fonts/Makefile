@@ -2,7 +2,7 @@ PORTNAME=	ia-writer-fonts
 DISTVERSION=	20230616
 CATEGORIES=	x11-fonts
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Typefaces of iA Writer: Mono, Duo, Quattro and Duospace
 WWW=		https://github.com/iaolo/iA-Fonts
 

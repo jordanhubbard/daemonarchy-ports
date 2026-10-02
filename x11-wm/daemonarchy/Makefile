@@ -6,7 +6,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Omarchy desktop on FreeBSD, with Daemonarchy branding and applications
 WWW=		https://github.com/jordanhubbard/daemonarchy
 

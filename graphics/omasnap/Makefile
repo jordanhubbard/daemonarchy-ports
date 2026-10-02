@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.21.0
 CATEGORIES=	graphics wayland
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Native Wayland screenshot and annotation overlay for Hyprland
 WWW=		https://github.com/omacom/omasnap
 

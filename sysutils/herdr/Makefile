@@ -4,7 +4,7 @@ DISTVERSION=	0.9.1
 CATEGORIES=	sysutils
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Terminal workspace manager for AI coding agents
 WWW=		https://github.com/herdrdev/herdr
 
