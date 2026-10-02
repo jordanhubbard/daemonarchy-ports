@@ -2156,3 +2156,7 @@ share/xdg-terminal-exec/hyprland-xdg-terminals.list
 %%DATADIR%%/freebsd/patches/patch-install_user_mise-work.sh
 %%DATADIR%%/freebsd/patches/patch-shell_plugins_menu_Menu.qml
 libexec/omarchy/freebsdize
+bin/omarchy-dev-sync
+%%DATADIR%%/bin/omarchy-dev-sync
+%%DATADIR%%/freebsd/bin/omarchy-dev-link
+%%DATADIR%%/freebsd/bin/omarchy-dev-sync

@@ -146,6 +146,14 @@ cmd_start() {
   # directory, as /etc/skel would on Arch.
   "%%PREFIX%%/libexec/omarchy/seed-user" || echo "uwsm: seeding Omarchy defaults failed" >&2
 
+  # In repo mode ("omarchy dev link"), keep the FreeBSD tree in step with the
+  # checkout for as long as the session runs.
+  local dev_watcher=""
+  if [[ -n ${OMARCHY_DEV_CHECKOUT:-} ]]; then
+    "%%PREFIX%%/bin/omarchy-dev-sync" --watch >/dev/null 2>&1 &
+    dev_watcher=$!
+  fi
+
   # Everything the session starts is reaped with it, as systemd stops the
   # session scope: session-reaper signals any process left once the
   # compositor exits.
@@ -163,6 +171,7 @@ cmd_start() {
   trap - HUP INT TERM
 
   systemctl --user stop-all
+  [[ -n $dev_watcher ]] && kill "$dev_watcher" 2>/dev/null
   rm -f "$(compositor_pidfile)"
   exit "$status"
 }
