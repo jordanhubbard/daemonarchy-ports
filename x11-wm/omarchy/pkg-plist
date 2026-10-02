@@ -2164,3 +2164,5 @@ bin/omarchy-agent-install-linux
 %%DATADIR%%/bin/omarchy-agent-install-linux
 %%DATADIR%%/freebsd/bin/omarchy-agent-install-linux
 %%DATADIR%%/freebsd/bin/omarchy-mise-install
+%%DATADIR%%/freebsd/patches/patch-bin_omarchy-dev-benchmark-theme-switcher
+%%DATADIR%%/freebsd/patches/patch-bin_omarchy-install-hermes-cli
