@@ -1,6 +1,6 @@
 PORTNAME=	daemonarchy
 PORTVERSION=	4.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -46,6 +46,9 @@ RUN_DEPENDS=	omarchy>0:x11-wm/omarchy \
 		tensaku>0:graphics/tensaku \
 		udiskie>0:sysutils/udiskie \
 		bsdisks>0:sysutils/bsdisks \
+		${LOCALBASE}/share/uefi-firmware/BHYVE_UEFI.fd:sysutils/edk2@bhyve \
+		vm-bhyve>0:sysutils/vm-bhyve \
+		tigervnc-viewer>0:net/tigervnc-viewer \
 		webp-pixbuf-loader>0:graphics/webp-pixbuf-loader \
 		wl-clipboard>0:x11/wl-clipboard \
 		wtype>0:x11/wtype \
@@ -168,11 +171,20 @@ SKEL=		${PREFIX}/share/omarchy/skel.d/daemonarchy
 SDDM_THEME=	${PREFIX}/share/sddm/themes/daemonarchy
 SDDM_SHARED=	Main.qml theme.conf bullet.png entry.png entry-failed.png \
 		lock.png lock-failed.png
+# FreeBSD's own features, under System > FreeBSD in the menu: boot
+# environments, jails, bhyve VMs, home snapshots, and DTrace.
+COMMANDS=	daemonarchy-be daemonarchy-dev-setup daemonarchy-dtrace \
+		daemonarchy-home-snapshots daemonarchy-jail daemonarchy-vm
 
 do-build:
 	rsvg-convert -w 3840 -h 2160 ${FILESDIR}/wallpaper.svg | \
 		magick png:- -quality 92 ${WRKDIR}/0-daemonarchy.jpg
 	rsvg-convert -w 800 ${FILESDIR}/wordmark.svg -o ${WRKDIR}/logo.png
+	${MKDIR} ${WRKDIR}/bin
+.for f in ${COMMANDS} daemonarchy.cron
+	${SED} -e 's|%%PREFIX%%|${PREFIX}|g; s|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${FILESDIR}/${f} > ${WRKDIR}/bin/${f}
+.endfor
 
 do-install:
 	${MKDIR} ${STAGEDIR}${SKEL}/.config/omarchy/branding \
@@ -190,5 +202,11 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/20-daemonarchy-theme.conf ${STAGEDIR}${PREFIX}/etc/sddm.conf.d
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
 	${INSTALL_DATA} ${FILESDIR}/mark.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/daemonarchy.svg
+.for f in ${COMMANDS}
+	${INSTALL_SCRIPT} ${WRKDIR}/bin/${f} ${STAGEDIR}${PREFIX}/bin
+.endfor
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/omarchy/vendor ${STAGEDIR}${PREFIX}/etc/cron.d
+	${INSTALL_DATA} ${FILESDIR}/omarchy-menu.jsonc ${STAGEDIR}${PREFIX}/share/omarchy/vendor
+	${INSTALL_DATA} ${WRKDIR}/bin/daemonarchy.cron ${STAGEDIR}${PREFIX}/etc/cron.d/daemonarchy
 
 .include <bsd.port.mk>
