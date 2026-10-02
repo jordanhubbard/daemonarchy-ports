@@ -1,7 +1,7 @@
 PORTNAME=	omarchy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -11,6 +11,8 @@ WWW=		https://omarchy.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# freebsdize, which adapts the sources, is a bash script run while patching.
+PATCH_DEPENDS=	bash:shells/bash
 BUILD_DEPENDS=	magick:graphics/ImageMagick7
 RUN_DEPENDS=	Hyprland:x11-wm/hyprland \
 		basuctl:devel/basu \
@@ -87,29 +89,14 @@ PREFIX_SHARE=	applications bash-completion chromium cups fonts fontconfig fzf \
 post-extract:
 	${CP} ${FILESDIR}/freebsd-bin/* ${WRKSRC}/bin/
 
+# The FreeBSD adaptation of Omarchy's sources lives in one script, which the
+# port runs here and installs for "omarchy dev link" to run on a checkout.
 post-patch:
-	${FIND} ${WRKSRC}/bin ${DATA_DIRS:S|^|${WRKSRC}/|} ${WRKSRC}/etc -type f \
-		\( -path '${WRKSRC}/themes/*' -prune -o -print \) | \
-		${XARGS} ${GREP} -lIE '/usr/(share|bin|lib)/|%%(DATADIR|PREFIX|LOCALBASE)%%|chromium\.desktop' | \
-		${XARGS} ${REINPLACE_CMD} -E \
-		-e 's|/usr/share/omarchy|${DATADIR}|g' \
-		-e 's#/usr/share/(${PREFIX_SHARE:ts|})([/" ]|$$)#${PREFIX}/share/\1\2#g' \
-		-e 's|/usr/bin/omarchy-|${PREFIX}/bin/omarchy-|g' \
-		-e 's#/usr/bin/(systemctl|systemd-run|timedatectl|powerprofilesctl)#${PREFIX}/libexec/omarchy/compat/\1#g' \
-		-e 's#/usr/bin/(${GNU_COREUTILS:ts|}|grep|find)([^A-Za-z0-9_.-]|$$)#${PREFIX}/libexec/omarchy/gnubin/\1\2#g' \
-		-e 's#/usr/bin/(bt-agent|fcitx5|fprintd-list|gtk-update-icon-cache|herdr|hyprctl|pipewire|tailscale|updatedb)#${LOCALBASE}/bin/\1#g' \
-		-e 's|/usr/lib/systemd/user|${DATADIR}/default/systemd/user|g' \
-		-e 's|chromium\.desktop|chromium-browser.desktop|g' \
-		-e 's|%%DATADIR%%|${DATADIR}|g; s|%%PREFIX%%|${PREFIX}|g; s|%%LOCALBASE%%|${LOCALBASE}|g'
-	${FIND} ${WRKSRC} -name '*.bak' -delete
-# Put the compat tools and GNU userland on the PATH of every Omarchy command,
-# after the metadata header that the omarchy router reads.
-	for f in ${WRKSRC}/bin/*; do \
-		${HEAD} -n 1 "$$f" | ${GREP} -q '^#!.*bash' || continue; \
-		${AWK} -v line='case ":$$PATH:" in *":${PREFIX}/libexec/omarchy/gnubin:"*) ;; *) PATH="${PREFIX}/libexec/omarchy/compat:${PREFIX}/libexec/omarchy/gnubin:$$PATH" ;; esac' \
-		'NR == 1 { print; next } !done && !/^[[:space:]]*(#|$$)/ { print line; print ""; done = 1 } { print } END { if (!done) print line }' \
-		"$$f" > "$$f.new" && ${MV} "$$f.new" "$$f"; \
-	done
+	${SED} -e 's!%%DATADIR%%!${DATADIR}!g; s!%%PREFIX%%!${PREFIX}!g; s!%%LOCALBASE%%!${LOCALBASE}!g' \
+		-e 's!%%PREFIX_SHARE%%!${PREFIX_SHARE:ts|}!g; s!%%GNU_COREUTILS%%!${GNU_COREUTILS:ts|}!g' \
+		-e 's!%%PYTHON_CMD%%!${PYTHON_CMD}!g; s!%%PERL%%!${PERL}!g' \
+		${FILESDIR}/freebsdize.in > ${WRKDIR}/freebsdize
+	${LOCALBASE}/bin/bash ${WRKDIR}/freebsdize --in-place ${WRKSRC}
 
 do-build:
 	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKDIR}/pdeathsig ${FILESDIR}/pdeathsig.c
@@ -149,6 +136,15 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/compat/* ${STAGEDIR}${PREFIX}/libexec/omarchy/compat
 	${LN} -s ${LOCALBASE}/bin/basuctl ${STAGEDIR}${PREFIX}/libexec/omarchy/compat/busctl
 	${INSTALL_SCRIPT} ${WRKDIR}/misc/seed-user ${STAGEDIR}${PREFIX}/libexec/omarchy
+	${INSTALL_SCRIPT} ${WRKDIR}/freebsdize ${STAGEDIR}${PREFIX}/libexec/omarchy
+# For "omarchy dev link": the port's patches and FreeBSD commands, which
+# freebsdize applies to a checkout.
+	${MKDIR} ${STAGEDIR}${DATADIR}/freebsd/patches ${STAGEDIR}${DATADIR}/freebsd/bin
+	${INSTALL_DATA} ${FILESDIR}/patch-* ${STAGEDIR}${DATADIR}/freebsd/patches
+	${INSTALL_DATA} ${FILESDIR}/freebsd-bin/* ${STAGEDIR}${DATADIR}/freebsd/bin
+	${REINPLACE_CMD} -E '1s@^#!(/usr/bin/env bash|/bin/bash)$$@#!${LOCALBASE}/bin/bash@' \
+		${STAGEDIR}${DATADIR}/freebsd/bin/*
+	${RM} ${STAGEDIR}${DATADIR}/freebsd/bin/*.bak
 	${INSTALL_PROGRAM} ${WRKDIR}/pdeathsig ${WRKDIR}/session-reaper ${STAGEDIR}${PREFIX}/libexec/omarchy
 .for f in ${GNU_COREUTILS}
 	${LN} -s ${LOCALBASE}/bin/g${f} ${STAGEDIR}${PREFIX}/libexec/omarchy/gnubin/${f}
