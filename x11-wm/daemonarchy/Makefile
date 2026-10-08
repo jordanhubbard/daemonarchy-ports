@@ -1,6 +1,6 @@
 PORTNAME=	daemonarchy
 PORTVERSION=	4.0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -61,10 +61,11 @@ USES=		python:run
 NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 
-OPTIONS_DEFINE=		APPS CLI DEV INPUT OBSIDIAN OMAAPPS PRINT VAAPI
-OPTIONS_DEFAULT=	APPS CLI DEV INPUT OMAAPPS PRINT VAAPI
+OPTIONS_DEFINE=		APPS BLUETOOTH CLI DEV INPUT OBSIDIAN OMAAPPS PRINT VAAPI
+OPTIONS_DEFAULT=	APPS BLUETOOTH CLI DEV INPUT OMAAPPS PRINT VAAPI
 
 APPS_DESC=	Default applications (browser, office, media, notes)
+BLUETOOTH_DESC=	Firmware for Realtek and Intel Bluetooth controllers
 CLI_DESC=	Terminal tools Omarchy's shell setup expects
 DEV_DESC=	Development languages, database clients and container tools
 INPUT_DESC=	Fcitx5 input method (XCompose and CJK input)
@@ -95,6 +96,8 @@ APPS_RUN_DEPENDS=	chromium>0:www/chromium \
 			xournalpp>0:graphics/xournalpp \
 			yt-dlp>0:www/yt-dlp \
 			zbar>0:graphics/zbar
+BLUETOOTH_RUN_DEPENDS=	iwmbt-firmware>0:comms/iwmbt-firmware \
+			rtlbt-firmware>0:comms/rtlbt-firmware
 CLI_RUN_DEPENDS=	bash-completion>0:shells/bash-completion \
 			bat>0:textproc/bat \
 			btop>0:sysutils/btop \
