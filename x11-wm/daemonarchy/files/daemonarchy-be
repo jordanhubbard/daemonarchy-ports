@@ -16,7 +16,7 @@ fi
 show() {
   echo
   printf '%-36s %-6s %-10s %s\n' "Boot environment" "Active" "Space" "Created"
-  bectl list -H -c creation | awk '{ printf "%-36s %-6s %-10s %s %s\n", $1, $2, $4, $5, $6 }' | tail -r
+  bectl list -H -C creation | awk '{ printf "%-36s %-6s %-10s %s %s\n", $1, $2, $4, $5, $6 }'
   echo
   gum style --foreground 8 "N = running now, R = boots next.  Pick any of them from the boot menu too."
   echo
@@ -30,7 +30,7 @@ create() {
 
 rollback() {
   local choice
-  mapfile -t envs < <(bectl list -H -c creation | awk '$2 !~ /R/ { print $1 }' | tail -r)
+  mapfile -t envs < <(bectl list -H -C creation | awk '$2 !~ /R/ { print $1 }')
   if (( ${#envs[@]} == 0 )); then
     echo "No other boot environment to roll back to."
     return
@@ -45,7 +45,7 @@ rollback() {
 
 delete() {
   local choice
-  mapfile -t envs < <(bectl list -H -c creation | awk '$2 !~ /[NR]/ { print $1 }' | tail -r)
+  mapfile -t envs < <(bectl list -H -C creation | awk '$2 !~ /[NR]/ { print $1 }')
   if (( ${#envs[@]} == 0 )); then
     echo "No boot environment can be deleted (the running and next ones are kept)."
     return
