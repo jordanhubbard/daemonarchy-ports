@@ -164,6 +164,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/misc/profile-omarchy.sh ${STAGEDIR}${PREFIX}/etc/profile.d/omarchy.sh
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/pulse/client.conf.d
 	${INSTALL_DATA} ${FILESDIR}/pulse-client.conf ${STAGEDIR}${PREFIX}/etc/pulse/client.conf.d/50-omarchy.conf
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/polkit-1/rules.d
+	${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/polkit-omarchy.rules > ${STAGEDIR}${PREFIX}/etc/polkit-1/rules.d/50-omarchy.rules
 
 # Desktop integration defaults.
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/xdg-terminal-exec ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail

@@ -2157,6 +2157,10 @@ share/xdg-terminal-exec/hyprland-xdg-terminals.list
 %%DATADIR%%/freebsd/patches/patch-etc_fastfetch_config.jsonc
 %%DATADIR%%/freebsd/patches/patch-install_user_mise-work.sh
 %%DATADIR%%/freebsd/patches/patch-shell_plugins_menu_Menu.qml
+%%DATADIR%%/freebsd/patches/patch-shell_plugins_panels_bluetooth_FreeBSDBluetooth.qml
+%%DATADIR%%/freebsd/patches/patch-shell_plugins_panels_bluetooth_Panel.qml
+%%DATADIR%%/freebsd/patches/patch-shell_plugins_panels_network_FreeBSDWifi.qml
+%%DATADIR%%/freebsd/patches/patch-shell_plugins_panels_network_Panel.qml
 libexec/omarchy/freebsdize
 bin/omarchy-dev-sync
 %%DATADIR%%/bin/omarchy-dev-sync
@@ -2168,3 +2172,14 @@ bin/omarchy-agent-install-linux
 %%DATADIR%%/freebsd/bin/omarchy-mise-install
 %%DATADIR%%/freebsd/patches/patch-bin_omarchy-dev-benchmark-theme-switcher
 %%DATADIR%%/freebsd/patches/patch-bin_omarchy-install-hermes-cli
+bin/omarchy-bluetooth
+bin/omarchy-wifi
+%%DATADIR%%/bin/omarchy-bluetooth
+%%DATADIR%%/bin/omarchy-wifi
+%%DATADIR%%/freebsd/bin/omarchy-bluetooth
+%%DATADIR%%/freebsd/bin/omarchy-bluetooth-device
+%%DATADIR%%/freebsd/bin/omarchy-bluetooth-power
+%%DATADIR%%/freebsd/bin/omarchy-wifi
+%%DATADIR%%/shell/plugins/panels/network/FreeBSDWifi.qml
+%%DATADIR%%/shell/plugins/panels/bluetooth/FreeBSDBluetooth.qml
+etc/polkit-1/rules.d/50-omarchy.rules
