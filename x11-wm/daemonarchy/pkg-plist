@@ -20,3 +20,4 @@ share/sddm/themes/daemonarchy/lock.png
 share/sddm/themes/daemonarchy/logo.png
 share/sddm/themes/daemonarchy/metadata.desktop
 share/sddm/themes/daemonarchy/theme.conf
+%%DATADIR%%/version

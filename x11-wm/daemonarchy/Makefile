@@ -1,6 +1,8 @@
 PORTNAME=	daemonarchy
-PORTVERSION=	4.0.4
-PORTREVISION=	4
+# Daemonarchy's own release number, not Omarchy's (x11-wm/omarchy) or
+# FreeBSD's. The epoch moves it past the 4.0.4 it used to borrow.
+PORTVERSION=	1.0.0
+PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -211,5 +213,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/omarchy/vendor ${STAGEDIR}${PREFIX}/etc/cron.d
 	${INSTALL_DATA} ${FILESDIR}/omarchy-menu.jsonc ${STAGEDIR}${PREFIX}/share/omarchy/vendor
 	${INSTALL_DATA} ${WRKDIR}/bin/daemonarchy.cron ${STAGEDIR}${PREFIX}/etc/cron.d/daemonarchy
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${ECHO_CMD} ${PORTVERSION} > ${STAGEDIR}${DATADIR}/version
 
 .include <bsd.port.mk>
