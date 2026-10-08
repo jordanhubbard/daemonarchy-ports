@@ -22,8 +22,8 @@ home_dataset() {
 
 prune() {
   local dataset=$1 kind=$2 keep=$3
-  zfs list -H -t snapshot -o name -s creation -d 1 "$dataset" |
-    grep "@auto-$kind-" | tail -r | tail -n +$((keep + 1)) |
+  zfs list -H -t snapshot -o name -S creation -d 1 "$dataset" |
+    grep "@auto-$kind-" | tail -n +$((keep + 1)) |
     while read -r snapshot; do zfs destroy -r "$snapshot"; done
 }
 
@@ -41,7 +41,7 @@ take() {
 list() {
   local dataset
   dataset=$(home_dataset "$HOME") || { echo "Your home is not on ZFS." >&2; exit 1; }
-  zfs list -H -t snapshot -o name,creation -s creation -d 1 "$dataset" | sed 's/^[^@]*@//' | tail -r
+  zfs list -H -t snapshot -o name,creation -S creation -d 1 "$dataset" | sed 's/^[^@]*@//'
 }
 
 # Open a snapshot of your home in the file manager, at your own directory, to
