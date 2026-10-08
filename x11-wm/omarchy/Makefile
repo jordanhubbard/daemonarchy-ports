@@ -1,7 +1,7 @@
 PORTNAME=	omarchy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -106,7 +106,7 @@ do-build:
 	${SED} -e 's|%%DATADIR%%|${DATADIR}|g; s|%%PREFIX%%|${PREFIX}|g; s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${FILESDIR}/compat/${f} > ${WRKDIR}/compat/${f}
 .endfor
-.for f in seed-user profile-omarchy.sh env-freebsd
+.for f in seed-user audio-default profile-omarchy.sh env-freebsd
 	${SED} -e 's|%%DATADIR%%|${DATADIR}|g; s|%%PREFIX%%|${PREFIX}|g; s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${FILESDIR}/${f} > ${WRKDIR}/misc/${f}
 .endfor
@@ -135,7 +135,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/omarchy/compat ${STAGEDIR}${PREFIX}/libexec/omarchy/gnubin
 	${INSTALL_SCRIPT} ${WRKDIR}/compat/* ${STAGEDIR}${PREFIX}/libexec/omarchy/compat
 	${LN} -s ${LOCALBASE}/bin/basuctl ${STAGEDIR}${PREFIX}/libexec/omarchy/compat/busctl
-	${INSTALL_SCRIPT} ${WRKDIR}/misc/seed-user ${STAGEDIR}${PREFIX}/libexec/omarchy
+	${INSTALL_SCRIPT} ${WRKDIR}/misc/seed-user ${WRKDIR}/misc/audio-default ${STAGEDIR}${PREFIX}/libexec/omarchy
 	${INSTALL_SCRIPT} ${WRKDIR}/freebsdize ${STAGEDIR}${PREFIX}/libexec/omarchy
 # For "omarchy dev link": the port's patches and FreeBSD commands, which
 # freebsdize applies to a checkout.
@@ -162,6 +162,8 @@ do-install:
 		${WRKSRC}/default/wayland-sessions/omarchy.desktop > ${STAGEDIR}${PREFIX}/share/wayland-sessions/omarchy.desktop
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/profile.d
 	${INSTALL_DATA} ${WRKDIR}/misc/profile-omarchy.sh ${STAGEDIR}${PREFIX}/etc/profile.d/omarchy.sh
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/pulse/client.conf.d
+	${INSTALL_DATA} ${FILESDIR}/pulse-client.conf ${STAGEDIR}${PREFIX}/etc/pulse/client.conf.d/50-omarchy.conf
 
 # Desktop integration defaults.
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/xdg-terminal-exec ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail

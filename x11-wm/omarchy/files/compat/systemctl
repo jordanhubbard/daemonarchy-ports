@@ -396,16 +396,28 @@ target_units() {
   done < <(user_unit_dirs) | awk '!seen[$0]++'
 }
 
+# Units start one after another here, where systemd starts them in parallel,
+# so a unit ordered After= the target itself (a oneshot that waits for the
+# shell, say) is held back until the rest of the target is up.
 start_user_target() {
-  local target=$1 unit
+  local target=$1 unit after
+  local -a later=()
   case "$target" in
     graphical-session.target) start_user_target graphical-session-pre.target ;;
   esac
   while IFS= read -r unit; do
     unit_masked "$unit" && continue
+    after=" $(unit_values "$unit" Unit After | tr '\n' ' ') "
+    if [[ $after == *" $target "* ]]; then
+      later+=("$unit")
+      continue
+    fi
     start_user_unit "$unit" || echo "systemctl: failed to start $unit" >&2
   done < <(target_units "$target")
   touch "$(runtime_dir)/$target.active"
+  for unit in "${later[@]}"; do
+    start_user_unit "$unit" || echo "systemctl: failed to start $unit" >&2
+  done
 }
 
 stop_user_target() {
@@ -630,9 +642,12 @@ user_main() {
       fi
       write_environment "${args[@]}"
       # The compositor publishing its display is the session becoming ready.
+      # Start the target in its own session under daemon(8): whatever called
+      # us can be gone, and its process group signalled, long before every
+      # unit is up. Its messages go to syslog.
       if [[ -n ${WAYLAND_DISPLAY:-} && ! -e "$(runtime_dir)/graphical-session.target.active" ]]; then
         touch "$(runtime_dir)/graphical-session.target.active"
-        (start_user_target graphical-session.target </dev/null >/dev/null 2>&1 &)
+        daemon -f -S -l user -s notice -T systemctl %%LOCALBASE%%/bin/bash "$0" --user start graphical-session.target
       fi
       ;;
     set-environment)
