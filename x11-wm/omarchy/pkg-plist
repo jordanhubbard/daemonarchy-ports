@@ -446,6 +446,7 @@ bin/omarchy-windows-vm
 etc/fonts/conf.avail/50-omarchy.conf
 etc/fonts/conf.d/50-omarchy.conf
 etc/profile.d/omarchy.sh
+etc/pulse/client.conf.d/50-omarchy.conf
 etc/sddm.conf.d/10-omarchy-theme.conf
 etc/sddm.conf.d/10-omarchy-wayland.conf
 @(root,wheel,0440) etc/sudoers.d/omarchy-passwd-tries
@@ -575,6 +576,7 @@ libexec/omarchy/gnubin/who
 libexec/omarchy/gnubin/whoami
 libexec/omarchy/gnubin/xargs
 libexec/omarchy/gnubin/yes
+libexec/omarchy/audio-default
 libexec/omarchy/pdeathsig
 libexec/omarchy/session-reaper
 libexec/omarchy/seed-user
@@ -1302,12 +1304,12 @@ share/icons/hicolor/48x48/apps/zoom.png
 %%DATADIR%%/freebsd/pkgmap
 %%DATADIR%%/freebsd/systemd/user/gnome-keyring-daemon.service
 %%DATADIR%%/freebsd/systemd/user/graphical-session.target.wants/gnome-keyring-daemon.service
+%%DATADIR%%/freebsd/systemd/user/graphical-session.target.wants/omarchy-audio-default.service
 %%DATADIR%%/freebsd/systemd/user/graphical-session.target.wants/pipewire-pulse.service
 %%DATADIR%%/freebsd/systemd/user/graphical-session.target.wants/pipewire.service
-%%DATADIR%%/freebsd/systemd/user/graphical-session.target.wants/wireplumber.service
+%%DATADIR%%/freebsd/systemd/user/omarchy-audio-default.service
 %%DATADIR%%/freebsd/systemd/user/pipewire-pulse.service
 %%DATADIR%%/freebsd/systemd/user/pipewire.service
-%%DATADIR%%/freebsd/systemd/user/wireplumber.service
 %%DATADIR%%/icon.png
 %%DATADIR%%/icon.txt
 %%DATADIR%%/install/config/all.sh
