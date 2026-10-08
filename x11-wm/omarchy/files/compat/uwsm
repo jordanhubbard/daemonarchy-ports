@@ -154,6 +154,11 @@ cmd_start() {
     dev_watcher=$!
   fi
 
+  # On Arch, PipeWire is socket-activated and so already there when anything
+  # in the session asks for it. Start it ahead of the compositor here: the
+  # shell connects to PipeWire once, when it starts.
+  systemctl --user start pipewire.service pipewire-pulse.service || echo "uwsm: starting PipeWire failed" >&2
+
   # Everything the session starts is reaped with it, as systemd stops the
   # session scope: session-reaper signals any process left once the
   # compositor exits.
