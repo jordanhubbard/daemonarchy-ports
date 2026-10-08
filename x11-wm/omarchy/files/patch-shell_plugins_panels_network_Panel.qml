@@ -10,7 +10,7 @@
 +  // stands in for Quickshell.Networking with the same shape.
 +  readonly property bool hasNetworkManager: Networking.backend === NetworkBackendType.NetworkManager
 +  readonly property var networking: hasNetworkManager ? Networking : freebsdWifi
-+  FreeBSDWifi { id: freebsdWifi; active: !root.hasNetworkManager }
++  FreeBSDWifi { id: freebsdWifi; active: !root.hasNetworkManager; fast: root.opened }
 +  readonly property bool networkManagerAvailable: hasNetworkManager || freebsdWifi.available
 +  readonly property var networkDevices: networking.devices ? networking.devices.values : []
    readonly property var wifiDevice: findDevice(DeviceType.Wifi)

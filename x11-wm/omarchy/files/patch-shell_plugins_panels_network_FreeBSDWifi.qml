@@ -1,6 +1,6 @@
 --- shell/plugins/panels/network/FreeBSDWifi.qml.orig
 +++ shell/plugins/panels/network/FreeBSDWifi.qml
-@@ -0,0 +1,255 @@
+@@ -0,0 +1,258 @@
 +import QtQuick
 +import Quickshell
 +import Quickshell.Io
@@ -16,6 +16,9 @@
 +
 +  // Poll only when the panel uses this backend.
 +  property bool active: false
++  // Poll briskly while the panel is open, and only to keep the bar icon
++  // current otherwise.
++  property bool fast: false
 +
 +  property var status: ({})
 +  readonly property bool available: status.available === true
@@ -241,7 +244,7 @@
 +  }
 +
 +  Timer {
-+    interval: 3000
++    interval: wifi.fast ? 3000 : 20000
 +    repeat: true
 +    running: wifi.active
 +    triggeredOnStart: true

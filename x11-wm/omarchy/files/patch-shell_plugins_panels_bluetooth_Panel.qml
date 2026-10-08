@@ -7,7 +7,7 @@
 -  readonly property var adapter: Bluetooth.defaultAdapter
 +  // FreeBSD has no BlueZ: FreeBSDBluetooth reads FreeBSD's own Bluetooth
 +  // stack and stands in for Quickshell.Bluetooth with the same shape.
-+  FreeBSDBluetooth { id: freebsdBluetooth; active: true }
++  FreeBSDBluetooth { id: freebsdBluetooth; active: true; fast: root.opened }
 +  readonly property var adapter: freebsdBluetooth.defaultAdapter
  
    // True while this instance owes BlueZ a StopDiscovery: set when it starts
