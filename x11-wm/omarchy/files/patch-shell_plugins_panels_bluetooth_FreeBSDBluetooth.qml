@@ -1,6 +1,6 @@
 --- shell/plugins/panels/bluetooth/FreeBSDBluetooth.qml.orig
 +++ shell/plugins/panels/bluetooth/FreeBSDBluetooth.qml
-@@ -0,0 +1,128 @@
+@@ -0,0 +1,131 @@
 +import QtQuick
 +import Quickshell
 +import Quickshell.Io
@@ -14,6 +14,9 @@
 +  id: bt
 +
 +  property bool active: false
++  // Poll briskly while the panel is open, and only to keep the bar icon
++  // current otherwise.
++  property bool fast: false
 +
 +  property var status: ({})
 +  readonly property bool present: status.present === true
@@ -122,7 +125,7 @@
 +  onActiveChanged: if (active) rootRefresh.running = true
 +
 +  Timer {
-+    interval: 3000
++    interval: bt.fast ? 3000 : 20000
 +    repeat: true
 +    running: bt.active
 +    triggeredOnStart: true
