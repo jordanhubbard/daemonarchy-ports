@@ -47,6 +47,8 @@ RUN_DEPENDS=	Hyprland:x11-wm/hyprland \
 USES=		fonts perl5 python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	basecamp
+# The FreeBSD compatibility layer: freebsdize, compat tools, FreeBSD commands.
+GH_TUPLE=	jordanhubbard:omarchy-freebsd:v1.0.0:freebsd
 USE_PERL5=	run
 
 SHEBANG_FILES=	bin/* config/omarchy/hooks/*/* default/systemd/system-sleep/* \
@@ -87,7 +89,7 @@ PREFIX_SHARE=	applications bash-completion chromium cups fonts fontconfig fzf \
 # FreeBSD implementations of commands whose Arch versions are built on pacman,
 # /sys, /proc, NetworkManager or Snapper.
 post-extract:
-	${CP} ${FILESDIR}/freebsd-bin/* ${WRKSRC}/bin/
+	${CP} ${WRKSRC_freebsd}/freebsd-bin/* ${WRKSRC}/bin/
 
 # The FreeBSD adaptation of Omarchy's sources lives in one script, which the
 # port runs here and installs for "omarchy dev link" to run on a checkout.
@@ -95,20 +97,20 @@ post-patch:
 	${SED} -e 's!%%DATADIR%%!${DATADIR}!g; s!%%PREFIX%%!${PREFIX}!g; s!%%LOCALBASE%%!${LOCALBASE}!g' \
 		-e 's!%%PREFIX_SHARE%%!${PREFIX_SHARE:ts|}!g; s!%%GNU_COREUTILS%%!${GNU_COREUTILS:ts|}!g' \
 		-e 's!%%PYTHON_CMD%%!${PYTHON_CMD}!g; s!%%PERL%%!${PERL}!g' \
-		${FILESDIR}/freebsdize.in > ${WRKDIR}/freebsdize
+		${WRKSRC_freebsd}/freebsdize.in > ${WRKDIR}/freebsdize
 	${LOCALBASE}/bin/bash ${WRKDIR}/freebsdize --in-place ${WRKSRC}
 
 do-build:
-	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKDIR}/pdeathsig ${FILESDIR}/pdeathsig.c
-	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKDIR}/session-reaper ${FILESDIR}/session-reaper.c
+	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKDIR}/pdeathsig ${WRKSRC_freebsd}/pdeathsig.c
+	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKDIR}/session-reaper ${WRKSRC_freebsd}/session-reaper.c
 	${MKDIR} ${WRKDIR}/compat ${WRKDIR}/misc
 .for f in ${COMPAT_TOOLS}
 	${SED} -e 's|%%DATADIR%%|${DATADIR}|g; s|%%PREFIX%%|${PREFIX}|g; s|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${FILESDIR}/compat/${f} > ${WRKDIR}/compat/${f}
+		${WRKSRC_freebsd}/compat/${f} > ${WRKDIR}/compat/${f}
 .endfor
 .for f in seed-user audio-default profile-omarchy.sh env-freebsd
 	${SED} -e 's|%%DATADIR%%|${DATADIR}|g; s|%%PREFIX%%|${PREFIX}|g; s|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${FILESDIR}/${f} > ${WRKDIR}/misc/${f}
+		${WRKSRC_freebsd}/${f} > ${WRKDIR}/misc/${f}
 .endfor
 
 do-install:
@@ -127,8 +129,8 @@ do-install:
 
 # FreeBSD support: package map, extra session units, compat tools, GNU links.
 	${MKDIR} ${STAGEDIR}${DATADIR}/freebsd/systemd/user/graphical-session.target.wants
-	${INSTALL_DATA} ${FILESDIR}/freebsd/pkgmap ${FILESDIR}/freebsd/pkg.sh ${STAGEDIR}${DATADIR}/freebsd
-	for f in ${FILESDIR}/systemd-user/*.service; do \
+	${INSTALL_DATA} ${WRKSRC_freebsd}/freebsd/pkgmap ${WRKSRC_freebsd}/freebsd/pkg.sh ${STAGEDIR}${DATADIR}/freebsd
+	for f in ${WRKSRC_freebsd}/systemd-user/*.service; do \
 		${SED} -e 's|%%PREFIX%%|${PREFIX}|g' "$$f" > ${STAGEDIR}${DATADIR}/freebsd/systemd/user/$${f##*/}; \
 		${LN} -s ../$${f##*/} ${STAGEDIR}${DATADIR}/freebsd/systemd/user/graphical-session.target.wants/$${f##*/}; \
 	done
@@ -141,7 +143,7 @@ do-install:
 # freebsdize applies to a checkout.
 	${MKDIR} ${STAGEDIR}${DATADIR}/freebsd/patches ${STAGEDIR}${DATADIR}/freebsd/bin
 	${INSTALL_DATA} ${FILESDIR}/patch-* ${STAGEDIR}${DATADIR}/freebsd/patches
-	${INSTALL_DATA} ${FILESDIR}/freebsd-bin/* ${STAGEDIR}${DATADIR}/freebsd/bin
+	${INSTALL_DATA} ${WRKSRC_freebsd}/freebsd-bin/* ${STAGEDIR}${DATADIR}/freebsd/bin
 	${REINPLACE_CMD} -E '1s@^#!(/usr/bin/env bash|/bin/bash)$$@#!${LOCALBASE}/bin/bash@' \
 		${STAGEDIR}${DATADIR}/freebsd/bin/*
 	${RM} ${STAGEDIR}${DATADIR}/freebsd/bin/*.bak
@@ -163,9 +165,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/profile.d
 	${INSTALL_DATA} ${WRKDIR}/misc/profile-omarchy.sh ${STAGEDIR}${PREFIX}/etc/profile.d/omarchy.sh
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/pulse/client.conf.d
-	${INSTALL_DATA} ${FILESDIR}/pulse-client.conf ${STAGEDIR}${PREFIX}/etc/pulse/client.conf.d/50-omarchy.conf
+	${INSTALL_DATA} ${WRKSRC_freebsd}/pulse-client.conf ${STAGEDIR}${PREFIX}/etc/pulse/client.conf.d/50-omarchy.conf
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/polkit-1/rules.d
-	${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/polkit-omarchy.rules > ${STAGEDIR}${PREFIX}/etc/polkit-1/rules.d/50-omarchy.rules
+	${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC_freebsd}/polkit-omarchy.rules > ${STAGEDIR}${PREFIX}/etc/polkit-1/rules.d/50-omarchy.rules
 
 # Desktop integration defaults.
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/xdg-terminal-exec ${STAGEDIR}${PREFIX}/etc/fonts/conf.avail
