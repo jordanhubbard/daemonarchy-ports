@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# omarchy:summary=Check the update log for known failure conditions
-
-# Arch checks initramfs generation here; FreeBSD has no initramfs.
-exit 0
