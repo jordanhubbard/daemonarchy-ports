@@ -1,19 +1,18 @@
 PORTNAME=	daemonarchy
 # Daemonarchy's own release number, not Omarchy's (x11-wm/omarchy) or
 # FreeBSD's. The epoch moves it past the 4.0.4 it used to borrow.
-PORTVERSION=	1.0.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.0
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
 
 MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Omarchy desktop on FreeBSD, with Daemonarchy branding and applications
 WWW=		https://github.com/jordanhubbard/daemonarchy
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	magick:graphics/ImageMagick7 \
 		rsvg-convert:graphics/librsvg2-rust
@@ -61,8 +60,11 @@ RUN_DEPENDS=	omarchy>0:x11-wm/omarchy \
 		${LOCALBASE}/lib/spa-0.2/libspa_freebsd_oss.so:audio/pipewire-spa-oss
 
 USES=		python:run
+USE_GITHUB=	yes
+GH_ACCOUNT=	jordanhubbard
+GH_PROJECT=	daemonarchy-desktop
+
 NO_ARCH=	yes
-NO_WRKSUBDIR=	yes
 
 OPTIONS_DEFINE=		APPS BLUETOOTH CLI DEV INPUT OBSIDIAN OMAAPPS PRINT VAAPI
 OPTIONS_DEFAULT=	APPS BLUETOOTH CLI DEV INPUT OMAAPPS PRINT VAAPI
@@ -183,36 +185,36 @@ COMMANDS=	daemonarchy-be daemonarchy-dev-setup daemonarchy-dtrace \
 		daemonarchy-home-snapshots daemonarchy-jail daemonarchy-vm
 
 do-build:
-	rsvg-convert -w 3840 -h 2160 ${FILESDIR}/wallpaper.svg | \
+	rsvg-convert -w 3840 -h 2160 ${WRKSRC}/wallpaper.svg | \
 		magick png:- -quality 92 ${WRKDIR}/0-daemonarchy.jpg
-	rsvg-convert -w 800 ${FILESDIR}/wordmark.svg -o ${WRKDIR}/logo.png
+	rsvg-convert -w 800 ${WRKSRC}/wordmark.svg -o ${WRKDIR}/logo.png
 	${MKDIR} ${WRKDIR}/bin
 .for f in ${COMMANDS} daemonarchy.cron
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|g; s|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${FILESDIR}/${f} > ${WRKDIR}/bin/${f}
+		${WRKSRC}/${f} > ${WRKDIR}/bin/${f}
 .endfor
 
 do-install:
 	${MKDIR} ${STAGEDIR}${SKEL}/.config/omarchy/branding \
 		${STAGEDIR}${SKEL}/.config/omarchy/backgrounds/tokyo-night
-	${INSTALL_DATA} ${FILESDIR}/screensaver.txt ${FILESDIR}/about.txt \
+	${INSTALL_DATA} ${WRKSRC}/screensaver.txt ${WRKSRC}/about.txt \
 		${STAGEDIR}${SKEL}/.config/omarchy/branding
 	${INSTALL_DATA} ${WRKDIR}/0-daemonarchy.jpg \
 		${STAGEDIR}${SKEL}/.config/omarchy/backgrounds/tokyo-night
 	${MKDIR} ${STAGEDIR}${SDDM_THEME}
-	${INSTALL_DATA} ${WRKDIR}/logo.png ${FILESDIR}/metadata.desktop ${STAGEDIR}${SDDM_THEME}
+	${INSTALL_DATA} ${WRKDIR}/logo.png ${WRKSRC}/metadata.desktop ${STAGEDIR}${SDDM_THEME}
 .for f in ${SDDM_SHARED}
 	${LN} -s ../omarchy/${f} ${STAGEDIR}${SDDM_THEME}/${f}
 .endfor
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/sddm.conf.d
-	${INSTALL_DATA} ${FILESDIR}/20-daemonarchy-theme.conf ${STAGEDIR}${PREFIX}/etc/sddm.conf.d
+	${INSTALL_DATA} ${WRKSRC}/20-daemonarchy-theme.conf ${STAGEDIR}${PREFIX}/etc/sddm.conf.d
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${FILESDIR}/mark.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/daemonarchy.svg
+	${INSTALL_DATA} ${WRKSRC}/mark.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/daemonarchy.svg
 .for f in ${COMMANDS}
 	${INSTALL_SCRIPT} ${WRKDIR}/bin/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/omarchy/vendor ${STAGEDIR}${PREFIX}/etc/cron.d
-	${INSTALL_DATA} ${FILESDIR}/omarchy-menu.jsonc ${STAGEDIR}${PREFIX}/share/omarchy/vendor
+	${INSTALL_DATA} ${WRKSRC}/omarchy-menu.jsonc ${STAGEDIR}${PREFIX}/share/omarchy/vendor
 	${INSTALL_DATA} ${WRKDIR}/bin/daemonarchy.cron ${STAGEDIR}${PREFIX}/etc/cron.d/daemonarchy
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${ECHO_CMD} ${PORTVERSION} > ${STAGEDIR}${DATADIR}/version
