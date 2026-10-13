@@ -2141,12 +2141,14 @@ share/xdg-terminal-exec/hyprland-xdg-terminals.list
 %%DATADIR%%/freebsd/bin/omarchy-update-analyze-logs
 %%DATADIR%%/freebsd/bin/omarchy-update-aur-pkgs
 %%DATADIR%%/freebsd/bin/omarchy-update-available
+%%DATADIR%%/freebsd/bin/omarchy-update-confirm
 %%DATADIR%%/freebsd/bin/omarchy-update-firmware
 %%DATADIR%%/freebsd/bin/omarchy-update-keyring
 %%DATADIR%%/freebsd/bin/omarchy-update-lock
 %%DATADIR%%/freebsd/bin/omarchy-update-orphan-pkgs
 %%DATADIR%%/freebsd/bin/omarchy-update-pacman-guard
 %%DATADIR%%/freebsd/bin/omarchy-update-pkg-prune
+%%DATADIR%%/freebsd/bin/omarchy-update-requires-free-space
 %%DATADIR%%/freebsd/bin/omarchy-update-restart
 %%DATADIR%%/freebsd/bin/omarchy-update-stay-awake
 %%DATADIR%%/freebsd/bin/omarchy-update-system-pkgs
@@ -2156,6 +2158,8 @@ share/xdg-terminal-exec/hyprland-xdg-terminals.list
 %%DATADIR%%/freebsd/bin/omarchy-version-pkgs
 %%DATADIR%%/freebsd/patches/patch-etc_fastfetch_config.jsonc
 %%DATADIR%%/freebsd/patches/patch-install_user_mise-work.sh
+%%DATADIR%%/freebsd/patches/patch-shell_plugins_bar_widgets_SystemUpdate.manifest.json
+%%DATADIR%%/freebsd/patches/patch-shell_plugins_bar_widgets_SystemUpdate.qml
 %%DATADIR%%/freebsd/patches/patch-shell_plugins_menu_Menu.qml
 %%DATADIR%%/freebsd/patches/patch-shell_plugins_panels_bluetooth_FreeBSDBluetooth.qml
 %%DATADIR%%/freebsd/patches/patch-shell_plugins_panels_bluetooth_Panel.qml
