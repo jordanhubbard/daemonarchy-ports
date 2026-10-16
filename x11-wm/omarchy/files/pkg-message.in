@@ -34,10 +34,11 @@ Omarchy needs a few system services and permissions on FreeBSD:
    Configuration for new users is copied into your home directory the
    first time the session starts; existing files are left alone.
 
-Wi-Fi and Bluetooth controls in the Omarchy panels need NetworkManager and
-BlueZ, which are not available on FreeBSD; use wpa_supplicant(8) and
-bluetooth(4) instead. Package installs and updates from the Omarchy menu use
-pkg(8), and system snapshots use ZFS boot environments (bectl(8)).
+Wi-Fi and Bluetooth panels use native FreeBSD backends, not NetworkManager
+or BlueZ. Bluetooth audio targets one stereo A2DP/SBC output; microphone
+profiles are not implemented. Hardware qualification is recorded in the
+Daemonarchy release notes. Package installs and updates use pkg(8), and
+system snapshots use ZFS boot environments (bectl(8)).
 EOM
 }
 ]
