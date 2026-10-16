@@ -211,6 +211,7 @@
     SUBDIR += clone
     SUBDIR += clonehdd
     SUBDIR += cloud-nuke
+    SUBDIR += clout
     SUBDIR += clsync
     SUBDIR += cluster-glue
     SUBDIR += cmdwatch
@@ -649,7 +650,6 @@
     SUBDIR += kubo-go
     SUBDIR += kustomize
     SUBDIR += kvmclock-kmod
-    SUBDIR += lava
     SUBDIR += lazydocker
     SUBDIR += lazyssh
     SUBDIR += lbl-cf
@@ -1593,6 +1593,7 @@
     SUBDIR += udfclient
     SUBDIR += udiskie
     SUBDIR += ufetch
+    SUBDIR += ufs-utils
     SUBDIR += uhidd
     SUBDIR += uhubctl
     SUBDIR += uif2iso
