@@ -2156,6 +2156,7 @@ share/xdg-terminal-exec/hyprland-xdg-terminals.list
 %%DATADIR%%/freebsd/bin/omarchy-version
 %%DATADIR%%/freebsd/bin/omarchy-version-channel
 %%DATADIR%%/freebsd/bin/omarchy-version-pkgs
+%%DATADIR%%/freebsd/patches/patch-default_sddm_hyprland.lua
 %%DATADIR%%/freebsd/patches/patch-etc_fastfetch_config.jsonc
 %%DATADIR%%/freebsd/patches/patch-install_user_mise-work.sh
 %%DATADIR%%/freebsd/patches/patch-shell_plugins_bar_widgets_SystemUpdate.manifest.json
