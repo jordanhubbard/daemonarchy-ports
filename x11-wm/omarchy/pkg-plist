@@ -2193,3 +2193,4 @@ bin/omarchy-wifi-enterprise
 %%DATADIR%%/bin/omarchy-wifi-enterprise
 %%DATADIR%%/freebsd/bin/omarchy-wifi-enterprise
 %%DATADIR%%/freebsd/bin/omarchy-launch-webapp
+%%DATADIR%%/freebsd/bin/omarchy-theme-set-browser-policy
