@@ -3,7 +3,7 @@ PORTNAME=	daemonarchy
 # FreeBSD's. The epoch moves it past the 4.0.4 it used to borrow.
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 
@@ -65,7 +65,7 @@ USES=		python:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	jordanhubbard
 GH_PROJECT=	daemonarchy-desktop
-GH_TAGNAME=	0b5b6a3da418c2c554e5431a4f509b28d9369a21
+GH_TAGNAME=	ec2a00824ec95b342c0c095657ac725c56f0528b
 
 NO_ARCH=	yes
 
@@ -75,7 +75,7 @@ OPTIONS_DEFAULT=	APPS BLUETOOTH CLI DEV INPUT OMAAPPS PRINT VAAPI
 APPS_DESC=	Default applications (browser, office, media, notes)
 BLUETOOTH_DESC=	Firmware for Realtek and Intel Bluetooth controllers
 CLI_DESC=	Terminal tools Omarchy's shell setup expects
-DEV_DESC=	Development languages, database clients and container tools
+DEV_DESC=	Development languages and database clients
 INPUT_DESC=	Fcitx5 input method (XCompose and CJK input)
 OBSIDIAN_DESC=	Obsidian notes (proprietary EULA; must be accepted to build)
 OMAAPPS_DESC=	Omarchy's own applications (Aether, Omacalc, Omasnap, ...)
@@ -133,11 +133,8 @@ CLI_RUN_DEPENDS=	bash-completion>0:shells/bash-completion \
 			zoxide>0:sysutils/zoxide
 DEV_USES=		llvm:run lua:51,run ruby:run
 DEV_RUN_DEPENDS=	autoconf-archive>0:devel/autoconf-archive \
-			docker-buildx>0:sysutils/docker-buildx \
-			docker-compose>0:sysutils/docker-compose \
 			dotnet>0:lang/dotnet \
 			fakeroot>0:security/fakeroot \
-			lazydocker>0:sysutils/lazydocker \
 			libyaml>0:textproc/libyaml \
 			${LUA_PKGNAMEPREFIX}luarocks>0:devel/lua-luarocks@${LUA_FLAVOR} \
 			mariadb118-client>0:databases/mariadb118-client \
