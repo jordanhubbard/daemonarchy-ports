@@ -1,7 +1,7 @@
 PORTNAME=	omarchy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.4
-PORTREVISION=	16
+PORTREVISION=	18
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -16,6 +16,7 @@ PATCH_DEPENDS=	bash:shells/bash \
 		${PYTHON_CMD}:lang/python${PYTHON_SUFFIX}
 BUILD_DEPENDS=	magick:graphics/ImageMagick7
 RUN_DEPENDS=	Hyprland:x11-wm/hyprland \
+		${LOCALBASE}/lib/virtual_oss/voss_bt.so:audio/virtual_oss_bluetooth \
 		${PYTHON_PKGNAMEPREFIX}pygobject>0:devel/py-pygobject@${PY_FLAVOR} \
 		basuctl:devel/basu \
 		ck-launch-session:sysutils/consolekit2 \
@@ -50,7 +51,7 @@ USES=		fonts perl5 python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	basecamp
 # The FreeBSD compatibility layer: freebsdize, compat tools, FreeBSD commands.
-GH_TUPLE=	jordanhubbard:omarchy-freebsd:c2acb42d814ae9ad016908f0652f3a85dcb3c55e:freebsd
+GH_TUPLE=	jordanhubbard:omarchy-freebsd:8f8904db1be3eafcdbab9406cbfa9ae097f1ee7d:freebsd
 USE_PERL5=	run
 
 SHEBANG_FILES=	bin/* config/omarchy/hooks/*/* default/systemd/system-sleep/* \
