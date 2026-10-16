@@ -1,7 +1,7 @@
 PORTNAME=	omarchy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.4
-PORTREVISION=	11
+PORTREVISION=	13
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 PATCH_DEPENDS=	bash:shells/bash
 BUILD_DEPENDS=	magick:graphics/ImageMagick7
 RUN_DEPENDS=	Hyprland:x11-wm/hyprland \
+		${PYTHON_PKGNAMEPREFIX}pygobject>0:devel/py-pygobject@${PY_FLAVOR} \
 		basuctl:devel/basu \
 		ck-launch-session:sysutils/consolekit2 \
 		dbus-run-session:devel/dbus \
@@ -48,7 +49,7 @@ USES=		fonts perl5 python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	basecamp
 # The FreeBSD compatibility layer: freebsdize, compat tools, FreeBSD commands.
-GH_TUPLE=	jordanhubbard:omarchy-freebsd:ce86c324ef06d93c34f8ece650dfa316348d883b:freebsd
+GH_TUPLE=	jordanhubbard:omarchy-freebsd:6639493a82a311f9e5bf5a4212cc97f18ad1a7dc:freebsd
 USE_PERL5=	run
 
 SHEBANG_FILES=	bin/* config/omarchy/hooks/*/* default/systemd/system-sleep/* \
@@ -144,7 +145,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/freebsd/patches ${STAGEDIR}${DATADIR}/freebsd/bin
 	${INSTALL_DATA} ${FILESDIR}/patch-* ${STAGEDIR}${DATADIR}/freebsd/patches
 	${INSTALL_DATA} ${WRKSRC_freebsd}/freebsd-bin/* ${STAGEDIR}${DATADIR}/freebsd/bin
-	${REINPLACE_CMD} -E '1s@^#!(/usr/bin/env bash|/bin/bash)$$@#!${LOCALBASE}/bin/bash@' \
+	${REINPLACE_CMD} -E -e '1s@^#!(/usr/bin/env bash|/bin/bash)$$@#!${LOCALBASE}/bin/bash@' \
+		-e '1s@^#!/usr/bin/env python3$$@#!${PYTHON_CMD}@' \
 		${STAGEDIR}${DATADIR}/freebsd/bin/*
 	${RM} ${STAGEDIR}${DATADIR}/freebsd/bin/*.bak
 	${INSTALL_PROGRAM} ${WRKDIR}/pdeathsig ${WRKDIR}/session-reaper ${STAGEDIR}${PREFIX}/libexec/omarchy

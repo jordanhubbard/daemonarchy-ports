@@ -1,3 +1,4 @@
+bin/daemonarchy
 bin/omarchy
 bin/omarchy-agent
 bin/omarchy-agent-crash
@@ -621,7 +622,6 @@ share/icons/hicolor/48x48/apps/zoom.png
 %%DATADIR%%/applications/Basecamp.desktop
 %%DATADIR%%/applications/Discord.desktop
 %%DATADIR%%/applications/Disk Usage.desktop
-%%DATADIR%%/applications/Docker.desktop
 %%DATADIR%%/applications/Google Contacts.desktop
 %%DATADIR%%/applications/Google Maps.desktop
 %%DATADIR%%/applications/Google Messages.desktop
@@ -634,6 +634,7 @@ share/icons/hicolor/48x48/apps/zoom.png
 %%DATADIR%%/applications/foot.desktop
 %%DATADIR%%/applications/imv.desktop
 %%DATADIR%%/applications/mpv.desktop
+%%DATADIR%%/bin/daemonarchy
 %%DATADIR%%/bin/omarchy
 %%DATADIR%%/bin/omarchy-agent
 %%DATADIR%%/bin/omarchy-agent-crash
@@ -1733,7 +1734,6 @@ share/icons/hicolor/48x48/apps/zoom.png
 %%DATADIR%%/skel/.local/share/applications/Basecamp.desktop
 %%DATADIR%%/skel/.local/share/applications/Discord.desktop
 %%DATADIR%%/skel/.local/share/applications/Disk Usage.desktop
-%%DATADIR%%/skel/.local/share/applications/Docker.desktop
 %%DATADIR%%/skel/.local/share/applications/Google Contacts.desktop
 %%DATADIR%%/skel/.local/share/applications/Google Maps.desktop
 %%DATADIR%%/skel/.local/share/applications/Google Messages.desktop
@@ -2187,3 +2187,4 @@ bin/omarchy-wifi
 %%DATADIR%%/shell/plugins/panels/network/FreeBSDWifi.qml
 %%DATADIR%%/shell/plugins/panels/bluetooth/FreeBSDBluetooth.qml
 etc/polkit-1/rules.d/50-omarchy.rules
+%%DATADIR%%/freebsd/bin/omarchy-launch-browser

@@ -3,6 +3,7 @@ PORTNAME=	daemonarchy
 # FreeBSD's. The epoch moves it past the 4.0.4 it used to borrow.
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 
@@ -21,6 +22,8 @@ BUILD_DEPENDS=	magick:graphics/ImageMagick7 \
 # DKMS drivers, Limine/Snapper, NetworkManager, BlueZ, power-profiles-daemon)
 # are covered by the base system or by the omarchy port's compat layer.
 RUN_DEPENDS=	omarchy>0:x11-wm/omarchy \
+		chromium>0:www/chromium \
+		octopkg>0:ports-mgmt/octopkg \
 		egl-wayland>0:graphics/egl-wayland \
 		font-awesome>0:x11-fonts/font-awesome \
 		fontconfig>0:x11-fonts/fontconfig \
@@ -62,6 +65,7 @@ USES=		python:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	jordanhubbard
 GH_PROJECT=	daemonarchy-desktop
+GH_TAGNAME=	0b5b6a3da418c2c554e5431a4f509b28d9369a21
 
 NO_ARCH=	yes
 
@@ -78,8 +82,7 @@ OMAAPPS_DESC=	Omarchy's own applications (Aether, Omacalc, Omasnap, ...)
 PRINT_DESC=	Printing and network service discovery
 VAAPI_DESC=	Hardware video decoding drivers
 
-APPS_RUN_DEPENDS=	chromium>0:www/chromium \
-			evince>0:graphics/evince \
+APPS_RUN_DEPENDS=	evince>0:graphics/evince \
 			ffmpegthumbnailer>0:multimedia/ffmpegthumbnailer \
 			gvfs>0:filesystems/gvfs \
 			ImageMagick7>0:graphics/ImageMagick7 \
