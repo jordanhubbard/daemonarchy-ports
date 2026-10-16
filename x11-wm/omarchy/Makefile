@@ -1,7 +1,7 @@
 PORTNAME=	omarchy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.4
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -12,7 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # freebsdize, which adapts the sources, is a bash script run while patching.
-PATCH_DEPENDS=	bash:shells/bash
+PATCH_DEPENDS=	bash:shells/bash \
+		${PYTHON_CMD}:lang/python${PYTHON_SUFFIX}
 BUILD_DEPENDS=	magick:graphics/ImageMagick7
 RUN_DEPENDS=	Hyprland:x11-wm/hyprland \
 		${PYTHON_PKGNAMEPREFIX}pygobject>0:devel/py-pygobject@${PY_FLAVOR} \
@@ -49,7 +50,7 @@ USES=		fonts perl5 python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	basecamp
 # The FreeBSD compatibility layer: freebsdize, compat tools, FreeBSD commands.
-GH_TUPLE=	jordanhubbard:omarchy-freebsd:6639493a82a311f9e5bf5a4212cc97f18ad1a7dc:freebsd
+GH_TUPLE=	jordanhubbard:omarchy-freebsd:9b4346e9101940ed783f08153dd5e7702f848b7f:freebsd
 USE_PERL5=	run
 
 SHEBANG_FILES=	bin/* config/omarchy/hooks/*/* default/systemd/system-sleep/* \

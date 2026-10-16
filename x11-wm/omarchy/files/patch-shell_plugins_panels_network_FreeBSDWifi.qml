@@ -1,6 +1,6 @@
 --- shell/plugins/panels/network/FreeBSDWifi.qml.orig
 +++ shell/plugins/panels/network/FreeBSDWifi.qml
-@@ -0,0 +1,258 @@
+@@ -0,0 +1,277 @@
 +import QtQuick
 +import Quickshell
 +import Quickshell.Io
@@ -69,7 +69,13 @@
 +      property bool stateChanging: false
 +      signal connectionFailed(int reason)
 +
-+      function connect() { wifi.runAction(this, ["omarchy-wifi", "connect", name], "") }
++      function connect() {
++        if (!known && (security === WifiSecurityType.WpaEap || security === WifiSecurityType.Wpa2Eap)) {
++          wifi.configureEnterprise(this)
++          return
++        }
++        wifi.runAction(this, ["omarchy-wifi", "connect", name], "")
++      }
 +      function connectWithPsk(psk) { wifi.runAction(this, ["omarchy-wifi", "connect", name, "--psk"], psk) }
 +      function disconnect() { wifi.runAction(this, ["omarchy-wifi", "disconnect"], "") }
 +      function forget() { wifi.runAction(this, ["omarchy-wifi", "forget", name], "") }
@@ -176,6 +182,19 @@
 +  function scan() {
 +    if (!scanProc.running) scanProc.running = true
 +  }
++
++  // The presentation launcher accepts a shell command. Quote the entire SSID,
++  // including embedded apostrophes, before adding it to that command.
++  function shellQuote(value) { return "'" + value.replace(/'/g, "'\\''") + "'" }
++
++  function configureEnterprise(network) {
++    if (enterpriseProc.running) return
++    enterpriseProc.command = ["omarchy-launch-floating-terminal-with-presentation",
++      "omarchy-wifi-enterprise --ssid " + shellQuote(network.name)]
++    enterpriseProc.running = true
++  }
++
++  Process { id: enterpriseProc; onExited: wifi.refresh() }
 +
 +  property var actionNetwork: null
 +  property string actionSecret: ""

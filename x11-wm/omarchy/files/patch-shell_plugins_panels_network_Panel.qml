@@ -34,7 +34,32 @@
      Qt.callLater(function() { root.refresh(true) })
    }
  
-@@ -1143,7 +1148,7 @@
+@@ -681,6 +686,9 @@
+   }
+ 
+   function requiresCredentials(security) {
++    // The FreeBSD wizard collects CA/server verification and EAP-TLS material,
++    // rather than using NetworkManager's identity/password-only inline form.
++    if (!hasNetworkManager && (security === WifiSecurityType.WpaEap || security === WifiSecurityType.Wpa2Eap)) return false
+     return Model.requiresCredentials(security, WifiSecurityType.Open, WifiSecurityType.Owe)
+   }
+ 
+@@ -757,7 +765,13 @@
+   }
+ 
+   function connectDirectly(ssid) {
+-    runNetworkAction("connect", networkForSsid(ssid), function(network) { network.connect() })
++    var network = networkForSsid(ssid)
++    if (!hasNetworkManager && network && !network.known &&
++        (network.security === WifiSecurityType.WpaEap || network.security === WifiSecurityType.Wpa2Eap)) {
++      freebsdWifi.configureEnterprise(network)
++      return
++    }
++    runNetworkAction("connect", network, function(network) { network.connect() })
+   }
+ 
+   function connectWithPassphrase(ssid, passphrase) {
+@@ -1143,7 +1157,7 @@
            ToggleSwitch {
              id: powerSwitch
              visible: root.canToggleWifi
