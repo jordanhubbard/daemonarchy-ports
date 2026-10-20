@@ -36,8 +36,12 @@ make framework. This is a small real starting boundary, not complete ports
 coverage or admitted execution. The product repository retains a direct native
 make probe that built LZ4, ran its default upstream checks and created a pkg;
 that probe is not a Literate AI lifecycle receipt or a qualified Component pkg.
-Standard binding, exact native profile, toolchain custody, original input
-admission and installed target execution are being established here.
+Original-source adoption now records the clean Git tree without moving source.
+The installed Standard binding selects framework revision `cffef3238ba48f2c0876270aa4a1aeacce4c86e1`
+and its complete evidence policy. Project authority and both FreeBSD/pkg locks
+validate through that installed CLI. Verification still fails on the missing
+current test receipt. Exact native profiles, toolchain custody, original input
+admission and installed target execution remain unfinished.
 
 ## Current work
 

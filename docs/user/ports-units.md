@@ -28,3 +28,19 @@ must invalidate the correct closure, including ports completion cookies.
 Packaging, build directories and ABI/toolchain choices belong in the selected
 Flavors and reviewed retained profile. Do not execute a whole-tree wrapper and
 call it per-origin Component acceptance.
+
+## Current operator boundary
+
+The reviewed adoption record in `.literate/original-adoption.json` binds the
+initial clean project commit and tree; original implementation remains in place.
+The complete Standard policy is bound to the installed framework wheel from
+`cffef3238ba48f2c0876270aa4a1aeacce4c86e1`, distribution identity
+`sha256:ed899116420edda0c803acf424067f102b6face4870e180104add4da431cb534`.
+
+With that exact installed CLI, `litai project validate .` and
+`litai lock . --target freebsd --check` pass. `litai verify .` fails because
+`verification/current.json` has not been earned. A source/ports build command
+requires the reviewed retained manifest and executable profile, exact toolchain
+closure, explicit plan authorization and actual native acceptance; those remain
+open. Changing the installed wheel requires the reviewed
+`litai project lifecycle rebind-standard` transaction before execution.
