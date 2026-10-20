@@ -10,7 +10,7 @@ provides:
     interface:
       uri: interfaces/contract.md
       pin: null
-requires: 
+requires:
   - requirement_id: ports-framework
     capability: daemonarchy.ports.make-framework
     version_range: ">=1,<2"
