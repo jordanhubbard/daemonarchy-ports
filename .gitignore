@@ -13,3 +13,11 @@ Mk/bsd.overlay.mk
 *.rej
 *.orig
 *.sw[p-z]
+
+# Daemonarchy native development outputs and authority mutexes
+_build/
+.worktrees/
+__pycache__/
+.literate/repository-lineage.lock
+.literate/conversion-authority.lock
+Tools/daemonarchy/components/**/.*.lock

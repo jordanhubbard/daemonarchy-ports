@@ -1,0 +1,66 @@
+{
+  "schema": "urn:literate-ai:schema:v2:project-definition",
+  "project_id": "daemonarchy-ports",
+  "version": "1.2.0",
+  "profile": "canonical",
+  "agent_skill": "SKILL.md",
+  "component_roots": [
+    "Tools/daemonarchy/components"
+  ],
+  "flavor_roots": [
+    "flavors"
+  ],
+  "skill_roots": [
+    "Tools/daemonarchy/skills",
+    "skills"
+  ],
+  "workflow_roots": [
+    "Tools/daemonarchy/workflows"
+  ],
+  "routing_roots": [
+    "Tools/daemonarchy/routing"
+  ],
+  "documentation_roots": [
+    "docs"
+  ],
+  "source_intelligence": {
+    "schema": "urn:literate-ai:schema:v1:project-source-intelligence-policy",
+    "provider_id": "none",
+    "command": null,
+    "minimum_version": null,
+    "artifact_path": null,
+    "stages": {
+      "project-maintenance": "off",
+      "source-generation": "off",
+      "cache-consumption": "off",
+      "source-to-specification": "off",
+      "repository-source-admission": "off",
+      "structural-review": "off"
+    },
+    "artifact_publication": "metadata-only"
+  },
+  "test_receipt": "verification/current.json",
+  "default_flavor_selectors": [
+    "+source-freebsd",
+    "+package-pkg"
+  ],
+  "repository_policy": {
+    "schema": "literate-ai/repository-policy@1",
+    "default_branch": "daemonarchy",
+    "main_state": "free",
+    "pre_release_version": null,
+    "default_component": "Tools/daemonarchy/components/liblz4",
+    "sample_component_roots": [
+      "samples"
+    ],
+    "work_queue": "docs/roadmap/active-work.md",
+    "remote": "origin",
+    "merge_method": "merge",
+    "pull_request_labels": [],
+    "release_engineer_source": "PROJECT.md#current-work",
+    "release_ci_workflow": "CI",
+    "patch_authority": "strict",
+    "writers": [],
+    "branch_gc_minimum_age_days": 7
+  }
+}
