@@ -13,6 +13,12 @@
   - [ ] Expose installed build/test/package execution and original outcomes plus independent sealed-product acceptance; forbid ambient dependency installation.
   - [ ] Prove clean/warm/source/Mk/options/toolchain invalidation and actual pkg BOM/provenance, then disposable VM installation/update/rollback.
 - **Evidence:**
-  - [x] Current project authority, documentation review and both exact FreeBSD/pkg locks validate through the installed canonical wheel at framework revision `cffef3238ba48f2c0876270aa4a1aeacce4c86e1`. Standard binding preserves all sixteen required evidence kinds. Verification fails solely on the missing current test receipt; native execution is not admitted.
+  - [x] Current project authority, documentation review and both exact FreeBSD/pkg locks validate through the installed canonical wheel at framework revision `5b9afcd7c9016341620695b9110ec073809d239c`. Standard binding preserves all sixteen required evidence kinds. Verification fails solely on the missing current test receipt; native execution is not admitted.
   - [ ] The installed CLI executes the original build, complete selected upstream tests and independent acceptance, and admits per-unit pkg products with actual provenance.
   - [ ] Equivalent native measurements and upstream-refresh/cut-over/rollback evidence satisfy the product requirements.
+
+The reviewed installed-wheel rebind plan
+`sha256:633d5a210fbf887155ffb855b6dab5c242bbbf78b29054bcc3a77e1f94fb8f5e`
+selects the common retained build/test frontend while preserving all sixteen
+evidence kinds and the Standard policy. Native deployment and executable
+profile/toolchain admission remain the next work; this rebind grants no receipt.

@@ -34,8 +34,8 @@ call it per-origin Component acceptance.
 The reviewed adoption record in `.literate/original-adoption.json` binds the
 initial clean project commit and tree; original implementation remains in place.
 The complete Standard policy is bound to the installed framework wheel from
-`cffef3238ba48f2c0876270aa4a1aeacce4c86e1`, distribution identity
-`sha256:ed899116420edda0c803acf424067f102b6face4870e180104add4da431cb534`.
+`5b9afcd7c9016341620695b9110ec073809d239c`, distribution identity
+`sha256:01c193fa8e09bfd5c38eee2d5aaa71594421c1e67840fad46d40b1740c4a8bc9`.
 
 With that exact installed CLI, `litai project validate .` and
 `litai lock . --target freebsd --check` pass. `litai verify .` fails because
