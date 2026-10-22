@@ -1,6 +1,7 @@
 PORTNAME=	lazydocker
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.25.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -14,8 +15,8 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	jesseduffield
 
-GO_BUILDFLAGS=	-ldflags "-s -X main.version=${DISTVERSION} \
-		-X main.buildSource=freebsd-ports"
+GO_LDFLAGS=	-X main.version=${DISTVERSION} \
+		-X main.buildSource=freebsd-ports
 
 PLIST_FILES=	bin/${PORTNAME}
 
