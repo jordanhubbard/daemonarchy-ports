@@ -24,7 +24,7 @@ USE_PYTHON=	autoplist noflavors pep517
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	NLS NOTIFY
-OPTIONS_DEFAULT=	NLS NOTIFY
+OPTIONS_DEFAULT=	NOTIFY
 
 NOTIFY_DESC=	Desktop notifications via libnotify
 

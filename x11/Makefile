@@ -76,6 +76,7 @@
     SUBDIR += controllermap
     SUBDIR += cool-retro-term
     SUBDIR += coreterminal
+    SUBDIR += cosmic-bg
     SUBDIR += damask
     SUBDIR += darktile
     SUBDIR += deforaos-integration
@@ -250,6 +251,7 @@
     SUBDIR += libsx
     SUBDIR += libsynaptics
     SUBDIR += libwacom
+    SUBDIR += libwinpos
     SUBDIR += libxcb
     SUBDIR += libxcvt
     SUBDIR += libxdg-basedir

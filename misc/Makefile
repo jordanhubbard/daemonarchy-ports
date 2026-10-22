@@ -338,6 +338,7 @@
     SUBDIR += onnxruntime
     SUBDIR += ooo
     SUBDIR += openclaw
+    SUBDIR += opencode
     SUBDIR += opencyc
     SUBDIR += openhab
     SUBDIR += openhab-addons
@@ -468,6 +469,7 @@
     SUBDIR += py-bitsandbytes
     SUBDIR += py-boost-histogram
     SUBDIR += py-censys
+    SUBDIR += py-claude-agent-sdk
     SUBDIR += py-cmap
     SUBDIR += py-codecarbon
     SUBDIR += py-cohere
@@ -541,6 +543,7 @@
     SUBDIR += py-ipyfastscape
     SUBDIR += py-jiwer
     SUBDIR += py-kartograph
+    SUBDIR += py-kenlm
     SUBDIR += py-kokoro
     SUBDIR += py-langchain
     SUBDIR += py-langchain-anthropic
