@@ -1,3 +1,4 @@
+bin/daemonarchy
 bin/omarchy
 bin/omarchy-agent
 bin/omarchy-agent-crash
@@ -621,7 +622,6 @@ share/icons/hicolor/48x48/apps/zoom.png
 %%DATADIR%%/applications/Basecamp.desktop
 %%DATADIR%%/applications/Discord.desktop
 %%DATADIR%%/applications/Disk Usage.desktop
-%%DATADIR%%/applications/Docker.desktop
 %%DATADIR%%/applications/Google Contacts.desktop
 %%DATADIR%%/applications/Google Maps.desktop
 %%DATADIR%%/applications/Google Messages.desktop
@@ -634,6 +634,7 @@ share/icons/hicolor/48x48/apps/zoom.png
 %%DATADIR%%/applications/foot.desktop
 %%DATADIR%%/applications/imv.desktop
 %%DATADIR%%/applications/mpv.desktop
+%%DATADIR%%/bin/daemonarchy
 %%DATADIR%%/bin/omarchy
 %%DATADIR%%/bin/omarchy-agent
 %%DATADIR%%/bin/omarchy-agent-crash
@@ -1733,7 +1734,6 @@ share/icons/hicolor/48x48/apps/zoom.png
 %%DATADIR%%/skel/.local/share/applications/Basecamp.desktop
 %%DATADIR%%/skel/.local/share/applications/Discord.desktop
 %%DATADIR%%/skel/.local/share/applications/Disk Usage.desktop
-%%DATADIR%%/skel/.local/share/applications/Docker.desktop
 %%DATADIR%%/skel/.local/share/applications/Google Contacts.desktop
 %%DATADIR%%/skel/.local/share/applications/Google Maps.desktop
 %%DATADIR%%/skel/.local/share/applications/Google Messages.desktop
@@ -2156,6 +2156,7 @@ share/xdg-terminal-exec/hyprland-xdg-terminals.list
 %%DATADIR%%/freebsd/bin/omarchy-version
 %%DATADIR%%/freebsd/bin/omarchy-version-channel
 %%DATADIR%%/freebsd/bin/omarchy-version-pkgs
+%%DATADIR%%/freebsd/patches/patch-default_sddm_hyprland.lua
 %%DATADIR%%/freebsd/patches/patch-etc_fastfetch_config.jsonc
 %%DATADIR%%/freebsd/patches/patch-install_user_mise-work.sh
 %%DATADIR%%/freebsd/patches/patch-shell_plugins_bar_widgets_SystemUpdate.manifest.json
@@ -2187,3 +2188,9 @@ bin/omarchy-wifi
 %%DATADIR%%/shell/plugins/panels/network/FreeBSDWifi.qml
 %%DATADIR%%/shell/plugins/panels/bluetooth/FreeBSDBluetooth.qml
 etc/polkit-1/rules.d/50-omarchy.rules
+%%DATADIR%%/freebsd/bin/omarchy-launch-browser
+bin/omarchy-wifi-enterprise
+%%DATADIR%%/bin/omarchy-wifi-enterprise
+%%DATADIR%%/freebsd/bin/omarchy-wifi-enterprise
+%%DATADIR%%/freebsd/bin/omarchy-launch-webapp
+%%DATADIR%%/freebsd/bin/omarchy-theme-set-browser-policy

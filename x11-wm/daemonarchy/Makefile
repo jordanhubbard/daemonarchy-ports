@@ -2,7 +2,7 @@ PORTNAME=	daemonarchy
 # Daemonarchy's own release number, not Omarchy's (x11-wm/omarchy) or
 # FreeBSD's. The epoch moves it past the 4.0.4 it used to borrow.
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.1.1
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 
@@ -21,6 +21,8 @@ BUILD_DEPENDS=	magick:graphics/ImageMagick7 \
 # DKMS drivers, Limine/Snapper, NetworkManager, BlueZ, power-profiles-daemon)
 # are covered by the base system or by the omarchy port's compat layer.
 RUN_DEPENDS=	omarchy>0:x11-wm/omarchy \
+		chromium>0:www/chromium \
+		octopkg>0:ports-mgmt/octopkg \
 		egl-wayland>0:graphics/egl-wayland \
 		font-awesome>0:x11-fonts/font-awesome \
 		fontconfig>0:x11-fonts/fontconfig \
@@ -71,15 +73,14 @@ OPTIONS_DEFAULT=	APPS BLUETOOTH CLI DEV INPUT OMAAPPS PRINT VAAPI
 APPS_DESC=	Default applications (browser, office, media, notes)
 BLUETOOTH_DESC=	Firmware for Realtek and Intel Bluetooth controllers
 CLI_DESC=	Terminal tools Omarchy's shell setup expects
-DEV_DESC=	Development languages, database clients and container tools
+DEV_DESC=	Development languages and database clients
 INPUT_DESC=	Fcitx5 input method (XCompose and CJK input)
 OBSIDIAN_DESC=	Obsidian notes (proprietary EULA; must be accepted to build)
 OMAAPPS_DESC=	Omarchy's own applications (Aether, Omacalc, Omasnap, ...)
 PRINT_DESC=	Printing and network service discovery
 VAAPI_DESC=	Hardware video decoding drivers
 
-APPS_RUN_DEPENDS=	chromium>0:www/chromium \
-			evince>0:graphics/evince \
+APPS_RUN_DEPENDS=	evince>0:graphics/evince \
 			ffmpegthumbnailer>0:multimedia/ffmpegthumbnailer \
 			gvfs>0:filesystems/gvfs \
 			ImageMagick7>0:graphics/ImageMagick7 \
@@ -130,11 +131,8 @@ CLI_RUN_DEPENDS=	bash-completion>0:shells/bash-completion \
 			zoxide>0:sysutils/zoxide
 DEV_USES=		llvm:run lua:51,run ruby:run
 DEV_RUN_DEPENDS=	autoconf-archive>0:devel/autoconf-archive \
-			docker-buildx>0:sysutils/docker-buildx \
-			docker-compose>0:sysutils/docker-compose \
 			dotnet>0:lang/dotnet \
 			fakeroot>0:security/fakeroot \
-			lazydocker>0:sysutils/lazydocker \
 			libyaml>0:textproc/libyaml \
 			${LUA_PKGNAMEPREFIX}luarocks>0:devel/lua-luarocks@${LUA_FLAVOR} \
 			mariadb118-client>0:databases/mariadb118-client \

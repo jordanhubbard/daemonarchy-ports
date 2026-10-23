@@ -1,0 +1,30 @@
+Daemonarchy VirtIO DRM integration
+=================================
+
+patch-daemonarchy-virtio combines the existing generated LinuxKPI options fix
+with the Linux 6.12 VirtIO DRM port from freebsd/drm-kmod PR #499 at
+ae8fc4c421eb4c0d6d9e0821ea6b070e8aec8199. Upstream now reviews the restructured
+6.13 implementation in PR #517; this integration keeps the release's 6.12.110
+DRM core shared with its NVIDIA DRM companion.
+
+Adaptations for 6.12.110 and FreeBSD CURRENT 1600027:
+- Guard the current fbdev deferred-I/O code/label on Linux.
+- Use base LinuxKPI's dma_sync_sgtable_for_device and vmemdup_user instead of
+  the older compatibility definitions.
+- Generate opt_linuxkpi.h and include common LinuxKPI configuration for VirtIO
+  as well as the existing modules.
+
+Imported Linux files retain their licenses; new FreeBSD glue retains MIT.
+The source archive stays pinned to drm_v6.12.110_1. This patch adds no binary
+objects, generated architecture links, private credentials or moving downloads.
+
+Native amd64 testport passed stage QA, plist checks, install/deinstall and
+package install/deinstall on the matching October 12 snapshot. An isolated
+QEMU/KVM guest using the matching modules rendered Hyprland 0.56.2, accepted
+keyboard/pointer input, switched resolution and rebooted into Hyprland again.
+Final packaged-image and physical GPU regression qualification remain required.
+
+Hyprland requires a VirGL-enabled host display (virtio-vga-gl or
+virtio-gpu-gl-pci). The 2D-only device is not a supported Hyprland path.
+Load virtio_gpu_drm during rc startup, never from loader.conf. Venus/Vulkan,
+multi-head and module unloading are not qualified by these checks.

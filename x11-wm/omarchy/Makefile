@@ -1,7 +1,7 @@
 PORTNAME=	omarchy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.4
-PORTREVISION=	12
+PORTREVISION=	24
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -12,9 +12,12 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # freebsdize, which adapts the sources, is a bash script run while patching.
-PATCH_DEPENDS=	bash:shells/bash
+PATCH_DEPENDS=	bash:shells/bash \
+		${PYTHON_CMD}:lang/python${PYTHON_SUFFIX}
 BUILD_DEPENDS=	magick:graphics/ImageMagick7
 RUN_DEPENDS=	Hyprland:x11-wm/hyprland \
+		${LOCALBASE}/lib/virtual_oss/voss_bt.so:audio/virtual_oss_bluetooth \
+		${PYTHON_PKGNAMEPREFIX}pygobject>0:devel/py-pygobject@${PY_FLAVOR} \
 		basuctl:devel/basu \
 		ck-launch-session:sysutils/consolekit2 \
 		dbus-run-session:devel/dbus \
@@ -48,7 +51,7 @@ USES=		fonts perl5 python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	basecamp
 # The FreeBSD compatibility layer: freebsdize, compat tools, FreeBSD commands.
-GH_TUPLE=	jordanhubbard:omarchy-freebsd:ce86c324ef06d93c34f8ece650dfa316348d883b:freebsd
+GH_TUPLE=	jordanhubbard:omarchy-freebsd:535e44bb6fa3e9b9f4fc3a870591688526279124:freebsd
 USE_PERL5=	run
 
 SHEBANG_FILES=	bin/* config/omarchy/hooks/*/* default/systemd/system-sleep/* \
@@ -144,7 +147,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/freebsd/patches ${STAGEDIR}${DATADIR}/freebsd/bin
 	${INSTALL_DATA} ${FILESDIR}/patch-* ${STAGEDIR}${DATADIR}/freebsd/patches
 	${INSTALL_DATA} ${WRKSRC_freebsd}/freebsd-bin/* ${STAGEDIR}${DATADIR}/freebsd/bin
-	${REINPLACE_CMD} -E '1s@^#!(/usr/bin/env bash|/bin/bash)$$@#!${LOCALBASE}/bin/bash@' \
+	${REINPLACE_CMD} -E -e '1s@^#!(/usr/bin/env bash|/bin/bash)$$@#!${LOCALBASE}/bin/bash@' \
+		-e '1s@^#!/usr/bin/env python3$$@#!${PYTHON_CMD}@' \
 		${STAGEDIR}${DATADIR}/freebsd/bin/*
 	${RM} ${STAGEDIR}${DATADIR}/freebsd/bin/*.bak
 	${INSTALL_PROGRAM} ${WRKDIR}/pdeathsig ${WRKDIR}/session-reaper ${STAGEDIR}${PREFIX}/libexec/omarchy
