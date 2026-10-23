@@ -1,4 +1,4 @@
---- etc/fastfetch/config.jsonc.orig	2026-10-01 01:22:23 UTC
+--- etc/fastfetch/config.jsonc.orig
 +++ etc/fastfetch/config.jsonc
 @@ -71,7 +71,7 @@
        "type": "command",
@@ -9,3 +9,12 @@
      },
      {
        "type": "command",
+@@ -139,7 +139,7 @@
+       "type": "command",
+       "key": "󱦟 OS Age",
+       "keyColor": "magenta",
+-      "text": "echo $(( ($(date +%s) - $(stat -c %W /)) / 86400 )) days"
++      "text": "created=$(/usr/bin/stat -f %B / 2>/dev/null) || { echo Unknown; exit 0; }; case \"$created\" in \"\"|*[!0-9]*) echo Unknown;; *) now=$(/bin/date +%s); if [ \"$created\" -gt 0 ] && [ \"$created\" -le \"$now\" ]; then echo \"$(( (now - created) / 86400 )) days\"; else echo Unknown; fi;; esac"
+     },
+     {
+       "type": "uptime",
