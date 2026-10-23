@@ -1,0 +1,4 @@
+Native FreeBSD kernel driver for Broadcom FullMAC Wi-Fi devices. This build
+includes the BCM4364 PCIe bring-up and scan bounds changes exercised on a
+MacBookPro16,1 hardware preview. Device and board firmware are separate and
+must be obtained through a verified acquisition path.

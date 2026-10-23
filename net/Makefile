@@ -269,6 +269,7 @@
     SUBDIR += icmpinfo
     SUBDIR += icpld
     SUBDIR += identme
+    SUBDIR += if_brcmfmac-kmod
     SUBDIR += if_pair-kmod
     SUBDIR += ifdepd
     SUBDIR += iffinder
