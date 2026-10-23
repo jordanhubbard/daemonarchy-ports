@@ -1,6 +1,6 @@
---- electron/shell/browser/native_window_views.h.orig	2026-09-15 22:52:01 UTC
+--- electron/shell/browser/native_window_views.h.orig	2026-10-13 23:18:11 UTC
 +++ electron/shell/browser/native_window_views.h
-@@ -30,7 +30,7 @@ class Arguments;
+@@ -33,7 +33,7 @@ class Arguments;
  class Arguments;
  }  // namespace gin
  
@@ -9,7 +9,7 @@
  namespace views {
  class FrameViewLinux;
  }  // namespace views
-@@ -38,7 +38,7 @@ namespace electron {
+@@ -41,7 +41,7 @@ namespace electron {
  
  namespace electron {
  
@@ -18,7 +18,7 @@
  class GlobalMenuBarX11;
  #endif
  
-@@ -186,7 +186,7 @@ class NativeWindowViews : public NativeWindow,
+@@ -185,7 +185,7 @@ class NativeWindowViews : public NativeWindow,
                      LPARAM l_param,
                      LRESULT* result);
    void SetIcon(HICON small_icon, HICON app_icon);
@@ -34,14 +34,23 @@
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    views::FrameViewLinux* GetFrameViewLinux() const;
- #endif
- 
-@@ -291,7 +291,7 @@ class NativeWindowViews : public NativeWindow,
+   [[nodiscard]] bool ignore_mouse_events() const {
+     return ignore_mouse_events_;
+@@ -306,7 +306,7 @@ class NativeWindowViews : public NativeWindow,
    // events from resizing the window.
    extensions::SizeConstraints old_size_constraints_;
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    std::unique_ptr<GlobalMenuBarX11> global_menu_bar_;
+ 
+   // Set while the window is disabled; running it re-enables event dispatch.
+@@ -325,7 +325,7 @@ class NativeWindowViews : public NativeWindow,
+   // This value is determined when the window is created.
+   bool rounded_corner_ = true;
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   bool ignore_mouse_events_ = false;
  #endif
  

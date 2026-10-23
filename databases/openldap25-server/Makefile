@@ -47,7 +47,7 @@ GNU_CONFIGURE=		yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 PORTREVISION_CLIENT=	3
-PORTREVISION_SERVER=	3
+PORTREVISION_SERVER=	4
 OPENLDAP_SHLIB_MAJOR=	0
 OPENLDAP_SHLIB_MINOR=	1.15
 OPENLDAP_MAJOR=		${DISTVERSION:R}
@@ -115,9 +115,6 @@ OPTIONS_DEFINE+=	OUTLOOK
 OPTIONS_DEFINE+=	ARGON2
 OPTIONS_DEFINE+=	LLOADD
 
-OPTIONS_EXCLUDE_FreeBSD_15=	SMBPWD	# Only works with Heimdal
-OPTIONS_EXCLUDE_FreeBSD_16=	SMBPWD	# Only works with Heimdal
-
 OPTIONS_DEFAULT+=	${BKNDS_DEFAULTS}
 OPTIONS_DEFAULT+=	${OPTIONS_GROUP_OVLYS}
 OPTIONS_DEFAULT+=	ARGON2 LLOADD
@@ -145,7 +142,7 @@ SOCK_DESC=		With Sock backend
 ACCESSLOG_DESC=		With In-Directory Access Logging overlay
 AUDITLOG_DESC=		With Audit Logging overlay
 AUTOCA_DESC=		With Automatic Certificate Authority overlay
-COLLECT_DESC=		With Collect overy Services overlay
+COLLECT_DESC=		With Collective Attributes overlay
 CONSTRAINT_DESC=	With Attribute Constraint overlay
 DDS_DESC=		With Dynamic Directory Services overlay
 DEREF_DESC=		With Dereference overlay
@@ -387,6 +384,14 @@ post-patch:
 .if defined(CONFIGURE_SED)
 	@${REINPLACE_CMD} -E ${CONFIGURE_SED} \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
+
+post-patch-SMBPWD-on:
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500000
+	@${REINPLACE_CMD} -e 's|-DDO_KRB5 ||' \
+		-e 's|^HEIMDAL_INC =.*|HEIMDAL_INC =|' \
+		-e 's|^HEIMDAL_LIB =.*|HEIMDAL_LIB =|' \
+		${WRKSRC}/contrib/slapd-modules/smbk5pwd/Makefile
 .endif
 
 pre-configure:

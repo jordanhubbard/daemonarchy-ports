@@ -106,6 +106,7 @@
     SUBDIR += R-cran-parallelly
     SUBDIR += R-cran-parsedate
     SUBDIR += R-cran-patrick
+    SUBDIR += R-cran-pbapply
     SUBDIR += R-cran-pillar
     SUBDIR += R-cran-pkgbuild
     SUBDIR += R-cran-pkgcache
@@ -129,6 +130,7 @@
     SUBDIR += R-cran-randomForest
     SUBDIR += R-cran-rappdirs
     SUBDIR += R-cran-rcmdcheck
+    SUBDIR += R-cran-rdtools
     SUBDIR += R-cran-registry
     SUBDIR += R-cran-rematch2
     SUBDIR += R-cran-remotes
@@ -163,6 +165,7 @@
     SUBDIR += R-cran-uuid
     SUBDIR += R-cran-vcd
     SUBDIR += R-cran-vctrs
+    SUBDIR += R-cran-vdiffr
     SUBDIR += R-cran-waldo
     SUBDIR += R-cran-webfakes
     SUBDIR += R-cran-whisker
@@ -499,7 +502,6 @@
     SUBDIR += commitizen
     SUBDIR += commoncpp
     SUBDIR += compdbgen
-    SUBDIR += compiler-rt
     SUBDIR += compiz-bcop
     SUBDIR += computelibrary
     SUBDIR += concurrencpp
@@ -517,7 +519,6 @@
     SUBDIR += covtool
     SUBDIR += cpan-upload
     SUBDIR += cpan-upload-http
-    SUBDIR += cpp-netlib
     SUBDIR += cpp-utilities
     SUBDIR += cpp2py
     SUBDIR += cppcheck
@@ -528,7 +529,6 @@
     SUBDIR += cpprestsdk
     SUBDIR += cpptest
     SUBDIR += cppunit
-    SUBDIR += cppurses
     SUBDIR += cpputest
     SUBDIR += cproto
     SUBDIR += cpu_features
@@ -586,6 +586,7 @@
     SUBDIR += cwrap
     SUBDIR += cxmon
     SUBDIR += cxref
+    SUBDIR += cxx-rust-cssparser
     SUBDIR += cxxopts
     SUBDIR += cxxtest
     SUBDIR += cxxtools
@@ -668,7 +669,6 @@
     SUBDIR += easyloggingpp
     SUBDIR += ebnf2yacc
     SUBDIR += ecgi
-    SUBDIR += eclipse-titan
     SUBDIR += edi
     SUBDIR += editline
     SUBDIR += efivar
@@ -713,7 +713,6 @@
     SUBDIR += exomizer
     SUBDIR += expected
     SUBDIR += f77flow
-    SUBDIR += fatal
     SUBDIR += fbthrift
     SUBDIR += fc++
     SUBDIR += fccf
@@ -1734,6 +1733,7 @@
     SUBDIR += maven363
     SUBDIR += maven38
     SUBDIR += maven39
+    SUBDIR += maven310
     SUBDIR += mcpp
     SUBDIR += mdb
     SUBDIR += mdds
@@ -1929,6 +1929,7 @@
     SUBDIR += openocd-devel
     SUBDIR += opentelemetry-cpp
     SUBDIR += opentelemetry-proto
+    SUBDIR += openvino
     SUBDIR += oq
     SUBDIR += orc
     SUBDIR += orcania
@@ -2804,6 +2805,7 @@
     SUBDIR += p5-Future
     SUBDIR += p5-Future-AsyncAwait
     SUBDIR += p5-Future-IO
+    SUBDIR += p5-Future-XS
     SUBDIR += p5-Gearman
     SUBDIR += p5-Gearman-Client-Async
     SUBDIR += p5-Gearman-Server
@@ -4890,6 +4892,7 @@
     SUBDIR += py-coveralls
     SUBDIR += py-cppheaderparser
     SUBDIR += py-cppy
+    SUBDIR += py-cpsat-logutils
     SUBDIR += py-crank
     SUBDIR += py-crashtest
     SUBDIR += py-crc32c
@@ -5201,6 +5204,7 @@
     SUBDIR += py-hash_ring
     SUBDIR += py-hatch
     SUBDIR += py-hatch-autorun
+    SUBDIR += py-hatch-cython
     SUBDIR += py-hatch-docstring-description
     SUBDIR += py-hatch-fancy-pypi-readme
     SUBDIR += py-hatch-jupyter-builder
@@ -5242,7 +5246,6 @@
     SUBDIR += py-immutables
     SUBDIR += py-importlab
     SUBDIR += py-importlib-metadata
-    SUBDIR += py-importlib-metadata6
     SUBDIR += py-importlib-metadata7
     SUBDIR += py-importlib-metadata8
     SUBDIR += py-importlib-resources
@@ -5434,6 +5437,7 @@
     SUBDIR += py-loguru
     SUBDIR += py-logutils
     SUBDIR += py-logzero
+    SUBDIR += py-loky
     SUBDIR += py-looseversion
     SUBDIR += py-loro
     SUBDIR += py-louie
@@ -5626,6 +5630,7 @@
     SUBDIR += py-orderedmultidict
     SUBDIR += py-orderly-set
     SUBDIR += py-orjson
+    SUBDIR += py-orloge
     SUBDIR += py-ormsgpack
     SUBDIR += py-os-brick
     SUBDIR += py-os-client-config
@@ -5676,6 +5681,7 @@
     SUBDIR += py-path
     SUBDIR += py-path.py
     SUBDIR += py-pathable
+    SUBDIR += py-pathlib-abc
     SUBDIR += py-pathlib2
     SUBDIR += py-pathos
     SUBDIR += py-pathspec
@@ -7988,7 +7994,6 @@
     SUBDIR += rubygem-mixlib-versioning
     SUBDIR += rubygem-mize
     SUBDIR += rubygem-mkrf
-    SUBDIR += rubygem-mmap2
     SUBDIR += rubygem-mocha
     SUBDIR += rubygem-molinillo
     SUBDIR += rubygem-moneta
@@ -8791,6 +8796,7 @@
     SUBDIR += talloc242
     SUBDIR += talloc243
     SUBDIR += talloc244
+    SUBDIR += talloc250
     SUBDIR += task
     SUBDIR += taskctl
     SUBDIR += taskflow
@@ -8818,12 +8824,14 @@
     SUBDIR += termbox2
     SUBDIR += termcolor
     SUBDIR += terminality
+    SUBDIR += termox
     SUBDIR += terraform-ls
     SUBDIR += test-drive
     SUBDIR += testsweeper
     SUBDIR += tevent
     SUBDIR += tevent016
     SUBDIR += tevent017
+    SUBDIR += tevent0172
     SUBDIR += tex-kpathsea
     SUBDIR += tex-libtexlua
     SUBDIR += tex-libtexluajit

@@ -1,5 +1,6 @@
 !!! This patch is a modified version of the phabricator mention !!!
 !!! You can diff them to see the difference !!!
+!!! Rebased on mozjs tag 7aeaf7a44d420360bde75db8453636092c3e2f56 (mongodb 8.0.29+) !!!
 
 From d497aa4f770ca02f6083e93b94996a8fe32c2ff4 Mon Sep 17 00:00:00 2001
 From: Mike Hommey <mh+mozilla@glandium.org>
@@ -17,8 +18,6 @@ Differential Revision: https://phabricator.services.mozilla.com/D261512
  .../mozbuild/mozbuild/vendor/rewrite_mozbuild.py   |  6 ++----
  2 files changed, 9 insertions(+), 11 deletions(-)
 
-diff --git a/python/mozbuild/mozbuild/frontend/reader.py b/python/mozbuild/mozbuild/frontend/reader.py
-index 9f6292cb909de..89bf9995c1768 100644
 --- a/python/mozbuild/mozbuild/frontend/reader.py
 +++ b/python/mozbuild/mozbuild/frontend/reader.py
 @@ -470,7 +470,7 @@
@@ -30,7 +29,7 @@ index 9f6292cb909de..89bf9995c1768 100644
                      ctx=node.ctx,
                  )
              )
-@@ -1035,8 +1035,8 @@
+@@ -1039,8 +1039,8 @@
                  else:
                      # Others
                      assert isinstance(target.slice, ast.Index)
@@ -38,10 +37,10 @@ index 9f6292cb909de..89bf9995c1768 100644
 -                    key = target.slice.value.s
 +                    assert isinstance(target.slice.value, ast.Constant)
 +                    key = target.slice.value.value
- 
-             return name, key
- 
-@@ -1044,11 +1044,11 @@
+             elif isinstance(target, ast.Attribute):
+                 assert isinstance(target.attr, str)
+                 key = target.attr
+@@ -1051,11 +1051,11 @@
              value = node.value
              if isinstance(value, ast.List):
                  for v in value.elts:
@@ -56,11 +55,9 @@ index 9f6292cb909de..89bf9995c1768 100644
 +                yield value.value
  
          assignments = []
-
-diff --git a/python/mozbuild/mozbuild/vendor/rewrite_mozbuild.py b/python/mozbuild/mozbuild/vendor/rewrite_mozbuild.py
-index cfcc0f18b9a9a..de06b58819b6a 100644
---- a/python/mozbuild/mozbuild/vendor/rewrite_mozbuild.py	2026-04-26 13:55:23.117672000 -0500
-+++ a/python/mozbuild/mozbuild/vendor/rewrite_mozbuild.py	2026-04-26 13:55:54.618049000 -0500
+ 
+--- a/python/mozbuild/mozbuild/vendor/rewrite_mozbuild.py
++++ b/python/mozbuild/mozbuild/vendor/rewrite_mozbuild.py
 @@ -327,15 +327,13 @@
      """
      if isinstance(node.value, ast.List) and "elts" in node.value._fields:

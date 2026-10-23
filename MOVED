@@ -5712,3 +5712,43 @@ devel/pyside2||2026-09-30|Has expired: Depends on deprecated Qt5 WebEngine
 devel/swig40|devel/swig|2026-09-30|Has expired: Outdated. Use devel/swig instead
 sysutils/rubygem-facter|sysutils/rubygem-openfact|2026-09-30|Has expired: Discontinued, use sysutils/rubygem-openfact
 textproc/libtextcat|textproc/libexttextcat|2026-09-30|Has expired: It has been superseded by textproc/libexttextcat
+www/py-qt5-webengine||2026-10-01|Has expired: Depends on deprecated Qt5 WebEngine
+www/qt5-webengine||2026-10-01|Has expired: Based on outdated Chromium
+devel/py-importlib-metadata6|devel/py-importlib-metadata7|2026-10-01|Has expired: No consumers left use devel/py-importlib-metadata7
+sysutils/py-appjail-gui||2026-10-02|Has expired: Upstream repo archived on Sep 02, 2026
+multimedia/ffmpeg6||2026-10-04|Removed: no consumers left
+science/serac|science/smith|2026-10-04|Project renamed upstream
+www/py-dj60-django-stubs-ext|www/py-dj61-django-stubs-ext|2026-10-04|Has expired: 6.0.9 is supposed to be the last 6.0.x release, migrate to www/py-dj61-django-stubs-ext
+devel/cpp-netlib||2026-10-04|Broken for more than a year and upstream is inactive
+devel/eclipse-titan||2026-10-04|Broken for more than a year in tree
+dns/dog||2026-10-04|Broken for years in tree and upstream is inactive
+games/frogatto||2026-10-04|Broken for than a year in tree
+lang/intel-compute-runtime||2026-10-04|Broken for than a year in tree
+math/xlapack||2026-10-04|Broken for than a year in tree
+net-p2p/libtorrent-rasterbar||2026-10-04|Broken for than a year in tree and no consumers left
+sysutils/twmn||2026-10-04|Broken for more than a year in tree
+devel/cppurses|devel/termox|2026-10-04|Project renamed upstream
+devel/fatal||2026-10-05|Project archived on GitHub, no users
+sysutils/lava||2026-10-06|Removed, only applies to unsupported CouchDB 1.x versions
+audio/stegosaurus-lv2||2026-10-06|Removed, no longer maintained upstream
+math/mumps|math/mumps-edf|2026-10-07|Repomove to math/mumps-edf
+math/mumps4|math/mumps|2026-10-07|Repomove to math/mumps
+textproc/py-hieroglyph||2026-10-09|Has expired: Broken with textproc/py-sphinx 7 and newer, last upstream release in 2020
+graphics/kamerka||2026-10-11|Remove abandonware
+www/node20||2026-10-13|Has expired: Node.js 20.* has reached its EoL on 2026-04-30. Use Node.js 24.* (www/node24) instead
+www/yarn-node20||2026-10-13|Removed, part of expired www/node20
+www/npm-node20||2026-10-13|Removed, part of expired www/node20
+devel/compiler-rt||2026-10-15|Now ships with the base system
+textproc/py-pypa-docs-theme||2026-10-15|Has expired: Upstream archived the repo on Mar 16, 2024
+www/py-wikitools||2026-10-18|Has expired: Not compatible with Python 3
+japanese/fcitx-mozc|japanese/fcitx5-mozc|2026-10-18|Deprecated: Use fcitx5 instead
+benchmarks/mangohud||2026-10-19|Broken for years in tree
+cad/yosys-systemverilog||2026-10-19|Broken for years in tree
+deskutils/gnome-todo||2026-10-19|Broken for several months in tree
+devel/rubygem-mmap2||2026-10-19|Broken for over a year in tree
+filesystems/darling-dmg||2026-10-19|Broken for over a year in tree
+games/wyrmsun||2026-10-19|Depends on games/wyrmgus which has been broken for more than 5 months
+games/wyrmgus||2026-10-19|Broken for several months in tree
+multimedia/wl-screenrec||2026-10-19|Broken for more than 5 months
+net-im/debugtox||2026-10-19|Broken for almost a year in tree
+textproc/regex2dfa||2026-10-19|Broken for 6+ months in tree

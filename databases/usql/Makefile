@@ -1,6 +1,7 @@
 PORTNAME=	usql
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.21.6
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libresvg.so:graphics/resvg-capi
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/xo/usql
 

@@ -1,5 +1,6 @@
 PORTNAME=	389-ds-base
 DISTVERSION=	3.2.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/389ds/389-ds-base/releases/download/${PORTNAME}-${DISTVERSION}/
 
@@ -56,6 +57,14 @@ MAKE_ENV=	CARGO_HOME=${WRKSRC}/.cargo \
 LIBS+=		-lexecinfo
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le && (${OSVERSION} < 1405000 || \
+	(${OSVERSION} >= 1500000 && ${OSVERSION} < 1501501) || \
+	(${OSVERSION} >= 1600000 && ${OSVERSION} < 1600019))
+MAKE_ENV+=	RUST_LIB_BACKTRACE=0
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}/var/db/dirsrv \

@@ -1,6 +1,6 @@
 PORTNAME=	claude-code
 DISTVERSION=	2.1.110
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 PKGNAMESUFFIX=	-legacy
@@ -16,8 +16,6 @@ FETCH_DEPENDS=	cargo:lang/rust \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 EXTRACT_DEPENDS=	curl:ftp/curl
 RUN_DEPENDS=	rg:textproc/ripgrep
-
-BROKEN=		Checksum error
 
 USES=		nodejs:run
 

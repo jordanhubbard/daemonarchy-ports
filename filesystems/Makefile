@@ -15,7 +15,6 @@
     SUBDIR += cramfs
     SUBDIR += cryptofs
     SUBDIR += curlftpfs
-    SUBDIR += darling-dmg
     SUBDIR += davfs2
     SUBDIR += diffsnap
     SUBDIR += dsbmc
@@ -102,6 +101,7 @@
     SUBDIR += py-pyfakefs
     SUBDIR += py-s3fs
     SUBDIR += py-tahoe-lafs
+    SUBDIR += py-universal-pathlib
     SUBDIR += py-zfs-autobackup
     SUBDIR += rar2fs
     SUBDIR += rubygem-chef-winrm-fs

@@ -93,12 +93,7 @@ KDE_FRAMEWORKS_BRANCH?=		${KDE_FRAMEWORKS${_KDE_VERSION}_BRANCH}
 
 KDE_APPLICATIONS_BRANCH?=	${KDE_APPLICATIONS6_BRANCH}
 KDE_APPLICATIONS_VERSION?=	${KDE_APPLICATIONS6_VERSION}
-KDE_APPLICATIONS_SHLIB_VER?=	${KDE_APPLICATIONS6_SHLIB_VER}
-KDE_APPLICATIONS_SHLIB_G_VER?=	${KDE_APPLICATIONS6_SHLIB_G_VER}
-
-# Legacy KDE Plasma.
-KDE_PLASMA5_VERSION?=		5.27.12
-KDE_PLASMA5_BRANCH?=		stable
+KDE_PIM_SHLIB_VER?=		${KDE_PIM6_SHLIB_VER}
 
 # Current KDE Plasma desktop.
 KDE_PLASMA6_VERSION?=		6.7.5
@@ -109,7 +104,7 @@ KDE_FRAMEWORKS5_VERSION?=	5.116.0
 KDE_FRAMEWORKS5_BRANCH?=	stable
 
 # Current KDE Frameworks (Qt6 based).
-KDE_FRAMEWORKS6_VERSION?=	6.30.0
+KDE_FRAMEWORKS6_VERSION?=	6.31.0
 KDE_FRAMEWORKS6_BRANCH?=	stable
 
 # Current KDE applications.
@@ -117,10 +112,8 @@ KDE_FRAMEWORKS6_BRANCH?=	stable
 # - check and update if needed _${PORTNAME}_PROJECT_VERSION for the following ports:
 #   audio/audiocd-kio, devel/kdevelop, games/libkdegames, games/libkmahjongg, graphics/kgraphviewer
 # - bump SHLIB_VER for editors/calligra.
-KDE_APPLICATIONS6_VERSION?=	26.08.1
-KDE_APPLICATIONS6_SHLIB_VER?=	6.8.1
-# G as in KDE Gear, and as in "don't make the variable name longer than required".
-KDE_APPLICATIONS6_SHLIB_G_VER?=	${KDE_APPLICATIONS6_VERSION}
+KDE_APPLICATIONS6_VERSION?=	26.08.2
+KDE_PIM6_SHLIB_VER?=		6.8.2
 KDE_APPLICATIONS6_BRANCH?=	stable
 
 # Some projects despite being a part of Gear distribution continue to use
@@ -205,7 +198,7 @@ PORTDOCS?=		HTML/*
 USE_KDE+=		doctools:build
 .      endif
 # Further pass along a SHLIB_VER PLIST_SUB
-PLIST_SUB+=		KDE_APPLICATIONS_SHLIB_VER=${KDE_APPLICATIONS_SHLIB_VER} \
+PLIST_SUB+=		KDE_PIM_SHLIB_VER=${KDE_PIM_SHLIB_VER} \
 			KDE_APPLICATIONS_VERSION_SHORT="${KDE_APPLICATIONS_VERSION:R:R}"
 .      if defined(_${PORTNAME}_PROJECT_VERSION)
 PLIST_SUB+=		SHLIB_VER_LONG=${_${PORTNAME}_PROJECT_VERSION}.${KDE_APPS_BASED_PATCHLEVEL}
@@ -325,8 +318,6 @@ _USE_FRAMEWORKS6_ALL=	apidox archive attica auth baloo bookmarks \
 _USE_FRAMEWORKS_ALL=	${_USE_FRAMEWORKS${_KDE_VERSION}_ALL}
 
 # List of components of the KDE Plasma distribution.
-_USE_PLASMA5_ALL=	libksysguard oxygen-sounds
-
 _USE_PLASMA6_ALL=	activities activities-stats activitymanagerd \
 			aurorae breeze breeze-gtk decoration discover \
 			globalacceld infocenter kde-cli-tools \
@@ -367,8 +358,8 @@ _USE_KDEPIM_ALL=	akonadi akonadicalendar akonadiconsole \
 			pimcommon pimtextedit tnef
 
 # List of frequently used KDE releated software for any KDE/Qt version.
-_USE_KDE_EXTRA5_ALL=	kirigami-addons phonon phonon-vlc \
-			plasma-wayland-protocols
+_USE_KDE_EXTRA5_ALL=	phonon phonon-vlc \
+			oxygen-sounds plasma-wayland-protocols
 _USE_KDE_EXTRA6_ALL=	kirigami-addons phonon phonon-mpv phonon-vlc \
 			plasma-wayland-protocols ktextaddons
 _USE_KDE_EXTRA_ALL=	${_USE_KDE_EXTRA${_KDE_VERSION}_ALL}

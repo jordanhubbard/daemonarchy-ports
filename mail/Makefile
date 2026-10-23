@@ -422,6 +422,7 @@
     SUBDIR += p5-Net-LMTP
     SUBDIR += p5-Net-ManageSieve
     SUBDIR += p5-Net-POP3-SSLWrapper
+    SUBDIR += p5-Net-POP3-XOAuth2
     SUBDIR += p5-Net-QMTP
     SUBDIR += p5-Net-SMTP-Server
     SUBDIR += p5-Net-SMTP-TLS
@@ -756,6 +757,7 @@
     SUBDIR += sylpheed
     SUBDIR += sympa
     SUBDIR += t-prot
+    SUBDIR += tarpitd
     SUBDIR += textmail
     SUBDIR += thunderbird
     SUBDIR += thunderbird-dictionaries

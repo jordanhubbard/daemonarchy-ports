@@ -9,6 +9,7 @@
     SUBDIR += R-cran-BsMD
     SUBDIR += R-cran-CVST
     SUBDIR += R-cran-ChangeAnomalyDetection
+    SUBDIR += R-cran-CompQuadForm
     SUBDIR += R-cran-DEoptimR
     SUBDIR += R-cran-DRR
     SUBDIR += R-cran-Deriv
@@ -101,7 +102,10 @@
     SUBDIR += R-cran-mclust
     SUBDIR += R-cran-mcmc
     SUBDIR += R-cran-memisc
+    SUBDIR += R-cran-meta
+    SUBDIR += R-cran-metabook
     SUBDIR += R-cran-metadat
+    SUBDIR += R-cran-metafor
     SUBDIR += R-cran-minqa
     SUBDIR += R-cran-misc3d
     SUBDIR += R-cran-miscTools
@@ -537,7 +541,7 @@
     SUBDIR += mtrxmath
     SUBDIR += multichoose
     SUBDIR += mumps
-    SUBDIR += mumps4
+    SUBDIR += mumps-edf
     SUBDIR += munkres-cpp
     SUBDIR += muparser
     SUBDIR += muparserx
@@ -661,6 +665,7 @@
     SUBDIR += octave-forge-optiminterp
     SUBDIR += octave-forge-outliers
     SUBDIR += octave-forge-parallel
+    SUBDIR += octave-forge-parts
     SUBDIR += octave-forge-pde1dm
     SUBDIR += octave-forge-piqp
     SUBDIR += octave-forge-pkg-octave-doc
@@ -1342,7 +1347,6 @@
     SUBDIR += xblas
     SUBDIR += xfce4-calculator-plugin
     SUBDIR += xgap
-    SUBDIR += xlapack
     SUBDIR += xldlas
     SUBDIR += xlife++
     SUBDIR += xplot

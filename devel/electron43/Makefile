@@ -91,7 +91,6 @@ GH_TUPLE=	electron:electron:${DISTVERSIONFULL}:electron \
 		Squirrel:Squirrel.Mac:${SQUIRREL_MAC_VER}:squirrel_mac \
 		ReactiveCocoa:ReactiveObjC:${REACTIVEOBJC_VER}:reactiveobjc \
 		Mantle:Mantle:${MANTLE_VER}:mantle \
-		EngFlow:reclient-configs:${ENGFLOW_RECLIENT_CONFIGS_VER}:reclient_configs \
 		rollup:rollup:v${ROLLUP_VER}:rollup
 USE_GL=		gbm gl glesv2
 USE_GNOME=	atk cairo gdkpixbuf gtk30 libxml2 libxslt pango
@@ -152,7 +151,7 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_system_libjpeg=true \
 		use_udev=false \
 		chrome_pgo_phase=0 \
-		extra_cflags="${CFLAGS}" \
+		extra_cflags="${CFLAGS} -I${LOCALBASE}/include/libepoll-shim ${PINCLUDES}" \
 		extra_cxxflags="${CXXFLAGS} -I${LOCALBASE}/include/libepoll-shim ${PINCLUDES}" \
 		extra_ldflags="${LDFLAGS}" \
 		ffmpeg_branding="${FFMPEG_BRAND}" \
@@ -166,14 +165,15 @@ GN_BOOTSTRAP_FLAGS=	--no-clean --no-rebuild --skip-generate-buildfiles
 PLIST_SUB=	ELECTRON_VER=${ELECTRON_VER} \
 		ELECTRON_VER_MAJOR=${ELECTRON_VER_MAJOR}
 
-OPTIONS_DEFINE=		CODECS CUPS DEBUG DIST DRIVER KERBEROS LTO PIPEWIRE
-OPTIONS_DEFAULT=	CODECS CUPS DRIVER KERBEROS PIPEWIRE ALSA PULSEAUDIO SNDIO
+OPTIONS_DEFINE=		AVX512 CODECS CUPS DEBUG DIST DRIVER KERBEROS LTO PIPEWIRE
+OPTIONS_DEFAULT=	AVX512 CODECS CUPS DRIVER KERBEROS PIPEWIRE ALSA PULSEAUDIO SNDIO
 OPTIONS_EXCLUDE_aarch64=LTO
 OPTIONS_GROUP=		AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO SNDIO
 OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	HEIMDAL HEIMDAL_BASE MIT
 OPTIONS_SUB=		yes
+AVX512_DESC=		Enable AVX512 instructions
 CODECS_DESC=		Compile and enable patented codecs like H.264
 DIST_DESC=		Build distribution zip files
 DRIVER_DESC=		Install chromedriver
@@ -187,6 +187,8 @@ ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/al
 			alsa-lib>=1.1.1_1:audio/alsa-lib
 ALSA_VARS=		GN_ARGS+=use_alsa=true
 ALSA_VARS_OFF=		GN_ARGS+=use_alsa=false
+AVX512_VARS=		GN_ARGS+=allow_avx512=true
+AVX512_VARS_OFF=	GN_ARGS+=allow_avx512=false
 CODECS_VARS=		GN_ARGS+=proprietary_codecs=true \
 			FFMPEG_BRAND="Chrome"
 CODECS_VARS_OFF=	GN_ARGS+=proprietary_codecs=false \
@@ -236,7 +238,7 @@ SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 # See ${WRKSRC}/electron/DEPS for CHROMIUM_VER
 CHROMIUM_VER=			150.0.7871.250
 # See ${WRKSRC}/electron/DEPS for NODE_VER
-NODE_VER=			24.21.0
+NODE_VER=			24.22.0
 # See ${WRKSRC}/electron/DEPS for NAN_VER
 NAN_VER=			675cefebca42410733da8a454c8d9391fcebfbc2
 # See ${WRKSRC}/electron/DEPS for SQUIRREL_MAC_VER
@@ -245,8 +247,6 @@ SQUIRREL_MAC_VER=		0e5d146ba13101a1302d59ea6e6e0b3cace4ae38
 REACTIVEOBJC_VER=		74ab5baccc6f7202c8ac69a8d1e152c29dc1ea76
 # See ${WRKSRC}/electron/DEPS for MANTLE_VER
 MANTLE_VER=			2a8e2123a3931038179ee06105c9e6ec336b12ea
-# See ${WRKSRC}/electron/DEPS for ENGFLOW_RECLIENT_CONFIGS_VER
-ENGFLOW_RECLIENT_CONFIGS_VER=	955335c30a752e9ef7bff375baab5e0819b6c00d
 # See ${WRKSRC}/third_party/devtools-frontend/src/node_modules/rollup/package.json
 ROLLUP_VER=			4.60.4
 # See ${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild/package.json
@@ -347,8 +347,6 @@ post-extract:
 		${WRKSRC}/third_party/squirrel.mac/vendor/ReactiveObjC
 	${MV} ${WRKDIR}/${GH_PROJECT_mantle}-${MANTLE_VER} \
 		${WRKSRC}/third_party/squirrel.mac/vendor/Mantle
-	${MV} ${WRKDIR}/${GH_PROJECT_reclient_configs}-${ENGFLOW_RECLIENT_CONFIGS_VER} \
-		${WRKSRC}/third_party/engflow-reclient-configs
 	${MV} ${WRKDIR}/${GH_PROJECT_rollup}-${ROLLUP_VER} \
 		${WRKSRC}/rollup
 	${MV} ${WRKDIR}/package ${WRKSRC}/esbuild
@@ -363,7 +361,7 @@ pre-patch:
 .ifndef MAINTAINER_MODE
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/dbus-daemon|${LOCALBASE}/bin/dbus-daemon|' \
-		${WRKSRC}/electron/spec/api-app-spec.ts
+		${WRKSRC}/electron/spec/api-app.spec.ts
 .endif
 
 pre-configure:

@@ -1,6 +1,6 @@
 PORTNAME=	gitlogue
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0 # make patch cargo-crates
+DISTVERSION=	0.12.0 # make patch cargo-crates
 PORTREVISION=	1
 CATEGORIES=	misc
 

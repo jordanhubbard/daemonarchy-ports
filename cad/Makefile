@@ -141,6 +141,7 @@
     SUBDIR += rubygem-gdsii
     SUBDIR += sch-rnd
     SUBDIR += scotch
+    SUBDIR += scotch-edf
     SUBDIR += silice
     SUBDIR += solvespace
     SUBDIR += sp2sp
@@ -166,7 +167,6 @@
     SUBDIR += xyce
     SUBDIR += yosys
     SUBDIR += yosys-ghdl-plugin
-    SUBDIR += yosys-systemverilog
     SUBDIR += z88
     SUBDIR += zcad
 

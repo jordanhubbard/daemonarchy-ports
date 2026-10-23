@@ -1,6 +1,6 @@
 PORTNAME=	eightctl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.8
+DISTVERSION=	0.2.10
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/steipete/eightctl
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 
 GO_PKGNAME=	github.com/steipete/eightctl
 

@@ -1,8 +1,9 @@
 PORTNAME=	thunderbird
-DISTVERSION=	157.0
+DISTVERSION=	158.0
+PORTREVISION=	1
 CATEGORIES=	mail news net-im wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}${DISTVERSIONSUFFIX}/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}${DISTVERSIONSUFFIX}-candidates/build2/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}${DISTVERSIONSUFFIX}-candidates/build1/source
 DISTFILES=	${DISTNAME}.source${EXTRACT_SUFX}
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -13,10 +14,8 @@ NOT_FOR_ARCHS=		i386
 NOT_FOR_ARCHS_REASON=	fails to build: rust needs more address space than platform can provide
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.129:security/nss \
+		nss>=3.130:security/nss \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=10.1.0:print/harfbuzz \
-		graphite2>=1.3.14:graphics/graphite2 \
 		png>=1.6.45:graphics/png \
 		dav1d>=1.0.0:multimedia/dav1d \
 		libvpx>=1.15.0:multimedia/libvpx \
@@ -24,10 +23,7 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		v4l_compat>0:multimedia/v4l_compat \
 		nasm:devel/nasm \
 		yasm:devel/yasm \
-		zip:archivers/zip \
-		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasip1/libc++abi.a:devel/wasi-libcxx${LLVM_VERSION} \
-		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasip1/libc.a:devel/wasi-libc@${LLVM_VERSION} \
-		wasi-compiler-rt${LLVM_VERSION}>0:devel/wasi-compiler-rt${LLVM_VERSION}
+		zip:archivers/zip
 LIB_DEPENDS=	libjson-c.so:devel/json-c
 
 USE_GECKO=	gecko
@@ -43,7 +39,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 MOZ_OPTIONS=	--enable-application=comm/mail --enable-official-branding
 MOZ_OPTIONS+=	--with-system-bz2 --with-system-jsonc
-MOZ_OPTIONS+=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 MOZ_MK_OPTIONS=	MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 MOZ_EXPORT=		MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 
@@ -55,6 +50,15 @@ SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}/defaults/pref/${PORTNAME}.js
 OPTIONS_DEFAULT=CANBERRA
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != powerpc64
+BUILD_DEPENDS+=	${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasip1/libc++abi.a:devel/wasi-libcxx${LLVM_VERSION} \
+		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasip1/libc.a:devel/wasi-libc@${LLVM_VERSION} \
+		wasi-compiler-rt${LLVM_VERSION}>0:devel/wasi-compiler-rt${LLVM_VERSION}
+MOZ_OPTIONS+=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
+.endif
 
 post-extract:
 	@${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON:R}|;s|@MOZILLA@|${MOZILLA}|' \

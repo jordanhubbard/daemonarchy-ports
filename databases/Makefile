@@ -194,6 +194,7 @@
     SUBDIR += mongodb-tools
     SUBDIR += mongodb70
     SUBDIR += mongodb80
+    SUBDIR += mongodb90
     SUBDIR += mongosh
     SUBDIR += mroonga
     SUBDIR += mtop
@@ -205,6 +206,8 @@
     SUBDIR += mysql-connector-odbc
     SUBDIR += mysql-shell
     SUBDIR += mysql2pgsql
+    SUBDIR += mysql267-client
+    SUBDIR += mysql267-server
     SUBDIR += mysql80-client
     SUBDIR += mysql80-server
     SUBDIR += mysql84-client
@@ -240,7 +243,9 @@
     SUBDIR += openldap27-client
     SUBDIR += openldap27-server
     SUBDIR += openvoxdb-terminus8
+    SUBDIR += openvoxdb-terminus9
     SUBDIR += openvoxdb8
+    SUBDIR += openvoxdb9
     SUBDIR += ora2pg
     SUBDIR += oracle8-client
     SUBDIR += p5-Amazon-SimpleDB
@@ -591,6 +596,7 @@
     SUBDIR += pgbot
     SUBDIR += pgbouncer
     SUBDIR += pgdbf
+    SUBDIR += pgdog
     SUBDIR += pgjwt
     SUBDIR += pgloader3
     SUBDIR += pglogical

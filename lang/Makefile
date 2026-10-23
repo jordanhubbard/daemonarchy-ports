@@ -50,6 +50,7 @@
     SUBDIR += crystal
     SUBDIR += cython
     SUBDIR += cython0
+    SUBDIR += dart
     SUBDIR += dhall
     SUBDIR += dlang-tools
     SUBDIR += dotnet
@@ -153,7 +154,6 @@
     SUBDIR += hs-unlambda
     SUBDIR += huc
     SUBDIR += inko
-    SUBDIR += intel-compute-runtime
     SUBDIR += intercal
     SUBDIR += io
     SUBDIR += io-devel
@@ -343,6 +343,7 @@
     SUBDIR += rust
     SUBDIR += rust-bootstrap
     SUBDIR += rust-nightly
+    SUBDIR += rust-nightly-bun
     SUBDIR += rust188
     SUBDIR += rustpython
     SUBDIR += s7

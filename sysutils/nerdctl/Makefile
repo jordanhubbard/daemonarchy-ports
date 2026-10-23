@@ -1,6 +1,7 @@
 PORTNAME=	nerdctl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.0
+DISTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 DISTFILES+=	go.mod
 
@@ -11,7 +12,7 @@ WWW=		https://github.com/containerd/nerdctl
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.26+,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	containerd
 

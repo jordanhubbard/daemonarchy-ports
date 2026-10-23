@@ -2,11 +2,10 @@ PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION}${AOORCN:?.p${AOORCN}:}
 PORTREVISION=	0
 CATEGORIES=	editors java
-MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}${AOORCN:?-RC${AOORCN}:}/source/
-#MASTER_SITES=	https://dlcdn.apache.org/openoffice/${PORTVERSION}/source/ \
-#1		https://archive.apache.org/dist/openoffice/${PORTVERSION}/source
-MASTER_SITES+=	https://dlcdn.apache.org/openoffice/${PORTVERSION}/source/ \
-		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
+#MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}${AOORCN:?-RC${AOORCN}:}/source/
+MASTER_SITES=	https://dlcdn.apache.org/openoffice/${PORTVERSION}/source/ \
+		https://archive.apache.org/dist/openoffice/${PORTVERSION}/source
+MASTER_SITES+=	http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
 		LOCAL/truckman/openoffice:extsrc \
 		SF/oooextras.mirror/:sf
 .if defined(LANG_PKGNAME)
@@ -129,10 +128,10 @@ CONFLICTS_INSTALL=	apache-openoffice-devel
 AOOVERSION1=	4
 AOOVERSION2=	1
 AOOVERSION3=	17
-AOORCN=		1
+#AOORCN=		2
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO4117m1\(Build:9817\)
-GITREVISION=	8b0c57b6af
+AOOTAG=		AOO4117m2\(Build:9818\)
+GITREVISION=	49c05bc6fd
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
 AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}

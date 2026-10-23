@@ -1,10 +1,9 @@
 PORTNAME=	firefox
-DISTVERSION=	153.4.0
-PORTREVISION=	1
+DISTVERSION=	153.5.1
 PORTEPOCH=	2
 CATEGORIES=	www wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build3/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build1/source
 PKGNAMESUFFIX=	-esr
 DISTFILES=	${DISTNAME}esr.source${EXTRACT_SUFX}
 
@@ -27,10 +26,7 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		v4l_compat>0:multimedia/v4l_compat \
 		nasm:devel/nasm \
 		yasm:devel/yasm \
-		zip:archivers/zip \
-		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasip1/libc++abi.a:devel/wasi-libcxx${LLVM_VERSION} \
-		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasip1/libc.a:devel/wasi-libc@${LLVM_VERSION} \
-		wasi-compiler-rt${LLVM_VERSION}>0:devel/wasi-compiler-rt${LLVM_VERSION}
+		zip:archivers/zip
 
 USE_GECKO=	gecko
 CPE_PRODUCT=	${PORTNAME}_esr
@@ -42,10 +38,18 @@ USES=		tar:xz
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
 MOZ_OPTIONS=	--enable-application=browser \
-		--enable-official-branding \
-		--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
+		--enable-official-branding
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != powerpc64
+BUILD_DEPENDS+=	${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasip1/libc++abi.a:devel/wasi-libcxx${LLVM_VERSION} \
+		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasip1/libc.a:devel/wasi-libc@${LLVM_VERSION} \
+		wasi-compiler-rt${LLVM_VERSION}>0:devel/wasi-compiler-rt${LLVM_VERSION}
+MOZ_OPTIONS+=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
+.endif
 
 post-extract:
 	@${SED} -e 's|@FIREFOX_ICON@|${FIREFOX_ICON:R}|;s|@MOZILLA@|${MOZILLA}|' \

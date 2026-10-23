@@ -781,7 +781,6 @@
     SUBDIR += squeezelite
     SUBDIR += sratom
     SUBDIR += ssr-lv2
-    SUBDIR += stegosaurus-lv2
     SUBDIR += stk
     SUBDIR += stone-phaser-lv2
     SUBDIR += strawberry

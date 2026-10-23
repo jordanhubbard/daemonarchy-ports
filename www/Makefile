@@ -103,6 +103,7 @@
     SUBDIR += carbonapi
     SUBDIR += cas
     SUBDIR += castget
+    SUBDIR += cef
     SUBDIR += cgi-lib
     SUBDIR += cgi-lib.pl
     SUBDIR += cgiwrap
@@ -382,6 +383,7 @@
     SUBDIR += linux-vieb
     SUBDIR += linux-widevine-cdm
     SUBDIR += litmus
+    SUBDIR += littlefedi
     SUBDIR += ljdeps
     SUBDIR += llhttp
     SUBDIR += loco
@@ -497,6 +499,7 @@
     SUBDIR += moodle50
     SUBDIR += moodle51
     SUBDIR += moodle52
+    SUBDIR += moodle53
     SUBDIR += morty
     SUBDIR += multisort
     SUBDIR += multiwatch
@@ -533,20 +536,36 @@
     SUBDIR += nginx-devel
     SUBDIR += nginx-full
     SUBDIR += nginx-lite
+    SUBDIR += nginx-module-accept-language
+    SUBDIR += nginx-module-ajp
     SUBDIR += nginx-module-array-var
+    SUBDIR += nginx-module-aws-auth
     SUBDIR += nginx-module-cache-purge
+    SUBDIR += nginx-module-fips-check
     SUBDIR += nginx-module-form-input
+    SUBDIR += nginx-module-gridfs
+    SUBDIR += nginx-module-iconv
+    SUBDIR += nginx-module-json-status
+    SUBDIR += nginx-module-let
     SUBDIR += nginx-module-lua
     SUBDIR += nginx-module-lua-stream
+    SUBDIR += nginx-module-modsecurity3
     SUBDIR += nginx-module-ndk
     SUBDIR += nginx-module-njs
+    SUBDIR += nginx-module-passenger
+    SUBDIR += nginx-module-postgres
+    SUBDIR += nginx-module-redis2
+    SUBDIR += nginx-module-sflow
+    SUBDIR += nginx-module-slowfs-cache
+    SUBDIR += nginx-module-sts
     SUBDIR += nginx-module-vod
+    SUBDIR += nginx-module-websockify
+    SUBDIR += nginx-module-zstd
     SUBDIR += nginx-naxsi
     SUBDIR += nginx-prometheus-exporter
     SUBDIR += nginx-ultimate-bad-bot-blocker
     SUBDIR += nift
     SUBDIR += node
-    SUBDIR += node20
     SUBDIR += node22
     SUBDIR += node24
     SUBDIR += node26
@@ -554,7 +573,6 @@
     SUBDIR += novnc
     SUBDIR += npc
     SUBDIR += npm
-    SUBDIR += npm-node20
     SUBDIR += npm-node22
     SUBDIR += npm-node24
     SUBDIR += npm-node26
@@ -1542,6 +1560,7 @@
     SUBDIR += py-asgi-csrf
     SUBDIR += py-asgiref
     SUBDIR += py-autobahn
+    SUBDIR += py-autobahn25
     SUBDIR += py-azure-common
     SUBDIR += py-baize
     SUBDIR += py-beaker
@@ -1599,7 +1618,6 @@
     SUBDIR += py-dj60-django-redis
     SUBDIR += py-dj60-django-rich
     SUBDIR += py-dj60-django-storages
-    SUBDIR += py-dj60-django-stubs-ext
     SUBDIR += py-dj60-django-tables2
     SUBDIR += py-dj60-django-taggit
     SUBDIR += py-dj60-django-timezone-field
@@ -1937,6 +1955,8 @@
     SUBDIR += py-pyramid-mako
     SUBDIR += py-pyramid_rpc
     SUBDIR += py-pysmartdl
+    SUBDIR += py-pytauri
+    SUBDIR += py-pytauri-wheel
     SUBDIR += py-python-digitalocean
     SUBDIR += py-python-dotenv
     SUBDIR += py-python-fasthtml
@@ -1947,7 +1967,6 @@
     SUBDIR += py-pywikibot
     SUBDIR += py-pywry
     SUBDIR += py-qh3
-    SUBDIR += py-qt5-webengine
     SUBDIR += py-qt6-webengine
     SUBDIR += py-quart
     SUBDIR += py-quart-trio
@@ -2046,7 +2065,6 @@
     SUBDIR += py-wfuzz
     SUBDIR += py-whitenoise
     SUBDIR += py-wikipedia
-    SUBDIR += py-wikitools
     SUBDIR += py-woob
     SUBDIR += py-woob-qt
     SUBDIR += py-wsgidav
@@ -2062,7 +2080,6 @@
     SUBDIR += qdecoder
     SUBDIR += qhttpengine
     SUBDIR += qt5-webchannel
-    SUBDIR += qt5-webengine
     SUBDIR += qt5-webglplugin
     SUBDIR += qt5-websockets
     SUBDIR += qt5-websockets-qml
@@ -2784,7 +2801,6 @@
     SUBDIR += xurls
     SUBDIR += yabb
     SUBDIR += yarn
-    SUBDIR += yarn-node20
     SUBDIR += yarn-node22
     SUBDIR += yarn-node24
     SUBDIR += yarn-node26
