@@ -33,7 +33,7 @@
 +  }
 +
 +  function debugSummary() {
-+    if (!debugStatus.grant) return ""
++    if (!debugStatus.grant) return "Remote debugging: Off"
 +    var state = debugStatus.connected ? "Agent connected" :
 +      (debugStatus.listener ? "Listening for approved agent" : "Approved; listener unavailable")
 +    return "Remote debugging: " + state + "\n" + debugAddress()
@@ -277,17 +277,15 @@
              hasCursor: root.toggleHeaderHasCursor
              foreground: root.bar.foreground
              Layout.alignment: Qt.AlignVCenter
-@@ -1267,6 +1344,53 @@
+@@ -1267,6 +1344,59 @@
          }
        }
  
 +      PanelSeparator {
-+        visible: root.debugStatus.grant
 +        foreground: root.bar.foreground
 +      }
 +
 +      Column {
-+        visible: root.debugStatus.grant
 +        width: parent.width
 +        spacing: Style.spacing.labelGap
 +
@@ -299,8 +297,9 @@
 +        Text {
 +          width: parent.width
 +          textFormat: Text.PlainText
-+          text: root.debugStatus.connected ? "Agent connected" :
-+            (root.debugStatus.listener ? "Listening for approved agent" : "Approved; listener unavailable")
++          text: !root.debugStatus.grant ? "Off" :
++            (root.debugStatus.connected ? "Agent connected" :
++            (root.debugStatus.listener ? "Listening for approved agent" : "Approved; listener unavailable"))
 +          color: root.bar.foreground
 +          font.family: root.bar.fontFamily
 +          font.pixelSize: Style.font.bodySmall
@@ -309,6 +308,7 @@
 +          width: parent.width
 +          textFormat: Text.PlainText
 +          text: root.debugAddress()
++          visible: root.debugStatus.grant
 +          wrapMode: Text.WrapAnywhere
 +          color: root.bar.foreground
 +          font.family: root.bar.fontFamily
@@ -317,11 +317,17 @@
 +        Row {
 +          spacing: Style.space(8)
 +          Button {
-+            visible: !root.debugStatus.listener
++            visible: !root.debugStatus.grant
++            text: "Pair"
++            onClicked: root.bar.run("omarchy-launch-floating-terminal-with-presentation 'sudo daemonarchy-debug listen'")
++          }
++          Button {
++            visible: root.debugStatus.grant && !root.debugStatus.listener
 +            text: "Resume"
 +            onClicked: root.bar.run("omarchy-launch-floating-terminal-with-presentation 'sudo daemonarchy-debug resume'")
 +          }
 +          Button {
++            visible: root.debugStatus.grant
 +            text: "Unpair"
 +            onClicked: root.bar.run("omarchy-launch-floating-terminal-with-presentation 'sudo daemonarchy-debug unpair'")
 +          }
@@ -331,7 +337,7 @@
        // Wi-Fi band selection. Only on Wi-Fi, and only when the network answers
        // on more than one band -- a single-band AP has nothing to toggle.
        PanelSeparator {
-@@ -1398,12 +1522,14 @@
+@@ -1398,12 +1528,14 @@
  
        }
  
@@ -347,7 +353,7 @@
          width: parent.width
          spacing: Style.space(10)
  
-@@ -1584,7 +1710,7 @@
+@@ -1584,7 +1716,7 @@
      onHovered: function(isHovered) {
        if (!isHovered) return
        root.cursorActive = true
