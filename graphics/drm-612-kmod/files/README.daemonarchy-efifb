@@ -1,0 +1,25 @@
+EFI framebuffer reservation on FreeBSD
+=====================================
+
+vt(efifb) can keep drawing until drmfb attaches. The firmware framebuffer may
+start partway into the GPU's VRAM BAR. Reserving only its length leaves the tail
+available to driver allocations, including the GART table.
+
+The MacBookPro16,1 probe reports BAR 0xb0000000, EFI framebuffer 0xb0600000,
+length 0x1ea0000. Its end is VRAM offset 0x24a0000; the old reservation ends at
+0x1ea0000 and allows a GART table at 0x1f00000 inside the framebuffer.
+Initially valid writeback PTEs later read zero and the graphics queue times out.
+Additional console logging changes this outcome and is not part of the fix.
+
+The FreeBSD-only patch reserves through the EFI framebuffer's end when metadata
+identifies a range wholly within this GPU's BAR. Missing metadata, another GPU,
+invalid/overflowing ranges and a larger existing reservation are handled without
+shrinking the existing reservation. Linux behavior is unchanged.
+
+After make patch, run on a native FreeBSD worker with Python and a C compiler:
+  python3.12 files/test-efifb-reservation.py --source \
+    "$(make -V WRKSRC)/drivers/gpu/drm/amd/amdgpu/amdgpu_gmc.c"
+
+The test compiles the actual patched helper and covers the captured overlap,
+missing metadata, another GPU, exact BAR bounds, overflowing ranges and retaining
+a larger existing reservation. Hardware results must be recorded separately.
