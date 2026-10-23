@@ -1,6 +1,15 @@
 --- src/msgbuf.c.orig
 +++ src/msgbuf.c
-@@ -257,10 +257,42 @@
+@@ -17,6 +17,8 @@
+ #include <sys/mbuf.h>
+ #include <sys/socket.h>
+ 
++#include <machine/atomic.h>
++
+ #include <net/if.h>
+ #include <net/if_var.h>
+ #include <net/if_media.h>
+@@ -257,10 +259,42 @@
  /*
   * Update write index in TCM after writing to ring.
   */
@@ -44,7 +53,7 @@
  }
  
  /*
-@@ -269,7 +301,7 @@
+@@ -269,7 +303,7 @@
  static uint16_t
  brcmf_ring_read_rptr(struct brcmf_softc *sc, struct brcmf_pcie_ringbuf *ring)
  {
@@ -53,7 +62,7 @@
  	return (ring->r_ptr);
  }
  
-@@ -279,7 +311,7 @@
+@@ -279,7 +313,7 @@
  static uint16_t
  brcmf_ring_read_wptr(struct brcmf_softc *sc, struct brcmf_pcie_ringbuf *ring)
  {
@@ -62,7 +71,7 @@
  	return (ring->w_ptr);
  }
  
-@@ -289,7 +321,7 @@
+@@ -289,7 +323,7 @@
  static void
  brcmf_ring_write_rptr(struct brcmf_softc *sc, struct brcmf_pcie_ringbuf *ring)
  {
@@ -71,7 +80,7 @@
  }
  
  /*
-@@ -325,6 +357,8 @@
+@@ -325,6 +359,8 @@
  void
  brcmf_msgbuf_ring_submit(struct brcmf_softc *sc, struct brcmf_pcie_ringbuf *ring)
  {
@@ -80,7 +89,17 @@
  	brcmf_ring_write_wptr(sc, ring);
  	brcmf_msgbuf_ring_doorbell(sc);
  }
-@@ -954,6 +988,8 @@
+@@ -389,7 +425,8 @@
+ 	case BRCMF_E_DISASSOC:
+ 	case BRCMF_E_DISASSOC_IND:
+ 		brcmf_link_event(sc, event_code, be32toh(event->msg.status),
+-		    be32toh(event->msg.reason), be16toh(event->msg.flags));
++		    be32toh(event->msg.reason), be16toh(event->msg.flags),
++		    event->msg.addr);
+ 		break;
+ 	case BRCMF_E_ESCAN_RESULT:
+ 		if (datalen > 0 && datalen < BRCMF_MSGBUF_MAX_CTL_PKT_SIZE - sizeof(*event))
+@@ -954,6 +991,8 @@
  		memcpy(sc->ioctl_reqbuf, buf, len);
  	else
  		buflen = 0;
@@ -89,7 +108,7 @@
  
  	memset(req, 0, sizeof(*req));
  	req->msg.msgtype = MSGBUF_TYPE_IOCTLPTR_REQ;
-@@ -1037,9 +1073,9 @@
+@@ -1037,9 +1076,9 @@
  			    BRCMF_D2H_MSGRING_CONTROL_COMPLETE];
  			if (h2d_ctrl != NULL && d2h_ctrl != NULL) {
  				uint16_t h2d_fw_rptr, d2h_fw_wptr;
@@ -101,7 +120,7 @@
  				    d2h_ctrl->w_idx_addr);
  				device_printf(sc->dev,
  				    "  diag: h2d_ctrl w=%u r=%u "
-@@ -1066,9 +1102,19 @@
+@@ -1066,9 +1105,19 @@
  		*resp_len = sc->ioctl_resp_len;
  
  	error = 0;
@@ -123,7 +142,7 @@
  		if (sc->ioctl_resp_len > len)
  			sc->ioctl_resp_len = len;
  		memcpy(buf, sc->ioctl_respbuf, sc->ioctl_resp_len);
-@@ -1246,10 +1292,20 @@
+@@ -1246,10 +1295,20 @@
  	/* Calculate index addresses in TCM (flowrings start after common H2D rings).
  	 * TCM index slots are 4 bytes each, though only lower 16 bits used.
  	 */
@@ -148,18 +167,44 @@
  
  	/* Write ring descriptor to TCM (flowrings start after common rings) */
  	desc_addr = sc->ringmem_addr +
-@@ -1438,6 +1494,10 @@
+@@ -1330,10 +1389,16 @@
+ 	int error, nsegs;
+ 	uint32_t pktid;
+ 
+-	if (sc->fw_dead || sc->flowring == NULL) {
++	if (sc->fw_dead) {
++		atomic_add_int(&sc->diag_tx_fw_dead, 1);
+ 		m_freem(m);
+ 		return (ENXIO);
+ 	}
++	if (sc->flowring == NULL) {
++		atomic_add_int(&sc->diag_tx_no_flowring, 1);
++		m_freem(m);
++		return (ENXIO);
++	}
+ 
+ 	ring = sc->flowring;
+ 
+@@ -1393,6 +1458,7 @@
+ 	/* Reserve space in flow ring */
+ 	tx = brcmf_msgbuf_ring_reserve(sc, ring);
+ 	if (tx == NULL) {
++		atomic_add_int(&sc->diag_tx_ring_full, 1);
+ 		bus_dmamap_unload(txb->dma_tag, txb->dma_map);
+ 		txb->m = NULL;
+ 		m_freem(m);
+@@ -1437,6 +1503,10 @@
+ 	if (error != 0) {
  		device_printf(sc->dev, "failed to allocate IOCTL buffer\n");
  		return (error);
- 	}
++	}
 +	if (sc->chip == 0x4364) {
 +		device_printf(sc->dev, "BCM4364 IOCTL request buffer ready\n");
 +		pause_sbt("brcmlog", mstosbt(50), 0, 0);
-+	}
+ 	}
  
  
- 
-@@ -1447,18 +1507,28 @@
+@@ -1447,18 +1517,28 @@
  		    "failed to post IOCTL response buffers\n");
  		return (error);
  	}
