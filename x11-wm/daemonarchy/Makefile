@@ -2,7 +2,7 @@ PORTNAME=	daemonarchy
 # Daemonarchy's own release number, not Omarchy's (x11-wm/omarchy) or
 # FreeBSD's. The epoch moves it past the 4.0.4 it used to borrow.
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.1
+DISTVERSION=	1.3.1
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 
@@ -64,6 +64,8 @@ USES=		python:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	jordanhubbard
 GH_PROJECT=	daemonarchy-desktop
+# Pin the development candidate until v1.3.1 is tagged at this reviewed commit.
+GH_TAGNAME=	ec2a00824ec95b342c0c095657ac725c56f0528b
 
 NO_ARCH=	yes
 
