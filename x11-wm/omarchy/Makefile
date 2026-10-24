@@ -1,7 +1,7 @@
 PORTNAME=	omarchy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.4
-PORTREVISION=	25
+PORTREVISION=	26
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -51,7 +51,7 @@ USES=		fonts perl5 python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	basecamp
 # The FreeBSD compatibility layer: freebsdize, compat tools, FreeBSD commands.
-GH_TUPLE=	jordanhubbard:omarchy-freebsd:535e44bb6fa3e9b9f4fc3a870591688526279124:freebsd
+GH_TUPLE=	jordanhubbard:omarchy-freebsd:800bf89b6ec6d0cfaaebb46a2440f56c3f997c8a:freebsd
 USE_PERL5=	run
 
 SHEBANG_FILES=	bin/* config/omarchy/hooks/*/* default/systemd/system-sleep/* \
