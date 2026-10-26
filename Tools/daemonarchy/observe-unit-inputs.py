@@ -98,7 +98,7 @@ def validate_context(context):
 def git(repo, *args):
     return subprocess.run(["git", "-C", str(repo), *args], check=True, timeout=20,
                           stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                          env={**os.environ, "GIT_NO_LAZY_FETCH": "1", "GIT_TERMINAL_PROMPT": "0"}).stdout
+                          env={**os.environ, "GIT_NO_LAZY_FETCH": "1", "GIT_TERMINAL_PROMPT": "0", "GIT_OPTIONAL_LOCKS":"0"}).stdout
 
 
 def dependency_edges(values):
@@ -166,7 +166,7 @@ def stage_package_database(output, declaration, snapshot):
 
 
 def command(repo, origin, output, context):
-    args = [MAKE, "-C", str(repo / origin), "__MAKE_CONF=/dev/null", "SRCCONF=/dev/null",
+    args = [MAKE, "-m", str(repo/"Mk"), "-C", str(repo / origin), "PORTSDIR="+str(repo), "__MAKE_CONF=/dev/null", "SRCCONF=/dev/null",
             "SRC_ENV_CONF=/dev/null", "BATCH=yes", "NO_DIALOG=yes", "OPSYS=FreeBSD",
             "ARCH=" + context["architecture"], "OSVERSION=" + str(context["osversion"]),
             "OPTIONS_OVERRIDE=" + " ".join(sorted(k for k, v in context["options"].items() if v))]
@@ -185,12 +185,17 @@ def output_limit():
     resource.setrlimit(resource.RLIMIT_FSIZE, (16 * 1024 * 1024, 16 * 1024 * 1024))
 
 
-def query(args, output, timeout):
+def query_environment(output):
     env = {"PATH": "/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin",
            "HOME": str(output / "home"), "TMPDIR": str(output / "tmp"), "LC_ALL": "C", "TZ": "UTC",
            "PKG_DBDIR":str(output/"pkgdb"), "PKG_CACHEDIR":str(output/"pkgcache"),
            "PORT_DBDIR":str(output/"options"), "DISTDIR":str(output/"distfiles"),
            "PACKAGES":str(output/"packages"), "WRKDIRPREFIX":str(output/"work")}
+    return env
+
+
+def query(args, output, timeout):
+    env=query_environment(output)
     with (output / "make.stdout").open("xb") as stdout, (output / "make.stderr").open("xb") as stderr:
         process = subprocess.Popen(args, env=env, stdout=stdout, stderr=stderr, start_new_session=True, preexec_fn=output_limit)
         try:
@@ -209,9 +214,14 @@ def query(args, output, timeout):
     with (output / "make.stdout").open("rb") as stream:
         data = stream.read(16 * 1024 * 1024 + 1)
     require(len(data) <= 16 * 1024 * 1024, "native metadata exceeds byte budget")
-    lines = data.decode().splitlines()
-    require(len(lines) == len(VARIABLES), "native metadata variable inventory is incomplete or multiline")
-    return dict(zip(VARIABLES, lines))
+    return decode_values(data)
+
+
+def decode_values(data):
+    require(len(data)<=16*1024*1024,"native metadata exceeds byte bound")
+    lines=data.decode().splitlines()
+    require(len(lines)==len(VARIABLES),"native metadata variable inventory is incomplete or multiline")
+    return dict(zip(VARIABLES,lines))
 
 
 def input_record(repo, revision, path):
