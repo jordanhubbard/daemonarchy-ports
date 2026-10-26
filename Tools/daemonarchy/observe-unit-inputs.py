@@ -166,7 +166,7 @@ def stage_package_database(output, declaration, snapshot):
 
 
 def command(repo, origin, output, context):
-    args = [MAKE, "-m", str(repo/"Mk"), "-C", str(repo / origin), "PORTSDIR="+str(repo), "__MAKE_CONF=/dev/null", "SRCCONF=/dev/null",
+    args = [MAKE, "-m", str(repo/"Mk"), "-m", "/usr/share/mk", "-C", str(repo / origin), "PORTSDIR="+str(repo), "__MAKE_CONF=/dev/null", "SRCCONF=/dev/null",
             "SRC_ENV_CONF=/dev/null", "BATCH=yes", "NO_DIALOG=yes", "OPSYS=FreeBSD",
             "ARCH=" + context["architecture"], "OSVERSION=" + str(context["osversion"]),
             "OPTIONS_OVERRIDE=" + " ".join(sorted(k for k, v in context["options"].items() if v))]

@@ -95,6 +95,8 @@ class ObserverTests(unittest.TestCase):
         self.assertEqual(self.sentinel.read_bytes(), b"preserve every existing payload")
         request = json.loads((self.output/"request.json").read_bytes())
         self.assertIn("OPTIONS_OVERRIDE=FOO", request["argv"])
+        self.assertIn("PORTSDIR="+str(self.repo),request["argv"])
+        self.assertEqual(request["argv"][1:5],["-m",str(self.repo/"Mk"),"-m","/usr/share/mk"])
         for variable in ("WRKDIRPREFIX", "DISTDIR", "PORT_DBDIR", "PKG_DBDIR", "PACKAGES", "MAKEOBJDIRPREFIX"):
             selected = [a.split("=", 1)[1] for a in request["argv"] if a.startswith(variable + "=")]
             self.assertEqual(len(selected), 1)
