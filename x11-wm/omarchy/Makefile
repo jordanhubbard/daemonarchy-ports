@@ -33,7 +33,6 @@ RUN_DEPENDS=	Hyprland:x11-wm/hyprland \
 		gum:devel/gum \
 		inotifywait:sysutils/inotify-tools \
 		jq:textproc/jq \
-		mise:sysutils/mise \
 		pipewire:multimedia/pipewire \
 		quickshell:x11/quickshell \
 		seatd:sysutils/seatd \
@@ -238,5 +237,13 @@ do-install:
 # Keep scripts (hooks, first-run steps, shell helpers) executable.
 	${FIND} ${STAGEDIR}${DATADIR} -type f ! -path '*/themes/*' -exec ${SH} -c \
 		'for f; do head -n 1 "$$f" | grep -q "^#!" && chmod 755 "$$f"; done; true' sh {} +
+
+.include <bsd.port.options.mk>
+
+# sysutils/mise is BROKEN_aarch64 (conda/rattler#2226). Other architectures
+# keep the dependency unchanged.
+.if ${ARCH} != aarch64
+RUN_DEPENDS+=	mise:sysutils/mise
+.endif
 
 .include <bsd.port.mk>

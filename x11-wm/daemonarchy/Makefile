@@ -49,7 +49,6 @@ RUN_DEPENDS=	omarchy>0:x11-wm/omarchy \
 		tensaku>0:graphics/tensaku \
 		udiskie>0:sysutils/udiskie \
 		bsdisks>0:sysutils/bsdisks \
-		${LOCALBASE}/share/uefi-firmware/BHYVE_UEFI.fd:sysutils/edk2@bhyve \
 		vm-bhyve>0:sysutils/vm-bhyve \
 		tigervnc-viewer>0:net/tigervnc-viewer \
 		webp-pixbuf-loader>0:graphics/webp-pixbuf-loader \
@@ -138,7 +137,6 @@ DEV_RUN_DEPENDS=	autoconf-archive>0:devel/autoconf-archive \
 			libyaml>0:textproc/libyaml \
 			${LUA_PKGNAMEPREFIX}luarocks>0:devel/lua-luarocks@${LUA_FLAVOR} \
 			mariadb118-client>0:databases/mariadb118-client \
-			mise>0:sysutils/mise \
 			postgresql18-client>0:databases/postgresql18-client \
 			${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR} \
 			tree-sitter-cli>0:devel/tree-sitter-cli
@@ -164,6 +162,16 @@ PRINT_RUN_DEPENDS=	avahi>0:net/avahi \
 			system-config-printer>0:print/system-config-printer
 
 .include <bsd.port.options.mk>
+
+# bhyve's UEFI guest firmware (sysutils/edk2@bhyve) is amd64-only.
+.if ${ARCH} == amd64
+RUN_DEPENDS+=	${LOCALBASE}/share/uefi-firmware/BHYVE_UEFI.fd:sysutils/edk2@bhyve
+.endif
+
+# sysutils/mise is BROKEN_aarch64 (conda/rattler#2226).
+.if ${PORT_OPTIONS:MDEV} && ${ARCH} != aarch64
+RUN_DEPENDS+=	mise>0:sysutils/mise
+.endif
 
 .if ${PORT_OPTIONS:MVAAPI} && (${ARCH} == amd64 || ${ARCH} == i386)
 RUN_DEPENDS+=	libva-intel-driver>0:multimedia/libva-intel-driver \
