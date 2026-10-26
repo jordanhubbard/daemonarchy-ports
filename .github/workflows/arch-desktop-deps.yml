@@ -1,0 +1,60 @@
+name: Desktop dependency architecture metadata
+
+on:
+  pull_request:
+    paths:
+      - 'x11-wm/omarchy/**'
+      - 'x11-wm/daemonarchy/**'
+      - 'x11-wm/hyprland/**'
+      - 'Tools/daemonarchy/check-arch-deps.sh'
+      - '.github/workflows/arch-desktop-deps.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  arch-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          # Mk plus the version files that Mk/Uses includes from port directories.
+          sparse-checkout: |
+            /Mk/
+            /Templates/
+            /Keywords/
+            /Makefile.inc
+            /Tools/daemonarchy/
+            /x11-wm/omarchy/
+            /x11-wm/daemonarchy/
+            /x11-wm/hyprland/
+            /lang/perl5*/version.mk
+            /lang/python3*/Makefile.version
+            /security/openssl*/version.mk
+      - name: Stage the base revision of the three ports
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || 'HEAD~1' }}
+        run: |
+          git fetch --depth=1 --filter=blob:none origin "$BASE" 2>/dev/null || true
+          base=$(git rev-parse --verify "$BASE^{commit}")
+          mkdir -p _base
+          for port in x11-wm/omarchy x11-wm/daemonarchy x11-wm/hyprland; do
+            mkdir -p "_base/$port"
+            git archive "$base" "$port" | tar -x -C _base
+          done
+          echo "base $base"
+      - name: Evaluate metadata and portlint on hosted FreeBSD (no builds)
+        uses: vmactions/freebsd-vm@c46abacb49f09938ca4e1702d15d836285d694cc
+        with:
+          release: '15.0'
+          arch: x86_64
+          mem: '2048'
+          cpu: '2'
+          prepare: pkg install -y portlint
+          run: |
+            PORTSDIR=$PWD; export PORTSDIR
+            sh Tools/daemonarchy/check-arch-deps.sh "$PWD/_base" "$PWD"
