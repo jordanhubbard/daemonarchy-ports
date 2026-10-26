@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import sqlite3
 import sys
 import tempfile
 import unittest
@@ -38,7 +39,7 @@ class ObserverTests(unittest.TestCase):
         self.git("commit", "-qm", "fixture")
         self.revision = self.git("rev-parse", "HEAD")
         self.context = {"architecture": "amd64", "osversion": 1600029, "flavor": None,
-                        "options": {"FOO": True, "BAR": False}, "make_variables": {"CC": "/usr/bin/cc"}}
+                        "options": {"FOO": True, "BAR": False}, "make_variables": {"CC": "/usr/bin/cc"}, "package_database":{"mode":"empty-diagnostic","identity":None}}
         self.values = {name: "" for name in observer.VARIABLES}
         self.values.update(PKGNAME="fixture-1.0", PKGORIGIN="category/pkg", ARCH="amd64", OPSYS="FreeBSD",
                            OSVERSION="1600029", COMPLETE_OPTIONS_LIST="FOO BAR", PORT_OPTIONS="FOO",
@@ -49,12 +50,16 @@ class ObserverTests(unittest.TestCase):
         self.values_file = self.root / "values.json"
         self.fake = self.root / "fake-make"
         self.fake.write_text("#!" + sys.executable + "\n" +
-            "import json,os,sys,time\n" +
+            "import json,os,sys,time,sqlite3\n" +
             "from pathlib import Path\n" +
             "v=json.loads(Path(" + repr(str(self.values_file)) + ").read_text())\n" +
             "if '__sleep' in v:\n" +
             " Path(" + repr(str(self.root/"child.pid")) + ").write_text(str(os.getpid()))\n" +
             " time.sleep(v['__sleep'])\n" +
+            "if v.get('__read_pkgdb'):\n" +
+            " db=Path(next(a.split('=',1)[1] for a in sys.argv if a.startswith('PKG_DBDIR=')))/'local.sqlite'\n" +
+            " if db.exists():\n  c=sqlite3.connect(db); v['PKGNAME']=c.execute('select value from facts').fetchone()[0]; c.close()\n" +
+            " else: v['PKGNAME']='empty-diagnostic-context'\n" +
             "for i,arg in enumerate(sys.argv):\n" +
             " if arg=='-V': print(v[sys.argv[i+1]])\n")
         self.fake.chmod(0o755)
@@ -95,6 +100,44 @@ class ObserverTests(unittest.TestCase):
             self.assertEqual(len(selected), 1)
             self.assertTrue(Path(selected[0]).is_relative_to(self.output))
         self.assertEqual((self.output/"make.exit").read_text(), "0\n")
+
+    def test_snapshot_copies_selected_database_without_touching_original(self):
+        snapshot=self.root/"sealed-pkgdb"
+        snapshot.mkdir()
+        with sqlite3.connect(snapshot/"local.sqlite") as database:
+            database.execute("create table facts(value text)")
+            database.execute("insert into facts values ('selected-installed-context')")
+        (snapshot/"local.sqlite").chmod(0o444)
+        original=(snapshot/"local.sqlite").read_bytes()
+        identity=observer.package_database_identity(snapshot)[1]
+        self.context["package_database"]={"mode":"snapshot","identity":identity}
+        self.values["__read_pkgdb"]=True
+        report=self.observe(package_snapshot=snapshot)
+        self.assertEqual(report["variables"]["PKGNAME"],"selected-installed-context")
+        self.assertEqual(report["package_database_context"]["identity"],identity)
+        self.assertFalse(report["package_database_context"]["selected_release_context_verified"])
+        self.assertEqual((snapshot/"local.sqlite").read_bytes(),original)
+        self.assertEqual((snapshot/"local.sqlite").stat().st_mode&0o777,0o444)
+        self.assertEqual((self.output/"pkgdb/local.sqlite").stat().st_mode&0o777,0o600)
+
+    def test_empty_package_database_is_explicitly_diagnostic(self):
+        self.values["__read_pkgdb"]=True
+        report=self.observe()
+        self.assertEqual(report["variables"]["PKGNAME"],"empty-diagnostic-context")
+        self.assertEqual(report["package_database_context"]["mode"],"empty-diagnostic")
+        self.assertFalse(report["package_database_context"]["selected_release_context_verified"])
+
+    def test_live_writable_or_changed_snapshot_cannot_be_adopted(self):
+        snapshot=self.root/"live-pkgdb"
+        snapshot.mkdir()
+        (snapshot/"local.sqlite").write_bytes(b"live or unsealed database")
+        with self.assertRaisesRegex(ValueError,"sealed read-only"):
+            observer.package_database_identity(snapshot)
+        (snapshot/"local.sqlite").chmod(0o444)
+        (snapshot/"local.sqlite-wal").write_bytes(b"active journal")
+        (snapshot/"local.sqlite-wal").chmod(0o444)
+        with self.assertRaisesRegex(ValueError,"live SQLite journals"):
+            observer.package_database_identity(snapshot)
 
     def test_existing_evidence_is_never_overwritten(self):
         self.observe()

@@ -11,6 +11,11 @@ built and no existing work, options, packages or distfiles are removed.
 The observation is not a complete recursive graph, a canonical Component
 registration, retained-project admission, ABI proof or cache-hit authorization.
 Canonical per-unit retained manifests/profiles remain execution authority.
+The context must declare package_database={mode:empty-diagnostic,identity:null}
+or mode:snapshot with a pinned sha256 identity and --package-snapshot binding.
+Empty diagnostic DB state never reproduces selected installed-package facts.
+Snapshots must be sealed/read-only and offline (no WAL/SHM/journal); only private
+copies can be modified. Complete selected option/flavor context remains explicit.
 """
 import argparse
 import hashlib
@@ -21,6 +26,7 @@ import platform
 import re
 import resource
 import signal
+import shutil
 import subprocess
 import sys
 import time
@@ -68,7 +74,7 @@ def read_context(path):
 
 
 def validate_context(context):
-    require(isinstance(context, dict) and set(context) == {"architecture", "osversion", "flavor", "options", "make_variables"},
+    require(isinstance(context, dict) and set(context) == {"architecture", "osversion", "flavor", "options", "make_variables", "package_database"},
             "explicit complete native context required")
     require(context["architecture"] in {"amd64", "aarch64", "i386", "armv7", "riscv64"}, "unknown native architecture")
     require(type(context["osversion"]) is int and context["osversion"] > 0, "explicit OSVERSION required")
@@ -78,6 +84,12 @@ def validate_context(context):
             type(v) is bool for k, v in context["options"].items()), "complete Boolean port options required")
     require(isinstance(context["make_variables"], dict) and set(context["make_variables"]) <= ALLOWED_VARIABLES,
             "unsupported native make variable")
+    database=context["package_database"]
+    require(isinstance(database,dict) and set(database)=={"mode","identity"} and
+            database["mode"] in {"empty-diagnostic","snapshot"}, "explicit package database context required")
+    require(database["identity"] is None if database["mode"]=="empty-diagnostic" else
+            isinstance(database["identity"],str) and re.fullmatch(r"sha256:[0-9a-f]{64}",database["identity"]),
+            "package database snapshot identity required")
     for value in context["make_variables"].values():
         require(isinstance(value, str) and len(value) <= 8192 and not any(ord(c) < 32 for c in value)
                 and not any(c in value for c in "$`"), "make context contains unreviewed expansion")
@@ -102,6 +114,57 @@ def dependency_edges(values):
     return sorted(edges, key=lambda e: (e["kind"], e["declaration"], e["origin"], e["requirement"], e["target"] or ""))
 
 
+def package_database_identity(directory):
+    """Hash a sealed offline snapshot; never copy a live SQLite journal state."""
+    require(directory.is_dir() and not directory.is_symlink(), "direct installed package snapshot required")
+    files=[]
+    total=0
+    for path in sorted(directory.iterdir()):
+        require(path.is_file() and not path.is_symlink() and
+                re.fullmatch(r"[A-Za-z0-9_.+-]+",path.name), "unsupported package snapshot entry")
+        require(not path.name.endswith(("-wal","-shm","-journal")), "live SQLite journals require an atomic offline snapshot")
+        before=path.stat()
+        readonly_mount=bool(os.statvfs(path).f_flag & getattr(os,"ST_RDONLY",1))
+        require(not before.st_mode & 0o222 or readonly_mount, "package snapshot files must be sealed read-only")
+        total+=before.st_size
+        require(len(files)<128 and total<=512*1024*1024, "package database snapshot exceeds byte/file budget")
+        identity=hashlib.sha256()
+        with path.open("rb") as stream:
+            for block in iter(lambda:stream.read(1024*1024),b""):
+                identity.update(block)
+        after=path.stat()
+        require((before.st_dev,before.st_ino,before.st_size,before.st_mtime_ns,before.st_ctime_ns)==
+                (after.st_dev,after.st_ino,after.st_size,after.st_mtime_ns,after.st_ctime_ns),
+                "package snapshot changed during observation")
+        files.append({"name":path.name,"size":before.st_size,"sha256":identity.hexdigest()})
+    require(any(f["name"]=="local.sqlite" for f in files), "installed local.sqlite snapshot required")
+    data=json.dumps({"schema":"daemonarchy/installed-package-database-snapshot@1","files":files},
+                    sort_keys=True,separators=(",",":")).encode()
+    return files,"sha256:"+sha(data)
+
+
+def stage_package_database(output, declaration, snapshot):
+    if declaration["mode"]=="empty-diagnostic":
+        require(snapshot is None,"empty diagnostic mode must not imply an installed snapshot")
+        return {"mode":"empty-diagnostic","identity":None,"selected_release_context_verified":False,
+                "semantics":"fresh empty pkgdb; not selected installed-package context"}
+    require(snapshot is not None,"bind an explicit installed-package snapshot")
+    files,identity=package_database_identity(snapshot)
+    require(identity==declaration["identity"],"installed-package snapshot identity changed")
+    for entry in files:
+        destination=output/"pkgdb"/entry["name"]
+        with (snapshot/entry["name"]).open("rb") as source,destination.open("xb") as target:
+            shutil.copyfileobj(source,target,1024*1024)
+        with destination.open("rb") as stream:
+            actual=hashlib.file_digest(stream,"sha256").hexdigest()
+        require(actual==entry["sha256"],"installed package snapshot changed during copy")
+        destination.chmod(0o600)  # Only the private copy can receive pkg scratch writes.
+    require(package_database_identity(snapshot)[1]==identity,"package snapshot changed during staging")
+    return {"mode":"snapshot-copy","identity":identity,"files":files,
+            "selected_release_context_verified":False,
+            "semantics":"exact offline snapshot; release/toolchain selection still requires canonical provenance"}
+
+
 def command(repo, origin, output, context):
     args = [MAKE, "-C", str(repo / origin), "__MAKE_CONF=/dev/null", "SRCCONF=/dev/null",
             "SRC_ENV_CONF=/dev/null", "BATCH=yes", "NO_DIALOG=yes", "OPSYS=FreeBSD",
@@ -124,7 +187,10 @@ def output_limit():
 
 def query(args, output, timeout):
     env = {"PATH": "/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin",
-           "HOME": str(output / "home"), "TMPDIR": str(output / "tmp"), "LC_ALL": "C", "TZ": "UTC"}
+           "HOME": str(output / "home"), "TMPDIR": str(output / "tmp"), "LC_ALL": "C", "TZ": "UTC",
+           "PKG_DBDIR":str(output/"pkgdb"), "PKG_CACHEDIR":str(output/"pkgcache"),
+           "PORT_DBDIR":str(output/"options"), "DISTDIR":str(output/"distfiles"),
+           "PACKAGES":str(output/"packages"), "WRKDIRPREFIX":str(output/"work")}
     with (output / "make.stdout").open("xb") as stdout, (output / "make.stderr").open("xb") as stderr:
         process = subprocess.Popen(args, env=env, stdout=stdout, stderr=stderr, start_new_session=True, preexec_fn=output_limit)
         try:
@@ -175,7 +241,7 @@ def input_record(repo, revision, path):
     return record
 
 
-def observe(repo, revision, origin, context, output, *, acknowledged, timeout=20):
+def observe(repo, revision, origin, context, output, *, acknowledged, timeout=20, package_snapshot=None):
     require(acknowledged, "Makefile evaluation requires --acknowledge-make-evaluation")
     require(platform.system() == "FreeBSD" and os.geteuid() != 0,
             "use an allocated unprivileged native FreeBSD worker")
@@ -191,13 +257,14 @@ def observe(repo, revision, origin, context, output, *, acknowledged, timeout=20
     require(git(repo, "rev-parse", "HEAD").decode().strip() == revision, "source checkout differs from selected revision")
     git(repo, "diff", "--quiet", "--no-ext-diff", "--no-textconv", revision, "--", origin, "Mk", "Templates", "Keywords")
     output.mkdir(mode=0o700)  # Exclusive: retain all prior evidence and outputs.
-    for name in ("home", "tmp", "work", "distfiles", "packages", "options", "pkgdb", "obj"):
+    for name in ("home", "tmp", "work", "distfiles", "packages", "options", "pkgdb", "pkgcache", "obj"):
         (output / name).mkdir()
     args = command(repo, origin, output, context)
     (output / "request.json").write_text(json.dumps({"revision": revision, "origin": origin,
                                                     "context": context, "argv": args}, sort_keys=True) + "\n")
     started = time.monotonic()
     try:
+        database_context=stage_package_database(output,context["package_database"],package_snapshot)
         values = query(args, output, timeout)
         require(values["ARCH"] == context["architecture"] and values["OPSYS"] == "FreeBSD" and
                 values["OSVERSION"] == str(context["osversion"]), "evaluated target/ABI differs from selected context")
@@ -250,7 +317,11 @@ def observe(repo, revision, origin, context, output, *, acknowledged, timeout=20
         git(repo, "diff", "--quiet", "--no-ext-diff", "--no-textconv", revision, "--", *sorted(roots), "Mk", "Templates", "Keywords")
         result = {"schema": "daemonarchy/ports-unit-input-observation@1", "revision": revision,
                   "git_tree": git(repo, "rev-parse", revision + "^{tree}").decode().strip(),
-                  "origin": origin, "context": context, "variables": values, "dependencies": edges,
+                  "origin": origin, "context": context, "package_database_context":database_context,
+                  "options_context":"explicit complete OPTIONS_OVERRIDE; existing options database is not consulted",
+                  "installed_toolchain_filesystem_context_verified":False,
+                  "repository_configuration_context_verified":False,
+                  "variables": values, "dependencies": edges,
                   "inputs": inputs, "unresolved_inputs": unresolved, "elapsed_milliseconds": int((time.monotonic()-started)*1000),
                   "recursive_closure_complete": False, "canonical_ownership_registered": False,
                   "native_profile_admitted": False, "cache_admission": False,
@@ -272,11 +343,12 @@ def main():
     parser.add_argument("--context", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--timeout", type=int, default=20)
+    parser.add_argument("--package-snapshot",type=Path,help="sealed offline installed-pkgdb snapshot; copied privately")
     parser.add_argument("--acknowledge-make-evaluation", action="store_true")
     args = parser.parse_args()
     try:
         report = observe(args.repo, args.revision, args.origin, read_context(args.context), args.output,
-                         acknowledged=args.acknowledge_make_evaluation, timeout=args.timeout)
+                         acknowledged=args.acknowledge_make_evaluation, timeout=args.timeout, package_snapshot=args.package_snapshot)
         print(json.dumps({"origin": report["origin"], "dependencies": len(report["dependencies"]),
                           "recursive_closure_complete": False, "cache_admission": False}))
         return 0
