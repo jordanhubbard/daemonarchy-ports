@@ -21,7 +21,6 @@ BUILD_DEPENDS=	magick:graphics/ImageMagick7 \
 # DKMS drivers, Limine/Snapper, NetworkManager, BlueZ, power-profiles-daemon)
 # are covered by the base system or by the omarchy port's compat layer.
 RUN_DEPENDS=	omarchy>0:x11-wm/omarchy \
-		chromium>0:www/chromium \
 		octopkg>0:ports-mgmt/octopkg \
 		egl-wayland>0:graphics/egl-wayland \
 		font-awesome>0:x11-fonts/font-awesome \
@@ -144,8 +143,7 @@ INPUT_RUN_DEPENDS=	fcitx5>0:textproc/fcitx5 \
 			fcitx5-gtk3>0:textproc/fcitx5-gtk \
 			fcitx5-qt6>0:textproc/fcitx5-qt
 OBSIDIAN_RUN_DEPENDS=	obsidian>0:textproc/obsidian
-OMAAPPS_RUN_DEPENDS=	aether>0:x11-themes/aether \
-			cliamp>0:audio/cliamp \
+OMAAPPS_RUN_DEPENDS=	cliamp>0:audio/cliamp \
 			herdr>0:sysutils/herdr \
 			omacalc>0:math/omacalc \
 			omacut>0:multimedia/omacut \
@@ -166,6 +164,20 @@ PRINT_RUN_DEPENDS=	avahi>0:net/avahi \
 # bhyve's UEFI guest firmware (sysutils/edk2@bhyve) is amd64-only.
 .if ${ARCH} == amd64
 RUN_DEPENDS+=	${LOCALBASE}/share/uefi-firmware/BHYVE_UEFI.fd:sysutils/edk2@bhyve
+.endif
+
+# www/chromium has no aarch64 package: the 15.1 aarch64 builder killed its
+# build at the time limit and main-arm64 blacklists it. Depend on it
+# everywhere else until a native aarch64 Chromium build exists.
+.if ${ARCH} != aarch64
+RUN_DEPENDS+=	chromium>0:www/chromium
+.endif
+
+# x11-themes/aether builds its Vite frontend from an npm cache distfile that
+# carries only the FreeBSD x64 rolldown, lightningcss and tailwind oxide
+# bindings; npm publishes no FreeBSD arm64 builds of them.
+.if ${PORT_OPTIONS:MOMAAPPS} && ${ARCH} != aarch64
+RUN_DEPENDS+=	aether>0:x11-themes/aether
 .endif
 
 # sysutils/mise is BROKEN_aarch64 (conda/rattler#2226).
