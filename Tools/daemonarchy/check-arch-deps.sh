@@ -3,7 +3,7 @@
 # usage (on FreeBSD, PORTSDIR=<tree>): check-arch-deps.sh BASE_TREE HEAD_TREE
 # Each tree holds x11-wm/{omarchy,daemonarchy,hyprland}; Mk/ comes from PORTSDIR.
 # amd64 metadata must be identical between the trees; aarch64 must drop the
-# dependencies that do not exist there (mise, edk2@bhyve, chromium) and build Hyprland without PCH.
+# dependencies that do not exist there (mise, edk2@bhyve, chromium, aether) and build Hyprland without PCH.
 set -eu
 base=$1 head=$2
 ports='x11-wm/omarchy x11-wm/daemonarchy x11-wm/hyprland'
@@ -28,6 +28,8 @@ meta "$head" x11-wm/daemonarchy amd64 RUN_DEPENDS | grep -q ':sysutils/edk2@bhyv
 ! meta "$head" x11-wm/daemonarchy aarch64 RUN_DEPENDS | grep -q 'sysutils/edk2' || fail 'daemonarchy aarch64 still needs edk2@bhyve'
 meta "$head" x11-wm/daemonarchy amd64 RUN_DEPENDS | grep -q ':www/chromium$' || fail 'daemonarchy amd64 lost chromium'
 ! meta "$head" x11-wm/daemonarchy aarch64 RUN_DEPENDS | grep -q ':www/chromium$' || fail 'daemonarchy aarch64 still needs chromium'
+meta "$head" x11-wm/daemonarchy amd64 RUN_DEPENDS | grep -q ':x11-themes/aether$' || fail 'daemonarchy amd64 lost aether'
+! meta "$head" x11-wm/daemonarchy aarch64 RUN_DEPENDS | grep -q ':x11-themes/aether$' || fail 'daemonarchy aarch64 still needs aether'
 meta "$head" x11-wm/hyprland aarch64 CMAKE_ARGS | grep -q 'CMAKE_DISABLE_PRECOMPILE_HEADERS:BOOL=ON' || fail 'hyprland aarch64 keeps PCH'
 ! meta "$head" x11-wm/hyprland amd64 CMAKE_ARGS | grep -q 'CMAKE_DISABLE_PRECOMPILE_HEADERS' || fail 'hyprland amd64 changed PCH'
 for port in $ports; do
@@ -40,5 +42,5 @@ for port in $ports; do
     grep -E '^(FATAL|WARN)' "$head/${port##*/}.portlint" || true
     [ "$after" -le "$before" ] || fail "portlint reports new FATAL errors for $port"
 done
-[ "$status" = 0 ] && echo 'PASS: amd64 metadata unchanged; aarch64 drops mise, edk2@bhyve and chromium, and disables Hyprland PCH'
+[ "$status" = 0 ] && echo 'PASS: amd64 metadata unchanged; aarch64 drops mise, edk2@bhyve, chromium and aether, and disables Hyprland PCH'
 exit "$status"

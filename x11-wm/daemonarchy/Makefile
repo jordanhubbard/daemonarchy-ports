@@ -143,8 +143,7 @@ INPUT_RUN_DEPENDS=	fcitx5>0:textproc/fcitx5 \
 			fcitx5-gtk3>0:textproc/fcitx5-gtk \
 			fcitx5-qt6>0:textproc/fcitx5-qt
 OBSIDIAN_RUN_DEPENDS=	obsidian>0:textproc/obsidian
-OMAAPPS_RUN_DEPENDS=	aether>0:x11-themes/aether \
-			cliamp>0:audio/cliamp \
+OMAAPPS_RUN_DEPENDS=	cliamp>0:audio/cliamp \
 			herdr>0:sysutils/herdr \
 			omacalc>0:math/omacalc \
 			omacut>0:multimedia/omacut \
@@ -172,6 +171,13 @@ RUN_DEPENDS+=	${LOCALBASE}/share/uefi-firmware/BHYVE_UEFI.fd:sysutils/edk2@bhyve
 # everywhere else until a native aarch64 Chromium build exists.
 .if ${ARCH} != aarch64
 RUN_DEPENDS+=	chromium>0:www/chromium
+.endif
+
+# x11-themes/aether builds its Vite frontend from an npm cache distfile that
+# carries only the FreeBSD x64 rolldown, lightningcss and tailwind oxide
+# bindings; npm publishes no FreeBSD arm64 builds of them.
+.if ${PORT_OPTIONS:MOMAAPPS} && ${ARCH} != aarch64
+RUN_DEPENDS+=	aether>0:x11-themes/aether
 .endif
 
 # sysutils/mise is BROKEN_aarch64 (conda/rattler#2226).
