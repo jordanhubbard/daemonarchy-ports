@@ -21,7 +21,6 @@ BUILD_DEPENDS=	magick:graphics/ImageMagick7 \
 # DKMS drivers, Limine/Snapper, NetworkManager, BlueZ, power-profiles-daemon)
 # are covered by the base system or by the omarchy port's compat layer.
 RUN_DEPENDS=	omarchy>0:x11-wm/omarchy \
-		chromium>0:www/chromium \
 		octopkg>0:ports-mgmt/octopkg \
 		egl-wayland>0:graphics/egl-wayland \
 		font-awesome>0:x11-fonts/font-awesome \
@@ -166,6 +165,13 @@ PRINT_RUN_DEPENDS=	avahi>0:net/avahi \
 # bhyve's UEFI guest firmware (sysutils/edk2@bhyve) is amd64-only.
 .if ${ARCH} == amd64
 RUN_DEPENDS+=	${LOCALBASE}/share/uefi-firmware/BHYVE_UEFI.fd:sysutils/edk2@bhyve
+.endif
+
+# www/chromium has no aarch64 package: the 15.1 aarch64 builder killed its
+# build at the time limit and main-arm64 blacklists it. Depend on it
+# everywhere else until a native aarch64 Chromium build exists.
+.if ${ARCH} != aarch64
+RUN_DEPENDS+=	chromium>0:www/chromium
 .endif
 
 # sysutils/mise is BROKEN_aarch64 (conda/rattler#2226).
