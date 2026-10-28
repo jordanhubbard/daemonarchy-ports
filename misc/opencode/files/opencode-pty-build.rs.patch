@@ -7,7 +7,7 @@ compare against.
 
 --- a/build.rs
 +++ b/build.rs
-@@ -53,32 +53,33 @@
+@@ -54,32 +54,33 @@
  
      // The checked-in declarations must match the native headers exactly.
      // Local overrides are useful for builds, but not for silently changing ABI.

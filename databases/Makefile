@@ -101,7 +101,6 @@
     SUBDIR += hiredis
     SUBDIR += hsqldb
     SUBDIR += iceberg-rust
-    SUBDIR += immudb
     SUBDIR += imposm3
     SUBDIR += influxdb
     SUBDIR += influxdb2-cli
@@ -118,6 +117,7 @@
     SUBDIR += kdb
     SUBDIR += kexi
     SUBDIR += keydb
+    SUBDIR += kividb
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
     SUBDIR += ladybug
@@ -558,7 +558,6 @@
     SUBDIR += pecl-memcache
     SUBDIR += pecl-memcached
     SUBDIR += pecl-mongodb
-    SUBDIR += pecl-redis
     SUBDIR += pecl-rrd
     SUBDIR += percona-orchestrator
     SUBDIR += percona-toolkit
@@ -573,6 +572,7 @@
     SUBDIR += pg_cron
     SUBDIR += pg_dirtyread
     SUBDIR += pg_ed25519
+    SUBDIR += pg_failover_slots
     SUBDIR += pg_filedump
     SUBDIR += pg_hashids
     SUBDIR += pg_incremental
@@ -620,6 +620,7 @@
     SUBDIR += pguri
     SUBDIR += pgvector
     SUBDIR += php-memvector
+    SUBDIR += php-redis
     SUBDIR += php-tarantool
     SUBDIR += php-xapian
     SUBDIR += php82-dba
@@ -881,6 +882,7 @@
     SUBDIR += py-pylibmc
     SUBDIR += py-pymemcache
     SUBDIR += py-pymongo
+    SUBDIR += py-pymssql
     SUBDIR += py-pymysql
     SUBDIR += py-pyodbc
     SUBDIR += py-pypuppetdb

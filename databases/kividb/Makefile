@@ -1,6 +1,5 @@
 PORTNAME=	kividb
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -18,8 +17,6 @@ CPE_PRODUCT=	kividb
 USE_GITHUB=	yes
 GH_ACCOUNT=	kividbio
 GH_PROJECT=	kividb
-
-.include "${.CURDIR}/Makefile.crates"
 
 PLIST_FILES=	bin/kividb
 

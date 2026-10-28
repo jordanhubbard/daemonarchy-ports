@@ -243,6 +243,7 @@
     SUBDIR += copytape
     SUBDIR += coreos-ct
     SUBDIR += coreutils
+    SUBDIR += coxswain
     SUBDIR += cpdup
     SUBDIR += cpdup-FreeBSD
     SUBDIR += cpu-microcode
@@ -1719,6 +1720,7 @@
     SUBDIR += yadm
     SUBDIR += yank
     SUBDIR += yazi
+    SUBDIR += ytop
     SUBDIR += z
     SUBDIR += zbackup
     SUBDIR += zeitgeist

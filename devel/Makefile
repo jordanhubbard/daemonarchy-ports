@@ -2510,7 +2510,6 @@
     SUBDIR += p5-DateTime-Format-Excel
     SUBDIR += p5-DateTime-Format-Flexible
     SUBDIR += p5-DateTime-Format-HTTP
-    SUBDIR += p5-DateTime-Format-IBeat
     SUBDIR += p5-DateTime-Format-ICal
     SUBDIR += p5-DateTime-Format-ISO8601
     SUBDIR += p5-DateTime-Format-Mail
@@ -3889,7 +3888,6 @@
     SUBDIR += p5-Test-XML
     SUBDIR += p5-Test-XML-Valid
     SUBDIR += p5-Test-YAML
-    SUBDIR += p5-Test-YAML-Meta
     SUBDIR += p5-Test-YAML-Valid
     SUBDIR += p5-Test-utf8
     SUBDIR += p5-Test2-Harness
@@ -4354,6 +4352,8 @@
     SUBDIR += php-pie
     SUBDIR += php-raphf
     SUBDIR += php-swoole
+    SUBDIR += php80-APCu
+    SUBDIR += php80-arcanist
     SUBDIR += php82-ffi
     SUBDIR += php82-gettext
     SUBDIR += php82-intl
@@ -4440,6 +4440,7 @@
     SUBDIR += premake5
     SUBDIR += priv_wrapper
     SUBDIR += prjpeppercorn113
+    SUBDIR += prjpeppercorn114
     SUBDIR += projectcenter
     SUBDIR += prometheus-cpp
     SUBDIR += protobuf
@@ -5121,6 +5122,7 @@
     SUBDIR += py-flynt
     SUBDIR += py-foolscap
     SUBDIR += py-forbiddenfruit
+    SUBDIR += py-forklib
     SUBDIR += py-fortranformat
     SUBDIR += py-freebsd
     SUBDIR += py-freebsd-sysctl
@@ -5431,6 +5433,8 @@
     SUBDIR += py-lockfile
     SUBDIR += py-logan
     SUBDIR += py-logbook
+    SUBDIR += py-logfire
+    SUBDIR += py-logfire-sdk
     SUBDIR += py-logfury
     SUBDIR += py-logilab-common
     SUBDIR += py-logistro
@@ -5486,6 +5490,7 @@
     SUBDIR += py-minimongo
     SUBDIR += py-minio
     SUBDIR += py-mirakuru
+    SUBDIR += py-mktestdocs
     SUBDIR += py-mmh3
     SUBDIR += py-mock
     SUBDIR += py-mockito
@@ -5861,6 +5866,7 @@
     SUBDIR += py-pydantic-compat
     SUBDIR += py-pydantic-core
     SUBDIR += py-pydantic-extra-types
+    SUBDIR += py-pydantic-handlebars
     SUBDIR += py-pydantic-resolve
     SUBDIR += py-pydantic-settings
     SUBDIR += py-pydantic-vault
@@ -6039,6 +6045,7 @@
     SUBDIR += py-pytest-translations
     SUBDIR += py-pytest-trio
     SUBDIR += py-pytest-twisted
+    SUBDIR += py-pytest-vcr
     SUBDIR += py-pytest-verbose-parametrize
     SUBDIR += py-pytest-virtualenv
     SUBDIR += py-pytest-watcher
@@ -6102,6 +6109,7 @@
     SUBDIR += py-q
     SUBDIR += py-qasync
     SUBDIR += py-qcs-api-client
+    SUBDIR += py-qcs-api-client-common
     SUBDIR += py-qcs-sdk-python
     SUBDIR += py-qstylizer
     SUBDIR += py-qt5
@@ -7623,6 +7631,7 @@
     SUBDIR += rubygem-drb-gitlab
     SUBDIR += rubygem-dry-cli
     SUBDIR += rubygem-dry-configurable
+    SUBDIR += rubygem-dry-configurable-gitlab
     SUBDIR += rubygem-dry-container
     SUBDIR += rubygem-dry-core
     SUBDIR += rubygem-dry-core-gitlab
@@ -8273,6 +8282,7 @@
     SUBDIR += rubygem-rb-kqueue
     SUBDIR += rubygem-rblineprof
     SUBDIR += rubygem-rbs
+    SUBDIR += rubygem-rbs-gitlab
     SUBDIR += rubygem-rbs_json_schema
     SUBDIR += rubygem-rbtrace
     SUBDIR += rubygem-rbtree
@@ -8688,7 +8698,6 @@
     SUBDIR += shell-toolbox
     SUBDIR += shflags
     SUBDIR += shfmt
-    SUBDIR += shiboken2
     SUBDIR += shiboken6
     SUBDIR += shiboken6-tools
     SUBDIR += shmap

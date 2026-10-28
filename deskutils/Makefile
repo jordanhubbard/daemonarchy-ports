@@ -41,6 +41,7 @@
     SUBDIR += coolreader
     SUBDIR += copyq
     SUBDIR += coregarage
+    SUBDIR += cosmic-screenshot
     SUBDIR += countdown
     SUBDIR += crengine-ng
     SUBDIR += crqt-ng
@@ -200,7 +201,6 @@
     SUBDIR += owncloudclient
     SUBDIR += p5-Data-ICal
     SUBDIR += p5-Data-ICal-DateTime
-    SUBDIR += p5-Goo
     SUBDIR += pal
     SUBDIR += parcellite
     SUBDIR += peaclock
@@ -321,6 +321,7 @@
     SUBDIR += zanshin
     SUBDIR += zim
     SUBDIR += zk
+    SUBDIR += znotes
     SUBDIR += zorro
 
 .include <bsd.port.subdir.mk>
