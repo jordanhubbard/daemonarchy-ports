@@ -1,0 +1,96 @@
+#!/bin/sh
+
+# PROVIDE: t2_touchid
+# REQUIRE: NETWORKING dbus
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Bridges the Apple T2 Touch ID sensor to fprintd through libfprint's
+# virtual storage device (the systemd units upstream, done the rc.d way).
+# Add the following lines to /etc/rc.conf to enable it:
+#
+# t2_touchid_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to run the bridge.
+# t2_touchid_socket (path):	libfprint's virtual-device socket.
+#				Default: /var/run/t2-touchid/fprint.sock
+# t2_touchid_uid (str):		macOS user id whose fingers are matched,
+#				or "auto". Default: auto
+# t2_touchid_match_flags (int):	BiometricKit match flags. Default: 0
+# t2_touchid_bind_user (str):	Account the macOS-enrolled fingers are bound
+#				to automatically, or "none". Default: none
+# t2_touchid_fprintd (bool):	Also run fprintd with
+#				FP_VIRTUAL_DEVICE_STORAGE pointing at the
+#				socket. Default: YES
+#
+# fprintd is normally started by D-Bus activation, which gives it a clean
+# environment, so it cannot be told about the virtual device that way. With
+# t2_touchid_fprintd="YES" this script runs fprintd itself, with the variable
+# set and --no-timeout, before anything activates it, and stops it again with
+# the bridge. A stopped bridge therefore means a fprintd without the virtual
+# device (no reader), and pam_fprintd falls straight through to the password.
+#
+# The T2 link must carry IPv6 link-local (Daemonarchy's daemonarchy-t2link
+# does this: ifconfig ueN inet6 -ifdisabled auto_linklocal).
+
+. /etc/rc.subr
+
+name=t2_touchid
+rcvar=t2_touchid_enable
+desc="Apple T2 Touch ID bridge for fprintd"
+
+load_rc_config $name
+
+: ${t2_touchid_enable:="NO"}
+: ${t2_touchid_socket:="/var/run/t2-touchid/fprint.sock"}
+: ${t2_touchid_uid:="auto"}
+: ${t2_touchid_match_flags:="0"}
+: ${t2_touchid_bind_user:="none"}
+: ${t2_touchid_fprintd:="YES"}
+
+pidfile="/var/run/${name}.pid"
+fprintd_pidfile="/var/run/${name}_fprintd.pid"
+fprintd_bin="%%PREFIX%%/libexec/fprintd"
+command="/usr/sbin/daemon"
+command_args="-r -R 5 -S -T t2-touchid -P ${pidfile} \
+	%%PREFIX%%/bin/t2-touchid --socket ${t2_touchid_socket} \
+	--uid ${t2_touchid_uid} --flags ${t2_touchid_match_flags} \
+	--bind-user ${t2_touchid_bind_user}"
+
+start_precmd="${name}_prestart"
+stop_postcmd="${name}_poststop"
+
+t2_touchid_stop_fprintd()
+{
+	local pid
+
+	if [ -r "${fprintd_pidfile}" ]; then
+		pid=$(check_pidfile "${fprintd_pidfile}" /usr/sbin/daemon)
+		[ -n "${pid}" ] && kill -TERM ${pid}
+		rm -f "${fprintd_pidfile}"
+	fi
+	# An fprintd that D-Bus activated without the virtual device.
+	pkill -TERM -f "^${fprintd_bin}( |\$)" 2>/dev/null
+	return 0
+}
+
+t2_touchid_prestart()
+{
+	# Whoever can write to the socket authenticates: root only.
+	install -d -o root -g wheel -m 0700 "${t2_touchid_socket%/*}"
+	if checkyesno t2_touchid_fprintd; then
+		t2_touchid_stop_fprintd
+		sleep 1
+		/usr/sbin/daemon -r -R 5 -S -T fprintd -P "${fprintd_pidfile}" \
+		    /usr/bin/env FP_VIRTUAL_DEVICE_STORAGE="${t2_touchid_socket}" \
+		    "${fprintd_bin}" --no-timeout
+	fi
+}
+
+t2_touchid_poststop()
+{
+	if checkyesno t2_touchid_fprintd; then
+		t2_touchid_stop_fprintd
+	fi
+}
+
+run_rc_command "$1"
