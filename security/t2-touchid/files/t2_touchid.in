@@ -51,7 +51,7 @@ pidfile="/var/run/${name}.pid"
 fprintd_pidfile="/var/run/${name}_fprintd.pid"
 fprintd_bin="%%PREFIX%%/libexec/fprintd"
 command="/usr/sbin/daemon"
-command_args="-r -R 5 -S -T t2-touchid -P ${pidfile} \
+command_args="-f -r -R 5 -S -T t2-touchid -P ${pidfile} \
 	%%PREFIX%%/bin/t2-touchid --socket ${t2_touchid_socket} \
 	--uid ${t2_touchid_uid} --flags ${t2_touchid_match_flags} \
 	--bind-user ${t2_touchid_bind_user}"
@@ -80,7 +80,7 @@ t2_touchid_prestart()
 	if checkyesno t2_touchid_fprintd; then
 		t2_touchid_stop_fprintd
 		sleep 1
-		/usr/sbin/daemon -r -R 5 -S -T fprintd -P "${fprintd_pidfile}" \
+		/usr/sbin/daemon -f -r -R 5 -S -T fprintd -P "${fprintd_pidfile}" \
 		    /usr/bin/env FP_VIRTUAL_DEVICE_STORAGE="${t2_touchid_socket}" \
 		    "${fprintd_bin}" --no-timeout
 	fi
