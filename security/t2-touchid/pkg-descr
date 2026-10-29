@@ -1,0 +1,16 @@
+t2-touchid bridges the Touch ID sensor of Apple T2 Macs (2018-2020 Intel
+MacBook Pro, MacBook Air, Mac mini, iMac Pro) to fprintd, so that login,
+sudo and screen lockers can accept a finger through stock fprintd and
+pam_fprintd.
+
+The sensor belongs to the T2's Secure Enclave and is reachable only over
+IPv6 link-local on the T2's internal USB CDC-NCM link (cdce on USB
+05ac:8233). The bridge speaks BiometricKit to bridgeOS there and reports
+the Secure Enclave's verdicts through libfprint's virtual storage device.
+It never enrolls: fingers are enrolled under macOS, and the Secure Enclave
+answers with an empty inventory until macOS has unlocked it once since the
+T2 last powered on.
+
+Written by Andre Eikmeyer for KaiT2en. GPL-3.0-or-later with an additional
+attribution term (section 7(b)); the installed LICENSE carries the exact
+copyright and attribution notice.

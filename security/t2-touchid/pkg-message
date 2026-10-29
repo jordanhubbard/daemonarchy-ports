@@ -1,0 +1,33 @@
+[
+{ type: install
+  message: <<EOM
+t2-touchid needs:
+
+ - libfprint built with its virtual devices (the VIRTUAL option of
+   security/libfprint, on by default in Daemonarchy's ports tree);
+ - the T2 link (cdce on USB 05ac:8233, ueN) up with IPv6 link-local and no
+   DHCP: ifconfig ueN inet6 -ifdisabled auto_linklocal
+   (Daemonarchy's daemonarchy-t2link does this);
+ - fingers enrolled under macOS, and macOS logged into once since the T2
+   last powered on (before that the Secure Enclave reports a locked,
+   empty inventory).
+
+It is disabled by default. To try it without changing PAM:
+
+  service t2_touchid onestart
+  fprintd-list <user>
+
+To use it at boot, set t2_touchid_enable="YES" (and t2_touchid_bind_user
+to bind the macOS-enrolled fingers to an account) in /etc/rc.conf, then
+add pam_fprintd to the PAM services that should accept a finger, before
+their password module, for example in /usr/local/etc/pam.d/sudo:
+
+  auth  sufficient  /usr/local/lib/security/pam_fprintd.so
+
+The rc script runs fprintd itself with FP_VIRTUAL_DEVICE_STORAGE set
+(t2_touchid_fprintd="YES"), because D-Bus activation cannot pass it.
+There is no Escape key to cancel a scan on FreeBSD: a prompt ends when the
+finger matches or after the 10-second match window.
+EOM
+}
+]
