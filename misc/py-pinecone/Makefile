@@ -1,6 +1,5 @@
 PORTNAME=	pinecone
-DISTVERSION=	10.0.0
-PORTREVISION=	2
+DISTVERSION=	10.2.0
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +24,7 @@ USES=		cargo python
 USE_PYTHON=	pep517 autoplist
 
 CARGO_CRATES=	aho-corasick-1.1.4 \
-		anyhow-1.0.102 \
+		anyhow-1.0.103 \
 		async-trait-0.1.89 \
 		atomic-waker-1.1.2 \
 		axum-0.8.8 \
@@ -41,7 +40,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		either-1.15.0 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
-		fastrand-2.4.0 \
+		fastrand-2.4.1 \
 		find-msvc-tools-0.1.9 \
 		fixedbitset-0.5.7 \
 		fnv-1.0.7 \
@@ -111,10 +110,10 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		regex-syntax-0.8.10 \
 		ring-0.17.14 \
 		rustix-1.1.4 \
-		rustls-0.23.37 \
+		rustls-0.23.46 \
 		rustls-native-certs-0.8.3 \
 		rustls-pki-types-1.14.0 \
-		rustls-webpki-0.103.13 \
+		rustls-webpki-0.103.16 \
 		rustversion-1.0.22 \
 		schannel-0.1.29 \
 		security-framework-3.7.0 \
@@ -134,7 +133,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		sync_wrapper-1.0.2 \
 		target-lexicon-0.13.5 \
 		tempfile-3.27.0 \
-		tokio-1.51.0 \
+		tokio-1.51.6 \
 		tokio-macros-2.7.0 \
 		tokio-rustls-0.26.4 \
 		tokio-stream-0.1.18 \

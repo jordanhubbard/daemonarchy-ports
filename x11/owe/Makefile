@@ -38,6 +38,14 @@ PORTEXAMPLES=	config.toml
 
 OPTIONS_DEFINE=	EXAMPLES
 
+# XXX Drop after FreeBSD 14.4 EOL around 2026-12-31
+# https://cgit.freebsd.org/src/commit/?id=3965de642c29
+.if !exists(/usr/include/sys/inotify.h)
+LIB_DEPENDS+=	libinotify.so:devel/libinotify
+USES+=		localbase:ldflags
+LDFLAGS+=	-linotify
+.endif
+
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/hooks/owe-idle ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DATADIR}

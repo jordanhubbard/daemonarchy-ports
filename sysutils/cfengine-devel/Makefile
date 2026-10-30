@@ -3,9 +3,9 @@ PORTVERSION=	3.28.${CFENGINE_COMMIT_DATE}
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
-CFENGINE_HASH=		396659be2
+CFENGINE_HASH=		b0f6da2dd
 LIBNTECH_HASH=		3c21479
-CFENGINE_COMMIT_DATE=	20260920
+CFENGINE_COMMIT_DATE=	20261028
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Systems administration tool for networks
@@ -47,13 +47,13 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--mandir=${PREFIX}/man \
 		--with-workdir=/var/cfengine \
 		--with-pcre2=${LOCALBASE} \
-		--with-lmdb=${LOCALBASE} \
+		--with-lmdb=${LOCALBASE}/lmdb0 \
 		--enable-fhs
 INSTALL_TARGET=	install-strip
 
 LIB_DEPENDS+=	libpcre.so:devel/pcre \
 		libpcre2-posix.so:devel/pcre2 \
-		liblmdb.so:databases/lmdb0 \
+		liblmdb0.so:databases/lmdb0 \
 		libyaml.so:textproc/libyaml \
 		libcurl.so:ftp/curl \
 		librsync.so:net/librsync

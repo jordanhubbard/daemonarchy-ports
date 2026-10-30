@@ -19,13 +19,13 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 		ffmpeg:multimedia/ffmpeg \
 		yt-dlp:www/yt-dlp
 
-USES=		go:1.26+,modules pkgconfig
+USES=		go:modules pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	bjarneo
 
 GO_MOD_DIST=	github
 GO_MODULE=	github.com/bjarneo/cliamp
-GO_BUILDFLAGS=	-ldflags "-s -w -X main.version=${DISTVERSIONFULL}"
+GO_LDFLAGS=	-w -X main.version=${DISTVERSIONFULL}
 
 PLIST_FILES=	bin/cliamp \
 		share/applications/cliamp.desktop \

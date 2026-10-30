@@ -1589,6 +1589,7 @@
     SUBDIR += py-ntc-templates
     SUBDIR += py-numpydoc
     SUBDIR += py-ocrmypdf
+    SUBDIR += py-odfdo
     SUBDIR += py-openpyxl
     SUBDIR += py-opensearch-py
     SUBDIR += py-openstackdocstheme
@@ -2294,6 +2295,7 @@
     SUBDIR += vbindiff
     SUBDIR += ve-hunspell
     SUBDIR += vgrep
+    SUBDIR += vss-text
     SUBDIR += wa-aspell
     SUBDIR += wa-hunspell
     SUBDIR += wdiff

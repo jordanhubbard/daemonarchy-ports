@@ -348,6 +348,11 @@ pre-configure-CACHE_PURGE-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-cache-purge ${WRKSRC_cache_purge}
 	@${CHMOD} -R u+w ${WRKSRC_cache_purge}
 
+pre-configure-CERT_EXPIRY-on:
+	@${RM} -rf ${WRKSRC_cert_expiry}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-cert-expiry ${WRKSRC_cert_expiry}
+	@${CHMOD} -R u+w ${WRKSRC_cert_expiry}
+
 pre-configure-DEVEL_KIT-on:
 	@${RM} -rf ${WRKSRC_devel_kit}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-ndk ${WRKSRC_devel_kit}
@@ -378,11 +383,51 @@ pre-configure-ICONV-on:
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-iconv ${WRKSRC_iconv}
 	@${CHMOD} -R u+w ${WRKSRC_iconv}
 
+pre-configure-IP_ANON-on:
+	@${RM} -rf ${WRKSRC_ip_anon}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-ip-anon ${WRKSRC_ip_anon}
+	@${CHMOD} -R u+w ${WRKSRC_ip_anon}
+
 pre-configure-HTTP_JSON_STATUS-on:
 	@${RM} -rf ${WRKSRC_json_status}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-json-status \
 		${WRKSRC_json_status}
 	@${CHMOD} -R u+w ${WRKSRC_json_status}
+
+pre-configure-MEMC-on:
+	@${RM} -rf ${WRKSRC_memc}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-memc \
+		${WRKSRC_memc}
+	@${CHMOD} -R u+w ${WRKSRC_memc}
+
+pre-configure-ENCRYPTSESSION-on:
+	@${RM} -rf ${WRKSRC_encryptsession}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-encrypted-session \
+		${WRKSRC_encryptsession}
+	@${CHMOD} -R u+w ${WRKSRC_encryptsession}
+
+pre-configure-HTTP_FANCYINDEX-on:
+	@${RM} -rf ${WRKSRC_fancyindex}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-fancyindex \
+		${WRKSRC_fancyindex}
+	@${CHMOD} -R u+w ${WRKSRC_fancyindex}
+
+pre-configure-HTTP_AUTH_LDAP-on:
+	@${RM} -rf ${WRKSRC_http_auth_ldap}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-auth-ldap ${WRKSRC_http_auth_ldap}
+	@${CHMOD} -R u+w ${WRKSRC_http_auth_ldap}
+
+pre-configure-HTTP_AUTH_PAM-on:
+	@${RM} -rf ${WRKSRC_auth_pam}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-auth-pam \
+		${WRKSRC_auth_pam}
+	@${CHMOD} -R u+w ${WRKSRC_auth_pam}
+
+pre-configure-HTTP_GEOIP2-on:
+	@${RM} -rf ${WRKSRC_geoip2}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-geoip2 \
+		${WRKSRC_geoip2}
+	@${CHMOD} -R u+w ${WRKSRC_geoip2}
 
 pre-configure-LET-on:
 	@${RM} -rf ${WRKSRC_let}
@@ -438,10 +483,20 @@ pre-configure-PASSENGER-on:
 		${WRKSRC_passenger}
 	@${CHMOD} -R u+w ${WRKSRC_passenger}
 
+pre-configure-STREAM_LIMIT_REQ-on:
+	@${RM} -rf ${WRKSRC_stream_limit_req}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-stream-limit-req ${WRKSRC_stream_limit_req}
+	@${CHMOD} -R u+w ${WRKSRC_stream_limit_req}
+
 pre-configure-STS-on:
 	@${RM} -rf ${WRKSRC_sts}
 	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-sts ${WRKSRC_sts}
 	@${CHMOD} -R u+w ${WRKSRC_sts}
+
+pre-configure-SYSLOG5424-on:
+	@${RM} -rf ${WRKSRC_syslog5424}
+	@${CP} -R ${LOCALBASE}/share/nginx/modules/nginx-module-syslog5424 ${WRKSRC_syslog5424}
+	@${CHMOD} -R u+w ${WRKSRC_syslog5424}
 
 pre-configure-VOD-on:
 	@${RM} -rf ${WRKSRC_vod}
