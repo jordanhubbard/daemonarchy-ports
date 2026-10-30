@@ -1478,7 +1478,6 @@
     SUBDIR += librashader
     SUBDIR += librcc
     SUBDIR += librcd
-    SUBDIR += libreadline-java
     SUBDIR += libregf
     SUBDIR += librelp
     SUBDIR += librest
@@ -1704,7 +1703,6 @@
     SUBDIR += lua-sysctl
     SUBDIR += luabind
     SUBDIR += luafilesystem
-    SUBDIR += luajava
     SUBDIR += lutok
     SUBDIR += luv
     SUBDIR += lwgrp
@@ -5056,6 +5054,7 @@
     SUBDIR += py-expression
     SUBDIR += py-extras
     SUBDIR += py-extremes
+    SUBDIR += py-f90nml
     SUBDIR += py-fabric
     SUBDIR += py-fabric3
     SUBDIR += py-face
@@ -8905,7 +8904,6 @@
     SUBDIR += uid_wrapper
     SUBDIR += ultragetopt
     SUBDIR += umbrello
-    SUBDIR += umlgraph
     SUBDIR += umpire
     SUBDIR += undead
     SUBDIR += unibilium

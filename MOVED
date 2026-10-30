@@ -1028,7 +1028,6 @@ textproc/adabrowse||2022-02-28|Removed, depends on expired lang/gcc6-aux
 textproc/templates_parser||2022-02-28|Removed, depends on expired lang/gcc6-aux
 textproc/words||2022-02-28|Removed, depends on expired lang/gcc6-aux
 x11-toolkits/gtkada||2022-02-28|Removed, depends on expired lang/gcc6-aux
-x11-toolkits/gtkada3||2022-02-28|Removed, depends on expired lang/gcc6-aux
 devel/py-zsm-lib|sysutils/zsm|2022-03-07|Remove obsoleted port. Use sysutils/zsm instead
 databases/postgresql96-client||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
 databases/postgresql96-contrib||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
@@ -4538,7 +4537,6 @@ security/gpgme-cpp|security/gpgmepp|2025-06-24|Gpgme C++ bindings have been spli
 security/gpgme-qt@qt5|security/qgpgme@qt5|2025-06-24|Gpgme Qt5 bindings have been split into a separate project
 security/gpgme-qt@qt6|security/qgpgme@qt6|2025-06-24|Gpgme Qt6 bindings have been split into a separate project
 textproc/py-libxml2|textproc/libxml2-python|2025-06-28|Use correct Python package name
-audio/lmms||2025-06-29|Remove expired port. Depends on expiring audio/carla
 audio/py-pyliblo||2025-06-29|Remove expired port. Upstream is inactive for over 9 years
 japanese/anthy|japanese/anthy-unicode|2025-06-29|Has expired: Use japanese/anthy-unicode instead
 japanese/kasumi|japanese/kasumi-unicode|2025-06-29|Has expired: Use japanese/kasumi-unicode instead
@@ -4750,7 +4748,6 @@ www/node18||2025-09-03|Has expired: Node.js 18.* has reached its EoL on 2025-04-
 devel/rubygem-hashie4|devel/rubygem-hashie|2025-09-07|Remove obsoleted port. Use devel/rubygem-hashie instead
 print/rubygem-afm0|print/rubygem-afm|2025-09-07|Remove obsoleted port. Use print/rubygem-afm instead
 www/rubygem-jwt29|www/rubygem-jwt|2025-09-07|Remove obsoleted port. Use www/rubygem-jwt instead
-www/mod_wsgi4|www/mod_wsgi|2025-09-08|Was tied to only major version 4, now upgraded to 5
 net-mgmt/netdata-go|net-mgmt/netdata|2025-09-08|The netdata-go plugin is included in the main netdata port
 finance/myphpmoney||2025-09-08|Has expired: Unmaintained upstream and most probably does not work with modern PHP versions
 databases/adminerevo||2025-09-09|Has expired: Abandoned upstream, repo archived Jan 24, 2025
@@ -5769,3 +5766,6 @@ misc/py-kartograph||2026-10-25|Removed: Contains python2 code, no users and no u
 www/mod_tls||2026-10-27|Removed: No longer maintained, removed from Apache httpd 2025-01-23
 net-im/convey||2026-10-27|Has expired: Obsolete and no longer developed since 2003
 databases/immudb||2026-10-27|Has expired: Not actively maintained. Multiple versions behind on upstream. Please take maintainership if you use this
+devel/umlgraph||2026-10-29|Has expired: 10 years old, not activaly maintained, does not run with jdk11+
+devel/luajava||2026-10-29|Has expired: No new version since 2008, upstream website is gone, JDK8 only, old Lua version
+devel/libreadline-java||2026-10-29|Has expired: 20 years old, does not build with jdk11+, not actively maintained, no users in the tree, forked(?) to https://github.com/aclemons/java-readline
