@@ -21,6 +21,8 @@ BUILD_DEPENDS=	magick:graphics/ImageMagick7 \
 # relies on. Arch packages without a FreeBSD equivalent (kernels, firmware,
 # DKMS drivers, Limine/Snapper, NetworkManager, BlueZ, power-profiles-daemon)
 # are covered by the base system or by the omarchy port's compat layer.
+# daemonarchy-pkg (ports-mgmt/daemonarchy-pkg) is the graphical package manager that the Packages menu entries
+# open; octopkg stays as the fallback until it has been qualified on a real desktop.
 RUN_DEPENDS=	omarchy>0:x11-wm/omarchy \
 		octopkg>0:ports-mgmt/octopkg \
 		daemonarchy-pkg>0:ports-mgmt/daemonarchy-pkg \
