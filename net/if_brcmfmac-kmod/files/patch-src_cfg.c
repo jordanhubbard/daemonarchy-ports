@@ -30,7 +30,22 @@
  	switch (event_code) {
  	case BRCMF_E_SET_SSID:
  		if (status == BRCMF_E_STATUS_SUCCESS) {
-@@ -265,6 +278,7 @@
+@@ -203,8 +216,12 @@
+ 
+ 		/* Ignore spurious link-down during WPA handshake.
+ 		 * The firmware sends E_LINK(down) before PTK is installed,
+-		 * which would abort the handshake prematurely. */
+-		if (!link && vap != NULL && vap->iv_state == IEEE80211_S_RUN) {
++		 * which would abort the handshake prematurely. Once the PTK
++		 * is in, a link-down is real (beacon loss, AP gone): the
++		 * firmware has dropped the association and tosses every
++		 * data frame, so net80211 and wpa_supplicant must be told. */
++		if (!link && vap != NULL && vap->iv_state == IEEE80211_S_RUN &&
++		    atomic_load_acq_int(&sc->diag_ptk_set_since_join) == 0) {
+ 			device_printf(sc->dev, "ignoring E_LINK down in RUN\n");
+ 			break;
+ 		}
+@@ -265,6 +282,7 @@
  		brcmf_fil_iovar_int_set(sc, "sup_wpa", 0);
  
  	memcpy(sc->join_bssid, sr->bssid, 6);
@@ -38,7 +53,7 @@
  
  	brcmf_abort_escan(sc);
  
-@@ -298,6 +312,7 @@
+@@ -298,6 +316,7 @@
  	uint16_t chanspec;
  
  	memcpy(sc->join_bssid, bssid, 6);
@@ -46,25 +61,24 @@
  
  	brcmf_abort_escan(sc);
  
-@@ -880,16 +895,8 @@
+@@ -880,15 +899,7 @@
  	struct ieee80211vap *vap = if_getsoftc(ifp);
  	struct ieee80211com *ic = vap->iv_ic;
  	struct brcmf_softc *sc = ic->ic_softc;
 -	struct ether_header *eh;
 -	uint16_t etype = 0;
-+	atomic_add_int(&sc->diag_tx_vap_count, 1);
- 
+-
 -	if (m->m_len >= sizeof(*eh)) {
 -		eh = mtod(m, struct ether_header *);
 -		etype = ntohs(eh->ether_type);
 -	}
 -	device_printf(sc->dev, "vap_transmit: state=%d etype=0x%04x len=%u\n",
 -	    vap->iv_state, etype, m->m_pkthdr.len);
--
++	atomic_add_int(&sc->diag_tx_vap_count, 1);
+ 
  	if (vap->iv_state != IEEE80211_S_RUN) {
  		/*
- 		 * Allow EAPOL frames before RUN — the firmware has
-@@ -973,6 +980,15 @@
+@@ -973,6 +984,15 @@
  	error = brcmf_get_macaddr(sc);
  	if (error != 0)
  		return (error);
