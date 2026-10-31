@@ -37,6 +37,8 @@ PLIST_SUB+=	FULLKMS=""
 .else
 PLIST_SUB+=	FULLKMS="@comment "
 MAKE_ARGS+=	KMODS="dmabuf ttm drm virtio"
+# Software-rendered desktops (Mesa kms_swrast) create dumb buffers on the render node:
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-drm-ioctl-dumb-render
 .endif
 
 SUB_FILES=	pkg-message
