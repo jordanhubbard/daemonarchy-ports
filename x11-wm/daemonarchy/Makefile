@@ -3,6 +3,7 @@ PORTNAME=	daemonarchy
 # FreeBSD's. The epoch moves it past the 4.0.4 it used to borrow.
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 
@@ -22,6 +23,7 @@ BUILD_DEPENDS=	magick:graphics/ImageMagick7 \
 # are covered by the base system or by the omarchy port's compat layer.
 RUN_DEPENDS=	omarchy>0:x11-wm/omarchy \
 		octopkg>0:ports-mgmt/octopkg \
+		daemonarchy-pkg>0:ports-mgmt/daemonarchy-pkg \
 		egl-wayland>0:graphics/egl-wayland \
 		font-awesome>0:x11-fonts/font-awesome \
 		fontconfig>0:x11-fonts/fontconfig \
