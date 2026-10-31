@@ -1,7 +1,7 @@
 /%%KMODDIR%%/dmabuf.ko
-/%%KMODDIR%%/amdgpu.ko
+%%FULLKMS%%/%%KMODDIR%%/amdgpu.ko
 /%%KMODDIR%%/drm.ko
-/%%KMODDIR%%/i915kms.ko
-/%%KMODDIR%%/radeonkms.ko
+%%FULLKMS%%/%%KMODDIR%%/i915kms.ko
+%%FULLKMS%%/%%KMODDIR%%/radeonkms.ko
 /%%KMODDIR%%/ttm.ko
 /%%KMODDIR%%/virtio_gpu_drm.ko
