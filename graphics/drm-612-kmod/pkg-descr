@@ -2,3 +2,12 @@ amdgpu, i915, and radeon DRM drivers modules.
 Currently corresponding to Linux 6.12 DRM.
 This version is for FreeBSD 15 1500509
 and above, or FreeBSD 16 1600018 and above.
+
+On aarch64 this port builds only the DRM core and the VirtIO GPU driver, for QEMU and
+UTM guests. It carries one deliberate deviation from upstream drm-kmod there: the three
+dumb-buffer ioctls (MODE_CREATE_DUMB, MODE_MAP_DUMB, MODE_DESTROY_DUMB) are marked
+DRM_RENDER_ALLOW, so a render-node client can create dumb buffers. Mesa's software
+rasteriser (kms_swrast), which Hyprland uses on a GPU without 3D, needs that; without it
+the compositor gets EACCES and the screen stays black. A render client can already
+allocate and map GEM objects, and it still cannot become DRM master or set a mode. The
+patch is not applied on amd64.
