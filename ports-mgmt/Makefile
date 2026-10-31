@@ -4,6 +4,7 @@
     SUBDIR += bsdadminscripts2
     SUBDIR += caronade
     SUBDIR += create-rb-port
+    SUBDIR += daemonarchy-pkg
     SUBDIR += dialog4ports
     SUBDIR += dialog4ports-static
     SUBDIR += distilator
