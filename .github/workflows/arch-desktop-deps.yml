@@ -6,6 +6,7 @@ on:
       - 'x11-wm/omarchy/**'
       - 'x11-wm/daemonarchy/**'
       - 'x11-wm/hyprland/**'
+      - 'x11-toolkits/aquamarine/**'
       - 'Tools/daemonarchy/check-arch-deps.sh'
       - 'Tools/daemonarchy/arch-deps-additions'
       - '.github/workflows/arch-desktop-deps.yml'
