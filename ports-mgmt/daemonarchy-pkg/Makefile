@@ -7,7 +7,6 @@ COMMENT=	Colorful graphical package manager for Daemonarchy
 WWW=		https://github.com/jordanhubbard/daemonarchy
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/apps/daemonarchy-pkg/LICENSE
 
 RUN_DEPENDS=	sudo:security/sudo \
 		${PYTHON_PKGNAMEPREFIX}pygobject>0:devel/py-pygobject@${PY_FLAVOR} \
@@ -20,7 +19,7 @@ GH_ACCOUNT=	jordanhubbard
 GH_PROJECT=	daemonarchy
 # Pin the reviewed commit of jordanhubbard/daemonarchy that carries apps/daemonarchy-pkg and the installer
 # engine files it shares (parallel-fetch, progress-model).
-GH_TAGNAME=	PIN_THE_MERGED_COMMIT
+GH_TAGNAME=	2f9b7ecf4c3bcdb4208198d12c63ee539f5e441d
 
 NO_ARCH=	yes
 NO_BUILD=	yes
