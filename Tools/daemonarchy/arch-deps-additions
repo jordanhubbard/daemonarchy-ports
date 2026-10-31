@@ -1,0 +1,5 @@
+# Intended additions to the amd64 metadata of the three desktop ports, one per line:
+#   PORT VARIABLE ENTRY
+# check-arch-deps.sh requires amd64 metadata to equal the base revision, except for exactly these added entries.
+# Nothing may be removed, and an addition that is not listed here fails. Remove a line once its change has merged.
+x11-wm/daemonarchy RUN_DEPENDS daemonarchy-pkg>0:ports-mgmt/daemonarchy-pkg
