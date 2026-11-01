@@ -38,7 +38,7 @@ HERE = "Tools/daemonarchy/retained"
 PROFILE = HERE + "/profile.draft.json"
 POLICY = HERE + "/test-policy.draft.json"
 TARGET = "freebsd"
-EXCLUDED_TOP = {".git", ".literate", "literate.project.json", "retained-out"}
+EXCLUDED_TOP = {".git", ".literate", "literate.project.json", "retained-out", "_build"}  # _build: litai cache, git-ignored
 # Only the portable suite the repository's CI runs verbatim
 # (.github/workflows/producer-inputs-native.yml); the native/hosted-VM step and
 # test_omarchy_debug_status.py are not part of this draft's inventory.
