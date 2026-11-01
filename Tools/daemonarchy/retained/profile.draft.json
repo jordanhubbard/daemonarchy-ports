@@ -1,0 +1,134 @@
+{
+  "schema": "literate-ai/retained-project-profile@1",
+  "authority_mode": "retained-project",
+  "target": "freebsd",
+  "worker_identity": "sha256:29d0ce36b8f96325b660670b5e4a2e99bd42e705472c2b4594f6955e04fe2171",
+  "toolchain_identity": "sha256:6a2531f314efeaf157d6dd677838e9ae873aeed935789fb6bef7f6186ad2eda4",
+  "dependency_identity": "sha256:5b8c257af24528b3bf9cc46317f481475a540ff4913422f09ba056fd64c05206",
+  "test_policy_identity": "sha256:9eba6db9e80fadcfc35bdea7ee2f4cfff6e1ce3501bf888fe0ea866a81a63137",
+  "release_policy_identity": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "tools": [
+    {
+      "name": "python3.12",
+      "path": "sdk/bin/python3.12",
+      "identity": "sha256:05587422e95c177bedf8622ec5d6771150412a652a3c38417d45e6c00dbd91b7"
+    },
+    {
+      "name": "make",
+      "path": "sdk/bin/make",
+      "identity": "sha256:d76476fc5cab5f04dcd399dd92f2af02116ab582d655ed11e303f018ace31fb1"
+    },
+    {
+      "name": "true",
+      "path": "sdk/bin/true",
+      "identity": "sha256:bcc1864368dcae63c9367cbb3bcf34eec558b18fe344b24e7cab63cc11f4ed7b"
+    }
+  ],
+  "actions": [
+    {
+      "id": "draft-unknown-build",
+      "stage": "build",
+      "tool": "true",
+      "argv": [
+        "sdk/bin/true"
+      ],
+      "requires": [],
+      "inventory": [
+        "UNKNOWN-per-origin-build-actions"
+      ],
+      "outputs": [
+        "retained-out/build"
+      ],
+      "timeout_seconds": 3600
+    },
+    {
+      "id": "draft-original-unit-tests",
+      "stage": "test",
+      "tool": "python3.12",
+      "argv": [
+        "sdk/bin/python3.12",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "Tools/daemonarchy",
+        "-p",
+        "test_*.py"
+      ],
+      "requires": [
+        "draft-unknown-build"
+      ],
+      "inventory": [
+        "test_observe_unit_inputs.ObserverTests.test_acknowledgement_and_native_worker_are_required",
+        "test_observe_unit_inputs.ObserverTests.test_context_cannot_override_isolation_or_expand_shell",
+        "test_observe_unit_inputs.ObserverTests.test_deadline_reaps_own_process_and_preserves_partial_evidence",
+        "test_observe_unit_inputs.ObserverTests.test_empty_package_database_is_explicitly_diagnostic",
+        "test_observe_unit_inputs.ObserverTests.test_existing_evidence_is_never_overwritten",
+        "test_observe_unit_inputs.ObserverTests.test_flavored_dependency_and_target_are_preserved",
+        "test_observe_unit_inputs.ObserverTests.test_generated_package_file_is_an_explicit_gap",
+        "test_observe_unit_inputs.ObserverTests.test_incomplete_and_changed_options_are_retained_failures",
+        "test_observe_unit_inputs.ObserverTests.test_lib_depends_has_build_and_runtime_edges_and_input_bytes",
+        "test_observe_unit_inputs.ObserverTests.test_live_writable_or_changed_snapshot_cannot_be_adopted",
+        "test_observe_unit_inputs.ObserverTests.test_master_port_inputs_are_inventoried",
+        "test_observe_unit_inputs.ObserverTests.test_missing_dynamic_dependency_expression_refuses",
+        "test_observe_unit_inputs.ObserverTests.test_shared_input_mutation_refuses_before_evaluation",
+        "test_observe_unit_inputs.ObserverTests.test_snapshot_copies_selected_database_without_touching_original",
+        "test_observe_unit_inputs.ObserverTests.test_target_context_is_exact",
+        "test_observe_unit_inputs.ObserverTests.test_wrong_flavor_does_not_silently_select_default",
+        "test_observe_unit_inputs_native.NativeProducerSmoke.test_actual_native_bsd_make_metadata",
+        "test_omarchy_debug_status.DebugStatusStaleness.test_clock_far_in_the_future_is_unavailable",
+        "test_omarchy_debug_status.DebugStatusStaleness.test_fresh_status_is_trusted",
+        "test_omarchy_debug_status.DebugStatusStaleness.test_fresh_unpaired_is_off_not_unavailable",
+        "test_omarchy_debug_status.DebugStatusStaleness.test_legacy_status_without_updated_is_trusted",
+        "test_omarchy_debug_status.DebugStatusStaleness.test_missing_or_unparseable_is_unavailable",
+        "test_omarchy_debug_status.DebugStatusStaleness.test_patch_gates_pair_button_on_availability",
+        "test_omarchy_debug_status.DebugStatusStaleness.test_stale_status_is_unavailable_with_no_actions"
+      ],
+      "outputs": [
+        "retained-out/tests"
+      ],
+      "timeout_seconds": 3600
+    },
+    {
+      "id": "draft-unknown-docs",
+      "stage": "docs",
+      "tool": "true",
+      "argv": [
+        "sdk/bin/true"
+      ],
+      "requires": [
+        "draft-unknown-build"
+      ],
+      "inventory": [
+        "UNKNOWN-docs-actions"
+      ],
+      "outputs": [
+        "retained-out/docs"
+      ],
+      "timeout_seconds": 3600
+    },
+    {
+      "id": "draft-unknown-accept",
+      "stage": "accept",
+      "tool": "true",
+      "argv": [
+        "sdk/bin/true"
+      ],
+      "requires": [
+        "draft-unknown-build",
+        "draft-original-unit-tests",
+        "draft-unknown-docs"
+      ],
+      "inventory": [
+        "UNKNOWN-independent-acceptance"
+      ],
+      "outputs": [
+        "retained-out/accept"
+      ],
+      "timeout_seconds": 3600
+    }
+  ],
+  "package_inventory": [
+    "retained-out/build"
+  ]
+}
