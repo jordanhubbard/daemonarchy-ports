@@ -81,46 +81,6 @@
       "id": "test_observe_unit_inputs.ObserverTests.test_wrong_flavor_does_not_silently_select_default",
       "action": "draft-original-unit-tests",
       "skip_reason": null
-    },
-    {
-      "id": "test_observe_unit_inputs_native.NativeProducerSmoke.test_actual_native_bsd_make_metadata",
-      "action": "draft-original-unit-tests",
-      "skip_reason": null
-    },
-    {
-      "id": "test_omarchy_debug_status.DebugStatusStaleness.test_clock_far_in_the_future_is_unavailable",
-      "action": "draft-original-unit-tests",
-      "skip_reason": null
-    },
-    {
-      "id": "test_omarchy_debug_status.DebugStatusStaleness.test_fresh_status_is_trusted",
-      "action": "draft-original-unit-tests",
-      "skip_reason": null
-    },
-    {
-      "id": "test_omarchy_debug_status.DebugStatusStaleness.test_fresh_unpaired_is_off_not_unavailable",
-      "action": "draft-original-unit-tests",
-      "skip_reason": null
-    },
-    {
-      "id": "test_omarchy_debug_status.DebugStatusStaleness.test_legacy_status_without_updated_is_trusted",
-      "action": "draft-original-unit-tests",
-      "skip_reason": null
-    },
-    {
-      "id": "test_omarchy_debug_status.DebugStatusStaleness.test_missing_or_unparseable_is_unavailable",
-      "action": "draft-original-unit-tests",
-      "skip_reason": null
-    },
-    {
-      "id": "test_omarchy_debug_status.DebugStatusStaleness.test_patch_gates_pair_button_on_availability",
-      "action": "draft-original-unit-tests",
-      "skip_reason": null
-    },
-    {
-      "id": "test_omarchy_debug_status.DebugStatusStaleness.test_stale_status_is_unavailable_with_no_actions",
-      "action": "draft-original-unit-tests",
-      "skip_reason": null
     }
   ],
   "reports": [
