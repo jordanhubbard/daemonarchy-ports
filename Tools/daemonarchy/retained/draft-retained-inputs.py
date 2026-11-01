@@ -39,21 +39,27 @@ PROFILE = HERE + "/profile.draft.json"
 POLICY = HERE + "/test-policy.draft.json"
 TARGET = "freebsd"
 EXCLUDED_TOP = {".git", ".literate", "literate.project.json", "retained-out"}
-TEST_FILES = (
-    "Tools/daemonarchy/test_observe_unit_inputs.py",
-    "Tools/daemonarchy/test_observe_unit_inputs_native.py",
-    "Tools/daemonarchy/test_omarchy_debug_status.py",
-)
+# Only the portable suite the repository's CI runs verbatim
+# (.github/workflows/producer-inputs-native.yml); the native/hosted-VM step and
+# test_omarchy_debug_status.py are not part of this draft's inventory.
+TEST_FILES = ("Tools/daemonarchy/test_observe_unit_inputs.py",)
+REPORT_TOOL = HERE + "/unittest-report.py"
+RELEASE = "literate.release.json"
+ORIGINS = HERE + "/origins.draft.list"
 
 
 def role_of(path: str) -> str:
     if path.startswith("sdk/"):
         return "toolchain"
+    if path.startswith("deps/"):
+        return "dependency"
+    if path == RELEASE:
+        return "release-policy"
     if path == POLICY:
         return "test-policy"
-    if path == PROFILE or path == "Makefile" or path.startswith("Mk/"):
+    if path in (PROFILE, ORIGINS, "Makefile") or path.startswith("Mk/"):
         return "build-definition"
-    if path in TEST_FILES or path == "Tools/daemonarchy/check-arch-deps.sh":
+    if path in TEST_FILES or path == REPORT_TOOL:
         return "test-definition"
     if path.startswith("docs/") or path.endswith(".md") and "/" not in path:
         return "docs-definition"
@@ -143,10 +149,7 @@ def main():
         return {"name": name, "path": m.path, "identity": "sha256:" + m.sha256}
 
     worker = ExecutionWorker("local", ExecutionWorkerKind.LOCAL, target_profile=TARGET)
-    empty = canonical_identity({"schema": "literate-ai/retained-role-closure@1",
-        "roles": ["dependency"], "members": [], "tree_policy": tree.to_dict()})
-    # Placeholder only: literate.release.json does not exist in this repository.
-    release_placeholder = ContentIdentity.parse_uri("sha256:" + hashlib.sha256(b"").hexdigest())
+    release_member = next(m for m in members if m.path == RELEASE)
     policy_member = next(m for m in members if m.path == POLICY)
     profile = {
         "schema": "literate-ai/retained-project-profile@1",
@@ -154,27 +157,38 @@ def main():
         "target": TARGET,
         "worker_identity": worker.identity.uri,
         "toolchain_identity": provisional.role_identity({"sdk", "toolchain"}).uri,
-        "dependency_identity": empty.uri,
+        "dependency_identity": provisional.role_identity({"dependency"}).uri,
         "test_policy_identity": "sha256:" + policy_member.sha256,
-        "release_policy_identity": release_placeholder.uri,
-        "tools": [tool("python3.12"), tool("make"), tool("true")],
+        "release_policy_identity": "sha256:" + release_member.sha256,
+        "tools": [tool("python3.12"), tool("poudriere"), tool("true")],
         "actions": [
-            {"id": "draft-unknown-build", "stage": "build", "tool": "true",
-             "argv": ["sdk/bin/true"], "requires": [],
-             "inventory": ["UNKNOWN-per-origin-build-actions"],
-             "outputs": ["retained-out/build"], "timeout_seconds": 3600},
+            # Grounded: daemonarchy HACKING.md "Build the packages" step 4 gives
+            # `poudriere bulk -j 16amd64 -p omarchyiso -b latest -t -f <list>`; the
+            # origin is the first closure named in docs/user/ports-units.md.  The
+            # jail and tree names are that document's examples (UNKNOWN on mudflap).
+            {"id": "draft-poudriere-build", "stage": "build", "tool": "poudriere",
+             "argv": ["sdk/bin/poudriere", "bulk", "-j", "16amd64", "-p", "omarchyiso",
+                      "-b", "latest", "-t", "-f", ORIGINS],
+             "requires": [], "inventory": ["archivers/liblz4"],
+             "outputs": ["retained-out/build"], "timeout_seconds": 86400},
+            # Grounded: CI runs this file verbatim; unittest-report.py only adds the
+            # report the policy names.
             {"id": "draft-original-unit-tests", "stage": "test", "tool": "python3.12",
-             "argv": ["sdk/bin/python3.12", "-m", "unittest", "discover", "-s",
-                      "Tools/daemonarchy", "-p", "test_*.py"],
-             "requires": ["draft-unknown-build"], "inventory": list(cases),
+             "argv": ["sdk/bin/python3.12", REPORT_TOOL, "--test-file", TEST_FILES[0],
+                      "--output", "retained-out/tests/unit-report.json"],
+             "requires": ["draft-poudriere-build"], "inventory": list(cases),
              "outputs": ["retained-out/tests"], "timeout_seconds": 3600},
+            # UNKNOWN: neither the repository nor its docs define a ports docs build
+            # or check; `true` is an explicit placeholder, not a result.
             {"id": "draft-unknown-docs", "stage": "docs", "tool": "true",
-             "argv": ["sdk/bin/true"], "requires": ["draft-unknown-build"],
-             "inventory": ["UNKNOWN-docs-actions"],
+             "argv": ["sdk/bin/true"], "requires": ["draft-poudriere-build"],
+             "inventory": ["UNKNOWN-ports-docs-action"],
              "outputs": ["retained-out/docs"], "timeout_seconds": 3600},
+            # UNKNOWN: independent sealed-product acceptance is open per
+            # docs/user/ports-units.md; no acceptance policy exists.
             {"id": "draft-unknown-accept", "stage": "accept", "tool": "true",
              "argv": ["sdk/bin/true"],
-             "requires": ["draft-unknown-build", "draft-original-unit-tests",
+             "requires": ["draft-poudriere-build", "draft-original-unit-tests",
                           "draft-unknown-docs"],
              "inventory": ["UNKNOWN-independent-acceptance"],
              "outputs": ["retained-out/accept"], "timeout_seconds": 3600},
