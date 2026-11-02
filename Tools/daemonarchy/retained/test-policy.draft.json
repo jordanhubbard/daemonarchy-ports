@@ -86,7 +86,7 @@
   "reports": [
     {
       "action": "draft-original-unit-tests",
-      "path": "retained-out/tests/unit-report.json"
+      "path": "tests/unit-report.json"
     }
   ]
 }
