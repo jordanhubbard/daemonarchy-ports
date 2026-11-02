@@ -3,7 +3,7 @@
 """DRAFT generator for the daemonarchy-ports retained-project manifest and profile.
 
 Run with the Literate AI runtime's interpreter (it imports literate_ai) from the
-project root, after staging the draft toolchain under ./sdk/bin (untracked):
+project root, after closure-inventory.py and stage-closure.py have produced the untracked ./closure:
 
     litai-venv/bin/python Tools/daemonarchy/retained/draft-retained-inputs.py \
         --manifest-out /abs/path/outside/tree/manifest.draft.json
@@ -11,11 +11,12 @@ project root, after staging the draft toolchain under ./sdk/bin (untracked):
 It writes the two tracked draft authority files next to itself (profile and test
 policy) and the full inventory manifest (about 180,000 members, NOT tracked) to
 --manifest-out.  It reads, hashes and lists; it executes nothing from the tree and
-asserts no build, test or acceptance result.  See DRAFT.md for every unknown.
+asserts no build, test or acceptance result.  See PROVENANCE.md for every unknown.
 """
 import argparse
 import ast
 import hashlib
+import importlib.util
 import json
 import os
 import stat
@@ -46,18 +47,25 @@ TEST_FILES = ("Tools/daemonarchy/test_observe_unit_inputs.py",)
 REPORT_TOOL = HERE + "/unittest-report.py"
 RELEASE = "literate.release.json"
 ORIGINS = HERE + "/origins.draft.list"
+CLOSURE = HERE + "/closure-inventory.json"
+TC = "closure/toolchain/bin/"
+JAIL, PTREE = "16r2303b36", "retained"   # bulk.env; poudriere names the package dir JAIL-PTREE
+DOC_INCLUDE = ("docs/**/*.md", "*.md", "Tools/**/*.md")
+BUILD_AUX = (HERE + "/run-bulk.sh", HERE + "/bulk.env", HERE + "/ambient-preflight.py",
+             HERE + "/accept-packages.py", HERE + "/closure-inventory.json",
+             HERE + "/closure-spec.json", HERE + "/docs-tree-check.py")
 
 
 def role_of(path: str) -> str:
-    if path.startswith("sdk/"):
+    if path.startswith("closure/toolchain/"):
         return "toolchain"
-    if path.startswith("deps/"):
+    if path.startswith("closure/dependency/"):
         return "dependency"
     if path == RELEASE:
         return "release-policy"
     if path == POLICY:
         return "test-policy"
-    if path in (PROFILE, ORIGINS, "Makefile") or path.startswith("Mk/"):
+    if path in (PROFILE, ORIGINS, "Makefile") or path in BUILD_AUX or path.startswith("Mk/"):
         return "build-definition"
     if path in TEST_FILES or path == REPORT_TOOL:
         return "test-definition"
@@ -115,6 +123,20 @@ def test_cases():
     return tuple(sorted(set(cases)))
 
 
+def doc_files(root: Path):
+    spec = importlib.util.spec_from_file_location("docs_tree_check", root / HERE / "docs-tree-check.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    found = []
+    for base, dirs, names in os.walk(root):
+        dirs[:] = sorted(d for d in dirs if d not in (".git", "_build", "closure", "retained-out"))
+        for n in sorted(names):
+            rel = os.path.relpath(os.path.join(base, n), root)
+            if module.matches(rel, DOC_INCLUDE):
+                found.append(rel)
+    return found
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--manifest-out", required=True)
@@ -122,6 +144,9 @@ def main():
     root = Path.cwd().resolve()
     roots = tuple(sorted(n for n in os.listdir(root) if n not in EXCLUDED_TOP))
     definition = ProjectConfigurationStore(root).read().definition
+    closure = json.loads((root / CLOSURE).read_text())
+    if closure["problems"]:
+        raise SystemExit("closure inventory has unresolved problems")
 
     # 1. test policy: statically collected case names only; outcomes unknown.
     cases = test_cases()
@@ -131,7 +156,7 @@ def main():
         "cases": [{"id": c, "action": "draft-original-unit-tests", "skip_reason": None}
                   for c in cases],
         "reports": [{"action": "draft-original-unit-tests",
-                     "path": "retained-out/tests/unit-report.json"}],
+                     "path": "tests/unit-report.json"}],
     })
     (root / POLICY).write_text(json.dumps(policy.to_dict(), indent=2) + "\n")
 
@@ -142,11 +167,16 @@ def main():
     profile_stub.write_text("{}\n")
     members, dirs = inventory(root, roots)
     provisional = RetainedProjectManifest(roots, members, limits, dirs, (), tree)
-    tool_members = {m.path: m for m in members if m.role == "toolchain"}
+    by_path = {m.path: m for m in members}
 
     def tool(name):
-        m = tool_members["sdk/bin/" + name]
+        m = by_path[TC + name]
         return {"name": name, "path": m.path, "identity": "sha256:" + m.sha256}
+
+    py = TC + "python3.12"
+    docs_files = doc_files(root)
+    ambient_items = ["ambient:" + a["name"] for a in closure["ambient"]]
+    origins = [l.strip() for l in (root / ORIGINS).read_text().splitlines() if l.strip()]
 
     worker = ExecutionWorker("local", ExecutionWorkerKind.LOCAL, target_profile=TARGET)
     release_member = next(m for m in members if m.path == RELEASE)
@@ -160,40 +190,52 @@ def main():
         "dependency_identity": provisional.role_identity({"dependency"}).uri,
         "test_policy_identity": "sha256:" + policy_member.sha256,
         "release_policy_identity": "sha256:" + release_member.sha256,
-        "tools": [tool("python3.12"), tool("poudriere"), tool("true")],
+        "tools": [tool(t["name"]) for t in closure["tools"] if t["role"] == "toolchain"],
+        "runtime_library_paths": ["closure/toolchain/lib", "closure/dependency/lib"],
         "actions": [
-            # Grounded: daemonarchy HACKING.md "Build the packages" step 4 gives
-            # `poudriere bulk -j 16amd64 -p omarchyiso -b latest -t -f <list>`; the
-            # origin is the first closure named in docs/user/ports-units.md.  The
-            # jail and tree names are that document's examples (UNKNOWN on mudflap).
-            {"id": "draft-poudriere-build", "stage": "build", "tool": "poudriere",
-             "argv": ["sdk/bin/poudriere", "bulk", "-j", "16amd64", "-p", "omarchyiso",
-                      "-b", "latest", "-t", "-f", ORIGINS],
-             "requires": [], "inventory": ["archivers/liblz4"],
-             "outputs": ["retained-out/build"], "timeout_seconds": 86400},
-            # Grounded: CI runs this file verbatim; unittest-report.py only adds the
-            # report the policy names.
+            # Re-observes the ambient host inputs (registry, build-jail anchors, git helper
+            # directories, dynamic linker) against closure-inventory.json.  Read-only.
+            {"id": "draft-ambient-preflight", "stage": "stage", "tool": "python3.12",
+             "argv": [py, "-B", HERE + "/ambient-preflight.py", "--inventory", CLOSURE,
+                      "--output", "{output_root}/preflight/ambient.json"],
+             "requires": [], "inventory": ambient_items, "outputs": ["preflight"],
+             "timeout_seconds": 3600},
+            # `poudriere bulk -j JAIL -p PTREE -b latest -t -f <list>` (daemonarchy
+            # HACKING.md "Build the packages" step 4) through run-bulk.sh, which maps the
+            # registry, data directory and ports tree onto the run (see PROVENANCE.md).
+            # Root is required.  Origin: the first closure in docs/user/ports-units.md.
+            {"id": "draft-poudriere-build", "stage": "build", "tool": "sh",
+             "argv": [TC + "sh", HERE + "/run-bulk.sh", "{output_root}/build"],
+             "requires": ["draft-ambient-preflight"], "inventory": list(origins),
+             "outputs": ["build"], "timeout_seconds": 86400},
+            # CI (producer-inputs-native.yml) runs this file verbatim; unittest-report.py
+            # only adds the report the policy names.  test needs `git` (captured).
             {"id": "draft-original-unit-tests", "stage": "test", "tool": "python3.12",
-             "argv": ["sdk/bin/python3.12", REPORT_TOOL, "--test-file", TEST_FILES[0],
-                      "--output", "retained-out/tests/unit-report.json"],
+             "argv": [py, "-B", REPORT_TOOL, "--test-file", TEST_FILES[0],
+                      "--output", "{output_root}/tests/unit-report.json"],
              "requires": ["draft-poudriere-build"], "inventory": list(cases),
-             "outputs": ["retained-out/tests"], "timeout_seconds": 3600},
-            # UNKNOWN: neither the repository nor its docs define a ports docs build
-            # or check; `true` is an explicit placeholder, not a result.
-            {"id": "draft-unknown-docs", "stage": "docs", "tool": "true",
-             "argv": ["sdk/bin/true"], "requires": ["draft-poudriere-build"],
-             "inventory": ["UNKNOWN-ports-docs-action"],
-             "outputs": ["retained-out/docs"], "timeout_seconds": 3600},
-            # UNKNOWN: independent sealed-product acceptance is open per
-            # docs/user/ports-units.md; no acceptance policy exists.
-            {"id": "draft-unknown-accept", "stage": "accept", "tool": "true",
-             "argv": ["sdk/bin/true"],
-             "requires": ["draft-poudriere-build", "draft-original-unit-tests",
-                          "draft-unknown-docs"],
-             "inventory": ["UNKNOWN-independent-acceptance"],
-             "outputs": ["retained-out/accept"], "timeout_seconds": 3600},
+             "outputs": ["tests"], "timeout_seconds": 3600},
+            # Whole-tree check of the project-authored Markdown (docs/, root, Tools/).
+            # Port Makefiles, pkg-descr files and the Mk/ framework have no docs check.
+            {"id": "draft-docs-tree", "stage": "docs", "tool": "python3.12",
+             "argv": [py, "-B", HERE + "/docs-tree-check.py", "--root", "."]
+                     + [a for p in DOC_INCLUDE for a in ("--include", p)]
+                     + ["--output", "{output_root}/docs-tree/report.json"],
+             "requires": ["draft-poudriere-build"],
+             "inventory": ["docs-tree:" + f for f in docs_files],
+             "outputs": ["docs-tree"], "timeout_seconds": 3600},
+            # STATIC package acceptance by a verifier separate from poudriere.  Installation
+            # and the ports' own test results are not examined (UNKNOWN).
+            {"id": "draft-accept-packages", "stage": "accept", "tool": "python3.12",
+             "argv": [py, "-B", HERE + "/accept-packages.py", "--packages",
+                      "{output_root}/build/poudriere-data/packages/%s-%s" % (JAIL, PTREE),
+                      "--origins", ORIGINS, "--output", "{output_root}/acceptance/packages.json"],
+             "requires": ["draft-ambient-preflight", "draft-poudriere-build",
+                          "draft-original-unit-tests", "draft-docs-tree"],
+             "inventory": ["package:" + o for o in origins],
+             "outputs": ["acceptance"], "timeout_seconds": 3600},
         ],
-        "package_inventory": ["retained-out/build"],
+        "package_inventory": ["build"],
     }
     RetainedProjectProfile.from_dict(profile)  # schema validation only
     profile_stub.write_text(json.dumps(profile, indent=2) + "\n")
@@ -207,7 +249,7 @@ def main():
         "roots": len(roots), "members": len(members), "directories": len(dirs),
         "symlinks": sum(1 for m in members if m.symlink_target is not None),
         "total_bytes": sum(m.size for m in members),
-        "test_cases": len(cases),
+        "test_cases": len(cases), "tools": len(profile["tools"]), "doc_files": len(docs_files),
         "manifest_identity": manifest.identity.uri,
         "profile_identity": RetainedProjectProfile.from_dict(profile).identity.uri,
         "worker_identity": worker.identity.uri,
