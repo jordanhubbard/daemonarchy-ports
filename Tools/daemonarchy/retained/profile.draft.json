@@ -1,0 +1,134 @@
+{
+  "schema": "literate-ai/retained-project-profile@1",
+  "authority_mode": "retained-project",
+  "target": "freebsd",
+  "worker_identity": "sha256:29d0ce36b8f96325b660670b5e4a2e99bd42e705472c2b4594f6955e04fe2171",
+  "toolchain_identity": "sha256:c828e0e76d5d28ce708349400d73a6c78e126e258210d97fd8f2d5c686ec85f4",
+  "dependency_identity": "sha256:5d0d12eaf863a83fa8c8464529cb52a74085a5aa63e524e49379f556275e0b93",
+  "test_policy_identity": "sha256:8397a85ef8f1c43cc5cad17e46cbb31ec660ab4f3ca98ae452a0ee85ace54eed",
+  "release_policy_identity": "sha256:f8a8f1fceec3f94bd24273c5707bab5a53c4543512d2a31c195a0a15dff9b7c3",
+  "tools": [
+    {
+      "name": "python3.12",
+      "path": "sdk/bin/python3.12",
+      "identity": "sha256:05587422e95c177bedf8622ec5d6771150412a652a3c38417d45e6c00dbd91b7"
+    },
+    {
+      "name": "poudriere",
+      "path": "sdk/bin/poudriere",
+      "identity": "sha256:1329a1bd99616c13de51285a95061aabf2fccd7dfd09e8001b1c6b22624242c9"
+    },
+    {
+      "name": "true",
+      "path": "sdk/bin/true",
+      "identity": "sha256:bcc1864368dcae63c9367cbb3bcf34eec558b18fe344b24e7cab63cc11f4ed7b"
+    }
+  ],
+  "actions": [
+    {
+      "id": "draft-poudriere-build",
+      "stage": "build",
+      "tool": "poudriere",
+      "argv": [
+        "sdk/bin/poudriere",
+        "bulk",
+        "-j",
+        "16amd64",
+        "-p",
+        "omarchyiso",
+        "-b",
+        "latest",
+        "-t",
+        "-f",
+        "Tools/daemonarchy/retained/origins.draft.list"
+      ],
+      "requires": [],
+      "inventory": [
+        "archivers/liblz4"
+      ],
+      "outputs": [
+        "retained-out/build"
+      ],
+      "timeout_seconds": 86400
+    },
+    {
+      "id": "draft-original-unit-tests",
+      "stage": "test",
+      "tool": "python3.12",
+      "argv": [
+        "sdk/bin/python3.12",
+        "Tools/daemonarchy/retained/unittest-report.py",
+        "--test-file",
+        "Tools/daemonarchy/test_observe_unit_inputs.py",
+        "--output",
+        "retained-out/tests/unit-report.json"
+      ],
+      "requires": [
+        "draft-poudriere-build"
+      ],
+      "inventory": [
+        "test_observe_unit_inputs.ObserverTests.test_acknowledgement_and_native_worker_are_required",
+        "test_observe_unit_inputs.ObserverTests.test_context_cannot_override_isolation_or_expand_shell",
+        "test_observe_unit_inputs.ObserverTests.test_deadline_reaps_own_process_and_preserves_partial_evidence",
+        "test_observe_unit_inputs.ObserverTests.test_empty_package_database_is_explicitly_diagnostic",
+        "test_observe_unit_inputs.ObserverTests.test_existing_evidence_is_never_overwritten",
+        "test_observe_unit_inputs.ObserverTests.test_flavored_dependency_and_target_are_preserved",
+        "test_observe_unit_inputs.ObserverTests.test_generated_package_file_is_an_explicit_gap",
+        "test_observe_unit_inputs.ObserverTests.test_incomplete_and_changed_options_are_retained_failures",
+        "test_observe_unit_inputs.ObserverTests.test_lib_depends_has_build_and_runtime_edges_and_input_bytes",
+        "test_observe_unit_inputs.ObserverTests.test_live_writable_or_changed_snapshot_cannot_be_adopted",
+        "test_observe_unit_inputs.ObserverTests.test_master_port_inputs_are_inventoried",
+        "test_observe_unit_inputs.ObserverTests.test_missing_dynamic_dependency_expression_refuses",
+        "test_observe_unit_inputs.ObserverTests.test_shared_input_mutation_refuses_before_evaluation",
+        "test_observe_unit_inputs.ObserverTests.test_snapshot_copies_selected_database_without_touching_original",
+        "test_observe_unit_inputs.ObserverTests.test_target_context_is_exact",
+        "test_observe_unit_inputs.ObserverTests.test_wrong_flavor_does_not_silently_select_default"
+      ],
+      "outputs": [
+        "retained-out/tests"
+      ],
+      "timeout_seconds": 3600
+    },
+    {
+      "id": "draft-unknown-docs",
+      "stage": "docs",
+      "tool": "true",
+      "argv": [
+        "sdk/bin/true"
+      ],
+      "requires": [
+        "draft-poudriere-build"
+      ],
+      "inventory": [
+        "UNKNOWN-ports-docs-action"
+      ],
+      "outputs": [
+        "retained-out/docs"
+      ],
+      "timeout_seconds": 3600
+    },
+    {
+      "id": "draft-unknown-accept",
+      "stage": "accept",
+      "tool": "true",
+      "argv": [
+        "sdk/bin/true"
+      ],
+      "requires": [
+        "draft-poudriere-build",
+        "draft-original-unit-tests",
+        "draft-unknown-docs"
+      ],
+      "inventory": [
+        "UNKNOWN-independent-acceptance"
+      ],
+      "outputs": [
+        "retained-out/accept"
+      ],
+      "timeout_seconds": 3600
+    }
+  ],
+  "package_inventory": [
+    "retained-out/build"
+  ]
+}

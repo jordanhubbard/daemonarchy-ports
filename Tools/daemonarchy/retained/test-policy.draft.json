@@ -1,0 +1,92 @@
+{
+  "schema": "literate-ai/retained-project-test-policy@1",
+  "project_policy_identity": "sha256:966919ad95981f7b4ffdc2033188bfbece5afd2b0706925073e9ec551fb67742",
+  "cases": [
+    {
+      "id": "test_observe_unit_inputs.ObserverTests.test_acknowledgement_and_native_worker_are_required",
+      "action": "draft-original-unit-tests",
+      "skip_reason": null
+    },
+    {
+      "id": "test_observe_unit_inputs.ObserverTests.test_context_cannot_override_isolation_or_expand_shell",
+      "action": "draft-original-unit-tests",
+      "skip_reason": null
+    },
+    {
+      "id": "test_observe_unit_inputs.ObserverTests.test_deadline_reaps_own_process_and_preserves_partial_evidence",
+      "action": "draft-original-unit-tests",
+      "skip_reason": null
+    },
+    {
+      "id": "test_observe_unit_inputs.ObserverTests.test_empty_package_database_is_explicitly_diagnostic",
+      "action": "draft-original-unit-tests",
+      "skip_reason": null
+    },
+    {
+      "id": "test_observe_unit_inputs.ObserverTests.test_existing_evidence_is_never_overwritten",
+      "action": "draft-original-unit-tests",
+      "skip_reason": null
+    },
+    {
+      "id": "test_observe_unit_inputs.ObserverTests.test_flavored_dependency_and_target_are_preserved",
+      "action": "draft-original-unit-tests",
+      "skip_reason": null
+    },
+    {
+      "id": "test_observe_unit_inputs.ObserverTests.test_generated_package_file_is_an_explicit_gap",
+      "action": "draft-original-unit-tests",
+      "skip_reason": null
+    },
+    {
+      "id": "test_observe_unit_inputs.ObserverTests.test_incomplete_and_changed_options_are_retained_failures",
+      "action": "draft-original-unit-tests",
+      "skip_reason": null
+    },
+    {
+      "id": "test_observe_unit_inputs.ObserverTests.test_lib_depends_has_build_and_runtime_edges_and_input_bytes",
+      "action": "draft-original-unit-tests",
+      "skip_reason": null
+    },
+    {
+      "id": "test_observe_unit_inputs.ObserverTests.test_live_writable_or_changed_snapshot_cannot_be_adopted",
+      "action": "draft-original-unit-tests",
+      "skip_reason": null
+    },
+    {
+      "id": "test_observe_unit_inputs.ObserverTests.test_master_port_inputs_are_inventoried",
+      "action": "draft-original-unit-tests",
+      "skip_reason": null
+    },
+    {
+      "id": "test_observe_unit_inputs.ObserverTests.test_missing_dynamic_dependency_expression_refuses",
+      "action": "draft-original-unit-tests",
+      "skip_reason": null
+    },
+    {
+      "id": "test_observe_unit_inputs.ObserverTests.test_shared_input_mutation_refuses_before_evaluation",
+      "action": "draft-original-unit-tests",
+      "skip_reason": null
+    },
+    {
+      "id": "test_observe_unit_inputs.ObserverTests.test_snapshot_copies_selected_database_without_touching_original",
+      "action": "draft-original-unit-tests",
+      "skip_reason": null
+    },
+    {
+      "id": "test_observe_unit_inputs.ObserverTests.test_target_context_is_exact",
+      "action": "draft-original-unit-tests",
+      "skip_reason": null
+    },
+    {
+      "id": "test_observe_unit_inputs.ObserverTests.test_wrong_flavor_does_not_silently_select_default",
+      "action": "draft-original-unit-tests",
+      "skip_reason": null
+    }
+  ],
+  "reports": [
+    {
+      "action": "draft-original-unit-tests",
+      "path": "retained-out/tests/unit-report.json"
+    }
+  ]
+}
