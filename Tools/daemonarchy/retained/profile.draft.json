@@ -7,6 +7,7 @@
   "dependency_identity": "sha256:28d21759abe8d14290b49efda13f10b1bc6f9185f1046bfbb27f699fcc00fc6e",
   "test_policy_identity": "sha256:9f43f574ee56d787a76db4c3475574dbc543c5ce37836f6fe377edce4409aedc",
   "release_policy_identity": "sha256:f8a8f1fceec3f94bd24273c5707bab5a53c4543512d2a31c195a0a15dff9b7c3",
+  "acceptance_policy_identity": "sha256:b5433bb3ee008d5572e99bad5ab7afa2beb4454e86d323e1f3701c2b8c9744bb",
   "tools": [
     {
       "name": "[",

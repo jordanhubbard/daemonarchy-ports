@@ -39,7 +39,8 @@ HERE = "Tools/daemonarchy/retained"
 PROFILE = HERE + "/profile.draft.json"
 POLICY = HERE + "/test-policy.draft.json"
 TARGET = "freebsd"
-EXCLUDED_TOP = {".git", ".literate", "literate.project.json", "retained-out", "_build"}  # _build: litai cache, git-ignored
+EXCLUDED_TOP = {".git", ".literate", "literate.project.json", "retained-out", "_build",
+                "verification"}  # verification/: the withheld acceptance policy, never a manifest root  # _build: litai cache, git-ignored
 # Only the portable suite the repository's CI runs verbatim
 # (.github/workflows/producer-inputs-native.yml); the native/hosted-VM step and
 # test_omarchy_debug_status.py are not part of this draft's inventory.
@@ -53,7 +54,8 @@ JAIL, PTREE = "16r2303b36", "retained"   # bulk.env; poudriere names the package
 DOC_INCLUDE = ("docs/**/*.md", "*.md", "Tools/**/*.md")
 BUILD_AUX = (HERE + "/run-bulk.sh", HERE + "/bulk.env", HERE + "/ambient-preflight.py",
              HERE + "/accept-packages.py", HERE + "/closure-inventory.json",
-             HERE + "/closure-spec.json", HERE + "/docs-tree-check.py")
+             HERE + "/closure-spec.json", HERE + "/docs-tree-check.py",
+             HERE + "/daemonarchy-verify.sh")
 
 
 def role_of(path: str) -> str:
@@ -180,6 +182,9 @@ def main():
 
     worker = ExecutionWorker("local", ExecutionWorkerKind.LOCAL, target_profile=TARGET)
     release_member = next(m for m in members if m.path == RELEASE)
+    acceptance_path = root / "verification" / "retained-project-acceptance.json"
+    acceptance_identity = ("sha256:" + hashlib.sha256(acceptance_path.read_bytes()).hexdigest()
+                           if acceptance_path.is_file() else None)
     policy_member = next(m for m in members if m.path == POLICY)
     profile = {
         "schema": "literate-ai/retained-project-profile@1",
@@ -190,6 +195,7 @@ def main():
         "dependency_identity": provisional.role_identity({"dependency"}).uri,
         "test_policy_identity": "sha256:" + policy_member.sha256,
         "release_policy_identity": "sha256:" + release_member.sha256,
+        **({"acceptance_policy_identity": acceptance_identity} if acceptance_identity else {}),
         "tools": [tool(t["name"]) for t in closure["tools"] if t["role"] == "toolchain"],
         "runtime_library_paths": ["closure/toolchain/lib", "closure/dependency/lib"],
         "actions": [
