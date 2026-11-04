@@ -39,7 +39,7 @@ HERE = "Tools/daemonarchy/retained"
 PROFILE = HERE + "/profile.draft.json"
 POLICY = HERE + "/test-policy.draft.json"
 TARGET = "freebsd"
-EXCLUDED_TOP = {".git", ".literate", "literate.project.json", "retained-out", "_build",
+EXCLUDED_TOP = {".git", ".literate", "literate.project.json", "retained-out", "_build", ".litai-cache-locks", "generated",
                 "verification"}  # verification/: the withheld acceptance policy, never a manifest root  # _build: litai cache, git-ignored
 # Only the portable suite the repository's CI runs verbatim
 # (.github/workflows/producer-inputs-native.yml); the native/hosted-VM step and
@@ -175,6 +175,8 @@ def main():
         m = by_path[TC + name]
         return {"name": name, "path": m.path, "identity": "sha256:" + m.sha256}
 
+    # Action argv holds only the arguments: the executor prefixes the action's tool binding.
+    IR = "{input_root}/"   # action paths into the frozen snapshot; cwd is the object root
     py = TC + "python3.12"
     docs_files = doc_files(root)
     ambient_items = ["ambient:" + a["name"] for a in closure["ambient"]]
@@ -196,13 +198,17 @@ def main():
         "test_policy_identity": "sha256:" + policy_member.sha256,
         "release_policy_identity": "sha256:" + release_member.sha256,
         **({"acceptance_policy_identity": acceptance_identity} if acceptance_identity else {}),
-        "tools": [tool(t["name"]) for t in closure["tools"] if t["role"] == "toolchain"],
+        # Only native (ELF) commands are profile tools: the dependency observer requires a native
+        # realization for each.  Captured shell scripts (poudriere, service) stay in the toolchain
+        # role of the manifest, pinned by sha256, and run under the captured sh.
+        "tools": [tool(t["name"]) for t in closure["tools"] if t["role"] == "toolchain"
+                  and open(root / (TC + t["name"]), "rb").read(4) == b"\x7fELF"],
         "runtime_library_paths": ["closure/toolchain/lib", "closure/dependency/lib"],
         "actions": [
             # Re-observes the ambient host inputs (registry, build-jail anchors, git helper
             # directories, dynamic linker) against closure-inventory.json.  Read-only.
             {"id": "draft-ambient-preflight", "stage": "stage", "tool": "python3.12",
-             "argv": [py, "-B", HERE + "/ambient-preflight.py", "--inventory", CLOSURE,
+             "argv": ["-B", IR + HERE + "/ambient-preflight.py", "--inventory", IR + CLOSURE,
                       "--output", "{output_root}/preflight/ambient.json"],
              "requires": [], "inventory": ambient_items, "outputs": ["preflight"],
              "timeout_seconds": 3600},
@@ -211,20 +217,20 @@ def main():
             # registry, data directory and ports tree onto the run (see PROVENANCE.md).
             # Root is required.  Origin: the first closure in docs/user/ports-units.md.
             {"id": "draft-poudriere-build", "stage": "build", "tool": "sh",
-             "argv": [TC + "sh", HERE + "/run-bulk.sh", "{output_root}/build"],
+             "argv": [IR + HERE + "/run-bulk.sh", "{output_root}/build"],
              "requires": ["draft-ambient-preflight"], "inventory": list(origins),
              "outputs": ["build"], "timeout_seconds": 86400},
             # CI (producer-inputs-native.yml) runs this file verbatim; unittest-report.py
             # only adds the report the policy names.  test needs `git` (captured).
             {"id": "draft-original-unit-tests", "stage": "test", "tool": "python3.12",
-             "argv": [py, "-B", REPORT_TOOL, "--test-file", TEST_FILES[0],
+             "argv": ["-B", IR + REPORT_TOOL, "--test-file", IR + TEST_FILES[0],
                       "--output", "{output_root}/tests/unit-report.json"],
              "requires": ["draft-poudriere-build"], "inventory": list(cases),
              "outputs": ["tests"], "timeout_seconds": 3600},
             # Whole-tree check of the project-authored Markdown (docs/, root, Tools/).
             # Port Makefiles, pkg-descr files and the Mk/ framework have no docs check.
             {"id": "draft-docs-tree", "stage": "docs", "tool": "python3.12",
-             "argv": [py, "-B", HERE + "/docs-tree-check.py", "--root", "."]
+             "argv": ["-B", IR + HERE + "/docs-tree-check.py", "--root", "{input_root}"]
                      + [a for p in DOC_INCLUDE for a in ("--include", p)]
                      + ["--output", "{output_root}/docs-tree/report.json"],
              "requires": ["draft-poudriere-build"],
@@ -233,9 +239,9 @@ def main():
             # STATIC package acceptance by a verifier separate from poudriere.  Installation
             # and the ports' own test results are not examined (UNKNOWN).
             {"id": "draft-accept-packages", "stage": "accept", "tool": "python3.12",
-             "argv": [py, "-B", HERE + "/accept-packages.py", "--packages",
+             "argv": ["-B", IR + HERE + "/accept-packages.py", "--packages",
                       "{output_root}/build/poudriere-data/packages/%s-%s" % (JAIL, PTREE),
-                      "--origins", ORIGINS, "--output", "{output_root}/acceptance/packages.json"],
+                      "--origins", IR + ORIGINS, "--output", "{output_root}/acceptance/packages.json"],
              "requires": ["draft-ambient-preflight", "draft-poudriere-build",
                           "draft-original-unit-tests", "draft-docs-tree"],
              "inventory": ["package:" + o for o in origins],

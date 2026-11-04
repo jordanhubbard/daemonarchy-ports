@@ -34,6 +34,23 @@ printf '%s\n' 'PACKAGE_FETCH_URL="https://pkg.FreeBSD.org/${ABI}"' >"$etc/poudri
 cd "$here"
 poudriere -e "$etc" ports -c -p "$PTREE" -m null -M "$here"
 poudriere -e "$etc" bulk -j "$JAIL" -p "$PTREE" -b latest -t -f "$here/$ORIGINS"
+# poudriere's navigation symlinks (latest, .latest, packages, logs/built/*, ...) chain through one
+# another and cannot be sealed as exports (a link target must be a direct member).  The repository
+# directory is made of links into .real_*/ (via .latest): move the real entries up into it, then drop
+# every remaining symlink.
+repo="$out/poudriere-data/packages/$JAIL-$PTREE"
+if [ -L "$repo/.latest" ]; then
+	real=$(realpath "$repo/.latest")
+	rm "$repo/.latest"
+	for e in "$real"/* "$real"/.[!.]*; do
+		[ -e "$e" ] || [ -L "$e" ] || continue
+		n=$(basename "$e")
+		[ ! -L "$repo/$n" ] || rm "$repo/$n"
+		mv "$e" "$repo/$n"
+	done
+	rmdir "$real"
+fi
+find "$out" -type l -exec rm {} +
 # Export the deterministic acceptance verifier with the build (the profile's package
 # inventory is this directory); the acceptance policy runs it against the sealed exports.
 install -m 0755 "$here/Tools/daemonarchy/retained/daemonarchy-verify.sh" "$out/daemonarchy-verify"
