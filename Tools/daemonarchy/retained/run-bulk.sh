@@ -9,7 +9,8 @@
 # the shared registry is never written, (b) points POUDRIERE_DATA and DISTFILES_CACHE at OUTDIR
 # (the profile passes {output_root}/build), so logs, caches and the built package set are the
 # sealed output, (c) registers the retained snapshot itself as ports tree PTREE (null method),
-# and (d) bulk-builds the origins in origins.list with `-b latest -t`.
+# (d) bulk-builds the origins in origins.list with `-b latest -t`, and (e) installs
+# daemonarchy-verify.sh into the build export, the executable the acceptance policy runs.
 #
 # poudriere needs root (jails, mounts); the wrapper refuses otherwise.  Nothing is signed.
 set -eu
@@ -32,4 +33,24 @@ sed -i '' -e "s|^POUDRIERE_DATA=.*|POUDRIERE_DATA=$out/poudriere-data|" \
 printf '%s\n' 'PACKAGE_FETCH_URL="https://pkg.FreeBSD.org/${ABI}"' >"$etc/poudriere.d/$PTREE-poudriere.conf"
 cd "$here"
 poudriere -e "$etc" ports -c -p "$PTREE" -m null -M "$here"
-exec poudriere -e "$etc" bulk -j "$JAIL" -p "$PTREE" -b latest -t -f "$here/$ORIGINS"
+poudriere -e "$etc" bulk -j "$JAIL" -p "$PTREE" -b latest -t -f "$here/$ORIGINS"
+# poudriere's navigation symlinks (latest, .latest, packages, logs/built/*, ...) chain through one
+# another and cannot be sealed as exports (a link target must be a direct member).  The repository
+# directory is made of links into .real_*/ (via .latest): move the real entries up into it, then drop
+# every remaining symlink.
+repo="$out/poudriere-data/packages/$JAIL-$PTREE"
+if [ -L "$repo/.latest" ]; then
+	real=$(realpath "$repo/.latest")
+	rm "$repo/.latest"
+	for e in "$real"/* "$real"/.[!.]*; do
+		[ -e "$e" ] || [ -L "$e" ] || continue
+		n=$(basename "$e")
+		[ ! -L "$repo/$n" ] || rm "$repo/$n"
+		mv "$e" "$repo/$n"
+	done
+	rmdir "$real"
+fi
+find "$out" -type l -exec rm {} +
+# Export the deterministic acceptance verifier with the build (the profile's package
+# inventory is this directory); the acceptance policy runs it against the sealed exports.
+install -m 0755 "$here/Tools/daemonarchy/retained/daemonarchy-verify.sh" "$out/daemonarchy-verify"

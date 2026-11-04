@@ -1,0 +1,22 @@
+{
+  "schema": "literate-ai/retained-project-acceptance-policy@1",
+  "component_locks": [
+    "sha256:6caab54bd5af3f42bd34f9a45ae831c323ae09b7aa3e1bdc0094fef2f3167ecb",
+    "sha256:91769c7a6338e31a9302468400ed6d5195ae19a5dddb5f1982b8812de032f282"
+  ],
+  "cases": [
+    {
+      "id": "package:archivers/liblz4",
+      "action": "draft-accept-packages",
+      "executable": "build/daemonarchy-verify",
+      "argv": [
+        "{output_root}/build"
+      ],
+      "stdin": "",
+      "expected_exit": 0,
+      "expected_stdout": "ZGFlbW9uYXJjaHktdmVyaWZ5IGFyY2hpdmVycy9saWJsejQgT0sgZXJyb3JzPTAK",
+      "expected_stderr": "",
+      "timeout_seconds": 300
+    }
+  ]
+}

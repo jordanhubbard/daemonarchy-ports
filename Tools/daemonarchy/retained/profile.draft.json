@@ -3,10 +3,11 @@
   "authority_mode": "retained-project",
   "target": "freebsd",
   "worker_identity": "sha256:29d0ce36b8f96325b660670b5e4a2e99bd42e705472c2b4594f6955e04fe2171",
-  "toolchain_identity": "sha256:8e84ad67a92803a118d1c7f0003fd798aef3866b75daf41db4b29cf2b932245d",
+  "toolchain_identity": "sha256:1af98d459c15e233401b20297181beea1df13c2bc06c6f74f4e9ba4453aa9366",
   "dependency_identity": "sha256:28d21759abe8d14290b49efda13f10b1bc6f9185f1046bfbb27f699fcc00fc6e",
   "test_policy_identity": "sha256:9f43f574ee56d787a76db4c3475574dbc543c5ce37836f6fe377edce4409aedc",
   "release_policy_identity": "sha256:f8a8f1fceec3f94bd24273c5707bab5a53c4543512d2a31c195a0a15dff9b7c3",
+  "acceptance_policy_identity": "sha256:b5433bb3ee008d5572e99bad5ab7afa2beb4454e86d323e1f3701c2b8c9744bb",
   "tools": [
     {
       "name": "[",
@@ -309,11 +310,6 @@
       "identity": "sha256:6aa088572c7f7a6f7d1149bc9e2f2efc1d4f059ed490cd79dbf15afe277ca174"
     },
     {
-      "name": "poudriere",
-      "path": "closure/toolchain/bin/poudriere",
-      "identity": "sha256:1329a1bd99616c13de51285a95061aabf2fccd7dfd09e8001b1c6b22624242c9"
-    },
-    {
       "name": "printf",
       "path": "closure/toolchain/bin/printf",
       "identity": "sha256:5ea01a7a6dd5f4f972d344c010cd2e2bf33b2e3b9b940339bed8714b544131b5"
@@ -357,11 +353,6 @@
       "name": "sed",
       "path": "closure/toolchain/bin/sed",
       "identity": "sha256:6ceda4eb9ba8944eaedfe4dc8337537e1a86d7f9ecb56c4c3f1afd460dcb3c0b"
-    },
-    {
-      "name": "service",
-      "path": "closure/toolchain/bin/service",
-      "identity": "sha256:144174bc3d03109787cd7ea3a3f8f21f350a19b968bf584bf479c874012b5995"
     },
     {
       "name": "sh",
@@ -489,11 +480,10 @@
       "stage": "stage",
       "tool": "python3.12",
       "argv": [
-        "closure/toolchain/bin/python3.12",
         "-B",
-        "Tools/daemonarchy/retained/ambient-preflight.py",
+        "{input_root}/Tools/daemonarchy/retained/ambient-preflight.py",
         "--inventory",
-        "Tools/daemonarchy/retained/closure-inventory.json",
+        "{input_root}/Tools/daemonarchy/retained/closure-inventory.json",
         "--output",
         "{output_root}/preflight/ambient.json"
       ],
@@ -518,8 +508,7 @@
       "stage": "build",
       "tool": "sh",
       "argv": [
-        "closure/toolchain/bin/sh",
-        "Tools/daemonarchy/retained/run-bulk.sh",
+        "{input_root}/Tools/daemonarchy/retained/run-bulk.sh",
         "{output_root}/build"
       ],
       "requires": [
@@ -538,11 +527,10 @@
       "stage": "test",
       "tool": "python3.12",
       "argv": [
-        "closure/toolchain/bin/python3.12",
         "-B",
-        "Tools/daemonarchy/retained/unittest-report.py",
+        "{input_root}/Tools/daemonarchy/retained/unittest-report.py",
         "--test-file",
-        "Tools/daemonarchy/test_observe_unit_inputs.py",
+        "{input_root}/Tools/daemonarchy/test_observe_unit_inputs.py",
         "--output",
         "{output_root}/tests/unit-report.json"
       ],
@@ -577,11 +565,10 @@
       "stage": "docs",
       "tool": "python3.12",
       "argv": [
-        "closure/toolchain/bin/python3.12",
         "-B",
-        "Tools/daemonarchy/retained/docs-tree-check.py",
+        "{input_root}/Tools/daemonarchy/retained/docs-tree-check.py",
         "--root",
-        ".",
+        "{input_root}",
         "--include",
         "docs/**/*.md",
         "--include",
@@ -625,13 +612,12 @@
       "stage": "accept",
       "tool": "python3.12",
       "argv": [
-        "closure/toolchain/bin/python3.12",
         "-B",
-        "Tools/daemonarchy/retained/accept-packages.py",
+        "{input_root}/Tools/daemonarchy/retained/accept-packages.py",
         "--packages",
         "{output_root}/build/poudriere-data/packages/16r2303b36-retained",
         "--origins",
-        "Tools/daemonarchy/retained/origins.draft.list",
+        "{input_root}/Tools/daemonarchy/retained/origins.draft.list",
         "--output",
         "{output_root}/acceptance/packages.json"
       ],
