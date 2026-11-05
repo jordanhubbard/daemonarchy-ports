@@ -2,7 +2,7 @@ PORTNAME=	daemonarchy
 # Daemonarchy's own release number, not Omarchy's (x11-wm/omarchy) or
 # FreeBSD's. The epoch moves it past the 4.0.4 it used to borrow.
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.1
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 
@@ -10,8 +10,12 @@ MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Omarchy desktop on FreeBSD, with Daemonarchy branding and applications
 WWW=		https://github.com/jordanhubbard/daemonarchy
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+# Daemonarchy-original files are BSD-2-Clause; omarchy-menu.jsonc keeps MIT
+# (see licenses/README.md in daemonarchy-desktop).
+LICENSE=	BSD2CLAUSE MIT
+LICENSE_COMB=	multi
+LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/licenses/BSD-2-Clause.txt
+LICENSE_FILE_MIT=	${WRKSRC}/licenses/MIT.txt
 
 BUILD_DEPENDS=	magick:graphics/ImageMagick7 \
 		rsvg-convert:graphics/librsvg2-rust
@@ -66,9 +70,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jordanhubbard
 GH_PROJECT=	daemonarchy-desktop
 # Pin the reviewed commit of the desktop layer. DISTVERSION is the Daemonarchy release
-# this package ships in (it is what /usr/local/share/daemonarchy/version says); the
-# layer itself is unchanged since 1.4.1, so the same commit and tarball are used.
-GH_TAGNAME=	ec2a00824ec95b342c0c095657ac725c56f0528b
+# this package ships in (it is what /usr/local/share/daemonarchy/version says). 1.5.1 moves
+# the layer to the commit whose Packages menu opens daemonarchy-pkg (daemonarchy-desktop #1)
+# and that carries the BSD-2-Clause relicensing (daemonarchy-desktop #2).
+GH_TAGNAME=	85322f51eae1910976a8703724493d30ab7b9bfb
 
 NO_ARCH=	yes
 
