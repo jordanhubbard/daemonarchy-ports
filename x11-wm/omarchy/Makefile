@@ -54,6 +54,7 @@ USE_PERL5=	run
 
 SHEBANG_FILES=	bin/* config/omarchy/hooks/*/* default/systemd/system-sleep/* \
 		install/user/first-run/* shell/plugins/*/*.sh shell/services/*.sh
+SHEBANG_GLOB=	*.sh
 
 FONTNAME=	omarchy
 SUB_FILES=	pkg-message
