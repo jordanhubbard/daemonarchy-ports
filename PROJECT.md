@@ -49,8 +49,10 @@ The [active queue](docs/roadmap/active-work.md) owns PORT-UNIT-001.
 The [unit guide](docs/user/ports-units.md) defines the first closure and the
 [acceptance map](docs/architecture/design-traceability.md) keeps outstanding
 requirements visible. All implementation bytes stay in their original places.
-Work targets the owned `daemonarchy` integration branch, with upstream `main`
-tracked separately. The repository's GitHub issue tracker is disabled; the
+Work targets the owned `main` integration branch, selected by the product's
+release checkout catalog and HACKING.md. Track FreeBSD upstream `main`
+separately; the older owned `daemonarchy` branch is not the release target.
+The repository's GitHub issue tracker is disabled; the
 Daemonarchy product queue tracks cross-repository work.
 
 ## Completed work
