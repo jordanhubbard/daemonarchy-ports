@@ -3105,3 +3105,6 @@ bin/omarchy-update-boot
 bin/omarchy-update-pacman
 bin/omarchy-webapp-window-class
 bin/omarchy-windows-key
+%%DATADIR%%/freebsd/patches/patch-bin_omarchy-hw-platform
+%%DATADIR%%/freebsd/patches/patch-bin_omarchy-hw-aarch64
+%%DATADIR%%/freebsd/patches/patch-bin_omarchy-hw-x86
