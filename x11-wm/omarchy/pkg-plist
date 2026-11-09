@@ -502,7 +502,6 @@ libexec/omarchy/gnubin/hostid
 libexec/omarchy/gnubin/id
 libexec/omarchy/gnubin/install
 libexec/omarchy/gnubin/join
-libexec/omarchy/gnubin/kill
 libexec/omarchy/gnubin/link
 libexec/omarchy/gnubin/ln
 libexec/omarchy/gnubin/logname
@@ -563,7 +562,6 @@ libexec/omarchy/gnubin/uname
 libexec/omarchy/gnubin/unexpand
 libexec/omarchy/gnubin/uniq
 libexec/omarchy/gnubin/unlink
-libexec/omarchy/gnubin/uptime
 libexec/omarchy/gnubin/users
 libexec/omarchy/gnubin/vdir
 libexec/omarchy/gnubin/wc

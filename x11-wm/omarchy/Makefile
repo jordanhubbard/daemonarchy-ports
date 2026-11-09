@@ -1,7 +1,7 @@
 PORTNAME=	omarchy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -63,15 +63,17 @@ SUB_LIST=	DATADIR=${DATADIR} PREFIX=${PREFIX}
 
 # GNU userland that Omarchy's scripts are written against, linked under their
 # plain names into a private directory on the scripts' PATH.
+# FreeBSD coreutils does not install gkill/guptime. Omarchy's signal operations
+# use the shell builtin and its FreeBSD uptime display uses native boot-time data.
 GNU_COREUTILS=	b2sum base32 base64 basename basenc cat chgrp chmod chown \
 		chroot cksum comm cp csplit cut date dd df dir dircolors dirname \
 		du echo env expand expr factor false fmt fold groups head hostid \
-		id install join kill link ln logname ls md5sum mkdir mkfifo mknod \
+		id install join link ln logname ls md5sum mkdir mkfifo mknod \
 		mktemp mv nice nl nohup nproc numfmt od paste pathchk pinky pr \
 		printenv printf ptx pwd readlink realpath rm rmdir seq sha1sum \
 		sha224sum sha256sum sha384sum sha512sum shred shuf sleep sort \
 		split stdbuf stty sum sync tac tail tee test timeout touch tr \
-		true truncate tsort tty uname unexpand uniq unlink uptime users \
+		true truncate tsort tty uname unexpand uniq unlink users \
 		vdir wc who whoami yes
 GNU_OTHER=	stat:gnustat awk:gawk egrep:gegrep fgrep:gfgrep find:gfind getopt:getopt \
 		grep:ggrep sed:gsed xargs:gxargs
