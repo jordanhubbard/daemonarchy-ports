@@ -1,7 +1,6 @@
 PORTNAME=	omarchy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.4
-PORTREVISION=	28
+DISTVERSION=	4.5.0
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -48,9 +47,9 @@ RUN_DEPENDS=	Hyprland:x11-wm/hyprland \
 
 USES=		fonts perl5 python:run shebangfix
 USE_GITHUB=	yes
-GH_ACCOUNT=	basecamp
+GH_ACCOUNT=	omacom
 # The FreeBSD compatibility layer: freebsdize, compat tools, FreeBSD commands.
-GH_TUPLE=	jordanhubbard:omarchy-freebsd:3e8359b47c28a28fe9fa3b16d5fa27603c9864b6:freebsd
+GH_TUPLE=	jordanhubbard:omarchy-freebsd:de9d465d0309e6121c73478b24f3fe8dbbd2a7d8:freebsd
 USE_PERL5=	run
 
 SHEBANG_FILES=	bin/* config/omarchy/hooks/*/* default/systemd/system-sleep/* \

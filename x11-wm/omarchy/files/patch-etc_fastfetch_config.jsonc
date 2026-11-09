@@ -13,8 +13,8 @@
        "type": "command",
        "key": "󱦟 OS Age",
        "keyColor": "magenta",
--      "text": "echo $(( ($(date +%s) - $(stat -c %W /)) / 86400 )) days"
-+      "text": "created=$(/usr/bin/stat -f %B / 2>/dev/null) || { echo Unknown; exit 0; }; case \"$created\" in \"\"|*[!0-9]*) echo Unknown;; *) now=$(/bin/date +%s); if [ \"$created\" -gt 0 ] && [ \"$created\" -le \"$now\" ]; then echo \"$(( (now - created) / 86400 )) days\"; else echo Unknown; fi;; esac"
+-      "text": "days=$(( ($(date +%s) - $(stat -c %W /var/log)) / 86400 )); omarchy-i18n --count \"$days\" about.days \"$days\""
++      "text": "created=$(/usr/bin/stat -f %B / 2>/dev/null) || { echo Unknown; exit 0; }; case \"$created\" in \"\"|*[!0-9]*) echo Unknown;; *) now=$(/bin/date +%s); if [ \"$created\" -gt 0 ] && [ \"$created\" -le \"$now\" ]; then days=$(( (now - created) / 86400 )); omarchy-i18n --count \"$days\" about.days \"$days\"; else echo Unknown; fi;; esac"
      },
      {
-       "type": "uptime",
+       "type": "command",
