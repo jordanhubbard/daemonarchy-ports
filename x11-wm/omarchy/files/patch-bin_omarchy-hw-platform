@@ -1,5 +1,19 @@
 --- bin/omarchy-hw-platform.orig
 +++ bin/omarchy-hw-platform
+@@ -40,11 +40,11 @@
+ fi
+
+ if (( EUID == 0 )) && [[ ${1:-} != --clean-environment ]]; then
+-  exec /usr/bin/env -i PATH=/usr/bin /bin/bash -p -- "${BASH_SOURCE[0]}" --clean-environment "$@"
++  exec /usr/bin/env -i PATH=%%LOCALBASE%%/libexec/omarchy/gnubin:/usr/bin:/bin %%LOCALBASE%%/bin/bash -p -- "${BASH_SOURCE[0]}" --clean-environment "$@"
+ fi
+
+ if (( EUID == 0 )); then
+-  export PATH=/usr/bin
++  export PATH=%%LOCALBASE%%/libexec/omarchy/gnubin:/usr/bin:/bin
+   fixtures=""
+ else
+   fixtures=${OMARCHY_PROC_ROOT:-}${OMARCHY_SYS_ROOT:-}${OMARCHY_IMAGE_ROOT:-}
 @@ -78,6 +78,12 @@
    echo "Error: cannot read the CPU architecture" >&2
    exit 1
