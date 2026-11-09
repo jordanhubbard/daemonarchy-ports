@@ -49,7 +49,7 @@ USES=		fonts perl5 python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	omacom
 # The FreeBSD compatibility layer: freebsdize, compat tools, FreeBSD commands.
-GH_TUPLE=	jordanhubbard:omarchy-freebsd:de9d465d0309e6121c73478b24f3fe8dbbd2a7d8:freebsd
+GH_TUPLE=	jordanhubbard:omarchy-freebsd:4f69052da532275c8be336c39a0544a3362404b2:freebsd
 USE_PERL5=	run
 
 SHEBANG_FILES=	bin/* config/omarchy/hooks/*/* default/systemd/system-sleep/* \
