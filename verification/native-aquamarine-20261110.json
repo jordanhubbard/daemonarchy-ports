@@ -1,0 +1,123 @@
+{
+  "schema": "daemonarchy/native-aquamarine-development@1",
+  "observed_utc": "2026-11-10T02:17:07.114422+00:00",
+  "origin": "x11-toolkits/aquamarine",
+  "package_identity": "aquamarine-0.16.0_1",
+  "ports_merge_commit": "a128bcefc8d1e7708d112753a17c3c507c04bbc3",
+  "ports_code_tree": "5c40f49e6e53c55a5fcba80e15890e0a89803db0",
+  "ports_archive_sha256": "b0240078cafd9890690d7f1c6e1620915afda6470747f47a1b11371542ad220d",
+  "source_archive": "hyprwm-aquamarine-v0.16.0_GH0.tar.gz",
+  "source_sha256": "42339c3096c9de6582c0d71bc86b7e63334a3faf6a2b917d385ad093caf66c3c",
+  "source_bytes": 125116,
+  "worker": {
+    "system": "FreeBSD 16.0-CURRENT ARM64 KVM worker",
+    "osversion": 1600029,
+    "build_uid": 1017,
+    "compiler": "FreeBSD clang 21.1.8",
+    "jobs": 1,
+    "nice": 19,
+    "dependency_prefix_readonly": true,
+    "package_database_readonly": true,
+    "ports_sources_readonly": true,
+    "dependency_installation_disabled": true,
+    "bootstrap_source_build_provenance": "unknown-host-bootstrap",
+    "builder_cannot_write_installed_prefix": true
+  },
+  "preserved_first_attempt": {
+    "fetch_exit": 1,
+    "reason": "Missing resolver configuration in isolated chroot",
+    "outside_vm_archive_retained": true
+  },
+  "fresh_second_attempt": {
+    "new_work_and_distfile_directories": true,
+    "resolver_fix": "Copied the live allocated guest resolver configuration into its isolated buildroot; DNS probe passed",
+    "native_network_fetch": true,
+    "distinfo_sha256_check_pass": true,
+    "observation": {
+      "machine": "arm64",
+      "build_uid": 1017,
+      "exit_records": {
+        "fetch.exit": "0",
+        "build.exit": "0",
+        "test.exit": "1",
+        "controller.exit": "1"
+      },
+      "tests": [
+        {
+          "name": "simpleWindow",
+          "result": "fail"
+        },
+        {
+          "name": "attachments",
+          "result": "pass"
+        },
+        {
+          "name": "output",
+          "result": "pass"
+        },
+        {
+          "name": "commitThread",
+          "result": "pass"
+        }
+      ],
+      "ctest_last_log_sha256": "6fa13138376389b58c986a989f2e9f0311d6446b2ca2ab30c63b6c7a05b2dde7",
+      "ctest_last_log_bytes": 14046,
+      "artifacts": [
+        {
+          "name": "libaquamarine.so.0.16.0",
+          "bytes": 1999576,
+          "sha256": "b0fb4b5809492d4ef74777dfa83e199fafbb0ebb9e5d4f61ee1b2046894e1353"
+        }
+      ],
+      "simpleWindow_ldd_exit": 0,
+      "simpleWindow_ldd": "@BUILD@/simpleWindow:\n\tlibaquamarine.so.15 => @BUILD@/libaquamarine.so.15 (0x1013f62b0000)\n\tlibseat.so.1 => /usr/local/lib/libseat.so.1 (0x1013f48fd000)\n\tlibinput.so.10 => /usr/local/lib/libinput.so.10 (0x1013fac80000)\n\tlibwayland-client.so.0 => /usr/local/lib/libwayland-client.so.0 (0x1013f5ca8000)\n\tlibm.so.5 => /lib/libm.so.5 (0x101409ef0000)\n\tlibhyprutils.so.13 => /usr/local/lib/libhyprutils.so.13 (0x1014163f0000)\n\tlibpixman-1.so.0 => /usr/local/lib/libpixman-1.so.0 (0x10141f9c0000)\n\tlibdrm.so.2 => /usr/local/lib/libdrm.so.2 (0x1013f7206000)\n\tlibgbm.so.1 => /usr/local/lib/libgbm.so.1 (0x1013f5827000)\n\tlibudev.so.0 => /usr/local/lib/libudev.so.0 (0x1013f8613000)\n\tlibdisplay-info.so.4 => /usr/local/lib/libdisplay-info.so.4 (0x101422620000)\n\tlibEGL.so.1 => /usr/local/lib/libEGL.so.1 (0x1013f7f1a000)\n\tlibGLESv2.so.2 => /usr/local/lib/libGLESv2.so.2 (0x1013f8ec2000)\n\tlibthr.so.3 => /lib/libthr.so.3 (0x1013fbb64000)\n\tlibc++.so.1 => /lib/libc++.so.1 (0x10142e840000)\n\tlibcxxrt.so.1 => /lib/libcxxrt.so.1 (0x1013f96e7000)\n\tlibgcc_s.so.1 => /lib/libgcc_s.so.1 (0x1013f9d65000)\n\tlibc.so.7 => /lib/libc.so.7 (0x1013fd400000)\n\tlibbasu.so.0 => /usr/local/lib/libbasu.so.0 (0x101437410000)\n\tlibmtdev.so.1 => /usr/local/lib/libmtdev.so.1 (0x1013fe413000)\n\tlibevdev.so.2 => /usr/local/lib/libevdev.so.2 (0x1014418b0000)\n\tlibepoll-shim.so.0 => /usr/local/lib/libepoll-shim.so.0 (0x1013fee83000)\n\tlibwacom.so.9 => /usr/local/lib/libwacom.so.9 (0x1013fc725000)\n\tliblua-5.4.so => /usr/local/lib/liblua-5.4.so (0x10144c1c0000)\n\tlibffi.so.8 => /usr/local/lib/libffi.so.8 (0x1013ff9ff000)\n\tlibdevinfo.so.7 => /usr/lib/libdevinfo.so.7 (0x10140145a000)\n\tlibprocstat.so.1 => /usr/lib/libprocstat.so.1 (0x101400a7d000)\n\tlibGLdispatch.so.0 => /usr/local/lib/libGLdispatch.so.0 (0x10144e910000)\n\tlibdl.so.1 => /usr/lib/libdl.so.1 (0x10140154c000)\n\tlibsys.so.7 => /lib/libsys.so.7 (0x101453100000)\n\tlibgudev-1.0.so.0 => /usr/local/lib/libgudev-1.0.so.0 (0x101401e76000)\n\tlibgobject-2.0.so.0 => /usr/local/lib/libgobject-2.0.so.0 (0x101458160000)\n\tlibglib-2.0.so.0 => /usr/local/lib/libglib-2.0.so.0 (0x101458e60000)\n\tlibelf.so.2 => /lib/libelf.so.2 (0x10140288b000)\n\tlibkvm.so.7 => /lib/libkvm.so.7 (0x101402e07000)\n\tlibutil.so.10 => /lib/libutil.so.10 (0x101403415000)\n\tlibiconv.so.2 => /usr/local/lib/libiconv.so.2 (0x101460ae0000)\n\tlibintl.so.8 => /usr/local/lib/libintl.so.8 (0x10146bd00000)\n\tlibpcre2-8.so.0 => /usr/local/lib/libpcre2-8.so.0 (0x101478f50000)\n",
+      "simpleWindow_elf_header_exit": 0,
+      "simpleWindow_elf_header": "ELF Header:\n  Magic:   7f 45 4c 46 02 01 01 09 00 00 00 00 00 00 00 00\n  Class:                             ELF64\n  Data:                              2's complement, little endian\n  Version:                           1 (current)\n  OS/ABI:                            UNIX - FreeBSD\n  ABI Version:                       0\n  Type:                              EXEC (Executable file)\n  Machine:                           AArch64\n  Version:                           0x1\n  Entry point address:               0x21C5D0\n  Start of program headers:          64 (bytes into file)\n  Start of section headers:          218216 (bytes into file)\n  Flags:                             0x0\n  Size of this header:               64 (bytes)\n  Size of program headers:           56 (bytes)\n  Number of program headers:         11\n  Size of section headers:           64 (bytes)\n  Number of section headers:         37\n  Section header string table index: 35\n",
+      "graphics_failure": "wl_display_connect failed; XDG_RUNTIME_DIR invalid or unset; no Wayland compositor running",
+      "package_qualified": false,
+      "release_qualified": false
+    },
+    "logs_exported_outside_vm": true,
+    "evidence_archive_sha256": "d8c966f51184e8a2030abdea0ced62d86e4ab80939573a5d6229a3f71ea10cf5",
+    "package_phase_run": false
+  },
+  "framework_diagnostic": {
+    "global_cli_revision": "0a267a6646f20e3a635a1f870042b6b034f026a1",
+    "global_parser_cause": "ProjectDefinition: unknown fields: scale_limits",
+    "developer_cli_revision": "8b83f5b967a3abfcd92bfbc93704f30c740718c4",
+    "developer_manifest_parsed": true,
+    "developer_validation": "documentation_authority_review_stale",
+    "repository_default_branch_before": "daemonarchy",
+    "repository_default_branch_after": "main",
+    "github_default_branch_verified": "main",
+    "scale_limits_and_lifecycle_policy_unchanged": true,
+    "human_review_marker_unchanged": true,
+    "no_standard_rebind_or_global_tool_upgrade": true
+  },
+  "remaining": [
+    "Provide an actual Wayland compositor and DRM allocator for simpleWindow; rerun the complete upstream suite",
+    "Package and independently verify sealed artifacts after required tests pass",
+    "Complete native amd64 checks, changed desktop closure and rendered hotplug/teardown acceptance",
+    "Rerun against the selected new world/kernel and complete lifecycle/authority receipts"
+  ],
+  "qualification": {
+    "native_compilation": true,
+    "upstream_suite_complete_pass": false,
+    "package": false,
+    "desktop": false,
+    "framework_receipt": false,
+    "release": false
+  },
+  "validation": {
+    "controller_cases": 24,
+    "controller_pass": 23,
+    "controller_skipped": 1,
+    "controller_skip_reason": "Hosted actual FreeBSD native-producer report required",
+    "controller_exit": 0,
+    "whitespace_check_exit": 0,
+    "native_upstream_suite_exit": 1,
+    "native_upstream_suite_pass": 3,
+    "native_upstream_suite_fail": 1,
+    "all_tests_claimed_pass": false
+  }
+}
