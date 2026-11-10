@@ -1,5 +1,6 @@
 PORTNAME=	opencode
-DISTVERSION=	2.0.32
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.2.5
 CATEGORIES=	misc
 
 # Upstream ships no FreeBSD builds of OpenTUI's Zig core, fff's Rust cdylib, the
@@ -9,32 +10,28 @@ CATEGORIES=	misc
 # files/setup-*-freebsd.py, files/*.patch and files/webui-wasm-package.json.
 #
 # OPENTUI_VERSION and FFF_VERSION must match the pinned @opentui/core and
-# @ff-labs/fff-bun releases (packages/cli/package.json, packages/core/package.json)
-# or the native FFI ABI breaks.
-OPENTUI_VERSION=	0.5.17
+# @ff-labs/fff-bun releases (the root package.json catalog and
+# packages/core/package.json) or the native FFI ABI breaks.
+OPENTUI_VERSION=	0.8.0
 FFF_VERSION=	0.10.5
 #
-# opencode-pty is the persistent terminal daemon the client spawns.  Its version
-# must match the pinned @opencode-ai/pty release and speak the same wire protocol
-# as the bundled client (packages/cli/package.json, packages/core/package.json),
-# and GHOSTTY_REVISION must match its ghostty-revision file, or the client
-# rejects the daemon as a protocol mismatch.
-OPENCODE_PTY_VERSION=	0.2.0
+# opencode-pty is the persistent terminal daemon the client spawns.  It is built
+# from the same source tree as the client (packages/process-daemon), and
+# GHOSTTY_REVISION must match its ghostty-revision file, or the client rejects
+# the daemon as a protocol mismatch.
 GHOSTTY_REVISION=	ab0b9da9e88fcb4b0533a1854e84628f663930af
 
-MASTER_SITES=	https://github.com/anomalyco/opencode/archive/refs/tags/:opencode \
-		https://github.com/anomalyco/opentui/archive/refs/tags/:opentui \
-		https://github.com/dmtrKovalenko/fff/archive/refs/tags/:fff \
-		https://registry.npmjs.org/@ff-labs/fff-bun/-/:fffbun \
-		https://github.com/anomalyco/opencode-pty/archive/refs/tags/:opencodepty \
-		https://github.com/ghostty-org/ghostty/archive/:ghostty
-DISTFILES=	v${DISTVERSION}${EXTRACT_SUFX}:opencode \
-		v${OPENTUI_VERSION}${EXTRACT_SUFX}:opentui \
-		v${FFF_VERSION}${EXTRACT_SUFX}:fff \
-		fff-bun-${FFF_VERSION}.tgz:fffbun \
-		v${OPENCODE_PTY_VERSION}${EXTRACT_SUFX}:opencodepty \
-		${GHOSTTY_REVISION}${EXTRACT_SUFX}:ghostty
+MASTER_SITES=	https://registry.npmjs.org/@ff-labs/fff-bun/-/:fffbun
+DISTFILES=	fff-bun-${FFF_VERSION}.tgz:fffbun
 DIST_SUBDIR=	${PORTNAME}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	anomalyco
+GH_PROJECT=	opencode
+GH_TAGNAME=	v${DISTVERSION}
+GH_TUPLE=	anomalyco:opentui:v${OPENTUI_VERSION}:opentui \
+		dmtrKovalenko:fff:v${FFF_VERSION}:fff \
+		ghostty-org:ghostty:${GHOSTTY_REVISION}:ghostty
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	AI coding agent for the terminal
@@ -58,7 +55,9 @@ CARGO_TEST=	no
 # rolldown has no native binding and its WASI fallback SIGSEGVs under node26.
 BUILD_DEPENDS=	${LOCALBASE}/bin/bun:lang/bun \
 		${LOCALBASE}/bin/zig:lang/zig \
-		${LOCALBASE}/bin/node:www/node24
+		${LOCALBASE}/bin/node:www/node24 \
+		npm-node24>0:www/npm-node24 \
+		gmake:devel/gmake
 # post-fetch warms the offline bun and Ghostty Zig caches, so both are needed.
 # Zig 0.16 hardcodes /etc/ssl/cert.pem on FreeBSD; ca_root_nss provides it.
 FETCH_DEPENDS=	${LOCALBASE}/bin/bun:lang/bun \
@@ -70,10 +69,9 @@ FETCH_DEPENDS=	${LOCALBASE}/bin/bun:lang/bun \
 # and the grep/glob tools.
 RUN_DEPENDS=	rg:textproc/ripgrep
 
-WRKSRC=		${WRKDIR}/opencode-${DISTVERSION}
 OPENTUI_WRKSRC=	${WRKDIR}/opentui-${OPENTUI_VERSION}
 FFF_WRKSRC=	${WRKDIR}/fff-${FFF_VERSION}
-OPENCODE_PTY_WRKSRC=	${WRKDIR}/opencode-pty-${OPENCODE_PTY_VERSION}
+OPENCODE_PTY_WRKSRC=	${WRKSRC}/packages/process-daemon
 GHOSTTY_WRKSRC=		${WRKDIR}/ghostty-${GHOSTTY_REVISION}
 
 # Build only the fff C-ABI cdylib (not the nvim/python/mcp crates).
@@ -82,6 +80,8 @@ FFF_SO=			${CARGO_TARGET_DIR}/release/libfff_c.so
 
 BUN=			${LOCALBASE}/bin/bun
 ZIG=			${LOCALBASE}/bin/zig
+NODE=			${LOCALBASE}/bin/node
+NODE_GYP=		${LOCALBASE}/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js
 BUN_INSTALL_CACHE_DIR=	${WRKDIR}/bun-cache
 WEBUI_WASM_DIR=	${WRKDIR}/gen-webui
 WEBUI_WASM_CACHE=	${DISTDIR}/${DIST_SUBDIR}/opencode-webui-wasm-${DISTVERSION}.tar.gz
@@ -89,7 +89,8 @@ BUN_CACHE_TARBALL=	${DISTDIR}/${DIST_SUBDIR}/opencode-bun-cache-${DISTVERSION}.t
 ZIG_PTY_CACHE_DIR=	${WRKDIR}/zig-pty-cache
 ZIG_PTY_CACHE=		${DISTDIR}/${DIST_SUBDIR}/opencode-pty-zig-cache-${DISTVERSION}.tar.gz
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		lib/opencode/watcher.node
 
 .include <bsd.port.pre.mk>
 
@@ -117,7 +118,7 @@ OPENCODE_PTY_BIN=	${CARGO_TARGET_DIR}/release/opencode-pty
 post-fetch:
 	@${ECHO_MSG} "===> Warming bun install cache"
 	@${RM} -rf ${WRKDIR}/gen && ${MKDIR} ${WRKDIR}/gen
-	@${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/v${DISTVERSION}${EXTRACT_SUFX} -C ${WRKDIR}/gen
+	@${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILE_DEFAULT} -C ${WRKDIR}/gen
 	@if [ ! -f ${BUN_CACHE_TARBALL} ]; then \
 		cd ${WRKDIR}/gen/opencode-${DISTVERSION} && \
 		${SETENV} BUN_INSTALL_CACHE_DIR=${BUN_INSTALL_CACHE_DIR} \
@@ -135,7 +136,7 @@ post-fetch:
 	@if [ ! -f ${ZIG_PTY_CACHE} ]; then \
 		${ECHO_MSG} "===> Warming the Ghostty Zig dependency cache"; \
 		${RM} -rf ${WRKDIR}/gen-ghostty && ${MKDIR} ${WRKDIR}/gen-ghostty && \
-		${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/${GHOSTTY_REVISION}${EXTRACT_SUFX} \
+		${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILE_ghostty} \
 			-C ${WRKDIR}/gen-ghostty && \
 		cd ${WRKDIR}/gen-ghostty/ghostty-${GHOSTTY_REVISION} && \
 		${SETENV} ZIG_GLOBAL_CACHE_DIR=${ZIG_PTY_CACHE_DIR} \
@@ -149,8 +150,8 @@ post-extract:
 	@${MKDIR} ${ZIG_PTY_CACHE_DIR}
 	@${TAR} xf ${ZIG_PTY_CACHE} -C ${ZIG_PTY_CACHE_DIR}
 
-# OpenTUI, opencode-pty and Ghostty are extra source trees, so their patches are
-# applied by hand.
+# OpenTUI and Ghostty are extra source trees, and opencode-pty lives in
+# packages/process-daemon, so their patches are applied by hand.
 post-patch:
 	@${PATCH} -d ${OPENTUI_WRKSRC} -p0 --batch < ${FILESDIR}/opentui-build.zig.patch
 	@${PATCH} -d ${OPENTUI_WRKSRC} -p0 --batch < ${FILESDIR}/opentui-ghostty-vt-freebsd.patch
@@ -161,6 +162,12 @@ do-build:
 	@${ECHO_MSG} "===> Installing OpenCode dependencies (offline)"
 	@cd ${WRKSRC} && ${SETENV} BUN_INSTALL_CACHE_DIR=${BUN_INSTALL_CACHE_DIR} \
 		${BUN} install --frozen-lockfile
+	@${ECHO_MSG} "===> Building the @parcel/watcher kqueue backend"
+	@for d in ${WRKSRC}/node_modules/.bun/@parcel+watcher@*/node_modules/@parcel/watcher; do \
+		[ -d "$${d}" ] || continue; \
+		(cd "$${d}" && ${SETENV} HOME=${WRKDIR} ${MAKE_ENV} \
+			${NODE} ${NODE_GYP} rebuild --nodedir=${LOCALBASE} --python=${PYTHON_CMD}); \
+	done
 	@${ECHO_MSG} "===> Installing @ff-labs/fff-bun (upstream ships no FreeBSD package)"
 	@${MKDIR} ${WRKSRC}/node_modules/@ff-labs
 	@${RM} -rf ${WRKSRC}/node_modules/@ff-labs/fff-bun
@@ -204,10 +211,10 @@ do-build:
 	@cd ${WRKSRC}/packages/cli && ${SETENV} \
 		HOME=${WRKDIR} \
 		OPENCODE_VERSION=${DISTVERSION} \
+		OPENCODE_TARGET=freebsd-${OPENTUI_ARCH} \
 		BUN_INSTALL_CACHE_DIR=${BUN_INSTALL_CACHE_DIR} \
 		OPENCODE_PTY_BIN=${OPENCODE_PTY_BIN} \
 		${BUN} run script/build.ts \
-			--target=opencode-freebsd-${OPENTUI_ARCH} \
 			--skip-install \
 			--outdir=dist
 	@test -x ${OPENCODE_BIN} || (${ECHO_MSG} "Missing ${OPENCODE_BIN}"; ${FALSE})
@@ -217,6 +224,11 @@ do-install:
 	# it (the default ${INSTALL_PROGRAM}) discards that payload, leaving a binary
 	# that runs as plain bun, so install it unstripped.
 	${INSTALL} -m 555 ${OPENCODE_BIN} ${STAGEDIR}${PREFIX}/bin/opencode
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/opencode
+	@for f in ${WRKSRC}/node_modules/.bun/@parcel+watcher@*/node_modules/@parcel/watcher/build/Release/watcher.node; do \
+		[ -f "$${f}" ] || continue; \
+		${INSTALL} -m 555 "$${f}" ${STAGEDIR}${PREFIX}/lib/opencode/watcher.node; \
+	done
 
 do-test:
 	@${ECHO_MSG} "==> Running OpenCode smoke test..."
@@ -231,5 +243,8 @@ do-test:
 		${ECHO_MSG} "ERROR: the opencode-pty terminal daemon is not embedded in the binary"; \
 		${FALSE}; \
 	fi
+	@${ECHO_MSG} "==> Checking the @parcel/watcher native binding is installed..."
+	@test -f ${STAGEDIR}${PREFIX}/lib/opencode/watcher.node || \
+		(${ECHO_MSG} "ERROR: watcher.node is missing"; ${FALSE})
 
 .include <bsd.port.post.mk>

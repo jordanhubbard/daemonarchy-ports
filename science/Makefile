@@ -60,6 +60,7 @@
     SUBDIR += clhep
     SUBDIR += clipper
     SUBDIR += code_saturne
+    SUBDIR += codeaster-frontend
     SUBDIR += conduit
     SUBDIR += coordgenlibs
     SUBDIR += cp2k
@@ -128,6 +129,7 @@
     SUBDIR += hepmc3
     SUBDIR += highfive
     SUBDIR += hpddm
+    SUBDIR += hpddm_petsc
     SUBDIR += hypre
     SUBDIR += iboview
     SUBDIR += isaac-cfd
@@ -186,10 +188,13 @@
     SUBDIR += mcxtrace
     SUBDIR += mcxtrace-comps
     SUBDIR += mdynamix
+    SUBDIR += medcoupling
     SUBDIR += medit
     SUBDIR += meep
     SUBDIR += metaphysicl
+    SUBDIR += mgis
     SUBDIR += minc-tools
+    SUBDIR += miss3d
     SUBDIR += mmdb2
     SUBDIR += mmg
     SUBDIR += mmtf-cpp
@@ -351,6 +356,7 @@
     SUBDIR += py-endf
     SUBDIR += py-esda
     SUBDIR += py-fresnel
+    SUBDIR += py-galore
     SUBDIR += py-gemmi
     SUBDIR += py-geolinks
     SUBDIR += py-geomet
@@ -370,6 +376,7 @@
     SUBDIR += py-igor2
     SUBDIR += py-inequality
     SUBDIR += py-ipygany
+    SUBDIR += py-jarvis-tools
     SUBDIR += py-jupyter_jsmol
     SUBDIR += py-kim-query
     SUBDIR += py-kimpy
@@ -387,6 +394,7 @@
     SUBDIR += py-mmcif
     SUBDIR += py-mmtf-python
     SUBDIR += py-mne
+    SUBDIR += py-molsym
     SUBDIR += py-morphio
     SUBDIR += py-mp-api
     SUBDIR += py-mpcontribs-client
@@ -442,6 +450,7 @@
     SUBDIR += py-pysal
     SUBDIR += py-pyscf
     SUBDIR += py-pyteomics
+    SUBDIR += py-pyzeo
     SUBDIR += py-qcelemental
     SUBDIR += py-qcengine
     SUBDIR += py-qcmanybody

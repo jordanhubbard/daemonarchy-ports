@@ -1,7 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.7
-PORTREVISION=	3
+DISTVERSION=	2.9.8
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,11 +19,10 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdeflate.so:archivers/libdeflate \
 		libffi.so:devel/libffi \
 		liblcms2.so:graphics/lcms2 \
-		libsqlite3.so:databases/sqlite3 \
 		libzstd.so:archivers/zstd
 
 USES=		cargo cpe gmake llvm:min=21,build localbase:ldflags ninja:build \
-		pkgconfig python:build
+		pkgconfig python:build sqlite
 USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
 GH_TUPLE=	denoland:deno_lsp_benchdata:a787434:denolsp/tests/bench/testdata/lsp_benchdata \
@@ -41,8 +39,9 @@ CARGO_ENV+=	V8_FROM_SOURCE=1 \
 		LCMS2_INCLUDE_DIR="${LOCALBASE}/include" \
 		LCMS2_LIB_DIR="${LOCALBASE}/lib" \
 		LIBSQLITE3_SYS_USE_PKG_CONFIG=1 \
-		CARGO_PROFILE_RELEASE_LTO="false" \
 		GN_ARGS="${V8_GN_ARGS}"
+# Same as upstream release builds: fold identical functions
+RUSTFLAGS+=	-C link-arg=-Wl,--icf=safe
 
 V8_GN_ARGS=	clang_use_chrome_plugins=false \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include\" \
@@ -55,8 +54,6 @@ V8_GN_ARGS=	clang_use_chrome_plugins=false \
 		use_sysroot=false \
 		use_glib=false \
 		v8_enable_cet_ibt=true
-
-WITHOUT_LTO=	yes
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 

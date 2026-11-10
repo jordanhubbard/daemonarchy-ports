@@ -81,13 +81,15 @@ def extract_plist_sub(log_content):
     return sub_map
 
 def get_expanded_key(line, sub_map):
-    expanded = line.strip()
+    clean = line.strip()
+    
     for macro in sorted(sub_map.keys(), key=len, reverse=True):
-        if macro in expanded:
-            expanded = expanded.replace(macro, sub_map[macro]).replace("//", "/")
-    clean = re.sub(r"%%.*?%%", "", expanded)
+        if sub_map[macro] == "":
+            clean = clean.replace(macro, "")
+            
+    clean = clean.replace("%%", "~")
     clean = re.sub(r"@\w+\s+", "", clean)
-    return clean.strip().lstrip('/')
+    return clean.lstrip('/')
 
 def get_plist_paths(ports_tree_root, origin):
     """Uses make to resolve all PLIST paths, handling multiple space-separated plists."""
@@ -175,6 +177,7 @@ def process_log(log_path, ports_tree_root, extended=False):
     sub_map = extract_plist_sub(log_content)
     orphans = re.findall(r"Error: Orphaned: (.*)", log_content)
     missing_from_log = set(re.findall(r"Error: Missing: (.*)", log_content))
+    option_missing_from_log = {re.sub(r"%%.*?%%", "", m).strip().lstrip('/') for m in missing_from_log}
 
     removed_count = 0
     added_count = 0
@@ -189,7 +192,7 @@ def process_log(log_path, ports_tree_root, extended=False):
             new_lines = []
             for line in lines:
                 clean_line = re.sub(r"%%.*?%%", "", line).strip().lstrip('/')
-                if line in missing_from_log or clean_line in missing_from_log:
+                if line in missing_from_log or clean_line in missing_from_log or clean_line in option_missing_from_log:
                     removed_count += 1
                     continue
                 new_lines.append(line)

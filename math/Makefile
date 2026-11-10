@@ -62,6 +62,7 @@
     SUBDIR += R-cran-dplyr
     SUBDIR += R-cran-eRm
     SUBDIR += R-cran-energy
+    SUBDIR += R-cran-epitools
     SUBDIR += R-cran-exactRankTests
     SUBDIR += R-cran-expm
     SUBDIR += R-cran-forcats
@@ -445,6 +446,7 @@
     SUBDIR += kfr
     SUBDIR += kig
     SUBDIR += kissat
+    SUBDIR += kissfft
     SUBDIR += kktdirect
     SUBDIR += kmplot
     SUBDIR += labplot
@@ -970,6 +972,7 @@
     SUBDIR += py-arviz-stats
     SUBDIR += py-arybo
     SUBDIR += py-autograd
+    SUBDIR += py-autograd-gamma
     SUBDIR += py-awkward
     SUBDIR += py-awkward-cpp
     SUBDIR += py-baycomp
@@ -1050,6 +1053,7 @@
     SUBDIR += py-isosurfaces
     SUBDIR += py-jacobi
     SUBDIR += py-jax
+    SUBDIR += py-jaxlib
     SUBDIR += py-jij-cimod
     SUBDIR += py-kahip
     SUBDIR += py-keras
@@ -1079,6 +1083,7 @@
     SUBDIR += py-moarchiving
     SUBDIR += py-modin
     SUBDIR += py-moocore
+    SUBDIR += py-mplcursors
     SUBDIR += py-mpmath
     SUBDIR += py-munkres
     SUBDIR += py-narwhals

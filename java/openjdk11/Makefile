@@ -1,7 +1,6 @@
 PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-
 DISTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION}
-PORTREVISION=	1
 CATEGORIES=	java devel
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 MASTER_SITES=	LOCAL/openjdk/:boot
@@ -71,9 +70,9 @@ NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	11
 JDK_MINOR_VERSION=	0
-JDK_PATCH_VERSION=	32
-JDK_BUILD_NUMBER=	9
-BSD_JDK_VERSION=	2
+JDK_PATCH_VERSION=	33
+JDK_BUILD_NUMBER=	10
+BSD_JDK_VERSION=	1
 
 JDK_BUG_URL=	https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Ports%20%26%20Packages&component=Individual%20Port(s)&short_desc=java/${PORTNAME}${JDK_MAJOR_VERSION}%3A%20
 
@@ -158,12 +157,10 @@ CONFIGURE_ARGS+=--disable-precompiled-headers
 # it is up to upstream project to fix these or not
 CFLAGS+=	-Wno-deprecated-builtins -Wno-inline-asm -Wno-unknown-attributes
 MAKE_ENV+=	USE_CLANG=true
-.if ${ARCH:Mpowerpc64*}
-LLVM_VER=	12
-BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
-CC=		${LOCALBASE}/bin/clang${LLVM_VER}
-CXX=		${LOCALBASE}/bin/clang++${LLVM_VER}
-.endif
+# clang >= 13 folds VMRegImpl::set_regName() (null Register this) into unreachable;
+# on PPC64 the empty function is just the traceback marker -> SIGILL at VM init
+CFLAGS_powerpc64=	-fno-delete-null-pointer-checks
+CFLAGS_powerpc64le=	-fno-delete-null-pointer-checks
 .endif
 
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*}

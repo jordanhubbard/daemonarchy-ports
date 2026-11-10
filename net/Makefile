@@ -306,7 +306,6 @@
     SUBDIR += isc-dhcp44-server
     SUBDIR += istgt
     SUBDIR += iwnet
-    SUBDIR += java-beepcore
     SUBDIR += jcifs
     SUBDIR += jgroups
     SUBDIR += jose
@@ -559,6 +558,7 @@
     SUBDIR += nmsg
     SUBDIR += nncp
     SUBDIR += nng
+    SUBDIR += nng1
     SUBDIR += norm
     SUBDIR += nqptp
     SUBDIR += nsc-tui
@@ -652,7 +652,6 @@
     SUBDIR += p5-IP-Country
     SUBDIR += p5-IPC-Session
     SUBDIR += p5-IPv6-Address
-    SUBDIR += p5-JavaScript-RPC
     SUBDIR += p5-Kafka
     SUBDIR += p5-MaxMind-DB-Common
     SUBDIR += p5-MaxMind-DB-Reader
@@ -700,7 +699,6 @@
     SUBDIR += p5-Net-DHCPClient
     SUBDIR += p5-Net-DLookup
     SUBDIR += p5-Net-Daemon
-    SUBDIR += p5-Net-Delicious
     SUBDIR += p5-Net-Dict
     SUBDIR += p5-Net-Divert
     SUBDIR += p5-Net-Dropbox-API
@@ -763,7 +761,6 @@
     SUBDIR += p5-Net-MAC
     SUBDIR += p5-Net-MAC-Vendor
     SUBDIR += p5-Net-MQTT
-    SUBDIR += p5-Net-Mosso-CloudFiles
     SUBDIR += p5-Net-MovableType
     SUBDIR += p5-Net-NBName
     SUBDIR += p5-Net-NBsocket
@@ -1153,6 +1150,7 @@
     SUBDIR += py-python-ipware
     SUBDIR += py-python-keystoneclient
     SUBDIR += py-python-ldap
+    SUBDIR += py-python-manilaclient
     SUBDIR += py-python-neutronclient
     SUBDIR += py-python-novaclient
     SUBDIR += py-python-openstackclient
@@ -1305,7 +1303,9 @@
     SUBDIR += rubygem-cloudflare
     SUBDIR += rubygem-connection_pool
     SUBDIR += rubygem-connection_pool-gitlab
+    SUBDIR += rubygem-connection_pool2
     SUBDIR += rubygem-devfile
+    SUBDIR += rubygem-dnsimple
     SUBDIR += rubygem-docker-api
     SUBDIR += rubygem-dogapi
     SUBDIR += rubygem-domain_name
@@ -1415,6 +1415,7 @@
     SUBDIR += rubygem-nats-pure-gitlab
     SUBDIR += rubygem-net-http2
     SUBDIR += rubygem-net-ldap
+    SUBDIR += rubygem-net-ldap-gitlab
     SUBDIR += rubygem-net-ldap017
     SUBDIR += rubygem-net-netrc
     SUBDIR += rubygem-net-ntp
@@ -1497,6 +1498,7 @@
     SUBDIR += rubygem-t
     SUBDIR += rubygem-train
     SUBDIR += rubygem-train-core
+    SUBDIR += rubygem-train-core-gitlab
     SUBDIR += rubygem-train-rest
     SUBDIR += rubygem-train-winrm
     SUBDIR += rubygem-tweetstream
@@ -1669,12 +1671,14 @@
     SUBDIR += ttl
     SUBDIR += tun2socks
     SUBDIR += tunneller
+    SUBDIR += turnd
     SUBDIR += turnserver
     SUBDIR += u6rd
     SUBDIR += ucarp
     SUBDIR += ucx
     SUBDIR += udp-over-tcp
     SUBDIR += udpbroadcastrelay
+    SUBDIR += udpspeeder
     SUBDIR += udptunnel
     SUBDIR += udpxy
     SUBDIR += udt

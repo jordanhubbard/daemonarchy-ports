@@ -1,6 +1,6 @@
 PORTNAME=	crush
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.98.1
+DISTVERSION=	0.100.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_NAME=	Functional Source License, Version 1.1, MIT Future License
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-USES=		go:1.27+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/charmbracelet/crush
 GO_LDFLAGS=	-w -X github.com/charmbracelet/crush/internal/version.Version=${DISTVERSION}
@@ -20,8 +20,8 @@ GO_LDFLAGS=	-w -X github.com/charmbracelet/crush/internal/version.Version=${DIST
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
 
-OPTIONS_DEFINE=		COMPLETIONS DISABLE_COMMAND_BLOCKING DOCS MANPAGES
-OPTIONS_DEFAULT=	COMPLETIONS DISABLE_COMMAND_BLOCKING MANPAGES
+OPTIONS_DEFINE=		COMPLETIONS DOCS MANPAGES
+OPTIONS_DEFAULT=	COMPLETIONS MANPAGES
 
 COMPLETIONS_DESC=		Build and/or install shell completions
 DISABLE_COMMAND_BLOCKING_DESC=	Support for disabling dangerous command blocking
@@ -29,8 +29,6 @@ DISABLE_COMMAND_BLOCKING_DESC=	Support for disabling dangerous command blocking
 COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/fish/completions/${PORTNAME}.fish \
 			share/zsh/site-functions/_${PORTNAME}
-
-DISABLE_COMMAND_BLOCKING_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-disable-command-blocking
 
 MANPAGES_PLIST_FILES=	share/man/man1/${PORTNAME}.1.gz
 

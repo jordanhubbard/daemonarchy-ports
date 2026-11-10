@@ -71,12 +71,10 @@
     SUBDIR += p5-Business-OnlinePayment-Jettis
     SUBDIR += p5-Business-OnlinePayment-LinkPoint
     SUBDIR += p5-Business-OnlinePayment-MerchantCommerce
-    SUBDIR += p5-Business-OnlinePayment-Network1Financial
     SUBDIR += p5-Business-OnlinePayment-OCV
     SUBDIR += p5-Business-OnlinePayment-PayConnect
     SUBDIR += p5-Business-OnlinePayment-PaymenTech
     SUBDIR += p5-Business-OnlinePayment-PaymentsGateway
-    SUBDIR += p5-Business-OnlinePayment-SurePay
     SUBDIR += p5-Business-OnlinePayment-TCLink
     SUBDIR += p5-Business-OnlinePayment-VirtualNet
     SUBDIR += p5-Business-OnlinePayment-eSec
@@ -86,7 +84,6 @@
     SUBDIR += p5-Business-TW-Invoice-U420
     SUBDIR += p5-Business-TW-TSIB-CStorePayment
     SUBDIR += p5-Business-TW-TSIB-VirtualAccount
-    SUBDIR += p5-Business-WorldPay-Junior
     SUBDIR += p5-Data-Currency
     SUBDIR += p5-Finance-Amortization
     SUBDIR += p5-Finance-Bitcoin
@@ -183,6 +180,7 @@
     SUBDIR += py-pandas-ta-openbb
     SUBDIR += py-pycoin
     SUBDIR += py-pycoingecko
+    SUBDIR += py-pyiso8583
     SUBDIR += py-pythclient
     SUBDIR += py-python-binance
     SUBDIR += py-python-bitcoinlib

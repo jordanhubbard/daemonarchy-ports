@@ -1,10 +1,10 @@
-TIMESTAMP = 1792000607
-SHA256 (semaphore-webui-2.19.16.tar.gz) = f6561da85cde54000c3d0847271fb70e1f0650ef2025da9b4021c6fd7ce9a7ff
-SIZE (semaphore-webui-2.19.16.tar.gz) = 8381099
-SHA256 (semaphore-provendor-2.19.16.tar.gz) = 42e7390e9afd2fd14de86f62eb6a52235f5dd0c3449a272c67f1e3dc6562c5dc
-SIZE (semaphore-provendor-2.19.16.tar.gz) = 8392
-SHA256 (semaphoreui-semaphore-v2.19.16_GH0.tar.gz) = 718ab8143c5747de476bb2e7a1a20d0d0abbf478b122f9cbe15ebb9806c115a9
-SIZE (semaphoreui-semaphore-v2.19.16_GH0.tar.gz) = 4798384
+TIMESTAMP = 1793693205
+SHA256 (semaphore-webui-2.19.18.tar.gz) = 8c24420e74bb8fd7f11ebc7f90df3f8aadeb4022aaca6fcc2902b0ae2852dcb8
+SIZE (semaphore-webui-2.19.18.tar.gz) = 8381760
+SHA256 (semaphore-provendor-2.19.18.tar.gz) = 7fc1890358e5e86ae5a346207ae2d3db40687fcd427963f2c0ffd4895005806e
+SIZE (semaphore-provendor-2.19.18.tar.gz) = 8473
+SHA256 (semaphoreui-semaphore-v2.19.18_GH0.tar.gz) = 582f2c71efd398788b22562b13577aeed8a8bfe0b39a41b11c5da404fe221def
+SIZE (semaphoreui-semaphore-v2.19.18_GH0.tar.gz) = 4799146
 SHA256 (Azure-go-ntlmssp-v0.1.1_GH0.tar.gz) = 9c4d159972a7bde756522e008484e8aa352007151d19baea9db4598f95be628c
 SIZE (Azure-go-ntlmssp-v0.1.1_GH0.tar.gz) = 32269
 SHA256 (FiloSottile-edwards25519-v1.2.0_GH0.tar.gz) = f77655cabfb1b5e599f32fc81459540c20743613c687961a173efe4e9f6c917f

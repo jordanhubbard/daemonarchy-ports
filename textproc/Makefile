@@ -185,6 +185,8 @@
     SUBDIR += el-hyphen
     SUBDIR += elasticsearch-plugin-head
     SUBDIR += elasticsearch8
+    SUBDIR += elasticsearch94
+    SUBDIR += elasticsearch95
     SUBDIR += en-aspell
     SUBDIR += en-hunspell
     SUBDIR += en-mythes
@@ -476,7 +478,6 @@
     SUBDIR += lua-icu-utils
     SUBDIR += lua-luaexpat
     SUBDIR += lua-lyaml
-    SUBDIR += lucene
     SUBDIR += lucene9
     SUBDIR += luceneplusplus
     SUBDIR += lv-aspell
@@ -1589,6 +1590,7 @@
     SUBDIR += py-ntc-templates
     SUBDIR += py-numpydoc
     SUBDIR += py-ocrmypdf
+    SUBDIR += py-odfdo
     SUBDIR += py-openpyxl
     SUBDIR += py-opensearch-py
     SUBDIR += py-openstackdocstheme
@@ -1698,6 +1700,7 @@
     SUBDIR += py-rouge-score
     SUBDIR += py-rst2ansi
     SUBDIR += py-rst2html5
+    SUBDIR += py-rtoml
     SUBDIR += py-sacrebleu
     SUBDIR += py-sacremoses
     SUBDIR += py-scour
@@ -1851,6 +1854,7 @@
     SUBDIR += py-youseedee
     SUBDIR += py-yte
     SUBDIR += py-zensical
+    SUBDIR += py-zensical-ui
     SUBDIR += py-zope.i18nmessageid
     SUBDIR += py-zpt
     SUBDIR += py-zxing-cpp
@@ -2057,6 +2061,7 @@
     SUBDIR += rubygem-phone
     SUBDIR += rubygem-pretty-xml
     SUBDIR += rubygem-prism
+    SUBDIR += rubygem-prism1
     SUBDIR += rubygem-psych
     SUBDIR += rubygem-psych3
     SUBDIR += rubygem-raabro
@@ -2294,6 +2299,7 @@
     SUBDIR += vbindiff
     SUBDIR += ve-hunspell
     SUBDIR += vgrep
+    SUBDIR += vss-text
     SUBDIR += wa-aspell
     SUBDIR += wa-hunspell
     SUBDIR += wdiff
@@ -2339,7 +2345,6 @@
     SUBDIR += xmlstarlet
     SUBDIR += xmlto
     SUBDIR += xmlwrapp
-    SUBDIR += xom
     SUBDIR += xorg-sgml-doctools
     SUBDIR += xql
     SUBDIR += xray

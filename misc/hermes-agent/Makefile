@@ -1,5 +1,6 @@
 PORTNAME=	hermes-agent
-PORTVERSION=	0.21.5
+PORTVERSION=	${HERMES_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES+=	LOCAL/olivier:webdist
 DISTFILES+=	${PORTNAME}-web-dist-${PORTVERSION}${EXTRACT_SUFX}:webdist
@@ -11,21 +12,24 @@ WWW=		https://github.com/NousResearch/hermes-agent
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# Upstream splits deps into a small `dependencies` core plus lazy-installed
-# extras (tools/lazy_deps.py).  The port ships the provider-specific extras
-# (anthropic, edge-tts, exa-py, fal-client, firecrawl-py, parallel-web) as
-# hard RUN_DEPENDS because patch-tools_lazy__deps.py turns lazy installs off
-# on FreeBSD -- pkg owns site-packages, so there is no runtime pip fallback.
+# Upstream splits deps into a small `dependencies` core plus optional extras
+# prepared by the bundled `pm` package manager (pm/, uv-backed; the old
+# tools/lazy_deps.py pip path is a retired shim).  The port ships the
+# provider-specific extras (acp, anthropic, edge-tts, exa-py, fal-client,
+# firecrawl-py, parallel-web) as hard RUN_DEPENDS because
+# patch-pm_install.py turns lazy installs off by default on FreeBSD -- pkg
+# owns site-packages, so there is no runtime pip/uv fallback.
 #
 # firecrawl-anydoc (upstream core since v2026.8.31, 0.2.4 as of this release)
 # is deliberately NOT listed: no port exists, and tools/read_extract.py
 # guards the import and
 # emits a teaching error naming the pip fallback, so the legacy-Office /
 # ODF / EPUB read_file paths degrade instead of breaking the install.
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anthropic>=0.87.0:misc/py-anthropic@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}agent-client-protocol>=0.9.0:devel/py-agent-client-protocol@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}anthropic>=0.87.0:misc/py-anthropic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=2026.5.20:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}croniter>=6.0.0:sysutils/py-croniter@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=50.0.0:security/py-cryptography@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cryptography>=50.0.1:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}edge-tts>=7.2.7:audio/py-edge-tts@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}exa-py>=2.10.2:www/py-exa-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fal-client>=0.13.1:misc/py-fal-client@${PY_FLAVOR} \
@@ -46,7 +50,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anthropic>=0.87.0:misc/py-anthropic@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}psutil>=7.2.2:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ptyprocess>=0.7.0:sysutils/py-ptyprocess@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.13.4:devel/py-pydantic2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.13.0:www/py-pyjwt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.14.0:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysocks>0:net/py-pysocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>=1.2.2:www/py-python-dotenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.32:www/py-python-multipart@${PY_FLAVOR} \
@@ -58,16 +62,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anthropic>=0.87.0:misc/py-anthropic@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}socksio>0:net/py-socksio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}starlette>=1.3.1:www/py-starlette@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tenacity>=9.1.4:devel/py-tenacity@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}urllib3>=2.7.0:net/py-urllib3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tomli-w>=1.2.0:textproc/py-tomli-w@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}truststore>=0.10.4:security/py-truststore@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urllib3>=2.8.0:net/py-urllib3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvicorn>=0.41.0:www/py-uvicorn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}watchfiles>=0.20:devel/py-watchfiles@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}websockets>=15.0.1:devel/py-websockets@${PY_FLAVOR}
 
-USES=		python:3.11+,run shebangfix
+USES=		python:3.11+ shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	NousResearch
 GH_PROJECT=	hermes-agent
-GH_TAGNAME=	v2026.9.24
+GH_TAGNAME=	v${PORTVERSION}
 
 USE_RC_SUBR=	hermes_dashboard hermes_gateway
 
@@ -105,14 +111,16 @@ PLIST_SUB+=	HERMES_LIBDIR=${HERMES_LIBDIR:S,^${PREFIX}/,,}
 #   1. Extract the upstream source tarball:
 #        tar xzf ${DISTDIR}/NousResearch-${PORTNAME}-${PORTVERSION}-${GH_TAGNAME}_GH0.tar.gz
 #        cd ${PORTNAME}-*/web
-#   2. Install deps and build the SPA:
-#        npm install --no-audit --no-fund
-#        npm run build
+#   2. Install deps and build the SPA (the repo root is an npm-workspaces
+#      monorepo as of 0.22.5; --ignore-scripts skips the ui-tui node-pty and
+#      electron downloads that the dashboard does not need -- bun works too:
+#      `bun install --ignore-scripts` + `(cd web && bun run build)` with a
+#      node->bun PATH shim, since the build script spawns node):
+#        npm install --ignore-scripts --no-audit --no-fund --engine-strict=false
+#        npm run build -w web --engine-strict=false
 #      This writes the bundle to ../hermes_cli/web_dist/.
-#      (v2026.8.31 dropped web/package-lock.json, so `npm install` is the
-#      only option -- `npm ci` requires a lockfile.  Earlier releases also
-#      needed --engine-strict=false for a too-narrow npm range in
-#      package.json; the engines gate is gone as of this release.)
+#      (0.23.0 pins engines.node >=26 with engine-strict in .npmrc; the pin
+#      is policy only, node 24 builds the same bundle.)
 #   3. Repackage with a top-level dir whose name matches the distfile:
 #        cp -a ../hermes_cli/web_dist /tmp/${PORTNAME}-web-dist-${PORTVERSION}
 #        cd /tmp && tar --no-acls --no-xattrs --no-fflags --uid=0 --gid=0 \
@@ -122,6 +130,10 @@ PLIST_SUB+=	HERMES_LIBDIR=${HERMES_LIBDIR:S,^${PREFIX}/,,}
 #      into ${DISTDIR} so `make makesum` picks it up locally.
 #   5. cd ${.CURDIR} && make makesum
 
+# The Ink TUI (`hermes --tui`, also the dashboard Chat tab) is packaged
+# separately as misc/hermes-tui so this port does not pull in node.  Both
+# read HERMES_VERSION from Makefile.version: bump them together.
+
 # Python packages that constitute the runtime app.  The bare top-level
 # modules (cli.py, run_agent.py, registration_lifecycle.py, ...) are not
 # listed: do-install globs every top-level *.py except setup.py, because
@@ -130,11 +142,12 @@ PLIST_SUB+=	HERMES_LIBDIR=${HERMES_LIBDIR:S,^${PREFIX}/,,}
 #
 # This list has the same hazard and no glob to save it: a package added
 # upstream must be added here or the app dies at import.  On every bump,
-# diff the top-level dirs holding __init__.py against this list (0.21.5
-# added hermes_platform).  evals/ and tests/ are dev-only, deliberately
-# excluded.
+# diff the top-level dirs holding __init__.py against this list (0.22.5
+# added pm, upstream's uv-backed dependency manager; it replaces the retired
+# tools/lazy_deps.py pip path).  evals/ and tests/ are dev-only,
+# deliberately excluded.
 HERMES_PKGS=	acp_adapter agent cron gateway hermes_cli hermes_platform \
-		plugins providers tools tui_gateway
+		plugins pm providers tools tui_gateway
 
 SHEBANG_FILES=	*.py
 
@@ -174,22 +187,33 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${SED} -e 's|%%HERMES_LIBDIR%%|${HERMES_LIBDIR}|g' \
 		-e 's|%%DATADIR%%|${DATADIR}|g' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
 		-e 's|%%ENTRY_MODULE%%|hermes_cli.main|g' \
 		-e 's|%%ENTRY_FUNC%%|main|g' \
 		${FILESDIR}/wrapper.in > ${STAGEDIR}${PREFIX}/bin/hermes
 	${SED} -e 's|%%HERMES_LIBDIR%%|${HERMES_LIBDIR}|g' \
 		-e 's|%%DATADIR%%|${DATADIR}|g' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
 		-e 's|%%ENTRY_MODULE%%|run_agent|g' \
 		-e 's|%%ENTRY_FUNC%%|main|g' \
 		${FILESDIR}/wrapper.in > ${STAGEDIR}${PREFIX}/bin/hermes-agent
 	${SED} -e 's|%%HERMES_LIBDIR%%|${HERMES_LIBDIR}|g' \
 		-e 's|%%DATADIR%%|${DATADIR}|g' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
 		-e 's|%%ENTRY_MODULE%%|acp_adapter.entry|g' \
 		-e 's|%%ENTRY_FUNC%%|main|g' \
 		${FILESDIR}/wrapper.in > ${STAGEDIR}${PREFIX}/bin/hermes-acp
+# Since 0.22.5 the version comes from install-stamp.json beside pm/;
+# without it hermes reports 0.0.0.  GIT_DIR keeps the script from
+# reading the ports tree's git state when WRKDIR is inside it.
+	cd ${WRKSRC} && ${SETENV} GIT_DIR=/nonexistent ${PYTHON_CMD} \
+		scripts/write_install_stamp.py \
+		-o ${STAGEDIR}${HERMES_LIBDIR}/install-stamp.json \
+		--commit ${GH_TAGNAME} --base-version ${PORTVERSION} \
+		--distance 0 --source freebsd-ports --update-mechanism external
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} skills ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} optional-skills ${STAGEDIR}${DATADIR}
@@ -209,4 +233,5 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
+.include "Makefile.version"
 .include <bsd.port.mk>
