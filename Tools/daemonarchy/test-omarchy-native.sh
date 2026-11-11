@@ -20,9 +20,11 @@ phase()
 {
     name=$1
     shift
+    printf "%s\t%s\tstart\n" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$name" >>"$out/phases.tsv"
     code=0
     "$@" >"$out/$name.stdout" 2>"$out/$name.stderr" || code=$?
     printf '%s\n' "$code" >"$out/$name.exit"
+    printf "%s\t%s\texit=%s\n" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$name" "$code" >>"$out/phases.tsv"
     if [ "$code" -ne 0 ]; then
         cat "$out/$name.stdout" "$out/$name.stderr"
         return "$code"
@@ -45,7 +47,10 @@ dependency_package=$(make -C multimedia/libdvdcss -V WRKDIR_PKGFILE)
 test -f "$dependency_package"
 cp -p "$dependency_package" "$out/packages/"
 phase libdvdcss-install make -C multimedia/libdvdcss install
-phase dependencies make -C "$port" install-missing-packages
+# Trace the original missing-dependency walker so a bounded timeout retains
+# the selected origin/sub-make, rather than only an empty buffered stdout.
+phase dependency-expression make -C "$port" -V MISSING-DEPENDS-LIST
+phase dependencies env DEBUG_MK_SCRIPTS_DEPENDS_LIST=yes make -C "$port" install-missing-packages
 phase checksum make -C "$port" checksum
 result=0
 phase package make -C "$port" DEVELOPER=yes package || result=$?
