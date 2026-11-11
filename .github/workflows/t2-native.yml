@@ -5,6 +5,7 @@ on:
     paths:
       - 'security/t2-touchid/**'
       - 'security/libfprint/**'
+      - 'devel/libgusb/**'
       - 'Tools/daemonarchy/test-t2-native.sh'
       - 'Tools/daemonarchy/test-glib-native.c'
       - 'Tools/daemonarchy/diagnose-libfprint.py'

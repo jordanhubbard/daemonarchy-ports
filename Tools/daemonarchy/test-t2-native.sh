@@ -17,7 +17,7 @@ available=$(df -k "$out" | awk 'NR == 2 { print $4 }')
 # the separate full-world/SDK worker profile and grants no such admission.
 test "$available" -ge 10485760
 printf '%s\n' "${GITHUB_SHA:-unknown}" >"$out/source-commit.txt"
-find security/t2-touchid security/libfprint Mk -type f -exec sha256 {} + >"$out/source-inputs.sha256"
+find security/t2-touchid security/libfprint devel/libgusb Mk -type f -exec sha256 {} + >"$out/source-inputs.sha256"
 pkg query '%n-%v %q' >"$out/bootstrap-before.txt"
 export PORTSDIR="$root"
 export BATCH=yes
@@ -38,9 +38,24 @@ phase()
     fi
 }
 phase libfprint-dependencies make -C security/libfprint install-missing-packages
+phase glib-control-compile sh -c 'cc -g -Wall -Wextra -Werror $(pkg-config --cflags gio-2.0 gusb) Tools/daemonarchy/test-glib-native.c $(pkg-config --libs gio-2.0 gusb) -o "$1/glib-control"' sh "$out"
+pkg query '%n-%v %q' libgusb >"$out/libgusb-original-version.txt"
+# Preserve the old dependency observation separately from required fixed tests.
+phase gusb-original-dispose "$out/glib-control" --usb-unenumerated-dispose || :
+phase libgusb-dependencies make -C devel/libgusb install-missing-packages
+phase libgusb-build make -C devel/libgusb package
+failures=0
+phase libgusb-tests make -C devel/libgusb test || failures=1
+libgusb_build=$(make -C devel/libgusb -V BUILD_WRKSRC)
+mkdir -p "$out/libgusb-meson-logs"
+cp "$libgusb_build"/meson-logs/testlog* "$out/libgusb-meson-logs/"
+phase libgusb-install make -C devel/libgusb reinstall
+phase glib-control "$out/glib-control" || failures=1
+phase gusb-control "$out/glib-control" --usb || failures=1
+phase gusb-dispose-control "$out/glib-control" --usb-dispose || failures=1
+phase gusb-unenumerated-dispose-control "$out/glib-control" --usb-unenumerated-dispose || failures=1
 phase libfprint-checksum make -C security/libfprint checksum
 phase libfprint-build make -C security/libfprint package
-failures=0
 phase libfprint-tests make -C security/libfprint test || failures=1
 libfprint_build=$(make -C security/libfprint -V BUILD_WRKSRC)
 mkdir -p "$out/libfprint-meson-logs"
@@ -48,10 +63,6 @@ cp "$libfprint_build"/meson-logs/testlog* "$out/libfprint-meson-logs/"
 if [ "$failures" -ne 0 ]; then
     phase debugger-dependencies pkg install -y gdb python312
     phase libfprint-backtraces /usr/local/bin/python3.12 Tools/daemonarchy/diagnose-libfprint.py "$libfprint_build" "$out/libfprint-debug"
-    phase glib-control-compile sh -c 'cc -g -Wall -Wextra -Werror $(pkg-config --cflags gio-2.0 gusb) Tools/daemonarchy/test-glib-native.c $(pkg-config --libs gio-2.0 gusb) -o "$1/glib-control"' sh "$out"
-    phase glib-control "$out/glib-control" || failures=1
-    phase gusb-control "$out/glib-control" --usb || failures=1
-    phase gusb-dispose-control "$out/glib-control" --usb-dispose || failures=1
     sanitized="$root/_build/libfprint-sanitized"
     sanitized_args="$(make -C security/libfprint -V MESON_ARGS) -Db_sanitize=address,undefined -Db_lundef=false -Ddoc=false"
     # The diagnostic profile disables only documentation: make test stages the
@@ -86,9 +97,9 @@ cli_refusal()
 }
 phase touchid-cli-refusal cli_refusal
 pkg query '%n-%v %q' >"$out/bootstrap-after.txt"
-pkg info -f libfprint t2-touchid >"$out/packages.txt"
-pkg info -l libfprint t2-touchid >"$out/installed-files.txt"
-sha256 /usr/local/bin/t2-touchid /usr/local/lib/libfprint-2.so.2 >"$out/installed.sha256"
+pkg info -f libgusb libfprint t2-touchid >"$out/packages.txt"
+pkg info -l libgusb libfprint t2-touchid >"$out/installed-files.txt"
+sha256 /usr/local/bin/t2-touchid /usr/local/lib/libfprint-2.so.2 /usr/local/lib/libgusb.so.2 >"$out/installed.sha256"
 # Inspect exactly the installed service syntax without starting hardware I/O.
 phase touchid-service-syntax sh -n /usr/local/etc/rc.d/t2_touchid
 printf '%s\n' "$failures" >"$out/required-test-failures"

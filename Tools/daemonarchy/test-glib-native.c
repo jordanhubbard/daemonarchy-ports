@@ -13,18 +13,24 @@ main (int argc, char **argv)
   gboolean usb = argc == 2 && strcmp (argv[1], "--usb") == 0;
   gboolean dispose = argc == 2 && strcmp (argv[1], "--usb-dispose") == 0;
 
-  g_assert_true (argc == 1 || usb || dispose);
+  gboolean unenumerated = argc == 2 && strcmp (argv[1], "--usb-unenumerated-dispose") == 0;
+
+  g_assert_true (argc == 1 || usb || dispose || unenumerated);
   for (unsigned i = 0; i < 100; ++i)
     {
       GError *error = NULL;
-      if (usb || dispose)
+      if (usb || dispose || unenumerated)
         {
           GUsbContext *context = g_usb_context_new (&error);
           g_assert_no_error (error);
           g_assert_nonnull (context);
-          g_usb_context_enumerate (context);
-          if (dispose)
-            g_object_run_dispose (G_OBJECT (context));
+          if (!unenumerated)
+            g_usb_context_enumerate (context);
+          if (dispose || unenumerated)
+            {
+              g_object_run_dispose (G_OBJECT (context));
+              g_object_run_dispose (G_OBJECT (context));
+            }
           g_object_unref (context);
         }
       GCancellable *cancellable = g_cancellable_new ();
