@@ -1,0 +1,53 @@
+name: T2 bridge native port validation
+
+on:
+  pull_request:
+    paths:
+      - 'security/t2-touchid/**'
+      - 'security/libfprint/**'
+      - 'Tools/daemonarchy/test-t2-native.sh'
+      - '.github/workflows/t2-native.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: t2-native-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  native-ports:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+      - name: Require capacity for the selected port job
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os, pathlib, shutil
+          assert shutil.disk_usage('.').free >= 20 * 1024**3, 'selected ports need 20 GiB host headroom'
+          memory = dict(line.split(':', 1) for line in pathlib.Path('/proc/meminfo').read_text().splitlines())
+          assert int(memory['MemAvailable'].split()[0]) * 1024 >= 8 * 1024**3, '6 GiB guest plus 2 GiB reserve'
+          assert len(os.sched_getaffinity(0)) >= 2
+          PY
+      - name: Build and test the actual FreeBSD ports in a disposable guest
+        uses: vmactions/freebsd-vm@c46abacb49f09938ca4e1702d15d836285d694cc
+        with:
+          release: '15.1'
+          arch: x86_64
+          mem: '6144'
+          cpu: '2'
+          sync: rsync
+          run: |
+            sh Tools/daemonarchy/test-t2-native.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: t2-native-port-results
+          path: _build/t2-native/
+          if-no-files-found: warn
