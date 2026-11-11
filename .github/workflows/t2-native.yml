@@ -6,6 +6,8 @@ on:
       - 'security/t2-touchid/**'
       - 'security/libfprint/**'
       - 'Tools/daemonarchy/test-t2-native.sh'
+      - 'Tools/daemonarchy/test-glib-native.c'
+      - 'Tools/daemonarchy/diagnose-libfprint.py'
       - '.github/workflows/t2-native.yml'
   workflow_dispatch:
 

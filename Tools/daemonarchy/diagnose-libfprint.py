@@ -20,7 +20,13 @@ for name in ('fp-context', 'fp-device'):
     command = ['/usr/local/bin/gdb', '--batch',
                '-ex', 'set pagination off', '-ex', 'set confirm off',
                '-ex', 'set debuginfod enabled off', '-ex', 'run',
-               '-ex', 'thread apply all bt', '--args', *test['cmd']]
+               '-ex', 'thread apply all bt full',
+               '-ex', 'info sharedlibrary',
+               '-ex', 'disassemble g_get_tmp_dir',
+               '-ex', 'disassemble g_mutex_lock',
+               '-ex', 'disassemble g_mutex_unlock',
+               '-ex', 'disassemble g_cancellable_cancel',
+               '--args', *test['cmd']]
     interrupted = killed = False
     with (output/(name+'.log')).open('wb') as log:
         process = subprocess.Popen(command, cwd=build, env=env,

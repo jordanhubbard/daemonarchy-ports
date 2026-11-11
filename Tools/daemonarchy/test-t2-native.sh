@@ -48,6 +48,16 @@ cp "$libfprint_build"/meson-logs/testlog* "$out/libfprint-meson-logs/"
 if [ "$failures" -ne 0 ]; then
     phase debugger-dependencies pkg install -y gdb python312
     phase libfprint-backtraces /usr/local/bin/python3.12 Tools/daemonarchy/diagnose-libfprint.py "$libfprint_build" "$out/libfprint-debug"
+    phase glib-control-compile sh -c 'cc -g -Wall -Wextra -Werror $(pkg-config --cflags gio-2.0) Tools/daemonarchy/test-glib-native.c $(pkg-config --libs gio-2.0) -o "$1/glib-control"' sh "$out"
+    phase glib-control "$out/glib-control" || failures=1
+    sanitized="$root/_build/libfprint-sanitized"
+    sanitized_args="$(make -C security/libfprint -V MESON_ARGS) -Db_sanitize=address,undefined"
+    if phase libfprint-sanitized-build make -C security/libfprint WRKDIRPREFIX="$sanitized" MESON_ARGS="$sanitized_args" package; then
+        phase libfprint-sanitized-tests make -C security/libfprint WRKDIRPREFIX="$sanitized" MESON_ARGS="$sanitized_args" test || failures=1
+        sanitized_build=$(make -C security/libfprint WRKDIRPREFIX="$sanitized" -V BUILD_WRKSRC)
+        mkdir -p "$out/libfprint-sanitized-meson-logs"
+        cp "$sanitized_build"/meson-logs/testlog* "$out/libfprint-sanitized-meson-logs/"
+    fi
     baseline="$root/_build/libfprint-default"
     phase libfprint-baseline-build make -C security/libfprint WRKDIRPREFIX="$baseline" OPTIONS_UNSET=VIRTUAL package
     phase libfprint-baseline-tests make -C security/libfprint WRKDIRPREFIX="$baseline" OPTIONS_UNSET=VIRTUAL test || failures=1
