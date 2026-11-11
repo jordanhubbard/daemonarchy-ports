@@ -3,6 +3,8 @@ name: T2 bridge native port validation
 on:
   pull_request:
     paths:
+      - 'Tools/daemonarchy/ci-apt.sh'
+      - 'Tools/daemonarchy/test_ci_apt.py'
       - 'security/t2-touchid/**'
       - 'security/libfprint/**'
       - 'devel/libgusb/**'
@@ -38,6 +40,10 @@ jobs:
           assert int(memory['MemAvailable'].split()[0]) * 1024 >= 8 * 1024**3, '6 GiB guest plus 2 GiB reserve'
           assert len(os.sched_getaffinity(0)) >= 2
           PY
+      - name: Bootstrap signed Ubuntu VM tools
+        run: |
+          python3 Tools/daemonarchy/test_ci_apt.py
+          bash Tools/daemonarchy/ci-apt.sh --no-install-recommends qemu-utils qemu-system-x86 ovmf
       - name: Build and test the actual FreeBSD ports in a disposable guest
         uses: vmactions/freebsd-vm@c46abacb49f09938ca4e1702d15d836285d694cc
         with:

@@ -1,12 +1,14 @@
 PORTNAME=	daemonarchy-pkg
 DISTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Colorful graphical package manager for Daemonarchy
 WWW=		https://github.com/jordanhubbard/daemonarchy
 
-LICENSE=	MIT
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/apps/daemonarchy-pkg/LICENSE
 
 RUN_DEPENDS=	sudo:security/sudo \
 		${PYTHON_PKGNAMEPREFIX}pygobject>0:devel/py-pygobject@${PY_FLAVOR} \
@@ -17,9 +19,9 @@ USES=		python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	jordanhubbard
 GH_PROJECT=	daemonarchy
-# Pin the reviewed commit of jordanhubbard/daemonarchy that carries apps/daemonarchy-pkg and the installer
-# engine files it shares (parallel-fetch, progress-model).
-GH_TAGNAME=	2f9b7ecf4c3bcdb4208198d12c63ee539f5e441d
+# Pin owned main, including the shared installer progress-model correction and
+# explicit BSD license. Selected application/engine bytes match the 1.6 integration.
+GH_TAGNAME=	3cd00f456273c8dc4a859ef37b9bb9c763690056
 
 NO_ARCH=	yes
 NO_BUILD=	yes
