@@ -40,8 +40,8 @@ phase()
 retain_package()
 {
     port=$1
-    package=$(make -C "$port" -V PKGFILE)
-    test -f "$package"
+    package=$(make -C "$port" -V WRKDIR_PKGFILE)
+    test -f "$package" || return 1
     cp -p "$package" "$out/packages/"
 }
 phase libfprint-dependencies make -C security/libfprint install-missing-packages
