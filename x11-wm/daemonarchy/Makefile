@@ -2,7 +2,7 @@ PORTNAME=	daemonarchy
 # Daemonarchy's own release number, not Omarchy's (x11-wm/omarchy) or
 # FreeBSD's. The epoch moves it past the 4.0.4 it used to borrow.
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.1
+DISTVERSION=	1.6.0
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 
@@ -69,11 +69,9 @@ USES=		python:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	jordanhubbard
 GH_PROJECT=	daemonarchy-desktop
-# Pin the reviewed commit of the desktop layer. DISTVERSION is the Daemonarchy release
-# this package ships in (it is what /usr/local/share/daemonarchy/version says). 1.5.1 moves
-# the layer to the commit whose Packages menu opens daemonarchy-pkg (daemonarchy-desktop #1)
-# and that carries the BSD-2-Clause relicensing (daemonarchy-desktop #2).
-GH_TAGNAME=	85322f51eae1910976a8703724493d30ab7b9bfb
+# Pin the reconciled desktop main for the 1.6 release candidate.
+# DISTVERSION supplies the installed Daemonarchy version independently of Omarchy.
+GH_TAGNAME=	4b2525533600f37d2c6249112c3d2d4e22989f36
 
 NO_ARCH=	yes
 
