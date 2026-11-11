@@ -56,10 +56,18 @@ phase gusb-dispose-control "$out/glib-control" --usb-dispose || failures=1
 phase gusb-unenumerated-dispose-control "$out/glib-control" --usb-unenumerated-dispose || failures=1
 phase libfprint-checksum make -C security/libfprint checksum
 phase libfprint-build make -C security/libfprint package
-phase libfprint-tests make -C security/libfprint test || failures=1
+phase libfprint-tests make -C security/libfprint MAKE_JOBS_NUMBER=1 test || failures=1
 libfprint_build=$(make -C security/libfprint -V BUILD_WRKSRC)
 mkdir -p "$out/libfprint-meson-logs"
 cp "$libfprint_build"/meson-logs/testlog* "$out/libfprint-meson-logs/"
+# Preserve every original deadline/assertion. Run timing-sensitive suites without
+# competing test processes, then exercise the complete fpi-device suite three
+# more times under that selected profile to expose scheduler variance.
+if [ "$failures" -eq 0 ]; then
+    phase libfprint-timing-repeat /usr/local/bin/meson test -C "$libfprint_build" --no-rebuild --print-errorlogs --num-processes 1 --repeat 3 --logbase timing-repeat fpi-device || failures=1
+    mkdir -p "$out/libfprint-timing-logs"
+    cp "$libfprint_build"/meson-logs/timing-repeat* "$out/libfprint-timing-logs/"
+fi
 if [ "$failures" -ne 0 ]; then
     phase debugger-dependencies pkg install -y gdb python312
     phase libfprint-backtraces /usr/local/bin/python3.12 Tools/daemonarchy/diagnose-libfprint.py "$libfprint_build" "$out/libfprint-debug"
@@ -69,14 +77,14 @@ if [ "$failures" -ne 0 ]; then
     # library first, and gtk-doc assumes GCC -lasan/-lubsan names on this host.
     # All original production options, package and tests above remain required.
     if phase libfprint-sanitized-build make -C security/libfprint WRKDIRPREFIX="$sanitized" MESON_ARGS="$sanitized_args" build; then
-        phase libfprint-sanitized-tests make -C security/libfprint WRKDIRPREFIX="$sanitized" MESON_ARGS="$sanitized_args" test || failures=1
+        phase libfprint-sanitized-tests make -C security/libfprint WRKDIRPREFIX="$sanitized" MESON_ARGS="$sanitized_args" MAKE_JOBS_NUMBER=1 test || failures=1
         sanitized_build=$(make -C security/libfprint WRKDIRPREFIX="$sanitized" -V BUILD_WRKSRC)
         mkdir -p "$out/libfprint-sanitized-meson-logs"
         cp "$sanitized_build"/meson-logs/testlog* "$out/libfprint-sanitized-meson-logs/"
     fi
     baseline="$root/_build/libfprint-default"
     phase libfprint-baseline-build make -C security/libfprint WRKDIRPREFIX="$baseline" OPTIONS_UNSET=VIRTUAL package
-    phase libfprint-baseline-tests make -C security/libfprint WRKDIRPREFIX="$baseline" OPTIONS_UNSET=VIRTUAL test || failures=1
+    phase libfprint-baseline-tests make -C security/libfprint WRKDIRPREFIX="$baseline" OPTIONS_UNSET=VIRTUAL MAKE_JOBS_NUMBER=1 test || failures=1
     baseline_build=$(make -C security/libfprint WRKDIRPREFIX="$baseline" OPTIONS_UNSET=VIRTUAL -V BUILD_WRKSRC)
     mkdir -p "$out/libfprint-baseline-meson-logs"
     cp "$baseline_build"/meson-logs/testlog* "$out/libfprint-baseline-meson-logs/"
