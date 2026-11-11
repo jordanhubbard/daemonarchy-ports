@@ -57,10 +57,13 @@ sha256 "$out"/packages/*.pkg >"$out/package-archives.sha256"
 phase install make -C "$port" install
 pkg info -f owe >"$out/package-info.txt"
 phase package-checksums pkg check -s owe
-phase linked-libraries ldd /usr/local/bin/owe
+phase linked-libraries ldd /usr/local/bin/owe /usr/local/bin/owed /usr/local/bin/owe-render
 ! grep -q 'not found' "$out/linked-libraries.stdout"
 if test "$(cat "$out/inotify-provider.txt")" = compatibility; then
-    grep -q libinotify "$out/linked-libraries.stdout"
+    # File watching belongs to the daemon; --as-needed correctly omits it
+    # from the command-line client. Inspect the consuming executable itself.
+    phase daemon-linked-libraries ldd /usr/local/bin/owed
+    grep -q libinotify "$out/daemon-linked-libraries.stdout"
 fi
 phase deinstall pkg delete -y owe
 ! pkg info -e owe
