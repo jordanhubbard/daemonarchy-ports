@@ -14,16 +14,3 @@
    fixtures=""
  else
    fixtures=${OMARCHY_PROC_ROOT:-}${OMARCHY_SYS_ROOT:-}${OMARCHY_IMAGE_ROOT:-}
-@@ -78,6 +78,12 @@
-   echo "Error: cannot read the CPU architecture" >&2
-   exit 1
- fi
-+
-+# BSD uname uses arm64/amd64 for these same CPU architectures.
-+case $machine in
-+  arm64) machine=aarch64 ;;
-+  amd64) machine=x86_64 ;;
-+esac
-
- # A booted system is one systemd runs as PID 1 from this root. An image build
- # is told apart by what it shows: no /run/systemd/system (a root with a /run of
