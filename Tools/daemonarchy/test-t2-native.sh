@@ -23,6 +23,7 @@ export PORTSDIR="$root"
 export BATCH=yes
 export MAKE_JOBS_NUMBER=2
 export CARGO_BUILD_JOBS=2
+ulimit -c 0
 phase()
 {
     name=$1
@@ -33,13 +34,27 @@ phase()
     printf '%s\n' "$result" >"$out/$name.exit"
     if [ "$result" -ne 0 ]; then
         cat "$out/$name.stdout" "$out/$name.stderr"
-        exit "$result"
+        return "$result"
     fi
 }
 phase libfprint-dependencies make -C security/libfprint install-missing-packages
 phase libfprint-checksum make -C security/libfprint checksum
 phase libfprint-build make -C security/libfprint package
-phase libfprint-tests make -C security/libfprint test
+failures=0
+phase libfprint-tests make -C security/libfprint test || failures=1
+libfprint_build=$(make -C security/libfprint -V MESON_BUILD_DIR)
+mkdir -p "$out/libfprint-meson-logs"
+cp "$libfprint_build"/meson-logs/testlog* "$out/libfprint-meson-logs/"
+if [ "$failures" -ne 0 ]; then
+    phase debugger-dependencies pkg install -y gdb python312
+    phase libfprint-backtraces /usr/local/bin/python3.12 Tools/daemonarchy/diagnose-libfprint.py "$libfprint_build" "$out/libfprint-debug"
+    baseline="$root/_build/libfprint-default"
+    phase libfprint-baseline-build make -C security/libfprint WRKDIRPREFIX="$baseline" OPTIONS_UNSET=VIRTUAL package
+    phase libfprint-baseline-tests make -C security/libfprint WRKDIRPREFIX="$baseline" OPTIONS_UNSET=VIRTUAL test || failures=1
+    baseline_build=$(make -C security/libfprint WRKDIRPREFIX="$baseline" OPTIONS_UNSET=VIRTUAL -V MESON_BUILD_DIR)
+    mkdir -p "$out/libfprint-baseline-meson-logs"
+    cp "$baseline_build"/meson-logs/testlog* "$out/libfprint-baseline-meson-logs/"
+fi
 phase libfprint-install make -C security/libfprint install
 phase touchid-dependencies make -C security/t2-touchid install-missing-packages
 phase touchid-checksum make -C security/t2-touchid checksum
@@ -61,4 +76,6 @@ pkg info -l libfprint t2-touchid >"$out/installed-files.txt"
 sha256 /usr/local/bin/t2-touchid /usr/local/lib/libfprint-2.so.2 >"$out/installed.sha256"
 # Inspect exactly the installed service syntax without starting hardware I/O.
 phase touchid-service-syntax sh -n /usr/local/etc/rc.d/t2_touchid
-printf '%s\n' 'Native selected port commands completed. Inspect original test counts in logs; no physical T2, CURRENT closure, SDK or lifecycle qualification.' >"$out/scope.txt"
+printf '%s\n' "$failures" >"$out/required-test-failures"
+printf '%s\n' 'Inspect every recorded original test count and failure. No physical T2, CURRENT closure, SDK or lifecycle qualification is awarded by these commands.' >"$out/scope.txt"
+test "$failures" -eq 0
