@@ -29,8 +29,17 @@ phase()
     fi
 }
 printf '%s\n' "${GITHUB_SHA:-unknown}" >"$out/source-commit.txt"
-find "$port" Mk -type f -exec sha256 {} + >"$out/source-inputs.sha256"
+find "$port" multimedia/libdvdcss Mk -type f -exec sha256 {} + >"$out/source-inputs.sha256"
 pkg query '%n-%v %q' >"$out/bootstrap-before.txt"
+# The official binary repository cannot distribute libdvdcss. Build this
+# actual selected dependency from its checksum-bound original port first.
+phase restricted-bootstrap pkg install -y meson pkgconf
+phase libdvdcss-checksum make -C multimedia/libdvdcss checksum
+phase libdvdcss-package make -C multimedia/libdvdcss package
+dependency_package=$(make -C multimedia/libdvdcss -V WRKDIR_PKGFILE)
+test -f "$dependency_package"
+cp -p "$dependency_package" "$out/packages/"
+phase libdvdcss-install make -C multimedia/libdvdcss install
 phase dependencies make -C "$port" install-missing-packages
 phase checksum make -C "$port" checksum
 result=0
