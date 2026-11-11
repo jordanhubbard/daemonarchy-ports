@@ -19,7 +19,21 @@
   "controller_suites_exit": 0,
   "imported_whitespace_check_exit": 2,
   "downstream_whitespace_check_exit": 2,
-  "native_metadata": false,
+  "native_metadata": {
+    "run": 42955226738,
+    "source_commit": "a191f19fc896b05afe203363ec955f4f1287f06f",
+    "configured_freebsd_release": "15.0",
+    "architectures_evaluated": [
+      "amd64",
+      "aarch64"
+    ],
+    "native_bsd_make": true,
+    "arm64_binary_execution": false,
+    "metadata_comparison": "pass; only explicit reviewed additions",
+    "portlint_fatals": "0 to 0 for all three desktop ports",
+    "log_sha256": "fcab10ea86460d3213611b0ce79f9e5dc3144481380c0da2f11220967252b221",
+    "scope": "Hosted FreeBSD native metadata and lint only, not CURRENT package/ABI or binary execution acceptance"
+  },
   "native_package_closure": false,
   "release_qualified": false,
   "notes": [
@@ -47,6 +61,6 @@
       "CMAKE_ARGS -fexperimental-library"
     ],
     "architecture_guard": "Unchanged; unreviewed additions and every removal still fail",
-    "native_rerun": "pending"
+    "native_rerun": "pass"
   }
 }
