@@ -242,7 +242,6 @@
     SUBDIR += ghostunnel
     SUBDIR += gist
     SUBDIR += gitea
-    SUBDIR += github-release-monitor
     SUBDIR += gitlab
     SUBDIR += gitlab-pages
     SUBDIR += gitlab-workhorse
@@ -435,6 +434,7 @@
     SUBDIR += minio-client
     SUBDIR += miniserve
     SUBDIR += mirrorselect
+    SUBDIR += mitmproxy
     SUBDIR += mknmz-wwwoffle
     SUBDIR += mod_asn
     SUBDIR += mod_auth_cas
@@ -543,6 +543,7 @@
     SUBDIR += nginx-module-ajp
     SUBDIR += nginx-module-array-var
     SUBDIR += nginx-module-auth-digest
+    SUBDIR += nginx-module-auth-krb5
     SUBDIR += nginx-module-auth-ldap
     SUBDIR += nginx-module-auth-pam
     SUBDIR += nginx-module-aws-auth
@@ -551,6 +552,7 @@
     SUBDIR += nginx-module-cert-expiry
     SUBDIR += nginx-module-dav-ext
     SUBDIR += nginx-module-drizzle
+    SUBDIR += nginx-module-dynamic-upstream
     SUBDIR += nginx-module-echo
     SUBDIR += nginx-module-encrypted-session
     SUBDIR += nginx-module-eval
@@ -563,6 +565,7 @@
     SUBDIR += nginx-module-headers-more
     SUBDIR += nginx-module-iconv
     SUBDIR += nginx-module-ip-anon
+    SUBDIR += nginx-module-ip2location
     SUBDIR += nginx-module-json-status
     SUBDIR += nginx-module-let
     SUBDIR += nginx-module-link
@@ -1946,6 +1949,7 @@
     SUBDIR += py-mailman-hyperkitty
     SUBDIR += py-mechanicalsoup
     SUBDIR += py-mechanize
+    SUBDIR += py-mitmproxy_rs
     SUBDIR += py-modelsearch
     SUBDIR += py-multidict
     SUBDIR += py-mwoauth
@@ -2627,6 +2631,7 @@
     SUBDIR += rubygem-websocket-driver
     SUBDIR += rubygem-websocket-extensions
     SUBDIR += rubygem-yapra
+    SUBDIR += rustfs
     SUBDIR += rustypaste
     SUBDIR += rustypaste-cli
     SUBDIR += s

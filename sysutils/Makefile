@@ -744,7 +744,6 @@
     SUBDIR += magicrescue
     SUBDIR += magika
     SUBDIR += manck
-    SUBDIR += mapchan
     SUBDIR += mapdir
     SUBDIR += massadmin
     SUBDIR += mate-control-center
@@ -1655,6 +1654,7 @@
     SUBDIR += virt-firmware
     SUBDIR += virt-what
     SUBDIR += virtualmin
+    SUBDIR += vitaly
     SUBDIR += vivid
     SUBDIR += vm-bhyve
     SUBDIR += vm-bhyve-devel

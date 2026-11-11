@@ -60,6 +60,7 @@
     SUBDIR += R-cran-filelock
     SUBDIR += R-cran-fontawesome
     SUBDIR += R-cran-foreach
+    SUBDIR += R-cran-furrr
     SUBDIR += R-cran-future
     SUBDIR += R-cran-future.apply
     SUBDIR += R-cran-gargle
@@ -2622,7 +2623,6 @@
     SUBDIR += p5-Devel-ebug
     SUBDIR += p5-Devel-ptkdb
     SUBDIR += p5-Device-Modbus
-    SUBDIR += p5-Device-USB
     SUBDIR += p5-Digest-TransformPath
     SUBDIR += p5-Dir-Project
     SUBDIR += p5-Dir-Self
@@ -6103,6 +6103,7 @@
     SUBDIR += py-python-mimeparse
     SUBDIR += py-python-ptrace
     SUBDIR += py-python-rapidjson
+    SUBDIR += py-python-sbom
     SUBDIR += py-python-semantic-release
     SUBDIR += py-python-socketio
     SUBDIR += py-python-statsd
@@ -6646,6 +6647,7 @@
     SUBDIR += py-zict
     SUBDIR += py-zipkin
     SUBDIR += py-zipp
+    SUBDIR += py-zipremove
     SUBDIR += py-zope.component
     SUBDIR += py-zope.configuration
     SUBDIR += py-zope.deprecation
