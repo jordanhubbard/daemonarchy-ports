@@ -61,6 +61,9 @@ phase install make -C "$port" install
 pkg info -f omarchy >"$out/package-info.txt"
 pkg info -l omarchy >"$out/installed-files.txt"
 phase package-checksums pkg check -s omarchy
+phase desktop-version env -u OMARCHY_PATH /usr/local/bin/omarchy-version
+expected_version=$(make -C "$port" -V PKGVERSION)
+test "$(cat "$out/desktop-version.stdout")" = "$expected_version"
 phase architecture-x86 /usr/local/bin/omarchy-hw-x86
 phase platform /usr/local/bin/omarchy-hw-platform
 test "$(cat "$out/platform.stdout")" = x86
