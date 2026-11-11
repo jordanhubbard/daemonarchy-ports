@@ -8,7 +8,7 @@ test "$(id -u)" = 0
 root=$(pwd -P)
 out="$root/_build/t2-native"
 test ! -e "$out"
-mkdir -p "$out"
+mkdir -p "$out/packages"
 freebsd-version -ku >"$out/freebsd-version.txt"
 sysctl hw.machine_arch hw.ncpu hw.physmem kern.osreldate >"$out/platform.txt"
 df -k "$out" >"$out/storage.txt"
@@ -37,6 +37,13 @@ phase()
         return "$result"
     fi
 }
+retain_package()
+{
+    port=$1
+    package=$(make -C "$port" -V PKGFILE)
+    test -f "$package"
+    cp -p "$package" "$out/packages/"
+}
 phase libfprint-dependencies make -C security/libfprint install-missing-packages
 phase glib-control-compile sh -c 'cc -g -Wall -Wextra -Werror $(pkg-config --cflags gio-2.0 gusb) Tools/daemonarchy/test-glib-native.c $(pkg-config --libs gio-2.0 gusb) -o "$1/glib-control"' sh "$out"
 pkg query '%n-%v %q' libgusb >"$out/libgusb-original-version.txt"
@@ -44,6 +51,7 @@ pkg query '%n-%v %q' libgusb >"$out/libgusb-original-version.txt"
 phase gusb-original-dispose "$out/glib-control" --usb-unenumerated-dispose || :
 phase libgusb-dependencies make -C devel/libgusb install-missing-packages
 phase libgusb-build make -C devel/libgusb package
+phase libgusb-retain-package retain_package devel/libgusb
 failures=0
 phase libgusb-tests make -C devel/libgusb test || failures=1
 libgusb_build=$(make -C devel/libgusb -V BUILD_WRKSRC)
@@ -56,11 +64,13 @@ phase gusb-dispose-control "$out/glib-control" --usb-dispose || failures=1
 phase gusb-unenumerated-dispose-control "$out/glib-control" --usb-unenumerated-dispose || failures=1
 phase libfprint-checksum make -C security/libfprint checksum
 phase libfprint-build make -C security/libfprint package
+phase libfprint-retain-package retain_package security/libfprint
 phase libfprint-tests make -C security/libfprint MAKE_JOBS_NUMBER=1 test || failures=1
 libfprint_build=$(make -C security/libfprint -V BUILD_WRKSRC)
 mkdir -p "$out/libfprint-meson-logs"
 cp "$libfprint_build"/meson-logs/testlog* "$out/libfprint-meson-logs/"
-# Preserve every original deadline/assertion. Run timing-sensitive suites without
+# Preserve the original thermal/state assertions and model-derived deadlines.
+# Run timing-sensitive suites without
 # competing test processes, then exercise the complete fpi-device suite three
 # more times under that selected profile to expose scheduler variance.
 if [ "$failures" -eq 0 ]; then
@@ -93,6 +103,7 @@ phase libfprint-install make -C security/libfprint install
 phase touchid-dependencies make -C security/t2-touchid install-missing-packages
 phase touchid-checksum make -C security/t2-touchid checksum
 phase touchid-build make -C security/t2-touchid package
+phase touchid-retain-package retain_package security/t2-touchid
 phase touchid-tests make -C security/t2-touchid test
 phase touchid-install make -C security/t2-touchid install
 cli_refusal()
@@ -105,6 +116,7 @@ cli_refusal()
 }
 phase touchid-cli-refusal cli_refusal
 pkg query '%n-%v %q' >"$out/bootstrap-after.txt"
+sha256 "$out"/packages/*.pkg >"$out/package-archives.sha256"
 pkg info -f libgusb libfprint t2-touchid >"$out/packages.txt"
 pkg info -l libgusb libfprint t2-touchid >"$out/installed-files.txt"
 sha256 /usr/local/bin/t2-touchid /usr/local/lib/libfprint-2.so.2 /usr/local/lib/libgusb.so.2 >"$out/installed.sha256"
