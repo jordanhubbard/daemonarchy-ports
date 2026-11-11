@@ -26,5 +26,12 @@
     "Frozen running bulk continues against previous ports pin.",
     "Hyprland advances from 0.57.1 to upstream 0.57.2; changed native products require fresh qualification.",
     "Imported upstream bytes and patch context are retained."
-  ]
+  ],
+  "hosted_metadata_setup_failure": {
+    "run": 42954130754,
+    "stage": "base revision staging before FreeBSD VM",
+    "reason": "depth-1 checkout cannot resolve HEAD~1; fetching that local expression as a remote ref failed silently",
+    "correction": "Fetch the explicit PR base or owned main and resolve FETCH_HEAD; fetch failures are no longer ignored",
+    "native_metadata_reached": false
+  }
 }

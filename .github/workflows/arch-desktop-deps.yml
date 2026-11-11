@@ -39,10 +39,10 @@ jobs:
             /security/openssl*/version.mk
       - name: Stage the base revision of the three ports
         env:
-          BASE: ${{ github.event.pull_request.base.sha || 'HEAD~1' }}
+          BASE: ${{ github.event.pull_request.base.sha || 'main' }}
         run: |
-          git fetch --depth=1 --filter=blob:none origin "$BASE" 2>/dev/null || true
-          base=$(git rev-parse --verify "$BASE^{commit}")
+          git fetch --depth=1 --filter=blob:none origin "$BASE"
+          base=$(git rev-parse --verify 'FETCH_HEAD^{commit}')
           mkdir -p _base
           for port in x11-wm/omarchy x11-wm/daemonarchy x11-wm/hyprland; do
             mkdir -p "_base/$port"
