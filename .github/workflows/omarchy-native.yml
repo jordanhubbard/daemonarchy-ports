@@ -43,7 +43,7 @@ jobs:
           run: |
             mkdir -p _build/omarchy-driver
             code=0
-            sh Tools/daemonarchy/test-omarchy-native.sh > _build/omarchy-driver/run.stdout 2> _build/omarchy-driver/run.stderr || code=$?
+            timeout -k 30 2400 sh Tools/daemonarchy/test-omarchy-native.sh > _build/omarchy-driver/run.stdout 2> _build/omarchy-driver/run.stderr || code=$?
             printf '%s\n' "$code" > _build/omarchy-driver/exit-status
       - name: Require success after evidence sync
         run: |

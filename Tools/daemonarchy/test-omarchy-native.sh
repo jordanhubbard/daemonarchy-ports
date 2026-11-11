@@ -34,6 +34,11 @@ pkg query '%n-%v %q' >"$out/bootstrap-before.txt"
 # The official binary repository cannot distribute libdvdcss. Build this
 # actual selected dependency from its checksum-bound original port first.
 phase restricted-bootstrap pkg install -y meson pkgconf
+# DOCS is a native default. Resolve its declared doxygen/tool dependencies
+# through the ordinary binary bootstrap path before invoking original make;
+# do not accidentally rebuild the transitive documentation toolchain here.
+phase libdvdcss-options make -C multimedia/libdvdcss -V PORT_OPTIONS
+phase libdvdcss-dependencies make -C multimedia/libdvdcss install-missing-packages
 phase libdvdcss-checksum make -C multimedia/libdvdcss checksum
 phase libdvdcss-package make -C multimedia/libdvdcss package
 dependency_package=$(make -C multimedia/libdvdcss -V WRKDIR_PKGFILE)
