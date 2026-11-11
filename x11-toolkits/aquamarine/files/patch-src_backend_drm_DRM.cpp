@@ -1,13 +1,14 @@
---- src/backend/drm/DRM.cpp.orig	2026-10-31 08:00:00.000000000 -0700
-+++ src/backend/drm/DRM.cpp	2026-10-31 08:00:00.000000000 -0700
-@@ -1,5 +1,6 @@
+--- src/backend/drm/DRM.cpp.orig
++++ src/backend/drm/DRM.cpp
+@@ -1,6 +1,7 @@
+ 
  #include "aquamarine/output/Output.hpp"
  #include <algorithm>
 +#include <string_view>
  #include <aquamarine/backend/DRM.hpp>
  #include <aquamarine/backend/drm/Legacy.hpp>
  #include <aquamarine/backend/drm/Atomic.hpp>
-@@ -95,14 +96,32 @@
+@@ -96,14 +97,32 @@
      return enumerate;
  }
  
@@ -42,7 +43,7 @@
          if (!drmConn)
              continue;
  
-@@ -1136,7 +1155,7 @@
+@@ -1137,7 +1156,7 @@
      listeners.gpuChange = gpu->events.change.listen([this](const CSessionDevice::SChangeEvent& E) {
          if (E.type == CSessionDevice::AQ_SESSION_EVENT_CHANGE_HOTPLUG) {
              backend->log(AQ_LOG_DEBUG, std::format("drm: Got a hotplug event for {}", gpuName));
@@ -51,7 +52,7 @@
          } else if (E.type == CSessionDevice::AQ_SESSION_EVENT_CHANGE_LEASE) {
              backend->log(AQ_LOG_DEBUG, std::format("drm: Got a lease event for {}", gpuName));
              scanLeases();
-@@ -1202,8 +1221,8 @@
+@@ -1203,8 +1222,8 @@
      }
  }
  
@@ -62,7 +63,7 @@
      markRedundantTiles();
  
      // disconnect now to possibly free up crtcs
-@@ -1249,8 +1268,27 @@
+@@ -1250,8 +1269,27 @@
          backend->log(AQ_LOG_ERROR, std::format("drm: Failed to update renderer state for {}", gpu->path));
  }
  
@@ -92,7 +93,7 @@
  
      auto resources = drmModeGetResources(gpu->fd);
      if (!resources) {
-@@ -1258,11 +1296,13 @@
+@@ -1259,11 +1297,13 @@
          return;
      }
  

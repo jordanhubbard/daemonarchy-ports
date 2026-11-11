@@ -8,8 +8,8 @@ PKGNAME_X=		-${FLAVOR:S/default//}
 .endif
 PKGNAMESUFFIX=		${PKGNAME_X:S/--/-/:C/-$//}
 
-HASH=			82a4224f0
-MIT_COMMIT_DATE=	2026.09.04
+HASH=			2eaa2f033
+MIT_COMMIT_DATE=	2026.11.05
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
@@ -57,7 +57,9 @@ LDAP_USES=		ldap
 LDAP_CONFIGURE_WITH=	ldap
 LMDB_DESC=		OpenLDAP Lightning Memory-Mapped Database support
 LMDB_CONFIGURE_WITH=	lmdb
-LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb0
+LMDB_CPPFLAGS=		-I${LOCALBASE}/lmdb0/include
+LMDB_LDFLAGS=		-L${LOCALBASE}/lmdb0/lib
+LMDB_LIB_DEPENDS=	liblmdb0.so:databases/lmdb0
 LMDB_IMPLIES=		LDAP
 NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls

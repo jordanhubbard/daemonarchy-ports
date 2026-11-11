@@ -1,6 +1,5 @@
 PORTNAME=	jellyfin-ffmpeg
-PORTVERSION=	8.1.3.1
-PORTREVISION=	3
+PORTVERSION=	8.1.3.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	ahze@FreeBSD.org
@@ -10,8 +9,8 @@ WWW=		https://github.com/jellyfin/jellyfin-ffmpeg
 LICENSE=	GPLv2+ LGPL21+
 LICENSE_COMB=	multi
 
-ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	upstream jellyfin-ffmpeg targets 64-bit; 32-bit builds non-PIC asm that lld rejects
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc powerpcspe
+NOT_FOR_ARCHS_REASON=	upstream jellyfin-ffmpeg targets 64-bit; 32-bit builds non-PIC asm that lld rejects
 
 BUILD_DEPENDS=	nasm:devel/nasm \
 		${LOCALBASE}/include/fftw3.h:math/fftw3 \
@@ -70,7 +69,7 @@ JFFMPEG_DIR=	${PREFIX}/lib/jellyfin-ffmpeg8
 
 post-patch:
 	cd ${WRKSRC} && QUILT_PATCHES=debian/patches quilt push -a || \
-	    QUILT_PATCHES=debian/patches quilt applied | ${GREP} -q 0098
+	    QUILT_PATCHES=debian/patches quilt applied | ${GREP} -q 0106
 	cd ${WRKSRC} && ${PATCH} -p0 --forward --quiet \
 	    < ${FILESDIR}/extra-patch-overlay_vulkan-framesync
 

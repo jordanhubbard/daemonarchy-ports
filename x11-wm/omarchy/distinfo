@@ -1,5 +1,5 @@
-TIMESTAMP = 1793038268
-SHA256 (basecamp-omarchy-v4.0.4_GH0.tar.gz) = cd576f3ea0d1d87ed45dd3f34c7dfd42c982884ac15fe8bf5b858241254ec508
-SIZE (basecamp-omarchy-v4.0.4_GH0.tar.gz) = 124795876
-SHA256 (jordanhubbard-omarchy-freebsd-3e8359b47c28a28fe9fa3b16d5fa27603c9864b6_GH0.tar.gz) = 1ebd74ca10cb43764506fee9c548a6ae81fdc295a1b8b2789905cec0bd96f893
-SIZE (jordanhubbard-omarchy-freebsd-3e8359b47c28a28fe9fa3b16d5fa27603c9864b6_GH0.tar.gz) = 67390
+TIMESTAMP = 1794208023
+SHA256 (omacom-omarchy-v4.5.0_GH0.tar.gz) = ec52106ab49023068a4eef1c6e3f2f5210982d10f5427b6d9f1afdba3e67fd76
+SIZE (omacom-omarchy-v4.5.0_GH0.tar.gz) = 180619768
+SHA256 (jordanhubbard-omarchy-freebsd-cba62618afb4bf99fe868cc9d010e7c2efed5fae_GH0.tar.gz) = cd338727d07a0a7edc4999650e34ead1b4c092c2d22caf990420d52ef65a6204
+SIZE (jordanhubbard-omarchy-freebsd-cba62618afb4bf99fe868cc9d010e7c2efed5fae_GH0.tar.gz) = 67980

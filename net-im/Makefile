@@ -5,7 +5,6 @@
     SUBDIR += coccinella
     SUBDIR += concord
     SUBDIR += conduit
-    SUBDIR += convey
     SUBDIR += coyim
     SUBDIR += deltachat-desktop
     SUBDIR += dendrite
@@ -14,6 +13,7 @@
     SUBDIR += dissent
     SUBDIR += echat
     SUBDIR += ejabberd
+    SUBDIR += faro
     SUBDIR += farstream
     SUBDIR += finch
     SUBDIR += flare
@@ -122,7 +122,6 @@
     SUBDIR += py-slixmpp
     SUBDIR += py-smpplib
     SUBDIR += py-toxcore-c
-    SUBDIR += py-unmessage
     SUBDIR += py-zapzap
     SUBDIR += qTox
     SUBDIR += quaternion
@@ -144,7 +143,6 @@
     SUBDIR += spectral
     SUBDIR += ssh-chat
     SUBDIR += sshout
-    SUBDIR += tde2e
     SUBDIR += tdlib
     SUBDIR += teams
     SUBDIR += telegram-cli

@@ -1,6 +1,7 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.6.10
+PORTREVISION=	1
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -25,7 +26,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 #
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=6.0.8<6.1:www/py-django60@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-cors-headers>=4.9.0<5:www/py-dj60-django-cors-headers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj60-django-debug-toolbar>=7.1.1<8:www/py-dj60-django-debug-toolbar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj60-django-debug-toolbar>=7.1.1<9:www/py-dj60-django-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-filter>=26.1<27:www/py-dj60-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-htmx>=1.29.0<2:www/py-dj60-django-htmx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-mptt>=0.18.0<0.19:www/py-dj60-django-mptt@${PY_FLAVOR} \
@@ -37,7 +38,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django60>=6.0.8<6.1:www/py-django60@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}dj60-django-tables2>=2.8.0<2.9:www/py-dj60-django-tables2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-taggit>=6.1.0<7:www/py-dj60-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-django-timezone-field>=7.2.2<8:www/py-dj60-django-timezone-field@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj60-djangorestframework>=3.17.1<3.18.0:www/py-dj60-djangorestframework@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj60-djangorestframework>=3.18.3<3.19.0:www/py-dj60-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-drf-spectacular>=0.30.0<1:www/py-dj60-drf-spectacular@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-drf-spectacular-sidecar>=2026.8.1:www/py-dj60-drf-spectacular-sidecar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj60-social-auth-app-django>=5.9.0<6:www/py-dj60-social-auth-app-django@${PY_FLAVOR} \
@@ -94,6 +95,10 @@ GIT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dulwich>0:devel/py-dulwich@${PY_FLAVOR}
 LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dj60-django-auth-ldap>0:www/py-dj60-django-auth-ldap
 S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR}
 SENTRY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sentry-sdk>0:devel/py-sentry-sdk@${PY_FLAVOR}
+
+# No longer required since DRF 3.18.2, remove once NetBox gets updated to 4.7.4+
+post-extract:
+	${RM} ${WRKSRC}/netbox/netbox/monkey.py
 
 do-install:
 	cd ${WRKSRC}/netbox ; \

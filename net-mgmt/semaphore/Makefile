@@ -1,6 +1,6 @@
 PORTNAME=	semaphore
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.19.16
+DISTVERSION=	2.19.18
 CATEGORIES=	net-mgmt
 MASTER_SITES+=	https://github.com/joneum/FreeBSD-Semaphore/releases/download/${PORTNAME}-${DISTVERSION}/:webui
 DISTFILES+=	${PORTNAME}-webui-${DISTVERSION}${EXTRACT_SUFX}:webui \
@@ -13,10 +13,16 @@ WWW=		https://semaphoreui.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	modernc.org/sqlite ships outdated FreeBSD bindings \
+			for the other architectures
+
 RUN_DEPENDS=	ansible:sysutils/py-ansible-core@${PY_FLAVOR} \
 		git:devel/git
 
-USES=		go:modules python:env
+USES=		cpe go:modules python:env
+CPE_VENDOR=	ansible-semaphore
+CPE_PRODUCT=	ansible_semaphore
 USE_GITHUB=	yes
 GH_ACCOUNT=	semaphoreui
 GH_TUPLE=	Azure:go-ntlmssp:v0.1.1:azure_go_ntlmssp/vendor/github.com/Azure/go-ntlmssp \
@@ -90,6 +96,9 @@ GL_TUPLE=	cznic:libc:533f38d8beab45d5a69acb60903422d454f0fac1:cznic_libc/vendor/
 		cznic:sqlite:66b4d20f42485b9823a2d35c86b08335d927d0e5:cznic_sqlite/vendor/modernc.org/sqlite
 USE_RC_SUBR=	semaphore
 
+USERS=		semaphore
+GROUPS=		semaphore
+
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_TARGET=	./cli:${PORTNAME}
 GO_BUILDFLAGS=	-trimpath \
@@ -105,7 +114,8 @@ post-extract:
 	@${CP} ${WRKDIR}/vendor/modules.txt ${WRKSRC}/vendor/modules.txt
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME} \
+		${STAGEDIR}/var/db/${PORTNAME}
 	${INSTALL_DATA} ${FILESDIR}/config.json.sample \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/config.json.sample
 

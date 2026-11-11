@@ -1,7 +1,6 @@
 PORTNAME=	susshi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.1
-PORTREVISION=	1
+DISTVERSION=	0.25.4
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,6 +20,7 @@ GH_ACCOUNT=	yatoub
 
 CARGO_CRATES=	adler2-2.0.1 \
 		allocator-api2-0.2.21 \
+		annotate-snippets-0.12.16 \
 		anstream-1.0.0 \
 		anstyle-1.0.14 \
 		anstyle-parse-1.0.0 \
@@ -28,8 +28,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.104 \
 		approx-0.5.1 \
-		arboard-3.6.1 \
+		arboard-3.7.0 \
 		arc-swap-1.9.1 \
+		arraydeque-0.5.1 \
 		autocfg-1.5.1 \
 		base64-0.23.1 \
 		basic-toml-0.1.10 \
@@ -47,11 +48,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		clap_derive-4.6.3 \
 		clap_lex-1.0.0 \
 		clap_mangen-0.3.1 \
-		clipboard-win-5.4.1 \
+		clipboard-win-5.4.3 \
 		colorchoice-1.0.4 \
 		compact_str-0.9.0 \
 		const-oid-0.10.2 \
 		convert_case-0.10.0 \
+		core_detect-1.0.0 \
 		cpufeatures-0.3.0 \
 		crc32fast-1.5.0 \
 		crossterm-0.29.0 \
@@ -70,6 +72,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		displaydoc-0.2.5 \
 		document-features-0.2.12 \
 		either-1.15.0 \
+		encoding_rs-0.8.42 \
+		encoding_rs_io-0.1.8 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		error-code-3.3.2 \
@@ -88,6 +92,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		gethostname-1.1.0 \
 		getrandom-0.2.17 \
 		getrandom-0.4.1 \
+		granit-parser-2.0.0 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		hashbrown-0.17.1 \
@@ -115,7 +120,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		libm-0.2.16 \
 		libredox-0.1.12 \
 		libssh2-sys-0.3.3 \
-		libz-sys-1.1.24 \
+		libz-sys-1.1.32 \
 		line-clipping-0.3.5 \
 		linux-raw-sys-0.12.1 \
 		litrs-1.0.0 \
@@ -127,6 +132,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		mime_guess-2.0.5 \
 		miniz_oxide-0.9.1 \
 		mio-1.1.1 \
+		multiversion_no_op-1.0.0 \
 		nix-0.31.3 \
 		num-conv-0.2.0 \
 		num-traits-0.2.19 \
@@ -166,15 +172,15 @@ CARGO_CRATES=	adler2-2.0.1 \
 		redox_users-0.5.2 \
 		ring-0.17.14 \
 		roff-1.1.1 \
-		rust-embed-8.12.0 \
-		rust-embed-impl-8.12.0 \
-		rust-embed-utils-8.12.0 \
+		rust-embed-8.13.0 \
+		rust-embed-impl-8.13.0 \
+		rust-embed-utils-8.13.0 \
 		rustc-hash-2.1.2 \
 		rustc_version-0.4.1 \
 		rustix-1.1.4 \
-		rustls-0.23.45 \
+		rustls-0.23.46 \
 		rustls-pki-types-1.14.1 \
-		rustls-webpki-0.103.15 \
+		rustls-webpki-0.103.16 \
 		rustversion-1.0.22 \
 		ryu-1.0.23 \
 		same-file-1.0.6 \
@@ -182,10 +188,10 @@ CARGO_CRATES=	adler2-2.0.1 \
 		self_cell-1.2.2 \
 		semver-1.0.27 \
 		serde-1.0.229 \
+		serde-saphyr-2.0.0 \
 		serde_core-1.0.229 \
 		serde_derive-1.0.229 \
-		serde_json-1.0.151 \
-		serde_yaml_ng-0.10.0 \
+		serde_json-1.0.154 \
 		sha2-0.11.0 \
 		shellexpand-3.1.2 \
 		shlex-1.3.0 \
@@ -193,6 +199,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		signal-hook-mio-0.2.5 \
 		signal-hook-registry-1.4.8 \
 		simd-adler32-0.3.9 \
+		simdutf8-0.1.5 \
 		smallvec-1.15.1 \
 		ssh2-0.9.6 \
 		static_assertions-1.1.0 \
@@ -225,7 +232,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode-truncate-2.0.1 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
-		unsafe-libyaml-0.2.11 \
 		untrusted-0.9.0 \
 		ureq-3.4.2 \
 		ureq-proto-0.6.4 \
@@ -239,33 +245,23 @@ CARGO_CRATES=	adler2-2.0.1 \
 		wasm-encoder-0.244.0 \
 		wasm-metadata-0.244.0 \
 		wasmparser-0.244.0 \
-		webpki-roots-1.0.7 \
+		webpki-roots-1.0.10 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.11 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-link-0.2.1 \
 		windows-sys-0.52.0 \
-		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_gnullvm-0.53.1 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_aarch64_msvc-0.53.1 \
 		windows_i686_gnu-0.52.6 \
-		windows_i686_gnu-0.53.1 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_gnullvm-0.53.1 \
 		windows_i686_msvc-0.52.6 \
-		windows_i686_msvc-0.53.1 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnu-0.53.1 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.52.6 \
-		windows_x86_64_msvc-0.53.1 \
 		wit-bindgen-0.51.0 \
 		wit-bindgen-core-0.51.0 \
 		wit-bindgen-rust-0.51.0 \

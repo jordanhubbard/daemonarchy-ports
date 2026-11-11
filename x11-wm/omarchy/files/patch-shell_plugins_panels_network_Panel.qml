@@ -1,7 +1,7 @@
 --- shell/plugins/panels/network/Panel.qml.orig
 +++ shell/plugins/panels/network/Panel.qml
-@@ -30,6 +30,52 @@
- 
+@@ -31,6 +31,52 @@
+
    // Live connection details from `ip` / /sys / iw.
    property var info: ({})  // { iface, type, ip, prefix, gateway, speed, duplex, ssid, signal, freq, bitrate, rx_bytes, tx_bytes, router_ping_ms, internet_ping_ms }
 +  // The status file is refreshed every 10 s while daemonarchy-debug is alive. One
@@ -50,11 +50,11 @@
 +      (debugStatus.listener ? "Listening for approved agent" : "Approved; listener unavailable")
 +    return "Remote debugging: " + state + "\n" + debugAddress()
 +  }
- 
+
    // Throughput tracking. Rates are computed as deltas between successive
    // `omarchy-network-status --verbose` samples (~1.5s apart via detailsPoll).
-@@ -65,8 +111,13 @@
-     "Bending light",
+@@ -66,8 +112,13 @@
+     Commons.I18n.t("network.phrase7")
    ]
    readonly property string connectionPhrase: connectionPhrases[connectionPhraseIndex % connectionPhrases.length]
 -  readonly property bool networkManagerAvailable: Networking.backend === NetworkBackendType.NetworkManager
@@ -69,12 +69,12 @@
    readonly property var wifiDevice: findDevice(DeviceType.Wifi)
    readonly property var wifiNetworkObjects: wifiDevice && wifiDevice.networks ? wifiDevice.networks.values : []
    readonly property var connectedWifiNetwork: findConnectedWifiNetwork()
-@@ -121,11 +172,11 @@
+@@ -122,11 +173,11 @@
    // Keyboard focus zone for the panel. j/k crosses row boundaries:
-   // header actions ⇄ band ⇄ DNS row ⇄ Wi-Fi networks. h/l move
+   // header actions ⇄ portal ⇄ band ⇄ DNS row ⇄ Wi-Fi networks. h/l move
    // within header actions, band pills, or DNS providers.
--  property string focusSection: "dns"  // "header" | "band" | "dns" | "wifi"
-+  property string focusSection: hasNetworkManager ? "dns" : "header"  // "header" | "band" | "dns" | "wifi"
+-  property string focusSection: "dns"  // "header" | "portal" | "band" | "dns" | "wifi"
++  property string focusSection: hasNetworkManager ? "dns" : "header"  // "header" | "portal" | "band" | "dns" | "wifi"
    property int headerIndex: 0
    readonly property bool canDisconnect: !!connectedWifiNetwork
    readonly property bool headerHasDisconnect: false
@@ -83,16 +83,16 @@
    // The hero switch is the Wi-Fi radio, so it only exists when there is a
    // radio to switch. On a wired box it would otherwise sit there reading
    // "off" beside a perfectly live Ethernet connection.
-@@ -137,7 +188,7 @@
+@@ -138,7 +189,7 @@
    readonly property bool qrHeaderHasCursor: cursorActive && focusSection === "header" && headerIndex === qrHeaderIndex
    readonly property bool speedHeaderHasCursor: cursorActive && focusSection === "header" && headerIndex === speedHeaderIndex
    readonly property bool toggleHeaderHasCursor: cursorActive && focusSection === "header" && headerIndex === toggleHeaderIndex
--  readonly property string toggleHint: Networking.wifiEnabled ? "Turn Wi-Fi off" : "Turn Wi-Fi on"
-+  readonly property string toggleHint: networking.wifiEnabled ? "Turn Wi-Fi off" : "Turn Wi-Fi on"
+-  readonly property string toggleHint: Networking.wifiEnabled ? Commons.I18n.t("network.turnWifiOff") : Commons.I18n.t("network.turnWifiOn")
++  readonly property string toggleHint: networking.wifiEnabled ? Commons.I18n.t("network.turnWifiOff") : Commons.I18n.t("network.turnWifiOn")
    readonly property var dnsProviders: ["DHCP", "Cloudflare", "Google", "Custom"]
    property int dnsIndex: 0
    // ["2.4", "5", ...], or empty when there is nothing to choose between.
-@@ -149,7 +200,7 @@
+@@ -150,7 +201,7 @@
    // Worth showing when there is a real choice, or when a pin is in force even
    // though only one band answers right now -- otherwise the Automatic switch
    // vanishes and the pin becomes unclearable from the panel.
@@ -101,8 +101,8 @@
      && (bandAvailable.length > 1 || bandPinned)
    // While a change is in flight, show the state that was asked for rather than
    // the one still in force, so the row answers the click immediately instead of
-@@ -163,7 +214,7 @@
-   readonly property bool bandBusy: pendingBand !== ""
+@@ -166,7 +217,7 @@
+   readonly property string dnsEffective: pendingDnsProvider !== "" ? pendingDnsProvider : dnsProvider
    // The speed test needs an interface to test, so its hero action only
    // appears once there is one.
 -  readonly property bool canRunSpeedTest: !!info.iface
@@ -110,8 +110,8 @@
    property int bandIndex: 0
    // The band section has up to two cursor rows: the Automatic switch on the
    // header line, then the pills. Same shape as wifiActionFocused.
-@@ -180,7 +231,7 @@
- 
+@@ -183,7 +234,7 @@
+
    onCanSelectBandChanged: {
      if (!canSelectBand && focusSection === "band") {
 -      focusSection = "dns"
@@ -119,25 +119,25 @@
        bandAutoFocused = true
      }
    }
-@@ -203,7 +254,7 @@
- 
+@@ -206,7 +257,7 @@
+
    function toggleNetwork() {
      if (!networkManagerAvailable) return
 -    Networking.wifiEnabled = !Networking.wifiEnabled
 +    networking.wifiEnabled = !networking.wifiEnabled
      Qt.callLater(function() { root.refresh(true) })
    }
- 
-@@ -322,7 +373,7 @@
+
+@@ -327,7 +378,7 @@
        refresh(true)
        selectedIndex = wifiNetworks.length > 0 ? 0 : -1
        wifiActionFocused = false
--      focusSection = wifiNetworks.length > 0 ? "wifi" : "dns"
-+      focusSection = wifiNetworks.length > 0 ? "wifi" : (hasNetworkManager ? "dns" : "header")
+-      focusSection = hasCaptivePortal ? "portal" : (wifiNetworks.length > 0 ? "wifi" : "dns")
++      focusSection = hasCaptivePortal ? "portal" : (wifiNetworks.length > 0 ? "wifi" : (hasNetworkManager ? "dns" : "header"))
        var idx = dnsProviders.indexOf(dnsProvider)
        dnsIndex = idx >= 0 ? idx : 0
        syncBandIndex()
-@@ -365,7 +416,7 @@
+@@ -370,7 +421,7 @@
      if (wifiNetworks.length === 0) {
        selectedIndex = -1
        wifiActionFocused = false
@@ -146,8 +146,8 @@
      } else if (passwordSsid !== "") {
        var passwordIndex = wifiIndexForSsid(passwordSsid)
        if (passwordIndex >= 0) {
-@@ -471,11 +522,11 @@
-   function refresh(scanWifi) {
+@@ -576,11 +627,11 @@
+     checkConnectivity()
      if (scanWifi === undefined) scanWifi = false
      if (!detailsProc.running) detailsProc.running = true
 -    if (!dnsProc.running) {
@@ -160,37 +160,37 @@
        bandProc.command = ["omarchy-network-band"]
        bandProc.running = true
      }
-@@ -638,7 +689,7 @@
+@@ -743,7 +794,7 @@
    // reconnect is the thing you want to watch, and the details rows above
    // report it as it happens.
    function setBand(band) {
 -    if (!band || actionProc.running) return
 +    if (!hasNetworkManager || !band || actionProc.running) return
- 
+
      root.pendingBand = band
      actionProc.command = ["omarchy-network-band", band]
-@@ -665,7 +716,7 @@
+@@ -770,7 +821,7 @@
    }
- 
+
    function setDns(provider) {
 -    if (!root.bar || !provider || actionProc.running) return
 +    if (!hasNetworkManager || !root.bar || !provider || actionProc.running) return
- 
+
      if (provider === "Custom") {
        var launcher = "omarchy-launch-floating-terminal-with-presentation"
-@@ -681,6 +732,9 @@
+@@ -787,6 +838,9 @@
    }
- 
+
    function requiresCredentials(security) {
 +    // The FreeBSD wizard collects CA/server verification and EAP-TLS material,
 +    // rather than using NetworkManager's identity/password-only inline form.
 +    if (!hasNetworkManager && (security === WifiSecurityType.WpaEap || security === WifiSecurityType.Wpa2Eap)) return false
      return Model.requiresCredentials(security, WifiSecurityType.Open, WifiSecurityType.Owe)
    }
- 
-@@ -757,7 +811,13 @@
+
+@@ -863,7 +917,13 @@
    }
- 
+
    function connectDirectly(ssid) {
 -    runNetworkAction("connect", networkForSsid(ssid), function(network) { network.connect() })
 +    var network = networkForSsid(ssid)
@@ -201,12 +201,13 @@
 +    }
 +    runNetworkAction("connect", network, function(network) { network.connect() })
    }
- 
+
    function connectWithPassphrase(ssid, passphrase) {
-@@ -806,6 +866,27 @@
- 
+@@ -911,6 +971,27 @@
+   implicitHeight: button.implicitHeight
+
    Component.onCompleted: refresh()
- 
++
 +  FileView {
 +    id: debugStatusFile
 +    path: "/var/run/daemonarchy-debug.status"
@@ -227,22 +228,26 @@
 +      root.updateDebugStatus(root.debugStatusText)
 +    }
 +  }
-+
+
    // Pulls everything we want about the active route's interface in one shot.
    Process {
-     id: detailsProc
-@@ -958,6 +1039,7 @@
-     anchors.fill: parent
+@@ -1085,8 +1166,8 @@
      bar: root.bar
      text: root.icon
-+    tooltipText: root.debugSummary()
- 
+     active: root.restricted
+-    tooltipText: root.hasCaptivePortal ? Commons.I18n.t("network.signInToNetwork")
+-      : (root.restricted ? Commons.I18n.t("network.limitedAccess") : "")
++    tooltipText: [root.hasCaptivePortal ? Commons.I18n.t("network.signInToNetwork")
++      : (root.restricted ? Commons.I18n.t("network.limitedAccess") : ""), root.debugSummary()].filter(function(text) { return text !== "" }).join("\n")
+
      onPressed: function(b) {
        if (root.opened) root.close()
-@@ -969,6 +1051,17 @@
+@@ -1096,6 +1177,17 @@
+       // that deferral and stalling the open on NetworkManager's AP flood.
+       else root.open()
      }
-   }
- 
++  }
++
 +  Rectangle {
 +    visible: root.debugStatus.grant
 +    anchors.right: button.right
@@ -250,14 +255,12 @@
 +    width: Style.space(6)
 +    height: width
 +    radius: width / 2
-+    color: root.debugStatus.connected ? Color.accent :
++    color: root.debugStatus.connected ? Commons.Color.accent :
 +      (root.debugStatus.listener ? root.bar.foreground : root.bar.urgent)
-+  }
-+
+   }
+
    // Keyboard-driven popup anchored to the bar widget icon. The shared
-   // KeyboardPanel handles the layer-shell PanelWindow scaffolding
-   // (focus priming on open, screen binding, anchored-to-icon positioning,
-@@ -1009,7 +1102,7 @@
+@@ -1141,7 +1233,7 @@
                  root.focusSection = "band"
                  root.bandAutoFocused = true
                } else {
@@ -265,8 +268,8 @@
 +                root.focusSection = root.hasNetworkManager ? "dns" : "wifi"
                }
              }
-           } else if (root.focusSection === "band") {
-@@ -1025,7 +1118,7 @@
+           } else if (root.focusSection === "portal") {
+@@ -1167,7 +1259,7 @@
              } else if (root.bandAutoFocused && root.bandPillsVisible) {
                root.bandAutoFocused = false
              } else {
@@ -275,7 +278,7 @@
              }
            } else if (root.focusSection === "dns") {
              // k from DNS moves up into the band section when it's on screen,
-@@ -1047,7 +1140,7 @@
+@@ -1191,7 +1283,7 @@
              // k from the top row escapes back up to the DNS row rather than
              // wrapping around to the bottom of the list.
              if (dy < 0 && root.selectedIndex <= 0) {
@@ -284,7 +287,7 @@
                root.wifiActionFocused = false
              }
              else root.selectByDelta(dy)
-@@ -1143,7 +1236,7 @@
+@@ -1284,7 +1376,7 @@
            ToggleSwitch {
              id: powerSwitch
              visible: root.canToggleWifi
@@ -293,10 +296,10 @@
              hasCursor: root.toggleHeaderHasCursor
              foreground: root.bar.foreground
              Layout.alignment: Qt.AlignVCenter
-@@ -1267,6 +1360,60 @@
+@@ -1435,6 +1527,60 @@
          }
        }
- 
+
 +      PanelSeparator {
 +        foreground: root.bar.foreground
 +      }
@@ -354,23 +357,23 @@
        // Wi-Fi band selection. Only on Wi-Fi, and only when the network answers
        // on more than one band -- a single-band AP has nothing to toggle.
        PanelSeparator {
-@@ -1398,12 +1545,14 @@
- 
+@@ -1566,12 +1712,14 @@
+
        }
- 
+
 -      // DNS provider selection.
 +      // NetworkManager DNS controls are unavailable on FreeBSD.
        PanelSeparator {
 +        visible: root.hasNetworkManager
          foreground: root.bar.foreground
        }
- 
+
        Column {
 +        visible: root.hasNetworkManager
          width: parent.width
          spacing: Style.space(10)
- 
-@@ -1584,7 +1733,7 @@
+
+@@ -1752,7 +1900,7 @@
      onHovered: function(isHovered) {
        if (!isHovered) return
        root.cursorActive = true

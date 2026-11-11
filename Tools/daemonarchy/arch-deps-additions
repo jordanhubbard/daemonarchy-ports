@@ -3,3 +3,5 @@
 # check-arch-deps.sh requires amd64 metadata to equal the base revision, except for exactly these added entries.
 # Nothing may be removed, and an addition that is not listed here fails. Remove a line once its change has merged.
 x11-wm/daemonarchy RUN_DEPENDS daemonarchy-pkg>0:ports-mgmt/daemonarchy-pkg
+x11-wm/hyprland LIB_DEPENDS libcanberra.so:audio/libcanberra
+x11-wm/hyprland CMAKE_ARGS -fexperimental-library

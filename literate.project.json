@@ -89,7 +89,7 @@
   ],
   "repository_policy": {
     "schema": "literate-ai/repository-policy@1",
-    "default_branch": "daemonarchy",
+    "default_branch": "main",
     "main_state": "free",
     "pre_release_version": null,
     "default_component": "Tools/daemonarchy/components/liblz4",

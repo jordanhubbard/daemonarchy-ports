@@ -5,7 +5,6 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Visual Regression Testing and Graphical Diffing
-WWW=		https://cran.r-project.org/package=vdiffr
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -18,7 +17,6 @@ CRAN_DEPENDS=	R-cran-cpp11>0:devel/R-cran-cpp11 \
 		R-cran-rlang>0:devel/R-cran-rlang \
 		R-cran-testthat>=3.0.3:devel/R-cran-testthat \
 		R-cran-xml2>=1.0.0:textproc/R-cran-xml2
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 LIB_DEPENDS=	libpng16.so:graphics/png
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \

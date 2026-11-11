@@ -11,8 +11,11 @@ Read `PROJECT.md`, [the documentation index](docs/README.md),
 [the active queue](docs/roadmap/active-work.md) before changing authority.
 The original ports, Mk files, patches, distinfo and upstream tests remain
 implementation authority. Keep them editable; do not quarantine or regenerate
-them during adoption. Use review branches targeting `daemonarchy`; keep
-upstream `main` separate.
+them during adoption. Use review branches targeting the owned `main` integration
+branch, as selected by Daemonarchy's release checkout catalog and HACKING.md.
+Keep FreeBSD's upstream `main` separate in its upstream remote; it is not the
+owned fork's release branch. The older `daemonarchy` branch is not the current
+release integration target.
 
 Use canonical Components, selected native Flavors and current locks. Exact
 original-source adoption and installed Standard binding require their reviewed

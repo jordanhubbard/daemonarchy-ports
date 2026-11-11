@@ -209,9 +209,6 @@
     SUBDIR += mailgraph
     SUBDIR += mailhog
     SUBDIR += mailio
-    SUBDIR += mailman
-    SUBDIR += mailman-exim4
-    SUBDIR += mailman-postfix
     SUBDIR += mailman3
     SUBDIR += mailpit
     SUBDIR += mailscanner
@@ -219,7 +216,6 @@
     SUBDIR += mailutils
     SUBDIR += mailx
     SUBDIR += mairix
-    SUBDIR += masqmail
     SUBDIR += mb2md
     SUBDIR += mbar
     SUBDIR += mblaze
@@ -537,6 +533,7 @@
     SUBDIR += py-mailnag
     SUBDIR += py-mailsuite
     SUBDIR += py-managesieve3
+    SUBDIR += py-minismtpd
     SUBDIR += py-notmuch
     SUBDIR += py-notmuch2
     SUBDIR += py-offlineimap
@@ -547,6 +544,7 @@
     SUBDIR += py-pymilter
     SUBDIR += py-pysasl
     SUBDIR += py-pyspf
+    SUBDIR += py-python-oxmsg
     SUBDIR += py-python-slimta
     SUBDIR += py-pyzmail
     SUBDIR += py-resend
@@ -752,6 +750,9 @@
     SUBDIR += ssmtp
     SUBDIR += stalwart
     SUBDIR += stalwart-cli
+    SUBDIR += stalwart-migrate
+    SUBDIR += stalwart-proxy
+    SUBDIR += stalwart016
     SUBDIR += surblhost
     SUBDIR += swaks
     SUBDIR += sylpheed
@@ -769,6 +770,7 @@
     SUBDIR += up-imapproxy
     SUBDIR += usendmail
     SUBDIR += vacation
+    SUBDIR += vandelay
     SUBDIR += vbsfilter
     SUBDIR += vexim
     SUBDIR += vpopmail
