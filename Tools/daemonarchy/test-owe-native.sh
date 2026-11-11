@@ -2,6 +2,9 @@
 # SPDX-License-Identifier: BSD-2-Clause
 # Original owe port checks across native inotify and its retained compatibility path.
 set -eu
+revision=${1:?reviewed source revision required}
+test "${#revision}" -eq 40
+case "$revision" in *[!0-9a-f]*) exit 64;; esac
 test "$(uname -s)" = FreeBSD
 test "$(id -u)" = 0
 root=$(pwd -P)
@@ -21,7 +24,7 @@ phase() {
     if [ "$code" -ne 0 ]; then cat "$out/$name.stdout" "$out/$name.stderr"; return "$code"; fi
 }
 freebsd-version -ku >"$out/platform.txt"
-git rev-parse HEAD >"$out/source-commit.txt"
+printf '%s\n' "$revision" >"$out/source-commit.txt"
 sha256 "$port/Makefile" "$port/distinfo" >"$out/source-inputs.sha256"
 phase options make -C "$port" -V LIB_DEPENDS -V USES -V LDFLAGS
 if test -f /usr/include/sys/inotify.h; then

@@ -47,7 +47,7 @@ jobs:
           run: |
             mkdir -p _build/owe-driver
             code=0
-            timeout -k 30 2400 sh Tools/daemonarchy/test-owe-native.sh > _build/owe-driver/run.stdout 2> _build/owe-driver/run.stderr || code=$?
+            timeout -k 30 2400 sh Tools/daemonarchy/test-owe-native.sh ${{ github.sha }} > _build/owe-driver/run.stdout 2> _build/owe-driver/run.stderr || code=$?
             printf '%s\n' "$code" > _build/owe-driver/exit-status
       - name: Require success after evidence sync
         run: |
