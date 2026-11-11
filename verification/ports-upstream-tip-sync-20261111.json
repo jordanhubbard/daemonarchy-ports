@@ -1,0 +1,30 @@
+{
+  "schema": "daemonarchy/ports-upstream-tip-sync@1",
+  "observed_utc": "2026-11-11T03:29:26.634784+00:00",
+  "owned_parent": "2f98c787cf7ac28ea815b843597096ba01aefa89",
+  "upstream_parent": "8ff8a871c096bef22a37351ef623b78e226b5a05",
+  "merge_commit": "ddd18e497b43541134ca87f9580e5c62e9721766",
+  "code_tree": "ff36a2897a66fa585154e03582b51458a0418f1e",
+  "upstream_commits_added": 175,
+  "delta_paths_vs_upstream": 230,
+  "previous_downstream_paths": 230,
+  "delta_outside_previous_downstream": [],
+  "categories_checked": 62,
+  "origin_entries_checked": 35537,
+  "missing_category_origins": [],
+  "controller_suites": [
+    "Tools/daemonarchy/test_observe_unit_inputs.py",
+    "Tools/daemonarchy/test_omarchy_debug_status.py"
+  ],
+  "controller_suites_exit": 0,
+  "imported_whitespace_check_exit": 2,
+  "downstream_whitespace_check_exit": 2,
+  "native_metadata": false,
+  "native_package_closure": false,
+  "release_qualified": false,
+  "notes": [
+    "Frozen running bulk continues against previous ports pin.",
+    "Hyprland advances from 0.57.1 to upstream 0.57.2; changed native products require fresh qualification.",
+    "Imported upstream bytes and patch context are retained."
+  ]
+}
