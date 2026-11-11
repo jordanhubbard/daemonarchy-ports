@@ -28,10 +28,11 @@ phase()
     name=$1
     shift
     result=0
+    printf 'phase %s\n' "$name"
     "$@" >"$out/$name.stdout" 2>"$out/$name.stderr" || result=$?
     printf '%s\n' "$result" >"$out/$name.exit"
     if [ "$result" -ne 0 ]; then
-        cat "$out/$name.stderr"
+        cat "$out/$name.stdout" "$out/$name.stderr"
         exit "$result"
     fi
 }

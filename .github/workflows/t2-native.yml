@@ -44,10 +44,22 @@ jobs:
           cpu: '2'
           sync: rsync
           run: |
-            sh Tools/daemonarchy/test-t2-native.sh
+            mkdir -p _build/t2-driver
+            result=0
+            sh Tools/daemonarchy/test-t2-native.sh > _build/t2-driver/run.stdout 2> _build/t2-driver/run.stderr || result=$?
+            printf '%s\n' "$result" > _build/t2-driver/exit-status
+      - name: Require successful native result after evidence sync
+        run: |
+          if ! test "$(cat _build/t2-driver/exit-status)" = 0; then
+            tail -n 120 _build/t2-driver/run.stdout
+            tail -n 120 _build/t2-driver/run.stderr
+            exit 1
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: t2-native-port-results
-          path: _build/t2-native/
+          path: |
+            _build/t2-native/
+            _build/t2-driver/
           if-no-files-found: warn
