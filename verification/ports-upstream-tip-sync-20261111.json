@@ -33,5 +33,20 @@
     "reason": "depth-1 checkout cannot resolve HEAD~1; fetching that local expression as a remote ref failed silently",
     "correction": "Fetch the explicit PR base or owned main and resolve FETCH_HEAD; fetch failures are no longer ignored",
     "native_metadata_reached": false
+  },
+  "reviewed_hyprland_dependency_delta": {
+    "hosted_failure_runs": [
+      42954604677,
+      42954615754
+    ],
+    "version": "0.57.2_1",
+    "retained_minimum": "glaze>=7.2.0:devel/glaze",
+    "reason": "Preserve the owned minimum instead of relaxing it to upstream glaze>0",
+    "additions": [
+      "LIB_DEPENDS libcanberra.so:audio/libcanberra",
+      "CMAKE_ARGS -fexperimental-library"
+    ],
+    "architecture_guard": "Unchanged; unreviewed additions and every removal still fail",
+    "native_rerun": "pending"
   }
 }
