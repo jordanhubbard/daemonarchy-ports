@@ -1413,6 +1413,7 @@
     SUBDIR += susshi
     SUBDIR += swatchdog
     SUBDIR += syft
+    SUBDIR += t2-touchid
     SUBDIR += tailcat
     SUBDIR += tailscale
     SUBDIR += tang

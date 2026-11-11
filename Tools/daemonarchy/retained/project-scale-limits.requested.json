@@ -1,0 +1,13 @@
+{
+  "schema": "daemonarchy/requested-project-scale-limits@1",
+  "status": "requested-not-active",
+  "reason": "The installed canonical ProjectDefinition rejects the root scale_limits field; complete-tree scaling support and admission remain required. Preserve the exact requested values without claiming active enforcement.",
+  "requested_scale_limits": {
+    "schema": "literate-ai/project-scale-limits@1",
+    "pinned_input_files": 500000,
+    "pinned_input_total_bytes": 2147483648,
+    "catalog_files": 250000,
+    "catalog_entries": 1000000,
+    "catalog_total_bytes": 2147483648
+  }
+}

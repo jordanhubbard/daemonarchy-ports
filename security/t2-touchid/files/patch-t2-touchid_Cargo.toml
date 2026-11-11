@@ -1,0 +1,20 @@
+--- t2-touchid/Cargo.toml.orig	2026-10-28 20:04:07 UTC
++++ t2-touchid/Cargo.toml
+@@ -7,12 +7,15 @@ anyhow = "1.0"
+ 
+ [dependencies]
+ anyhow = "1.0"
+-input = "0.9"
+-input-linux = "0.7"
+ libc = "0.2"
+ zbus = "5"
+ t2-biometrickit = { path = "protocols/t2-biometrickit" }
+ 
++# The Escape monitor reads keys through libinput on Linux only.
++[target.'cfg(target_os = "linux")'.dependencies]
++input = "0.9"
++input-linux = "0.7"
++
+ [[bin]]
+ name = "t2-touchid"
+ path = "daemon/main.rs"
