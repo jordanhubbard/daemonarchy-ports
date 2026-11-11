@@ -54,7 +54,9 @@ if [ "$failures" -ne 0 ]; then
     phase gusb-dispose-control "$out/glib-control" --usb-dispose || failures=1
     sanitized="$root/_build/libfprint-sanitized"
     sanitized_args="$(make -C security/libfprint -V MESON_ARGS) -Db_sanitize=address,undefined -Db_lundef=false"
-    if phase libfprint-sanitized-build make -C security/libfprint WRKDIRPREFIX="$sanitized" MESON_ARGS="$sanitized_args" package; then
+    # Diagnostic binaries need no staged gtk-doc scanner (which assumes GCC
+    # -lasan/-lubsan names). The unsanitized package above remains required.
+    if phase libfprint-sanitized-build make -C security/libfprint WRKDIRPREFIX="$sanitized" MESON_ARGS="$sanitized_args" build; then
         phase libfprint-sanitized-tests make -C security/libfprint WRKDIRPREFIX="$sanitized" MESON_ARGS="$sanitized_args" test || failures=1
         sanitized_build=$(make -C security/libfprint WRKDIRPREFIX="$sanitized" -V BUILD_WRKSRC)
         mkdir -p "$out/libfprint-sanitized-meson-logs"
