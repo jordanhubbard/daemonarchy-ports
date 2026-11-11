@@ -1,7 +1,7 @@
 PORTNAME=	libfprint
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.94.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -26,10 +26,12 @@ MESON_ARGS=	-Dinstalled-tests= \
 
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=		DOCS GIR GTK_EXAMPLES TEST
+OPTIONS_DEFINE=		DOCS GIR GTK_EXAMPLES TEST VIRTUAL
+OPTIONS_DEFAULT=	VIRTUAL
 OPTIONS_SUB=		yes
 GIR_DESC=		Install glib introspection support
 GTK_EXAMPLES_DESC=	Install GTK examples
+VIRTUAL_DESC=		Virtual devices driven over a socket (security/t2-touchid)
 
 DOCS_BUILD_DEPENDS=		gtkdoc-scan:textproc/gtk-doc
 DOCS_MESON_TRUE=		doc
@@ -37,5 +39,7 @@ GIR_MESON_TRUE=			introspection
 GTK_EXAMPLES_USE=		GNOME=gtk30
 GTK_EXAMPLES_MESON_TRUE=	gtk-examples
 TEST_MESON_TRUE=		installed-tests
+# The virtual drivers stay inert unless FP_VIRTUAL_* names their socket.
+VIRTUAL_MESON_ON=		-Ddrivers=all
 
 .include <bsd.port.mk>
