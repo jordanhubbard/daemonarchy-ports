@@ -42,7 +42,7 @@ phase libfprint-checksum make -C security/libfprint checksum
 phase libfprint-build make -C security/libfprint package
 failures=0
 phase libfprint-tests make -C security/libfprint test || failures=1
-libfprint_build=$(make -C security/libfprint -V MESON_BUILD_DIR)
+libfprint_build=$(make -C security/libfprint -V BUILD_WRKSRC)
 mkdir -p "$out/libfprint-meson-logs"
 cp "$libfprint_build"/meson-logs/testlog* "$out/libfprint-meson-logs/"
 if [ "$failures" -ne 0 ]; then
@@ -51,7 +51,7 @@ if [ "$failures" -ne 0 ]; then
     baseline="$root/_build/libfprint-default"
     phase libfprint-baseline-build make -C security/libfprint WRKDIRPREFIX="$baseline" OPTIONS_UNSET=VIRTUAL package
     phase libfprint-baseline-tests make -C security/libfprint WRKDIRPREFIX="$baseline" OPTIONS_UNSET=VIRTUAL test || failures=1
-    baseline_build=$(make -C security/libfprint WRKDIRPREFIX="$baseline" OPTIONS_UNSET=VIRTUAL -V MESON_BUILD_DIR)
+    baseline_build=$(make -C security/libfprint WRKDIRPREFIX="$baseline" OPTIONS_UNSET=VIRTUAL -V BUILD_WRKSRC)
     mkdir -p "$out/libfprint-baseline-meson-logs"
     cp "$baseline_build"/meson-logs/testlog* "$out/libfprint-baseline-meson-logs/"
 fi
