@@ -1,3 +1,721 @@
+  <vuln vid="e8416dd1-df3e-11f1-8608-589cfc0f9aca">
+    <topic>MongoDB Server -- Pre-authentication use-after-free in replica set primary catch-up</topic>
+    <affects>
+      <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.48</lt></range>
+      </package>
+      <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.37</lt></range>
+      </package>
+      <package>
+	<name>mongodb90</name>
+	<range><lt>9.0.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MongoDB reports:</p>
+	<blockquote cite="https://www.mongodb.com/community/forums/t/important-mongodb-security-update-available-action-required-november-10-2026/344843">
+	  <p>MongoDB identified and fixed an important vulnerability
+	    (CVE-2026-118383, CVSS 9.5) that could allow unauthorized access
+	    to the MongoDB Server. We found it internally through our
+	    proactive security program, and we are not aware of any attempts
+	    to take advantage of this vulnerability.</p>
+	</blockquote>
+	<p>https://jira.mongodb.org/browse/SERVER-138119 reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-138119">
+	  <p>A use-after-free in the replication component of MongoDB Server
+	    can occur when a newly elected replica set primary completes
+	    catch-up. The condition can be caused by requests that do not
+	    require authentication, and may result in the server terminating
+	    unexpectedly or, under certain conditions, arbitrary code
+	    execution in the context of the server process. Replica set
+	    members are affected, including the shard and config server
+	    replica set members of sharded clusters; standalone mongod
+	    instances are not.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-118383</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-118383</url>
+      <url>https://www.mongodb.com/community/forums/t/important-mongodb-security-update-available-action-required-november-10-2026/344843</url>
+      <url>https://jira.mongodb.org/browse/SERVER-138119</url>
+      <url>https://jira.mongodb.org/browse/SERVER-138175</url>
+    </references>
+    <dates>
+      <discovery>2026-11-10</discovery>
+      <entry>2026-11-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="52ed373b-df37-11f1-8135-8447094a420f">
+    <topic>mod_http2 -- heap corruption and RCE in assign_headers</topic>
+    <affects>
+      <package>
+	<name>ap24-mod_http2</name>
+	<range><lt>2.0.43</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://httpd.apache.org/security/vulnerabilities_24.html">
+	  <p>CVE-2026-119618 (critical): mod_http2: heap corruption and RCE in assign_headers</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-119618</cvename>
+      <url>https://httpd.apache.org/security/vulnerabilities_24.html</url>
+    </references>
+    <dates>
+      <discovery>2026-11-11</discovery>
+      <entry>2026-11-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a1ede43e-de8c-11f1-bae2-3497f65b111b">
+    <topic>angie -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>angie</name>
+	<range><lt>1.12.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Angie Software Team reports:</p>
+	<blockquote cite="https://en.angie.software/angie/docs/oss_changes/#angie-1-12-4">
+	  <p>When variables were used in the root or alias directives, or
+	    in the log file path of the access_log directive in the HTTP
+	    module or the access_log directive in the stream module, worker
+	    process memory corruption or a worker process crash could occur
+	    (CVE-2026-93479).</p>
+	  <p>When the ssl_session_cache directive was used with the shared
+	    parameter without the ssl_session_ticket_key directive, an
+	    attacker could forge a TLS session and bypass client certificate
+	    verification (CVE-2026-97629).</p>
+	  <p>When requests received over HTTP/3 were proxied, a part of an
+	    unknown frame might be treated as the request body, which might
+	    result in bypassing the client_max_body_size limit or injecting
+	    data into the proxied request (CVE-2026-95101).</p>
+	  <p>When the alias directive was used, if the request URI was
+	    changed by the rewrite directive and the $request_filename
+	    variable was evaluated afterwards, worker process memory
+	    corruption or a worker process crash could occur
+	    (CVE-2026-15176).</p>
+	  <p>When asynchronous file I/O (aio) was used in certain
+	    configurations, if an SSI page contained include virtual
+	    commands, worker process memory corruption or a worker process
+	    crash could occur (CVE-2026-97205).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-93479</cvename>
+      <cvename>CVE-2026-97629</cvename>
+      <cvename>CVE-2026-95101</cvename>
+      <cvename>CVE-2026-15176</cvename>
+      <cvename>CVE-2026-97205</cvename>
+      <url>https://en.angie.software/angie/docs/oss_changes/#angie-1-12-4</url>
+    </references>
+    <dates>
+      <discovery>2026-10-16</discovery>
+      <entry>2026-11-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a1ee2283-de8c-11f1-bae2-3497f65b111b">
+    <topic>angie-module-njs -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>angie-module-njs</name>
+	<range><lt>1.0.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The njs development team reports:</p>
+	<blockquote cite="https://nginx.org/en/docs/njs/changes.html#njs1.0.2">
+	  <p>Memory leak when parsing malformed XML in the njs engine
+	    (CVE-2026-101025).  Repeated malformed input could exhaust
+	    worker process memory.  Affects 0.7.10-1.0.1.</p>
+	  <p>Incomplete XML attribute values containing entity references
+	    (CVE-2026-101019).  JavaScript accessors could return values
+	    different from those used by XML canonicalization, affecting
+	    signed XML validation.  Affects 0.7.10-1.0.1.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-101025</cvename>
+      <cvename>CVE-2026-101019</cvename>
+      <url>https://nginx.org/en/docs/njs/changes.html#njs1.0.2</url>
+      <url>https://nginx.org/en/docs/njs/security.html#advisories</url>
+    </references>
+    <dates>
+      <discovery>2026-10-14</discovery>
+      <entry>2026-11-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f8802557-dea7-11f1-bf46-901b0e13f1a0">
+    <topic>X.Org X server and Xwayland -- Multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>xorg-server</name>
+<name>xephyr</name>
+<name>xorg-vfbserver</name>
+<range><lt>21.1.26,1</lt></range>
+</package>
+<package>
+<name>xorg-nestserver</name>
+<range><lt>21.1.26,2</lt></range>
+</package>
+<package>
+<name>xwayland</name>
+<range><lt>24.1.15,1</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>X.Org reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2026-November/003759.html">
+	  <p>
+	    CVE-2026-109091: X.Org Server EDID DS_RANGES Out-Of-Bounds Write
+	    CVE-2026-109092: X.Org Server XvShmPutImage Shared-Memory Bounds Overflow
+	    CVE-2026-109093: X.Org Server XTestFakeInput Valuator Stack Out-Of-Bounds Write
+	    CVE-2026-109094: X.Org Server XRes QueryResourceBytes Swap Path Size Overflow
+	    CVE-2026-109095: X.Org Server glamor Xv Image Size Integer Overflow
+	    CVE-2026-109096: X.Org Server XvPutImage Negative Image Size Length Bypass
+	    CVE-2026-109903: X.Org Server XvQueryImageAttributes Negative Size Reply
+	    CVE-2026-109904: X.Org Server XRes QueryClientIds Request Size Overflow
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-109091</cvename>
+      <cvename>CVE-2026-109092</cvename>
+      <cvename>CVE-2026-109093</cvename>
+      <cvename>CVE-2026-109094</cvename>
+      <cvename>CVE-2026-109095</cvename>
+      <cvename>CVE-2026-109096</cvename>
+      <cvename>CVE-2026-109903</cvename>
+      <cvename>CVE-2026-109904</cvename>
+      <url>https://lists.x.org/archives/xorg-announce/2026-November/003759.html</url>
+    </references>
+    <dates>
+      <discovery>2026-11-10</discovery>
+      <entry>2026-11-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1a672925-de93-11f1-9824-6cc21735f730">
+    <topic>PostgreSQL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>postgresql14-server</name>
+	<name>postgresql14-client</name>
+	<name>postgresql14-contrib</name>
+	<name>postgresql14-plperl</name>
+	<name>postgresql14-pltcl</name>
+	<range><lt>14.25</lt></range>
+      </package>
+      <package>
+	<name>postgresql15-server</name>
+	<name>postgresql15-client</name>
+	<name>postgresql15-contrib</name>
+	<name>postgresql15-plperl</name>
+	<name>postgresql15-pltcl</name>
+	<range><lt>15.20</lt></range>
+      </package>
+      <package>
+	<name>postgresql16-server</name>
+	<name>postgresql16-client</name>
+	<name>postgresql16-contrib</name>
+	<name>postgresql16-plperl</name>
+	<name>postgresql16-pltcl</name>
+	<range><lt>16.16</lt></range>
+      </package>
+      <package>
+	<name>postgresql17-server</name>
+	<name>postgresql17-client</name>
+	<name>postgresql17-contrib</name>
+	<name>postgresql17-plperl</name>
+	<name>postgresql17-pltcl</name>
+	<range><lt>17.12</lt></range>
+      </package>
+      <package>
+	<name>postgresql18-server</name>
+	<name>postgresql18-client</name>
+	<name>postgresql18-contrib</name>
+	<name>postgresql18-plperl</name>
+	<name>postgresql18-pltcl</name>
+	<range><lt>18.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PostgreSQL project reports:</p>
+	<blockquote cite="https://www.postgresql.org/about/news/postgresql-187-1712-1616-1520-1425-and-19-rc-2-released-3442/">
+	  <ul>
+	    <li>CVE-2026-6460: Add defenses against problems caused by
+	      altering composite types concurrently with operations on data of
+	      those types</li>
+	    <li>CVE-2026-6464: Ensure that psql counts all the COPY FROM STDIN
+	      commands appearing in a multi-query command string</li>
+	    <li>CVE-2026-6467: Prevent corrupting a newly-installed extension
+	      by renaming its target schema during CREATE EXTENSION or by
+	      installing it into a temporary schema</li>
+	    <li>CVE-2026-14661: Validate all connection options in replication
+	      subscriptions and contrib/dblink</li>
+	    <li>CVE-2026-16237: Enforce view row visibility in INSERT ... ON
+	      CONFLICT</li>
+	    <li>CVE-2026-16240: Fix use of externally-controlled format string
+	      in pg_basebackup</li>
+	    <li>CVE-2026-18447: Disallow declaring SQL functions as returning
+	      type "any"</li>
+	    <li>CVE-2026-116303: Check EXECUTE privilege before calling cast
+	      functions within to_json() and other conversion-to-JSON code;
+	      Check EXECUTE privilege before calling cast functions within
+	      foreign key enforcement checks</li>
+	    <li>CVE-2026-116304: Fix race condition leading to use-after-free
+	      in shared tupledesc management</li>
+	    <li>CVE-2026-116306: Cope with concurrent rowtype changes in
+	      ExecEvalFieldStore[De]Form()</li>
+	    <li>CVE-2026-116307: In PL/Perl, fix use-after-free triggered by
+	      releasing a prepared query that is being executed</li>
+	    <li>CVE-2026-116308: In contrib/dict_int, return NULL for
+	      zero-length tokens</li>
+	    <li>CVE-2026-116309: Fix type confusion in PL/Perl's
+	      get_perl_array_ref()</li>
+	    <li>CVE-2026-116310: Fix use-after-free in COPY FROM ON_ERROR
+	      reporting (PostgreSQL 17, 18 only)</li>
+	    <li>CVE-2026-116311: Prevent DROP OWNED BY from changing row-level
+	      security policies on tables that the current user does not
+	      own</li>
+	    <li>CVE-2026-116312: Avoid inserting the wrong tuple into a
+	      trigger transition table in a MERGE that does an INSERT followed
+	      by an UPDATE (PostgreSQL 15, 16, 17, 18 only)</li>
+	    <li>CVE-2026-116313: Use fully-qualified operator names in
+	      vacuumdb (PostgreSQL 18 only)</li>
+	    <li>CVE-2026-116314: Harden pg_restore against corrupt archive
+	      files</li>
+	    <li>CVE-2026-116315: Fix buffer overrun in tsvector_delete()</li>
+	    <li>CVE-2026-116316: Disallow security-restricted operations from
+	      creating types in temporary schemas</li>
+	    <li>CVE-2026-116317: Fix buffer overrun in ts_rank_cd()</li>
+	    <li>CVE-2026-116318: Ensure that pg_dump quotes the names of NOT
+	      NULL constraints (PostgreSQL 18 only)</li>
+	    <li>CVE-2026-116319: Fix use-after-free in
+	      plperl_return_next_internal()</li>
+	    <li>CVE-2026-116320: Fix use-after-free in scans of Perl arrays
+	      and hashes</li>
+	    <li>CVE-2026-116321: Prevent construction of invalid name values
+	      via element assignment</li>
+	    <li>CVE-2026-116322: Delay processing of cancel request packets
+	      until it's safe to handle them (PostgreSQL 18 only)</li>
+	    <li>CVE-2026-116323: Fix use-after-free hazards in re-entrant use
+	      of PL/Tcl</li>
+	    <li>CVE-2026-116325: Ensure that reindexdb correctly quotes index
+	      names it is dealing with (PostgreSQL 17, 18 only)</li>
+	    <li>CVE-2026-116326: Support tied Perl objects in PL/Perl and
+	      associated contrib modules; Fix PL/Perl to cope with errors thrown
+	      from tied objects</li>
+	    <li>CVE-2026-116327: Treat application of a leaky function to a
+	      CaseTestExpr or internal Param node as leaky</li>
+	    <li>CVE-2026-116328: Prevent memory corruption after a large
+	      allocation in a generation memory context is freed (PostgreSQL 15,
+	      16, 17, 18 only)</li>
+	    <li>CVE-2026-116329: Guard against malicious alteration of a table
+	      while a statistics import function is running on it (PostgreSQL 18
+	      only)</li>
+	    <li>CVE-2026-116330: Make the \[un]restrict commands functional in
+	      pg_dump's tar-format output</li>
+	    <li>CVE-2026-116331: Don't generate an index-based plan for an
+	      aggregate whose input and output types don't match</li>
+	    <li>CVE-2026-116332: Disallow closing a portal that is still being
+	      set up</li>
+	    <li>CVE-2026-116333: Avoid out-of-bounds reads in parallel btree
+	      scans with array keys (PostgreSQL 17, 18 only)</li>
+	    <li>CVE-2026-116335: Check that commutator and negator operator
+	      pairs return the same data type</li>
+	    <li>CVE-2026-116336: Prevent functions in index predicates and
+	      expressions from breaking REINDEX CONCURRENTLY by manipulating the
+	      indexes</li>
+	    <li>CVE-2026-120139: Harden more memory-size calculations against
+	      integer overflow</li>
+	    <li>CVE-2026-120141: Fix type confusion in set-returning functions
+	      that return RECORD, when materialized in a query's target
+	      list</li>
+	    <li>CVE-2026-120142: Handle dropped columns safely while comparing
+	      row types (PostgreSQL 17, 18 only)</li>
+	    <li>CVE-2026-120143: Forcibly close portals associated with
+	      transition tables at the end of the trigger function</li>
+	    <li>CVE-2026-120144: Replace the type cache's in_progress_list
+	      mechanism with something simpler and safer (PostgreSQL 18
+	      only)</li>
+	    <li>CVE-2026-120145: Reject system catalogs as logical replication
+	      targets</li>
+	    <li>CVE-2026-120146: Align REASSIGN OWNED's caller-privilege
+	      checks with ALTER ... OWNER TO's checks</li>
+	    <li>CVE-2026-120147: Reject re-entrant use of contrib/dblink</li>
+	    <li>CVE-2026-120148: Refuse to create extended statistics on
+	      expressions of transient types</li>
+	    <li>CVE-2026-120149: Avoid out-of-bounds accesses in FDW batch
+	      inserts</li>
+	    <li>CVE-2026-120150: Fix use-after-free in expanded-record domain
+	      constraint checking</li>
+	    <li>CVE-2026-120151: Cope with concurrent rowtype changes in
+	      PL/pgSQL record field assignment</li>
+	    <li>CVE-2026-120152: Fix use-after-free in pg_show_all_settings()
+	      (PostgreSQL 16, 17, 18 only)</li>
+	    <li>CVE-2026-120153: Reject more unsafe names in extension script
+	      substitutions</li>
+	    <li>CVE-2026-120154: Check ON CONFLICT target row against RLS
+	      policies before applying user quals</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-6460</cvename>
+      <cvename>CVE-2026-6464</cvename>
+      <cvename>CVE-2026-6467</cvename>
+      <cvename>CVE-2026-14661</cvename>
+      <cvename>CVE-2026-16237</cvename>
+      <cvename>CVE-2026-16240</cvename>
+      <cvename>CVE-2026-18447</cvename>
+      <cvename>CVE-2026-116303</cvename>
+      <cvename>CVE-2026-116304</cvename>
+      <cvename>CVE-2026-116306</cvename>
+      <cvename>CVE-2026-116307</cvename>
+      <cvename>CVE-2026-116308</cvename>
+      <cvename>CVE-2026-116309</cvename>
+      <cvename>CVE-2026-116310</cvename>
+      <cvename>CVE-2026-116311</cvename>
+      <cvename>CVE-2026-116312</cvename>
+      <cvename>CVE-2026-116313</cvename>
+      <cvename>CVE-2026-116314</cvename>
+      <cvename>CVE-2026-116315</cvename>
+      <cvename>CVE-2026-116316</cvename>
+      <cvename>CVE-2026-116317</cvename>
+      <cvename>CVE-2026-116318</cvename>
+      <cvename>CVE-2026-116319</cvename>
+      <cvename>CVE-2026-116320</cvename>
+      <cvename>CVE-2026-116321</cvename>
+      <cvename>CVE-2026-116322</cvename>
+      <cvename>CVE-2026-116323</cvename>
+      <cvename>CVE-2026-116325</cvename>
+      <cvename>CVE-2026-116326</cvename>
+      <cvename>CVE-2026-116327</cvename>
+      <cvename>CVE-2026-116328</cvename>
+      <cvename>CVE-2026-116329</cvename>
+      <cvename>CVE-2026-116330</cvename>
+      <cvename>CVE-2026-116331</cvename>
+      <cvename>CVE-2026-116332</cvename>
+      <cvename>CVE-2026-116333</cvename>
+      <cvename>CVE-2026-116335</cvename>
+      <cvename>CVE-2026-116336</cvename>
+      <cvename>CVE-2026-120139</cvename>
+      <cvename>CVE-2026-120141</cvename>
+      <cvename>CVE-2026-120142</cvename>
+      <cvename>CVE-2026-120143</cvename>
+      <cvename>CVE-2026-120144</cvename>
+      <cvename>CVE-2026-120145</cvename>
+      <cvename>CVE-2026-120146</cvename>
+      <cvename>CVE-2026-120147</cvename>
+      <cvename>CVE-2026-120148</cvename>
+      <cvename>CVE-2026-120149</cvename>
+      <cvename>CVE-2026-120150</cvename>
+      <cvename>CVE-2026-120151</cvename>
+      <cvename>CVE-2026-120152</cvename>
+      <cvename>CVE-2026-120153</cvename>
+      <cvename>CVE-2026-120154</cvename>
+      <url>https://www.postgresql.org/docs/release/18.7/</url>
+      <url>https://www.postgresql.org/docs/release/17.12/</url>
+      <url>https://www.postgresql.org/docs/release/16.16/</url>
+      <url>https://www.postgresql.org/docs/release/15.20/</url>
+      <url>https://www.postgresql.org/docs/release/14.25/</url>
+    </references>
+    <dates>
+      <discovery>2026-11-12</discovery>
+      <entry>2026-11-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="05286f93-de01-11f1-bbb3-901b0e9408dc">
+    <topic>conduit -- e2ee signing keys vulnerability</topic>
+    <affects>
+      <package>
+	<name>matrix-conduit</name>
+	<range><lt>0.10.16</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Conduit team reports:</p>
+	<blockquote cite="https://gitlab.com/famedly/conduit/-/releases/v0.10.16">
+	  <p>Fixes a vulnerability where E2EE signing keys could be
+	  accepted from servers other than the one the user belongs
+	  to. It is recommended you upgrade ASAP.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://gitlab.com/famedly/conduit/-/releases/v0.10.16</url>
+    </references>
+    <dates>
+      <discovery>2026-11-10</discovery>
+      <entry>2026-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9e9c6e36-dd9f-11f1-bae2-3497f65b111b">
+    <topic>immich -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>immich</name>
+	<name>immich-cli</name>
+	<range><lt>3.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Immich project reports:</p>
+	<blockquote cite="https://github.com/immich-app/immich/security/advisories">
+	  <ul>
+	    <li>An attacker-chosen OAuth state cookie allows forced account
+	      linking and takeover of any account, bypassing the fix for
+	      CVE-2025-43856.</li>
+	    <li>A malicious or intercepted server can read, exfiltrate and
+	      delete arbitrary local files through the duplicate check of the
+	      command line client.</li>
+	    <li>An external library import follows symbolic links, which
+	      allows arbitrary files to be read.</li>
+	    <li>Unsanitized EXIF make, model and lens model allow path
+	      traversal in the storage template engine.</li>
+	    <li>An unanchored regular expression allows the allowedHosts
+	      protection of plugins to be bypassed completely.</li>
+	    <li>A shared link ignores the "Show metadata" setting on metadata
+	      searches, which leaks EXIF and GPS data.</li>
+	    <li>An upload through a shared link runs as the link owner, so the
+	      owner check of the live photo video can never fail.</li>
+	    <li>Metadata of other owners can be written through the duplicate
+	      resolve endpoint.</li>
+	    <li>Archive downloads through a shared link can include original
+	      files despite the edited asset enforcement.</li>
+	    <li>A partner can read the metadata of the sharer's locked folder
+	      when a search request omits the visibility, and the archived
+	      timeline metadata as well.</li>
+	    <li>Read-scoped API keys can reset cluster group people data.</li>
+	    <li>An unbounded motion photo offset causes memory and disk
+	      exhaustion.</li>
+	    <li>An uploaded SVG asset allows stored cross-site scripting.</li>
+	    <li>Email messages allow HTML injection.</li>
+	    <li>Before 3.2.4, an uploaded SVG file reaches the ImageMagick
+	      coders, which allows code execution on the server
+	      (CVE-2026-105764).</li>
+	    <li>A share link with uploads disabled can be used to test whether
+	      the owner has a given file.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-105764</cvename>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-q89f-h332-8q2h</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-7j23-rprg-3g5q</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-p632-vh57-j6x4</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-wp5v-5wj6-j2fh</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-wwfq-95jq-3m3c</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-8xfw-gq8x-8mrr</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-gjj9-fvfp-jw63</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-9g87-8gwq-4xqp</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-6jjx-fxr3-8vf2</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-rq4j-mp2m-85qp</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-v7v2-63g5-gwf7</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-j722-3hvf-c9vr</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-qcp2-7vph-gq64</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-c9h4-ccvj-j2h2</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-wjrq-m9hw-r4vq</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-v94m-9pp2-pm59</url>
+      <url>https://github.com/immich-app/immich/security/advisories/GHSA-xm8q-2hq2-gpxg</url>
+    </references>
+    <dates>
+      <discovery>2026-11-10</discovery>
+      <entry>2026-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3047b511-dde7-11f1-8135-8447094a420f">
+    <topic>LibreSSL -- Out of bounds read</topic>
+    <affects>
+      <package>
+	<name>libressl</name>
+	<name>libressl-libtls</name>
+	<name>libressl-devel</name>
+	<name>libressl-devel-libtls</name>
+	<range><lt>4.3.5</lt></range>
+	<range><ge>4.4.0</ge><lt>4.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenBSD project reports:</p>
+	<blockquote cite="https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.4.1-relnotes.txt.">
+	  <p>Out of bounds read that may happen during renegotiation in TLSv1.2.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.4.1-relnotes.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-11-11</discovery>
+      <entry>2026-11-11</entry>
+      <modified>2026-11-12</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="f2904526-ddd3-11f1-8135-8447094a420f">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.71</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://httpd.apache.org/security/vulnerabilities_24.html">
+	  <p>CVE-2026-119618 (critical): mod_http2: heap corruption and RCE in assign_headers</p>
+	  <p>CVE-2026-106023 (important): mod_md NULL pointer dereference leads to child process crash</p>
+	  <p>CVE-2026-109163 (low): mod_vhost_alias 1 byte stack buffer overwrite (after CVE-2026-63292)</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-119618</cvename>
+      <cvename>CVE-2026-109163</cvename>
+      <cvename>CVE-2026-106023</cvename>
+      <url>https://httpd.apache.org/security/vulnerabilities_24.html</url>
+    </references>
+    <dates>
+      <discovery>2026-11-11</discovery>
+      <entry>2026-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9e2564aa-ddb8-11f1-adaa-3c7c3fba4204">
+    <topic>Mbed TLS -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	  <name>mbedtls4</name>
+	  <range><lt>4.2.0</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mbed TLS Team reports:</p>
+	<blockquote cite="https://github.com/Mbed-TLS/mbedtls/releases/tag/mbedtls-4.2.0">
+	  <ul>
+	    <li>CVE-2026-50581: Fix a bug where transcript-hash computation errors during TLS 1.2
+		extended master secret calculation could be ignored instead of causing the handshake
+		to fail. This could allow a handshake to continue with a master secret that was not
+		correctly bound to the handshake transcript, undermining the security guarantees of
+		the extended master secret extension.</li>
+	    <li>CVE-2026-50640: Fix a TLS 1.3 server-side error-handling bug affecting session ticket
+		generation. Under rare conditions, such as memory allocation failures while computing
+		the resumption master secret, the server could issue invalid session tickets instead
+		of failing the handshake. Clients presented with such tickets would fail session
+		resumption and fall back to a full handshake. In deployments relying on session
+		resumption, repeated occurrences could increase the frequency of full handshakes
+		and amplify resource consumption during periods of resource exhaustion or other
+		transient failures.</li>
+	    <li>CVE-2026-50580: Fix a remote buffer overflow in (D)TLS with ECDHE-PSK cipher suites
+		when CBC is disabled.</li>
+	    <li>CVE-2026-50586: Fix a potential information disclosure in TLS 1.2 servers using session
+		tickets. If the session ticket write callback failed without setting the lifetime output
+		parameter, Mbed TLS could send 4 bytes of uninitialized stack memory to the peer in the
+		NewSessionTicket message.</li>
+	    <li>CVE-2026-50588: Fix an out-of-bounds read when parsing TLS 1.2 ECJPAKE ServerKeyExchange
+		messages.</li>
+	    <li>CVE-2026-50579: Fix a use-after-free/double-free risk in mbedtls_pkcs7_free() when reusing
+		an mbedtls_pkcs7 context across parse -> free -> parse -> free cycles. The function now
+		resets the context after freeing it, ensuring stale signed_data.signers.next pointers cannot
+		be walked by a later free operation.</li>
+	    <li>CVE-2026-54441: Improved documentation of mbedtls_ssl_conf_sig_algs() to emphasize that this
+		function only sets signature algorithms that are enforced during TLS key exchange and not on
+		certificate verification.</li>
+	    <li>CVE-2026-50585 : Ensure 'badmac_seen' and 'dtls_srtp_info' fields from 'mbedtls_ssl_context'
+		are properly zeroized when mbedtls_ssl_session_reset() is called. This could cause premature
+		DTLS connection failure or incorrect DTLS-SRTP parameter inheritance for applications reusing
+		an SSL context.</li>
+	    <li>CVE-2026-25832: Fix TLS 1.3 clients to reject a HelloRetryRequest whose selected group was
+		not advertised in the original ClientHello.</li>
+	    <li>CVE-2026-49300: Fix two bugs in the X.509 certificate parser that caused some inputs with a
+		malformed basicConstraints extension to be accepted. This could have dangerous results, in
+		particular causing some certificates to be parsed as CA certificates when other X.509
+		implementations would parse them as end-entity certificates.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-50581</cvename>
+      <cvename>CVE-2026-50640</cvename>
+      <cvename>CVE-2026-50580</cvename>
+      <cvename>CVE-2026-50586</cvename>
+      <cvename>CVE-2026-50588</cvename>
+      <cvename>CVE-2026-50579</cvename>
+      <cvename>CVE-2026-54441</cvename>
+      <cvename>CVE-2026-50585</cvename>
+      <cvename>CVE-2026-25832</cvename>
+      <cvename>CVE-2026-49300</cvename>
+      <url>https://github.com/Mbed-TLS/mbedtls/releases/tag/mbedtls-4.2.0</url>
+      <url>https://mbed-tls.readthedocs.io/en/latest/security-advisories/</url>
+    </references>
+    <dates>
+      <discovery>2026-07-07</discovery>
+      <entry>2026-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="808dee2b-dd99-11f1-ac90-2cf05da270f3">
+    <topic>Gitlab -- vulnerability</topic>
+    <affects>
+<package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>19.5.0</ge><lt>19.5.4</lt></range>
+	<range><ge>19.4.0</ge><lt>19.4.6</lt></range>
+	<range><ge>7.0.0</ge><lt>19.3.8</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-4-released/?nav=19.5.4">
+	  <p>Vulnerability in git</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-105437</cvename>
+      <url>https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-4-released/?nav=19.5.4</url>
+    </references>
+    <dates>
+      <discovery>2026-11-10</discovery>
+      <entry>2026-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8dc02503-dd51-11f1-a654-f8b46a88f42c">
     <topic>krb5 -- MIT krb5 Security Advisory 2026-001</topic>
     <affects>
@@ -2937,12 +3655,6 @@
 	<name>sqlite3</name>
 	<range><lt>3.54.0,1</lt></range>
       </package>
-      <package>
-	<name>FreeBSD</name>
-	<range><ge>15.1</ge><lt>15.1_7</lt></range>
-	<range><ge>14.5</ge><lt>14.5_4</lt></range>
-	<range><ge>14.4</ge><lt>14.4_13</lt></range>
-      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -2984,6 +3696,7 @@
     <dates>
       <discovery>2026-10-30</discovery>
       <entry>2026-10-30</entry>
+      <modified>2026-11-11</modified>
     </dates>
   </vuln>
 

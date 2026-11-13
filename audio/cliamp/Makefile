@@ -1,6 +1,7 @@
 PORTNAME=	cliamp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -25,7 +26,7 @@ GH_ACCOUNT=	bjarneo
 
 GO_MOD_DIST=	github
 GO_MODULE=	github.com/bjarneo/cliamp
-GO_BUILDFLAGS=	-ldflags "-s -w -X main.version=${DISTVERSIONFULL}"
+GO_LDFLAGS=	-w -X main.version=${DISTVERSIONFULL}
 
 PLIST_FILES=	bin/cliamp \
 		share/applications/cliamp.desktop \
