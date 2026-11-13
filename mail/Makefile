@@ -492,6 +492,7 @@
     SUBDIR += popular
     SUBDIR += postfinger
     SUBDIR += postfix
+    SUBDIR += postfix_exporter
     SUBDIR += postfix-current
     SUBDIR += postfix-logwatch
     SUBDIR += postfix-policyd-sf
@@ -646,6 +647,7 @@
     SUBDIR += rubygem-net-smtp
     SUBDIR += rubygem-pony
     SUBDIR += rubygem-premailer
+    SUBDIR += rubygem-premailer-gitlab
     SUBDIR += rubygem-premailer-rails
     SUBDIR += rubygem-premailer-rails-rails-gitlab
     SUBDIR += rubygem-premailer-rails-rails5
@@ -763,6 +765,7 @@
     SUBDIR += thunderbird
     SUBDIR += thunderbird-dictionaries
     SUBDIR += thunderbird-esr
+    SUBDIR += tidemail
     SUBDIR += tlb
     SUBDIR += tmpmail
     SUBDIR += tpop3d
