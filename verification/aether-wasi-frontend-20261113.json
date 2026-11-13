@@ -1,0 +1,340 @@
+{
+  "schema": "daemonarchy/aether-wasi-frontend-observation@1",
+  "observed_utc": "2026-11-13T22:07:15.297466+00:00",
+  "work_item": "https://github.com/jordanhubbard/daemonarchy/issues/62",
+  "scope": "Frontend source compilation and original frontend tests only. Complete Go/WebKit backend, native port/package, desktop runtime, ARM metaport admission, SDK/lifecycle and release acceptance remain open.",
+  "base_ports_revision": "181620f22b6c06689a5a6edd1146a4dbeca53aea",
+  "original_source_archive_sha256": "f67c8d2c6f27f67a755bc279ece5ddb194f1bb165648280b9a7be86904d36ff5",
+  "port_input_sha256": {
+    "x11-themes/aether/Makefile": "c4bba3693ff858118b69ee89571b145725816e5d7d66d58122450ade00dd9eec",
+    "x11-themes/aether/distinfo": "68f889242ea09682015971795b63bd381cd67b492bfb27f5ffafe4c40ff3984e",
+    "x11-themes/aether/files/patch-frontend_package.json": "6b5454b7fa08aab30f3f4e1a9a4bf27938159a13d93b33dd05ac7c252a4e6d9e",
+    "x11-themes/aether/files/patch-frontend_package-lock.json": "aaef1004f8692bcddc7bb87d18e1580f2a77d714f07a7a1d16f819e002957b53",
+    "x11-themes/aether/files/select-wasm-bindings.cjs": "a91834f2479069578b46e91411c4747840b5dea7a2daf2e873843c0e8e91d130"
+  },
+  "cache_input": {
+    "sha256": "c9905e09c775f90c4788338901891d04c5297ad5eb6413c74ae25e6ec21bd370",
+    "bytes": 27843798,
+    "provenance": {
+      "schema": "daemonarchy/aether-wasi-cache-provenance@1",
+      "source_version": "4.30.0",
+      "source_archive_sha256": "f67c8d2c6f27f67a755bc279ece5ddb194f1bb165648280b9a7be86904d36ff5",
+      "frontend_package_json_sha256": "54c3ed65713e52e293a07fc8db817210047859fce70d37259f5a0f098a6f714c",
+      "frontend_package_lock_sha256": "8726a0c043a6c23d0839be4eeb75e40ea205a7d1795429322b9d028645f08393",
+      "compilers": {
+        "rolldown_wasi": "1.2.7",
+        "tailwind_oxide_wasi": "4.2.4",
+        "lightningcss_wasm": [
+          "1.32.0",
+          "1.33.0"
+        ]
+      },
+      "existing_dependency_versions_changed": false,
+      "cache_preparation": {
+        "node": "26.13.0",
+        "npm": "11.20.0"
+      },
+      "verified_offline_consumer": {
+        "npm": "12.2.2",
+        "node": [
+          "24.22.1",
+          "26.12.1"
+        ],
+        "platform": "FreeBSD ARM64",
+        "original_frontend_tests": 116,
+        "typecheck_errors": 0
+      },
+      "purpose": "Platform-independent npm build cache. Not a prebuilt application frontend or an SDK/lifecycle receipt."
+    }
+  },
+  "native_cache_paths_and_bytes_equal_checked_archive": {
+    "files": 254,
+    "all_cache_paths_and_bytes_equal_native_tested_bundle": true,
+    "archive_sha256": "c9905e09c775f90c4788338901891d04c5297ad5eb6413c74ae25e6ec21bd370"
+  },
+  "native_frontend_runs": [
+    {
+      "status": "passed",
+      "platform": "FreeBSD ARM64",
+      "node_version": "v26.12.1",
+      "node_sha256": "9653a21427e96d853bfd01cea550018770be261597809581659d9a8dde930031",
+      "uid": 65534,
+      "network": "jail ip4=disable ip6=disable",
+      "offline_ci_exit": 0,
+      "native_node_addons": 0,
+      "original_cases": 116,
+      "all_passed_no_skips": true,
+      "typecheck_exit": 0,
+      "byte_identical_reference_assets": {
+        "index.html": "1d8b41a17bd1dd3b1d908b2c4577abd5add1ba68c8d104c54026c3d48e6e3afb",
+        "assets/index-ZvlVS2jx.js": "d3196ae6c891f96945cf9b033cec26db51f20d4b11193e4fba6bf32a02b102b2",
+        "assets/aether-logo-BrOKuGwl.png": "9718a8944c3a91ab7735c66acdbec9aa316ef7a699307a6751544c9a7b2819cc",
+        "assets/index-Cas_wiDS.css": "4b109ebe2ca0691eb6cd3692adb71c089ff6c49cfe9a600ee9a19343aab379ea"
+      },
+      "scope": "Frontend source build and complete original frontend test/type suite, with exact cross-implementation asset parity. Official binary Node tool provenance unknown. Not complete native Aether backend/GUI, package/SDK/lifecycle or release qualification.",
+      "jail_cleanup_and_host_package_invariance": {
+        "host_unchanged": true,
+        "private_jail_removed": true,
+        "devfs_unmounted": true,
+        "all_phase_exits_zero": true
+      },
+      "original_report_sha256": "1d780e2ff13f268bfd97323234d79751d0325ffd9553568260061bfa2a6fad70",
+      "all_phase_exits_zero": true,
+      "phase_exits": {
+        "extract-base": 0,
+        "extract-package-0": 0,
+        "extract-package-1": 0,
+        "extract-package-2": 0,
+        "extract-package-3": 0,
+        "extract-package-4": 0,
+        "extract-package-5": 0,
+        "extract-package-6": 0,
+        "extract-package-7": 0,
+        "extract-package-8": 0,
+        "extract-package-9": 0,
+        "extract-package-10": 0,
+        "extract-package-11": 0,
+        "extract-package-12": 0,
+        "extract-package-13": 0,
+        "extract-package-14": 0,
+        "extract-package-15": 0,
+        "extract-package-16": 0,
+        "extract-package-17": 0,
+        "extract-package-18": 0,
+        "extract-package-19": 0,
+        "extract-package-20": 0,
+        "extract-package-21": 0,
+        "extract-package-22": 0,
+        "extract-package-23": 0,
+        "extract-package-24": 0,
+        "extract-package-25": 0,
+        "extract-package-26": 0,
+        "mount-devfs": 0,
+        "create-jail": 0,
+        "node-version": 0,
+        "node-wasi": 0,
+        "offline-ci": 0,
+        "select-wasm": 0,
+        "frontend-build": 0,
+        "original-tests": 0,
+        "typecheck": 0,
+        "remove-jail": 0,
+        "unmount-devfs": 0
+      },
+      "native_tool_source_provenance": "Unknown official binary source build; fingerprint-signed official repository acquisition. Diagnostic frontend tool only."
+    },
+    {
+      "status": "passed",
+      "platform": "FreeBSD ARM64",
+      "node_version": "v24.22.1",
+      "node_sha256": "8a7f3edeef8a85f0ed16ba85466886efda699a57340c086ea1c4ae8e42068cb8",
+      "uid": 65534,
+      "network": "jail ip4=disable ip6=disable",
+      "offline_ci_exit": 0,
+      "native_node_addons": 0,
+      "original_cases": 116,
+      "all_passed_no_skips": true,
+      "typecheck_exit": 0,
+      "byte_identical_reference_assets": {
+        "index.html": "1d8b41a17bd1dd3b1d908b2c4577abd5add1ba68c8d104c54026c3d48e6e3afb",
+        "assets/index-ZvlVS2jx.js": "d3196ae6c891f96945cf9b033cec26db51f20d4b11193e4fba6bf32a02b102b2",
+        "assets/aether-logo-BrOKuGwl.png": "9718a8944c3a91ab7735c66acdbec9aa316ef7a699307a6751544c9a7b2819cc",
+        "assets/index-Cas_wiDS.css": "4b109ebe2ca0691eb6cd3692adb71c089ff6c49cfe9a600ee9a19343aab379ea"
+      },
+      "scope": "Frontend source build and complete original frontend test/type suite, with exact cross-implementation asset parity. Official binary Node tool provenance unknown. Not complete native Aether backend/GUI, package/SDK/lifecycle or release qualification.",
+      "jail_cleanup_and_host_package_invariance": {
+        "host_unchanged": true,
+        "private_jail_removed": true,
+        "devfs_unmounted": true,
+        "all_phase_exits_zero": true
+      },
+      "original_report_sha256": "36b5511cd59324a1461f73ccfe4b631356eda2d81bdc332d0f0d49db0c3c4d3a",
+      "all_phase_exits_zero": true,
+      "phase_exits": {
+        "extract-base": 0,
+        "extract-package-0": 0,
+        "extract-package-1": 0,
+        "extract-package-2": 0,
+        "extract-package-3": 0,
+        "extract-package-4": 0,
+        "extract-package-5": 0,
+        "extract-package-6": 0,
+        "extract-package-7": 0,
+        "extract-package-8": 0,
+        "extract-package-9": 0,
+        "extract-package-10": 0,
+        "extract-package-11": 0,
+        "extract-package-12": 0,
+        "extract-package-13": 0,
+        "extract-package-14": 0,
+        "extract-package-15": 0,
+        "extract-package-16": 0,
+        "extract-package-17": 0,
+        "extract-package-18": 0,
+        "extract-package-19": 0,
+        "mount-devfs": 0,
+        "create-jail": 0,
+        "node-version": 0,
+        "node-wasi": 0,
+        "offline-ci": 0,
+        "select-wasm": 0,
+        "frontend-build": 0,
+        "original-tests": 0,
+        "typecheck": 0,
+        "remove-jail": 0,
+        "unmount-devfs": 0
+      },
+      "native_tool_source_provenance": "Unknown official binary source build; fingerprint-signed official repository acquisition. Diagnostic frontend tool only."
+    },
+    {
+      "status": "passed",
+      "platform": "FreeBSD AMD64",
+      "node_version": "v24.22.1",
+      "node_sha256": "3c8445d3a2c91fce5bc630d0c902feaae52f8b79c627ff74b2a65341d4b32af8",
+      "uid": 65534,
+      "network": "jail ip4=disable ip6=disable",
+      "offline_ci_exit": 0,
+      "native_node_addons": 0,
+      "original_cases": 116,
+      "all_passed_no_skips": true,
+      "typecheck_exit": 0,
+      "byte_identical_reference_assets": {
+        "index.html": "1d8b41a17bd1dd3b1d908b2c4577abd5add1ba68c8d104c54026c3d48e6e3afb",
+        "assets/index-ZvlVS2jx.js": "d3196ae6c891f96945cf9b033cec26db51f20d4b11193e4fba6bf32a02b102b2",
+        "assets/aether-logo-BrOKuGwl.png": "9718a8944c3a91ab7735c66acdbec9aa316ef7a699307a6751544c9a7b2819cc",
+        "assets/index-Cas_wiDS.css": "4b109ebe2ca0691eb6cd3692adb71c089ff6c49cfe9a600ee9a19343aab379ea"
+      },
+      "scope": "Frontend source build and complete original frontend test/type suite, with exact cross-implementation asset parity. Official binary Node tool provenance unknown. Not complete native Aether backend/GUI, package/SDK/lifecycle or release qualification.",
+      "jail_cleanup_and_host_package_invariance": {
+        "host_unchanged": true,
+        "private_jail_removed": true,
+        "devfs_unmounted": true,
+        "all_phase_exits_zero": true,
+        "signed_repository_fetch_exits_zero": true
+      },
+      "original_report_sha256": "7e9fad6f02328950feb190153272e4ae715d2c09a678b3b52461148ffa0ecf62",
+      "all_phase_exits_zero": true,
+      "phase_exits": {
+        "extract-base": 0,
+        "extract-package-0": 0,
+        "extract-package-1": 0,
+        "extract-package-2": 0,
+        "extract-package-3": 0,
+        "extract-package-4": 0,
+        "extract-package-5": 0,
+        "extract-package-6": 0,
+        "extract-package-7": 0,
+        "extract-package-8": 0,
+        "extract-package-9": 0,
+        "extract-package-10": 0,
+        "extract-package-11": 0,
+        "extract-package-12": 0,
+        "extract-package-13": 0,
+        "extract-package-14": 0,
+        "extract-package-15": 0,
+        "extract-package-16": 0,
+        "extract-package-17": 0,
+        "extract-package-18": 0,
+        "extract-package-19": 0,
+        "mount-devfs": 0,
+        "create-jail": 0,
+        "node-version": 0,
+        "node-wasi": 0,
+        "offline-ci": 0,
+        "select-wasm": 0,
+        "frontend-build": 0,
+        "original-tests": 0,
+        "typecheck": 0,
+        "remove-jail": 0,
+        "unmount-devfs": 0
+      },
+      "native_tool_source_provenance": "Unknown official binary source build; fingerprint-signed official repository acquisition. Diagnostic frontend tool only."
+    }
+  ],
+  "independent_reference": "Original unmodified frontend built on Linux ARM64 with native compiler addons, same 116 tests passed and typecheck zero errors/warnings. Four complete generated asset paths and bytes equal all WASI builds.",
+  "selector_refusal_controls": [
+    {
+      "case": "version",
+      "exit": 1,
+      "refused": true
+    },
+    {
+      "case": "loader",
+      "exit": 1,
+      "refused": true
+    },
+    {
+      "case": "missing",
+      "exit": 1,
+      "refused": true
+    },
+    {
+      "case": "escape",
+      "exit": 1,
+      "refused": true
+    }
+  ],
+  "patch_application": {
+    "source_mod_sum_unchanged": true,
+    "go_workspace_inactive": true,
+    "patches": 34,
+    "all_zero_fuzz_zero_offset": true,
+    "frontend_inputs_equal_native_tested": true,
+    "post_patch_copies": 4,
+    "scope": "Source materialization and patch application only; no native Go/backend/package qualification"
+  },
+  "project_gates": [
+    {
+      "name": "authority",
+      "exit": 0,
+      "ok": true,
+      "gates": null
+    },
+    {
+      "name": "declared-freebsd-locks",
+      "exit": 0,
+      "ok": true,
+      "gates": null
+    },
+    {
+      "name": "lifecycle",
+      "exit": 1,
+      "ok": false,
+      "gates": [
+        {
+          "detail": "project authority and documentation review",
+          "gate": "authority",
+          "state": "pass"
+        },
+        {
+          "detail": "2 committed lock(s) current",
+          "gate": "locks",
+          "state": "pass"
+        },
+        {
+          "detail": "project selects provider 'none'",
+          "gate": "source-intelligence",
+          "state": "skipped"
+        },
+        {
+          "artifacts": [],
+          "detail": "no declared HTML artifacts to verify",
+          "gate": "html-observability",
+          "state": "skipped"
+        },
+        {
+          "detail": "project.test_receipt_missing: configured project test receipt has not been committed",
+          "gate": "receipt",
+          "state": "fail"
+        }
+      ]
+    }
+  ],
+  "prior_failed_setups_preserved": [
+    "Initial direct Tailwind WASI devDependency install rejected its CPU constraint; corrected approach preserves the existing optional dependency and explicitly selects the WASI build CPU.",
+    "First native probe stopped before package extraction because modern package arch was mistaken for abi; corrected probe verifies both independently.",
+    "Raw upstream source lacks vendor; the first all-patch review stopped at vendored Wails patches. go mod vendor materialized checksum-bound sources before the successful zero-offset/zero-fuzz review."
+  ],
+  "lifecycle_receipt": false,
+  "full_native_aether_qualified": false
+}
