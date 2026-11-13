@@ -1,0 +1,227 @@
+{
+  "schema": "daemonarchy/aether-native-port-observation@1",
+  "observed_utc": "2026-11-13T23:44:15.912178+00:00",
+  "original_production_port_revision": "fcfd07cb22c4407ba8a2366166c3b3ecaf0a74e5",
+  "source_revision": "Aether4.30.0 original tag; archive SHA256 f67c8d2c6f27f67a755bc279ece5ddb194f1bb165648280b9a7be86904d36ff5",
+  "native_base_source_revision": "70e6ff814546f849c9b6d97333f9a1af2c12fcba",
+  "scope": "Diagnostic original native ARM64 build/install/upstream-test observations. Not qualified exact source closure, desktop rendering/interaction, Component ownership/SDK products or lifecycle/release acceptance.",
+  "source_build_provenance": "Current base/compiler and pkg2.9.2_1 have separately retained native source builds. Official repository dependency/tool source-build provenance unknown. Exact observed versions differ from selected source ports.",
+  "tools": {
+    "node": "v24.22.1",
+    "npm": "12.2.0",
+    "go": "go version go1.27.3 freebsd/arm64",
+    "pkg": "2.9.2_1 (matched native source bulk bootstrap)",
+    "selected_source_ports_pending": {
+      "node24": "24.22.2",
+      "npm": "12.2.2",
+      "go127": "1.27.4"
+    }
+  },
+  "original_port_build": {
+    "original_port_targets": [
+      "checksum",
+      "extract",
+      "patch",
+      "configure",
+      "build",
+      "stage",
+      "package"
+    ],
+    "all_exits_zero": true,
+    "frontend_original_cases": 116,
+    "frontend_typecheck_exit": 0,
+    "native_node_addons": 0,
+    "reference_assets": {
+      "index.html": "1d8b41a17bd1dd3b1d908b2c4577abd5add1ba68c8d104c54026c3d48e6e3afb",
+      "assets/index-ZvlVS2jx.js": "d3196ae6c891f96945cf9b033cec26db51f20d4b11193e4fba6bf32a02b102b2",
+      "assets/aether-logo-BrOKuGwl.png": "9718a8944c3a91ab7735c66acdbec9aa316ef7a699307a6751544c9a7b2819cc",
+      "assets/index-Cas_wiDS.css": "4b109ebe2ca0691eb6cd3692adb71c089ff6c49cfe9a600ee9a19343aab379ea"
+    },
+    "native_binary_machine": 183,
+    "native_binary_sha256": "6f1dbecd8d021ebd8a9c5cd75c472bdcd1ac7e66601560ff9f1f8ba99bddd12a",
+    "package": {
+      "name": "aether-4.30.0_1.pkg",
+      "bytes": 12054697,
+      "sha256": "d13b8ebb2c09c296d11edf9904d7fcd43bed295d5924ae37dee894638e50880d"
+    },
+    "scope": "Diagnostic original native port build with independently recorded binary bootstrap dependencies. Full Go upstream tests, independent package/install/desktop behavior, exact selected source closure, SDK/lifecycle and release acceptance remain open."
+  },
+  "independent_package_install": {
+    "package": {
+      "name": "aether-4.30.0_1.pkg",
+      "bytes": 12054697,
+      "sha256": "d13b8ebb2c09c296d11edf9904d7fcd43bed295d5924ae37dee894638e50880d"
+    },
+    "installed_package": "aether-4.30.0_1",
+    "installed_files": [
+      {
+        "file": "/usr/local/bin/aether",
+        "uid": 0,
+        "gid": 0,
+        "sha256": "6f1dbecd8d021ebd8a9c5cd75c472bdcd1ac7e66601560ff9f1f8ba99bddd12a"
+      },
+      {
+        "file": "/usr/local/share/applications/aether.desktop",
+        "uid": 0,
+        "gid": 0,
+        "sha256": "7b984377e284449cc749ee6ce22c68ed3678a50aa47a97d7cce587ce047e4d73"
+      },
+      {
+        "file": "/usr/local/share/applications/li.oever.aether.url-handler.desktop",
+        "uid": 0,
+        "gid": 0,
+        "sha256": "13dd032f683b1eca899ec3c6044c0cb4c7af00b950f85723fd680c24d68e2542"
+      },
+      {
+        "file": "/usr/local/share/doc/aether/README.md",
+        "uid": 0,
+        "gid": 0,
+        "sha256": "f1394808c8ac8c4dd1f439febcac30a3b1e491a8bec9ce68d2962bd608cc6459"
+      },
+      {
+        "file": "/usr/local/share/icons/hicolor/512x512/apps/aether.png",
+        "uid": 0,
+        "gid": 0,
+        "sha256": "9718a8944c3a91ab7735c66acdbec9aa316ef7a699307a6751544c9a7b2819cc"
+      },
+      {
+        "file": "/usr/local/share/licenses/aether-4.30.0_1/LICENSE",
+        "uid": 0,
+        "gid": 0,
+        "sha256": "8a9617637463b68fc0584861100926c56e2af396c013024314c285549b9c9642"
+      },
+      {
+        "file": "/usr/local/share/licenses/aether-4.30.0_1/MIT",
+        "uid": 0,
+        "gid": 0,
+        "sha256": "3507caa9b70264bdbe49eff56f570238ee9294ead5d32982e642c249e3053bd4"
+      },
+      {
+        "file": "/usr/local/share/licenses/aether-4.30.0_1/catalog.mk",
+        "uid": 0,
+        "gid": 0,
+        "sha256": "e4188d93b7c86e93f5fc8bc0904ebea74e23703f705aaaa06598f8d75b4d0a08"
+      },
+      {
+        "file": "/usr/local/share/pixmaps/aether.png",
+        "uid": 0,
+        "gid": 0,
+        "sha256": "567a9edfb467f9f5b5065d47c56ebcffb774d7f170e0b26e0f5117f38747611a"
+      },
+      {
+        "file": "/usr/local/share/sbom/pc/aether.pc",
+        "uid": 0,
+        "gid": 0,
+        "sha256": "4ca3180a53d9da7008c5902530de0cf93cc84d66fb9a23968346da6850c7ebfe"
+      }
+    ],
+    "all_10_installed_file_bytes_and_root_wheel_ownership_match": true,
+    "installed_cli_version": "aether 4.30.0",
+    "runtime_uid": 65534,
+    "network": "ip4=disable ip6=disable",
+    "scope": "Sealed package installation, dependency/version/payload/ownership verification and installed CLI only, in the diagnostic dependency root. Not clean runtime-only closure, upstream Go suite, desktop rendering/interaction, exact-source SDK/lifecycle or release acceptance."
+  },
+  "test_only_port_delta": [
+    {
+      "file": "internal/theme/applier_test.go",
+      "before": "b01b3ef9bd0cb6a89e9d4ef9783e277a46f47e843778a61825765666a58f8276",
+      "after": "db428857985db58e408911a8b7f4bc1dc162d8dab48c502091f1e72109e808ea",
+      "patch_sha256": "e6cdaa59315ce8385a16f6d8155c73035a731b83afd65ab02ea062a3349bcf52"
+    },
+    {
+      "file": "internal/theme/legacy_gtk_test.go",
+      "before": "dbd361e4e5b4c1a0a9dcfa933679e3c5c838d5f5f65e02d36f0cf4b9fd9377bc",
+      "after": "b499033361a39fb8b65b682199d5255abf8c966da4813e42d51f7eba6b5bf921",
+      "patch_sha256": "1ec61232e39ee9264b205b7cb76b0de105d6b5010911969b504ec61f420f868e"
+    }
+  ],
+  "native_original_go_tests": {
+    "counts": {
+      "PASS": 589,
+      "SKIP": 1
+    },
+    "completed_unique_cases": 590,
+    "result_cache_disabled": true,
+    "raw_report_sha256": "e8ce607e6b84238745b737de54e998d0a9b31279291c2af989b9cd978f469ebf",
+    "previous_skip_now_passed": [
+      "TestIsOmarchyInstalledRequiresPublicCLI",
+      "TestRetireLegacyGTKStylesheetsHandlesLinkToGeneratedFile",
+      "TestImportColorsTomlFromThemeDir"
+    ],
+    "remaining_skip": "TestSuitabilityEval: upstream explicitly opt-in real-wallpaper evaluation/contact-sheet harness; default upstream target does not run it.",
+    "assertions": "Both native platform tests keep every original assertion; only platform guards/reason strings include FreeBSD.",
+    "theme_fixture": {
+      "source_wallpaper_sha256": "4cd33ed4addf064dedd1a2271111ec6a57df44aebecacb4cf4871ffe2b600ff8",
+      "source_wallpaper": "Aether4.30.0 bundled aether-dark-2k.jpg",
+      "generation": "Actual installed product CLI, default editor integrations, --no-apply export",
+      "generated_files": {
+        "aether.zed.json": "76cbb905012819c54947883af77f1a6b4bee6df476e758c527d832f3134864be",
+        "alacritty.toml": "0a7c94f8d09eb52ae0f92bb9c2d5dfda63baa7247a2955008d9accf5c8832395",
+        "btop.theme": "43695cc1401c81d6e4aae8e0127bd7624791f8a881ee65745a8a6c426d1d2e98",
+        "chromium.theme": "b730042111fbdc2c980fd89a7ab6065678c6b2a060f5d4f774e70b7dbd8bd6db",
+        "colors.toml": "09260277568121def98612fd6456dcc3a03d860e48aa394b66fe92a13ea86884",
+        "foot.ini": "90e308adf3aad4191e0430b5d8397b9e80b7231c5cc6b312ca4d58968e110c2d",
+        "ghostty.conf": "f49de80f22a132e46074f5335170181b73ef10e025b1a8f23e3c39bf2c502c1e",
+        "hyprland.conf": "a50020ecd694b92b3d1cd7802b874b2b65c6fe1d831f6982e4f33c0a531b1292",
+        "hyprlock.conf": "619a7dda195fba5f566986db2e0e18b5b672ad9adbd73795b31044a9f4f478d6",
+        "icons.theme": "9d0ee8e36f0ca102946a1fd20582cbab7a106b830c2804daa2bf66d8a3db51ec",
+        "kitty.conf": "0b798403ba3e95dcd452d76a49a9945652bc726ae9623aa027035e62f8541833",
+        "mako.ini": "35dea4c6188546e587b7ac1bed06f8e50c480953b41f2c2b88d3ec5b80efb52f",
+        "neovim.lua": "23937ece295bd1250a711d6267a5e4605d7169b7a413572ca5b854d6ed62fa7a",
+        "swayosd.css": "647b49d6105f226df2a9b96bf3b49985c4235aa6a0e2bec58537aaec0209e86c",
+        "vencord.theme.css": "4be5a32e998cea1c6705cfbc3b54689e8ffc94066bab80cacd8c7d7a172e6924",
+        "vscode.json": "335c820067e83fa7a4229bc4160b5bdc301f49d0c5e941f7181b6bec04a5fcd5",
+        "walker.css": "94575f9c6165fe258b61241e92df3725c23330c51ad73a70a31eab2cbf0a6f35",
+        "warp.yaml": "7cf605be607fad21da24a6dcebd983e0bfac6bc84e7fed73d80adb83c7ac9f99",
+        "waybar.css": "d3ae7dfe219374e5c6f390ec211a98b8bd0574521ac7f1349ef0da0aafda7a36",
+        "wofi.css": "2494e9e350328ddf7cd5c10ddba8ee769adcaa86ec64338223984782308aea70",
+        "zellij.kdl": "59cf53b956c17d2564efcc585e24c4957579800e2988b617cb31c1f638819e16",
+        "backgrounds/aether-dark-2k.jpg": "4cd33ed4addf064dedd1a2271111ec6a57df44aebecacb4cf4871ffe2b600ff8",
+        "vscode-extension/package.json": "317e59c5dd80201aea0828fd4e557079804b2b1c2b92dcbbc2a2a58d86d923f0",
+        "vscode-extension/themes/aether-color-theme.json": "6dca006486421d81e8ba56c904fe1e095473b4ae5bf4ee649e13884b29dcd230"
+      }
+    }
+  },
+  "cleanup": {
+    "build_and_install": {
+      "host_unchanged": true,
+      "all_private_jails_removed": true,
+      "all_private_mounts_unmounted": true,
+      "native_original_port_targets_pass": true,
+      "native_package_installed_payload_bytes_and_root_ownership_pass": true,
+      "native_installed_cli_version_pass": true,
+      "original_go_test_target_exit": 0,
+      "scope": "Diagnostic binary bootstrap dependencies; exact-source closure/SDK/lifecycle and desktop acceptance remain open."
+    },
+    "expanded_go_tests": {
+      "host_unchanged": true,
+      "private_jail_removed": true,
+      "devfs_and_ports_unmounted": true
+    }
+  },
+  "lifecycle_receipt": false,
+  "desktop_qualified": false,
+  "exact_source_closure_qualified": false,
+  "reviewed_patch_layout_equivalence": [
+    {
+      "file": "internal/theme/applier_test.go",
+      "port_patch": "patch-internal_theme_applier__test.go",
+      "previous_patch_sha256": "e6cdaa59315ce8385a16f6d8155c73035a731b83afd65ab02ea062a3349bcf52",
+      "reviewed_patch_sha256": "9800ccd48a078ffabdccef0a915da32ef513e328d69cc477504b1df95bbe8722",
+      "source_after_sha256": "db428857985db58e408911a8b7f4bc1dc162d8dab48c502091f1e72109e808ea",
+      "gnu_zero_fuzz_zero_offset": true,
+      "native_bsd_patch_exit": 0,
+      "native_go_tested_bytes_equal": true
+    },
+    {
+      "file": "internal/theme/legacy_gtk_test.go",
+      "port_patch": "patch-internal_theme_legacy__gtk__test.go",
+      "previous_patch_sha256": "1ec61232e39ee9264b205b7cb76b0de105d6b5010911969b504ec61f420f868e",
+      "reviewed_patch_sha256": "92757f8c4ff8defa3cdff18b15335050f4ddf402eaafc6ce7198e16f69c36efc",
+      "source_after_sha256": "b499033361a39fb8b65b682199d5255abf8c966da4813e42d51f7eba6b5bf921",
+      "gnu_zero_fuzz_zero_offset": true,
+      "native_bsd_patch_exit": 0,
+      "native_go_tested_bytes_equal": true
+    }
+  ]
+}
