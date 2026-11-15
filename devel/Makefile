@@ -681,6 +681,7 @@
     SUBDIR += electron42
     SUBDIR += electron43
     SUBDIR += electron44
+    SUBDIR += electron45
     SUBDIR += elf
     SUBDIR += elf-dissector
     SUBDIR += elfcat
@@ -8825,6 +8826,7 @@
     SUBDIR += stdx-allocator
     SUBDIR += stfl
     SUBDIR += stgit
+    SUBDIR += stirmake
     SUBDIR += stlfilt
     SUBDIR += stlink
     SUBDIR += str
