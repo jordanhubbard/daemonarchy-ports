@@ -30,6 +30,41 @@ phase()
         return "$code"
     fi
 }
+bootstrap_dependencies() {
+    dependency_root=$1
+    dependency_label=$2
+    # These native list targets enumerate this port's direct prerequisites.
+    # pkg supplies their runtime closure; their source-build tools are unrelated.
+    make -C "$dependency_root" DEPENDS_SHOW_FLAVOR=yes \
+        build-depends-list run-depends-list test-depends-list \
+        >"$out/$dependency_label.direct-paths" || return $?
+    sort -u "$out/$dependency_label.direct-paths" \
+        >"$out/$dependency_label.direct-paths.sorted" || return $?
+    pkg query -a '%o' >"$out/$dependency_label.installed-origins" || return $?
+    : >"$out/$dependency_label.binary-origins" || return $?
+    while IFS= read -r dependency_path; do
+        case "$dependency_path" in
+            "$root/"*) dependency_origin=${dependency_path#"$root/"} ;;
+            *) printf 'Unexpected dependency path: %s\n' "$dependency_path" >&2; return 1 ;;
+        esac
+        # Installed origins omit the flavor/subpackage suffix. The original
+        # depends targets below still enforce the actual package/file/library
+        # constraints, and build a dependency if its installed variant is wrong.
+        installed_origin=${dependency_origin%@*}
+        installed_origin=${installed_origin%~*}
+        if grep -Fqx "$installed_origin" "$out/$dependency_label.installed-origins"; then
+            continue
+        else
+            dependency_status=$?
+            test "$dependency_status" -eq 1 || return "$dependency_status"
+        fi
+        printf '%s\n' "$dependency_origin" >>"$out/$dependency_label.binary-origins" || return $?
+    done <"$out/$dependency_label.direct-paths.sorted"
+    while IFS= read -r dependency_origin; do
+        pkg install -yA "$dependency_origin" || return $?
+    done <"$out/$dependency_label.binary-origins"
+    make -C "$dependency_root" USE_PACKAGE_DEPENDS=yes depends test-depends
+}
 printf '%s\n' "${GITHUB_SHA:-unknown}" >"$out/source-commit.txt"
 find "$port" multimedia/libdvdcss Mk -type f -exec sha256 {} + >"$out/source-inputs.sha256"
 pkg query '%n-%v %q' >"$out/bootstrap-before.txt"
@@ -40,9 +75,8 @@ phase restricted-bootstrap pkg install -y meson pkgconf
 # through the ordinary binary bootstrap path before invoking original make;
 # do not accidentally rebuild the transitive documentation toolchain here.
 phase libdvdcss-options make -C multimedia/libdvdcss -V PORT_OPTIONS
-# Native targets check selected defaults and dependency constraints.
-# Binary tools bring runtime dependencies, not their own documentation build tools.
-phase libdvdcss-dependencies make -C multimedia/libdvdcss USE_PACKAGE_DEPENDS=yes depends test-depends
+# Fetch direct prerequisites as binaries, then enforce native constraints.
+phase libdvdcss-dependencies bootstrap_dependencies multimedia/libdvdcss libdvdcss
 phase libdvdcss-checksum make -C multimedia/libdvdcss checksum
 phase libdvdcss-package make -C multimedia/libdvdcss package
 dependency_package=$(make -C multimedia/libdvdcss -V WRKDIR_PKGFILE)
@@ -52,7 +86,7 @@ phase libdvdcss-install make -C multimedia/libdvdcss install
 # Retain the original recursive expression for audit. Native dependency
 # targets below validate the selected prerequisites and log their resolution.
 phase dependency-expression make -C "$port" -V MISSING-DEPENDS-LIST
-phase dependencies make -C "$port" USE_PACKAGE_DEPENDS=yes depends test-depends
+phase dependencies bootstrap_dependencies "$port" selected-port
 phase checksum make -C "$port" checksum
 result=0
 phase package make -C "$port" DEVELOPER=yes package || result=$?
