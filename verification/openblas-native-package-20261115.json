@@ -280,7 +280,56 @@
     ],
     "private_native_build_evidence_archive_sha256": "15850ea569480af3fd78e3a492040e4a2735cc05528eff3209041ba397e072be",
     "original_build_image_unchanged": true,
-    "independent_installed_consumer": "Pending; running against a fresh produced userland in an independent ARM KVM guest. No pass is claimed.",
+    "independent_installed_consumer": {
+      "status": "installed-consumer-passed",
+      "fresh_userland_source": "70e6ff814546f849c9b6d97333f9a1af2c12fcba",
+      "running_kernel_source": "af55b6f9042e15b635e90926d476e7cbeb48a069",
+      "running_kernel_matches_selected_source": false,
+      "full_declared_package_closure_installed": true,
+      "bootstrap_pkg_version": "2.9.2_1",
+      "exact_installed_inventory_checked": true,
+      "native_pkg_payload_and_dependency_checks_passed": true,
+      "normal_ldconfig_startup": true,
+      "jail_network_disabled": true,
+      "core_dump_limit_bytes": 0,
+      "compiler": "Clang 21.1.8 aarch64-unknown-freebsd16.0",
+      "warnings_as_errors": true,
+      "probe_source_sha256": "1524e74b2dc27a1d957d55976b9441b038eebbb00d56a05d3dde7f0e4497c9bb",
+      "binary_sha256": "66cc57052536e9ff32e2dde876f910ad5b5470678cdecb03add08af83d3421b7",
+      "resolved_library_sha256": {
+        "/lib/libc.so.7": "35cb5b9b46bd4a92f14515b40b0df76553cd866d93396c675285421c22c44d59",
+        "/lib/libgcc_s.so.1": "f0127e2c601fdb0a389f2a92105927a8af65e938043ad6541e409e43b5383a5c",
+        "/lib/libm.so.5": "1207789ec8f3d7df8c3513fde45e1573936d477c5b85aaf680cb4749f5828acf",
+        "/lib/libsys.so.7": "8d48822929f7c745863d0979fc964f8a149f40302a4b2e8351ccbfbe675e3ded",
+        "/lib/libthr.so.3": "6ee4319f764bcea92b1da8e7974a2fbd02ab277b6225b5c92b754e0b60ba69b2",
+        "/usr/lib/libomp.so": "1a36c879eb49f65815cc45238015314b98ba639c1300a40e89585c8ff033738f",
+        "/usr/local/lib/gcc14/libgfortran.so.5": "30f0fbfb7786e531c1c73a4fe32a5263e0ef44c1cef213b300637f73e202cab2",
+        "/usr/local/lib/libopenblas.so.0": "e2fe7827a324b07f940f9cc5ad9e821f9724436707fda2918440d531741d76f8"
+      },
+      "cases": [
+        "row-major dgemm with alpha/beta",
+        "column-major transposed dgemm",
+        "pivoted Fortran dgesv solution",
+        "singular dgesv status",
+        "complex conjugate-transposed zgemm"
+      ],
+      "results": [
+        {
+          "omp_configuration": 1,
+          "exit": 0,
+          "cases_passed": 5
+        },
+        {
+          "omp_configuration": 2,
+          "exit": 0,
+          "cases_passed": 5
+        }
+      ],
+      "thread_count_verification": "Library API confirms requested configurations; concurrent team execution was not instrumented",
+      "jail_and_devfs_cleanup_passed": true,
+      "private_consumer_evidence_archive_sha256": "640890d03ecc1535f42c9e04261caab4306638afc66367cf176c5be13475b270",
+      "scope": "Bounded ARM64 installed consumer of the retained native bulk package. No new ports build, exact release-kernel, isolated testport, Component/SDK/lifecycle or release admission."
+    },
     "scope": "Native ARM default build/test/package diagnostics only; complete closure, matched release-kernel, canonical Component/SDK/lifecycle and release acceptance remain open."
   }
 }
