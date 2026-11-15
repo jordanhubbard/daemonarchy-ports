@@ -1,0 +1,182 @@
+{
+  "schema": "daemonarchy/openblas-native-package-diagnostic@1",
+  "source_revision": "70e6ff814546f849c9b6d97333f9a1af2c12fcba",
+  "ports_snapshot": "181620f22b6c06689a5a6edd1146a4dbeca53aea",
+  "candidate_port_input_revision": "232a80bdd18175a7086f4193b179007b4da89a63",
+  "whole_openblas_origin_file_bytes_match_candidate": true,
+  "native_build_context": {
+    "target": "FreeBSD16 amd64",
+    "worker_kernel_source": "4b6dd598234450bf82278a846bfec809e4cc0077",
+    "jail_base_source": "70e6ff814546f849c9b6d97333f9a1af2c12fcba",
+    "host_and_jail_osversion": 1600031,
+    "clang": "21.1.8",
+    "gfortran": "14.2.0",
+    "poudriere": "3.4.99 / 0198103",
+    "mode": "Original retained native bulk, default options and test targets",
+    "source_build_record": "math/openblas openblas-0.3.34_2,2 630",
+    "build_seconds": 630
+  },
+  "default_options": {
+    "AVX": false,
+    "AVX2": false,
+    "AVX512": false,
+    "DYNAMIC_ARCH": true,
+    "INTERFACE64": false,
+    "OPENMP": true
+  },
+  "default_native_test_observations": {
+    "targets": [
+      "test/all",
+      "utest/all",
+      "ctest/all"
+    ],
+    "unit_groups": [
+      {
+        "cases": 125,
+        "passed": 125,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "cases": 1535,
+        "passed": 1535,
+        "failed": 0,
+        "skipped": 0
+      }
+    ],
+    "total_unit_case_identities": 1660,
+    "level_one_pass_markers": 134,
+    "computational_pass_markers": 196,
+    "failure_markers": 0,
+    "complete_log_sha256": "c69110e0e54519641c516f591f6e0df5569ebf692bcbfe989a250eb66933db69",
+    "complete_log_bytes": 18197041,
+    "private_case_inventory_sha256": "06ea7a4792de13d1dc753dcf24a9d46b92cd67435e35b2128e08d6dbf46dd809"
+  },
+  "package": {
+    "identity": "openblas 0.3.34_2,2 FreeBSD:16:amd64 math/openblas",
+    "bytes": 8950622,
+    "sha256": "9047a6b0b12f73259e9f36a6b48b0cd5a4635f35c94d6364eb31b09b8826d80f"
+  },
+  "runtime_dependency_build_records": [
+    {
+      "name": "indexinfo",
+      "sha256": "b6ab297f6db0d80d76ef77c11cf1274d4742bd6f2e0b5194931654a90404ed1f",
+      "source_build_record": "print/indexinfo indexinfo-0.3.1_1 3",
+      "build_origin_with_flavor": "print/indexinfo",
+      "package_flavor_annotation": null
+    },
+    {
+      "name": "liblz4",
+      "sha256": "0d127ab65d7a542aaa0e41da587abd3293fe054774ec2799141467758ef73bab",
+      "source_build_record": "archivers/liblz4 liblz4-1.11.1,1 13",
+      "build_origin_with_flavor": "archivers/liblz4",
+      "package_flavor_annotation": null
+    },
+    {
+      "name": "zstd",
+      "sha256": "c72720c8e4537a5d9c00ee06813677d6700fd6cd59333a0fbf23c5670cfbbe98",
+      "source_build_record": "archivers/zstd zstd-1.5.7_2 20",
+      "build_origin_with_flavor": "archivers/zstd",
+      "package_flavor_annotation": null
+    },
+    {
+      "name": "binutils",
+      "sha256": "662726b921371d399a33a0a2f9e26372fb9148cdc67dc010ab65eb7ec332c938",
+      "source_build_record": "devel/binutils@native binutils-2.44_1,1 295",
+      "build_origin_with_flavor": "devel/binutils@native",
+      "package_flavor_annotation": "native"
+    },
+    {
+      "name": "gmp",
+      "sha256": "55e3fe4229c871a5c6ec07a45017287c172a7e070aad65b08bc778f675e9dddf",
+      "source_build_record": "math/gmp gmp-6.3.0 80",
+      "build_origin_with_flavor": "math/gmp",
+      "package_flavor_annotation": null
+    },
+    {
+      "name": "mpfr",
+      "sha256": "111db84096361908ddaa26bca41a73f1152b5488ef7f0bb58b9088b96737837b",
+      "source_build_record": "math/mpfr mpfr-4.2.2,1 51",
+      "build_origin_with_flavor": "math/mpfr",
+      "package_flavor_annotation": null
+    },
+    {
+      "name": "mpc",
+      "sha256": "d3e6fa84db9ab289f9f934c6f14f809710173bf6242c6892044a225ebe4ccb96",
+      "source_build_record": "math/mpc mpc-1.4.1 13",
+      "build_origin_with_flavor": "math/mpc",
+      "package_flavor_annotation": null
+    },
+    {
+      "name": "gcc14",
+      "sha256": "bf9f52b248ed6f923413c4383d5d5e5683e6a83ed28336b452553696fa0d212d",
+      "source_build_record": "lang/gcc14 gcc14-14.2.0_7 2995",
+      "build_origin_with_flavor": "lang/gcc14",
+      "package_flavor_annotation": null
+    },
+    {
+      "name": "openblas",
+      "sha256": "9047a6b0b12f73259e9f36a6b48b0cd5a4635f35c94d6364eb31b09b8826d80f",
+      "source_build_record": "math/openblas openblas-0.3.34_2,2 630",
+      "build_origin_with_flavor": "math/openblas",
+      "package_flavor_annotation": null
+    }
+  ],
+  "independent_installed_consumer": {
+    "target": "Fresh jail using the produced source70e6 base/kernel/lib32 sets",
+    "running_provider_kernel_source": "303b3646270f",
+    "running_kernel_matches_selected_source": false,
+    "full_declared_package_closure_installed": true,
+    "exact_installed_inventory_checked": true,
+    "native_pkg_payload_and_dependency_checks_passed": true,
+    "normal_ldconfig_startup": true,
+    "network_disabled": true,
+    "core_dump_limit_bytes": 0,
+    "probe_source": "Tools/daemonarchy/native-probes/openblas-installed-consumer.c",
+    "probe_source_sha256": "1524e74b2dc27a1d957d55976b9441b038eebbb00d56a05d3dde7f0e4497c9bb",
+    "binary_sha256": "e704287b41308bce43f45cafa17408e0de408fa8a9ba5a71b536e90c770edc46",
+    "compile_argv": [
+      "cc",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I/usr/local/include",
+      "/tmp/consumer.c",
+      "-o",
+      "/tmp/consumer",
+      "-L/usr/local/lib",
+      "-lopenblas",
+      "-lm"
+    ],
+    "cases": [
+      "row-major dgemm with alpha/beta",
+      "column-major transposed dgemm",
+      "pivoted Fortran dgesv solution",
+      "singular dgesv status",
+      "complex conjugate-transposed zgemm"
+    ],
+    "results": [
+      {
+        "omp_threads": 1,
+        "exit": 0,
+        "cases_passed": 5
+      },
+      {
+        "omp_threads": 2,
+        "exit": 0,
+        "cases_passed": 5
+      }
+    ],
+    "jail_and_devfs_cleanup_passed": true
+  },
+  "private_build_and_consumer_evidence_archive_sha256": "ad3d72dc5369432587ef33d9249cdb4283b49ee3cdaf4b88887293a49763f736",
+  "retained_original_images_unchanged": true,
+  "unqualified": [
+    "Separate source4b6 QEMU TCG isolated testport remains in progress; its earlier prerequisite timeout is retained",
+    "Complete CURRENT desktop closure and exact running release-kernel acceptance",
+    "Canonical Component/SDK/lifecycle admission and release"
+  ],
+  "scope": "Retained native default build/test/package evidence and an independent exact-package installed consumer. This diagnostic is not an isolated-testport result or a lifecycle/release receipt."
+}
