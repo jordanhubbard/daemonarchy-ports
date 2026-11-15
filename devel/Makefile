@@ -681,6 +681,7 @@
     SUBDIR += electron42
     SUBDIR += electron43
     SUBDIR += electron44
+    SUBDIR += electron45
     SUBDIR += elf
     SUBDIR += elf-dissector
     SUBDIR += elfcat
@@ -1548,6 +1549,7 @@
     SUBDIR += libuninum
     SUBDIR += libunistring
     SUBDIR += libunwind
+    SUBDIR += libunwind-devel
     SUBDIR += libuutil
     SUBDIR += libuv
     SUBDIR += libvanessa_adt
@@ -1915,6 +1917,7 @@
     SUBDIR += ode
     SUBDIR += ois
     SUBDIR += okteta
+    SUBDIR += okteta-qt5
     SUBDIR += ollama-hpp
     SUBDIR += omake
     SUBDIR += omniORB
@@ -5006,6 +5009,8 @@
     SUBDIR += py-distributed
     SUBDIR += py-dj60-django-rq
     SUBDIR += py-dj60-strawberry-graphql
+    SUBDIR += py-dj61-django-rq
+    SUBDIR += py-dj61-strawberry-graphql
     SUBDIR += py-django-rq
     SUBDIR += py-dlinfo
     SUBDIR += py-dm-tree
@@ -5866,6 +5871,7 @@
     SUBDIR += py-pyairtable2
     SUBDIR += py-pyaml-env
     SUBDIR += py-pyasn1
+    SUBDIR += py-pyasn1-alt-modules
     SUBDIR += py-pyasn1-modules
     SUBDIR += py-pybase64
     SUBDIR += py-pybind11
@@ -6568,6 +6574,7 @@
     SUBDIR += py-widgetsnbextension
     SUBDIR += py-wimpy
     SUBDIR += py-wirerope
+    SUBDIR += py-wkb-wkt-converter
     SUBDIR += py-wlc
     SUBDIR += py-woops
     SUBDIR += py-worldmonitor-sdk
@@ -6902,6 +6909,7 @@
     SUBDIR += rubygem-aws-sdk-accessanalyzer
     SUBDIR += rubygem-aws-sdk-account
     SUBDIR += rubygem-aws-sdk-accountaccess
+    SUBDIR += rubygem-aws-sdk-accountaccessruntime
     SUBDIR += rubygem-aws-sdk-acm
     SUBDIR += rubygem-aws-sdk-acmpca
     SUBDIR += rubygem-aws-sdk-agentregistry
@@ -7610,6 +7618,7 @@
     SUBDIR += rubygem-cucumber-cucumber-expressions19
     SUBDIR += rubygem-cucumber-messages
     SUBDIR += rubygem-cucumber-messages32
+    SUBDIR += rubygem-cucumber-messages34
     SUBDIR += rubygem-cucumber-query
     SUBDIR += rubygem-cucumber-rails
     SUBDIR += rubygem-cucumber-tag-expressions
@@ -7901,6 +7910,7 @@
     SUBDIR += rubygem-hashie
     SUBDIR += rubygem-hashie-forbidden_attributes
     SUBDIR += rubygem-hashie-gitlab
+    SUBDIR += rubygem-hashie5
     SUBDIR += rubygem-health_check
     SUBDIR += rubygem-health_check-rails-gitlab
     SUBDIR += rubygem-health_check-rails70
@@ -8816,6 +8826,7 @@
     SUBDIR += stdx-allocator
     SUBDIR += stfl
     SUBDIR += stgit
+    SUBDIR += stirmake
     SUBDIR += stlfilt
     SUBDIR += stlink
     SUBDIR += str

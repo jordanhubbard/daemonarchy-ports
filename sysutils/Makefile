@@ -677,6 +677,7 @@
     SUBDIR += libg15
     SUBDIR += libg15render
     SUBDIR += libieee1284
+    SUBDIR += libmbus
     SUBDIR += libptytty
     SUBDIR += libsunacl
     SUBDIR += libsysstat
@@ -1544,6 +1545,7 @@
     SUBDIR += u-boot-bhyve-riscv
     SUBDIR += u-boot-chip
     SUBDIR += u-boot-clearfog
+    SUBDIR += u-boot-cm3588
     SUBDIR += u-boot-cubieboard
     SUBDIR += u-boot-cubieboard2
     SUBDIR += u-boot-cubox-hummingboard

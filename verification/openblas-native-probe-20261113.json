@@ -1,0 +1,77 @@
+{
+  "schema": "daemonarchy/openblas-native-probe@1",
+  "observed_utc": "2026-11-13T13:03:36.306046+00:00",
+  "scope": "Native host-probe compilation/execution and make flag selection only; full library build, upstream tests, pkg/install and CURRENT desktop closure remain unqualified.",
+  "worker": {
+    "os": "FreeBSD 16.0-CURRENT",
+    "osversion": 1600031,
+    "arch": "amd64",
+    "source_revision": "4b6dd598234450bf82278a846bfec809e4cc0077",
+    "emulation": "QEMU TCG max CPU, 4 vCPU / 12 GiB",
+    "compiler": "FreeBSD Clang 21.1.8, llvmorg-21.1.8-0-g2078da43e25a"
+  },
+  "distfile": {
+    "name": "OpenMathLib-OpenBLAS-v0.3.34_GH0.tar.gz",
+    "sha256": "cd7e129868320cc2d033afa920e31202dfe0b8066a5b66661900ccc0f197dfed",
+    "matches_original_distinfo": true
+  },
+  "patch": {
+    "path": "math/openblas/files/patch-Makefile.system",
+    "sha256": "9b963b59ce90b82e0f9e359d6063dd9ac6457512a6157c4f8e303cada5f177b8",
+    "native_apply_fuzz": 0,
+    "patched_makefile_system_sha256": "2e2759ef06e6982aeb3fa18d1d6c2a3b3e392cf6d65688a8d8ad58012518268c"
+  },
+  "controls": {
+    "original_getarch_compile": {
+      "exit": 1,
+      "diagnostic": "unknown target CPU 'athlon-xp'",
+      "flags": "-DNO_AVX -DNO_AVX2 -DNO_AVX512 -march=native"
+    },
+    "generic_getarch_compile": {
+      "exit": 0,
+      "flags": "-DNO_AVX -DNO_AVX2 -DNO_AVX512",
+      "getarch_0_exit": 0,
+      "getarch_1_exit": 0,
+      "reported_core": "BARCELONA",
+      "reported_cores": 4
+    },
+    "second_getarch_compile": {
+      "exit": 0,
+      "flags": "-I. -DNO_AVX -DNO_AVX2 -DNO_AVX512 -DGEMM_MULTITHREAD_THRESHOLD=4",
+      "getarch_0_exit": 0,
+      "getarch_1_exit": 0
+    },
+    "gnu_make_flag_selection": {
+      "passed": 5,
+      "disabled_avx512": "no native compiler flag",
+      "enabled_or_unspecified_avx512": "original -march=native retained",
+      "pgi_or_non_x86_64": "original behavior retained"
+    }
+  },
+  "logs_and_products_sha256": {
+    "original-compile.log": "70bee4696ac72068a4b1986be75ec6b9c4e28306bce7d2bdb2d3eafb33679eea",
+    "generic-compile.log": "583afc941b5900222697a85fc557f9b8af48f53321962ad9c1fd53d55a45c8f9",
+    "getarch-0.txt": "3da7fe9d0e5641fa861552f8613e5c26cf080694ff42d7f18ec37b36e9149deb",
+    "getarch-1.txt": "55e7dbb7218ba97fe1bc33bbcdf46df40f8a643b52816dd49df70a5ee5eec7d1",
+    "getarch-generic-r2": "1eaad128818d5f1a834446203839a070c1ad369eb9231dac13c554350d93ceca",
+    "second-compile-r2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "getarch-2nd-r2": "ce4b7090d8ee652dfe0a96bf34a86c11566558de023b278bee741d2742ebf73c",
+    "getarch-2nd-r2-0.txt": "a37b04a2791188b734218cdd8802c04c053a38f2349cec46e56e8ca25f400ae9",
+    "getarch-2nd-r2-1.txt": "dbec0d59baf882a21acd49658cefc28d90ba1fb8536e7841426e3f96bcb6c1c4"
+  },
+  "failed_harness_attempts": [
+    "The first direct second-probe compile omitted the original Makefile default GEMM_MULTITHREAD_THRESHOLD=4 and failed. Its original log is retained; the corrected harness passed."
+  ],
+  "original_bulk_observation": {
+    "ports_revision": "378954db127eb5126a65b45fca31b29ea2f93e83",
+    "status": "still-running",
+    "source_built": 129,
+    "fetched": 683,
+    "failed": 1,
+    "skipped": 65,
+    "failure_origin": "math/openblas",
+    "failure_log_sha256": "1323bfb3996554d0c22974846a9e61cd1744d8aef16b3d82e3bc8ae820eae389",
+    "in_flight_inputs_unchanged": true
+  },
+  "lifecycle_receipt": false
+}

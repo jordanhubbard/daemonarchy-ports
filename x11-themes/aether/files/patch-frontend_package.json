@@ -1,0 +1,15 @@
+--- frontend/package.json.orig
++++ frontend/package.json
+@@ -15,9 +15,12 @@
+     "test": "vitest run"
+   },
+   "devDependencies": {
++    "@rolldown/binding-wasm32-wasi": "1.2.7",
+     "@sveltejs/vite-plugin-svelte": "^7.0.0",
+     "@tailwindcss/vite": "^4.2.4",
+     "jsdom": "^30.0.1",
++    "lightningcss-wasm-1-32": "npm:lightningcss-wasm@1.32.0",
++    "lightningcss-wasm-1-33": "npm:lightningcss-wasm@1.33.0",
+     "svelte": "^5.55.5",
+     "svelte-check": "^4.4.6",
+     "tailwindcss": "^4.2.4",
