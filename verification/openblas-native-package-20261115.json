@@ -178,5 +178,109 @@
     "Complete CURRENT desktop closure and exact running release-kernel acceptance",
     "Canonical Component/SDK/lifecycle admission and release"
   ],
-  "scope": "Retained native default build/test/package evidence and an independent exact-package installed consumer. This diagnostic is not an isolated-testport result or a lifecycle/release receipt."
+  "scope": "Retained native default build/test/package evidence and an independent exact-package installed consumer. This diagnostic is not an isolated-testport result or a lifecycle/release receipt.",
+  "arm64_native_build": {
+    "target": "FreeBSD16 aarch64",
+    "source_revision": "70e6ff814546f849c9b6d97333f9a1af2c12fcba",
+    "ports_snapshot": "181620f22b6c06689a5a6edd1146a4dbeca53aea",
+    "worker_kernel_source": "af55b6f9042e15b635e90926d476e7cbeb48a069",
+    "whole_openblas_origin_file_bytes_match_candidate": true,
+    "default_options": {
+      "DYNAMIC_ARCH": false,
+      "INTERFACE64": false,
+      "OPENMP": true
+    },
+    "source_build_record": "math/openblas openblas-0.3.34_2,2 499",
+    "build_seconds": 499,
+    "original_default_targets": [
+      "test/all",
+      "utest/all",
+      "ctest/all"
+    ],
+    "unit_groups": [
+      {
+        "count": 127,
+        "ok": 127,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "count": 1535,
+        "ok": 1535,
+        "failed": 0,
+        "skipped": 0
+      }
+    ],
+    "total_unit_case_identities": 1662,
+    "failure_markers": 0,
+    "complete_log_sha256": "00badec8acc9524ec49d8b0687810e3040ee493300f90e43469addc1aa2df084",
+    "complete_log_bytes": 5683602,
+    "private_case_inventory_sha256": "08be434e2e66bf280bb7602c20b986f83988158ba81cf759eb3ee5d225100b76",
+    "stage_and_package_completed": true,
+    "package": {
+      "metadata": "openblas 0.3.34_2,2 FreeBSD:16:aarch64 math/openblas",
+      "bytes": 6298303,
+      "sha256": "ab87700b6bff2e3ff29564c4de8e4bdefb7147364043c2fddc3c0125af976424"
+    },
+    "runtime_dependency_build_records": [
+      {
+        "name": "indexinfo",
+        "sha256": "7266f152c0f5fccfa713e7fa7419d2d13d99ac6b7ac426ea8cc286fce9a339b4",
+        "source_build_record": "print/indexinfo indexinfo-0.3.1_1 5",
+        "build_origin_with_flavor": "print/indexinfo"
+      },
+      {
+        "name": "liblz4",
+        "sha256": "d3154ea897aa4222921d1ecdf589765c5773544c6c09cb3799164929a855e147",
+        "source_build_record": "archivers/liblz4 liblz4-1.11.1,1 14",
+        "build_origin_with_flavor": "archivers/liblz4"
+      },
+      {
+        "name": "zstd",
+        "sha256": "448bdab2f4ed3695312e9f429bdb12ad7109240cc12ba2d9822c703a70331915",
+        "source_build_record": "archivers/zstd zstd-1.5.7_2 21",
+        "build_origin_with_flavor": "archivers/zstd"
+      },
+      {
+        "name": "binutils",
+        "sha256": "794123c11eb93d3352b85d361292fc066b187626b86d6d4fea16d415c07a6e23",
+        "source_build_record": "devel/binutils@native binutils-2.44_1,1 392",
+        "build_origin_with_flavor": "devel/binutils@native"
+      },
+      {
+        "name": "gmp",
+        "sha256": "cf1003b5eeda6ae6485373a6cf4d88e9b28cc08b977ba0f0d80f5e0bbe6d23ce",
+        "source_build_record": "math/gmp gmp-6.3.0 134",
+        "build_origin_with_flavor": "math/gmp"
+      },
+      {
+        "name": "mpfr",
+        "sha256": "b399ecb0178f9fdc6219b5f5794ef4ab8b81c96c53f988f5b1315e6270ed1f9a",
+        "source_build_record": "math/mpfr mpfr-4.2.2,1 74",
+        "build_origin_with_flavor": "math/mpfr"
+      },
+      {
+        "name": "mpc",
+        "sha256": "5cc562546b05691a570073c276a3304b461b5a6b350999a8869ccf2d5dc213d3",
+        "source_build_record": "math/mpc mpc-1.4.1 18",
+        "build_origin_with_flavor": "math/mpc"
+      },
+      {
+        "name": "gcc14",
+        "sha256": "cef14d0d31eadc0e913d8e67be3f12324570ccbaf295cfb79bfe5f3a72ed759c",
+        "source_build_record": "lang/gcc14 gcc14-14.2.0_7 4357",
+        "build_origin_with_flavor": "lang/gcc14"
+      },
+      {
+        "name": "openblas",
+        "sha256": "ab87700b6bff2e3ff29564c4de8e4bdefb7147364043c2fddc3c0125af976424",
+        "source_build_record": "math/openblas openblas-0.3.34_2,2 499",
+        "build_origin_with_flavor": "math/openblas"
+      }
+    ],
+    "private_native_build_evidence_archive_sha256": "15850ea569480af3fd78e3a492040e4a2735cc05528eff3209041ba397e072be",
+    "original_build_image_unchanged": true,
+    "independent_installed_consumer": "Pending; running against a fresh produced userland in an independent ARM KVM guest. No pass is claimed.",
+    "scope": "Native ARM default build/test/package diagnostics only; complete closure, matched release-kernel, canonical Component/SDK/lifecycle and release acceptance remain open."
+  }
 }
