@@ -3,6 +3,8 @@ name: Owe native inotify compatibility
 on:
   pull_request:
     paths:
+      - 'Tools/daemonarchy/ci-apt.sh'
+      - 'Tools/daemonarchy/test_ci_apt.py'
       - 'x11/owe/**'
       - 'Tools/daemonarchy/test-owe-native.sh'
       - '.github/workflows/owe-native.yml'
@@ -36,6 +38,10 @@ jobs:
           memory = dict(line.split(':', 1) for line in pathlib.Path('/proc/meminfo').read_text().splitlines())
           assert int(memory['MemAvailable'].split()[0]) * 1024 >= 8 * 1024**3
           PY
+      - name: Bootstrap signed Ubuntu VM tools
+        run: |
+          python3 Tools/daemonarchy/test_ci_apt.py
+          bash Tools/daemonarchy/ci-apt.sh --no-install-recommends qemu-utils qemu-system-x86 ovmf
       - name: Check original port in disposable FreeBSD guest
         uses: vmactions/freebsd-vm@c46abacb49f09938ca4e1702d15d836285d694cc
         with:

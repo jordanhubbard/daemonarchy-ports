@@ -3,6 +3,8 @@ name: Desktop dependency architecture metadata
 on:
   pull_request:
     paths:
+      - 'Tools/daemonarchy/ci-apt.sh'
+      - 'Tools/daemonarchy/test_ci_apt.py'
       - 'x11-wm/omarchy/**'
       - 'x11-wm/daemonarchy/**'
       - 'x11-wm/hyprland/**'
@@ -49,6 +51,10 @@ jobs:
             git archive "$base" "$port" | tar -x -C _base
           done
           echo "base $base"
+      - name: Bootstrap signed Ubuntu VM tools
+        run: |
+          python3 Tools/daemonarchy/test_ci_apt.py
+          bash Tools/daemonarchy/ci-apt.sh --no-install-recommends qemu-utils qemu-system-x86 ovmf
       - name: Evaluate metadata and portlint on hosted FreeBSD (no builds)
         uses: vmactions/freebsd-vm@c46abacb49f09938ca4e1702d15d836285d694cc
         with:
