@@ -70,9 +70,63 @@
   "unqualified": [
     "full patched WebKit build and upstream tests",
     "new WebKit package and installation",
-    "ARM64 native regression and GTK/WebKit plus Aether visible GUI retest",
+    "ARM64 GTK/WebKit plus Aether visible GUI retest",
     "source-built bootstrap/dependency provenance",
     "canonical Component/SDK/lifecycle admission and release closure"
   ],
-  "scope": "Exact original StringBuffer adopt definitions and WTF headers linked to the installed old JSC; isolated diagnostic, not a rebuilt library or GUI acceptance"
+  "scope": "Exact original StringBuffer adopt definitions and WTF headers linked to the installed old JSC; isolated diagnostic, not a rebuilt library or GUI acceptance",
+  "arm64_native_diagnostic": {
+    "target": "FreeBSD16 arm64 on ARM KVM, 4 vCPUs, 8 GiB RAM",
+    "kernel_build_id": "native-controls-af55b6f9042e",
+    "kernel_matches_selected_release_source": false,
+    "clang_version": "21.1.8",
+    "libcxx_version": 210108,
+    "default_libcxx_hardening_mode": 16,
+    "probe_input_archive_sha256": "a9c802b41a86646587f8293dae3c7955f708ff6312c47b5997498bf4421a4350",
+    "original_header_sha256": "c9028a567f8ac9b85b0f0c777cb1163e80a45301cd21b21082bd5434404abf86",
+    "patched_header_sha256": "772e584f4a899b9c9d7ac0b532ae3174f621755a0c43866b9297d545d484ca89",
+    "linked_jsc_sha256": "a4db28c377709f75c1755060306c78434a5eb5bf2ea5e3b7943377388d483572",
+    "linked_libcxx_sha256": "1e696955770ac55658e72e7eb192fc6284da4d270e3a3c4c76f7385ad86208e5",
+    "runtime_method": "Byte-verified copies of the retained ARM diagnostic JSC dependency files, in a private runtime prefix. Native base libraries retained. No package installation or source-built dependency provenance is claimed.",
+    "original_headers_result": {
+      "compile_exit": 0,
+      "run_exit": -5,
+      "signal": "SIGTRAP",
+      "binary_sha256": "6d3d5ac21bef731ab14d36e906a1f2b005021f15e034a83f9839b416f53e15ad",
+      "disassembly": "Nonempty StringBuffer<LChar> adopt ends with BRK #1 after fastCompactMalloc, matching the prior native ARM crash location."
+    },
+    "patched_headers_result": {
+      "compile_exit": 0,
+      "run_exit": 0,
+      "binary_sha256": "fdc411fa4ce32307326f101cae835e250ec60ef5c4287950d0f8070a011337b7",
+      "completed_cases": 16,
+      "output": "libcpp_version=210108 hardening_mode=16\nPASS 16 cases: StringBuffer copy and StringImplMalloc Vector transfer, 8/16bit, 4 lengths\n",
+      "adopt_contains_brk": false
+    },
+    "compile_argv": [
+      "c++",
+      "-std=c++20",
+      "-O2",
+      "-fno-strict-aliasing",
+      "-Iheaders-patched",
+      "-Iheaders-original/Source/WTF",
+      "-Iheaders-original/Source/bmalloc",
+      "header-probe.cpp",
+      "-o",
+      "patched",
+      "-I/opt/arm-span-runtime/usr/local/include",
+      "-I/opt/arm-span-runtime/usr/local/include/glib-2.0",
+      "-I/opt/arm-span-runtime/usr/local/lib/glib-2.0/include",
+      "-L/opt/arm-span-runtime/usr/local/lib",
+      "-ljavascriptcoregtk-4.1",
+      "-l:libgobject-2.0.so.0",
+      "-l:libglib-2.0.so.0",
+      "-l:libintl.so.8"
+    ],
+    "native_bsd_patch_zero_fuzz_and_offset": true,
+    "core_dump_limit_bytes": 0,
+    "private_evidence_archive_sha256": "b679875d2c859edc8f890b050c79374906e075cfaa37989bbe8bb47067b546a2",
+    "initial_attempt": "Linking stopped because the minimal copied runtime omitted unversioned development-library symlinks. The completed attempt names the same verified versioned shared objects explicitly; no source or library bytes changed.",
+    "scope": "Native ARM header regression only. Full patched WebKit build, default tests, package/install and GTK/WebKit plus Aether visible GUI acceptance remain open."
+  }
 }
