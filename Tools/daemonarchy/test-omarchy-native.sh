@@ -40,17 +40,19 @@ phase restricted-bootstrap pkg install -y meson pkgconf
 # through the ordinary binary bootstrap path before invoking original make;
 # do not accidentally rebuild the transitive documentation toolchain here.
 phase libdvdcss-options make -C multimedia/libdvdcss -V PORT_OPTIONS
-phase libdvdcss-dependencies make -C multimedia/libdvdcss install-missing-packages
+# Native targets check selected defaults and dependency constraints.
+# Binary tools bring runtime dependencies, not their own documentation build tools.
+phase libdvdcss-dependencies make -C multimedia/libdvdcss USE_PACKAGE_DEPENDS=yes depends test-depends
 phase libdvdcss-checksum make -C multimedia/libdvdcss checksum
 phase libdvdcss-package make -C multimedia/libdvdcss package
 dependency_package=$(make -C multimedia/libdvdcss -V WRKDIR_PKGFILE)
 test -f "$dependency_package"
 cp -p "$dependency_package" "$out/packages/"
 phase libdvdcss-install make -C multimedia/libdvdcss install
-# Trace the original missing-dependency walker so a bounded timeout retains
-# the selected origin/sub-make, rather than only an empty buffered stdout.
+# Retain the original recursive expression for audit. Native dependency
+# targets below validate the selected prerequisites and log their resolution.
 phase dependency-expression make -C "$port" -V MISSING-DEPENDS-LIST
-phase dependencies env DEBUG_MK_SCRIPTS_DEPENDS_LIST=yes make -C "$port" install-missing-packages
+phase dependencies make -C "$port" USE_PACKAGE_DEPENDS=yes depends test-depends
 phase checksum make -C "$port" checksum
 result=0
 phase package make -C "$port" DEVELOPER=yes package || result=$?

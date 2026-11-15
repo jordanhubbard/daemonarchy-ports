@@ -23,13 +23,21 @@ phase() {
     printf '%s\t%s\texit=%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$name" "$code" >>"$out/phases.tsv"
     if [ "$code" -ne 0 ]; then cat "$out/$name.stdout" "$out/$name.stderr"; return "$code"; fi
 }
+expect_absent() {
+    absence_code=0
+    "$@" || absence_code=$?
+    if [ "$absence_code" -ne 1 ]; then
+        printf 'Expected absence (exit 1), got %s: %s\n' "$absence_code" "$*" >&2
+        return 1
+    fi
+}
 freebsd-version -ku >"$out/platform.txt"
 printf '%s\n' "$revision" >"$out/source-commit.txt"
 find "$port" multimedia/libdvdcss Mk -type f -exec sha256 {} + >"$out/source-inputs.sha256"
 phase options make -C "$port" -V LIB_DEPENDS -V USES -V LDFLAGS
 if test -f /usr/include/sys/inotify.h; then
     echo system >"$out/inotify-provider.txt"
-    ! grep -q 'libinotify.so:devel/libinotify' "$out/options.stdout"
+    expect_absent grep -q 'libinotify.so:devel/libinotify' "$out/options.stdout"
 else
     echo compatibility >"$out/inotify-provider.txt"
     grep -q 'libinotify.so:devel/libinotify' "$out/options.stdout"
@@ -39,14 +47,16 @@ fi
 # Omarchy native lane, before the ordinary binary dependency bootstrap.
 phase restricted-bootstrap pkg install -y meson pkgconf
 phase libdvdcss-options make -C multimedia/libdvdcss -V PORT_OPTIONS
-phase libdvdcss-dependencies make -C multimedia/libdvdcss install-missing-packages
+# Native targets check selected defaults and dependency constraints.
+# Binary tools bring runtime dependencies, not their own documentation build tools.
+phase libdvdcss-dependencies make -C multimedia/libdvdcss USE_PACKAGE_DEPENDS=yes depends test-depends
 phase libdvdcss-checksum make -C multimedia/libdvdcss checksum
 phase libdvdcss-package make -C multimedia/libdvdcss package
 dependency_package=$(make -C multimedia/libdvdcss -V WRKDIR_PKGFILE)
 test -f "$dependency_package"
 cp -p "$dependency_package" "$out/packages/"
 phase libdvdcss-install make -C multimedia/libdvdcss install
-phase dependencies make -C "$port" install-missing-packages
+phase dependencies make -C "$port" USE_PACKAGE_DEPENDS=yes depends test-depends
 phase checksum make -C "$port" checksum
 phase package make -C "$port" DEVELOPER=yes package
 phase check-plist make -C "$port" check-plist
@@ -58,7 +68,7 @@ phase install make -C "$port" install
 pkg info -f owe >"$out/package-info.txt"
 phase package-checksums pkg check -s owe
 phase linked-libraries ldd /usr/local/bin/owe /usr/local/bin/owed /usr/local/bin/owe-render
-! grep -q 'not found' "$out/linked-libraries.stdout"
+expect_absent grep -q 'not found' "$out/linked-libraries.stdout"
 if test "$(cat "$out/inotify-provider.txt")" = compatibility; then
     # File watching belongs to the daemon; --as-needed correctly omits it
     # from the command-line client. Inspect the consuming executable itself.
@@ -66,5 +76,5 @@ if test "$(cat "$out/inotify-provider.txt")" = compatibility; then
     grep -q libinotify "$out/daemon-linked-libraries.stdout"
 fi
 phase deinstall pkg delete -y owe
-! pkg info -e owe
+expect_absent pkg info -e owe
 printf '%s\n' 'Original native port package/install/checksum/link/deinstall checks. No GUI, final CURRENT closure or SDK/lifecycle admission.' >"$out/scope.txt"
