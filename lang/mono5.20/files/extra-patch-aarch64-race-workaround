@@ -36,3 +36,13 @@ Disable compiler parallelism there as well as for the normal build rules.
  USE_MBAS_FLAGS = /codepage:$(CODEPAGE) $(LOCAL_MBAS_FLAGS) $(PLATFORM_MBAS_FLAGS) $(PROFILE_MBAS_FLAGS) $(MBAS_FLAGS)
  USE_CFLAGS = $(LOCAL_CFLAGS) $(CFLAGS) $(CPPFLAGS)
  CSCOMPILE = $(Q_MCS) $(MCS) $(USE_MCS_FLAGS)
+--- mono/mini/Makefile.am.in.orig
++++ mono/mini/Makefile.am.in
+@@ -70,1 +70,1 @@
+-MCS = CSC_SDK_PATH_DISABLED= $(TOOLS_RUNTIME) $(CSC) -langversion:7.2 -unsafe -nowarn:0162 -nologo -noconfig -r:$(CLASS)/mscorlib.dll -r:$(CLASS)/System.dll -r:$(CLASS)/System.Core.dll
++MCS = CSC_SDK_PATH_DISABLED= $(TOOLS_RUNTIME) $(CSC) /parallel- -langversion:7.2 -unsafe -nowarn:0162 -nologo -noconfig -r:$(CLASS)/mscorlib.dll -r:$(CLASS)/System.dll -r:$(CLASS)/System.Core.dll
+--- mono/tests/Makefile.am.orig
++++ mono/tests/Makefile.am
+@@ -206,1 +206,1 @@
+-MCS_NO_UNSAFE = $(TOOLS_RUNTIME) $(CSC) -debug:portable \
++MCS_NO_UNSAFE = $(TOOLS_RUNTIME) $(CSC) /parallel- -debug:portable \

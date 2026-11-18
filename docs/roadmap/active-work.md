@@ -68,3 +68,18 @@ failure archive are verified on two healthy hosts. The remaining original tests,
 a complete revised-port build and the affected closure still require
 qualification. No complete Mono test or causal bootstrap crash-repair pass is
 claimed.
+
+The same diagnostic worker also reproduced the original test compiler's
+SIGSEGV/abort once in three invocations of the unchanged `builtin-types.cs`
+input. Adding only `/parallel-` compiled all three paired invocations; all five
+produced executables each passed their 80 original runtime cases. The ARM64-only
+workaround now also covers the direct compiler definitions in `mono/mini` and
+`mono/tests`, retaining four make jobs and the complete test selection.
+
+The release tarball omits three required test sources and seven xUnit binaries.
+Restore those inputs from the exact original Mono 5.20.1.34 tag commit
+`feca91f7eb1b440a6520cf754370b98271339d1a` and its xUnit submodule commit
+`bb583470c7fc9f5b8369a4c273176c8202f00b1a`, with checksum-bound distfiles.
+These upstream prebuilt test tools do not establish source-built SDK provenance.
+The complete revised original test target and a clean revision 7 port build
+remain qualification requirements.
