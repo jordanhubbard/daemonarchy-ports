@@ -1,6 +1,6 @@
 PORTNAME=	mono
 PORTVERSION=	5.20.1.34
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 PKGNAMESUFFIX=	5.20
@@ -85,6 +85,13 @@ PLIST+=	${.CURDIR}/pkg-plist.powerpc
 .endif
 
 .include <bsd.port.pre.mk>
+
+# Upstream enables system AOT by default on these FreeBSD targets.
+.if ${ARCH} == "aarch64" || ${ARCH} == "amd64" || ${ARCH} == "i386"
+PLIST_SUB+=	COMPILER_AOT=""
+.else
+PLIST_SUB+=	COMPILER_AOT="@comment "
+.endif
 
 .if ${ARCH} == "aarch64"
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-aarch64-race-workaround

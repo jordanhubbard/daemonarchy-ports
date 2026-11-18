@@ -164,3 +164,21 @@ unchanged. Revision 11 selects that native AOT linker flag on FreeBSD ARM64,
 preserving AOT, the base compiler/linker, four jobs, profiles and original tests.
 A clean revised port build, package and full original upstream tests remain
 required; the successful controlled compiler startup is bounded evidence.
+
+The clean revision 11 native ARM64 run passes the previous Roslyn AOT startup
+failure and reaches staging, but its original `check-plist` gate refuses seven
+unlisted compiler AOT images. All seven staged files are independently reopened
+as ELF64 AArch64 shared images. The testport launcher returns zero despite the
+recorded port failure; the independent failed-row check correctly stops before
+upstream tests. The complete retained workdir and raw logs are preserved and
+verified on two healthy hosts, and all 184,085 source inputs, 176 original seed
+packages and host guards remain unchanged. No revision 11 package or full-test
+acceptance is claimed.
+
+Revision 12 explicitly lists those seven existing payloads on the FreeBSD
+targets whose upstream configure enables system AOT by default: aarch64, amd64
+and i386. Other supported targets keep their original selection. AOT generation,
+compiler/linker choices, default options, four jobs and all upstream test groups
+remain selected. Native metadata, a clean revised build/package and the complete
+original upstream tests remain required; the package-list correction does not
+qualify the selected closure, SDK or release.
