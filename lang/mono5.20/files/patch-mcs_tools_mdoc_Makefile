@@ -1,0 +1,20 @@
+--- mcs/tools/mdoc/Makefile.orig
++++ mcs/tools/mdoc/Makefile
+@@ -1,6 +1,8 @@
+ thisdir = tools/mdoc
+ SUBDIRS = 
+ include ../../build/rules.make
++
++PATCH ?= patch
+ 
+ MONODOC_RESOURCES = \
+ 	Resources/mdoc-html-format.xsl    \
+@@ -134,7 +136,7 @@
+ Test/DocTest.dll-v2: 
+ 	-rm -f Test/DocTest.cs
+ 	cp Test/DocTest-v1.cs Test/DocTest.cs
+-	cd Test && patch --binary -p0 < DocTest-v2.patch
++	cd Test && $(PATCH) --binary -p0 < DocTest-v2.patch
+ 	-rm -f Test/DocTest.dll
+ 	$(MAKE) TEST_CSCFLAGS=$(TEST_CSCFLAGS) Test/DocTest.dll
+ 

@@ -1,0 +1,11 @@
+--- runtime/Makefile.am.orig
++++ runtime/Makefile.am
+@@ -138,7 +138,7 @@
+ mcs-do-run-test-profiles: test-support-files
+ 	cd $(mcs_topdir) && $(MAKE) NO_DIR_CHECK=1 PROFILES='$(test_profiles)' run-test-profiles
+ 
+-mcs-do-xunit-run-test-profiles: test-support-files
++mcs-do-run-xunit-test-profiles: test-support-files
+ 	cd $(mcs_topdir) && $(MAKE) NO_DIR_CHECK=1 PROFILES='$(test_profiles)' run-xunit-test-profiles
+ 
+ if HOST_WIN32

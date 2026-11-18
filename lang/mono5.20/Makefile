@@ -1,6 +1,6 @@
 PORTNAME=	mono
 PORTVERSION=	5.20.1.34
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 PKGNAMESUFFIX=	5.20
@@ -21,6 +21,9 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		${LOCALBASE}/bin/as:devel/binutils
+TEST_DEPENDS=	gpatch:devel/patch \
+		libgdiplus>=0:graphics/libgdiplus \
+		sqlite3>=0:databases/sqlite3
 
 CONFLICTS_INSTALL=	certmgr coin-or-disco disco mono mono[0-9]*
 
@@ -69,6 +72,7 @@ MAKE_ENV=	MONO_SHARED_DIR="${WRKDIR}" \
 		TZ=UTC
 
 TEST_ARGS=	-k
+TEST_ENV=	PATCH=${LOCALBASE}/bin/gpatch
 TEST_TARGET=	check
 
 PORTSCOUT=	limit:^\d+\.\d+\.[1-9]\d*
