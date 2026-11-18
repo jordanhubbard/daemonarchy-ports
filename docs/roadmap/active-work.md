@@ -164,3 +164,14 @@ qualify a complete revision 10 build, package, upstream tests or release closure
 - **Direction:** Package the reviewed current desktop and native adapter without treating their focused tests as complete release acceptance.
 - **Implementation:** Select Omarchy `853c91cea133c203fe199329b85278dc213ccf9c` and adapter `0c139ec87394775ea948a8ad945c9a8035ef3485`, retaining the existing dated package version with PORTREVISION 1. Update the network patch to preserve upstream's `switchingNetwork` term and the existing FreeBSD NetworkManager guard. Refresh the package inventory for the exact added/deleted sources and native adaptation, including the translation watcher and privileged firmware helper.
 - **Evidence:** Both complete source archives match every Git blob, mode and path (5,709 desktop and 87 adapter files) and are verified on two healthy hosts. Original native checksum/extract/patch/FreeBSD adaptation succeeds in a fresh private view after the one network hunk rebase; the first failed patch, reject and complete workdir remain preserved. The first observer's environment-directory override mistake was stopped and preserved, then corrected with native make command-line variables and explicit directory checks. Original port files and host/jail package inventories remain unchanged. The adapted firmware helper has its native Bash interpreter with `-p` retained. The candidate package list follows the original install mapping; actual native build/package/staging/check-plist/install, installed helper/policy and GUI behavior, complete current source/ports closure and per-unit SDK/lifecycle acceptance remain required.
+
+The first actual native desktop package run resolves its original dependencies,
+verifies both source checksums and reaches staging, but developer QA rejects
+three new script interpreters. Extend the original shebang selection to the
+console-font Python script and app scaffold. Preserve the firmware helper's
+`-p` flag when rewriting the retained dev-link command copy. The normal main
+command was already rewritten correctly. Keep developer stage QA, package,
+plist and install checks enabled. Preserve the complete original selected work
+directory on both success and failure in subsequent native workflow artifacts;
+the first run's complete uploaded raw logs remain retained. Original native
+package/staging/plist/install qualification still requires a fresh corrected run.

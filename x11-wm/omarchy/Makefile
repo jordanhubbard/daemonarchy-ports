@@ -55,7 +55,9 @@ GH_TUPLE=	jordanhubbard:omarchy-freebsd:0c139ec87394775ea948a8ad945c9a8035ef3485
 USE_PERL5=	run
 
 SHEBANG_FILES=	bin/* config/omarchy/hooks/*/* default/systemd/system-sleep/* \
-		install/user/first-run/* shell/plugins/*/*.sh shell/services/*.sh
+		install/user/first-run/* install/provisioning/console-font.py \
+		default/agents/skills/omarchy-app/scaffold \
+		shell/plugins/*/*.sh shell/services/*.sh
 SHEBANG_GLOB=	*.sh
 
 FONTNAME=	omarchy
@@ -150,7 +152,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/freebsd/patches ${STAGEDIR}${DATADIR}/freebsd/bin
 	${INSTALL_DATA} ${FILESDIR}/patch-* ${STAGEDIR}${DATADIR}/freebsd/patches
 	${INSTALL_DATA} ${WRKSRC_freebsd}/freebsd-bin/* ${STAGEDIR}${DATADIR}/freebsd/bin
-	${REINPLACE_CMD} -E -e '1s@^#!(/usr/bin/env bash|/bin/bash)$$@#!${LOCALBASE}/bin/bash@' \
+	${REINPLACE_CMD} -E -e '1s@^#!(/usr/bin/env bash|/bin/bash)([[:space:]]|$$)@#!${LOCALBASE}/bin/bash\2@' \
 		-e '1s@^#!/usr/bin/env python3$$@#!${PYTHON_CMD}@' \
 		${STAGEDIR}${DATADIR}/freebsd/bin/*
 	${RM} ${STAGEDIR}${DATADIR}/freebsd/bin/*.bak

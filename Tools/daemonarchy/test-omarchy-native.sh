@@ -16,6 +16,31 @@ export PORTSDIR="$root"
 export BATCH=yes
 export MAKE_JOBS_NUMBER=2
 port=x11-wm/omarchy
+# Retain the complete original source, staging tree and products on both success
+# and failure. The workflow uploads this directory after the guest syncs back.
+preserve_original_workdir()
+{
+    original_status=$?
+    trap - EXIT
+    archive_status=0
+    if workdir=$(make -C "$root/$port" -V WRKDIR 2>"$out/preserve-workdir-query.stderr"); then
+        if [ -n "$workdir" ] && [ "$workdir" != / ] && [ -d "$workdir" ]; then
+            tar --acls --fflags -czf "$out/original-selected-workdir.tar.gz" \
+                -C "$(dirname "$workdir")" "$(basename "$workdir")" \
+                >"$out/preserve-workdir.stdout" 2>"$out/preserve-workdir.stderr" || archive_status=$?
+        else
+            printf '%s\n' 'Original selected work directory was not created.' >"$out/preserve-workdir.stdout"
+        fi
+    else
+        archive_status=1
+    fi
+    printf '%s\n' "$archive_status" >"$out/preserve-workdir.exit"
+    if [ "$original_status" -eq 0 ] && [ "$archive_status" -ne 0 ]; then
+        original_status=1
+    fi
+    exit "$original_status"
+}
+trap preserve_original_workdir EXIT
 phase()
 {
     name=$1
