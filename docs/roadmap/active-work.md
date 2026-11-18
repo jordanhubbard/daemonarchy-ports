@@ -46,3 +46,25 @@ profile/toolchain admission remain the next work; this rebind grants no receipt.
   - [ ] Extend the existing aarch64-only patch to both direct BOOTSTRAP_MCS calls and bump PORTREVISION; preserve all original options, distfiles and four make jobs.
 - **Evidence:**
   - [ ] Preserve the original native SIGSEGV log and exact source/patch identities; qualify a full default-options native build/package, original tests and all skipped dependents before complete selected-closure and release acceptance.
+
+The native source99 diagnostic builds of both the original revision and the
+bootstrap serialization candidate completed, so the original source97 build
+crash is not yet reproduced under that newer kernel. The candidate's original
+`make test` (`check -k`, four make jobs, default X11 and all test dependencies)
+failed: Roslyn compilation crashed, some upstream test inputs were missing,
+and the sampling profiler aborted after `clock_nanosleep` returned EOPNOTSUPP.
+The complete failed work directory, cores, logs and reports are retained on
+healthy storage. These failures remain release qualification gaps.
+
+A separate native clock probe reproduced the profiler's incorrect selection of
+the unsupported process CPU sleep clock. A follow-up port patch selects it only
+after a successful probe and retains the existing monotonic clock fallback.
+The fallback passed the standalone native probe. Rebuilding the actual runtime
+with that one source change then passed all nine unchanged original profiler
+checks, including the previously aborting sampling case. The original port
+source, all 174 cached package bytes and the host guards remained unchanged in
+that declared runtime experiment; both its closed evidence and the earlier full
+failure archive are verified on two healthy hosts. The remaining original tests,
+a complete revised-port build and the affected closure still require
+qualification. No complete Mono test or causal bootstrap crash-repair pass is
+claimed.
