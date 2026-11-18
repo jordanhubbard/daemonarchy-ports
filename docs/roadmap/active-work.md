@@ -182,3 +182,27 @@ compiler/linker choices, default options, four jobs and all upstream test groups
 remain selected. Native metadata, a clean revised build/package and the complete
 original upstream tests remain required; the package-list correction does not
 qualify the selected closure, SDK or release.
+
+
+The complete clean revision 12 ARM64 package build passes, including check-plist
+and all seven compiler AOT images. The actual 90,239,621-byte package has SHA256
+`00a04ff4fa9b18f4af6ef019cd5209bf0f2d20fe9d93cb9b616b6d94472854a7`.
+Its original full `make test` / `check -k` command then runs for 37 minutes and
+exits 1. All source inputs, 176 seed packages and host postguards pass. The full
+workdir, raw logs and all 114 retained report products are independently archived
+and verified on two healthy hosts. Of those products, 107 XML reports retain
+46,628 case records, including failures, errors and original ignored outcomes.
+Repeated upstream profile runs can overwrite reports; these counts are not a
+claim of complete unique coverage, and no failure or ignored case is waived.
+
+The failed run exposes missing libgdiplus and SQLite test libraries, GNU patch's
+`--binary` requirement in the original mdoc tests, and an upstream runtime rule
+named `mcs-do-xunit-run-test-profiles` while check invokes
+`mcs-do-run-xunit-test-profiles`. Revision 13 declares the three test packages,
+lets mdoc select GNU patch through the test environment and makes that existing
+xUnit recipe reachable under its caller's name. Original test groups, default
+options, four jobs and native build tools remain selected. Other retained test
+failures still require diagnosis; these prerequisite and rule corrections do
+not establish a full-test pass, affected-dependent qualification or current
+source/ports/SDK/lifecycle/release acceptance. A fresh clean native build and
+the complete original target remain required.
