@@ -1,0 +1,11 @@
+Keep every compiler AOT profile in one argument under current GNU Make.
+
+--- mcs/class/aot-compiler/Makefile.orig
++++ mcs/class/aot-compiler/Makefile
+@@ -47,4 +47,4 @@
+ comma:=,
+-space:=
+-space+=
++empty:=
++space:=$(empty) $(empty)
+ profile_arg:=$(subst $(space)$(comma),$(comma),$(foreach pf,$(profile_file),$(comma)profile=$(strip $(pf))))

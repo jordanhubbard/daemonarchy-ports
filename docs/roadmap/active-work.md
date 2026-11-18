@@ -114,3 +114,39 @@ restores the remaining original-tag resource/remote-executor/xbuild fixtures
 without overwriting source. Default options, four make jobs and all original
 test groups remain selected. Complete native patch/extraction checks, a clean
 revised build and the full upstream test target remain required.
+
+
+The fresh revision 9 build on the complete current ports source tree first
+rebuilt all 21 stale test-support dependencies successfully, but failed before
+packaging or upstream tests during compiler AOT generation. Giving FreeBSD its
+proper `.so` AOT suffix exposes an original GNU Make whitespace bug: two compiler
+profile options expand into separate arguments, and Mono treats the second
+`,profile=...` argument as an assembly path. Actual native GNU Make 4.4.1 and the
+two unchanged source profile files reproduce that argument split. Defining the
+separator as one literal space preserves both profiles in one AOT option.
+Revision 10 applies that narrow original Makefile correction and keeps all AOT
+work, default options, four jobs and original tests selected. The failed full
+revision 9 work directory and all output remain retained; full revised native
+build, package, original tests and affected current closure are still required.
+
+The isolated actual compiler follow-up reproduces the original malformed
+argument failure. With the separator corrected, Mono reads both unchanged
+profiles and compiles all 132 selected compiler methods, then fails because
+the default native jail has no `as`. Bind the real GNU assembler through the
+shared binutils support, selecting only AS and retaining the base compiler and
+linker; retain it as a runtime dependency for `mono --aot` too. The next native
+control uses a verified source-built binutils package in a private directory,
+with no installation on the live worker. Full port/package/test and current
+closure qualification remain required after these focused controls.
+
+The corrected native AOT control now completes with both original profiles:
+all 132 methods compile, GNU assembler 2.44 assembles the output and the base
+linker produces an ELF64 AArch64 shared image. The original runtime, compiler,
+mscorlib and profile inputs remain byte-identical, and host state is unchanged.
+The source-built assembler and Zstd dependency were extracted into a private
+directory; no packages were installed on the live worker. The original argument
+failure and missing-assembler failure remain preserved alongside the successful
+control. Native ports metadata confirms only AS switches to binutils; base
+CC/CXX/LD, default MONOLITE/NLS/X11, four jobs, the six test-support dependencies
+and the full `check -k` target remain selected. These focused checks do not
+qualify a complete revision 10 build, package, upstream tests or release closure.
