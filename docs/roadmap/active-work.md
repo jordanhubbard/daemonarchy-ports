@@ -34,3 +34,15 @@ profile/toolchain admission remain the next work; this rebind grants no receipt.
   - [ ] Build/package/install the selected ports in the disposable native worker and inspect every original test outcome.
   - [ ] Qualify the matching CURRENT package closure and independent virtual-fprintd/software failure behavior.
 - **Evidence:** Native phase logs and package manifests remain separate from canonical Component/SDK/lifecycle receipts. No physical Touch ID success is claimed; physical sensor acceptance is outside this execution.
+
+### [ ] PORT-MONO-001 — Qualify ARM64 Mono bootstrap compiler serialization
+
+- **Priority:** P1
+- **Owner:** lang/mono5.20 native ARM64 port
+- **Direction:** Complete the existing ARM64 Roslyn serialization at direct bootstrap compiler calls without reducing default build concurrency or dependencies.
+- **Conclusion:** The original full selected ARM64 closure crashes in Mono and skips four dependents. Two direct bootstrap calls omit the existing serialization flags; the candidate is not yet natively qualified. Product issue #333 tracks this work.
+- **Depends on:** Daemonarchy issue #333 and COMP-001
+- **Implementation:**
+  - [ ] Extend the existing aarch64-only patch to both direct BOOTSTRAP_MCS calls and bump PORTREVISION; preserve all original options, distfiles and four make jobs.
+- **Evidence:**
+  - [ ] Preserve the original native SIGSEGV log and exact source/patch identities; qualify a full default-options native build/package, original tests and all skipped dependents before complete selected-closure and release acceptance.
