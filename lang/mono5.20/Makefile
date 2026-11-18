@@ -1,6 +1,6 @@
 PORTNAME=	mono
 PORTVERSION=	5.20.1.34
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 PKGNAMESUFFIX=	5.20
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		bash:shells/bash \
 		cmake-core>0:devel/cmake-core
 LIB_DEPENDS=	libinotify.so:devel/libinotify
-RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
+RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
+		${LOCALBASE}/bin/as:devel/binutils
 
 CONFLICTS_INSTALL=	certmgr coin-or-disco disco mono mono[0-9]*
 
@@ -46,6 +47,10 @@ USE_PERL5=	build
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
+# Compiler AOT generation and mono --aot invoke the native assembler.
+# Select only AS from binutils; retain the base compiler and linker.
+USE_BINUTILS=	yes
+BINUTILS=	AS
 # The release tarball omits inputs required by its original check target.
 # Keep test sources and the upstream-selected xUnit binaries at their exact pins.
 USE_GITHUB=	nodefault

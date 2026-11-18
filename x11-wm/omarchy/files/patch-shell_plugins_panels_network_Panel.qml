@@ -96,8 +96,8 @@
    // Worth showing when there is a real choice, or when a pin is in force even
    // though only one band answers right now -- otherwise the Automatic switch
    // vanishes and the pin becomes unclearable from the panel.
--  readonly property bool canSelectBand: (kind === "wifi" || bandBusy)
-+  readonly property bool canSelectBand: hasNetworkManager && (kind === "wifi" || bandBusy)
+-  readonly property bool canSelectBand: (kind === "wifi" || bandBusy || switchingNetwork)
++  readonly property bool canSelectBand: hasNetworkManager && (kind === "wifi" || bandBusy || switchingNetwork)
      && (bandAvailable.length > 1 || bandPinned)
    // While a change is in flight, show the state that was asked for rather than
    // the one still in force, so the row answers the click immediately instead of
