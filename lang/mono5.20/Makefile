@@ -1,6 +1,6 @@
 PORTNAME=	mono
 PORTVERSION=	5.20.1.34
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 PKGNAMESUFFIX=	5.20
@@ -89,14 +89,8 @@ PLIST_SUB+=	BOEHM=""
 .endif
 
 post-extract:
-	${CP} ${WRKSRC_tests}/mcs/class/Mono.Profiler.Log/Test/ProfilerTestRun.cs \
-		${WRKSRC_tests}/mcs/class/Mono.Profiler.Log/Test/ProfilerTests.cs \
-		${WRKSRC}/mcs/class/Mono.Profiler.Log/Test/
-	${MKDIR} ${WRKSRC}/mcs/class/System.ComponentModel.Composition.4.5/corefx
-	${CP} ${WRKSRC_tests}/mcs/class/System.ComponentModel.Composition.4.5/corefx/SR.cs \
-		${WRKSRC}/mcs/class/System.ComponentModel.Composition.4.5/corefx/
-	${CP} ${WRKSRC_xunit}/*.dll ${WRKSRC_xunit}/*.exe \
-		${WRKSRC}/external/xunit-binaries/
+	${SH} ${FILESDIR}/restore-test-inputs.sh ${WRKSRC} \
+		${WRKSRC_tests} ${WRKSRC_xunit}
 
 post-extract-MONOLITE-on:
 	${MKDIR} ${WRKSRC}/mcs/class/lib/monolite-linux
