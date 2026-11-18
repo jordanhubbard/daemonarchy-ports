@@ -1,6 +1,6 @@
 PORTNAME=	mono
 PORTVERSION=	5.20.1.34
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 PKGNAMESUFFIX=	5.20
