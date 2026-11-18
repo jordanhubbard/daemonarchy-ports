@@ -114,3 +114,10 @@ restores the remaining original-tag resource/remote-executor/xbuild fixtures
 without overwriting source. Default options, four make jobs and all original
 test groups remain selected. Complete native patch/extraction checks, a clean
 revised build and the full upstream test target remain required.
+
+### [ ] PORT-HERDR-001 — Bind the required Zig compiler series
+
+- **Owner:** sysutils/herdr and its vendored libghostty-vt build.
+- **Direction:** Retain the original default build and bind its actual compiler requirement through the shared Zig framework.
+- **Implementation:** Select `USES=zig:016` and bump PORTREVISION. The current unversioned Zig port supplies 0.17, while the vendored Ghostty build requires 0.16 and fails with removed Build API members under 0.17. The existing `lang/zig016` origin supplies the required compiler at the existing command path.
+- **Evidence:** The original default AMD64 source99/ports2ba0 bulk reached the actual vendored Ghostty compile and failed with both the version requirement and missing `Build.build_root`. The complete failed log and frozen port inputs are preserved on two healthy hosts. Actual native FreeBSD metadata resolves the original compiler dependency to `lang/zig` 0.17 and the candidate to `lang/zig016` 0.16, retaining the original Cargo flags, four jobs and options in the isolated view. A clean source-built compiler/package build, original runtime controls and the complete selected closure still require qualification; no passing build or SDK/lifecycle receipt is implied by this repair.
