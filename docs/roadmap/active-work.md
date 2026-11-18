@@ -150,3 +150,17 @@ control. Native ports metadata confirms only AS switches to binutils; base
 CC/CXX/LD, default MONOLITE/NLS/X11, four jobs, the six test-support dependencies
 and the full `check -k` target remain selected. These focused checks do not
 qualify a complete revision 10 build, package, upstream tests or release closure.
+
+The complete revision 10 build gets past AOT argument assembly and all six
+compiler AOT image generations, but aborts when Roslyn starts to build mscorlib.
+The ARM64 PLT decoder expects ADRP/ADD; FreeBSD LLD 21 relaxes nearby sequences
+to NOP/ADR. The original core, all runtime/compiler/AOT inputs and complete
+failed workdir are retained on two healthy hosts with source/cache/host guards.
+An actual native control generates each of the six assembly objects once and
+links those same objects both ways. Default linking reproduces the exact
+trampoline assertion; adding only `--no-relax` preserves every PLT entry and
+runs the compiler with all six AOT images loaded. All original input bytes stay
+unchanged. Revision 11 selects that native AOT linker flag on FreeBSD ARM64,
+preserving AOT, the base compiler/linker, four jobs, profiles and original tests.
+A clean revised port build, package and full original upstream tests remain
+required; the successful controlled compiler startup is bounded evidence.
