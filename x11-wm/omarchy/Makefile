@@ -1,5 +1,6 @@
 PORTNAME=	omarchy
 DISTVERSION=	4.5.0.20261113
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -48,13 +49,15 @@ USES=		fonts perl5 python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	jordanhubbard
 # Reviewed dated snapshot after v4.5.0; retain the exact owned integration.
-GH_TAGNAME=	eb1bae39bc2a2170c052548669e53db6775e521e
+GH_TAGNAME=	853c91cea133c203fe199329b85278dc213ccf9c
 # The FreeBSD compatibility layer: freebsdize, compat tools, FreeBSD commands.
-GH_TUPLE=	jordanhubbard:omarchy-freebsd:648954b3a7bba9872f899e1afffda527f014dfd9:freebsd
+GH_TUPLE=	jordanhubbard:omarchy-freebsd:0c139ec87394775ea948a8ad945c9a8035ef3485:freebsd
 USE_PERL5=	run
 
 SHEBANG_FILES=	bin/* config/omarchy/hooks/*/* default/systemd/system-sleep/* \
-		install/user/first-run/* shell/plugins/*/*.sh shell/services/*.sh
+		install/user/first-run/* install/provisioning/console-font.py \
+		default/agents/skills/omarchy-app/scaffold \
+		shell/plugins/*/*.sh shell/services/*.sh
 SHEBANG_GLOB=	*.sh
 
 FONTNAME=	omarchy
@@ -149,7 +152,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/freebsd/patches ${STAGEDIR}${DATADIR}/freebsd/bin
 	${INSTALL_DATA} ${FILESDIR}/patch-* ${STAGEDIR}${DATADIR}/freebsd/patches
 	${INSTALL_DATA} ${WRKSRC_freebsd}/freebsd-bin/* ${STAGEDIR}${DATADIR}/freebsd/bin
-	${REINPLACE_CMD} -E -e '1s@^#!(/usr/bin/env bash|/bin/bash)$$@#!${LOCALBASE}/bin/bash@' \
+	${REINPLACE_CMD} -E -e '1s@^#!(/usr/bin/env bash|/bin/bash)([[:space:]]|$$)@#!${LOCALBASE}/bin/bash\2@' \
 		-e '1s@^#!/usr/bin/env python3$$@#!${PYTHON_CMD}@' \
 		${STAGEDIR}${DATADIR}/freebsd/bin/*
 	${RM} ${STAGEDIR}${DATADIR}/freebsd/bin/*.bak
