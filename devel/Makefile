@@ -624,8 +624,8 @@
     SUBDIR += derelict-util
     SUBDIR += desed
     SUBDIR += desktop-file-utils
-    SUBDIR += dev86
     SUBDIR += detect-it-easy
+    SUBDIR += dev86
     SUBDIR += devtodo
     SUBDIR += dfuzzer
     SUBDIR += dia2code
@@ -4942,6 +4942,7 @@
     SUBDIR += py-cymbal
     SUBDIR += py-cymem
     SUBDIR += py-cysignals
+    SUBDIR += py-cython-cmake
     SUBDIR += py-cython-test-exception-raiser
     SUBDIR += py-cytoolz
     SUBDIR += py-d2to1
@@ -5006,6 +5007,7 @@
     SUBDIR += py-dirspec
     SUBDIR += py-dirty-equals
     SUBDIR += py-diskcache
+    SUBDIR += py-diskcache-community
     SUBDIR += py-distlib
     SUBDIR += py-distributed
     SUBDIR += py-dj60-django-rq
@@ -5206,6 +5208,7 @@
     SUBDIR += py-graphene2
     SUBDIR += py-graphql-core
     SUBDIR += py-graphql-core2
+    SUBDIR += py-graphql-core32
     SUBDIR += py-graphql-relay
     SUBDIR += py-graphql-relay2
     SUBDIR += py-great-tables
@@ -5657,6 +5660,7 @@
     SUBDIR += py-opentelemetry-sdk
     SUBDIR += py-opentelemetry-semantic-conventions
     SUBDIR += py-opentelemetry-semantic-conventions-ai
+    SUBDIR += py-opentelemetry-test-utils
     SUBDIR += py-opentelemetry-util-http
     SUBDIR += py-opentracing
     SUBDIR += py-openupgradelib
@@ -6258,6 +6262,7 @@
     SUBDIR += py-selection
     SUBDIR += py-semantic-version
     SUBDIR += py-semver
+    SUBDIR += py-sentinels
     SUBDIR += py-sentry-sdk
     SUBDIR += py-serializable
     SUBDIR += py-session-info
@@ -7021,6 +7026,7 @@
     SUBDIR += rubygem-aws-sdk-connectcontactlens
     SUBDIR += rubygem-aws-sdk-connecthealth
     SUBDIR += rubygem-aws-sdk-connectparticipant
+    SUBDIR += rubygem-aws-sdk-connectscheduling
     SUBDIR += rubygem-aws-sdk-connectwisdomservice
     SUBDIR += rubygem-aws-sdk-continuum
     SUBDIR += rubygem-aws-sdk-controlcatalog
@@ -7213,6 +7219,7 @@
     SUBDIR += rubygem-aws-sdk-observabilityadmin
     SUBDIR += rubygem-aws-sdk-odb
     SUBDIR += rubygem-aws-sdk-omics
+    SUBDIR += rubygem-aws-sdk-opensearchmemory
     SUBDIR += rubygem-aws-sdk-opensearchserverless
     SUBDIR += rubygem-aws-sdk-opensearchservice
     SUBDIR += rubygem-aws-sdk-organizations
@@ -7284,6 +7291,7 @@
     SUBDIR += rubygem-aws-sdk-sagemakeredgemanager
     SUBDIR += rubygem-aws-sdk-sagemakerfeaturestoreruntime
     SUBDIR += rubygem-aws-sdk-sagemakergeospatial
+    SUBDIR += rubygem-aws-sdk-sagemakerinferencerouterruntime
     SUBDIR += rubygem-aws-sdk-sagemakerjobruntime
     SUBDIR += rubygem-aws-sdk-sagemakermetrics
     SUBDIR += rubygem-aws-sdk-sagemakerruntime
@@ -7947,7 +7955,6 @@
     SUBDIR += rubygem-io-nonblock
     SUBDIR += rubygem-io-stream
     SUBDIR += rubygem-io-wait
-    SUBDIR += rubygem-io-wait01
     SUBDIR += rubygem-iobuffer
     SUBDIR += rubygem-iostruct
     SUBDIR += rubygem-ipynbdiff
@@ -8736,6 +8743,7 @@
     SUBDIR += sdl20
     SUBDIR += sdl2pp
     SUBDIR += sdl3
+    SUBDIR += sdl3-imgui-filedialogs
     SUBDIR += sdl_console
     SUBDIR += sdlmm
     SUBDIR += sdlskk
@@ -9028,6 +9036,9 @@
     SUBDIR += wizardkit
     SUBDIR += wizer
     SUBDIR += woff2
+    SUBDIR += woodpecker
+    SUBDIR += woodpecker-agent
+    SUBDIR += woodpecker-plugin-git
     SUBDIR += wxformbuilder
     SUBDIR += xa65
     SUBDIR += xbyak
