@@ -83,3 +83,16 @@ Restore those inputs from the exact original Mono 5.20.1.34 tag commit
 These upstream prebuilt test tools do not establish source-built SDK provenance.
 The complete revised original test target and a clean revision 7 port build
 remain qualification requirements.
+
+The retained-workdir follow-up completed with 249 passing cases in five XML
+reports, but its full target still failed on further omitted test inputs. Its
+generated compiler rules also remained old under disabled maintainer mode, so
+it does not qualify the new compiler flags. An expanded audit found 3,472
+missing original-tag test files (about 16 MB), including the NUnit launcher,
+shared test helpers and runtime fixtures. A revision 8 follow-up restores the
+original test trees without overwriting existing files or downstream patches.
+The existing monodoc test files match the original api-doc-tools submodule;
+restoring the test directories makes their original relative paths resolve.
+A clean original autoreconf/configure/build/package and the complete revised
+test target remain required; the failed workdir and raw reports are retained
+and verified on two healthy hosts.
