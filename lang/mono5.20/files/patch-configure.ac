@@ -13,7 +13,13 @@
  		has_dtrace=yes
  		with_sgen_default_concurrent=yes
  		;;
-@@ -1947,7 +1953,8 @@
+@@ -451 +457,5 @@
++case "$host_os" in
++  freebsd*) PLATFORM_AOT_SUFFIX=.so ;;
++esac
++
+ if test -z "$HOST_WIN32_TRUE"; then :
+@@ -1947,7 +1957,8 @@
  	dnl *** won't always indicate the interface sched_affinity has.  ***
  	dnl ****************************************************************
  	AC_MSG_CHECKING(for sched_setaffinity from glibc < 2.3.4)
@@ -23,7 +29,7 @@
              int mask = 1; 
              sched_setaffinity(0, &mask);
  	], [
-@@ -1958,8 +1965,9 @@
+@@ -1958,8 +1969,9 @@
  		# We have the new, three-parameter version
  		AC_MSG_RESULT(no)
  	])
@@ -35,7 +41,7 @@
  	], [
  		AC_MSG_RESULT(yes)
  		AC_DEFINE(GLIBC_HAS_CPU_COUNT, 1, [GLIBC has CPU_COUNT macro in sched.h])
-@@ -4001,13 +4009,10 @@
+@@ -4001,13 +4013,10 @@
  		;;
  	macppc-*-openbsd* | powerpc*-*-linux* | powerpc-*-openbsd* | \
          powerpc-*-sysv* | powerpc-*-darwin* | powerpc-*-netbsd* | \
@@ -50,7 +56,7 @@
  		else
  			TARGET=POWERPC;
  			CPPFLAGS="$CPPFLAGS -D__mono_ppc__"
-@@ -4022,6 +4027,10 @@
+@@ -4022,6 +4031,10 @@
  			dnl we may hardcode 64-bit names at times, but we don't do 32-bit AIX, so
  			LIBC="libc.a(shr_64.o)"
  			INTL="libintl.a(libintl.so.8)"
