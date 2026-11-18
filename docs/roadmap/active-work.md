@@ -34,3 +34,90 @@ profile/toolchain admission remain the next work; this rebind grants no receipt.
   - [ ] Build/package/install the selected ports in the disposable native worker and inspect every original test outcome.
   - [ ] Qualify the matching CURRENT package closure and independent virtual-fprintd/software failure behavior.
 - **Evidence:** Native phase logs and package manifests remain separate from canonical Component/SDK/lifecycle receipts. No physical Touch ID success is claimed; physical sensor acceptance is outside this execution.
+
+### [ ] PORT-MONO-001 — Qualify ARM64 Mono bootstrap compiler serialization
+
+- **Priority:** P1
+- **Owner:** lang/mono5.20 native ARM64 port
+- **Direction:** Complete the existing ARM64 Roslyn serialization at direct bootstrap compiler calls without reducing default build concurrency or dependencies.
+- **Conclusion:** The original full selected ARM64 closure crashes in Mono and skips four dependents. Two direct bootstrap calls omit the existing serialization flags; the candidate is not yet natively qualified. Product issue #333 tracks this work.
+- **Depends on:** Daemonarchy issue #333 and COMP-001
+- **Implementation:**
+  - [ ] Extend the existing aarch64-only patch to both direct BOOTSTRAP_MCS calls and bump PORTREVISION; preserve all original options, distfiles and four make jobs.
+- **Evidence:**
+  - [ ] Preserve the original native SIGSEGV log and exact source/patch identities; qualify a full default-options native build/package, original tests and all skipped dependents before complete selected-closure and release acceptance.
+
+The native source99 diagnostic builds of both the original revision and the
+bootstrap serialization candidate completed, so the original source97 build
+crash is not yet reproduced under that newer kernel. The candidate's original
+`make test` (`check -k`, four make jobs, default X11 and all test dependencies)
+failed: Roslyn compilation crashed, some upstream test inputs were missing,
+and the sampling profiler aborted after `clock_nanosleep` returned EOPNOTSUPP.
+The complete failed work directory, cores, logs and reports are retained on
+healthy storage. These failures remain release qualification gaps.
+
+A separate native clock probe reproduced the profiler's incorrect selection of
+the unsupported process CPU sleep clock. A follow-up port patch selects it only
+after a successful probe and retains the existing monotonic clock fallback.
+The fallback passed the standalone native probe. Rebuilding the actual runtime
+with that one source change then passed all nine unchanged original profiler
+checks, including the previously aborting sampling case. The original port
+source, all 174 cached package bytes and the host guards remained unchanged in
+that declared runtime experiment; both its closed evidence and the earlier full
+failure archive are verified on two healthy hosts. The remaining original tests,
+a complete revised-port build and the affected closure still require
+qualification. No complete Mono test or causal bootstrap crash-repair pass is
+claimed.
+
+The same diagnostic worker also reproduced the original test compiler's
+SIGSEGV/abort once in three invocations of the unchanged `builtin-types.cs`
+input. Adding only `/parallel-` compiled all three paired invocations; all five
+produced executables each passed their 80 original runtime cases. The ARM64-only
+workaround now also covers the direct compiler definitions in `mono/mini` and
+`mono/tests`, retaining four make jobs and the complete test selection.
+
+The release tarball omits three required test sources and seven xUnit binaries.
+Restore those inputs from the exact original Mono 5.20.1.34 tag commit
+`feca91f7eb1b440a6520cf754370b98271339d1a` and its xUnit submodule commit
+`bb583470c7fc9f5b8369a4c273176c8202f00b1a`, with checksum-bound distfiles.
+These upstream prebuilt test tools do not establish source-built SDK provenance.
+The complete revised original test target and a clean revision 7 port build
+remain qualification requirements.
+
+The retained-workdir follow-up completed with 249 passing cases in five XML
+reports, but its full target still failed on further omitted test inputs. Its
+generated compiler rules also remained old under disabled maintainer mode, so
+it does not qualify the new compiler flags. An expanded audit found 3,472
+missing original-tag test files (about 16 MB), including the NUnit launcher,
+shared test helpers and runtime fixtures. A revision 8 follow-up restores the
+original test trees without overwriting existing files or downstream patches.
+The existing monodoc test files match the original api-doc-tools submodule;
+restoring the test directories makes their original relative paths resolve.
+A clean original autoreconf/configure/build/package and the complete revised
+test target remain required; the failed workdir and raw reports are retained
+and verified on two healthy hosts.
+
+The clean revision 8 native build completed and activated the intended compiler
+flags. Its full original test target still failed: the gc-descriptor compiler
+has a separate definition without the ARM workaround; FreeBSD's empty AOT
+suffix aliases AOT recipes to ordinary DLL targets; and six original-tag test
+inputs remain absent outside the previously restored trees. The retained run
+includes 27,914 passing mini test executions across 23 optimization combinations
+and 293 passing XML cases, but these do not qualify the complete target. All
+original reports, the compiler core and the complete workdir are preserved on
+two healthy hosts. The produced revision 8 package is also preserved separately;
+the first observer checked only an absent convenience repository path.
+
+Revision 9 extends the existing ARM compiler workaround to every remaining
+Mono test compiler definition, assigns the ELF AOT suffix on FreeBSD and
+restores the remaining original-tag resource/remote-executor/xbuild fixtures
+without overwriting source. Default options, four make jobs and all original
+test groups remain selected. Complete native patch/extraction checks, a clean
+revised build and the full upstream test target remain required.
+
+### [ ] PORT-HERDR-001 — Bind the required Zig compiler series
+
+- **Owner:** sysutils/herdr and its vendored libghostty-vt build.
+- **Direction:** Retain the original default build and bind its actual compiler requirement through the shared Zig framework.
+- **Implementation:** Select `USES=zig:016` and bump PORTREVISION. The current unversioned Zig port supplies 0.17, while the vendored Ghostty build requires 0.16 and fails with removed Build API members under 0.17. The existing `lang/zig016` origin supplies the required compiler at the existing command path.
+- **Evidence:** The original default AMD64 source99/ports2ba0 bulk reached the actual vendored Ghostty compile and failed with both the version requirement and missing `Build.build_root`. The complete failed log and frozen port inputs are preserved on two healthy hosts. Actual native FreeBSD metadata resolves the original compiler dependency to `lang/zig` 0.17 and the candidate to `lang/zig016` 0.16, retaining the original Cargo flags, four jobs and options in the isolated view. A clean source-built compiler/package build, original runtime controls and the complete selected closure still require qualification; no passing build or SDK/lifecycle receipt is implied by this repair.

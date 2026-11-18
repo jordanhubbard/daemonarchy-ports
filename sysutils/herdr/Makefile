@@ -1,6 +1,7 @@
 PORTNAME=	herdr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 DIST_SUBDIR=	${PORTNAME}
 
@@ -11,7 +12,7 @@ WWW=		https://github.com/herdrdev/herdr
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo zig
+USES=		cargo zig:016
 USE_GITHUB=	yes
 GH_ACCOUNT=	herdrdev
 
