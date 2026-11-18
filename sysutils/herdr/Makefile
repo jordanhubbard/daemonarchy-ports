@@ -1,7 +1,7 @@
 PORTNAME=	herdr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 DIST_SUBDIR=	${PORTNAME}
 
@@ -11,6 +11,9 @@ WWW=		https://github.com/herdrdev/herdr
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+TEST_DEPENDS=	bash:shells/bash \
+		git:devel/git
 
 USES=		cargo zig:016
 USE_GITHUB=	yes

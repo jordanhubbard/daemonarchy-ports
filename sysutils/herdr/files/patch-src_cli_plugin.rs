@@ -1,12 +1,19 @@
---- src/cli/plugin.rs.orig	2026-10-14 15:56:41 UTC
+--- src/cli/plugin.rs.orig
 +++ src/cli/plugin.rs
-@@ -1723,7 +1723,8 @@ fn current_plugin_platform() -> PluginPlatform {
- }
- 
- fn current_plugin_platform() -> PluginPlatform {
--    if cfg!(target_os = "linux") {
-+    // FreeBSD runs the same Unix/XDG tooling Linux plugins expect.
-+    if cfg!(any(target_os = "linux", target_os = "freebsd")) {
+@@ -1727,6 +1727,8 @@
          PluginPlatform::Linux
      } else if cfg!(target_os = "macos") {
          PluginPlatform::Macos
++    } else if cfg!(target_os = "freebsd") {
++        PluginPlatform::Freebsd
+     } else {
+         PluginPlatform::Windows
+     }
+@@ -1737,6 +1739,7 @@
+         PluginPlatform::Linux => "linux",
+         PluginPlatform::Macos => "macos",
+         PluginPlatform::Windows => "windows",
++        PluginPlatform::Freebsd => "freebsd",
+     }
+ }
+ 

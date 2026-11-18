@@ -189,3 +189,39 @@ plist and install checks enabled. Preserve the complete original selected work
 directory on both success and failure in subsequent native workflow artifacts;
 the first run's complete uploaded raw logs remain retained. Original native
 package/staging/plist/install qualification still requires a fresh corrected run.
+
+
+The complete native ARM64 Herdr run now passes the clean default package build
+with source-built Rust and Zig 0.16. Its 4,856,633-byte package has SHA256
+`0f4ae8cfbfff3b38c81babd79a720a0e44dbfb732dde4a085be33f17257120c9`;
+sealed `nobody` help and version controls pass. The full original Cargo test
+target exits 1 and its main test binary terminates with SIGPIPE. The retained
+output has 3,092 completed case lines, including 79 failures; this is incomplete
+coverage. All frozen source/seed/host postguards pass, and the complete
+34,919-member workdir, raw logs and package are verified on two healthy hosts.
+
+Focused controls reopen the exact original test binary and independently list
+all 3,610 main test identities under both root and nobody. Git-using worktree
+and Bash-using partial-write cases reproduce missing-executable errors under
+both users. A Linux/macOS-only plugin action is incorrectly invoked on FreeBSD
+under both users because the adapter identifies FreeBSD as Linux. The cleanup
+case passes in an isolated process; its full-suite failure remains recorded.
+
+Herdr revision 2 declares Git and Bash test dependencies and gives FreeBSD an
+explicit plugin platform in the API schema, manifest parser and CLI checks.
+Linux, macOS and Windows retain their platform identities. All-supported-host
+fixtures include FreeBSD, with their existing case names and checks retained;
+explicit exclusion fixtures retain their restrictions. Two new regression cases
+cover FreeBSD parsing/serialization and native platform enforcement. Original
+Cargo target groups, options, compiler choices and four jobs remain selected.
+
+Sixteen read-only native metadata queries across eight architectures preserve
+the original build/runtime dependencies, Cargo/make flags, options and test
+arguments. Only the two test tools, package revision and its three generated
+license-directory names change. Sixteen native BSD patch dry-run/application
+checks cover all eight exact upstream files without offsets or fuzz. These
+checks do not establish architecture builds or a full revised test pass. The
+original SIGPIPE failure is unresolved; private traced replays are retained and
+do not waive it. A clean revised package, complete original tests, matching
+CURRENT dependencies, source-built SDK and retained lifecycle/release acceptance
+remain required.
