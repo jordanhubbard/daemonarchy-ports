@@ -28,7 +28,8 @@ restore_tree()
 	done
 }
 
-for tree in mono/tests mcs/tools/nunit-lite mcs/class/test-helpers; do
+for tree in mono/tests mcs/tools/nunit-lite mcs/class/test-helpers \
+    mcs/class/Microsoft.Build/xbuild-testing; do
 	restore_tree "$tag_source/$tree" "$release_source/$tree"
 done
 
@@ -49,6 +50,10 @@ done
 composition=mcs/class/System.ComponentModel.Composition.4.5/corefx
 copy_missing_file "$tag_source/$composition/SR.cs" \
     "$release_source/$composition/SR.cs"
+for relative in mcs/class/System.Core/corefx/SR.tests.cs \
+    mcs/class/System/System/RemoteExecutorTests.cs; do
+	copy_missing_file "$tag_source/$relative" "$release_source/$relative"
+done
 for source in "$xunit_source/"*.dll "$xunit_source/"*.exe; do
 	copy_missing_file "$source" \
 	    "$release_source/external/xunit-binaries/${source##*/}"

@@ -96,3 +96,21 @@ restoring the test directories makes their original relative paths resolve.
 A clean original autoreconf/configure/build/package and the complete revised
 test target remain required; the failed workdir and raw reports are retained
 and verified on two healthy hosts.
+
+The clean revision 8 native build completed and activated the intended compiler
+flags. Its full original test target still failed: the gc-descriptor compiler
+has a separate definition without the ARM workaround; FreeBSD's empty AOT
+suffix aliases AOT recipes to ordinary DLL targets; and six original-tag test
+inputs remain absent outside the previously restored trees. The retained run
+includes 27,914 passing mini test executions across 23 optimization combinations
+and 293 passing XML cases, but these do not qualify the complete target. All
+original reports, the compiler core and the complete workdir are preserved on
+two healthy hosts. The produced revision 8 package is also preserved separately;
+the first observer checked only an absent convenience repository path.
+
+Revision 9 extends the existing ARM compiler workaround to every remaining
+Mono test compiler definition, assigns the ELF AOT suffix on FreeBSD and
+restores the remaining original-tag resource/remote-executor/xbuild fixtures
+without overwriting source. Default options, four make jobs and all original
+test groups remain selected. Complete native patch/extraction checks, a clean
+revised build and the full upstream test target remain required.

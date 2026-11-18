@@ -46,3 +46,29 @@ Disable compiler parallelism there as well as for the normal build rules.
 @@ -206,1 +206,1 @@
 -MCS_NO_UNSAFE = $(TOOLS_RUNTIME) $(CSC) -debug:portable \
 +MCS_NO_UNSAFE = $(TOOLS_RUNTIME) $(CSC) /parallel- -debug:portable \
+
+--- mono/profiler/Makefile.am.orig
++++ mono/profiler/Makefile.am
+@@ -159 +159 @@
+-MCS = $(TOOLS_RUNTIME) $(CSC) -lib:$(CLASS) -unsafe -nologo -noconfig -nowarn:0162 -nowarn:0168 -nowarn:0219 -debug:portable
++MCS = $(TOOLS_RUNTIME) $(CSC) /parallel- -lib:$(CLASS) -unsafe -nologo -noconfig -nowarn:0162 -nowarn:0168 -nowarn:0219 -debug:portable
+--- mono/unit-tests/Makefile.am.orig
++++ mono/unit-tests/Makefile.am
+@@ -9 +9 @@
+-MCS_NO_UNSAFE = $(TOOLS_RUNTIME) $(CSC) -debug:portable \
++MCS_NO_UNSAFE = $(TOOLS_RUNTIME) $(CSC) /parallel- -debug:portable \
+--- mono/tests/assembly-load-reference/Makefile.am.orig
++++ mono/tests/assembly-load-reference/Makefile.am
+@@ -61 +61 @@
+-MCS= $(TOOLS_RUNTIME) $(CSC) -noconfig -nologo -debug:portable -target:library $(PROFILE_MCS_FLAGS)
++MCS= $(TOOLS_RUNTIME) $(CSC) /parallel- -noconfig -nologo -debug:portable -target:library $(PROFILE_MCS_FLAGS)
+--- mono/tests/gc-descriptors/Makefile.am.orig
++++ mono/tests/gc-descriptors/Makefile.am
+@@ -6 +6 @@
+-MCS = $(TOOLS_RUNTIME) $(CSC) -lib:$(CLASS) -noconfig -unsafe -nowarn:0162 -nowarn:0168 -nowarn:0219 -debug:portable
++MCS = $(TOOLS_RUNTIME) $(CSC) /parallel- -lib:$(CLASS) -noconfig -unsafe -nowarn:0162 -nowarn:0168 -nowarn:0219 -debug:portable
+--- mono/tests/testing_gac/Makefile.am.orig
++++ mono/tests/testing_gac/Makefile.am
+@@ -51 +51 @@
+-MCS= $(TOOLS_RUNTIME) $(CSC) -noconfig -nologo -debug:portable -target:library $(PROFILE_MCS_FLAGS)
++MCS= $(TOOLS_RUNTIME) $(CSC) /parallel- -noconfig -nologo -debug:portable -target:library $(PROFILE_MCS_FLAGS)
