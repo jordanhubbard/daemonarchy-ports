@@ -174,6 +174,25 @@ try:
 finally:
     shutil.rmtree(fixture)
 PYICONS
+# Measure the actual installed privileged files, including numeric ownership.
+installed_ownership()
+{
+    for installed_file in \
+        "$icons_prefix/bin/omarchy-firmware-setup" \
+        "$icons_datadir/freebsd/bin/omarchy-firmware-setup" \
+        "$icons_prefix/libexec/omarchy/compat/systemctl" \
+        "$icons_prefix/etc/polkit-1/rules.d/50-omarchy.rules"
+    do
+        metadata=$(stat -f '%u:%g:%Lp' "$installed_file") || return $?
+        printf '%s %s\n' "$metadata" "$installed_file" || return $?
+        case "$metadata" in
+            0:0:*) permissions=${metadata#0:0:} ;;
+            *) return 1 ;;
+        esac
+        test "$((0$permissions & 06022))" -eq 0 || return $?
+    done
+}
+phase installed-ownership installed_ownership
 phase desktop-version env -u OMARCHY_PATH /usr/local/bin/omarchy-version
 expected_version=$(make -C "$port" -V PKGVERSION)
 test "$(cat "$out/desktop-version.stdout")" = "$expected_version"
