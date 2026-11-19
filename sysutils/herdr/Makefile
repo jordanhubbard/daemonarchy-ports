@@ -1,7 +1,7 @@
 PORTNAME=	herdr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 DIST_SUBDIR=	${PORTNAME}
 
@@ -35,6 +35,10 @@ PLIST_FILES=	bin/${PORTNAME} \
 post-patch:
 	${FIND} ${WRKSRC}/src/integration/assets -type f -name '*.sh' \
 		-exec ${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|g' {} +
+	${REINPLACE_CMD} -e 's|python3 |${PYTHON_CMD} |g' \
+		${WRKSRC}/tests/cli/panes.rs \
+		${WRKSRC}/tests/cli/workspace.rs \
+		${WRKSRC}/tests/live_handoff.rs
 
 # USES=zig replaces the _USES_extract list, dropping the USES=cargo crate
 # vendoring step, so run it explicitly.
