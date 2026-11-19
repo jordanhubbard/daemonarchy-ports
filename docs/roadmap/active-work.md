@@ -225,3 +225,19 @@ original SIGPIPE failure is unresolved; private traced replays are retained and
 do not waive it. A clean revised package, complete original tests, matching
 CURRENT dependencies, source-built SDK and retained lifecycle/release acceptance
 remain required.
+
+The subsequent revision 2 native package and sealed CLI checks pass. Its full
+default upstream test run reaches both terminal summaries: Ghostty reports
+74 passed and one original ignored case; the main binary reports 3,550 passed,
+51 failed and eleven original ignored cases. All 3,687 individual case records
+are independently recovered. SIGPIPE does not recur in this run; the 51 actual
+failures remain acceptance failures, and later Cargo targets do not run.
+
+Revision 3 extends eleven portable command fixtures to FreeBSD without changing
+their assertions, restores the incoming HOME value when the existing integration
+test guard exits, and identifies FreeBSD accurately in the update target helper.
+Self-update remains disabled in favor of pkg. Focused unchanged original cases
+reproduce a plugin failure and pass the previously failing Qwen and terminal
+identity cases in isolation; these controls diagnose the full run and do not
+replace it. All original test identities remain present. The revised package
+and complete default native test run still require qualification.

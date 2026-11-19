@@ -108,6 +108,60 @@
  
  [[startup]]
  command = ["node", "restore.js"]
+@@ -1941,7 +1941,7 @@
+ name = "Pane Plugin"
+ version = "0.1.0"
+ min_herdr_version = "0.6.10"
+-platforms = ["linux", "macos"]
++platforms = ["linux", "macos", "freebsd"]
+ 
+ [[panes]]
+ id = "board"
+@@ -2048,7 +2048,7 @@
+ name = "Path Env"
+ version = "0.1.0"
+ min_herdr_version = "0.6.10"
+-platforms = ["linux", "macos"]
++platforms = ["linux", "macos", "freebsd"]
+ 
+ [[panes]]
+ id = "board"
+@@ -2152,7 +2152,7 @@
+ name = "Tab Plugin"
+ version = "0.1.0"
+ min_herdr_version = "0.6.10"
+-platforms = ["linux", "macos"]
++platforms = ["linux", "macos", "freebsd"]
+ 
+ [[panes]]
+ id = "board"
+@@ -2235,7 +2235,7 @@
+ name = "Split Plugin"
+ version = "0.1.0"
+ min_herdr_version = "0.6.10"
+-platforms = ["linux", "macos"]
++platforms = ["linux", "macos", "freebsd"]
+ 
+ [[panes]]
+ id = "board"
+@@ -2314,7 +2314,7 @@
+ name = "Overlay Plugin"
+ version = "0.1.0"
+ min_herdr_version = "0.6.10"
+-platforms = ["linux", "macos"]
++platforms = ["linux", "macos", "freebsd"]
+ 
+ [[panes]]
+ id = "board"
+@@ -2395,7 +2395,7 @@
+ name = "Popup Plugin"
+ version = "0.1.0"
+ min_herdr_version = "0.6.10"
+-platforms = ["linux", "macos"]
++platforms = ["linux", "macos", "freebsd"]
+ 
+ [[panes]]
+ id = "board"
 @@ -2508,6 +2508,7 @@
                  crate::api::schema::PluginPlatform::Linux,
                  crate::api::schema::PluginPlatform::Macos,
@@ -116,6 +170,51 @@
              ])
          );
  
+@@ -2813,7 +2814,7 @@
+ name = "Runner"
+ version = "0.1.0"
+ min_herdr_version = "0.6.10"
+-platforms = ["linux", "macos"]
++platforms = ["linux", "macos", "freebsd"]
+ 
+ [[actions]]
+ id = "run"
+@@ -2880,7 +2881,7 @@
+ name = "Action Paths"
+ version = "0.1.0"
+ min_herdr_version = "0.6.10"
+-platforms = ["linux", "macos"]
++platforms = ["linux", "macos", "freebsd"]
+ 
+ [[actions]]
+ id = "run"
+@@ -2991,7 +2992,7 @@
+ name = "Startup"
+ version = "0.1.0"
+ min_herdr_version = "0.6.10"
+-platforms = ["linux", "macos"]
++platforms = ["linux", "macos", "freebsd"]
+ 
+ [[startup]]
+ command = ["sh", "-c", "printf '%s:%s' \"$HERDR_PLUGIN_ID\" \"$HERDR_PLUGIN_EVENT\" > {}"]
+@@ -3038,7 +3039,7 @@
+ name = "Event Context"
+ version = "0.1.0"
+ min_herdr_version = "0.6.10"
+-platforms = ["linux", "macos"]
++platforms = ["linux", "macos", "freebsd"]
+ 
+ [[events]]
+ on = "worktree.created"
+@@ -3256,7 +3257,7 @@
+ name = "Links"
+ version = "0.1.0"
+ min_herdr_version = "0.6.10"
+-platforms = ["linux", "macos"]
++platforms = ["linux", "macos", "freebsd"]
+ 
+ [[actions]]
+ id = "open"
 @@ -3324,7 +3325,7 @@
  name = "Link Order"
  version = "0.1.0"
