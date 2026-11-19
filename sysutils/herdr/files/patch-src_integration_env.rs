@@ -1,5 +1,14 @@
 --- src/integration/env.rs.orig
 +++ src/integration/env.rs
+@@ -1,7 +1,7 @@
+ use std::io;
+ use std::path::PathBuf;
+ #[cfg(test)]
+-use std::sync::{Mutex, MutexGuard, OnceLock};
++use std::sync::MutexGuard;
+ 
+ use portable_pty::CommandBuilder;
+ 
 @@ -234,6 +234,7 @@
  #[cfg(test)]
  pub(crate) struct IntegrationEnvLock {
@@ -20,8 +29,13 @@
          #[cfg(windows)]
          if let Some(appdata) = self.appdata.take() {
              std::env::set_var("APPDATA", appdata);
-@@ -256,6 +262,7 @@
-     let guard = LOCK.get_or_init(|| Mutex::new(())).lock().unwrap();
+@@ -252,10 +258,10 @@
+ 
+ #[cfg(test)]
+ pub(crate) fn integration_env_lock() -> IntegrationEnvLock {
+-    static LOCK: OnceLock<Mutex<()>> = OnceLock::new();
+-    let guard = LOCK.get_or_init(|| Mutex::new(())).lock().unwrap();
++    let guard = crate::config::test_config_env_lock().lock().unwrap();
      IntegrationEnvLock {
          _guard: guard,
 +        home: std::env::var_os("HOME"),

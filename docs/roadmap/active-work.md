@@ -259,3 +259,22 @@ sealed-package CLI checks remain retained; revision 4 still requires a fresh
 native package and complete original test run with all assertions, original
 ignored reasons and default test concurrency preserved. No complete Herdr or
 release acceptance is claimed.
+
+A subsequent unfiltered original Herdr test run with the missing Python command
+provided passed 3,599 main cases and failed two different cases, with the same
+11 original ignored cases. Concurrent native calls through the verbatim Herdr
+PTY backend then reproduced a separate FreeBSD `openpty()` race: `ptsname()`
+returns shared static storage. A caller-owned `ptsname_r()` buffer fixes the
+paired native reproducer. Source PRs 110 and 111 retain that general libutil fix
+and its native regression; it is not a Herdr-specific PTY workaround.
+
+Herdr's original test helpers also use different mutexes while modifying the
+same process environment. The revision 5 port candidate coordinates the existing
+integration environment guard with the existing configuration guard, and guards
+15 original command/cache tests that depend on that shared state. It preserves
+all original function identities, assertions, test concurrency and ignored
+reasons. The declared versioned Python runtime from revision 4 is retained.
+All patches must apply to the checksum-bound original source with zero fuzz;
+a fresh native build and the complete original test target still need to qualify
+this candidate with the reviewed libutil fix. No complete Herdr or release pass
+is claimed.
