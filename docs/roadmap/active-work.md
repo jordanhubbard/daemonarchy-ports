@@ -241,3 +241,21 @@ reproduce a plugin failure and pass the previously failing Qwen and terminal
 identity cases in isolation; these controls diagnose the full run and do not
 replace it. All original test identities remain present. The revised package
 and complete default native test run still require qualification.
+
+The revision 3 Herdr candidate built and packaged on the native ARM64 worker,
+but its complete original test target failed: Ghostty had 74 passing cases and
+one original ignored case; the main target had 3,537 passing, 64 failing and 11
+original ignored cases. Sixty-one failures followed a poisoned shared test
+lock. Two direct failures pass when run individually; their full-suite behavior
+remains unresolved. The Letta hook failure reproduces individually because its
+embedded command expects `python3`, while only `python3.12` is installed.
+Building and installing the original `lang/python3` metaport in the isolated
+jail makes that unchanged original case pass, confirming the missing command.
+
+Revision 4 declares the Python runtime through `USES=python:run` and binds the
+embedded shell hooks to `${PYTHON_CMD}` during the original patch phase. It does
+not depend on the unversioned metaport. The revision 3 failure evidence and
+sealed-package CLI checks remain retained; revision 4 still requires a fresh
+native package and complete original test run with all assertions, original
+ignored reasons and default test concurrency preserved. No complete Herdr or
+release acceptance is claimed.
