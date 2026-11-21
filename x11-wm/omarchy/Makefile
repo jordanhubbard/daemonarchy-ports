@@ -1,5 +1,5 @@
 PORTNAME=	omarchy
-DISTVERSION=	4.5.0.20261113
+DISTVERSION=	4.5.0.20261119
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -48,13 +48,15 @@ USES=		fonts perl5 python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	jordanhubbard
 # Reviewed dated snapshot after v4.5.0; retain the exact owned integration.
-GH_TAGNAME=	eb1bae39bc2a2170c052548669e53db6775e521e
+GH_TAGNAME=	0640b8c1c761fd962298907712596c1197c13a29
 # The FreeBSD compatibility layer: freebsdize, compat tools, FreeBSD commands.
-GH_TUPLE=	jordanhubbard:omarchy-freebsd:648954b3a7bba9872f899e1afffda527f014dfd9:freebsd
+GH_TUPLE=	jordanhubbard:omarchy-freebsd:029e0eba6ff69392e416abb5bbd58206d4d20443:freebsd
 USE_PERL5=	run
 
 SHEBANG_FILES=	bin/* config/omarchy/hooks/*/* default/systemd/system-sleep/* \
-		install/user/first-run/* shell/plugins/*/*.sh shell/services/*.sh
+		install/user/first-run/* install/provisioning/console-font.py \
+		default/agents/skills/omarchy-app/scaffold \
+		shell/plugins/*/*.sh shell/services/*.sh
 SHEBANG_GLOB=	*.sh
 
 FONTNAME=	omarchy
@@ -82,7 +84,7 @@ COMPAT_TOOLS=	brightnessctl journalctl powerprofilesctl setpriv systemctl \
 		systemd-cat systemd-inhibit systemd-run timedatectl uwsm uwsm-app
 
 # Directories copied into ${DATADIR} as-is (after the FreeBSD adjustments).
-DATA_DIRS=	applications config default install migrations shell themes
+DATA_DIRS=	applications config default icons install migrations shell themes
 
 # Paths the Arch package uses that live under ${PREFIX} on FreeBSD. (The
 # rewrite below also maps Arch's chromium.desktop to www/chromium's
@@ -149,7 +151,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/freebsd/patches ${STAGEDIR}${DATADIR}/freebsd/bin
 	${INSTALL_DATA} ${FILESDIR}/patch-* ${STAGEDIR}${DATADIR}/freebsd/patches
 	${INSTALL_DATA} ${WRKSRC_freebsd}/freebsd-bin/* ${STAGEDIR}${DATADIR}/freebsd/bin
-	${REINPLACE_CMD} -E -e '1s@^#!(/usr/bin/env bash|/bin/bash)$$@#!${LOCALBASE}/bin/bash@' \
+	${REINPLACE_CMD} -E -e '1s@^#!(/usr/bin/env bash|/bin/bash)([[:space:]]|$$)@#!${LOCALBASE}/bin/bash\2@' \
 		-e '1s@^#!/usr/bin/env python3$$@#!${PYTHON_CMD}@' \
 		${STAGEDIR}${DATADIR}/freebsd/bin/*
 	${RM} ${STAGEDIR}${DATADIR}/freebsd/bin/*.bak
