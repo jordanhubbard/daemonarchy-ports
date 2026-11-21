@@ -1,6 +1,6 @@
 PORTNAME=	mono
 PORTVERSION=	5.20.1.34
-PORTREVISION=	4
+PORTREVISION=	13
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 PKGNAMESUFFIX=	5.20
@@ -19,7 +19,11 @@ BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		bash:shells/bash \
 		cmake-core>0:devel/cmake-core
 LIB_DEPENDS=	libinotify.so:devel/libinotify
-RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
+RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
+		${LOCALBASE}/bin/as:devel/binutils
+TEST_DEPENDS=	gpatch:devel/patch \
+		libgdiplus>=0:graphics/libgdiplus \
+		sqlite3>=0:databases/sqlite3
 
 CONFLICTS_INSTALL=	certmgr coin-or-disco disco mono mono[0-9]*
 
@@ -46,6 +50,15 @@ USE_PERL5=	build
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
+# Compiler AOT generation and mono --aot invoke the native assembler.
+# Select only AS from binutils; retain the base compiler and linker.
+USE_BINUTILS=	yes
+BINUTILS=	AS
+# The release tarball omits inputs required by its original check target.
+# Keep test sources and the upstream-selected xUnit binaries at their exact pins.
+USE_GITHUB=	nodefault
+GH_TUPLE=	mono:mono:feca91f7eb1b440a6520cf754370b98271339d1a:tests \
+		mono:xunit-binaries:bb583470c7fc9f5b8369a4c273176c8202f00b1a:xunit
 SHEBANG_FILES=	scripts/mono-heapviz scripts/mono-package-runtime \
 		mono/mini/genmdesc.py mono/tests/test_lldb.py
 BINARY_ALIAS=	python=${PYTHON_CMD}
@@ -59,6 +72,7 @@ MAKE_ENV=	MONO_SHARED_DIR="${WRKDIR}" \
 		TZ=UTC
 
 TEST_ARGS=	-k
+TEST_ENV=	PATCH=${LOCALBASE}/bin/gpatch
 TEST_TARGET=	check
 
 PORTSCOUT=	limit:^\d+\.\d+\.[1-9]\d*
@@ -76,12 +90,23 @@ PLIST+=	${.CURDIR}/pkg-plist.powerpc
 
 .include <bsd.port.pre.mk>
 
+# Upstream enables system AOT by default on these FreeBSD targets.
+.if ${ARCH} == "aarch64" || ${ARCH} == "amd64" || ${ARCH} == "i386"
+PLIST_SUB+=	COMPILER_AOT=""
+.else
+PLIST_SUB+=	COMPILER_AOT="@comment "
+.endif
+
 .if ${ARCH} == "aarch64"
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-aarch64-race-workaround
 PLIST_SUB+=	BOEHM="@comment "
 .else
 PLIST_SUB+=	BOEHM=""
 .endif
+
+post-extract:
+	${SH} ${FILESDIR}/restore-test-inputs.sh ${WRKSRC} \
+		${WRKSRC_tests} ${WRKSRC_xunit}
 
 post-extract-MONOLITE-on:
 	${MKDIR} ${WRKSRC}/mcs/class/lib/monolite-linux
