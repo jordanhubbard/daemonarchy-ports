@@ -1,0 +1,11 @@
+--- tests/fixtures/plugin-smoke/herdr-plugin.toml.orig
++++ tests/fixtures/plugin-smoke/herdr-plugin.toml
+@@ -3,7 +3,7 @@
+ version = "0.1.0"
+ min_herdr_version = "0.6.10"
+ description = "Portable plugin smoke fixture"
+-platforms = ["linux", "macos", "windows"]
++platforms = ["linux", "macos", "windows", "freebsd"]
+ 
+ [[actions]]
+ id = "workspace-list"

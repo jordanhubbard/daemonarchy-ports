@@ -1,0 +1,12 @@
+--- docs/next/api/herdr-api.schema.json.orig
++++ docs/next/api/herdr-api.schema.json
+@@ -9070,7 +9070,8 @@
+           "enum": [
+             "linux",
+             "macos",
+-            "windows"
++            "windows",
++            "freebsd"
+           ],
+           "type": "string"
+         },

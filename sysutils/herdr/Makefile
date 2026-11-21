@@ -1,6 +1,7 @@
 PORTNAME=	herdr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.5
+PORTREVISION=	7
 CATEGORIES=	sysutils
 DIST_SUBDIR=	${PORTNAME}
 
@@ -11,7 +12,10 @@ WWW=		https://github.com/herdrdev/herdr
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo zig
+TEST_DEPENDS=	bash:shells/bash \
+		git:devel/git
+
+USES=		cargo python:run zig:016
 USE_GITHUB=	yes
 GH_ACCOUNT=	herdrdev
 
@@ -25,6 +29,16 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/bash-completion/completions/${PORTNAME} \
 		share/fish/vendor_completions.d/${PORTNAME}.fish \
 		share/zsh/site-functions/_${PORTNAME}
+
+# Embedded agent hooks require Python at runtime. Bind them to the selected
+# versioned interpreter instead of relying on an ambient python3 alias.
+post-patch:
+	${FIND} ${WRKSRC}/src/integration/assets -type f -name '*.sh' \
+		-exec ${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|g' {} +
+	${REINPLACE_CMD} -e 's|python3 |${PYTHON_CMD} |g' \
+		${WRKSRC}/tests/cli/panes.rs \
+		${WRKSRC}/tests/cli/workspace.rs \
+		${WRKSRC}/tests/live_handoff.rs
 
 # USES=zig replaces the _USES_extract list, dropping the USES=cargo crate
 # vendoring step, so run it explicitly.
