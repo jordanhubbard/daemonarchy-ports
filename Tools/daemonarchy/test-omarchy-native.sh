@@ -16,6 +16,31 @@ export PORTSDIR="$root"
 export BATCH=yes
 export MAKE_JOBS_NUMBER=2
 port=x11-wm/omarchy
+# Retain the complete original source, staging tree and products on both success
+# and failure. The workflow uploads this directory after the guest syncs back.
+preserve_original_workdir()
+{
+    original_status=$?
+    trap - EXIT
+    archive_status=0
+    if workdir=$(make -C "$root/$port" -V WRKDIR 2>"$out/preserve-workdir-query.stderr"); then
+        if [ -n "$workdir" ] && [ "$workdir" != / ] && [ -d "$workdir" ]; then
+            tar --acls --fflags -czf "$out/original-selected-workdir.tar.gz" \
+                -C "$(dirname "$workdir")" "$(basename "$workdir")" \
+                >"$out/preserve-workdir.stdout" 2>"$out/preserve-workdir.stderr" || archive_status=$?
+        else
+            printf '%s\n' 'Original selected work directory was not created.' >"$out/preserve-workdir.stdout"
+        fi
+    else
+        archive_status=1
+    fi
+    printf '%s\n' "$archive_status" >"$out/preserve-workdir.exit"
+    if [ "$original_status" -eq 0 ] && [ "$archive_status" -ne 0 ]; then
+        original_status=1
+    fi
+    exit "$original_status"
+}
+trap preserve_original_workdir EXIT
 phase()
 {
     name=$1
@@ -102,6 +127,72 @@ phase install make -C "$port" install
 pkg info -f omarchy >"$out/package-info.txt"
 pkg info -l omarchy >"$out/installed-files.txt"
 phase package-checksums pkg check -s omarchy
+# Exercise the installed command as an unprivileged user. A successful package
+# checksum check alone cannot find runtime assets omitted from the packing list.
+icons_python=$(make -C "$port" -V PYTHON_CMD)
+icons_prefix=$(make -C "$port" -V PREFIX)
+icons_datadir=$(make -C "$port" -V DATADIR)
+phase built-in-icon-sets "$icons_python" - "$icons_prefix" "$icons_datadir" <<'PYICONS'
+import os
+from pathlib import Path
+import pwd
+import shutil
+import subprocess
+import sys
+import tempfile
+
+account = pwd.getpwnam("nobody")
+fixture = tempfile.mkdtemp(prefix="omarchy-icons-")
+try:
+    os.chown(fixture, account.pw_uid, account.pw_gid)
+    context = {
+        "env": {
+            "HOME": fixture,
+            "OMARCHY_PATH": sys.argv[2],
+            "PATH": f"{sys.argv[1]}/bin:/usr/bin:/bin",
+            "LANG": "C",
+        },
+        "user": account.pw_uid,
+        "group": account.pw_gid,
+        "extra_groups": [],
+        "capture_output": True,
+        "text": True,
+    }
+
+    def checked_output(command):
+        result = subprocess.run(command, **context)
+        print(result.stdout, end="")
+        print(result.stderr, end="", file=sys.stderr)
+        result.check_returncode()
+        return result.stdout
+
+    uid = checked_output(["/usr/bin/id", "-u"]).strip()
+    assert int(uid) == account.pw_uid and int(uid) != 0, uid
+    command = str(Path(sys.argv[1]) / "bin/omarchy-icons-list")
+    labels = checked_output([command]).splitlines()
+    assert {"Arcade", "Papercraft", "Original"}.issubset(labels), labels
+finally:
+    shutil.rmtree(fixture)
+PYICONS
+# Measure the actual installed privileged files, including numeric ownership.
+installed_ownership()
+{
+    for installed_file in \
+        "$icons_prefix/bin/omarchy-firmware-setup" \
+        "$icons_datadir/freebsd/bin/omarchy-firmware-setup" \
+        "$icons_prefix/libexec/omarchy/compat/systemctl" \
+        "$icons_prefix/etc/polkit-1/rules.d/50-omarchy.rules"
+    do
+        metadata=$(stat -f '%u:%g:%Lp' "$installed_file") || return $?
+        printf '%s %s\n' "$metadata" "$installed_file" || return $?
+        case "$metadata" in
+            0:0:*) permissions=${metadata#0:0:} ;;
+            *) return 1 ;;
+        esac
+        test "$((0$permissions & 06022))" -eq 0 || return $?
+    done
+}
+phase installed-ownership installed_ownership
 phase desktop-version env -u OMARCHY_PATH /usr/local/bin/omarchy-version
 expected_version=$(make -C "$port" -V PKGVERSION)
 test "$(cat "$out/desktop-version.stdout")" = "$expected_version"
