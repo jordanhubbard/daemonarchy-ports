@@ -92,11 +92,15 @@ PYMALLOC_CONFIGURE_WITH=	pymalloc
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDTRACE}
+# The upstream freeze test configures and rebuilds a private source copy.
+MAKE_ENV+=	MAKE=${GMAKE}
 # An object-free dtrace -G probe otherwise defaults to the wrong ELF class.
 .  if !empty(ARCH:M*64*)
 CONFIGURE_ENV+=	DFLAGS=-64
+MAKE_ENV+=	DFLAGS=-64
 .  else
 CONFIGURE_ENV+=	DFLAGS=-32
+MAKE_ENV+=	DFLAGS=-32
 .  endif
 .endif
 
@@ -147,10 +151,10 @@ post-patch:
 		@${ECHO_CMD} ${_module} >> ${WRKSRC}/Modules/Setup.local
 .  endfor
 
-post-configure-DTRACE-on:
+post-patch-DTRACE-on:
 # dtrace -G needs native ELF probe sites.  Preserve LTO for all other objects;
 # GNU make's private assignment prevents the flag reaching prerequisites.
-	@${ECHO_CMD} '$$(DTRACE_DEPS): private CFLAGS_NODIST += -fno-lto' >> ${WRKSRC}/Makefile
+	@${ECHO_CMD} '$$(DTRACE_DEPS): private CFLAGS_NODIST += -fno-lto' >> ${WRKSRC}/Makefile.pre.in
 
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}
