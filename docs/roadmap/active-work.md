@@ -226,3 +226,23 @@ failures still require diagnosis; these prerequisite and rule corrections do
 not establish a full-test pass, affected-dependent qualification or current
 source/ports/SDK/lifecycle/release acceptance. A fresh clean native build and
 the complete original target remain required.
+
+### FreeBSD update snapshot configuration (Daemonarchy issue 334)
+
+The current desktop still lets the historical snapshot-service migration reach
+Linux Snapper setup on FreeBSD. The port now guards that shared setup leaf by
+operating system. FreeBSD keeps the existing `omarchy-snapshot` boot-environment
+backend; Linux keeps its original Snapper configuration and timer operations.
+The historical migration and the runner's completion markers and stop-on-failure
+behavior are unchanged. The package revision increases to distinguish the fix.
+
+Private shell controls reproduce the original missing-Snapper exit 127, then
+complete the migration with the patched leaf. Another migration's exit 17 still
+stops the runner without writing its completion marker. Executed and sourced
+leaf controls pass, and Linux configuration bytes, modes and service arguments
+match the original. Native FreeBSD ARM64 controls also reject the old leaf and
+accept the patched leaf as nobody, without invoking Snapper or systemctl or
+creating their configuration files. The native driver retains that check for
+the actual installed file. These source controls do not establish a new package,
+an installed-product pass, a full desktop update or lifecycle/release acceptance;
+the revised native package and installed checks remain required.
