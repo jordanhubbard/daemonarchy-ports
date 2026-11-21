@@ -1,8 +1,11 @@
 Workaround for Roslyn crash: https://github.com/mono/mono/issues/7017
 
+The bootstrap profile probes invoke the compiler directly, without USE_MCS_FLAGS.
+Disable compiler parallelism there as well as for the normal build rules.
+
 --- mcs/build/profiles/basic.make.orig	2018-07-12 00:08:27 UTC
 +++ mcs/build/profiles/basic.make
-@@ -47,7 +47,7 @@ LIBRARY_COMPILE = $(BOOT_COMPILE)
+@@ -52,7 +52,7 @@ LIBRARY_COMPILE = $(BOOT_COMPILE)
  #
  # Copy from rules.make because I don't know how to unset MCS_FLAGS
  #
@@ -11,6 +14,17 @@ Workaround for Roslyn crash: https://github.com/mono/mono/issues/7017
 
  .PHONY: profile-check do-profile-check
  profile-check:
+@@ -119,8 +119,8 @@ endif
+ $(PROFILE_EXE): $(topdir)/build/common/basic-profile-check.cs $(GENSOURCES_CS)
+ 	$(MAKE) $(MAKE_Q) -C $(topdir)/packages
+-	$(BOOTSTRAP_MCS) /warn:0 /noconfig /langversion:latest /r:System.dll /r:mscorlib.dll /out:$@.tmp $<
+-	$(BOOTSTRAP_MCS) /noconfig /langversion:latest /r:mscorlib.dll /r:System.dll /r:System.Core.dll /out:$(GENSOURCES_EXE).tmp $(GENSOURCES_CS)
++	$(BOOTSTRAP_MCS) /parallel- /warn:0 /noconfig /langversion:latest /r:System.dll /r:mscorlib.dll /out:$@.tmp $<
++	$(BOOTSTRAP_MCS) /parallel- /noconfig /langversion:latest /r:mscorlib.dll /r:System.dll /r:System.Core.dll /out:$(GENSOURCES_EXE).tmp $(GENSOURCES_CS)
+ 	- rm $(GENSOURCES_EXE)
+ 	mv $(GENSOURCES_EXE).tmp $(GENSOURCES_EXE)
+ 	- rm -f $@
+ 	mv $@.tmp $@
 --- mcs/build/rules.make.orig	2018-07-12 00:09:18.508196000 +0000
 +++ mcs/build/rules.make	2018-07-12 00:12:13.875877000 +0000
 @@ -34,7 +34,7 @@
@@ -22,3 +36,39 @@ Workaround for Roslyn crash: https://github.com/mono/mono/issues/7017
  USE_MBAS_FLAGS = /codepage:$(CODEPAGE) $(LOCAL_MBAS_FLAGS) $(PLATFORM_MBAS_FLAGS) $(PROFILE_MBAS_FLAGS) $(MBAS_FLAGS)
  USE_CFLAGS = $(LOCAL_CFLAGS) $(CFLAGS) $(CPPFLAGS)
  CSCOMPILE = $(Q_MCS) $(MCS) $(USE_MCS_FLAGS)
+--- mono/mini/Makefile.am.in.orig
++++ mono/mini/Makefile.am.in
+@@ -70,1 +70,1 @@
+-MCS = CSC_SDK_PATH_DISABLED= $(TOOLS_RUNTIME) $(CSC) -langversion:7.2 -unsafe -nowarn:0162 -nologo -noconfig -r:$(CLASS)/mscorlib.dll -r:$(CLASS)/System.dll -r:$(CLASS)/System.Core.dll
++MCS = CSC_SDK_PATH_DISABLED= $(TOOLS_RUNTIME) $(CSC) /parallel- -langversion:7.2 -unsafe -nowarn:0162 -nologo -noconfig -r:$(CLASS)/mscorlib.dll -r:$(CLASS)/System.dll -r:$(CLASS)/System.Core.dll
+--- mono/tests/Makefile.am.orig
++++ mono/tests/Makefile.am
+@@ -206,1 +206,1 @@
+-MCS_NO_UNSAFE = $(TOOLS_RUNTIME) $(CSC) -debug:portable \
++MCS_NO_UNSAFE = $(TOOLS_RUNTIME) $(CSC) /parallel- -debug:portable \
+
+--- mono/profiler/Makefile.am.orig
++++ mono/profiler/Makefile.am
+@@ -159 +159 @@
+-MCS = $(TOOLS_RUNTIME) $(CSC) -lib:$(CLASS) -unsafe -nologo -noconfig -nowarn:0162 -nowarn:0168 -nowarn:0219 -debug:portable
++MCS = $(TOOLS_RUNTIME) $(CSC) /parallel- -lib:$(CLASS) -unsafe -nologo -noconfig -nowarn:0162 -nowarn:0168 -nowarn:0219 -debug:portable
+--- mono/unit-tests/Makefile.am.orig
++++ mono/unit-tests/Makefile.am
+@@ -9 +9 @@
+-MCS_NO_UNSAFE = $(TOOLS_RUNTIME) $(CSC) -debug:portable \
++MCS_NO_UNSAFE = $(TOOLS_RUNTIME) $(CSC) /parallel- -debug:portable \
+--- mono/tests/assembly-load-reference/Makefile.am.orig
++++ mono/tests/assembly-load-reference/Makefile.am
+@@ -61 +61 @@
+-MCS= $(TOOLS_RUNTIME) $(CSC) -noconfig -nologo -debug:portable -target:library $(PROFILE_MCS_FLAGS)
++MCS= $(TOOLS_RUNTIME) $(CSC) /parallel- -noconfig -nologo -debug:portable -target:library $(PROFILE_MCS_FLAGS)
+--- mono/tests/gc-descriptors/Makefile.am.orig
++++ mono/tests/gc-descriptors/Makefile.am
+@@ -6 +6 @@
+-MCS = $(TOOLS_RUNTIME) $(CSC) -lib:$(CLASS) -noconfig -unsafe -nowarn:0162 -nowarn:0168 -nowarn:0219 -debug:portable
++MCS = $(TOOLS_RUNTIME) $(CSC) /parallel- -lib:$(CLASS) -noconfig -unsafe -nowarn:0162 -nowarn:0168 -nowarn:0219 -debug:portable
+--- mono/tests/testing_gac/Makefile.am.orig
++++ mono/tests/testing_gac/Makefile.am
+@@ -51 +51 @@
+-MCS= $(TOOLS_RUNTIME) $(CSC) -noconfig -nologo -debug:portable -target:library $(PROFILE_MCS_FLAGS)
++MCS= $(TOOLS_RUNTIME) $(CSC) /parallel- -noconfig -nologo -debug:portable -target:library $(PROFILE_MCS_FLAGS)
