@@ -1372,6 +1372,7 @@ share/icons/hicolor/48x48/apps/zoom.png
 %%DATADIR%%/install/config/increase-lockout-limit.sh
 %%DATADIR%%/install/config/lockscreen-pam.sh
 %%DATADIR%%/install/config/snapper.sh
+%%DATADIR%%/install/config/snapper.sh.orig
 %%DATADIR%%/install/config/ssh-command-path.sh
 %%DATADIR%%/install/config/ssh-keepalive.sh
 %%DATADIR%%/install/config/theme-system.sh
@@ -2109,6 +2110,7 @@ share/xdg-terminal-exec/hyprland-xdg-terminals.list
 %%DATADIR%%/freebsd/patches/patch-etc_fastfetch_config.jsonc
 %%DATADIR%%/freebsd/patches/patch-shell_plugins_bar_widgets_SystemUpdate.manifest.json
 %%DATADIR%%/freebsd/patches/patch-shell_plugins_bar_widgets_SystemUpdate.qml
+%%DATADIR%%/freebsd/patches/patch-install_config_snapper.sh
 %%DATADIR%%/freebsd/patches/patch-shell_plugins_menu_Menu.qml
 %%DATADIR%%/freebsd/patches/patch-shell_plugins_panels_bluetooth_FreeBSDBluetooth.qml
 %%DATADIR%%/freebsd/patches/patch-shell_plugins_panels_bluetooth_Panel.qml

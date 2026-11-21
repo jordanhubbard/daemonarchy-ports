@@ -174,6 +174,57 @@ try:
 finally:
     shutil.rmtree(fixture)
 PYICONS
+# This setup leaf is also invoked by pending migrations during updates. It
+# must succeed on FreeBSD without calling Linux snapshot/service commands or
+# ending an installer that sources it. Exercise the actual installed file.
+phase snapshot-config "$icons_python" - "$icons_prefix" "$icons_datadir" <<'PYSNAPSHOT'
+import os
+from pathlib import Path
+import pwd
+import shutil
+import subprocess
+import sys
+import tempfile
+
+account = pwd.getpwnam("nobody")
+fixture = Path(tempfile.mkdtemp(prefix="omarchy-snapshot-"))
+try:
+    os.chown(fixture, account.pw_uid, account.pw_gid)
+    canaries = fixture / "bin"
+    canaries.mkdir(mode=0o755)
+    for name in ("snapper", "systemctl"):
+        command = canaries / name
+        command.write_text('#!/bin/sh\nprintf "%s\\n" "$0 $*" >>"$HOME/unexpected-calls"\nexit 73\n')
+        command.chmod(0o755)
+    env = {
+        "HOME": str(fixture),
+        "PATH": f"{canaries}:{sys.argv[1]}/bin:/usr/bin:/bin",
+        "LANG": "C",
+        "OMARCHY_PATH": sys.argv[2],
+        "OMARCHY_SNAPPER_CONFIG_PATH": str(fixture / "root-config"),
+        "OMARCHY_SNAPPER_CONF_PATH": str(fixture / "snapper-conf"),
+    }
+    bash = str(Path(sys.argv[1]) / "bin/bash")
+    leaf = str(Path(sys.argv[2]) / "install/config/snapper.sh")
+    for arguments in (
+        [bash, "-euo", "pipefail", leaf],
+        [bash, "-euo", "pipefail", "-c",
+         'source "$1"; printf "%s\\n" source-continued', "snapshot-test", leaf],
+    ):
+        result = subprocess.run(
+            arguments, cwd="/tmp", env=env, user=account.pw_uid,
+            group=account.pw_gid, extra_groups=[], capture_output=True,
+            text=True, timeout=30,
+        )
+        print(result.stdout, end="")
+        print(result.stderr, end="", file=sys.stderr)
+        result.check_returncode()
+    assert "source-continued" in result.stdout, result.stdout
+    for name in ("root-config", "snapper-conf", "unexpected-calls"):
+        assert not (fixture / name).exists(), name
+finally:
+    shutil.rmtree(fixture)
+PYSNAPSHOT
 # Measure the actual installed privileged files, including numeric ownership.
 installed_ownership()
 {
