@@ -1,0 +1,112 @@
+{
+  "schema": "daemonarchy/development-probe@1",
+  "date_utc": "2026-11-22T08:54:37.596623+00:00",
+  "work": "RPI-DISPLAY-001",
+  "status": "original-native-port-and-installed-software-display-controls-passed",
+  "canonical_lifecycle_admission": false,
+  "source": {
+    "ports_revision": "31e5a3b1ec64b4f16569f7b82e62940299630b11",
+    "upstream_drm_revision": "1d054ae55685c45c23aa86541427dfc72afa9ca1",
+    "upstream_archive_sha256": "9c99c05c3269271ca6ea19ccdca53b27517b1d6b679065fc5c3dfc2682ddfaef",
+    "incremental_patch_sha256": "9ddf75af385eb6e253eb87653457c27c8f08082150b62e7bd175027566ec169d",
+    "selected_ports_files_checked_pre_post": 376,
+    "patched_source_files_checked_pre_post": 3695,
+    "kernel_header_files_checked_pre_post": 36893,
+    "original_host_files_unchanged": true
+  },
+  "native_build": {
+    "os": "FreeBSD",
+    "arch": "aarch64",
+    "osversion": 1600031,
+    "options": [
+      "EFIFB"
+    ],
+    "compiler_observed": "FreeBSD clang 21.1.8",
+    "linker_observed": "LLD 21.1.8",
+    "make_observed": "20260704",
+    "pkg_observed": "2.9.3",
+    "bootstrap_source_admission": "Not established by observed original tool versions and hashes.",
+    "targets": {
+      "original-checksum-patch": 0,
+      "original-build": 0,
+      "original-test": 0,
+      "original-stage": 0,
+      "original-check-plist": 0,
+      "original-stage-qa": 0,
+      "original-package": 0
+    },
+    "layout_bounds_refusal_checks": 16404
+  },
+  "package": {
+    "name": "drm-612-kmod-6.12.110.1600031_8.pkg",
+    "bytes": 410749,
+    "sha256": "f72ed7056f17a4558a91c2d827ace81b3af0326e8202b9328f435ee95f5b511a",
+    "installed_modules": {
+      "boot/modules/dmabuf.ko": {
+        "bytes": 59280,
+        "sha256": "9b0b2c39e813ea1e64724d0c18987bc5b3016d594df850824d86e54a639f4519",
+        "mode": 292
+      },
+      "boot/modules/drm.ko": {
+        "bytes": 1002192,
+        "sha256": "a6d033ab6f346e12507e56be41a231556cf85ea8e046929d789ae02affcf1752",
+        "mode": 292
+      },
+      "boot/modules/efifb_drm.ko": {
+        "bytes": 24480,
+        "sha256": "0d8a345c53c83fa743df365b68701f3d09c3004551cf372afa13f162ab97962b",
+        "mode": 292
+      },
+      "boot/modules/ttm.ko": {
+        "bytes": 87152,
+        "sha256": "3cd30066c23fb8592b8371374f0f21a5be7559baece8590b2f1e0b72b01ae396",
+        "mode": 292
+      },
+      "boot/modules/virtio_gpu_drm.ko": {
+        "bytes": 123672,
+        "sha256": "0f07ac16894edc489068ab670178750107744b60ce4dde26edc944a51bf2b0b8",
+        "mode": 292
+      }
+    },
+    "actual_installed_owners_uid_gid_zero": true,
+    "install_delete_reinstall_scripts_registry": "actual-package-install-delete-reinstall-scripts-and-checksums-passed",
+    "postinstall_kldxref_hints_created": true
+  },
+  "runtime": {
+    "platform": "Generic ARM64 UEFI QEMU/KVM RAM framebuffer",
+    "memory_gib": 1,
+    "boot_kernel_sha256": "bb3278a22dd15933d10b4c393004e9cfab922d7973532405d087d4282f110090",
+    "rendering": "software pixman; no GPU acceleration",
+    "installed_package_KMS_exit": 0,
+    "verified_scanout_pixels": 1440000,
+    "scanout_mismatches": 0,
+    "modeset_dirtyfb_pageflip_event_console_restore": true,
+    "actual_Wayland_terminal_window_title": "Daemonarchy packaged display test",
+    "actual_framebuffer_capture_sha256": "b311be15e2650a8fba30e6e42751740081767426ee07dcac9b5012f27548e147",
+    "actual_emulated_USB_keyboard_to_shell_marker": true,
+    "owned_VM_clean_shutdown_observed": true
+  },
+  "alternative_source_profiles": {
+    "arm64-disabled": {
+      "native_checksum_and_patch_exit": 0,
+      "verified_source_files": 3689,
+      "expected_patched_tree": "05f40343397205ac165b85c757055a46040d4a35",
+      "no_EFI_patch_applied": true
+    },
+    "amd64-default": {
+      "native_checksum_and_patch_exit": 0,
+      "verified_source_files": 3689,
+      "expected_patched_tree": "49f72ed5b663b274a546d2fa4e584ddb0f6d652b",
+      "no_EFI_patch_applied": true
+    }
+  },
+  "limitations": [
+    "AMD64 source selection only; no new AMD64 compilation or runtime result.",
+    "Prior Pi4 visual acceptance used manually loaded modules, not this package.",
+    "Physical Pi5, full RAM, GPU acceleration, WiFi and the installed product session remain unqualified.",
+    "VirtIO custom framebuffer GEM-size validation has separate outstanding controls; EFI negative cases do not qualify it.",
+    "Package filesystem roundtrip does not qualify kernel hot replacement or product update/rollback.",
+    "No global SDK replacement, source admission, signed feed, release publication or canonical lifecycle receipt."
+  ],
+  "retention": "Original sources, tests, products, archives, scripts and failed probes remain privately retained."
+}
