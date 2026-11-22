@@ -1,5 +1,5 @@
 PORTNAME=	got
-DISTVERSION=	0.130
+DISTVERSION=	0.131
 CATEGORIES=	devel
 MASTER_SITES=	https://gameoftrees.org/releases/portable/
 DISTNAME=	got-portable-${DISTVERSION}
@@ -16,6 +16,10 @@ USES=		localbase pkgconfig ssl
 CONFLICTS_INSTALL=	p5-App-GitGot
 
 GNU_CONFIGURE=	Yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "/printf '---/{ N; s/printf '/printf -- '/g; }" \
+		${WRKSRC}/regress/cmdline/*.sh
 
 # The regression test suite requires:
 #  installed got

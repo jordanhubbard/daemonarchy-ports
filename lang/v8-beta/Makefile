@@ -1,10 +1,10 @@
 # We follow the beta channel on https://chromiumdash.appspot.com/releases?platform=Linux
 # Latest beta version API: https://chromiumdash.appspot.com/fetch_releases?channel=Beta&platform=Linux&num=1&offset=0
 # V8 is mirrored at https://github.com/v8/v8 (use a specific release tag, not lkgr which is a dynamic ref)
-# Browse current beta branch: https://chromium.googlesource.com/v8/v8/+/refs/heads/15.7-lkgr
+# Browse current beta branch: https://chromium.googlesource.com/v8/v8/+/refs/heads/15.9-lkgr
 
 PORTNAME=	v8
-PORTVERSION=	15.7.112
+PORTVERSION=	15.9.128.1
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-beta
 
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 LIB_DEPENDS=	libicuuc.so:devel/icu
 
 USES=		cargo compiler:c++20-lang cpe elfctl llvm:min=20,build ninja \
-		pkgconfig python:build
+		pkgconfig python:build ssl
 CPE_VENDOR=	google
 USE_GITHUB=	yes
 GH_ACCOUNT=	v8
@@ -90,33 +90,33 @@ TEMPORAL_CAPI_DIR=	${CARGO_VENDOR_DIR}/${CARGO_CRATES:Mtemporal_capi-[0-9]*}
 TEMPORAL_CAPI_LIB=	${WRKDIR}/libv8_temporal.a
 
 # Sub-dependency commit hashes from DEPS at tag ${PORTVERSION}
-ABSL_REV=			9aa0c314d9bd021e48f0193f0af3316a7e8bec63
-BUILD_REV=			aa268127b8cc571ebc60f200d052a09d27231843
-BUILDTOOLS_REV=			8790f824690e131a78f36e80ecc05a9272f061c8
-CLANG_REV=			47fbf574c4f14e7288da3e51ff6eca0990183377
+ABSL_REV=			d8ad4495323e7b20443e7129fcbfd7ee78282818
+BUILD_REV=			af992619fc48cb7f698662654d15080a774b5bf1
+BUILDTOOLS_REV=			a9c58ac990557a29176bbaeef7577b196c38a950
+CLANG_REV=			2459bbdf7089b8d0e4adb65f3551202f06e21e39
 CPU_FEATURES_CHROMIUM_REV=	4974e2063946d9dd2a417c27db139fd982ff447a
 CPU_FEATURES_REV=		81d13c49649f0714dd41fb56bb246398b6584085
 DISARM_REV=			2d960dae4b4fb29dba05cfc48210fbed423f3d2c
 DRAGONBOX_REV=			beeeef91cf6fef89a4d4ba5e95d47ca64ccb3a44
 FADEC_REV=			c9f78f532b9004de278489019ab2c6c28ae9746e
-FAST_FLOAT_REV=			42f254836ee416ffcf2f4e6576260003ac33d48c
+FAST_FLOAT_REV=			dbeabeeb3e6791cb96994c2a7a084c36e62ccfb2
 FP16_REV=			782eea126dc5c755827be751a099eb01826175cf
-FUZZTEST_REV=			4b524d48590b3433597a557d1a8abc134a86b611
-FUZZTEST_SRC_REV=		a8861f3aa71443dabaf42dc9cba78b3982524a51
-GOOGLETEST_REV=			4fe3307fb2d9f86d19777c7eb0e4809e9694dde7
+FUZZTEST_REV=			0c2febf9c1f0b11df71c537cb75a2918f9a6ddc6
+FUZZTEST_SRC_REV=		a2d3cb097f07a91dd26768db7d9f0898cd42b0f0
+GOOGLETEST_REV=			6450691fd7d07ef932582206fbafb1a513927e08
 HIGHWAY_REV=			2607d3b5b0113992fe84d3848859eae13b3b52c1
-ICU_REV=			19dfb44a62ae60ce6b0060de8c0cef5d5c527177
-JSONCPP_REV=			3347a4b86bb914cb565f0cbda19c06e109513300
-LIBCXX_REV=			97b436da4c33663581d394f4ee0a5977fc38c2f4
-LIBCXXABI_REV=			0e691bb69ac90450d8d53bc8ee5968c62f9c15a7
-LIBUNWIND_REV=			c4438dd4178c627697459a12c54eb1f7f8eefd12
-LLVM_LIBC_REV=			97e60a1e7f7180965cc84e22ddde9f1d4ffd640f
-PARTITION_ALLOC_REV=		1b65ca87736e9edb51911e15915573bf4cda7245
-PROTOBUF_REV=			9fbbf0b210753390b790e4f1e74ddff5d7d97bbf
-PROTOC_WRAPPER_REV=		e9dbe1bf6a2a5d2d4973725874259eed587cf18d
+ICU_REV=			b09986242cfb165b9111ade98be6b042ef973b86
+JSONCPP_REV=			93acc7b155048f1a66c43235cc205519f1e7a6ea
+LIBCXX_REV=			def01bd012f56d2fd8f5e2dc75dc28a846ab9cdb
+LIBCXXABI_REV=			de3f73284c8614bb9408e45d70649f8e7933172e
+LIBUNWIND_REV=			9e44ea2ff4f53a60c2a3d2b6f511d7bab9ab12f0
+LLVM_LIBC_REV=			885e2a900ba002ef0ba7b4757da90b0f3aa309e8
+PARTITION_ALLOC_REV=		cf4e6581d2404fdd11b903ca1e7c3e04e679751b
+PROTOBUF_REV=			1c9b6be005a5f855d1c8dd3c63a11f2ee78f956c
+PROTOC_WRAPPER_REV=		5c77c0c9fdebb2d87378bcea183e4c6937fd8c53
 RE2_REV=			2da0056814cf180480a19f5cf811e7e1c054bf6d
 SIMDUTF_REV=			f7356eed293f8208c40b3c1b344a50bd70971983
-ZLIB_REV=			456ae730017b9b4bd3371927abc82627fd51feef
+ZLIB_REV=			ec453dc9abac1ddf39ced752e72a7a80dcda1d91
 
 # Run "gn args --list out/Release" for all variables.
 # Some parts don't have use_system_* flag, and can be turned on/off by using
@@ -138,6 +138,7 @@ GN_ARGS+=	clang_base_path="${LLVM_PREFIX}" \
 		use_lld=true \
 		use_custom_libcxx=false \
 		use_custom_libcxx_for_host=false \
+		v8_enable_ecma402_icu4x=false \
 		v8_enable_temporal_systemicu=true \
 		v8_metagen_libclang_bindings_dir="${LLVM_PREFIX}/lib/${PYTHON_VERSION}/site-packages" \
 		v8_metagen_libclang_so="${LLVM_PREFIX}/lib/libclang.so" \
@@ -245,6 +246,7 @@ post-extract:
 post-patch:
 # https://github.com/klzgrad/naiveproxy/blob/master/src/build/config/gclient_args.gni
 	@${ECHO_CMD} 'checkout_google_benchmark = false' > ${WRKSRC}/build/config/gclient_args.gni
+	@${CP} ${FILESDIR}/boringssl-BUILD.gn ${WRKSRC}/third_party/boringssl/BUILD.gn
 	@${SED} -e 's|%%TEMPORAL_CAPI_DIR%%|${TEMPORAL_CAPI_DIR}|' \
 		-e 's|%%TEMPORAL_CAPI_LIB%%|${TEMPORAL_CAPI_LIB}|' \
 		${FILESDIR}/temporal_capi-BUILD.gn.in > ${CARGO_WRKSRC}/BUILD.gn

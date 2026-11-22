@@ -4,7 +4,7 @@ PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	pizzamig@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GNU Project Debugger
 WWW=		https://www.gnu.org/software/gdb/
 
@@ -123,10 +123,6 @@ PLIST_SUB+=	LIBCXX="@comment "
 
 .if ! ${PORT_OPTIONS:MBUNDLED_ZLIB}
 EXCLUDE+=	zlib
-.endif
-
-.if ${ARCH} == amd64
-CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
 
 # powerpc64le switched long double to IEEE-128 in FreeBSD 16; apply the gdb

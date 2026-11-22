@@ -1,5 +1,5 @@
-TIMESTAMP = 1778993465
-SHA256 (go/databases_timescaledb-parallel-copy/timescaledb-parallel-copy-v0.13.0/v0.13.0.mod) = 1a3deb05be34e57f7f9e184db64b48da3500685296ba4f693b5ad898a6cece5f
-SIZE (go/databases_timescaledb-parallel-copy/timescaledb-parallel-copy-v0.13.0/v0.13.0.mod) = 3601
-SHA256 (go/databases_timescaledb-parallel-copy/timescaledb-parallel-copy-v0.13.0/v0.13.0.zip) = 9f852e1199f07f0ebffedc13c746bf25fb591c52733e146b767a2c32be0cc80e
-SIZE (go/databases_timescaledb-parallel-copy/timescaledb-parallel-copy-v0.13.0/v0.13.0.zip) = 86238
+TIMESTAMP = 1794456829
+SHA256 (go/databases_timescaledb-parallel-copy/timescaledb-parallel-copy-v0.13.2/v0.13.2.mod) = 8567863221c19ecdcf4dba19b0cf726f06c2b2472dd37019abd45be0129efdc0
+SIZE (go/databases_timescaledb-parallel-copy/timescaledb-parallel-copy-v0.13.2/v0.13.2.mod) = 3276
+SHA256 (go/databases_timescaledb-parallel-copy/timescaledb-parallel-copy-v0.13.2/v0.13.2.zip) = d0e51bfdd9a70cba992f035a0e8a525c23b37d22a3db209aca320ca6d18647d7
+SIZE (go/databases_timescaledb-parallel-copy/timescaledb-parallel-copy-v0.13.2/v0.13.2.zip) = 90517

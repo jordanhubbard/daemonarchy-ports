@@ -1,5 +1,5 @@
 PORTNAME=	cibuildwheel # doesn't fully support FreeBSD
-DISTVERSION=	4.2.1
+DISTVERSION=	4.3.5
 CATEGORIES=	devel science
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +13,10 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bashlex>=0.13:devel/py-bashlex@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bashlex>=0.14:devel/py-bashlex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bracex>0:textproc/py-bracex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}build>=1.0.0:devel/py-build@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}certifi>=2026.10.19:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dependency-groups>=1.2:devel/py-dependency-groups@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>0:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}humanize>0:devel/py-humanize@${PY_FLAVOR} \
@@ -45,6 +45,6 @@ TEST_ARGS=	--disable-plugin-autoload \
 post-patch:
 	@${RM} ${WRKSRC}/*/*.orig ${WRKSRC}/*/*/*.orig ${WRKSRC}/*/*/*/*.orig 2>/dev/null || ${TRUE}
 
-# tests as of 4.2.1: 851 passed, 71 skipped, 3 xfailed in 5.74s (unit_test only)
+# tests as of 4.3.5: 942 passed, 71 skipped, 3 xfailed in 9.25s (unit_test only)
 
 .include <bsd.port.mk>

@@ -1,7 +1,6 @@
 PORTNAME=	logstash
-DISTVERSION=	9.5.4
+DISTVERSION=	9.5.6
 DISTVERSIONSUFFIX=	-darwin-x86_64
-PORTREVISION=	3
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.elastic.co/downloads/logstash/ \
 		LOCAL/vvd/elastic
@@ -13,7 +12,7 @@ WWW=		https://www.elastic.co/products/logstash
 
 LICENSE=	APACHE20
 
-ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
 RUN_DEPENDS=	bash:shells/bash
 
@@ -31,7 +30,7 @@ EXTRACT_AFTER_ARGS=	--exclude jdk.app \
 			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/*-darwin \
 			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/*-linux \
 			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/x86-freebsd \
-			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/${ARCH:S|aarch64|x86_64|}-freebsd \
+			--exclude vendor/jruby/lib/ruby/stdlib/libfixposix/binary/${ARCH:Namd64:C|.+|x86_64|}-freebsd \
 			--no-same-owner --no-same-permissions
 
 NO_BUILD=	yes

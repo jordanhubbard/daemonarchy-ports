@@ -3,10 +3,14 @@ name: Desktop dependency architecture metadata
 on:
   pull_request:
     paths:
+      - 'Tools/daemonarchy/ci-apt.sh'
+      - 'Tools/daemonarchy/test_ci_apt.py'
       - 'x11-wm/omarchy/**'
       - 'x11-wm/daemonarchy/**'
       - 'x11-wm/hyprland/**'
+      - 'x11-toolkits/aquamarine/**'
       - 'Tools/daemonarchy/check-arch-deps.sh'
+      - 'Tools/daemonarchy/arch-deps-additions'
       - '.github/workflows/arch-desktop-deps.yml'
   workflow_dispatch:
 
@@ -37,16 +41,20 @@ jobs:
             /security/openssl*/version.mk
       - name: Stage the base revision of the three ports
         env:
-          BASE: ${{ github.event.pull_request.base.sha || 'HEAD~1' }}
+          BASE: ${{ github.event.pull_request.base.sha || 'main' }}
         run: |
-          git fetch --depth=1 --filter=blob:none origin "$BASE" 2>/dev/null || true
-          base=$(git rev-parse --verify "$BASE^{commit}")
+          git fetch --depth=1 --filter=blob:none origin "$BASE"
+          base=$(git rev-parse --verify 'FETCH_HEAD^{commit}')
           mkdir -p _base
           for port in x11-wm/omarchy x11-wm/daemonarchy x11-wm/hyprland; do
             mkdir -p "_base/$port"
             git archive "$base" "$port" | tar -x -C _base
           done
           echo "base $base"
+      - name: Bootstrap signed Ubuntu VM tools
+        run: |
+          python3 Tools/daemonarchy/test_ci_apt.py
+          bash Tools/daemonarchy/ci-apt.sh --no-install-recommends qemu-utils qemu-system-x86 ovmf
       - name: Evaluate metadata and portlint on hosted FreeBSD (no builds)
         uses: vmactions/freebsd-vm@c46abacb49f09938ca4e1702d15d836285d694cc
         with:

@@ -1,29 +1,47 @@
---- shell/plugins/menu/Menu.qml.orig	2026-10-02 07:08:52 UTC
+--- shell/plugins/menu/Menu.qml.orig
 +++ shell/plugins/menu/Menu.qml
-@@ -51,6 +51,10 @@ Item {
-   property string userMenuPath: Quickshell.env("HOME") + "/.config/omarchy/extensions/omarchy-menu.jsonc"
+@@ -41,6 +41,7 @@
+
+   function refresh() {
+     defaultMenuFile.reload()
++    vendorMenuFile.reload()
+     userMenuFile.reload()
+     languageFile.reload()
+     menuCatalogFile.reload()
+@@ -65,6 +66,10 @@
+   readonly property string languagePath: Quickshell.env("OMARCHY_LANGUAGE_FILE") || ((Quickshell.env("XDG_CONFIG_HOME") || (Quickshell.env("HOME") + "/.config")) + "/omarchy/language")
    property var defaultMenuItems: []
    property var userMenuItems: []
-+  // Entries other packages add to the menu (FreeBSD port addition): merged
-+  // after the defaults and before the user's own extension.
++  // Package entries precede user overrides and retain upstream translations.
 +  property string vendorMenuPath: "%%DATADIR%%/vendor/omarchy-menu.jsonc"
 +  property var vendorMenuItems: []
-   property bool opened: false
-   property string mode: "menu"
-   readonly property bool dmenuActive: mode === "select" || mode === "input"
-@@ -244,7 +248,7 @@ Item {
-   // on a per-key basis (so the user can tweak label/icon/action without
-   // re-declaring the whole row).
-   function rebuildItemsFromSources() {
--    var mergedMenu = MenuModel.mergeMenuSources(root.defaultMenuItems, root.userMenuItems)
-+    var mergedMenu = MenuModel.mergeMenuSources(root.defaultMenuItems.concat(root.vendorMenuItems), root.userMenuItems)
++  property bool vendorMenuSettled: false
+   // Whether each file has answered once, loaded or (the user's) missing. At
+   // startup both arrive separately, and evaluating guards for the first alone
+   // would run the whole batch twice; an open before then evaluates anyway.
+@@ -298,14 +303,14 @@
+     // "Go" label comes from the catalog's root entry; the merge only uses
+     // it for the injected row, never over a user-supplied heading.
+     var rootCatalog = root.menuCatalog.root
+-    var mergedMenu = MenuModel.mergeMenuSources(translatedDefaults, root.userMenuItems, rootCatalog && rootCatalog.label)
++    var mergedMenu = MenuModel.mergeMenuSources(translatedDefaults.concat(root.vendorMenuItems), root.userMenuItems, rootCatalog && rootCatalog.label)
      root.providerRevision += 1
      root.providersLoaded = ({})
      root.providerQueue = []
-@@ -925,6 +929,16 @@ Item {
-     watchChanges: true
+     root.items = mergedMenu.items
+     root.itemOrder = mergedMenu.itemOrder
+     root.rowsLoaded = true
+-    if (!skipGuards && root.defaultMenuSettled && root.userMenuSettled) root.evaluateGuards()
++    if (!skipGuards && root.defaultMenuSettled && root.vendorMenuSettled && root.userMenuSettled) root.evaluateGuards()
+     if (root.opened) {
+       root.rebuildDisplay()
+       if (!root.dmenuActive) {
+@@ -1153,7 +1158,17 @@
      printErrors: false
-     onLoaded: { root.defaultMenuItems = root.parseMenuJsonc(text()); root.rebuildItemsFromSources() }
+     onLoaded: { root.defaultMenuItems = MenuModel.keepMenuRows(root.defaultMenuItems, text(), true); root.defaultMenuSettled = true; root.rebuildItemsFromSources() }
+     // A user file that loaded first held its evaluation for this one.
+-    onLoadFailed: { root.defaultMenuSettled = true; if (root.userMenuSettled) root.evaluateGuards() }
++    onLoadFailed: { root.defaultMenuSettled = true; if (root.vendorMenuSettled && root.userMenuSettled) root.evaluateGuards() }
 +    onFileChanged: reload()
 +  }
 +
@@ -32,8 +50,8 @@
 +    path: root.vendorMenuPath
 +    watchChanges: true
 +    printErrors: false
-+    onLoaded: { root.vendorMenuItems = root.parseMenuJsonc(text()); root.rebuildItemsFromSources() }
-+    onLoadFailed: { root.vendorMenuItems = []; root.rebuildItemsFromSources() }
++    onLoaded: { root.vendorMenuItems = MenuModel.keepMenuRows(root.vendorMenuItems, text(), false); root.vendorMenuSettled = true; root.rebuildItemsFromSources() }
++    onLoadFailed: { root.vendorMenuItems = []; root.vendorMenuSettled = true; root.rebuildItemsFromSources() }
      onFileChanged: reload()
    }
- 
+

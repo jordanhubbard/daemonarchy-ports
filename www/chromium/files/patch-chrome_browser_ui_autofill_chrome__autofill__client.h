@@ -1,6 +1,6 @@
---- chrome/browser/ui/autofill/chrome_autofill_client.h.orig	2026-09-25 15:26:43 UTC
+--- chrome/browser/ui/autofill/chrome_autofill_client.h.orig	2026-11-11 14:44:17 UTC
 +++ chrome/browser/ui/autofill/chrome_autofill_client.h
-@@ -132,7 +132,7 @@ class ChromeAutofillClient : public ContentAutofillCli
+@@ -135,7 +135,7 @@ class ChromeAutofillClient : public ContentAutofillCli
    ~ChromeAutofillClient() override;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,16 +1,15 @@
---- hermes_cli/config_defaults.py.orig	2026-09-24 10:08:47 UTC
+--- hermes_cli/config_defaults.py.orig	2026-11-16 19:28:45 UTC
 +++ hermes_cli/config_defaults.py
-@@ -4,7 +4,9 @@ docs of config.yaml.
+@@ -4,6 +4,8 @@ docs of config.yaml.
  docs of config.yaml.
  """
  
 +import sys
- 
 +
- def _aux(timeout, *, reasoning_effort=True, **extra):
-     """Standard auxiliary-task model block (see DEFAULT_CONFIG["auxiliary"]).
+ from hermes_cli.config_defaults_auxiliary import _aux
+ from hermes_cli.config_defaults_voice import VOICE_DEFAULTS
  
-@@ -1761,8 +1763,10 @@ DEFAULT_CONFIG = {
+@@ -1738,8 +1740,10 @@ DEFAULT_CONFIG = {
          "acked_advisories": [],
          # Lazy-install opt-in backend packages from PyPI when a backend that needs them is first
          # enabled (e.g. `elevenlabs`). False = require explicit pip install for everything beyond

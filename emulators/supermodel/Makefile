@@ -1,7 +1,7 @@
 PORTNAME=	supermodel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3a-20260726
-DISTVERSIONSUFFIX=	-git-b7d8acd
+DISTVERSION=	0.4-20261107
+DISTVERSIONSUFFIX=	-git-ff92a99
 CATEGORIES=	emulators
 
 MAINTAINER=	owlandrews@protonmail.com
@@ -11,7 +11,7 @@ WWW=		https://github.com/trzy/Supermodel
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/Docs/LICENSE.txt
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 USES=		compiler gl gmake localbase:ldflags sdl
 

@@ -1,5 +1,5 @@
 PORTNAME=	librenms
-PORTVERSION=	26.9.1.1
+PORTVERSION=	26.11.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -20,16 +20,15 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		rrdtool:databases/rrdtool \
 		snmpget:net-mgmt/net-snmp
 
-USES=		cpe php python shebangfix sudo
+USES=		cpe php python shebangfix
 USE_GITHUB=	yes
 # php hash/json/openssl extension is required but it's statically linked in default php
 USE_PHP=	ctype curl dom fileinfo filter gd iconv ldap mbstring mysqli \
-		pdo pdo_mysql phar posix readline session simplexml snmp \
+		pcntl pdo pdo_mysql phar posix readline session simplexml snmp \
 		sockets tokenizer xml xmlwriter zip zlib
 USE_RC_SUBR=	librenms
 
-SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/paragonie/random_compat/build-phar.sh \
-		../librenms-vendor-${PORTVERSION}/bin/carbon \
+SHEBANG_FILES=	../librenms-vendor-${PORTVERSION}/bin/carbon \
 		../librenms-vendor-${PORTVERSION}/bin/patch-type-declarations \
 		../librenms-vendor-${PORTVERSION}/bin/php-parse \
 		../librenms-vendor-${PORTVERSION}/bin/psysh \
@@ -56,7 +55,7 @@ SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/paragonie/random_compat/buil
 		scripts/composer_wrapper.php \
 		scripts/dynamic_check_requirements.py scripts/gen_rancid.php \
 		scripts/gen_smokeping.php scripts/git-pre-commit-hook.sh \
-		scripts/github-remove scripts/ifAlias scripts/json-app-tool.php \
+		scripts/github-remove scripts/ifAlias \
 		scripts/Migration/Standard_Conversion/convert_no_xml.sh \
 		scripts/Migration/Standard_Conversion/destwork_no_xml.sh \
 		scripts/Migration/Standard_Conversion/mkdir.sh \
@@ -119,7 +118,7 @@ _SCRIPT_FILES=		daily.sh lnms
 # _RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-_RELEASE_TIMESTAMP=	1790098407
+_RELEASE_TIMESTAMP=	1792596286
 _ROOT_DIRS=		LibreNMS app bootstrap config database doc html \
 			includes lang licenses mibs misc resources routes \
 			scripts tests
@@ -131,10 +130,9 @@ _STORAGE_DIRS=	app app/public debugbar framework framework/cache \
 		framework/cache/data framework/sessions framework/testing \
 		framework/views logs
 # these are directories which require a generic @DIR entry in pkg-plist
-_OTHER_DIRS=	database/seeders/config html/plugins html/js/lang \
+_OTHER_DIRS=	database/seeders/config html/plugins \
 		resources/views/overview/custom tests/Browser/console \
 		tests/Browser/source tests/Browser/screenshots \
-		vendor/librenms/laravel-vue-i18n-generator/tests/output \
 		vendor/symfony/mime/Resources/bin \
 		vendor/symfony/string/Resources/bin
 
@@ -172,6 +170,9 @@ do-install:
 # avoid: Error: lnms file is owned by root, it should be owned and ran by a non-privileged user
 	${ECHO_CMD} "@(www,wheel,0555) www/${PORTNAME}/lnms" >> ${TMPPLIST}
 
+# despite removing, this needs to be here.
+#	${ECHO_CMD} "@dir %%WWWDIR%%/html/js/lang " >> ${TMPPLIST}
+
 	${MKDIR} ${STAGEDIR}/${WWWDIR}/vendor
 	(cd ${WRKDIR}/${PORTNAME}-vendor-${PORTVERSION} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/vendor)
 
@@ -180,10 +181,6 @@ do-install:
 # That causese problems when the code doesn't do that update.
 	${MV} ${STAGEDIR}/${WWWDIR}/vendor/bootstrap-cache/* ${STAGEDIR}/${WWWDIR}/bootstrap/cache/
 	${RM} -rf ${STAGEDIR}/${WWWDIR}/vendor/bootstrap-cache
-
-# similarly with html/js/lang
-	${MV} ${STAGEDIR}/${WWWDIR}/vendor/html-js-lang/* ${STAGEDIR}/${WWWDIR}/html/js/lang/
-	${RM} -rf ${STAGEDIR}/${WWWDIR}/vendor/html-js-lang
 
 # Files in scripts dir should be executable
 	${FIND} ${STAGEDIR}/${WWWDIR}/scripts -type f -exec ${CHMOD} +x {} \;

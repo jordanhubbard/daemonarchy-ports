@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/graphics/canvas_2d_resource_provider.cc.orig	2026-09-25 15:26:43 UTC
+--- third_party/blink/renderer/platform/graphics/canvas_2d_resource_provider.cc.orig	2026-11-11 14:44:17 UTC
 +++ third_party/blink/renderer/platform/graphics/canvas_2d_resource_provider.cc
-@@ -792,7 +792,7 @@ Canvas2DResourceProvider::CreateWithClear(
+@@ -664,7 +664,7 @@ Canvas2DResourceProvider::CreateWithClear(
            gpu::SHARED_IMAGE_USAGE_CONCURRENT_READ_WRITE);
  #endif
  

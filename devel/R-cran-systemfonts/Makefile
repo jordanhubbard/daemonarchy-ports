@@ -1,5 +1,5 @@
 PORTNAME=	systemfonts
-DISTVERSION=	1.3.2
+DISTVERSION=	1.3.3
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -13,7 +13,6 @@ CRAN_DEPENDS=	R-cran-base64enc>0:converters/R-cran-base64enc \
 		R-cran-cpp11>=0.2.1:devel/R-cran-cpp11 \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
 		R-cran-lifecycle>0:devel/R-cran-lifecycle
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	${CRAN_DEPENDS}
@@ -23,7 +22,7 @@ TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr \
 		R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-ragg>0:graphics/R-cran-ragg \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
-		R-cran-testthat>=2.1.0:devel/R-cran-testthat \
+		R-cran-testthat>=3.2.0:devel/R-cran-testthat \
 		xorg-fonts-truetype>0:x11-fonts/xorg-fonts-truetype
 
 USES=		cran:auto-plist,compiles pkgconfig

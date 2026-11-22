@@ -12,8 +12,8 @@ WWW=		https://github.com/freebsd/drm-kmod/
 LICENSE=	BSD2CLAUSE MIT GPLv2
 LICENSE_COMB=	multi
 
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64
+ONLY_FOR_ARCHS=	amd64 aarch64
+ONLY_FOR_ARCHS_REASON=	the full KMS set (amdgpu, i915, radeon) is only supported on amd64; aarch64 carries the VirtIO GPU stack for QEMU and UTM guests
 
 CONFLICTS_INSTALL=	drm-latest-kmod \
 			drm-515-kmod \
@@ -28,6 +28,18 @@ GH_PROJECT=	drm-kmod
 GH_TAGNAME=	${DRM_KMOD_GH_TAGNAME}
 
 .include <bsd.port.options.mk>
+
+# amd64 builds every module. aarch64 builds only the core and the VirtIO GPU
+# driver (a KMS device for QEMU/UTM guests): there is no aarch64 amdgpu, radeon
+# or i915 here, and the plist comments those three out.
+.if ${ARCH} == amd64
+PLIST_SUB+=	FULLKMS=""
+.else
+PLIST_SUB+=	FULLKMS="@comment "
+MAKE_ARGS+=	KMODS="dmabuf ttm drm virtio"
+# Software-rendered desktops (Mesa kms_swrast) create dumb buffers on the render node:
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-drm-ioctl-dumb-render
+.endif
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME} OPSYS=${OPSYS} OSREL=${OSREL}

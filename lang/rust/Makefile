@@ -1,6 +1,6 @@
 PORTNAME=	rust
 PORTVERSION?=	1.99.1
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://dev-static.rust-lang.org/dist/:src \
@@ -28,9 +28,11 @@ ONLY_FOR_ARCHS_REASON?=	requires prebuilt bootstrap compiler
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cmake:indirect cpe ninja:build pkgconfig python:build ssl tar:xz
+USES=		cmake:indirect cpe ninja:build pkgconfig python:build shebangfix ssl tar:xz
 
 CPE_VENDOR=	rust-lang
+
+SHEBANG_FILES=	compiler/rustc_codegen_cranelift/.github/scripts/free-disk-space.sh
 
 MAKE_ENV=	DESTDIR=${STAGEDIR} \
 		LIBGIT2_NO_PKG_CONFIG=1 \
@@ -96,12 +98,25 @@ _COMPONENTS+=		cargo-${_PACKAGE_VERS}-${_RUST_TARGET} \
 			rustc-${_PACKAGE_VERS}-${_RUST_TARGET} \
 			rustfmt-${_PACKAGE_VERS}-${_RUST_TARGET} \
 			rust-analysis-${_PACKAGE_VERS}-${_RUST_TARGET} \
-			rust-std-${_PACKAGE_VERS}-${_RUST_TARGET}
+			rust-std-${_PACKAGE_VERS}-${_RUST_TARGET} \
+			rustc-dev-${_PACKAGE_VERS}-${_RUST_TARGET}
 
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} != FreeBSD
 IGNORE=		is only for FreeBSD
+.endif
+
+# cc-rs appends the target specific CFLAGS_<target> to CFLAGS, it does not
+# replace them.  Pass the flags per target only, so that the -march/-mtune/
+# -mcpu that CPUTYPE adds for the host do not reach the C code built for
+# wasm32 (compiler-builtins), where clang rejects them.
+_RUST_CC_ENV=	CFLAGS= CXXFLAGS= \
+		CFLAGS_${_RUST_TARGET:S/-/_/g}="${CFLAGS}" \
+		CXXFLAGS_${_RUST_TARGET:S/-/_/g}="${CXXFLAGS}"
+.if ${PORT_OPTIONS:MWASM}
+_RUST_CC_ENV+=	CFLAGS_wasm32_unknown_unknown="${CFLAGS:N-march=*:N-mtune=*:N-mcpu=*}" \
+		CXXFLAGS_wasm32_unknown_unknown="${CXXFLAGS:N-march=*:N-mtune=*:N-mcpu=*}"
 .endif
 
 .if ${ARCH} == powerpc
@@ -116,12 +131,10 @@ MAKE_ENV+=	RUST_BACKTRACE=1
 MAKE_ENV+=	RUST_LIB_BACKTRACE=0
 .endif
 
-# per https://rust-lang.github.io/rustup/concepts/components.html
-# rustc-dev and miri are only useful on nightly
+# miri and cargo-miri are for dev/nightly channels
 .if defined(NIGHTLY_DATE)
 _RUST_TOOLS+=	miri cargo-miri
-_COMPONENTS+=	rustc-dev-${_PACKAGE_VERS}-${_RUST_TARGET} \
-		miri-${_PACKAGE_VERS}-${_RUST_TARGET}
+_COMPONENTS+=	miri-${_PACKAGE_VERS}-${_RUST_TARGET}
 .endif
 
 .if ${PORT_OPTIONS:MWASM} && ${PORT_OPTIONS:MDOCS}
@@ -256,7 +269,7 @@ do-configure:
 
 do-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} x.py dist --jobs=${MAKE_JOBS_NUMBER}
+		${SETENV} ${MAKE_ENV} ${_RUST_CC_ENV} ${PYTHON_CMD} x.py dist --jobs=${MAKE_JOBS_NUMBER}
 
 do-install:
 	${RM} -r ${WRKDIR}/_extractdist
@@ -283,7 +296,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/rustlib/uninstall.sh
 	@${FIND} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/lib \
 		${STAGEDIR}${PREFIX}/libexec -exec ${FILE} -i {} + | \
-		${AWK} -F: '/executable|sharedlib/ { print $$1 }' | ${XARGS} ${STRIP_CMD}
+		${AWK} -F: '/executable|sharedlib/ { print $$1 }' | ${XARGS} ${STRIP_CMD} --strip-unneeded
+
 	@${FIND} ${STAGEDIR}${PREFIX} -not -type d | \
 		${SED} -E -e 's,^${STAGEDIR}${PREFIX}/,,' \
 			-e 's,(share/man/man[1-9]/.*\.[0-9]),\1.gz,' >> ${TMPPLIST}
@@ -302,6 +316,6 @@ post-install-SOURCES-on:
 # Note that make test does not work when rust is already installed.
 do-test:
 	@cd ${WRKSRC} && \
-		${SETENV} ${TEST_ENV} ${PYTHON_CMD} x.py test --jobs=${MAKE_JOBS_NUMBER}
+		${SETENV} ${TEST_ENV} ${_RUST_CC_ENV} ${PYTHON_CMD} x.py test --jobs=${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.post.mk>

@@ -126,6 +126,7 @@
     SUBDIR += dtmfdial
     SUBDIR += dumb
     SUBDIR += dumb-allegro
+    SUBDIR += easyeffects
     SUBDIR += easytag
     SUBDIR += eawpats
     SUBDIR += eawplus
@@ -432,6 +433,7 @@
     SUBDIR += liquidsfz
     SUBDIR += listener
     SUBDIR += littlefly-lv2
+    SUBDIR += lmms
     SUBDIR += lollypop
     SUBDIR += lpcnet
     SUBDIR += lsp-plugins-lv2
@@ -450,6 +452,7 @@
     SUBDIR += malint
     SUBDIR += mamba
     SUBDIR += maolan
+    SUBDIR += maolan-plugins
     SUBDIR += mate-media
     SUBDIR += mclk-lv2
     SUBDIR += mda-lv2
@@ -607,6 +610,9 @@
     SUBDIR += plasma6-ocean-sound-theme
     SUBDIR += plasma6-oxygen-sounds
     SUBDIR += plasma6-plasma-pa
+    SUBDIR += plasma6lts-kpipewire
+    SUBDIR += plasma6lts-ocean-sound-theme
+    SUBDIR += plasma6lts-plasma-pa
     SUBDIR += playgsf
     SUBDIR += playmidi
     SUBDIR += playumidi

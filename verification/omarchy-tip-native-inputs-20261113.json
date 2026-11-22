@@ -1,0 +1,91 @@
+{
+  "schema": "daemonarchy/native-omarchy-inputs@1",
+  "observed_utc": "2026-11-13T16:26:15.224780+00:00",
+  "ports_parent": "2d06d3126e8b374f4524fae2f5b8bce6529e6b41",
+  "owned_input_blobs": {
+    "x11-wm/omarchy/Makefile": "49a2e9eb9d2fca3ab9b8c38ad2b6974b7f1a68ff",
+    "x11-wm/omarchy/distinfo": "a20bdb04cfadb583e8f119a797c969f292a85d6e",
+    "x11-wm/omarchy/pkg-plist": "621741d3a9c7b11fa23e348f18e65f868ec35095"
+  },
+  "selected_omarchy": {
+    "version": "4.5.0.20261113",
+    "revision": "eb1bae39bc2a2170c052548669e53db6775e521e",
+    "tree": "ca2b638a94774d2095acc06b4603fdb32afeb561",
+    "archive_sha256": "e2e1db01012d65b39e9f660bc943974d47faed47ca0346542269bd4363e66afc",
+    "archive_bytes": 181296787,
+    "git_files": 5425,
+    "archive_files": 5425,
+    "missing": [],
+    "extra": [],
+    "mode_or_content_mismatches": []
+  },
+  "compatibility_revision": "648954b3a7bba9872f899e1afffda527f014dfd9",
+  "native_controls": {
+    "platform": "FreeBSD 16.0-CURRENT amd64",
+    "kernel_user_version": "1600031",
+    "pkg_version": "2.9.0",
+    "python": "3.12.15",
+    "original_targets": {
+      "checksum": 0,
+      "extract": 0
+    },
+    "default_options_retained": true,
+    "installed_package_inventory_unchanged": true,
+    "metadata_preparation": "Initial view omitted Perl/Python version providers; original lang/perl5.42 and lang/python312 inputs from the same ports parent were then added. Initial failed evidence retained.",
+    "patch_adaptation": {
+      "source_revision": "e8c7a0a6460a8aeca41726600d1f567b9e99a8a0",
+      "source_tree_matches_selected_revision": true,
+      "original_patches": 12,
+      "patch_exits": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "maximum_fuzz": 0,
+      "compatibility_rewrite_exit": 0,
+      "literal_install_sources_missing": [],
+      "scope": "Separate private source view; not original make patch/package or GUI acceptance."
+    },
+    "private_shell": {
+      "package": "bash-static-5.3.20",
+      "package_sha256": "a1c5c2a58243aa65f0cec4924522df18472afef79c490f7a42a86d2499b48a68",
+      "delivery": "Fetched with repository refresh disabled; extracted privately without installation.",
+      "source_build_provenance": "unknown; not admitted as a canonical SDK product"
+    }
+  },
+  "plist_projection": {
+    "added": 82,
+    "removed": 26,
+    "configuration_sample_policy_retained": true,
+    "scope": "Native adapted source inventory and original install mappings. Original native stage/check-plist/package still required."
+  },
+  "private_log_sha256": {
+    "omarchy-native-checksum-r2.stdout": "afebdaac52dcb42583bb6288e8889cb7e92cc5598eb1db2fd25aefc9c4c7c1c0",
+    "omarchy-native-extract.stdout": "f45370a3ce573504a47589f56749bcaf958527f77d9819fef236940ed8d10f71",
+    "omarchy-native-adaptation.stdout": "376ac274824efa5e1913d2ab78f89f245008c4e68e041a9e6e320e189db0e6c2"
+  },
+  "scope": {
+    "native_package_qualified": false,
+    "native_desktop_qualified": false,
+    "current_dependency_closure_qualified": false,
+    "canonical_component_execution": false,
+    "sdk_provenance_qualified": false,
+    "lifecycle_receipt": false,
+    "published_release_changed": false
+  },
+  "pending": [
+    "Original native patch/build/stage/check-plist/package/install and package checksums.",
+    "Matched CURRENT package, library and kernel-module closure.",
+    "Native desktop/login/menu/service/application and update/rollback qualification.",
+    "Complete per-unit Component/SDK/lifecycle evidence."
+  ]
+}

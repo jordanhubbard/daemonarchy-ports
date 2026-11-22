@@ -1,0 +1,20 @@
+The native compiler target is needed for AVX512 detection only. When AVX512
+is explicitly disabled, use the compiler's baseline target for the host probe
+and retain OpenBLAS's runtime CPUID detection. In particular, Clang 21 can
+resolve -march=native to the unsupported 32-bit athlon-xp target under QEMU
+TCG's max CPU on an amd64 guest.
+
+--- Makefile.system.orig
++++ Makefile.system
+@@ -206,9 +206,11 @@
+ # On x86_64 build getarch with march=native unless the compiler is PGI. This is required to detect AVX512 support in getarch.
+ ifeq ($(HOSTARCH), x86_64)
+ ifeq ($(findstring pgcc,$(HOSTCC))$(findstring nvc,$(HOSTCC)),)
++ifneq ($(NO_AVX512), 1)
+ GETARCH_FLAGS += -march=native
+ endif
+ endif
++endif
+ 
+ ifdef INTERFACE64
+ ifneq ($(INTERFACE64), 0)

@@ -1,7 +1,5 @@
 PORTNAME=	omarchy
-DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.4
-PORTREVISION=	27
+DISTVERSION=	4.5.0.20261119
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -48,13 +46,18 @@ RUN_DEPENDS=	Hyprland:x11-wm/hyprland \
 
 USES=		fonts perl5 python:run shebangfix
 USE_GITHUB=	yes
-GH_ACCOUNT=	basecamp
+GH_ACCOUNT=	jordanhubbard
+# Reviewed dated snapshot after v4.5.0; retain the exact owned integration.
+GH_TAGNAME=	0640b8c1c761fd962298907712596c1197c13a29
 # The FreeBSD compatibility layer: freebsdize, compat tools, FreeBSD commands.
-GH_TUPLE=	jordanhubbard:omarchy-freebsd:3e8359b47c28a28fe9fa3b16d5fa27603c9864b6:freebsd
+GH_TUPLE=	jordanhubbard:omarchy-freebsd:029e0eba6ff69392e416abb5bbd58206d4d20443:freebsd
 USE_PERL5=	run
 
 SHEBANG_FILES=	bin/* config/omarchy/hooks/*/* default/systemd/system-sleep/* \
-		install/user/first-run/* shell/plugins/*/*.sh shell/services/*.sh
+		install/user/first-run/* install/provisioning/console-font.py \
+		default/agents/skills/omarchy-app/scaffold \
+		shell/plugins/*/*.sh shell/services/*.sh
+SHEBANG_GLOB=	*.sh
 
 FONTNAME=	omarchy
 SUB_FILES=	pkg-message
@@ -62,15 +65,17 @@ SUB_LIST=	DATADIR=${DATADIR} PREFIX=${PREFIX}
 
 # GNU userland that Omarchy's scripts are written against, linked under their
 # plain names into a private directory on the scripts' PATH.
+# FreeBSD coreutils does not install gkill/guptime. Omarchy's signal operations
+# use the shell builtin and its FreeBSD uptime display uses native boot-time data.
 GNU_COREUTILS=	b2sum base32 base64 basename basenc cat chgrp chmod chown \
 		chroot cksum comm cp csplit cut date dd df dir dircolors dirname \
 		du echo env expand expr factor false fmt fold groups head hostid \
-		id install join kill link ln logname ls md5sum mkdir mkfifo mknod \
+		id install join link ln logname ls md5sum mkdir mkfifo mknod \
 		mktemp mv nice nl nohup nproc numfmt od paste pathchk pinky pr \
 		printenv printf ptx pwd readlink realpath rm rmdir seq sha1sum \
 		sha224sum sha256sum sha384sum sha512sum shred shuf sleep sort \
 		split stdbuf stty sum sync tac tail tee test timeout touch tr \
-		true truncate tsort tty uname unexpand uniq unlink uptime users \
+		true truncate tsort tty uname unexpand uniq unlink users \
 		vdir wc who whoami yes
 GNU_OTHER=	stat:gnustat awk:gawk egrep:gegrep fgrep:gfgrep find:gfind getopt:getopt \
 		grep:ggrep sed:gsed xargs:gxargs
@@ -79,7 +84,7 @@ COMPAT_TOOLS=	brightnessctl journalctl powerprofilesctl setpriv systemctl \
 		systemd-cat systemd-inhibit systemd-run timedatectl uwsm uwsm-app
 
 # Directories copied into ${DATADIR} as-is (after the FreeBSD adjustments).
-DATA_DIRS=	applications config default install migrations shell themes
+DATA_DIRS=	applications config default icons install migrations shell themes
 
 # Paths the Arch package uses that live under ${PREFIX} on FreeBSD. (The
 # rewrite below also maps Arch's chromium.desktop to www/chromium's
@@ -146,7 +151,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/freebsd/patches ${STAGEDIR}${DATADIR}/freebsd/bin
 	${INSTALL_DATA} ${FILESDIR}/patch-* ${STAGEDIR}${DATADIR}/freebsd/patches
 	${INSTALL_DATA} ${WRKSRC_freebsd}/freebsd-bin/* ${STAGEDIR}${DATADIR}/freebsd/bin
-	${REINPLACE_CMD} -E -e '1s@^#!(/usr/bin/env bash|/bin/bash)$$@#!${LOCALBASE}/bin/bash@' \
+	${REINPLACE_CMD} -E -e '1s@^#!(/usr/bin/env bash|/bin/bash)([[:space:]]|$$)@#!${LOCALBASE}/bin/bash\2@' \
 		-e '1s@^#!/usr/bin/env python3$$@#!${PYTHON_CMD}@' \
 		${STAGEDIR}${DATADIR}/freebsd/bin/*
 	${RM} ${STAGEDIR}${DATADIR}/freebsd/bin/*.bak

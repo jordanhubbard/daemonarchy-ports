@@ -1,4 +1,4 @@
---- ui/views/focus/focus_manager.cc.orig	2026-09-25 15:26:43 UTC
+--- ui/views/focus/focus_manager.cc.orig	2026-11-11 14:44:17 UTC
 +++ ui/views/focus/focus_manager.cc
 @@ -643,7 +643,7 @@ bool FocusManager::RedirectAcceleratorToParentWidget(
      return false;

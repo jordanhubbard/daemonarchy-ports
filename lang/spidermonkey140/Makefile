@@ -1,11 +1,14 @@
 PORTNAME=	spidermonkey
 DISTVERSION=	140.13.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
 		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build1/source
 PKGNAMESUFFIX=	${SP_VER}
 DISTNAME=	firefox-${DISTVERSION}esr.source
+
+PATCH_SITES=	https://github.com/mozilla-firefox/firefox/commit/
+PATCHFILES=	4f531ca86d24be5d4de673f6e652ed899151d20c.patch?full_index=1:-p1
 
 MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	Standalone JavaScript based from Mozilla 140-esr
@@ -52,10 +55,6 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 PLIST_SUB=	SP_VER=${SP_VER}
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64
-CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-.endif
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 CONFIGURE_ENV+=	LLVM_CONFIG=${LLVM_CONFIG} \

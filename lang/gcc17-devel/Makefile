@@ -1,5 +1,5 @@
 PORTNAME=	gcc
-PORTVERSION=	17.0.0.s20261004
+PORTVERSION=	17.0.0.s20261101
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -76,10 +76,7 @@ GRAPHITE_CONFIGURE_WITH+=      isl
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
-
-.elif ${ARCH} == powerpc64
+.if ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	--with-abi=elfv2
 .endif
 
@@ -138,12 +135,10 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgccjit \
-		gcc${SUFFIX}/libgomp
+		gcc${SUFFIX}/libgomp \
+		gcc${SUFFIX}/libitm
 .if ${ARCH} == amd64 || ${ARCH} == i386
 INFO+=		gcc${SUFFIX}/libquadmath
-.endif
-.if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == aarch64 || ${ARCH:Marmv?}
-INFO+=		gcc${SUFFIX}/libitm
 .endif
 SUB_FILES=	pkg-message
 SUB_LIST+=	TARGLIB=${TARGLIB}

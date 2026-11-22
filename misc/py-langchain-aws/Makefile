@@ -1,5 +1,5 @@
 PORTNAME=	langchain-aws
-DISTVERSION=	1.8.1
+DISTVERSION=	1.9.3
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.43.64:www/py-boto3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.6.7:misc/py-langchain-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain-core>=1.7.6:misc/py-langchain-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.0.0:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.10.6:devel/py-pydantic2@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anthropic>0:misc/py-anthropic@${PY_FLAVOR} \
@@ -36,7 +36,12 @@ NO_ARCH=	yes
 TEST_WRKSRC=	${WRKSRC}/tests/unit_tests
 # botocore version drift and optional aws_bedrock_token_generator tests fail
 # in the package build environment.
-TEST_ARGS=	--deselect=tests/unit_tests/chat_models/test_bedrock_converse.py::test__bedrock_content_block_keys_match_botocore \
+TEST_ARGS=	--disable-plugin-autoload \
+		-p pytest_asyncio.plugin \
+		-p pytest_benchmark.plugin \
+		-p pytest_recording.plugin \
+		-p syrupy \
+		--deselect=tests/unit_tests/chat_models/test_bedrock_converse.py::test__bedrock_content_block_keys_match_botocore \
 		--deselect=tests/unit_tests/chat_models/test_openai.py::test_installed_provider_mints_token_when_called \
 		--deselect=tests/unit_tests/test_utils.py::test_bedrock_api_key_provider_mandatory_failure_raises \
 		--deselect=tests/unit_tests/test_utils.py::test_bedrock_api_key_provider_default_chain_when_unresolvable \
@@ -47,6 +52,6 @@ TEST_ARGS=	--deselect=tests/unit_tests/chat_models/test_bedrock_converse.py::tes
 		--deselect=tests/unit_tests/test_utils.py::test_bedrock_api_key_provider_profile_resolution \
 		--deselect=tests/unit_tests/test_utils.py::test_bedrock_api_key_provider_generates_and_caches
 
-# tests as of 1.8.1: 1413 passed, 6 skipped, 10 deselected, 1 xpassed, 6 warnings
+# tests as of 1.9.3: 1558 passed, 6 skipped, 10 deselected, 1 xpassed, 5 warnings
 
 .include <bsd.port.mk>

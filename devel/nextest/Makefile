@@ -1,7 +1,6 @@
 PORTNAME=	nextest
 DISTVERSIONPREFIX=	cargo-nextest-
-DISTVERSION=	0.9.148
-PORTREVISION=	1
+DISTVERSION=	0.9.152
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -52,6 +51,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		backtrace-ext-0.2.1 \
 		base64-0.21.7 \
 		base64-0.22.1 \
+		base64-0.23.1 \
 		base64ct-1.7.3 \
 		bit-set-0.5.3 \
 		bit-set-0.8.0 \
@@ -64,6 +64,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		borsh-1.5.7 \
 		bstr-1.13.1 \
 		bumpalo-3.19.0 \
+		byte-wrapper-0.2.1 \
 		bytecount-0.6.9 \
 		bytemuck-1.24.0 \
 		byteorder-1.5.0 \
@@ -76,7 +77,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		cargo-platform-0.3.0 \
 		cargo_metadata-0.23.1 \
 		cc-1.2.30 \
-		cfg-expr-0.20.9 \
+		cfg-expr-0.20.10 \
 		cfg-if-1.0.5 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.10.2 \
@@ -125,7 +126,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		der-0.8.2 \
 		deranged-0.5.8 \
 		derive-ex-0.1.8 \
-		derive-where-1.6.1 \
+		derive-where-1.7.0 \
 		derive_more-2.0.1 \
 		derive_more-impl-2.0.1 \
 		dialoguer-0.12.0 \
@@ -172,10 +173,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.2 \
-		fraction-0.15.4 \
-		fs-err-3.3.1 \
+		fraction-0.17.0 \
+		fs-err-3.3.2 \
 		fs_extra-1.3.0 \
-		future-queue-0.4.0 \
+		future-queue-0.4.1 \
 		futures-0.3.34 \
 		futures-channel-0.3.34 \
 		futures-core-0.3.34 \
@@ -190,7 +191,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		getrandom-0.3.4 \
 		getrandom-0.4.2 \
 		gimli-0.31.1 \
-		globset-0.4.20 \
+		globset-0.4.21 \
 		globwalk-0.9.1 \
 		goblin-0.10.3 \
 		guppy-0.19.1 \
@@ -226,7 +227,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		indenter-0.3.4 \
 		indexmap-2.14.2 \
 		indicatif-0.18.6 \
-		indoc-2.0.7 \
+		indoc-2.0.8 \
 		insta-1.48.0 \
 		ipnet-2.12.0 \
 		is_ci-1.2.0 \
@@ -240,13 +241,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		jni-sys-macros-0.4.1 \
 		jobserver-0.1.33 \
 		js-sys-0.3.91 \
-		jsonschema-0.49.9 \
-		jsonschema-regex-0.49.9 \
-		jsonschema-value-0.49.9 \
+		jsonschema-0.58.6 \
+		jsonschema-regex-0.58.6 \
+		jsonschema-value-0.58.6 \
 		lab-0.11.0 \
 		lazy_static-1.5.0 \
 		leb128fmt-0.1.0 \
-		libc-0.2.189 \
+		libc-0.2.191 \
 		libredox-0.1.24 \
 		libtest-mimic-0.8.2 \
 		linux-raw-sys-0.4.15 \
@@ -271,7 +272,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		mio-1.2.0 \
-		mukti-metadata-0.3.0 \
+		mukti-metadata-0.4.0 \
 		native-tls-0.2.14 \
 		nested-0.1.1 \
 		newtype-uuid-1.4.0 \
@@ -280,7 +281,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		nohash-hasher-0.2.0 \
 		nom-7.1.3 \
 		num-0.4.3 \
-		num-bigint-0.4.6 \
+		num-bigint-0.4.8 \
 		num-cmp-0.1.0 \
 		num-complex-0.4.6 \
 		num-conv-0.2.0 \
@@ -289,7 +290,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		num-iter-0.1.45 \
 		num-rational-0.4.2 \
 		num-traits-0.2.19 \
-		num_threads-0.1.7 \
+		num_threads-0.1.8 \
 		objc2-core-foundation-0.3.2 \
 		objc2-system-configuration-0.3.2 \
 		object-0.36.7 \
@@ -304,7 +305,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ordered-float-4.6.0 \
 		os_pipe-1.2.2 \
 		outref-0.5.2 \
-		owo-colors-4.3.0 \
+		owo-colors-4.4.0 \
 		parking_lot-0.12.4 \
 		parking_lot_core-0.9.11 \
 		pathdiff-0.2.3 \
@@ -337,7 +338,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		prost-0.14.1 \
 		prost-derive-0.14.1 \
 		prost-types-0.14.1 \
-		pulldown-cmark-0.13.4 \
+		pulldown-cmark-0.13.6 \
 		quick-error-1.2.3 \
 		quick-junit-0.8.0 \
 		quick-xml-0.38.4 \
@@ -347,7 +348,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		r-efi-6.0.0 \
 		rand-0.8.6 \
 		rand-0.9.4 \
-		rand-0.10.2 \
+		rand-0.10.3 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
 		rand_core-0.9.3 \
@@ -359,7 +360,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
-		referencing-0.49.9 \
+		referencing-0.58.6 \
 		regex-1.13.1 \
 		regex-automata-0.4.18 \
 		regex-syntax-0.8.11 \
@@ -370,19 +371,19 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
 		rustix-1.0.7 \
-		rustls-0.23.45 \
+		rustls-0.23.46 \
 		rustls-native-certs-0.8.3 \
 		rustls-pki-types-1.12.0 \
 		rustls-platform-verifier-0.7.0 \
 		rustls-platform-verifier-android-0.1.1 \
-		rustls-webpki-0.103.15 \
+		rustls-webpki-0.103.16 \
 		rustversion-1.0.22 \
 		rusty-fork-0.3.0 \
 		same-file-1.0.6 \
 		sapling-streampager-0.12.0 \
 		schannel-0.1.27 \
-		schemars-1.2.2 \
-		schemars_derive-1.2.2 \
+		schemars-1.2.3 \
+		schemars_derive-1.2.3 \
 		scopeguard-1.2.0 \
 		scroll-0.13.0 \
 		scroll_derive-0.13.1 \
@@ -397,9 +398,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde_derive-1.0.229 \
 		serde_derive_internals-0.30.0 \
 		serde_ignored-0.1.14 \
-		serde_json-1.0.151 \
+		serde_json-1.0.154 \
 		serde_path_to_error-0.1.20 \
-		serde_spanned-1.1.1 \
+		serde_spanned-1.1.2 \
 		serde_tokenstream-0.2.2 \
 		sha2-0.10.9 \
 		sharded-slab-0.1.7 \
@@ -417,8 +418,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		similar-2.7.0 \
 		siphasher-1.0.1 \
 		slab-0.4.11 \
-		smallvec-1.16.2 \
-		smol_str-0.3.2 \
+		smallvec-1.16.4 \
+		smol_str-0.3.7 \
 		socket2-0.5.10 \
 		socket2-0.6.3 \
 		socks-0.3.4 \
@@ -442,7 +443,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		synoptic-2.2.9 \
 		tar-0.4.46 \
 		target-lexicon-0.13.5 \
-		target-spec-3.7.0 \
+		target-spec-3.8.0 \
 		target-spec-miette-0.4.8 \
 		tempfile-3.20.0 \
 		terminal_size-0.4.4 \
@@ -455,9 +456,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		test-strategy-0.4.5 \
 		textwrap-0.16.2 \
 		thiserror-1.0.69 \
-		thiserror-2.0.20 \
+		thiserror-2.0.21 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.20 \
+		thiserror-impl-2.0.21 \
 		thread-id-5.0.0 \
 		thread_local-1.1.8 \
 		time-0.3.47 \
@@ -465,16 +466,16 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		time-macros-0.2.27 \
 		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.53.1 \
+		tokio-1.54.1 \
 		tokio-macros-2.7.0 \
 		tokio-rustls-0.26.4 \
 		tokio-stream-0.1.19 \
 		tokio-util-0.7.15 \
-		toml-1.1.6+spec-1.1.0 \
-		toml_datetime-1.1.1+spec-1.1.0 \
-		toml_edit-0.25.15+spec-1.1.0 \
-		toml_parser-1.1.3+spec-1.1.0 \
-		toml_writer-1.1.2+spec-1.1.0 \
+		toml-1.1.8+spec-1.1.0 \
+		toml_datetime-1.1.2+spec-1.1.0 \
+		toml_edit-0.25.17+spec-1.1.0 \
+		toml_parser-1.1.5+spec-1.1.0 \
+		toml_writer-1.1.3+spec-1.1.0 \
 		tonic-0.14.2 \
 		tonic-prost-0.14.2 \
 		tower-0.5.2 \
@@ -494,17 +495,17 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		unarray-0.1.4 \
 		unicase-2.9.0 \
 		unicode-general-category-1.1.0 \
-		unicode-ident-1.0.24 \
+		unicode-ident-1.0.27 \
 		unicode-linebreak-0.1.5 \
-		unicode-normalization-0.1.25 \
+		unicode-normalization-0.1.26 \
 		unicode-segmentation-1.12.0 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
 		unit-prefix-0.5.1 \
 		untrusted-0.9.0 \
-		ureq-3.3.0 \
-		ureq-proto-0.6.0 \
+		ureq-3.4.2 \
+		ureq-proto-0.6.5 \
 		url-2.5.7 \
 		urlencoding-2.1.3 \
 		usdt-0.6.0 \
@@ -542,7 +543,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		web-sys-0.3.91 \
 		web-time-1.1.0 \
 		webpki-root-certs-1.0.6 \
-		webpki-roots-1.0.0 \
+		webpki-roots-1.0.10 \
 		wezterm-bidi-0.2.3 \
 		wezterm-blob-leases-0.1.1 \
 		wezterm-color-types-0.3.0 \
@@ -604,7 +605,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zerocopy-derive-0.8.27 \
 		zeroize-1.8.1 \
 		zipsign-api-0.1.5 \
-		zmij-1.0.18 \
+		zmij-1.0.23 \
 		zstd-0.14.0 \
 		zstd-safe-8.0.0 \
 		zstd-sys-2.1.0+zstd.1.5.7

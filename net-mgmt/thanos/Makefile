@@ -1,7 +1,7 @@
 PORTNAME=	thanos
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.42.4
-PORTREVISION=	4
+DISTVERSION=	0.42.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	alven@FreeBSD.org
@@ -26,6 +26,6 @@ GO_LDFLAGS=	-X github.com/prometheus/common/version.Branch="master" \
 PLIST_FILES=	bin/${PORTNAME}
 
 BUILD_DATE=	${:Udate +%F:sh}
-REVISION=	45c4f394
+REVISION=	4f05efee
 
 .include <bsd.port.mk>

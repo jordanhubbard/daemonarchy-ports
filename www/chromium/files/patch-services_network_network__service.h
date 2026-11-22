@@ -1,7 +1,7 @@
---- services/network/network_service.h.orig	2026-09-25 15:26:43 UTC
+--- services/network/network_service.h.orig	2026-11-11 14:44:17 UTC
 +++ services/network/network_service.h
-@@ -242,7 +242,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
-   void SetFirstPartySets(net::GlobalFirstPartySets sets) override;
+@@ -245,7 +245,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
+       mojo::PendingReceiver<mojom::NetworkServiceTest> receiver) override;
  
    void SetExplicitlyAllowedPorts(const std::vector<uint16_t>& ports) override;
 -#if BUILDFLAG(IS_LINUX)
@@ -9,7 +9,7 @@
    void SetGssapiLibraryLoadObserver(
        mojo::PendingRemote<mojom::GssapiLibraryLoadObserver>
            gssapi_library_load_observer) override;
-@@ -312,7 +312,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
+@@ -315,7 +315,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
    std::unique_ptr<net::HttpAuthHandlerFactory> CreateHttpAuthHandlerFactory(
        NetworkContext* network_context);
  

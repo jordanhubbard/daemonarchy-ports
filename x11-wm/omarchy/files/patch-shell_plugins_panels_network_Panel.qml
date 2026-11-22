@@ -1,10 +1,14 @@
 --- shell/plugins/panels/network/Panel.qml.orig
 +++ shell/plugins/panels/network/Panel.qml
-@@ -30,6 +30,40 @@
+@@ -31,6 +31,52 @@
  
    // Live connection details from `ip` / /sys / iw.
    property var info: ({})  // { iface, type, ip, prefix, gateway, speed, duplex, ssid, signal, freq, bitrate, rx_bytes, tx_bytes, router_ping_ms, internet_ping_ms }
-+  property var debugStatus: ({ grant: false, listener: false, connected: false, addresses: "", port: "" })
++  // The status file is refreshed every 10 s while daemonarchy-debug is alive. One
++  // that is missing, unparseable or older than this is not a state to act on.
++  readonly property int debugStatusMaxAge: 60
++  property string debugStatusText: ""
++  property var debugStatus: ({ unavailable: true, grant: false, listener: false, connected: false, addresses: "", port: "" })
 +
 +  function updateDebugStatus(content) {
 +    var fields = {}
@@ -13,11 +17,18 @@
 +      var separator = lines[i].indexOf("=")
 +      if (separator > 0) fields[lines[i].slice(0, separator)] = lines[i].slice(separator + 1)
 +    }
-+    if (fields.schema !== "1") {
-+      debugStatus = ({ grant: false, listener: false, connected: false, addresses: "", port: "" })
++    // Files from an older daemonarchy have no `updated=`: trust them as before.
++    var stale = false
++    if (fields.updated !== undefined) {
++      var updated = /^[0-9]{1,12}$/.test(fields.updated) ? Number(fields.updated) : NaN
++      stale = !(Math.abs(Date.now() / 1000 - updated) <= debugStatusMaxAge)
++    }
++    if (fields.schema !== "1" || stale) {
++      debugStatus = ({ unavailable: true, grant: false, listener: false, connected: false, addresses: "", port: "" })
 +      return
 +    }
 +    debugStatus = ({
++      unavailable: false,
 +      grant: fields.grant === "1",
 +      listener: fields.listener === "1",
 +      connected: fields.connected === "1",
@@ -33,6 +44,7 @@
 +  }
 +
 +  function debugSummary() {
++    if (debugStatus.unavailable) return "Remote debugging: status unavailable"
 +    if (!debugStatus.grant) return "Remote debugging: Off"
 +    var state = debugStatus.connected ? "Agent connected" :
 +      (debugStatus.listener ? "Listening for approved agent" : "Approved; listener unavailable")
@@ -41,8 +53,8 @@
  
    // Throughput tracking. Rates are computed as deltas between successive
    // `omarchy-network-status --verbose` samples (~1.5s apart via detailsPoll).
-@@ -65,8 +99,13 @@
-     "Bending light",
+@@ -66,8 +112,13 @@
+     Commons.I18n.t("network.phrase7")
    ]
    readonly property string connectionPhrase: connectionPhrases[connectionPhraseIndex % connectionPhrases.length]
 -  readonly property bool networkManagerAvailable: Networking.backend === NetworkBackendType.NetworkManager
@@ -56,13 +68,13 @@
 +  readonly property var networkDevices: networking.devices ? networking.devices.values : []
    readonly property var wifiDevice: findDevice(DeviceType.Wifi)
    readonly property var wifiNetworkObjects: wifiDevice && wifiDevice.networks ? wifiDevice.networks.values : []
-   readonly property var connectedWifiNetwork: findConnectedWifiNetwork()
-@@ -121,11 +160,11 @@
+   // Bound here rather than in a row, so it also sees networks with no delegate:
+@@ -142,11 +193,11 @@
    // Keyboard focus zone for the panel. j/k crosses row boundaries:
-   // header actions ⇄ band ⇄ DNS row ⇄ Wi-Fi networks. h/l move
+   // header actions ⇄ portal ⇄ band ⇄ DNS row ⇄ Wi-Fi networks. h/l move
    // within header actions, band pills, or DNS providers.
--  property string focusSection: "dns"  // "header" | "band" | "dns" | "wifi"
-+  property string focusSection: hasNetworkManager ? "dns" : "header"  // "header" | "band" | "dns" | "wifi"
+-  property string focusSection: "dns"  // "header" | "portal" | "band" | "dns" | "wifi"
++  property string focusSection: hasNetworkManager ? "dns" : "header"  // "header" | "portal" | "band" | "dns" | "wifi"
    property int headerIndex: 0
    readonly property bool canDisconnect: !!connectedWifiNetwork
    readonly property bool headerHasDisconnect: false
@@ -71,26 +83,26 @@
    // The hero switch is the Wi-Fi radio, so it only exists when there is a
    // radio to switch. On a wired box it would otherwise sit there reading
    // "off" beside a perfectly live Ethernet connection.
-@@ -137,7 +176,7 @@
+@@ -158,7 +209,7 @@
    readonly property bool qrHeaderHasCursor: cursorActive && focusSection === "header" && headerIndex === qrHeaderIndex
    readonly property bool speedHeaderHasCursor: cursorActive && focusSection === "header" && headerIndex === speedHeaderIndex
    readonly property bool toggleHeaderHasCursor: cursorActive && focusSection === "header" && headerIndex === toggleHeaderIndex
--  readonly property string toggleHint: Networking.wifiEnabled ? "Turn Wi-Fi off" : "Turn Wi-Fi on"
-+  readonly property string toggleHint: networking.wifiEnabled ? "Turn Wi-Fi off" : "Turn Wi-Fi on"
+-  readonly property string toggleHint: Networking.wifiEnabled ? Commons.I18n.t("network.turnWifiOff") : Commons.I18n.t("network.turnWifiOn")
++  readonly property string toggleHint: networking.wifiEnabled ? Commons.I18n.t("network.turnWifiOff") : Commons.I18n.t("network.turnWifiOn")
    readonly property var dnsProviders: ["DHCP", "Cloudflare", "Google", "Custom"]
    property int dnsIndex: 0
    // ["2.4", "5", ...], or empty when there is nothing to choose between.
-@@ -149,7 +188,7 @@
+@@ -170,7 +221,7 @@
    // Worth showing when there is a real choice, or when a pin is in force even
    // though only one band answers right now -- otherwise the Automatic switch
    // vanishes and the pin becomes unclearable from the panel.
--  readonly property bool canSelectBand: (kind === "wifi" || bandBusy)
-+  readonly property bool canSelectBand: hasNetworkManager && (kind === "wifi" || bandBusy)
+-  readonly property bool canSelectBand: (kind === "wifi" || bandBusy || switchingNetwork)
++  readonly property bool canSelectBand: hasNetworkManager && (kind === "wifi" || bandBusy || switchingNetwork)
      && (bandAvailable.length > 1 || bandPinned)
    // While a change is in flight, show the state that was asked for rather than
    // the one still in force, so the row answers the click immediately instead of
-@@ -163,7 +202,7 @@
-   readonly property bool bandBusy: pendingBand !== ""
+@@ -186,7 +237,7 @@
+   readonly property string dnsEffective: pendingDnsProvider !== "" ? pendingDnsProvider : dnsProvider
    // The speed test needs an interface to test, so its hero action only
    // appears once there is one.
 -  readonly property bool canRunSpeedTest: !!info.iface
@@ -98,7 +110,7 @@
    property int bandIndex: 0
    // The band section has up to two cursor rows: the Automatic switch on the
    // header line, then the pills. Same shape as wifiActionFocused.
-@@ -180,7 +219,7 @@
+@@ -203,7 +254,7 @@
  
    onCanSelectBandChanged: {
      if (!canSelectBand && focusSection === "band") {
@@ -107,7 +119,7 @@
        bandAutoFocused = true
      }
    }
-@@ -203,7 +242,7 @@
+@@ -226,7 +277,7 @@
  
    function toggleNetwork() {
      if (!networkManagerAvailable) return
@@ -116,16 +128,16 @@
      Qt.callLater(function() { root.refresh(true) })
    }
  
-@@ -322,7 +361,7 @@
+@@ -347,7 +398,7 @@
        refresh(true)
        selectedIndex = wifiNetworks.length > 0 ? 0 : -1
        wifiActionFocused = false
--      focusSection = wifiNetworks.length > 0 ? "wifi" : "dns"
-+      focusSection = wifiNetworks.length > 0 ? "wifi" : (hasNetworkManager ? "dns" : "header")
+-      focusSection = hasCaptivePortal ? "portal" : (wifiNetworks.length > 0 ? "wifi" : "dns")
++      focusSection = hasCaptivePortal ? "portal" : (wifiNetworks.length > 0 ? "wifi" : (hasNetworkManager ? "dns" : "header"))
        var idx = dnsProviders.indexOf(dnsProvider)
        dnsIndex = idx >= 0 ? idx : 0
        syncBandIndex()
-@@ -365,7 +404,7 @@
+@@ -390,7 +441,7 @@
      if (wifiNetworks.length === 0) {
        selectedIndex = -1
        wifiActionFocused = false
@@ -134,8 +146,8 @@
      } else if (passwordSsid !== "") {
        var passwordIndex = wifiIndexForSsid(passwordSsid)
        if (passwordIndex >= 0) {
-@@ -471,11 +510,11 @@
-   function refresh(scanWifi) {
+@@ -611,11 +662,11 @@
+     checkConnectivity()
      if (scanWifi === undefined) scanWifi = false
      if (!detailsProc.running) detailsProc.running = true
 -    if (!dnsProc.running) {
@@ -148,7 +160,7 @@
        bandProc.command = ["omarchy-network-band"]
        bandProc.running = true
      }
-@@ -638,7 +677,7 @@
+@@ -788,7 +839,7 @@
    // reconnect is the thing you want to watch, and the details rows above
    // report it as it happens.
    function setBand(band) {
@@ -157,7 +169,7 @@
  
      root.pendingBand = band
      actionProc.command = ["omarchy-network-band", band]
-@@ -665,7 +704,7 @@
+@@ -815,7 +866,7 @@
    }
  
    function setDns(provider) {
@@ -166,7 +178,7 @@
  
      if (provider === "Custom") {
        var launcher = "omarchy-launch-floating-terminal-with-presentation"
-@@ -681,6 +720,9 @@
+@@ -832,6 +883,9 @@
    }
  
    function requiresCredentials(security) {
@@ -176,7 +188,7 @@
      return Model.requiresCredentials(security, WifiSecurityType.Open, WifiSecurityType.Owe)
    }
  
-@@ -757,7 +799,13 @@
+@@ -927,7 +981,13 @@
    }
  
    function connectDirectly(ssid) {
@@ -191,42 +203,51 @@
    }
  
    function connectWithPassphrase(ssid, passphrase) {
-@@ -806,6 +854,23 @@
+@@ -975,6 +1035,27 @@
+   implicitHeight: button.implicitHeight
  
    Component.onCompleted: refresh()
- 
++
 +  FileView {
 +    id: debugStatusFile
 +    path: "/var/run/daemonarchy-debug.status"
 +    watchChanges: true
 +    printErrors: false
 +    onFileChanged: reload()
-+    onLoaded: root.updateDebugStatus(text())
-+    onLoadFailed: root.updateDebugStatus("")
++    onLoaded: { root.debugStatusText = text(); root.updateDebugStatus(root.debugStatusText) }
++    onLoadFailed: { root.debugStatusText = ""; root.updateDebugStatus("") }
 +  }
 +
 +  Timer {
 +    interval: 5000
 +    running: true
 +    repeat: true
-+    onTriggered: debugStatusFile.reload()
++    onTriggered: {
++      debugStatusFile.reload()
++      // Age the last text too, so a file that stops changing goes stale.
++      root.updateDebugStatus(root.debugStatusText)
++    }
 +  }
-+
+ 
    // Pulls everything we want about the active route's interface in one shot.
    Process {
-     id: detailsProc
-@@ -958,6 +1023,7 @@
-     anchors.fill: parent
+@@ -1150,8 +1231,8 @@
      bar: root.bar
      text: root.icon
-+    tooltipText: root.debugSummary()
+     active: root.restricted
+-    tooltipText: root.hasCaptivePortal ? Commons.I18n.t("network.signInToNetwork")
+-      : (root.restricted ? Commons.I18n.t("network.limitedAccess") : "")
++    tooltipText: [root.hasCaptivePortal ? Commons.I18n.t("network.signInToNetwork")
++      : (root.restricted ? Commons.I18n.t("network.limitedAccess") : ""), root.debugSummary()].filter(function(text) { return text !== "" }).join("\n")
  
      onPressed: function(b) {
        if (root.opened) root.close()
-@@ -969,6 +1035,17 @@
+@@ -1161,6 +1242,17 @@
+       // that deferral and stalling the open on NetworkManager's AP flood.
+       else root.open()
      }
-   }
- 
++  }
++
 +  Rectangle {
 +    visible: root.debugStatus.grant
 +    anchors.right: button.right
@@ -234,14 +255,12 @@
 +    width: Style.space(6)
 +    height: width
 +    radius: width / 2
-+    color: root.debugStatus.connected ? Color.accent :
++    color: root.debugStatus.connected ? Commons.Color.accent :
 +      (root.debugStatus.listener ? root.bar.foreground : root.bar.urgent)
-+  }
-+
+   }
+ 
    // Keyboard-driven popup anchored to the bar widget icon. The shared
-   // KeyboardPanel handles the layer-shell PanelWindow scaffolding
-   // (focus priming on open, screen binding, anchored-to-icon positioning,
-@@ -1009,7 +1086,7 @@
+@@ -1206,7 +1298,7 @@
                  root.focusSection = "band"
                  root.bandAutoFocused = true
                } else {
@@ -249,8 +268,8 @@
 +                root.focusSection = root.hasNetworkManager ? "dns" : "wifi"
                }
              }
-           } else if (root.focusSection === "band") {
-@@ -1025,7 +1102,7 @@
+           } else if (root.focusSection === "portal") {
+@@ -1232,7 +1324,7 @@
              } else if (root.bandAutoFocused && root.bandPillsVisible) {
                root.bandAutoFocused = false
              } else {
@@ -259,7 +278,7 @@
              }
            } else if (root.focusSection === "dns") {
              // k from DNS moves up into the band section when it's on screen,
-@@ -1047,7 +1124,7 @@
+@@ -1256,7 +1348,7 @@
              // k from the top row escapes back up to the DNS row rather than
              // wrapping around to the bottom of the list.
              if (dy < 0 && root.selectedIndex <= 0) {
@@ -268,7 +287,7 @@
                root.wifiActionFocused = false
              }
              else root.selectByDelta(dy)
-@@ -1143,7 +1220,7 @@
+@@ -1351,7 +1443,7 @@
            ToggleSwitch {
              id: powerSwitch
              visible: root.canToggleWifi
@@ -277,7 +296,7 @@
              hasCursor: root.toggleHeaderHasCursor
              foreground: root.bar.foreground
              Layout.alignment: Qt.AlignVCenter
-@@ -1267,6 +1344,59 @@
+@@ -1507,6 +1599,60 @@
          }
        }
  
@@ -297,7 +316,8 @@
 +        Text {
 +          width: parent.width
 +          textFormat: Text.PlainText
-+          text: !root.debugStatus.grant ? "Off" :
++          text: root.debugStatus.unavailable ? "Status unavailable" :
++            !root.debugStatus.grant ? "Off" :
 +            (root.debugStatus.connected ? "Agent connected" :
 +            (root.debugStatus.listener ? "Listening for approved agent" : "Approved; listener unavailable"))
 +          color: root.bar.foreground
@@ -317,7 +337,7 @@
 +        Row {
 +          spacing: Style.space(8)
 +          Button {
-+            visible: !root.debugStatus.grant
++            visible: !root.debugStatus.unavailable && !root.debugStatus.grant
 +            text: "Pair"
 +            onClicked: root.bar.run("omarchy-launch-floating-terminal-with-presentation 'sudo daemonarchy-debug listen'")
 +          }
@@ -337,7 +357,7 @@
        // Wi-Fi band selection. Only on Wi-Fi, and only when the network answers
        // on more than one band -- a single-band AP has nothing to toggle.
        PanelSeparator {
-@@ -1398,12 +1528,14 @@
+@@ -1638,12 +1784,14 @@
  
        }
  
@@ -353,7 +373,7 @@
          width: parent.width
          spacing: Style.space(10)
  
-@@ -1584,7 +1716,7 @@
+@@ -1831,7 +1979,7 @@
      onHovered: function(isHovered) {
        if (!isHovered) return
        root.cursorActive = true

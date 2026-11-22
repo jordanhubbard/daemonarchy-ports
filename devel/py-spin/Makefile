@@ -1,5 +1,5 @@
 PORTNAME=	spin
-DISTVERSION=	0.18
+DISTVERSION=	0.19
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +19,8 @@ RUN_DEPENDS=	${PY_TOMLI} \
 
 USES=		python
 USE_PYTHON=	autoplist pep517
+
+post-patch:
+	${REINPLACE_CMD} '/click/s|>=.*"|"|' ${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>

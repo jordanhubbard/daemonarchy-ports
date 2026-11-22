@@ -1,10 +1,10 @@
 PORTNAME=	pgaccess
 PORTVERSION=	1.00.20140902
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases tcl tk
 MASTER_SITES=	https://BSDforge.com/projects/source/databases/pgaccess/
 
-MAINTAINER=	portmaster@bsdforge.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful PostgreSQL database GUI administration tool and toolkit
 WWW=		https://BSDforge.com/projects/databases/pgaccess/
 
@@ -12,7 +12,7 @@ LICENSE=	BSD4CLAUSE
 
 RUN_DEPENDS=	${LOCALBASE}/lib/pgtcl/pkgIndex.tcl:databases/pgtcl
 
-USES=		pgsql tk tar:xz
+USES=		pgsql tk:86 tar:xz
 
 NO_ARCH=	yes
 

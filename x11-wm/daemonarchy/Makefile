@@ -2,7 +2,7 @@ PORTNAME=	daemonarchy
 # Daemonarchy's own release number, not Omarchy's (x11-wm/omarchy) or
 # FreeBSD's. The epoch moves it past the 4.0.4 it used to borrow.
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1
+DISTVERSION=	1.6.0
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 
@@ -10,8 +10,12 @@ MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Omarchy desktop on FreeBSD, with Daemonarchy branding and applications
 WWW=		https://github.com/jordanhubbard/daemonarchy
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+# Daemonarchy-original files are BSD-2-Clause; omarchy-menu.jsonc keeps MIT
+# (see licenses/README.md in daemonarchy-desktop).
+LICENSE=	BSD2CLAUSE MIT
+LICENSE_COMB=	multi
+LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/licenses/BSD-2-Clause.txt
+LICENSE_FILE_MIT=	${WRKSRC}/licenses/MIT.txt
 
 BUILD_DEPENDS=	magick:graphics/ImageMagick7 \
 		rsvg-convert:graphics/librsvg2-rust
@@ -20,8 +24,11 @@ BUILD_DEPENDS=	magick:graphics/ImageMagick7 \
 # relies on. Arch packages without a FreeBSD equivalent (kernels, firmware,
 # DKMS drivers, Limine/Snapper, NetworkManager, BlueZ, power-profiles-daemon)
 # are covered by the base system or by the omarchy port's compat layer.
+# daemonarchy-pkg (ports-mgmt/daemonarchy-pkg) is the graphical package manager that the Packages menu entries
+# open; octopkg stays as the fallback until it has been qualified on a real desktop.
 RUN_DEPENDS=	omarchy>0:x11-wm/omarchy \
 		octopkg>0:ports-mgmt/octopkg \
+		daemonarchy-pkg>0:ports-mgmt/daemonarchy-pkg \
 		egl-wayland>0:graphics/egl-wayland \
 		font-awesome>0:x11-fonts/font-awesome \
 		fontconfig>0:x11-fonts/fontconfig \
@@ -62,8 +69,9 @@ USES=		python:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	jordanhubbard
 GH_PROJECT=	daemonarchy-desktop
-# Pin the development candidate until v1.3.1 is tagged at this reviewed commit.
-GH_TAGNAME=	ec2a00824ec95b342c0c095657ac725c56f0528b
+# Pin the reconciled desktop main for the 1.6 release candidate.
+# DISTVERSION supplies the installed Daemonarchy version independently of Omarchy.
+GH_TAGNAME=	4b2525533600f37d2c6249112c3d2d4e22989f36
 
 NO_ARCH=	yes
 

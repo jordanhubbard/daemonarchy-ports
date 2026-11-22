@@ -1,6 +1,5 @@
 PORTNAME=	chromium
-PORTVERSION=	154.0.8037.57
-PORTREVISION=	2
+PORTVERSION=	157.0.8103.78
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 TSV=		7.0.2
@@ -9,15 +8,15 @@ MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official
 		https://nerd.hu/distfiles/:external \
 		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio \
 		https://github.com/chromium-linux-tarballs/chromium-tarballs/releases/download/${PORTVERSION}/:unofficial
-DISTFILES=	${DISTNAME}-linux${EXTRACT_SUFX}:unofficial \
+DISTFILES=	${DISTNAME}-lite${EXTRACT_SUFX} \
 		${DISTNAME}-profdata${EXTRACT_SUFX}:external \
 		pulseaudio-${PULSEV}.tar.gz:pulseaudio \
 		TypeScript-${TSV}-vendor.tar.gz:external
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	rollup:rollup:v4.60.4:rollup/rollup \
-		evanw:esbuild:v${_ESBUILD_VERSION:sh}:esbuild/esbuild \
-		microsoft:TypeScript:v${TSV}:typescript/typescript
+GH_TUPLE=	evanw:esbuild:v${_ESBUILD_VERSION:sh}:esbuild/esbuild \
+		microsoft:TypeScript:v${TSV}:typescript/typescript \
+		google:crubit:dcf92a1baf2c8a6561ed0361502cfec20e2f65f5:crubit/third_party/rust-toolchain/lib/third_party/crubit
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
@@ -38,6 +37,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		node:www/node \
 		rustc:lang/rust \
 		tsc:lang/typescript-go \
+		vulkan-headers>0:graphics/vulkan-headers \
 		xcb-proto>0:x11/xcb-proto \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${LOCALBASE}/share/usbids/usb.ids:misc/usbids \
@@ -91,9 +91,12 @@ USES=		bison cargo compiler:c++17-lang cpe desktop-file-utils gl gmake \
 
 WITHOUT_FBSD10_FIX=	Yes
 
-CARGO_CARGOTOML=	${WRKSRC}/rollup/rust/Cargo.toml
-CARGO_CARGOLOCK=	${WRKSRC}/rollup/rust/Cargo.lock
-CARGO_TARGET_DIR=	${WRKSRC}/rollup/rust/target
+LTO_UNSAFE=		Yes
+CARGO_CARGOTOML=	${WRKSRC}/third_party/rust-toolchain/lib/third_party/crubit/Cargo.toml
+CARGO_CARGOLOCK=	${WRKSRC}/third_party/rust-toolchain/lib/third_party/crubit/Cargo.lock
+CARGO_TARGET_DIR=	${WRKSRC}/third_party/rust-toolchain/lib/third_party/crubit/target
+CARGO_BUILD_ARGS+=	-p cc_bindings_from_rs
+CARGO_ENV+=		RUSTC_BOOTSTRAP=1 \
 
 CARGO_INSTALL=		No
 CARGO_BUILD=		No
@@ -149,6 +152,8 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_system_libffi=true \
 		use_system_libjpeg=true \
 		use_udev=false \
+		v8_metagen_libclang_so="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so" \
+		v8_metagen_libclang_bindings_dir="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/python${PYTHON_VER}/site-packages" \
 		extra_cxxflags="${CXXFLAGS} -I${LOCALBASE}/include/libepoll-shim ${PINCLUDES}" \
 		extra_ldflags="${LDFLAGS}" \
 		ffmpeg_branding="${FFMPEG_BRAND}" \
@@ -244,7 +249,7 @@ WIDEVINE_DESC=		Depend on foreign-cdm to enable playback of DRM content
 WIDEVINE_RUN_DEPENDS=	foreign-cdm>0:www/foreign-cdm
 
 .include "Makefile.tests"
-#TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
+TEST_DISTFILES=		${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
 TEST_ALL_TARGET=	${TEST_TARGETS}
 
 .include <bsd.port.options.mk>
@@ -292,7 +297,9 @@ MAKE_ENV+=	C_INCLUDE_PATH=${LOCALBASE}/include \
 # rust
 MAKE_ENV+=	RUSTC_BOOTSTRAP=1
 GN_ARGS+=	enable_rust=true \
-		rust_sysroot_absolute="${LOCALBASE}"
+		rust_sysroot_absolute="${LOCALBASE}" \
+		rust_crubit_root="//third_party/rust-toolchain" \
+		enable_rust_api_from_cpp=true
 
 # go
 MAKE_ENV+=	GOCACHE=${WRKDIR}/go-cache
@@ -304,6 +311,10 @@ pre-everything::
 	@${ECHO_MSG} "- ${WANTSPACE} of free disk space"
 	@${ECHO_MSG} "- 1.5 million free inodes"
 	@${ECHO_MSG}
+
+post-patch:
+	patch -d ${WRKSRC}/typescript/tsc/internal/bundled/libs -Ep2 < \
+		${WRKSRC}/third_party/typescript/linux-amd64/3pp/patches/typescript_native_preview.patch
 
 pre-configure:
 	# We used to remove bundled libraries to be sure that chromium uses
@@ -326,31 +337,24 @@ pre-configure:
 	-${CP} -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
 .endfor
 	touch ${WRKDIR}/pulseaudio-${PULSEV}/src/pulse/version.h
-	@${REINPLACE_CMD} -e 's|$${LOCALBASE}|${LOCALBASE}|;s|$${MODCLANG_VERSION}|${LLVM_DEFAULT}|' \
+	@${REINPLACE_CMD} -e 's|$${LOCALBASE}|${LOCALBASE}|g;s|$${MODCLANG_VERSION}|${LLVM_DEFAULT}|g' \
 		${WRKSRC}/build/linux/strip_binary.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
-		${WRKSRC}/build/rust/rust_bindgen_generator.gni
-	patch -d ${WRKSRC}/typescript/tsc/internal/bundled/libs -Ep2 < \
-		${WRKSRC}/third_party/typescript/linux-amd64/3pp/patches/typescript_native_preview.patch
+		${WRKSRC}/build/rust/rust_bindgen_generator.gni \
+		${WRKSRC}/v8/BUILD.gn
 
 pre-build:
 	cd ${WRKSRC}/typescript/tsc && \
 		${SETENV} ${MAKE_ENV} go build -v -p ${MAKE_JOBS_NUMBER} -mod=vendor ./cmd/tsgo && \
 		ln -sf ${WRKSRC}/typescript/tsc/tsgo \
 		${WRKSRC}/third_party/typescript/linux-amd64/src/lib/tsc
+
+do-configure:
 	@${CARGO_CARGO_RUN} build \
 		--manifest-path ${CARGO_CARGOTOML} \
 		--verbose \
 		--verbose \
 		${CARGO_BUILD_ARGS}
-	(cd ${WRKSRC}/third_party/devtools-frontend/src/node_modules/@rollup && \
-		mkdir -p rollup-freebsd && \
-		cp ${CARGO_TARGET_DIR}/release/libbindings_napi.so \
-			rollup-freebsd/rollup.freebsd.node && \
-		echo '{ "main": "./rollup.freebsd.node" }' \
-			> rollup-freebsd/package.json)
-
-do-configure:
 	(cd ${WRKSRC}/esbuild && \
 		${LOCALBASE}/bin/node scripts/esbuild.js \
 		/usr/local/bin/esbuild --neutral && \
@@ -358,7 +362,18 @@ do-configure:
 		ln -sf ${WRKSRC}/esbuild/npm/esbuild \
 		${WRKSRC}/third_party/devtools-frontend/src/node_modules/esbuild \
 	)
+
+	# Setup rustc dependency
+	@${MKDIR} ${WRKSRC}/third_party/rust-toolchain/bin \
+		${WRKSRC}/third_party/rust-toolchain/bin \
+		${WRKSRC}/third_party/rust-toolchain/lib/third_party
+	${LN} -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
+	ln -sf ${LOCALBASE}/bin/rustfmt ${WRKSRC}/third_party/rust-toolchain/bin/rustfmt
+	ln -sf ${WRKSRC}/third_party/rust-toolchain/lib/third_party/crubit/target/release/cc_bindings_from_rs \
+		${WRKSRC}/third_party/rust-toolchain/bin/
+
 	# GN generator bootstrapping and generating ninja files
+	${LN} -sf ${WRKSRC}/out/${BUILDTYPE}/gn ${WRKSRC}/buildtools/linux64/gn
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} LD=${CXX} \
 		READELF=${READELF} AR=${AR} NM=${NM} ${PYTHON_CMD} \
 		./tools/gn/bootstrap/bootstrap.py ${GN_BOOTSTRAP_FLAGS}
@@ -368,10 +383,6 @@ do-configure:
 	# Setup nodejs dependency
 	@${MKDIR} ${WRKSRC}/third_party/node/freebsd/node-freebsd/bin
 	${LN} -sf ${LOCALBASE}/bin/node ${WRKSRC}/third_party/node/freebsd/node-freebsd/bin/node
-
-	# Setup rustc dependency
-	@${MKDIR} ${WRKSRC}/third_party/rust-toolchain/bin
-	${LN} -sf ${LOCALBASE}/bin/rustc ${WRKSRC}/third_party/rust-toolchain/bin/rustc
 
 	# Setup esbuild dependency
 	${LN} -sf ${LOCALBASE}/bin/esbuild ${WRKSRC}/third_party/devtools-frontend/src/third_party/esbuild/esbuild
@@ -402,7 +413,7 @@ do-install:
 .for d in protoc mksnapshot
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/${d} ${STAGEDIR}${DATADIR}
 .endfor
-.for d in snapshot_blob.bin v8_context_snapshot.bin
+.for d in snapshot_blob.bin
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/${d} ${STAGEDIR}${DATADIR}
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${BUILDTYPE}/chrome \

@@ -6,8 +6,6 @@ PORTNAME=	u-boot
 PORTVERSION=	${UBOOT_VERSION}
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	-${MODEL}
-MASTER_SITES=	https://ftp.denx.de/pub/u-boot/ \
-		ftp://ftp.denx.de/pub/u-boot/
 DIST_SUBDIR=	u-boot
 
 MAINTAINER?=	uboot@FreeBSD.org
@@ -29,8 +27,7 @@ BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 BUILD_DEPENDS+=	gnutls>=0:security/gnutls
 LIB_DEPENDS+=	libuuid.so:misc/libuuid
 
-USES=		bison compiler:c11 gmake python:build perl5 pkgconfig shebangfix ssl \
-		tar:bz2
+USES=		bison compiler:c11 gmake python:build perl5 pkgconfig shebangfix ssl
 USE_PERL5=	build
 BINARY_ALIAS=	bison=${LOCALBASE}/bin/bison \
 		date=${LOCALBASE}/bin/gdate \
@@ -132,11 +129,31 @@ UBOOT_METADATA_ARMADA38X_RAW_BS=	512
 # Override for QEMU family
 UBOOT_PLIST_QEMU=	u-boot.bin
 
+# Override for MT7986 family
+UBOOT_PLIST_MT7986=	bl2.img u-boot.fip
+UBOOT_ARCH_MT7986=	aarch64
+UBOOT_MOVE_MT7986=	${MT7986_ATF}/bl2.img
+
 # Uboot variables
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
 .endif
-UBOOT_VERSION?=	2026.07
+UBOOT_VERSION?=	2026.10
+
+# Releases up to 2026.07 are tarballs on ftp.denx.de.  The project does not
+# publish tarballs there anymore, fetch the tags of newer releases from its
+# GitLab instance.  Slave ports can still pin an older version.
+.if ${UBOOT_VERSION:C/[^0-9]//g} >= 202610
+USE_GITLAB=	yes
+GL_SITE=	https://git.u-boot-project.org
+GL_ACCOUNT=	u-boot
+GL_PROJECT=	u-boot
+GL_TAGNAME=	v${UBOOT_VERSION}
+.else
+MASTER_SITES=	https://ftp.denx.de/pub/u-boot/ \
+		ftp://ftp.denx.de/pub/u-boot/
+USES+=		tar:bz2
+.endif
 
 # If a slave port defines a PORTREVISION use it
 .if defined(U_BOOT_SLAVE_PORTREVISION_${UBOOT_VERSION})
@@ -200,17 +217,24 @@ MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-rk3399/bl31.elf
 .endif
 
 .if defined(FAMILY) && ${FAMILY} == rk356X
-BUILD_DEPENDS+=	${LOCALBASE}/share/rkbin/rk35/rk3566_ddr_1056MHz_v1.23.bin:sysutils/rkbin \
+BUILD_DEPENDS+=	${LOCALBASE}/share/rkbin/rk35/rk3566_ddr_1056MHz_v1.26.bin:sysutils/rkbin \
 		${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
-MAKE_ENV+=	BL31=${LOCALBASE}/share/rkbin/rk35/rk3568_bl31_v1.45.elf \
-		ROCKCHIP_TPL=${LOCALBASE}/share/rkbin/rk35/rk3566_ddr_1056MHz_v1.23.bin
+MAKE_ENV+=	BL31=${LOCALBASE}/share/rkbin/rk35/rk3568_bl31_v1.46.elf \
+		ROCKCHIP_TPL=${LOCALBASE}/share/rkbin/rk35/rk3566_ddr_1056MHz_v1.26.bin
 .endif
 
 .if defined(FAMILY) && ${FAMILY} == rk3588
-BUILD_DEPENDS+=	${LOCALBASE}/share/rkbin/rk35/rk3588_ddr_lp4_2112MHz_lp5_2400MHz_v1.18.bin:sysutils/rkbin \
+BUILD_DEPENDS+=	${LOCALBASE}/share/rkbin/rk35/rk3588_ddr_lp4_2112MHz_lp5_2400MHz_v1.24.bin:sysutils/rkbin \
 		${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
-MAKE_ENV+=	BL31=${LOCALBASE}/share/rkbin/rk35/rk3588_bl31_v1.47.elf \
-		ROCKCHIP_TPL=${LOCALBASE}/share/rkbin/rk35/rk3588_ddr_lp4_2112MHz_lp5_2400MHz_v1.18.bin
+MAKE_ENV+=	BL31=${LOCALBASE}/share/rkbin/rk35/rk3588_bl31_v1.56.elf \
+		ROCKCHIP_TPL=${LOCALBASE}/share/rkbin/rk35/rk3588_ddr_lp4_2112MHz_lp5_2400MHz_v1.24.bin
+.endif
+
+.if defined(FAMILY) && ${FAMILY} == mt7986
+MT7986_BOOT_DEVICE?=	sdmmc
+MT7986_ATF=	${LOCALBASE}/share/atf-mt7986/${MT7986_BOOT_DEVICE}-ddr4
+BUILD_DEPENDS+=	${MT7986_ATF}/bl31.bin:sysutils/atf-mt7986 \
+		fiptool:sysutils/fiptool
 .endif
 
 # Each u-boot family has different files to include, bring them in.
@@ -274,6 +298,10 @@ post-build:
 .for i in ${UBOOT_EXTRA_TARGETS}
 	(cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${i})
 .endfor
+.endif
+.if defined(FAMILY) && ${FAMILY} == mt7986
+	${LOCALBASE}/bin/fiptool create --soc-fw ${MT7986_ATF}/bl31.bin \
+		--nt-fw ${WRKSRC}/u-boot.bin ${WRKSRC}/u-boot.fip
 .endif
 # If we need to put anything into WRKSRC, do so now so we can build the PLIST
 # in do-install

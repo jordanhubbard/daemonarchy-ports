@@ -41,6 +41,7 @@
     SUBDIR += coolreader
     SUBDIR += copyq
     SUBDIR += coregarage
+    SUBDIR += cosmic-screenshot
     SUBDIR += countdown
     SUBDIR += crengine-ng
     SUBDIR += crqt-ng
@@ -130,6 +131,7 @@
     SUBDIR += jot
     SUBDIR += just
     SUBDIR += kaddressbook
+    SUBDIR += kaichat
     SUBDIR += kalarm
     SUBDIR += kanbanapp
     SUBDIR += kcharselect
@@ -171,6 +173,7 @@
     SUBDIR += lumina-photo
     SUBDIR += lumina-screenshot
     SUBDIR += lumina-textedit
+    SUBDIR += lxqt-clip
     SUBDIR += lxqt-notificationd
     SUBDIR += maliit-framework
     SUBDIR += maliit-keyboard
@@ -197,10 +200,8 @@
     SUBDIR += notification-daemon
     SUBDIR += notify-osd
     SUBDIR += orage
-    SUBDIR += owncloudclient
     SUBDIR += p5-Data-ICal
     SUBDIR += p5-Data-ICal-DateTime
-    SUBDIR += p5-Goo
     SUBDIR += pal
     SUBDIR += parcellite
     SUBDIR += peaclock
@@ -215,6 +216,9 @@
     SUBDIR += plasma6-milou
     SUBDIR += plasma6-sddm-kcm
     SUBDIR += plasma6-xdg-desktop-portal-kde
+    SUBDIR += plasma6lts-milou
+    SUBDIR += plasma6lts-sddm-kcm
+    SUBDIR += plasma6lts-xdg-desktop-portal-kde
     SUBDIR += plopfolio
     SUBDIR += podman-desktop
     SUBDIR += preferences
@@ -270,7 +274,6 @@
     SUBDIR += sysctlview
     SUBDIR += systempreferences
     SUBDIR += taskd
-    SUBDIR += tasksh
     SUBDIR += taskwarrior
     SUBDIR += taskwarrior-tui
     SUBDIR += tatuin
@@ -321,6 +324,7 @@
     SUBDIR += zanshin
     SUBDIR += zim
     SUBDIR += zk
+    SUBDIR += znotes
     SUBDIR += zorro
 
 .include <bsd.port.subdir.mk>

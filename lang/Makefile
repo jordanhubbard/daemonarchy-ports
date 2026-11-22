@@ -49,7 +49,6 @@
     SUBDIR += crumb
     SUBDIR += crystal
     SUBDIR += cython
-    SUBDIR += cython0
     SUBDIR += dart
     SUBDIR += dhall
     SUBDIR += dlang-tools
@@ -296,6 +295,7 @@
     SUBDIR += pomsky
     SUBDIR += prql
     SUBDIR += ptoc
+    SUBDIR += puffin
     SUBDIR += purescript
     SUBDIR += py-dhall
     SUBDIR += py-gherkin-official
@@ -344,7 +344,6 @@
     SUBDIR += rust-bootstrap
     SUBDIR += rust-nightly
     SUBDIR += rust-nightly-bun
-    SUBDIR += rust188
     SUBDIR += rustpython
     SUBDIR += s7
     SUBDIR += s7-nrepl
@@ -384,10 +383,10 @@
     SUBDIR += tauthon
     SUBDIR += tcbasic
     SUBDIR += tcc
+    SUBDIR += tcl
     SUBDIR += tcl-manual
     SUBDIR += tcl-wrapper
     SUBDIR += tcl86
-    SUBDIR += tcl90
     SUBDIR += tclX
     SUBDIR += tolua
     SUBDIR += tolua++
@@ -410,5 +409,6 @@
     SUBDIR += zig
     SUBDIR += zig014
     SUBDIR += zig015
+    SUBDIR += zig016
 
 .include <bsd.port.subdir.mk>

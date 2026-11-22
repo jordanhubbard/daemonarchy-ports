@@ -1,9 +1,10 @@
 PORTNAME=	aether
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.30.0
+PORTREVISION=	1
 CATEGORIES=	x11-themes
-MASTER_SITES+=	https://github.com/jordanhubbard/freebsd-ports/releases/download/${PORTNAME}-${DISTVERSION}-npm-cache/:npmcache
-DISTFILES+=	${PORTNAME}-${DISTVERSION}-npm-cache.tar.gz:npmcache
+MASTER_SITES+=	https://github.com/jordanhubbard/daemonarchy-ports/releases/download/${PORTNAME}-${DISTVERSION}-wasi-npm-cache-r1/:npmcache
+DISTFILES+=	${PORTNAME}-${DISTVERSION}-wasi-npm-cache-r1.tar.gz:npmcache
 
 MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	Desktop theming application that extracts colors from wallpapers
@@ -37,15 +38,10 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-# The frontend (Svelte + Vite) is embedded into the binary with go:embed but
-# frontend/dist is not committed upstream.  Build it offline from an npm cache
-# distfile, which has to be regenerated for every update on FreeBSD (it
-# carries the FreeBSD builds of rolldown, lightningcss and tailwind oxide):
-#   fetch https://github.com/omacom/aether/archive/refs/tags/v${DISTVERSION}.tar.gz
-#   cd aether-${DISTVERSION}/frontend && npm ci --cache ${PWD}/npm-cache
-#   tar -czf aether-${DISTVERSION}-npm-cache.tar.gz npm-cache/_cacache
-# The resulting file is published as a release asset named after it (see
-# MASTER_SITES); upload a new one for each DISTVERSION.
+# Build the embedded frontend offline with the same upstream WASI compiler
+# backends on every architecture. The cache is bound to the patched lock file;
+# no FreeBSD-specific Node addon binaries or prebuilt frontend are required.
+# Select the WASI dependency context explicitly and refuse native fallbacks.
 
 # Wails v2 only supports Linux, Darwin and Windows.  The vendored sources are
 # patched to accept freebsd in their build constraints (files/patch-vendor_*),
@@ -63,9 +59,11 @@ post-patch:
 
 pre-build:
 	cd ${WRKSRC}/frontend && ${SETENV} ${MAKE_ENV} HOME=${WRKDIR} \
-		npm ci --offline --cache ${WRKDIR}/npm-cache --ignore-scripts \
+		npm ci --cpu=wasm32 --offline --cache ${WRKDIR}/npm-cache --ignore-scripts \
 		--no-audit --no-fund --no-update-notifier && \
-		${SETENV} ${MAKE_ENV} HOME=${WRKDIR} npm run build
+		${SETENV} ${MAKE_ENV} HOME=${WRKDIR} NAPI_RS_FORCE_WASI=error \
+		node ${FILESDIR}/select-wasm-bindings.cjs ${WRKSRC}/frontend && \
+		${SETENV} ${MAKE_ENV} HOME=${WRKDIR} NAPI_RS_FORCE_WASI=error npm run build
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/applications

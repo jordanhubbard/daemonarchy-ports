@@ -1,0 +1,7 @@
+daemonarchy-pkg is the graphical package manager of Daemonarchy. It lists,
+searches, installs, updates and removes packages from the repositories pkg is
+configured with, shows each repository's signature state, and shows the plan
+(what changes, how many bytes, from which repository) before anything runs.
+What runs is exactly the plan that was shown: a small helper started as root
+recomputes the plan and refuses if it changed. Downloads use several pkg
+processes at once, and progress is measured, with estimates labelled.

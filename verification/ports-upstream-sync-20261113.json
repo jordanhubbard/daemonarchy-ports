@@ -1,0 +1,41 @@
+{
+  "schema": "daemonarchy/ports-upstream-sync@1",
+  "observed_utc": "2026-11-13T13:11:40.416852+00:00",
+  "owned_parent": "232a80bdd18175a7086f4193b179007b4da89a63",
+  "previous_upstream": "8ff8a871c096bef22a37351ef623b78e226b5a05",
+  "upstream_parent": "a13fb0f8a05cb6c8546d23efe7e14b5e1702b60b",
+  "merge_commit": "d3d2e1f6b7c08b6a542447292f81591c480a2249",
+  "merge_tree": "143961f317f92bd74d3cbf6e815b346650fd9bf0",
+  "upstream_commits_added": 1548,
+  "imported_diff": "3665 files changed, 41891 insertions(+), 27973 deletions(-)",
+  "downstream_paths_before": 261,
+  "downstream_paths_after": 260,
+  "unexpected_downstream_paths": [],
+  "conflict_disposition": {
+    "audio/cliamp/Makefile": "Keep owned 2.3.0 and Go minimum; migrate version linker flags to GO_LDFLAGS, retaining -s from Mk/Uses/go.mk and -w explicitly. PORTREVISION 1 binds changed flags; do not downgrade to upstream 2.2.0_2.",
+    "sysutils/lazydocker/Makefile": "Adopt upstream 0.25.2_2 and GO_LDFLAGS, preserving version/buildSource and framework default -s."
+  },
+  "category_index_check": {
+    "categories": 62,
+    "origins": 35580,
+    "missing": []
+  },
+  "controller_tests": {
+    "run": 40,
+    "skipped": 1,
+    "result": "passed",
+    "log_sha256": "c10da3fab858cc5f4df7d0be662af3e7ff0b0179b6412075fa02feb4dc6986d4"
+  },
+  "imported_whitespace_check": {
+    "exit": 2,
+    "diagnostic_lines": 527,
+    "upstream_bytes_preserved": true
+  },
+  "qualification": {
+    "native_metadata": false,
+    "native_package_closure": false,
+    "runtime": false,
+    "canonical_sdk_lifecycle_receipt": false,
+    "frozen_native_builds_retargeted": false
+  }
+}

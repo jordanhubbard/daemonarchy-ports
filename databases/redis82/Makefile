@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	8.2.10
+DISTVERSION=	8.2.11
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 PKGNAMESUFFIX=	82
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS_RSALv2=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		compiler:c11 cpe gmake tcl:test
+USES=		compiler:c11 cpe gmake tcl:test,86
 CPE_VENDOR=	redislabs
 USE_RC_SUBR=	redis sentinel
 

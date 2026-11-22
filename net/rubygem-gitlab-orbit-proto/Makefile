@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-orbit-proto
-PORTVERSION=	0.105.2
+PORTVERSION=	0.156.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

@@ -1,6 +1,6 @@
 PORTNAME=	pinact
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.0
+DISTVERSION=	5.0.2
 PORTREVISION=	1
 CATEGORIES=	devel
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/suzuki-shunsuke/pinact
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.27+,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/suzuki-shunsuke/${PORTNAME}/v5
 GO_TARGET=	./cmd/pinact
@@ -40,15 +40,11 @@ post-build-COMPLETIONS-on:
 .endfor
 
 post-install-COMPLETIONS-on:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
-		${STAGEDIR}${PREFIX}/share/fish/completions \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${GO_WRKSRC}/${PORTNAME}.bash \
-		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.fish \
-		${STAGEDIR}${PREFIX}/share/fish/completions/${PORTNAME}.fish
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.zsh \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
+	@${MKDIR} ${COMPLETIONS_PLIST_FILES:H:S|^|${STAGEDIR}${PREFIX}/|}
+.for shell in bash fish zsh
+	${INSTALL_DATA} ${GO_WRKSRC}/${PORTNAME}.${shell} \
+		${COMPLETIONS_PLIST_FILES:M*${shell}*:S|^|${STAGEDIR}${PREFIX}/|}
+.endfor
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
