@@ -33054,7 +33054,7 @@ affected.</p>
     <affects>
     <package><name>python310</name> <range><ge>0</ge></range></package>
     <package><name>python311</name> <range><ge>0</ge></range></package>
-    <package><name>python312</name> <range><ge>0</ge></range></package>
+    <package><name>python312</name> <range><ge>0</ge><lt>3.12.16_2</lt></range></package>
     <package><name>python313</name> <range><ge>0</ge></range></package>
     <package><name>python313t</name> <range><ge>0</ge></range></package>
     <package><name>python314</name> <range><ge>0</ge></range></package>
@@ -33069,16 +33069,18 @@ affected.</p>
 	  additional commands injected using newlines. Mitigation rejects
 	  commands containing control characters.</p>
 	</blockquote>
+	<p>The Daemonarchy python312 port backports the mitigation in 3.12.16_2.</p>
 	</body>
     </description>
     <references>
       <cvename>CVE-2025-15367</cvename>
       <url>https://cveawg.mitre.org/api/cve/CVE-2025-15367</url>
+      <url>https://github.com/jordanhubbard/daemonarchy-ports/issues/83</url>
     </references>
     <dates>
       <discovery>2026-01-20</discovery>
       <entry>2026-04-01</entry>
-      <modified>2026-08-14</modified>
+      <modified>2026-11-22</modified>
     </dates>
   </vuln>
 
@@ -33087,7 +33089,7 @@ affected.</p>
     <affects>
     <package><name>python310</name> <range><ge>0</ge></range></package>
     <package><name>python311</name> <range><ge>0</ge></range></package>
-    <package><name>python312</name> <range><ge>0</ge></range></package>
+    <package><name>python312</name> <range><ge>0</ge><lt>3.12.16_2</lt></range></package>
     <package><name>python313</name> <range><lt>3.13.15</lt></range></package>
     <package><name>python313t</name> <range><lt>3.13.15</lt></range></package>
     <package><name>python314</name> <range><lt>3.14.7</lt></range></package>
@@ -33102,16 +33104,18 @@ affected.</p>
 	  additional commands injected using newlines.  Mitigation rejects
 	  commands containing specific control characters.</p>
 	</blockquote>
+	<p>The Daemonarchy python312 port backports the mitigation in 3.12.16_2.</p>
 	</body>
     </description>
     <references>
       <cvename>CVE-2025-15366</cvename>
       <url>https://cveawg.mitre.org/api/cve/CVE-2025-15366</url>
+      <url>https://github.com/jordanhubbard/daemonarchy-ports/issues/83</url>
     </references>
     <dates>
       <discovery>2026-01-20</discovery>
       <entry>2026-04-01</entry>
-      <modified>2026-08-08</modified>
+      <modified>2026-11-22</modified>
     </dates>
   </vuln>
 
