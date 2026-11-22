@@ -138,6 +138,10 @@ CONFIGURE_ARGS:=	${CONFIGURE_ARGS:N${LTO_CONFIGURE_ON}}
 .endif
 
 post-patch:
+# Keep reconfigured freeze installs inside their selected lowercase prefix.
+# pathfix uses PREFIX, which can still name the outer ports installation.
+	@${REINPLACE_CMD} -e 's|^LIBPC=.*|LIBPC= $$(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.pre.in
+
 # disable the detection of includes and library from libuuid,
 # which introduces hidden dependency and breaks build
 	@${REINPLACE_CMD} -e 's|uuid/uuid.h|ignore_&|' ${WRKSRC}/configure
