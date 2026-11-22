@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# The account helper creates the home before pkg processes directory entries.
+# Apply the mode declared in pkg-plist to that already-existing directory.
+chmod 0750 "${PKG_ROOTDIR}/var/db/rabbitmq"
