@@ -1,0 +1,133 @@
+{
+  "schema": "daemonarchy/development-probe@1",
+  "date_utc": "2026-11-22T09:26:05.793690+00:00",
+  "work": "RPI-DISPLAY-001",
+  "status": "original-native-port-and-installed-software-display-controls-passed",
+  "canonical_lifecycle_admission": false,
+  "source": {
+    "ports_revision": "78101686b6314d6141394dda7ba9851d95dd3cde",
+    "upstream_drm_revision": "1d054ae55685c45c23aa86541427dfc72afa9ca1",
+    "upstream_archive_sha256": "9c99c05c3269271ca6ea19ccdca53b27517b1d6b679065fc5c3dfc2682ddfaef",
+    "incremental_patch_sha256": "9ddf75af385eb6e253eb87653457c27c8f08082150b62e7bd175027566ec169d",
+    "selected_ports_files_checked_pre_post": 407,
+    "patched_source_files_checked_pre_post": 3695,
+    "kernel_header_files_checked_pre_post": 36893,
+    "original_host_files_unchanged": true,
+    "kernel_header_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
+    "build_worker_kernel_sha256": "a8c493095a72afff329f1b51a67a2ff125c9d289dc6c8193d2b28643350991d6",
+    "current_owned_main_ancestry": "ba15ac2be68f2049666ef85856d2bf50d34fe014"
+  },
+  "native_build": {
+    "os": "FreeBSD",
+    "arch": "aarch64",
+    "osversion": 1600031,
+    "options": [
+      "EFIFB"
+    ],
+    "compiler_observed": "FreeBSD clang 21.1.8",
+    "linker_observed": "LLD 21.1.8",
+    "make_observed": "20260704",
+    "pkg_observed": "2.9.3",
+    "bootstrap_source_admission": "Not established by observed original tool versions and hashes.",
+    "targets": {
+      "original-checksum-patch": 0,
+      "original-build": 0,
+      "original-test": 0,
+      "original-stage": 0,
+      "original-check-plist": 0,
+      "original-stage-qa": 0,
+      "original-package": 0
+    },
+    "layout_bounds_refusal_checks": 16404,
+    "observed_original_tool_and_runtime_library_files_checked_pre_post": 44
+  },
+  "package": {
+    "name": "drm-612-kmod-6.12.110.1600031_8.pkg",
+    "bytes": 410853,
+    "sha256": "45f2a304375375dd1a94156712bbef34a64adb0c3e17a301b51e93aa71e77565",
+    "installed_modules": {
+      "boot/modules/dmabuf.ko": {
+        "bytes": 59280,
+        "sha256": "5b3c98f084889fcdd6f7ee249f5c1599689dd822553d0aa23fa1663fddee511a",
+        "mode": 292
+      },
+      "boot/modules/drm.ko": {
+        "bytes": 1002192,
+        "sha256": "13a1a4cc074476660ac2a96e0a6ae21580ddc47d9dea5a3df43f8a62cc979b95",
+        "mode": 292
+      },
+      "boot/modules/efifb_drm.ko": {
+        "bytes": 24480,
+        "sha256": "0d8a345c53c83fa743df365b68701f3d09c3004551cf372afa13f162ab97962b",
+        "mode": 292
+      },
+      "boot/modules/ttm.ko": {
+        "bytes": 87152,
+        "sha256": "3ab5bd68319179799958b4d2a0af65981c98b42866509e38b024683804bfdda7",
+        "mode": 292
+      },
+      "boot/modules/virtio_gpu_drm.ko": {
+        "bytes": 123672,
+        "sha256": "ad8ade7835c16baf1358f90855fbec653890b205f0b0202ed43170293a12ca38",
+        "mode": 292
+      }
+    },
+    "actual_installed_owners_uid_gid_zero": true,
+    "install_delete_reinstall_scripts_registry": "actual-package-install-delete-reinstall-scripts-and-checksums-passed",
+    "postinstall_kldxref_hints_created": true
+  },
+  "runtime": {
+    "platform": "Generic ARM64 UEFI QEMU/KVM RAM framebuffer",
+    "memory_gib": 1,
+    "boot_kernel_sha256": "bb3278a22dd15933d10b4c393004e9cfab922d7973532405d087d4282f110090",
+    "rendering": "software pixman; no GPU acceleration",
+    "installed_package_KMS_exit": 0,
+    "verified_scanout_pixels": 1440000,
+    "scanout_mismatches": 0,
+    "modeset_dirtyfb_pageflip_event_console_restore": true,
+    "actual_Wayland_terminal_window_title": "Daemonarchy packaged display test",
+    "actual_framebuffer_capture_sha256": "b311be15e2650a8fba30e6e42751740081767426ee07dcac9b5012f27548e147",
+    "actual_emulated_USB_keyboard_to_shell_marker": true,
+    "owned_VM_clean_shutdown_observed": true
+  },
+  "alternative_source_profiles": {
+    "arm64-disabled": {
+      "native_checksum_and_patch_exit": 0,
+      "verified_source_files": 3689,
+      "expected_patched_tree": "05f40343397205ac165b85c757055a46040d4a35",
+      "no_EFI_patch_applied": true
+    },
+    "amd64-default": {
+      "native_checksum_and_patch_exit": 0,
+      "verified_source_files": 3689,
+      "expected_patched_tree": "49f72ed5b663b274a546d2fa4e584ddb0f6d652b",
+      "no_EFI_patch_applied": true
+    }
+  },
+  "limitations": [
+    "AMD64 source selection only; no new AMD64 compilation or runtime result.",
+    "Prior Pi4 visual acceptance used manually loaded modules, not this package.",
+    "Physical Pi5, full RAM, GPU acceleration, WiFi and the installed product session remain unqualified.",
+    "VirtIO custom framebuffer GEM-size validation has separate outstanding controls; EFI negative cases do not qualify it.",
+    "Package filesystem roundtrip does not qualify kernel hot replacement or product update/rollback.",
+    "No global SDK replacement, source admission, signed feed, release publication or canonical lifecycle receipt.",
+    "Final CURRENT distribution qualification remains separate from this F4 kernel/header selection."
+  ],
+  "retention": "Original sources, tests, products, archives, scripts and failed probes remain privately retained.",
+  "original_framework_SBOM": {
+    "relative_path": "usr/local/share/sbom/pc/drm-612-kmod.pc",
+    "bytes": 474,
+    "sha256": "8a3fcacd3bb2f4cd9bb13bf8d2d20b20ec7bb750cc39f28678bc4107241bc9ea",
+    "content": "pkgversion=6.12.110.1600031_8\norigin=graphics/drm-612-kmod\n\nName: drm-612-kmod\nDescription: Direct Rendering Manager (DRM) GPU drivers\nVersion: 6.12.110\nLicense: BSD2CLAUSE AND MIT AND GPLv2\nMaintainer: x11@FreeBSD.org\nURL: https://github.com/freebsd/drm-kmod/\nSource: https://codeload.github.com/freebsd/drm-kmod/tar.gz/drm_v6.12.110_1?dummy=/freebsd-drm-kmod-6.12.110-drm_v6.12.110_1_GH0.tar.gz\nFreeBSD-Pkgversion: 6.12.110.1600031_8\nFreeBSD-Origin: graphics/drm-612-kmod\n"
+  },
+  "installed_SBOM_review": {
+    "actual_generated_SBOM_packaged_and_installed_equal": true,
+    "installed_owner_uid_gid_zero": true,
+    "path": "usr/local/share/sbom/pc/drm-612-kmod.pc",
+    "bytes": 474,
+    "sha256": "8a3fcacd3bb2f4cd9bb13bf8d2d20b20ec7bb750cc39f28678bc4107241bc9ea",
+    "source_URL_and_licenses_preserved": true,
+    "scope": "Original ports pc-format SBOM; not complete canonical Component dependency/toolchain admission."
+  },
+  "earlier_development_record": "drm-612-efifb-20261122.json"
+}
