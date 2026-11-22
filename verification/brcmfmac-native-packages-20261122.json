@@ -142,6 +142,14 @@
         "kernel_generated_header_and_selected_product_capsule_files": 307,
         "all_patched_source_files": 55,
         "actual_package_reopened": true
+      },
+      "complete_native_archive_offhost_reopen": {
+        "archive_sha256": "64a40cc950d9a80a48f4fe732609582372432d2189c94fc5c2273f570f9222ac",
+        "archive_bytes": 158255321,
+        "all_entries": 41599,
+        "logical_file_bytes": 589802924,
+        "all_content_metadata_and_literal_links_match": true,
+        "healthy_second_host_ext4": true
       }
     },
     "amd64": {
@@ -247,6 +255,10 @@
         "patched": 55,
         "package": 1,
         "failed_preparation_evidence_files": 12
+      },
+      "complete_native_archive_offhost_reopen": {
+        "native_producer_and_independent_controller_on_different_physical_hosts": true,
+        "source_kernel_ports_module_and_failed_preparation_content_reopened": true
       }
     }
   },
