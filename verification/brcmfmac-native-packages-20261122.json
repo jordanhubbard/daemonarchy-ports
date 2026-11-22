@@ -1,0 +1,278 @@
+{
+  "schema": "daemonarchy/brcmfmac-native-package-review@1",
+  "date": "2026-11-22",
+  "scope": "Original patched port native packaging and independent idle module consumers; no physical radio or release acceptance.",
+  "ports_input_commit": "9a7013b8934adea0f091b1da9c4c05c80f854f84",
+  "ports_parent": "ba15ac2be68f2049666ef85856d2bf50d34fe014",
+  "upstream_revision": "9adbe774d3be91827d628fbd811daf63512acb6d",
+  "upstream_archive": {
+    "bytes": 155107,
+    "sha256": "2eeb83e170328a884f976ae5d906ea42c28a124a017959f1ce10cadb665c106b"
+  },
+  "unchanged_downstream_patches": [
+    {
+      "path": "net/if_brcmfmac-kmod/files/patch-src_brcmfmac.h",
+      "sha256": "16aacc59a15420c11dee97ea715499f1046954ff704d285dd03ce7d25530414e"
+    },
+    {
+      "path": "net/if_brcmfmac-kmod/files/patch-src_cfg.c",
+      "sha256": "901416ffac0514aa61d0649284049707c26d2aa6b608e2c1e5018fdcaf91b1bc"
+    },
+    {
+      "path": "net/if_brcmfmac-kmod/files/patch-src_core.c",
+      "sha256": "3ca1bd7182200645cbeeb813138e5615ec6a24806e2f96b029d384b379389f51"
+    },
+    {
+      "path": "net/if_brcmfmac-kmod/files/patch-src_main.c",
+      "sha256": "448578c54d207d5a179d1188d0cb4160a825caa8be16a2d176abeef90fffff0d"
+    },
+    {
+      "path": "net/if_brcmfmac-kmod/files/patch-src_msgbuf.c",
+      "sha256": "0d98b3303c84101df2000e97e50f561ef31accb2c58b2f7248172747d23476aa"
+    },
+    {
+      "path": "net/if_brcmfmac-kmod/files/patch-src_pcie.c",
+      "sha256": "86dae9532ff7c823832112aa194892934a608a8627d3380081c66f9571744e12"
+    },
+    {
+      "path": "net/if_brcmfmac-kmod/files/patch-src_scan.c",
+      "sha256": "fabd9f0094b783a0351ed5908c1694895b7e17ba14d708a6f1ac662968681016"
+    },
+    {
+      "path": "net/if_brcmfmac-kmod/files/patch-src_sdpcm.c",
+      "sha256": "7f1d496921ccac7a02bc1773e42c0b1d84deb56d2e4a944dba8de6f1b31dd14a"
+    },
+    {
+      "path": "net/if_brcmfmac-kmod/files/patch-src_security.c",
+      "sha256": "8ded9e576e0a649553c62c02a370eb59470fcdbe25946299a27dfdfdbc539593"
+    }
+  ],
+  "kernel_source_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
+  "architectures": {
+    "aarch64": {
+      "OSVERSION": 1600031,
+      "native_phase_exits": {
+        "native-metadata": 0,
+        "original-checksum-patch": 0,
+        "original-build": 0,
+        "original-test-target": 0,
+        "actual-module-sections": 0,
+        "actual-module-CTF-types": 0,
+        "original-stage": 0,
+        "staged-module-sections": 0,
+        "staged-module-CTF-types": 0,
+        "original-check-plist": 0,
+        "original-stage-qa": 0,
+        "original-package": 0
+      },
+      "guard_counts": {
+        "ports_files": 406,
+        "patched_source_files": 55,
+        "kernel_source_entries": 36893,
+        "observed_host_tool_runtime_records": 51
+      },
+      "host_unchanged": true,
+      "package": {
+        "name": "if_brcmfmac-kmod-20260402.1600031_4.pkg",
+        "bytes": 72895,
+        "sha256": "5d330c992645ac40aa01d8648b599a2b27fef2c8795bfea4623e9b9ca21dc32d"
+      },
+      "installed_module": {
+        "bytes": 135176,
+        "sha256": "c8852132229708eadbc0f8b3d3d817659c7b5968ed4ed4671829ffac82b37c98"
+      },
+      "CTF_driver_and_net80211_types": true,
+      "staged_DWARF_removed_CTF_preserved": true,
+      "original_framework_SBOM": {
+        "relative_path": "usr/local/share/sbom/pc/if_brcmfmac-kmod.pc",
+        "bytes": 520,
+        "sha256": "d9fa0f901152377bd4f46b21f2c1bf8927337e47fee48a9fdab81fbda9550425",
+        "content": "pkgversion=20260402.1600031_4\norigin=net/if_brcmfmac-kmod\n\nName: if_brcmfmac-kmod\nDescription: Native Broadcom FullMAC Wi-Fi kernel module\nVersion: 20260402\nLicense: ISCL\nMaintainer: jkh@FreeBSD.org\nURL: https://github.com/narqo/freebsd-brcmfmac\nSource: https://codeload.github.com/narqo/freebsd-brcmfmac/tar.gz/9adbe774d3be91827d628fbd811daf63512acb6d?dummy=/narqo-freebsd-brcmfmac-20260402-9adbe774d3be91827d628fbd811daf63512acb6d_GH0.tar.gz\nFreeBSD-Pkgversion: 20260402.1600031_4\nFreeBSD-Origin: net/if_brcmfmac-kmod\n"
+      },
+      "independent_consumer": {
+        "package_sha256": "5d330c992645ac40aa01d8648b599a2b27fef2c8795bfea4623e9b9ca21dc32d",
+        "actual_all_five_payload_bytes_modes_and_root_ownership_passed": true,
+        "original_pkg_install_delete_reinstall_scripts_passed": true,
+        "both_installed_driver_load_unload_cycles_passed": true,
+        "actual_PCI_and_SDIO_frontends_registered": true,
+        "missing_CTF_warnings_absent": true,
+        "kernel_file_registry_and_interfaces_restored": true
+      },
+      "installed_payload": {
+        "boot/modules/if_brcmfmac.ko": {
+          "bytes": 135176,
+          "mode": 292,
+          "sha256": "c8852132229708eadbc0f8b3d3d817659c7b5968ed4ed4671829ffac82b37c98"
+        },
+        "usr/local/share/licenses/if_brcmfmac-kmod-20260402.1600031_4/ISCL": {
+          "bytes": 837,
+          "mode": 420,
+          "sha256": "ec5c69c538c3e7d86ff8f7617fac8918e342df249dee45993e3e4b3771b19090"
+        },
+        "usr/local/share/licenses/if_brcmfmac-kmod-20260402.1600031_4/LICENSE": {
+          "bytes": 79,
+          "mode": 420,
+          "sha256": "5fe93c3e042a87337ef6e636ff3254d8d0cf41de9fb5481cb74c6a7801afabff"
+        },
+        "usr/local/share/licenses/if_brcmfmac-kmod-20260402.1600031_4/catalog.mk": {
+          "bytes": 273,
+          "mode": 420,
+          "sha256": "f347c1462b518f2be017b0c29bc6888c1b0c908740bc86b1e141b6d5963eebee"
+        },
+        "usr/local/share/sbom/pc/if_brcmfmac-kmod.pc": {
+          "bytes": 520,
+          "mode": 420,
+          "sha256": "d9fa0f901152377bd4f46b21f2c1bf8927337e47fee48a9fdab81fbda9550425"
+        }
+      },
+      "complete_native_custody_archive": {
+        "bytes": 158255321,
+        "sha256": "64a40cc950d9a80a48f4fe732609582372432d2189c94fc5c2273f570f9222ac"
+      },
+      "VM_shutdown_verified": true,
+      "kernel_ident": "GENERIC-MMCCAM",
+      "kernel_sha256": "34e923c631d645cc8cbc211031af0a7f41bd6f07d30a89738a92e7d44402fac6",
+      "kernel_generated_capsule_entries": 307,
+      "kernel_source_overlays": "Three exact mailbox/VC-bus files retained in source PR132/133; native source and generated options bound together.",
+      "complete_native_archive_independent_reopen": {
+        "complete_archive_independently_reopened": true,
+        "selected_ports_files": 406,
+        "base_kernel_Git_files": 36890,
+        "explicit_kernel_overlays": 3,
+        "kernel_generated_header_and_selected_product_capsule_files": 307,
+        "all_patched_source_files": 55,
+        "actual_package_reopened": true
+      }
+    },
+    "amd64": {
+      "OSVERSION": 1600031,
+      "native_phase_exits": {
+        "native-metadata": 0,
+        "original-checksum-patch": 0,
+        "original-build": 0,
+        "original-test-target": 0,
+        "actual-module-sections": 0,
+        "actual-module-CTF-types": 0,
+        "original-stage": 0,
+        "staged-module-sections": 0,
+        "staged-module-CTF-types": 0,
+        "original-check-plist": 0,
+        "original-stage-qa": 0,
+        "original-package": 0
+      },
+      "guard_counts": {
+        "ports_files": 406,
+        "patched_source_files": 55,
+        "kernel_source_entries": 36893,
+        "observed_host_tool_runtime_records": 51
+      },
+      "host_unchanged": true,
+      "package": {
+        "name": "if_brcmfmac-kmod-20260402.1600031_4.pkg",
+        "bytes": 73378,
+        "sha256": "9a9f2ad3405bab391c841034d01f2b6663b072b1a7ab9ce9dcc34732e092e6e1"
+      },
+      "installed_module": {
+        "bytes": 177504,
+        "sha256": "6a4a289efc7d5c06ee9c5511629e33b7e5bf516d77b61c2c25b1d362cb6f0a24"
+      },
+      "CTF_driver_and_net80211_types": true,
+      "staged_DWARF_removed_CTF_preserved": true,
+      "original_framework_SBOM": {
+        "relative_path": "usr/local/share/sbom/pc/if_brcmfmac-kmod.pc",
+        "bytes": 520,
+        "sha256": "d9fa0f901152377bd4f46b21f2c1bf8927337e47fee48a9fdab81fbda9550425",
+        "content": "pkgversion=20260402.1600031_4\norigin=net/if_brcmfmac-kmod\n\nName: if_brcmfmac-kmod\nDescription: Native Broadcom FullMAC Wi-Fi kernel module\nVersion: 20260402\nLicense: ISCL\nMaintainer: jkh@FreeBSD.org\nURL: https://github.com/narqo/freebsd-brcmfmac\nSource: https://codeload.github.com/narqo/freebsd-brcmfmac/tar.gz/9adbe774d3be91827d628fbd811daf63512acb6d?dummy=/narqo-freebsd-brcmfmac-20260402-9adbe774d3be91827d628fbd811daf63512acb6d_GH0.tar.gz\nFreeBSD-Pkgversion: 20260402.1600031_4\nFreeBSD-Origin: net/if_brcmfmac-kmod\n"
+      },
+      "independent_consumer": {
+        "source_kernel_SDIOb_deinit_returns": "EOPNOTSUPP; original sys/dev/sdio/sdiob.c",
+        "normal_dependency_unload_refusal_retained": true,
+        "forced_unload_used": false,
+        "actual_all_five_payload_bytes_modes_and_root_ownership_passed": true,
+        "original_install_delete_reinstall_scripts_passed": true,
+        "both_installed_driver_load_unload_cycles_passed": true,
+        "actual_PCI_and_SDIO_frontends_registered": true,
+        "missing_CTF_warnings_absent": true,
+        "final_package_payload_and_registry_absent": true,
+        "only_new_resident_dependency": "sdio.ko"
+      },
+      "installed_payload": {
+        "boot/modules/if_brcmfmac.ko": {
+          "bytes": 177504,
+          "mode": 292,
+          "sha256": "6a4a289efc7d5c06ee9c5511629e33b7e5bf516d77b61c2c25b1d362cb6f0a24"
+        },
+        "usr/local/share/licenses/if_brcmfmac-kmod-20260402.1600031_4/ISCL": {
+          "bytes": 837,
+          "mode": 420,
+          "sha256": "ec5c69c538c3e7d86ff8f7617fac8918e342df249dee45993e3e4b3771b19090"
+        },
+        "usr/local/share/licenses/if_brcmfmac-kmod-20260402.1600031_4/LICENSE": {
+          "bytes": 79,
+          "mode": 420,
+          "sha256": "5fe93c3e042a87337ef6e636ff3254d8d0cf41de9fb5481cb74c6a7801afabff"
+        },
+        "usr/local/share/licenses/if_brcmfmac-kmod-20260402.1600031_4/catalog.mk": {
+          "bytes": 273,
+          "mode": 420,
+          "sha256": "f347c1462b518f2be017b0c29bc6888c1b0c908740bc86b1e141b6d5963eebee"
+        },
+        "usr/local/share/sbom/pc/if_brcmfmac-kmod.pc": {
+          "bytes": 520,
+          "mode": 420,
+          "sha256": "d9fa0f901152377bd4f46b21f2c1bf8927337e47fee48a9fdab81fbda9550425"
+        }
+      },
+      "complete_native_custody_archive": {
+        "bytes": 414686583,
+        "sha256": "c3c9fbc34bc3536e41b4028d1eb5aed02f17760018ed5152d62bceba6fc0ba42"
+      },
+      "VM_shutdown_verified": true,
+      "kernel_ident": "GENERIC",
+      "kernel_sha256": "83690f1f4fa3001a1e77852c44e9234ff6f9c4b6fa3e11cf7cf2a6e0c504ef35",
+      "clean_reboot_dependency_review": {
+        "same_private_COW_rebooted": true,
+        "original_kernel_file_sha256": "83690f1f4fa3001a1e77852c44e9234ff6f9c4b6fa3e11cf7cf2a6e0c504ef35",
+        "SDIO_dependency_absent_after_reboot": true,
+        "original_kernel_file_names_restored": true,
+        "final_package_payload_and_registry_absent": true,
+        "forced_unload_used": false
+      },
+      "complete_native_archive_independent_reopen": {
+        "complete_archive_independently_reopened": true,
+        "sha256": "c3c9fbc34bc3536e41b4028d1eb5aed02f17760018ed5152d62bceba6fc0ba42",
+        "bytes": 414686583,
+        "ports": 406,
+        "kernel": 36893,
+        "patched": 55,
+        "package": 1,
+        "failed_preparation_evidence_files": 12
+      }
+    }
+  },
+  "upstream_test_inventory": "No executable upstream suite or TEST_TARGET. Ports test target returned zero; this is not a suite pass.",
+  "bootstrap_provenance": "Observed tool/version/byte/runtime library guards retained; original source-build provenance is not fully admitted.",
+  "failed_attempts_retained": [
+    "amd64 preparation missing private parent directory; no source work created",
+    "arm64 consumer path outside existing RAM-root helper namespace rejected before mutation; corrected path",
+    "amd64 consumer expected SDIO unload; base sdiobdeinit returns EOPNOTSUPP; no forced unload",
+    "amd64 reboot observer property-name substitution failed after actual QEMU exit; corrected independent observer",
+    "Earlier raw-driver module readback discrepancy has no retained original failing bytes; cause remains unclassified. New package readbacks were retained before comparison."
+  ],
+  "not_qualified": [
+    "Physical PCIe or SDIO Broadcom hardware",
+    "Pi ACPI SDIO enumeration, power and pin sequencing",
+    "Board firmware, NVRAM and CLM selection",
+    "Association, traffic and recovery",
+    "Native Pi SD and Ethernet regression with this kernel/module",
+    "Final matching CURRENT source and package closure",
+    "Canonical Component execution, complete toolchain provenance, both canonical BOMs, SDK or lifecycle admission",
+    "Product update, rollback, signing, feed or 1.6 release acceptance"
+  ],
+  "canonical_verification": {
+    "locks": "2 current",
+    "authority": "stale; human review required, marker unchanged",
+    "receipt": "rejected with stale authority; no current earned receipt",
+    "lifecycle_admitted": false
+  }
+}

@@ -1,5 +1,12 @@
 # Native ports development
 
+### [ ] PORT-BRCM-001 — Qualify Broadcom packages and Pi SDIO operation
+
+- **Owner:** net/if_brcmfmac-kmod and matching source/kernel profiles.
+- **Direction:** Retain all downstream PCIe/security patches while enabling aarch64 development and original FreeBSD CTF generation.
+- **Evidence:** [Native package and independent consumer results](../user/brcmfmac-native-packages.md) cover arm64 GENERIC-MMCCAM and amd64 GENERIC, original package scripts, complete payload checks and two installed-driver cycles. The amd64 base SDIO dependency requires reboot for cleanup; a real same-disk reboot restored the original module list.
+- **Remaining:** Physical PCIe/SDIO radios, Pi power/pin/firmware integration, association/traffic/recovery, native SD/Ethernet regression, final CURRENT closure and canonical provenance/SDK/lifecycle admission. No signed feed or release acceptance is implied.
+
 ### [ ] PORT-UNIT-001 — Qualify original port and shared make composition
 
 - **Priority:** P1
