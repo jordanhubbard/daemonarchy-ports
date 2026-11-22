@@ -1,3 +1,57 @@
+  <vuln vid="5e63ecc4-23ac-4f2f-b01a-0ac4e942f3e4">
+    <topic>py-setuptools -- command injection in VCS downloads</topic>
+    <affects>
+      <package>
+	<name>py37-setuptools</name>
+	<name>py38-setuptools</name>
+	<name>py39-setuptools</name>
+	<name>py310-setuptools</name>
+	<name>py311-setuptools</name>
+	<name>py312-setuptools</name>
+	<name>py313-setuptools</name>
+	<name>py313t-setuptools</name>
+	<name>py314-setuptools</name>
+	<name>py314t-setuptools</name>
+	<name>py315-setuptools</name>
+	<range><lt>63.1.0_5</lt></range>
+	<range><gt>63.1.0_5</gt><lt>70.0.0</lt></range>
+      </package>
+      <package>
+	<name>py27-setuptools44</name>
+	<name>py37-setuptools58</name>
+	<name>py38-setuptools58</name>
+	<name>py39-setuptools58</name>
+	<name>py310-setuptools58</name>
+	<name>py311-setuptools58</name>
+	<name>py312-setuptools58</name>
+	<name>py313-setuptools58</name>
+	<name>py313t-setuptools58</name>
+	<name>py314-setuptools58</name>
+	<name>py314t-setuptools58</name>
+	<name>py315-setuptools58</name>
+	<range><lt>70.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PackageIndex VCS downloads interpolate package URLs, revisions and
+	  destination paths into shell commands. Shell metacharacters in these
+	  values can execute commands with the caller's privileges.</p>
+	<p>The argv-based subprocess fix from setuptools 70.0.0 is backported
+	  in port revision 63.1.0_5. The legacy 44 and 58 ports remain affected.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2024-6345</cvename>
+      <url>https://github.com/advisories/GHSA-cx63-2mw6-8hw5</url>
+      <url>https://github.com/pypa/setuptools/commit/88807c7062788254f654ea8c03427adc859321f0</url>
+    </references>
+    <dates>
+      <discovery>2024-07-15</discovery>
+      <entry>2026-11-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="890d1126-e36c-11f1-bae2-3497f65b111b">
     <topic>nginx -- multiple vulnerabilities</topic>
     <affects>
@@ -27508,13 +27562,21 @@ vulnerability is fixed in crate versions: 36.0.7, 42.0.2, and 43.0.1.</p>
 	<name>py313-setuptools58</name>
 	<name>py313t-setuptools58</name>
 	<name>py314-setuptools58</name>
+	<name>py314t-setuptools58</name>
+	<name>py315-setuptools58</name>
+	<range><lt>78.1.1</lt></range>
+    </package>
+    <package>
 	<name>py310-setuptools</name>
 	<name>py311-setuptools</name>
 	<name>py312-setuptools</name>
 	<name>py313-setuptools</name>
 	<name>py313t-setuptools</name>
 	<name>py314-setuptools</name>
-	<range><lt>78.1.1</lt></range>
+	<name>py314t-setuptools</name>
+	<name>py315-setuptools</name>
+	<range><lt>63.1.0_5</lt></range>
+	<range><gt>63.1.0_5</gt><lt>78.1.1</lt></range>
     </package>
     </affects>
     <description>
@@ -27529,6 +27591,8 @@ vulnerability is fixed in crate versions: 36.0.7, 42.0.2, and 43.0.1.</p>
 	  process running the Python code, which could escalate to remote
 	  code execution depending on the context.</p>
 	</blockquote>
+	<p>The containment fix is backported in port revision 63.1.0_5.
+	  The additional range preserves detection of other affected versions.</p>
 	</body>
     </description>
     <references>
@@ -27538,6 +27602,7 @@ vulnerability is fixed in crate versions: 36.0.7, 42.0.2, and 43.0.1.</p>
     <dates>
       <discovery>2025-05-17</discovery>
       <entry>2026-05-14</entry>
+      <modified>2026-11-22</modified>
     </dates>
   </vuln>
 
