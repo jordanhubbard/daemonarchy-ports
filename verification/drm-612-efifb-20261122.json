@@ -12,7 +12,9 @@
     "selected_ports_files_checked_pre_post": 376,
     "patched_source_files_checked_pre_post": 3695,
     "kernel_header_files_checked_pre_post": 36893,
-    "original_host_files_unchanged": true
+    "original_host_files_unchanged": true,
+    "kernel_header_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
+    "build_worker_kernel_sha256": "a8c493095a72afff329f1b51a67a2ff125c9d289dc6c8193d2b28643350991d6"
   },
   "native_build": {
     "os": "FreeBSD",
@@ -106,7 +108,8 @@
     "Physical Pi5, full RAM, GPU acceleration, WiFi and the installed product session remain unqualified.",
     "VirtIO custom framebuffer GEM-size validation has separate outstanding controls; EFI negative cases do not qualify it.",
     "Package filesystem roundtrip does not qualify kernel hot replacement or product update/rollback.",
-    "No global SDK replacement, source admission, signed feed, release publication or canonical lifecycle receipt."
+    "No global SDK replacement, source admission, signed feed, release publication or canonical lifecycle receipt.",
+    "These controls bind the F4 source/kernel selection; final CURRENT distribution qualification remains separate."
   ],
   "retention": "Original sources, tests, products, archives, scripts and failed probes remain privately retained."
 }
