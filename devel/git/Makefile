@@ -65,6 +65,10 @@ SHEBANG_FILES=	Documentation/*.perl \
 		git-p4.py \
 		templates/hooks/fsmonitor-watchman.sample
 TEST_TARGET=	test
+# The upstream shell tests use Perl helpers even when NO_PERL disables Git's
+# Perl commands. Keep the interpreter a test-only dependency for those builds.
+TEST_DEPENDS+=	${LOCALBASE}/bin/perl:lang/perl${PERL5_DEFAULT}
+TEST_ARGS+=	PERL_PATH=${LOCALBASE}/bin/perl
 
 CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 
