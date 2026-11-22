@@ -1,5 +1,6 @@
 PORTNAME=	perl
 DISTVERSION=	${PERL_VERSION}
+PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN/../../src/5.0 \
 		CPAN/../by-authors/id/S/SH/SHAY
@@ -243,6 +244,11 @@ post-patch:
 		${AWK} -v patch="$$patch" 'seen == 1 && /,NULL/ {print ",\"FreeBSD:" patch "\""} {print} /local_patches\[\]/ { seen=1 }' ${WRKSRC}/patchlevel.h > ${WRKDIR}/patchlevel.h; \
 		mv -f ${WRKDIR}/patchlevel.h ${WRKSRC}/patchlevel.h ; \
 	done
+	# Preserve the patch backup outside the upstream source-script inventory.
+	# dual-life.t requires a utils counterpart for every file in bin/.
+	@if [ -f ${WRKSRC}/cpan/JSON-PP/bin/json_pp.orig ]; then \
+		${MV} ${WRKSRC}/cpan/JSON-PP/bin/json_pp.orig ${WRKDIR}/json_pp.orig; \
+	fi
 
 post-install:
 	@${REINPLACE_CMD} -e '/^lddlflags/s|-L${WRKSRC} ||' \
