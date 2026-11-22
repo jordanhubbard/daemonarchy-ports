@@ -1,0 +1,171 @@
+{
+  "schema": "daemonarchy/ports-upstream-sync-development@1",
+  "observed_utc": "2026-11-10T01:54:28.831793+00:00",
+  "status": "draft-native-metadata-only",
+  "merge_commit": "a128bcefc8d1e7708d112753a17c3c507c04bbc3",
+  "owned_parent": "48561eaaf50086b2a6f469e307f26d1292024de6",
+  "upstream_parent": "5dcb3b799d588df1559edc4d0dfeb028b64ef70f",
+  "code_tree": "5c40f49e6e53c55a5fcba80e15890e0a89803db0",
+  "audit": {
+    "schema": "daemonarchy/ports-refresh-audit@1",
+    "owned_head": "48561eaaf50086b2a6f469e307f26d1292024de6",
+    "upstream": "5dcb3b799d588df1559edc4d0dfeb028b64ef70f",
+    "candidate_tree": "5c40f49e6e53c55a5fcba80e15890e0a89803db0",
+    "protected_paths": 390,
+    "delta_paths_vs_upstream": 229,
+    "delta_outside_protected": [],
+    "unmerged_index_entries": 0,
+    "unstaged_paths": 0,
+    "categories_checked": 63,
+    "category_entries_checked": 35528,
+    "missing_category_origins": [],
+    "native_build_qualified": false
+  },
+  "native_metadata": {
+    "candidate_tree": "5c40f49e6e53c55a5fcba80e15890e0a89803db0",
+    "current_origins_evaluated": 35,
+    "current_origin_make_failures": [],
+    "architecture_ignored_origins": [
+      {
+        "origin": "graphics/nvidia-drm-612-kmod",
+        "reason": "is only for amd64, while you are running aarch64"
+      },
+      {
+        "origin": "net/if_brcmfmac-kmod",
+        "reason": "is only for amd64, while you are running aarch64"
+      }
+    ],
+    "broken_origins": [],
+    "declared_direct_dependency_origins": 300,
+    "missing_direct_dependency_origins": [],
+    "historical_probe_failure": {
+      "origin": "x11-wm/omarchy-desktop",
+      "probe_exit": 2,
+      "already_absent_before_import": true,
+      "renamed_to": "x11-wm/daemonarchy",
+      "rename_commit": "994340cfe174f6e3e58a9238b0855053715e21fa",
+      "replacement_probe_exit": 0
+    },
+    "scope": "Native ARM64 BSD-make metadata and direct dependency-origin existence; no transitive closure, native amd64, package build/install or release qualification"
+  },
+  "native_worker": {
+    "system": "FreeBSD 16.0-CURRENT",
+    "machine": "arm64",
+    "arch": "aarch64",
+    "osversion": 1600029,
+    "build_uid": 1017,
+    "bootstrap_source_build_provenance": "unknown-host-bootstrap",
+    "scope": "Installed baseline worker, not the newly compiling CURRENT world",
+    "dependency_installation_performed": false,
+    "runtime_package_installation_performed": false
+  },
+  "native_candidate_archive": {
+    "tree": "5c40f49e6e53c55a5fcba80e15890e0a89803db0",
+    "bytes": 126820519,
+    "sha256": "b0240078cafd9890690d7f1c6e1620915afda6470747f47a1b11371542ad220d"
+  },
+  "owned_resolutions": [
+    {
+      "path": "lang/php82/Makefile",
+      "decision": "Retain the selected security release already present upstream, with its newer upstream PORTREVISION=2"
+    },
+    {
+      "path": "lang/php83/Makefile",
+      "decision": "Retain the selected security release already present upstream, with its newer upstream PORTREVISION=2"
+    },
+    {
+      "path": "lang/php84/Makefile",
+      "decision": "Retain the selected security release already present upstream, with its newer upstream PORTREVISION=2"
+    },
+    {
+      "path": "lang/php85/Makefile",
+      "decision": "Retain the selected security release already present upstream, with its newer upstream PORTREVISION=2"
+    },
+    {
+      "path": "graphics/nvidia-drm-612-kmod/Makefile",
+      "decision": "Retain owned revision 2 and all owned DRM changes while taking nonconflicting upstream shared-driver updates"
+    },
+    {
+      "path": "x11-toolkits/aquamarine/Makefile",
+      "decision": "Update to upstream 0.16.0 and retain the owned hotplug/teardown patches as revision 1; native patch/build/runtime acceptance pending"
+    },
+    {
+      "path": "sysutils/herdr/files/patch-crates_ghostty-vt_build.rs",
+      "decision": "Keep the owned 0.9.5 workspace patch path and combine upstream PowerPC mappings with existing amd64/aarch64 mappings"
+    },
+    {
+      "path": "misc/Makefile",
+      "decision": "Combine surviving category origins; omit only stale entries whose origin Makefile is absent after the upstream import"
+    },
+    {
+      "path": "x11/Makefile",
+      "decision": "Combine surviving category origins; omit only stale entries whose origin Makefile is absent after the upstream import"
+    }
+  ],
+  "aquamarine_patch_controls": {
+    "source_sha256": "42339c3096c9de6582c0d71bc86b7e63334a3faf6a2b917d385ad093caf66c3c",
+    "initial_failure_retained": true,
+    "repair": "Refresh owned DRM patch context for the new upstream leading blank line; connector probing and hotplug behavior unchanged",
+    "controls": [
+      {
+        "patch": "x11-toolkits/aquamarine/files/patch-include_aquamarine_backend_DRM.hpp",
+        "sha256": "2a3bbe08c43a6bc9f231f53cec4c3cb94f0a92460c0061a04410188f1b9d1ae4",
+        "exit": 0,
+        "stdout": "patching file include/aquamarine/backend/DRM.hpp\n",
+        "stderr": ""
+      },
+      {
+        "patch": "x11-toolkits/aquamarine/files/patch-src_backend_Backend.cpp",
+        "sha256": "dc6ce3b096e4bdd4dd841030a58a2cf6781acce4a6b817d20162f648a92a9424",
+        "exit": 0,
+        "stdout": "patching file src/backend/Backend.cpp\n",
+        "stderr": ""
+      },
+      {
+        "patch": "x11-toolkits/aquamarine/files/patch-src_backend_drm_DRM.cpp",
+        "sha256": "8103896198e535a0962cb51e31b62e18d0a41c943972c48132f6d8921c8e93e3",
+        "exit": 0,
+        "stdout": "patching file src/backend/drm/DRM.cpp\n",
+        "stderr": ""
+      },
+      {
+        "patch": "x11-toolkits/aquamarine/files/extra-patch-src_backend_Headless.cpp",
+        "sha256": "8fdfeb9ac98ee0e925792561eec65df80f7944cf2d77d4db383ea90197324d47",
+        "exit": 0,
+        "stdout": "patching file src/backend/Headless.cpp\n",
+        "stderr": ""
+      }
+    ],
+    "native_build_qualified": false
+  },
+  "controller_tests": {
+    "cases": 24,
+    "pass": 23,
+    "skipped": 1,
+    "skip_reason": "Actual hosted FreeBSD BSD-make report required",
+    "exit": 0
+  },
+  "whitespace": {
+    "merge_whitespace_check_exit": 2,
+    "trailing_whitespace_paths": 2522,
+    "nonprotected_warning_paths": 2521,
+    "nonprotected_warning_paths_not_identical_to_upstream": [],
+    "protected_warning_paths": [
+      "x11-toolkits/aquamarine/files/patch-src_backend_drm_DRM.cpp"
+    ]
+  },
+  "framework_validation": {
+    "project_validate": "project.manifest_invalid",
+    "litai_verify": "project.manifest_invalid",
+    "manifest_byte_identical_to_owned_parent": true,
+    "no_lifecycle_receipt_claimed": true
+  },
+  "remaining": [
+    "Native amd64 metadata/build checks",
+    "Build changed desktop and dependency packages against the selected source/ABI",
+    "Qualify Hyprland 0.57.1 and Aquamarine 0.16.0 hotplug and teardown on actual desktops",
+    "Complete signed architecture-specific closures, media, install/update/recovery acceptance",
+    "Resolve framework manifest/authority/lifecycle gates without weakening policy"
+  ],
+  "release_qualified": false
+}

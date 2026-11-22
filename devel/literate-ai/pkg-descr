@@ -1,0 +1,9 @@
+literate-ai is a software-neutral lifecycle framework for spec-led AI
+development. Its command line harness, litai, drives specification, planning,
+generation, build, test, verification, locking and release of a project as
+reviewed, evidence-gated steps, and can delegate native work to the build
+system a project already uses (make, CMake, Bazel and others).
+
+Daemonarchy installs /usr/src and /usr/ports on every system; litai is the
+harness through which source and ports operations are meant to be run. The
+litai-mcp program exposes the same harness over the Model Context Protocol.

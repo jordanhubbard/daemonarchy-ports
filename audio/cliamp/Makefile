@@ -1,6 +1,7 @@
 PORTNAME=	cliamp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 		ffmpeg:multimedia/ffmpeg \
 		yt-dlp:www/yt-dlp
 
-USES=		go:modules pkgconfig
+USES=		go:1.26+,modules pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	bjarneo
 

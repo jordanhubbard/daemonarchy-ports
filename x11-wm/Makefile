@@ -5,6 +5,7 @@
     SUBDIR += amiwm
     SUBDIR += aphelia
     SUBDIR += awesome
+    SUBDIR += awesome-devel
     SUBDIR += awesome-vicious
     SUBDIR += bbkeys
     SUBDIR += bbpager
@@ -28,6 +29,7 @@
     SUBDIR += deforaos-panel
     SUBDIR += devilspie
     SUBDIR += devilspie2
+    SUBDIR += devilspie2-devel
     SUBDIR += durden
     SUBDIR += dwl
     SUBDIR += dwm
@@ -41,6 +43,7 @@
     SUBDIR += epplets
     SUBDIR += euclid-wm
     SUBDIR += evilwm
+    SUBDIR += fastcompmgr
     SUBDIR += fbcmd
     SUBDIR += fluxbox
     SUBDIR += fluxter
@@ -94,7 +97,9 @@
     SUBDIR += piewm
     SUBDIR += plasma6-kdecoration
     SUBDIR += plasma6-kwin
-    SUBDIR += plasma6-kwin-x11
+    SUBDIR += plasma6lts-kdecoration
+    SUBDIR += plasma6lts-kwin
+    SUBDIR += plasma6lts-kwin-x11
     SUBDIR += pwm
     SUBDIR += qtile
     SUBDIR += ratpoison

@@ -1,0 +1,5 @@
+Univers is a library to parse and compare software package versions and
+version ranges, and to work with the version semantics of many package
+ecosystems (Debian, RPM, npm, PyPI, Maven, Gentoo, ...) through a common
+interface. It is a companion to Package URLs (purl) and vers version range
+specifiers.

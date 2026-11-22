@@ -1,5 +1,5 @@
 PORTNAME=	fast-depends
-DISTVERSION=	3.0.9
+DISTVERSION=	3.0.11
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,12 +22,14 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}annotated-types>0:devel/py-annotated-types@
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
+TEST_ARGS=	--disable-plugin-autoload -p anyio
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Lancetnik
 GH_PROJECT=	FastDepends
 
 NO_ARCH=	yes
 
-# tests as of 3.0.9: 213 passed, 12 skipped in 1.69s
+# tests as of 3.0.11: 232 passed, 9 skipped in 0.58s
 
 .include <bsd.port.mk>

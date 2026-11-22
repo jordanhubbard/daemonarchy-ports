@@ -1,5 +1,5 @@
 PORTNAME=	langchain-core
-DISTVERSION=	1.6.9
+DISTVERSION=	1.8.1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +13,11 @@ WWW=		https://python.langchain.com/docs/introduction/ \
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.23.0:www/py-httpx@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=2026.10.19:security/py-certifi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx>=0.23.0:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpatch>=1.33.0:devel/py-jsonpatch@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain-protocol>=0.0.19:misc/py-langchain-protocol@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langsmith>=0.3.45:misc/py-langsmith@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langchain-protocol>=0.0.20:misc/py-langchain-protocol@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langsmith>=0.14.9:misc/py-langsmith@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=23.2.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.7.4:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.3.0:devel/py-pyyaml@${PY_FLAVOR} \
@@ -47,8 +48,6 @@ NO_ARCH=	yes
 # tests fail with: INTERNALERROR> ValueError: no option named 'only_extended'
 # Deselect tests that require network access, DNS resolution, blocking calls,
 # or specific upstream dependencies not available in the FreeBSD test environment.
-# the TEST_ARGS_part args should be added but they cause failures "blockbuster.blockbuster.BlockingError: Blocking call to os.read"
-# for some obscure reason.
 TEST_ARGS_part=	--disable-plugin-autoload \
 		-p blockbuster \
 		-p freezegun \
@@ -62,7 +61,8 @@ TEST_ARGS_part=	--disable-plugin-autoload \
 		-p xdist \
 		-p syrupy \
 		--asyncio-mode=auto
-TEST_ARGS=	--ignore=${WRKSRC}/tests/unit_tests/test_ssrf_policy_transport.py \
+TEST_ARGS=	${TEST_ARGS_part} \
+		--ignore=${WRKSRC}/tests/unit_tests/test_ssrf_policy_transport.py \
 		--deselect=tests/unit_tests/language_models/chat_models/test_base.py::test_invocation_params_passed_to_tracer_metadata \
 		--deselect=tests/unit_tests/language_models/chat_models/test_base.py::test_astream_events_v3_invocation_params_passed_to_tracer_metadata \
 		--deselect=tests/unit_tests/language_models/chat_models/test_base.py::test_user_lc_versions_metadata_survives_merge_astream \
@@ -105,6 +105,6 @@ TEST_ARGS=	--ignore=${WRKSRC}/tests/unit_tests/test_ssrf_policy_transport.py \
 		--snapshot-warn-unused
 # failures in deselected tets reported upstream: https://github.com/langchain-ai/langchain/issues/40852
 
-# tests as of 1.6.9: 2257 passed, 12 skipped, 36 deselected, 9 xfailed, 5 warnings
+# tests as of 1.8.1: 2496 passed, 12 skipped, 36 deselected, 9 xfailed, 5 warnings
 
 .include <bsd.port.mk>

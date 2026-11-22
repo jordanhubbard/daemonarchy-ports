@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2026-11-03 00:00:00.000000000 +0000
++++ pyproject.toml	2026-11-03 00:00:00.000000000 +0000
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools==83.0.0"]
++requires = ["setuptools>=63.1.0"]
+ build-backend = "literate_ai_build_backend"
+ backend-path = ["tools/build_backend"]
+ 
+@@ -9,8 +9,7 @@
+ description = "Software-neutral lifecycle framework for spec-led AI development"
+ readme = "README.md"
+ requires-python = ">=3.11"
+-license = "Apache-2.0"
+-license-files = ["LICENSE"]
++license = {text = "Apache-2.0"}
+ classifiers = [
+   "Operating System :: MacOS",
+   "Operating System :: Microsoft :: Windows :: Windows 11",

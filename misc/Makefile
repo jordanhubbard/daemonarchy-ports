@@ -212,6 +212,7 @@
     SUBDIR += hello
     SUBDIR += help2man
     SUBDIR += hermes-agent
+    SUBDIR += hermes-tui
     SUBDIR += heyu2
     SUBDIR += hicolor-icon-theme
     SUBDIR += histring
@@ -237,9 +238,6 @@
     SUBDIR += json-tui
     SUBDIR += kbdscan
     SUBDIR += kcd
-    SUBDIR += kde-thumbnailer-chm
-    SUBDIR += kde-thumbnailer-epub
-    SUBDIR += kde-thumbnailer-fb2
     SUBDIR += kdeedu
     SUBDIR += kdeedu-data
     SUBDIR += kdeutils
@@ -247,6 +245,7 @@
     SUBDIR += kf5-purpose
     SUBDIR += kf6-purpose
     SUBDIR += kgeography
+    SUBDIR += kimi-code
     SUBDIR += klettres
     SUBDIR += koboldcpp
     SUBDIR += kookbook
@@ -454,6 +453,7 @@
     SUBDIR += py-SQSnobFit
     SUBDIR += py-SimpleSoapy
     SUBDIR += py-SoapySDR
+    SUBDIR += py-a2a-sdk
     SUBDIR += py-accelerate
     SUBDIR += py-ag2
     SUBDIR += py-aistudio-sdk
@@ -461,6 +461,7 @@
     SUBDIR += py-analysis-framework-base
     SUBDIR += py-anthropic
     SUBDIR += py-apache-beam
+    SUBDIR += py-apache-tvm-ffi
     SUBDIR += py-ascii-magic
     SUBDIR += py-ast-comments
     SUBDIR += py-autogen
@@ -473,6 +474,7 @@
     SUBDIR += py-cmap
     SUBDIR += py-codecarbon
     SUBDIR += py-cohere
+    SUBDIR += py-cohere-melody
     SUBDIR += py-colorbrewer
     SUBDIR += py-colored
     SUBDIR += py-colorzero
@@ -485,6 +487,7 @@
     SUBDIR += py-comfyui-workflow-templates-json
     SUBDIR += py-comfyui-workflow-templates-media-api
     SUBDIR += py-comfyui-workflow-templates-media-assets-01
+    SUBDIR += py-comfyui-workflow-templates-media-assets-02
     SUBDIR += py-comfyui-workflow-templates-media-image
     SUBDIR += py-comfyui-workflow-templates-media-other
     SUBDIR += py-comfyui-workflow-templates-media-video
@@ -566,6 +569,7 @@
     SUBDIR += py-langgraph
     SUBDIR += py-langgraph-checkpoint
     SUBDIR += py-langgraph-checkpoint-conformance
+    SUBDIR += py-langgraph-checkpoint-postgres
     SUBDIR += py-langgraph-checkpoint-sqlite
     SUBDIR += py-langgraph-prebuilt
     SUBDIR += py-langgraph-sdk
@@ -606,7 +610,9 @@
     SUBDIR += py-modelscope
     SUBDIR += py-modelscope-hub
     SUBDIR += py-molequeue
+    SUBDIR += py-mslk
     SUBDIR += py-napari
+    SUBDIR += py-napari-resources
     SUBDIR += py-napari-svg
     SUBDIR += py-npTDMS
     SUBDIR += py-npe2
@@ -629,6 +635,7 @@
     SUBDIR += py-openvdb
     SUBDIR += py-optimum
     SUBDIR += py-optuna
+    SUBDIR += py-oss-harmony
     SUBDIR += py-oterm
     SUBDIR += py-paddlepaddle
     SUBDIR += py-palettable
@@ -645,6 +652,7 @@
     SUBDIR += py-polars-runtime
     SUBDIR += py-posthog
     SUBDIR += py-powerline-status
+    SUBDIR += py-prefab-ui
     SUBDIR += py-progressbar
     SUBDIR += py-progressbar2
     SUBDIR += py-pyEDFlib

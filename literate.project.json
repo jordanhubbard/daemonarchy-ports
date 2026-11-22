@@ -45,7 +45,7 @@
     "framework_distribution_identity": {
       "schema": "urn:literate-ai:schema:v1:content-identity",
       "algorithm": "sha256",
-      "digest": "01c193fa8e09bfd5c38eee2d5aaa71594421c1e67840fad46d40b1740c4a8bc9"
+      "digest": "f9ae1b8a4ce07c73f2ded62b73117f681fa12cfdf95c40cc66f3b727ebda6c2b"
     },
     "policy_identity": {
       "schema": "urn:literate-ai:schema:v1:content-identity",
@@ -61,7 +61,7 @@
     "runner_identity": {
       "schema": "urn:literate-ai:schema:v1:content-identity",
       "algorithm": "sha256",
-      "digest": "dd6a818dfa3cdb4ac7b6987c1f6d4c3cb1bd0b0c1f7c195984bda8eed3674395"
+      "digest": "bce6051915b832bddee47be0b93483e4af9dc9597314aa6fd18a1e5d7ab2e6ac"
     },
     "required_evidence_kinds": [
       "acceptance-result",
@@ -89,7 +89,7 @@
   ],
   "repository_policy": {
     "schema": "literate-ai/repository-policy@1",
-    "default_branch": "daemonarchy",
+    "default_branch": "main",
     "main_state": "free",
     "pre_release_version": null,
     "default_component": "Tools/daemonarchy/components/liblz4",
