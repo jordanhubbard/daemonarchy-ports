@@ -1,0 +1,1091 @@
+diff --git Makefile Makefile
+index 5643b16deb..98a17424f4 100644
+--- Makefile
++++ Makefile
+@@ -3,7 +3,7 @@
+ SYSDIR?=/usr/src/sys
+ .include "${SYSDIR}/conf/kern.opts.mk"
+ 
+-_VALID_KMODS=	dmabuf ttm drm dummygfx i915 amd radeon virtio linuxkpi_video
++_VALID_KMODS=	dmabuf ttm drm dummygfx i915 amd radeon virtio efifb linuxkpi_video
+ 
+ SUPPORTED_ARCH=	amd64 \
+ 		i386 \
+@@ -46,6 +46,11 @@ afterinstall: .PHONY
+ 	fi
+ .endif
+ 
++# Firmware scanout is an explicitly selected fallback, never auto-enabled.
++.if defined(WITH_EFIFB_DRM)
++DEFAULT_KMODS+= efifb
++.endif
++
+ KMODS?=	${DEFAULT_KMODS}
+ 
+ .for var in ${KMODS}
+diff --git drivers/gpu/drm/drm_gem_framebuffer_helper.c drivers/gpu/drm/drm_gem_framebuffer_helper.c
+index 28e518ec58..cf240db62f 100644
+--- drivers/gpu/drm/drm_gem_framebuffer_helper.c
++++ drivers/gpu/drm/drm_gem_framebuffer_helper.c
+@@ -40,17 +40,39 @@ int drm_gem_fb_init_with_funcs(struct drm_device *dev,
+ 	const struct drm_format_info *info;
+ 	struct drm_gem_object **objs;
+ 	int ret, i;
++	uint64_t width, height, min_pitch, min_size;
+ 
+ 	info = drm_get_format_info(dev, mode_cmd);
++	if (info == NULL || info->num_planes == 0 ||
++	    info->num_planes > DRM_FORMAT_MAX_PLANES ||
++	    mode_cmd->width == 0 || mode_cmd->height == 0)
++		return -EINVAL;
+ 	objs = kcalloc(info->num_planes, sizeof(*objs), GFP_KERNEL);
++	if (objs == NULL)
++		return -ENOMEM;
+ 
+ 	for (i = 0; i < info->num_planes; ++i) {
++		/* Use 64-bit sizes: untrusted pitches/offsets may exceed 4 GiB. */
++		width = DIV_ROUND_UP((uint64_t)mode_cmd->width, i ? info->hsub : 1);
++		height = DIV_ROUND_UP((uint64_t)mode_cmd->height, i ? info->vsub : 1);
++		min_pitch = drm_format_info_min_pitch(info, i, width);
++		if (min_pitch == 0 || min_pitch > mode_cmd->pitches[i]) {
++			ret = -EINVAL;
++			goto err;
++		}
++		min_size = (height - 1) * (uint64_t)mode_cmd->pitches[i] +
++		    min_pitch + mode_cmd->offsets[i];
+ 		objs[i] = drm_gem_object_lookup(file, mode_cmd->handles[i]);
+ 
+ 		if (objs[i] == NULL) {
+ 			ret = -ENOENT;
+ 			goto err;
+ 		}
++		if (min_size > objs[i]->size) {
++			drm_gem_object_put(objs[i]);
++			ret = -EINVAL;
++			goto err;
++		}
+ 	}
+ 
+ 	drm_helper_mode_fill_fb_struct(dev, fb, mode_cmd);
+diff --git drivers/gpu/drm/drm_gem_framebuffer_scanout.c drivers/gpu/drm/drm_gem_framebuffer_scanout.c
+new file mode 100644
+index 0000000000..ea36d13544
+--- /dev/null
++++ drivers/gpu/drm/drm_gem_framebuffer_scanout.c
+@@ -0,0 +1,217 @@
++// SPDX-License-Identifier: GPL-2.0-or-later
++/*
++ * drm gem framebuffer helpers missing from the existing FreeBSD subset.
++ * Copyright (C) 2017 Noralf Trønnes
++ * From Linux v6.12, drm_gem_framebuffer_helper.c, blob
++ * 3bdb6ba37ff42fb6d8fc0715358863e83061de5a. Original helpers remain in place.
++ */
++#include <linux/slab.h>
++#include <linux/module.h>
++#include <linux/iosys-map.h>
++#include <drm/drm_damage_helper.h>
++#include <drm/drm_drv.h>
++#include <drm/drm_framebuffer.h>
++#include <drm/drm_gem.h>
++#include <drm/drm_gem_framebuffer_helper.h>
++
++/**
++ * drm_gem_fb_create_with_funcs() - Helper function for the
++ *                                  &drm_mode_config_funcs.fb_create
++ *                                  callback
++ * @dev: DRM device
++ * @file: DRM file that holds the GEM handle(s) backing the framebuffer
++ * @mode_cmd: Metadata from the userspace framebuffer creation request
++ * @funcs: vtable to be used for the new framebuffer object
++ *
++ * This function can be used to set &drm_framebuffer_funcs for drivers that need
++ * custom framebuffer callbacks. Use drm_gem_fb_create() if you don't need to
++ * change &drm_framebuffer_funcs. The function does buffer size validation.
++ *
++ * Returns:
++ * Pointer to a &drm_framebuffer on success or an error pointer on failure.
++ */
++struct drm_framebuffer *
++drm_gem_fb_create_with_funcs(struct drm_device *dev, struct drm_file *file,
++			     const struct drm_mode_fb_cmd2 *mode_cmd,
++			     const struct drm_framebuffer_funcs *funcs)
++{
++	struct drm_framebuffer *fb;
++	int ret;
++
++	fb = kzalloc(sizeof(*fb), GFP_KERNEL);
++	if (!fb)
++		return ERR_PTR(-ENOMEM);
++
++	ret = drm_gem_fb_init_with_funcs(dev, fb, file, mode_cmd, funcs);
++	if (ret) {
++		kfree(fb);
++		return ERR_PTR(ret);
++	}
++
++	return fb;
++}
++EXPORT_SYMBOL_GPL(drm_gem_fb_create_with_funcs);
++
++static const struct drm_framebuffer_funcs drm_gem_fb_funcs = {
++	.destroy	= drm_gem_fb_destroy,
++	.create_handle	= drm_gem_fb_create_handle,
++};
++
++/**
++ * drm_gem_fb_create() - Helper function for the
++ *                       &drm_mode_config_funcs.fb_create callback
++ * @dev: DRM device
++ * @file: DRM file that holds the GEM handle(s) backing the framebuffer
++ * @mode_cmd: Metadata from the userspace framebuffer creation request
++ *
++ * This function creates a new framebuffer object described by
++ * &drm_mode_fb_cmd2. This description includes handles for the buffer(s)
++ * backing the framebuffer.
++ *
++ * If your hardware has special alignment or pitch requirements these should be
++ * checked before calling this function. The function does buffer size
++ * validation. Use drm_gem_fb_create_with_dirty() if you need framebuffer
++ * flushing.
++ *
++ * Drivers can use this as their &drm_mode_config_funcs.fb_create callback.
++ * The ADDFB2 IOCTL calls into this callback.
++ *
++ * Returns:
++ * Pointer to a &drm_framebuffer on success or an error pointer on failure.
++ */
++struct drm_framebuffer *
++drm_gem_fb_create(struct drm_device *dev, struct drm_file *file,
++		  const struct drm_mode_fb_cmd2 *mode_cmd)
++{
++	return drm_gem_fb_create_with_funcs(dev, file, mode_cmd,
++					    &drm_gem_fb_funcs);
++}
++EXPORT_SYMBOL_GPL(drm_gem_fb_create);
++
++static const struct drm_framebuffer_funcs drm_gem_fb_funcs_dirtyfb = {
++	.destroy	= drm_gem_fb_destroy,
++	.create_handle	= drm_gem_fb_create_handle,
++	.dirty		= drm_atomic_helper_dirtyfb,
++};
++
++/**
++ * drm_gem_fb_create_with_dirty() - Helper function for the
++ *                       &drm_mode_config_funcs.fb_create callback
++ * @dev: DRM device
++ * @file: DRM file that holds the GEM handle(s) backing the framebuffer
++ * @mode_cmd: Metadata from the userspace framebuffer creation request
++ *
++ * This function creates a new framebuffer object described by
++ * &drm_mode_fb_cmd2. This description includes handles for the buffer(s)
++ * backing the framebuffer. drm_atomic_helper_dirtyfb() is used for the dirty
++ * callback giving framebuffer flushing through the atomic machinery. Use
++ * drm_gem_fb_create() if you don't need the dirty callback.
++ * The function does buffer size validation.
++ *
++ * Drivers should also call drm_plane_enable_fb_damage_clips() on all planes
++ * to enable userspace to use damage clips also with the ATOMIC IOCTL.
++ *
++ * Drivers can use this as their &drm_mode_config_funcs.fb_create callback.
++ * The ADDFB2 IOCTL calls into this callback.
++ *
++ * Returns:
++ * Pointer to a &drm_framebuffer on success or an error pointer on failure.
++ */
++struct drm_framebuffer *
++drm_gem_fb_create_with_dirty(struct drm_device *dev, struct drm_file *file,
++			     const struct drm_mode_fb_cmd2 *mode_cmd)
++{
++	return drm_gem_fb_create_with_funcs(dev, file, mode_cmd,
++					    &drm_gem_fb_funcs_dirtyfb);
++}
++EXPORT_SYMBOL_GPL(drm_gem_fb_create_with_dirty);
++
++/**
++ * drm_gem_fb_vmap - maps all framebuffer BOs into kernel address space
++ * @fb: the framebuffer
++ * @map: returns the mapping's address for each BO
++ * @data: returns the data address for each BO, can be NULL
++ *
++ * This function maps all buffer objects of the given framebuffer into
++ * kernel address space and stores them in struct iosys_map. If the
++ * mapping operation fails for one of the BOs, the function unmaps the
++ * already established mappings automatically.
++ *
++ * Callers that want to access a BO's stored data should pass @data.
++ * The argument returns the addresses of the data stored in each BO. This
++ * is different from @map if the framebuffer's offsets field is non-zero.
++ *
++ * Both, @map and @data, must each refer to arrays with at least
++ * fb->format->num_planes elements.
++ *
++ * See drm_gem_fb_vunmap() for unmapping.
++ *
++ * Returns:
++ * 0 on success, or a negative errno code otherwise.
++ */
++int drm_gem_fb_vmap(struct drm_framebuffer *fb, struct iosys_map *map,
++		    struct iosys_map *data)
++{
++	struct drm_gem_object *obj;
++	unsigned int i;
++	int ret;
++
++	for (i = 0; i < fb->format->num_planes; ++i) {
++		obj = drm_gem_fb_get_obj(fb, i);
++		if (!obj) {
++			ret = -EINVAL;
++			goto err_drm_gem_vunmap;
++		}
++		ret = drm_gem_vmap_unlocked(obj, &map[i]);
++		if (ret)
++			goto err_drm_gem_vunmap;
++	}
++
++	if (data) {
++		for (i = 0; i < fb->format->num_planes; ++i) {
++			memcpy(&data[i], &map[i], sizeof(data[i]));
++			if (iosys_map_is_null(&data[i]))
++				continue;
++			iosys_map_incr(&data[i], fb->offsets[i]);
++		}
++	}
++
++	return 0;
++
++err_drm_gem_vunmap:
++	while (i) {
++		--i;
++		obj = drm_gem_fb_get_obj(fb, i);
++		if (!obj)
++			continue;
++		drm_gem_vunmap_unlocked(obj, &map[i]);
++	}
++	return ret;
++}
++EXPORT_SYMBOL(drm_gem_fb_vmap);
++
++/**
++ * drm_gem_fb_vunmap - unmaps framebuffer BOs from kernel address space
++ * @fb: the framebuffer
++ * @map: mapping addresses as returned by drm_gem_fb_vmap()
++ *
++ * This function unmaps all buffer objects of the given framebuffer.
++ *
++ * See drm_gem_fb_vmap() for more information.
++ */
++void drm_gem_fb_vunmap(struct drm_framebuffer *fb, struct iosys_map *map)
++{
++	unsigned int i = fb->format->num_planes;
++	struct drm_gem_object *obj;
++
++	while (i) {
++		--i;
++		obj = drm_gem_fb_get_obj(fb, i);
++		if (!obj)
++			continue;
++		if (iosys_map_is_null(&map[i]))
++			continue;
++		drm_gem_vunmap_unlocked(obj, &map[i]);
++	}
++}
++EXPORT_SYMBOL(drm_gem_fb_vunmap);
+diff --git drivers/gpu/drm/drm_os_freebsd.c drivers/gpu/drm/drm_os_freebsd.c
+index e1b64006d7..9ff3c24989 100644
+--- drivers/gpu/drm/drm_os_freebsd.c
++++ drivers/gpu/drm/drm_os_freebsd.c
+@@ -135,10 +135,13 @@ drm_dev_alias(struct device *ldev, struct drm_minor *minor, const char *minor_st
+ 	node = SYSCTL_ADD_NODE(ctx_list, SYSCTL_STATIC_CHILDREN(_dev_drm), OID_AUTO, buf,
+ 	    CTLFLAG_RD, NULL, "DRM properties");
+ 	oid_list = SYSCTL_CHILDREN(node);
+-	tmp = pci_get_vendor(dev) + ((u32)pci_get_device(dev) << 16);
+-	SYSCTL_ADD_PROC(ctx_list, oid_list, OID_AUTO, "PCI_ID",
+-	    CTLTYPE_STRING | CTLFLAG_RD, NULL, tmp,
+-	    sysctl_pci_id, "A", "PCI vendor and device ID");
++	/* Firmware/platform display devices do not have PCI configuration. */
++	if (dev_is_pci(ldev->parent)) {
++		tmp = pci_get_vendor(dev) + ((u32)pci_get_device(dev) << 16);
++		SYSCTL_ADD_PROC(ctx_list, oid_list, OID_AUTO, "PCI_ID",
++		    CTLTYPE_STRING | CTLFLAG_RD, NULL, tmp,
++		    sysctl_pci_id, "A", "PCI vendor and device ID");
++	}
+ 	SYSCTL_ADD_INT(ctx_list, oid_list, OID_AUTO, "type",
+ 	    CTLFLAG_RD, &minor->type, 0,
+ 	    "DRM minor type (0=primary, 2=render)");
+diff --git drivers/gpu/drm/drm_sysctl_freebsd.c drivers/gpu/drm/drm_sysctl_freebsd.c
+index 8a30c5907e..c6de7ac7f4 100644
+--- drivers/gpu/drm/drm_sysctl_freebsd.c
++++ drivers/gpu/drm/drm_sysctl_freebsd.c
+@@ -171,15 +171,21 @@ drm_add_busid_modesetting(struct drm_device *dev, struct sysctl_ctx_list *ctx,
+ {
+ 	struct sysctl_oid *oid;
+ 	int domain, bus, slot, func;
+-	struct pci_dev *pdev = to_pci_dev(dev->dev);
+-
+-	domain = pci_domain_nr(pdev->bus);
+-	bus    = pdev->bus->number;
+-	slot   = PCI_SLOT(pdev->devfn);
+-	func   = PCI_FUNC(pdev->devfn);
+-
+-	snprintf(dev->busid_str, sizeof(dev->busid_str),
+-	    "pci:%04x:%02x:%02x.%d", domain, bus, slot, func);
++	struct pci_dev *pdev;
++
++	if (dev_is_pci(dev->dev)) {
++		pdev = to_pci_dev(dev->dev);
++		domain = pci_domain_nr(pdev->bus);
++		bus    = pdev->bus->number;
++		slot   = PCI_SLOT(pdev->devfn);
++		func   = PCI_FUNC(pdev->devfn);
++
++		snprintf(dev->busid_str, sizeof(dev->busid_str),
++		    "pci:%04x:%02x:%02x.%d", domain, bus, slot, func);
++	} else {
++		snprintf(dev->busid_str, sizeof(dev->busid_str),
++		    "platform:%s", dev_name(dev->dev));
++	}
+ 	oid = SYSCTL_ADD_STRING(ctx, SYSCTL_CHILDREN(top), OID_AUTO, "busid",
+ 	    CTLFLAG_RD, dev->busid_str, 0, NULL);
+ 	if (oid == NULL)
+diff --git drm/Makefile drm/Makefile
+index 96892f7757..f6c662adc0 100644
+--- drm/Makefile
++++ drm/Makefile
+@@ -44,6 +44,7 @@ SRCS=	drm_atomic.c \
+ 	drm_gem.c \
+ 	drm_gem_atomic_helper.c \
+ 	drm_gem_framebuffer_helper.c \
++	drm_gem_framebuffer_scanout.c \
+ 	drm_gem_shmem_helper.c \
+ 	drm_gpuvm.c \
+ 	drm_hdmi_state_helper.c \
+@@ -67,6 +68,7 @@ SRCS=	drm_atomic.c \
+ 	drm_probe_helper.c \
+ 	drm_property.c \
+ 	drm_rect.c \
++	drm_simple_kms_helper.c \
+ 	drm_self_refresh_helper.c \
+ 	drm_suballoc.c \
+ 	drm_syncobj.c \
+diff --git efifb/Makefile efifb/Makefile
+new file mode 100644
+index 0000000000..4b49578302
+--- /dev/null
++++ efifb/Makefile
+@@ -0,0 +1,56 @@
++# `kconfig.mk` defines variables used to conditionally add files to $(SRCS).
++.include "../kconfig.mk"
++
++SRCDIR=	${.CURDIR}
++
++KMOD=	efifb_drm
++
++EXPORT_SYMS=	YES
++
++.PATH:	${SRCDIR} ${.CURDIR:H}/drivers/gpu/drm
++
++SRCS= efifb_drm.c
++
++SRCS+=	\
++	opt_drm.h		\
++	opt_platform.h		\
++	opt_syscons.h		\
++	opt_teken.h		\
++	opt_splash.h		\
++	vnode_if.h		\
++	bus_if.h		\
++	device_if.h		\
++	pci_if.h		\
++	fb_if.h
++
++CLEANFILES+= ${KMOD}.ko.full ${KMOD}.ko.debug
++
++SRCS+= opt_linuxkpi.h
++.include <bsd.kmod.mk>
++CFLAGS+= -include ${SYSDIR}/compat/linuxkpi/common/include/linux/kconfig.h
++
++# These Makefiles are included after <bsd.kmod.mk> because they expand
++# variables defined by it.
++.include "../linuxkpi_version.mk"
++.include "../compiler_flags.mk"
++
++CFLAGS+= -I${.CURDIR:H}/linuxkpi/gplv2/include
++CFLAGS+= -I${.CURDIR:H}/linuxkpi/bsd/include
++CFLAGS+= -I${SYSDIR}/compat/linuxkpi/common/include
++CFLAGS+= -I${SYSDIR}/compat/linuxkpi/dummy/include
++
++CFLAGS+= -I${.CURDIR:H}/include
++CFLAGS+= -I${.CURDIR:H}/include/uapi
++CFLAGS+= -I${.CURDIR:H}/drivers/gpu
++CFLAGS+= -I${SRCDIR}
++
++
++CFLAGS+= '-DKBUILD_MODNAME="efifb_drm"'
++CFLAGS+= '-DLINUXKPI_PARAM_PREFIX=efifb_drm_' -DDRM_SYSCTL_PARAM_PREFIX=_efifb_drm
++
++# The full shared KCONFIG set, as every kmod in this tree uses: DRM
++# header struct layouts and inline functions depend on CONFIG_* values,
++# so all modules must see the same set as drm.ko or their ABIs diverge.
++CFLAGS+= ${KCONFIG:C/(.*)/-DCONFIG_\1/}
++
++CWARNFLAGS+= -Wno-gnu-pointer-arith
+diff --git efifb/efi_fb_layout.h efifb/efi_fb_layout.h
+new file mode 100644
+index 0000000000..9fdbc2cb91
+--- /dev/null
++++ efifb/efi_fb_layout.h
+@@ -0,0 +1,50 @@
++/* SPDX-License-Identifier: BSD-2-Clause */
++/* Copyright (c) 2026 Daemonarchy contributors. */
++#ifndef EFIFB_DRM_LAYOUT_H
++#define EFIFB_DRM_LAYOUT_H
++#ifdef _KERNEL
++#include <sys/types.h>
++#include <sys/stdint.h>
++#else
++#include <stdint.h>
++#endif
++
++#define EFIFB_DRM_MAX_DIMENSION 8192U
++#define EFIFB_DRM_MAX_BYTES (256ULL * 1024 * 1024)
++#define EFIFB_DRM_XRGB8888 1
++#define EFIFB_DRM_XBGR8888 2
++
++struct efifb_drm_layout {
++ uint64_t address, size;
++ uint32_t width, height, stride;
++ uint32_t red, green, blue, reserved;
++};
++
++/* Validate the complete scanout extent before a physical mapping or copy. */
++static inline int
++efifb_drm_layout_valid(const struct efifb_drm_layout *f, uint32_t *pitch,
++    unsigned int *format)
++{
++ uint64_t bytes;
++ if (f->address == 0 || f->size == 0 || f->size > EFIFB_DRM_MAX_BYTES ||
++     f->address > UINT64_MAX - f->size ||
++     f->address + f->size > UINT64_MAX - 65535 ||
++     f->width == 0 || f->height == 0 ||
++     f->width > EFIFB_DRM_MAX_DIMENSION ||
++     f->height > EFIFB_DRM_MAX_DIMENSION || f->stride < f->width ||
++     f->stride > UINT32_MAX / 4)
++  return (0);
++ bytes = (uint64_t)f->stride * 4 * f->height;
++ if (bytes > f->size || f->green != 0x0000ff00 ||
++     (f->reserved != 0 && f->reserved != 0xff000000))
++  return (0);
++ if (f->red == 0x00ff0000 && f->blue == 0x000000ff)
++  *format = EFIFB_DRM_XRGB8888;
++ else if (f->red == 0x000000ff && f->blue == 0x00ff0000)
++  *format = EFIFB_DRM_XBGR8888;
++ else
++  return (0);
++ *pitch = f->stride * 4;
++ return (1);
++}
++#endif
+diff --git efifb/efifb_drm.c efifb/efifb_drm.c
+new file mode 100644
+index 0000000000..9b8fd6c109
+--- /dev/null
++++ efifb/efifb_drm.c
+@@ -0,0 +1,367 @@
++/*-
++ * SPDX-License-Identifier: BSD-2-Clause
++ * Copyright (c) 2026 Daemonarchy contributors.
++ *
++ * Fixed-mode KMS for the firmware's existing EFI scanout. This supplies a
++ * real display device and shmem dumb buffers; it does not submit V3D jobs,
++ * change HDMI timings or claim hardware rendering. Native VC4/V3D support
++ * remains a separate driver. Loading is explicitly opt-in.
++ */
++#include <sys/param.h>
++#include <sys/systm.h>
++#include <sys/bus.h>
++#include <sys/kernel.h>
++#include <sys/linker.h>
++#include <sys/module.h>
++#include <machine/metadata.h>
++#include <vm/vm.h>
++#include <vm/pmap.h>
++#include <dev/vt/vt.h>
++
++#include <linux/module.h>
++#include <linux/device.h>
++#include <linux/err.h>
++#include <linux/iosys-map.h>
++#include <linux/fb.h>
++#include <drm/drm_atomic_helper.h>
++#include <drm/drm_connector.h>
++#include <drm/drm_damage_helper.h>
++#include <drm/drm_drv.h>
++#include <drm/drm_fbdev_shmem.h>
++#include <drm/drm_file.h>
++#include <drm/drm_fourcc.h>
++#include <drm/drm_format_helper.h>
++#include <drm/drm_framebuffer.h>
++#include <drm/drm_gem_framebuffer_helper.h>
++#include <drm/drm_gem_shmem_helper.h>
++#include <drm/drm_modes.h>
++#include <drm/drm_modeset_helper_vtables.h>
++#include <drm/drm_print.h>
++#include <drm/drm_probe_helper.h>
++#include <drm/drm_simple_kms_helper.h>
++#include "efi_fb_layout.h"
++
++struct efifb_drm_softc {
++ struct device ldev;
++ struct drm_device *drm;
++ struct drm_simple_display_pipe pipe;
++ struct drm_connector connector;
++ struct drm_display_mode mode;
++ struct efifb_drm_layout layout;
++ struct iosys_map scanout;
++ uint32_t pitch, formats[2];
++ bool mode_initialized, device_added, registered;
++};
++static int efifb_drm_enable;
++TUNABLE_INT("hw.efifb_drm.enable", &efifb_drm_enable);
++static unsigned int efifb_drm_attached;
++static struct class efifb_drm_class = { .name = "efifb_drm" };
++static bool efifb_drm_class_registered;
++/* LinuxKPI initializes the existing newbus class softc to its device. */
++CTASSERT(offsetof(struct efifb_drm_softc, ldev) == 0);
++static const struct drm_driver efifb_drm_driver;
++
++static const struct efi_fb *
++efifb_drm_metadata(void)
++{
++ caddr_t kmdp;
++ kmdp = preload_search_by_type("elf kernel");
++ if (kmdp == NULL)
++  kmdp = preload_search_by_type("elf64 kernel");
++ if (kmdp == NULL)
++  return (NULL);
++ return ((const struct efi_fb *)preload_search_info(kmdp,
++     MODINFO_METADATA | MODINFOMD_EFI_FB));
++}
++
++static void
++efifb_drm_copy_metadata(struct efifb_drm_layout *l, const struct efi_fb *f)
++{
++ *l = (struct efifb_drm_layout) {
++  .address = f->fb_addr, .size = f->fb_size,
++  .width = f->fb_width, .height = f->fb_height, .stride = f->fb_stride,
++  .red = f->fb_mask_red, .green = f->fb_mask_green,
++  .blue = f->fb_mask_blue, .reserved = f->fb_mask_reserved
++ };
++}
++
++static int
++efifb_drm_get_modes(struct drm_connector *connector)
++{
++ struct efifb_drm_softc *sc = connector->dev->dev_private;
++ struct drm_display_mode *mode;
++ mode = drm_mode_duplicate(connector->dev, &sc->mode);
++ if (mode == NULL)
++  return (0);
++ mode->type = DRM_MODE_TYPE_DRIVER | DRM_MODE_TYPE_PREFERRED;
++ drm_mode_probed_add(connector, mode);
++ return (1);
++}
++static const struct drm_connector_helper_funcs efifb_connector_helpers = {
++ .get_modes = efifb_drm_get_modes,
++};
++static void
++efifb_connector_destroy(struct drm_connector *connector)
++{
++ drm_connector_cleanup(connector);
++}
++static const struct drm_connector_funcs efifb_connector_funcs = {
++ .fill_modes = drm_helper_probe_single_connector_modes,
++ .destroy = efifb_connector_destroy,
++ .reset = drm_atomic_helper_connector_reset,
++ .atomic_duplicate_state = drm_atomic_helper_connector_duplicate_state,
++ .atomic_destroy_state = drm_atomic_helper_connector_destroy_state,
++};
++
++static enum drm_mode_status
++efifb_drm_mode_valid(struct drm_simple_display_pipe *pipe,
++    const struct drm_display_mode *mode)
++{
++ struct efifb_drm_softc *sc = pipe->crtc.dev->dev_private;
++ return (drm_mode_equal(mode, &sc->mode) ? MODE_OK : MODE_BAD);
++}
++static int
++efifb_drm_check(struct drm_simple_display_pipe *pipe,
++    struct drm_plane_state *plane, struct drm_crtc_state *crtc)
++{
++ if (plane->src_x != 0 || plane->src_y != 0)
++  return (-EINVAL);
++ /* The firmware display has no interrupt source owned by this driver. */
++ crtc->no_vblank = true;
++ return (0);
++}
++static void
++efifb_drm_blit(struct drm_simple_display_pipe *pipe,
++    struct drm_plane_state *plane)
++{
++ struct efifb_drm_softc *sc = pipe->crtc.dev->dev_private;
++ struct drm_framebuffer *fb = plane->fb;
++ struct iosys_map map[DRM_FORMAT_MAX_PLANES];
++ struct iosys_map data[DRM_FORMAT_MAX_PLANES];
++ struct drm_rect rect = DRM_RECT_INIT(0, 0, sc->layout.width,
++     sc->layout.height);
++ int error;
++ if (fb == NULL)
++  return;
++ error = drm_gem_fb_vmap(fb, map, data);
++ if (error != 0) {
++  drm_err(sc->drm, "cannot map scanout buffer: %d\n", error);
++  return;
++ }
++ drm_fb_memcpy(&sc->scanout, &sc->pitch, data, fb, &rect);
++ drm_gem_fb_vunmap(fb, map);
++}
++static void
++efifb_drm_pipe_enable(struct drm_simple_display_pipe *pipe,
++    struct drm_crtc_state *crtc, struct drm_plane_state *plane)
++{
++ efifb_drm_blit(pipe, plane);
++}
++static void
++efifb_drm_pipe_update(struct drm_simple_display_pipe *pipe,
++    struct drm_plane_state *old)
++{
++ efifb_drm_blit(pipe, pipe->plane.state);
++}
++static const struct drm_simple_display_pipe_funcs efifb_pipe_funcs = {
++ .mode_valid = efifb_drm_mode_valid,
++ .check = efifb_drm_check,
++ .enable = efifb_drm_pipe_enable,
++ .update = efifb_drm_pipe_update,
++};
++static const struct drm_mode_config_funcs efifb_mode_config_funcs = {
++ .fb_create = drm_gem_fb_create_with_dirty,
++ .atomic_check = drm_atomic_helper_check,
++ .atomic_commit = drm_atomic_helper_commit,
++};
++DEFINE_DRM_GEM_FOPS(efifb_drm_fops);
++static const struct drm_driver efifb_drm_driver = {
++ .driver_features = DRIVER_GEM | DRIVER_MODESET | DRIVER_ATOMIC,
++ DRM_GEM_SHMEM_DRIVER_OPS,
++ .fops = &efifb_drm_fops,
++ .name = "efifb_drm",
++ .desc = "EFI fixed-mode firmware display (no GPU acceleration)",
++ .date = "20261122", .major = 1, .minor = 0,
++};
++
++static void
++efifb_linux_device_release(struct device *dev)
++{
++ struct efifb_drm_softc *sc =
++     container_of(dev, struct efifb_drm_softc, ldev);
++ /* Newbus has no automatic softc; LinuxKPI owns this allocation. */
++ if (dev->bsddev != NULL && device_get_softc(dev->bsddev) == sc)
++  device_set_softc(dev->bsddev, NULL);
++ kfree(sc);
++}
++static void
++efifb_drm_identify(driver_t *driver, device_t parent)
++{
++ if (efifb_drm_enable && efifb_drm_metadata() != NULL &&
++     device_find_child(parent, "efifb_drm", -1) == NULL)
++  BUS_ADD_CHILD(parent, 0, "efifb_drm", -1);
++}
++static int
++efifb_drm_probe(device_t dev)
++{
++ struct efifb_drm_layout layout;
++ const struct efi_fb *fb;
++ uint32_t pitch;
++ unsigned int format;
++ if (!efifb_drm_enable || device_get_unit(dev) != 0 ||
++     (fb = efifb_drm_metadata()) == NULL)
++  return (ENXIO);
++ efifb_drm_copy_metadata(&layout, fb);
++ if (!efifb_drm_layout_valid(&layout, &pitch, &format))
++  return (ENXIO);
++ device_set_desc(dev, "EFI firmware framebuffer KMS display");
++ return (BUS_PROBE_DEFAULT);
++}
++static int
++efifb_drm_attach(device_t dev)
++{
++ struct efifb_drm_softc *sc;
++ struct drm_device *drm;
++ struct drm_display_mode fixed = { DRM_SIMPLE_MODE(0, 0, 0, 0) };
++ unsigned int format;
++ void *mapping;
++ struct apertures_struct *aperture;
++ int error;
++ if (!efifb_drm_class_registered) {
++  error = class_register(&efifb_drm_class);
++  if (error != 0)
++   return (error < 0 ? -error : error);
++  efifb_drm_class_registered = true;
++ }
++ sc = kzalloc(sizeof(*sc), GFP_KERNEL);
++ if (sc == NULL)
++  return (ENOMEM);
++ efifb_drm_copy_metadata(&sc->layout, efifb_drm_metadata());
++ if (!efifb_drm_layout_valid(&sc->layout, &sc->pitch, &format)) {
++  kfree(sc);
++  return (EINVAL);
++ }
++ mapping = pmap_mapdev_attr(sc->layout.address, sc->layout.size,
++     VM_MEMATTR_WRITE_COMBINING);
++ if (mapping == NULL) {
++  kfree(sc);
++  return (ENOMEM);
++ }
++ iosys_map_set_vaddr_iomem(&sc->scanout, mapping);
++ sc->ldev.class = &efifb_drm_class;
++ sc->ldev.release = efifb_linux_device_release;
++ device_initialize(&sc->ldev);
++ error = dev_set_name(&sc->ldev, "%s", device_get_nameunit(dev));
++ if (error != 0)
++  goto fail_device;
++ error = device_add(&sc->ldev);
++ if (error != 0)
++  goto fail_device;
++ sc->device_added = true;
++ drm = drm_dev_alloc(&efifb_drm_driver, &sc->ldev);
++ if (IS_ERR(drm)) {
++  error = PTR_ERR(drm);
++  goto fail_device;
++ }
++ sc->drm = drm;
++ drm->dev_private = sc;
++ error = drm_mode_config_init(drm);
++ if (error != 0)
++  goto fail_drm;
++ sc->mode_initialized = true;
++ drm->mode_config.funcs = &efifb_mode_config_funcs;
++ drm->mode_config.min_width = sc->layout.width;
++ drm->mode_config.max_width = sc->layout.width;
++ drm->mode_config.min_height = sc->layout.height;
++ drm->mode_config.max_height = sc->layout.height;
++ fixed.hdisplay = fixed.hsync_start = fixed.hsync_end = fixed.htotal =
++     sc->layout.width;
++ fixed.vdisplay = fixed.vsync_start = fixed.vsync_end = fixed.vtotal =
++     sc->layout.height;
++ fixed.clock = ((uint64_t)fixed.htotal * fixed.vtotal * 60) / 1000;
++ sc->mode = fixed;
++ drm_mode_set_name(&sc->mode);
++ if (format == EFIFB_DRM_XRGB8888) {
++  sc->formats[0] = DRM_FORMAT_XRGB8888;
++  sc->formats[1] = DRM_FORMAT_ARGB8888;
++ } else {
++  sc->formats[0] = DRM_FORMAT_XBGR8888;
++  sc->formats[1] = DRM_FORMAT_ABGR8888;
++ }
++ error = drm_connector_init(drm, &sc->connector, &efifb_connector_funcs,
++     DRM_MODE_CONNECTOR_Unknown);
++ if (error != 0)
++  goto fail_drm;
++ drm_connector_helper_add(&sc->connector, &efifb_connector_helpers);
++ error = drm_simple_display_pipe_init(drm, &sc->pipe, &efifb_pipe_funcs,
++     sc->formats, nitems(sc->formats), NULL, &sc->connector);
++ if (error != 0)
++  goto fail_drm;
++ drm_plane_enable_fb_damage_clips(&sc->pipe.plane);
++ drm_mode_config_reset(drm);
++ aperture = alloc_apertures(1);
++ if (aperture == NULL) {
++  error = -ENOMEM;
++  goto fail_drm;
++ }
++ aperture->ranges[0].base = sc->layout.address;
++ aperture->ranges[0].size = sc->layout.size;
++ error = drm_dev_register(drm, 0);
++ if (error != 0) {
++  kfree(aperture);
++  goto fail_drm;
++ }
++ sc->registered = true;
++ efifb_drm_attached++;
++ remove_conflicting_framebuffers(aperture, efifb_drm_driver.name, false);
++ kfree(aperture);
++ drm_fbdev_shmem_setup(drm, 32);
++ device_printf(dev, "%ux%u fixed EFI scanout, stride %u; no GPU acceleration\n",
++     sc->layout.width, sc->layout.height, sc->pitch);
++ return (0);
++fail_drm:
++ if (sc->mode_initialized)
++  drm_mode_config_cleanup(sc->drm);
++ drm_dev_put(sc->drm);
++ sc->drm = NULL;
++fail_device:
++ if (sc->device_added)
++  device_del(&sc->ldev);
++ pmap_unmapdev(mapping, sc->layout.size);
++ put_device(&sc->ldev);
++ return (error < 0 ? -error : error);
++}
++static int
++efifb_drm_detach(device_t dev)
++{
++ struct efifb_drm_softc *sc = device_get_softc(dev);
++ /* Existing drm-kmod devfs nodes cannot safely be removed after register. */
++ return (sc != NULL && sc->registered ? EBUSY : 0);
++}
++static int
++efifb_drm_modevent(module_t mod, int event, void *arg)
++{
++ if (event == MOD_QUIESCE && efifb_drm_attached != 0)
++  return (EBUSY);
++ if (event == MOD_UNLOAD && efifb_drm_class_registered) {
++  class_unregister(&efifb_drm_class);
++  efifb_drm_class_registered = false;
++ }
++ return (event == MOD_LOAD || event == MOD_UNLOAD ||
++     event == MOD_QUIESCE || event == MOD_SHUTDOWN ? 0 : EOPNOTSUPP);
++}
++static device_method_t efifb_drm_methods[] = {
++ DEVMETHOD(device_identify, efifb_drm_identify),
++ DEVMETHOD(device_probe, efifb_drm_probe),
++ DEVMETHOD(device_attach, efifb_drm_attach),
++ DEVMETHOD(device_detach, efifb_drm_detach),
++ DEVMETHOD_END
++};
++static driver_t efifb_drm_newbus = {
++ .name = "efifb_drm", .methods = efifb_drm_methods,
++ .size = 0
++};
++DRIVER_MODULE(efifb_drm, nexus, efifb_drm_newbus, efifb_drm_modevent, NULL);
++MODULE_VERSION(efifb_drm, 1);
++MODULE_DEPEND(efifb_drm, linuxkpi, 1, 1, 1);
++MODULE_DEPEND(efifb_drm, drmn, 2, 2, 2);
+diff --git tests/test_efi_fb_layout.c tests/test_efi_fb_layout.c
+new file mode 100644
+index 0000000000..4e6d82a866
+--- /dev/null
++++ tests/test_efi_fb_layout.c
+@@ -0,0 +1,34 @@
++/* SPDX-License-Identifier: BSD-2-Clause */
++#include <assert.h>
++#include <stdint.h>
++#include <stdio.h>
++#include "../efifb/efi_fb_layout.h"
++int main(void)
++{
++ struct efifb_drm_layout f={.address=0x3e2fe000,.size=1920ULL*1080*4,
++  .width=1920,.height=1080,.stride=1920,.red=0xff0000,.green=0xff00,
++  .blue=0xff,.reserved=0xff000000},bad;
++ uint32_t pitch;unsigned int format,cases=0;
++ assert(efifb_drm_layout_valid(&f,&pitch,&format));
++ assert(pitch==7680 && format==EFIFB_DRM_XRGB8888);cases++;
++ f.stride=2048;f.size=2048ULL*1080*4;
++ assert(efifb_drm_layout_valid(&f,&pitch,&format) && pitch==8192);cases++;
++ f.red=0xff;f.blue=0xff0000;
++ assert(efifb_drm_layout_valid(&f,&pitch,&format) && format==EFIFB_DRM_XBGR8888);cases++;
++#define REJECT(field,value) do {bad=f;bad.field=(value);assert(!efifb_drm_layout_valid(&bad,&pitch,&format));cases++;} while (0)
++ REJECT(width,0);REJECT(height,0);REJECT(address,0);REJECT(size,0);
++ REJECT(width,8193);REJECT(height,8193);REJECT(stride,1919);
++ REJECT(stride,UINT32_MAX);REJECT(stride,UINT32_MAX/4+1);
++ REJECT(size,2048ULL*1080*4-1);REJECT(size,EFIFB_DRM_MAX_BYTES+1);
++ REJECT(address,UINT64_MAX-f.size+1);REJECT(address,UINT64_MAX-f.size-100);
++ REJECT(red,0xf800);REJECT(blue,0xff00);REJECT(green,0xff0000);
++ REJECT(reserved,0x80000000);
++ for (uint32_t h=1;h<=8192;h++) {
++  struct efifb_drm_layout v=f;v.width=1;v.height=h;v.stride=3;v.size=(uint64_t)h*12;
++  assert(efifb_drm_layout_valid(&v,&pitch,&format) && pitch==12);
++  assert((uint64_t)(h-1)*pitch+4<=v.size);cases++;
++  v.size--;assert(!efifb_drm_layout_valid(&v,&pitch,&format));cases++;
++ }
++ printf("EFI scanout layout: %u positive/bounds/refusal checks passed\n",cases);
++ return 0;
++}
+diff --git tests/test_efi_kms_device.c tests/test_efi_kms_device.c
+new file mode 100644
+index 0000000000..d5a5e40a3f
+--- /dev/null
++++ tests/test_efi_kms_device.c
+@@ -0,0 +1,169 @@
++/* SPDX-License-Identifier: BSD-2-Clause
++ * Native, opt-in KMS scanout control. Requires an exclusive disposable display.
++ * Leaves a known pattern visible for 30 seconds, then restores the old CRTC.
++ */
++#include <sys/types.h>
++#include <sys/ioctl.h>
++#include <sys/mman.h>
++#include <errno.h>
++#include <fcntl.h>
++#include <poll.h>
++#include <stdint.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include <unistd.h>
++#include <drm/drm.h>
++#include <drm/drm_mode.h>
++#include <drm/drm_fourcc.h>
++
++static void check(int ok, const char *what)
++{
++ if (!ok) { perror(what); exit(1); }
++}
++static void reject(int fd, struct drm_mode_fb_cmd2 fb, const char *what,
++    int allow_range)
++{
++ errno = 0;
++ if (ioctl(fd, DRM_IOCTL_MODE_ADDFB2, &fb) != -1 ||
++     (errno != EINVAL && !(allow_range && errno == ERANGE))) {
++  fprintf(stderr, "%s: unexpected result, errno=%d\n", what, errno);
++  exit(1);
++ }
++ printf("PASS rejected %s errno=%d\n", what, errno);
++}
++int main(int argc, char **argv)
++{
++ int fd;
++ unsigned int hold = 30;
++ char name[64] = {0};
++ struct drm_version ver = { .name_len = sizeof(name)-1, .name = name };
++ uint32_t connectors[16] = {0}, crtcs[16] = {0}, encoders[16] = {0};
++ struct drm_mode_card_res res = {
++  .connector_id_ptr = (uintptr_t)connectors, .count_connectors = 16,
++  .crtc_id_ptr = (uintptr_t)crtcs, .count_crtcs = 16
++ };
++ struct drm_mode_modeinfo modes[16] = {{0}};
++ struct drm_mode_get_connector conn = {
++  .modes_ptr = (uintptr_t)modes, .count_modes = 16,
++  .encoders_ptr = (uintptr_t)encoders, .count_encoders = 16
++ };
++ struct drm_mode_crtc old = {0}, next = {0};
++ struct drm_mode_create_dumb tiny = { .width = 8, .height = 8, .bpp = 32 };
++ struct drm_mode_create_dumb bo = { .bpp = 32 };
++ struct drm_mode_fb_cmd2 fb = { .pixel_format = DRM_FORMAT_XRGB8888 };
++ struct drm_mode_map_dumb map = {0};
++ struct drm_mode_fb_dirty_cmd dirty = {0};
++ struct drm_mode_create_dumb flip_bo = { .bpp = 32 };
++ struct drm_mode_fb_cmd2 flip_fb = {0};
++ struct drm_mode_crtc_page_flip flip = {0};
++ struct drm_event_vblank event = {0};
++ struct pollfd pollfd;
++ uint32_t *pixels;
++ uint32_t *flip_pixels;
++ check(argc == 2 || argc == 3,
++     "usage: test-efi-kms-device /dev/dri/card0 [hold-seconds 1..300]");
++ if (argc == 3) {
++  char *end;
++  unsigned long n = strtoul(argv[2], &end, 10);
++  check(*argv[2] != '\0' && *end == '\0' && n >= 1 && n <= 300,
++      "hold-seconds 1..300");
++  hold = n;
++ }
++ setvbuf(stdout, NULL, _IONBF, 0);
++ fd = open(argv[1], O_RDWR); check(fd >= 0, "open DRM");
++ check(ioctl(fd, DRM_IOCTL_VERSION, &ver) == 0, "VERSION");
++ check(strcmp(name, "efifb_drm") == 0, "exclusive EFI control driver");
++ check(ioctl(fd, DRM_IOCTL_MODE_GETRESOURCES, &res) == 0, "GETRESOURCES");
++ check(res.count_connectors == 1 && res.count_crtcs == 1, "one connector/CRTC");
++ conn.connector_id = connectors[0];
++ check(ioctl(fd, DRM_IOCTL_MODE_GETCONNECTOR, &conn) == 0, "GETCONNECTOR");
++ check(conn.count_modes == 1 && conn.connection == 1, "one connected mode");
++ old.crtc_id = crtcs[0];
++ check(ioctl(fd, DRM_IOCTL_MODE_GETCRTC, &old) == 0, "GETCRTC");
++ printf("driver=%s connector=%u crtc=%u mode=%ux%u old_fb=%u\n",
++     name, connectors[0], crtcs[0], modes[0].hdisplay, modes[0].vdisplay,
++     old.fb_id);
++ check(old.mode_valid && old.fb_id != 0, "restorable old scanout");
++ check(ioctl(fd, DRM_IOCTL_MODE_CREATE_DUMB, &tiny) == 0, "CREATE tiny DUMB");
++ fb.width = modes[0].hdisplay; fb.height = modes[0].vdisplay;
++ fb.handles[0] = tiny.handle; fb.pitches[0] = fb.width * 4;
++ reject(fd, fb, "undersized GEM object", 0);
++ fb.pitches[0] = UINT32_MAX - 3;
++ reject(fd, fb, "64-bit oversized pitch footprint", 1);
++ fb.pitches[0] = fb.width * 4; fb.offsets[0] = UINT32_MAX - 3;
++ reject(fd, fb, "64-bit oversized offset footprint", 1);
++ bo.width = fb.width; bo.height = fb.height;
++ check(ioctl(fd, DRM_IOCTL_MODE_CREATE_DUMB, &bo) == 0, "CREATE display DUMB");
++ fb.handles[0] = bo.handle; fb.pitches[0] = bo.pitch; fb.offsets[0] = 0;
++ if (ioctl(fd, DRM_IOCTL_MODE_ADDFB2, &fb) != 0) {
++  fb.pixel_format = DRM_FORMAT_XBGR8888;
++  check(ioctl(fd, DRM_IOCTL_MODE_ADDFB2, &fb) == 0, "ADDFB2 native format");
++ }
++ map.handle = bo.handle;
++ check(ioctl(fd, DRM_IOCTL_MODE_MAP_DUMB, &map) == 0, "MAP_DUMB");
++ pixels = mmap(NULL, bo.size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, map.offset);
++ check(pixels != MAP_FAILED, "mmap DUMB");
++ for (uint32_t y = 0; y < bo.height; y++)
++  for (uint32_t x = 0; x < bo.width; x++) {
++   uint32_t rgb = x < bo.width/3 ? 0xff0000 :
++       x < 2*bo.width/3 ? 0x00ff00 : 0x0000ff;
++   if (y >= bo.height/2) rgb = 0xffffff;
++   if (fb.pixel_format == DRM_FORMAT_XBGR8888)
++    rgb = (rgb & 0xff00) | ((rgb & 0xff) << 16) | (rgb >> 16);
++   pixels[(uint64_t)y * (bo.pitch / 4) + x] = rgb;
++  }
++ next.crtc_id = crtcs[0]; next.fb_id = fb.fb_id; next.mode_valid = 1;
++ next.mode = modes[0]; next.set_connectors_ptr = (uintptr_t)connectors;
++ next.count_connectors = 1;
++ check(ioctl(fd, DRM_IOCTL_MODE_SETCRTC, &next) == 0, "SETCRTC pattern");
++ printf("PATTERN_READY width=%u height=%u pitch=%u fb=%u; hold %us\n",
++     bo.width, bo.height, bo.pitch, fb.fb_id, hold);
++ sleep(hold);
++ /* Exercise the dirty path used when software renderers reuse a buffer. */
++ for (uint32_t y = 0; y < bo.height; y++)
++  for (uint32_t x = 0; x < bo.width; x++)
++   pixels[(uint64_t)y * (bo.pitch / 4) + x] =
++       y < bo.height / 2 ? 0x00ffffff : 0;
++ dirty.fb_id = fb.fb_id;
++ check(ioctl(fd, DRM_IOCTL_MODE_DIRTYFB, &dirty) == 0, "DIRTYFB update");
++ puts("DIRTY_READY upper white / lower black");
++ sleep(hold);
++ /* A second GEM buffer must become visible and deliver a completion event. */
++ flip_bo.width = bo.width; flip_bo.height = bo.height;
++ check(ioctl(fd, DRM_IOCTL_MODE_CREATE_DUMB, &flip_bo) == 0,
++     "CREATE flip DUMB");
++ flip_fb = fb; flip_fb.fb_id = 0; flip_fb.handles[0] = flip_bo.handle;
++ flip_fb.pitches[0] = flip_bo.pitch;
++ check(ioctl(fd, DRM_IOCTL_MODE_ADDFB2, &flip_fb) == 0, "ADDFB2 flip");
++ map.handle = flip_bo.handle; map.offset = 0;
++ check(ioctl(fd, DRM_IOCTL_MODE_MAP_DUMB, &map) == 0, "MAP flip DUMB");
++ flip_pixels = mmap(NULL, flip_bo.size, PROT_READ | PROT_WRITE,
++     MAP_SHARED, fd, map.offset);
++ check(flip_pixels != MAP_FAILED, "mmap flip DUMB");
++ for (uint32_t y = 0; y < bo.height; y++)
++  for (uint32_t x = 0; x < bo.width; x++)
++   flip_pixels[(uint64_t)y * (flip_bo.pitch / 4) + x] =
++       x < bo.width / 2 ? 0x00ffffff : 0;
++ flip.crtc_id = crtcs[0]; flip.fb_id = flip_fb.fb_id;
++ flip.flags = DRM_MODE_PAGE_FLIP_EVENT; flip.user_data = 0x5049344b4d53ULL;
++ check(ioctl(fd, DRM_IOCTL_MODE_PAGE_FLIP, &flip) == 0, "PAGE_FLIP");
++ pollfd = (struct pollfd){ .fd = fd, .events = POLLIN };
++ check(poll(&pollfd, 1, 3000) == 1 && (pollfd.revents & POLLIN),
++     "page-flip completion deadline");
++ check(read(fd, &event, sizeof(event)) == sizeof(event) &&
++     event.base.type == DRM_EVENT_FLIP_COMPLETE &&
++     event.base.length == sizeof(event) && event.user_data == flip.user_data,
++     "page-flip completion identity");
++ puts("FLIP_READY left white / right black; completion event verified");
++ sleep(hold);
++ old.set_connectors_ptr = (uintptr_t)connectors; old.count_connectors = 1;
++ check(ioctl(fd, DRM_IOCTL_MODE_SETCRTC, &old) == 0, "restore old CRTC");
++ check(ioctl(fd, DRM_IOCTL_MODE_RMFB, &fb.fb_id) == 0, "RMFB");
++ check(ioctl(fd, DRM_IOCTL_MODE_RMFB, &flip_fb.fb_id) == 0, "RMFB flip");
++ munmap(pixels, bo.size);
++ munmap(flip_pixels, flip_bo.size);
++ close(fd);
++ puts("PASS native KMS modeset and restore; independently verify scanout pixels");
++ return 0;
++}
+diff --git virtio/Makefile virtio/Makefile
+index b6f1127acd..8f942f051e 100644
+--- virtio/Makefile
++++ virtio/Makefile
+@@ -9,11 +9,8 @@ EXPORT_SYMS=	YES
+ 
+ .PATH:	${SRCDIR} ${SRCDIR}/freebsd ${SRCDIR:H}
+ 
+-# drm_simple_kms_helper.c is not part of drm.ko; build it here for
+-# drm_simple_encoder_init().
+ SRCS=	virtgpu_freebsd.c \
+ 	linux_virtio.c \
+-	drm_simple_kms_helper.c \
+ 	virtgpu_vram.c \
+ 	virtgpu_debugfs.c \
+ 	virtgpu_display.c \
