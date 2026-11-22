@@ -1,6 +1,6 @@
 # Restore runtime probe assertions and current call coverage.
 # FreeBSD uses native DOF inventory; keep every original trace expectation.
-# Report the exact missing kernel process-provider refusal as unavailable.
+# Report exact missing kernel process-provider or configured-build capabilities.
 --- Lib/test/test_dtrace.py.orig
 +++ Lib/test/test_dtrace.py
 @@ -4,6 +4,7 @@
@@ -11,7 +11,15 @@
  import types
  import unittest
  
-@@ -97,6 +98,21 @@
+@@ -77,4 +78,7 @@
+     def trace_python(self, script_file, python_file, optimize_python=None):
++        if not sysconfig.get_config_var('WITH_DTRACE'):
++            raise unittest.SkipTest(
++                'CPython must be configured with the --with-dtrace option.')
+         python_flags = []
+         if optimize_python:
+             python_flags.extend(["-O"] * optimize_python)
+@@ -97,6 +101,21 @@
      EXTENSION = ".d"
      COMMAND = ["dtrace", "-q", "-s"]
  
@@ -33,7 +41,7 @@
  
  class SystemTapBackend(TraceBackend):
      EXTENSION = ".stp"
-@@ -126,7 +142,11 @@
+@@ -126,7 +145,11 @@
      def test_verify_call_opcodes(self):
          """Ensure our call stack test hits all function call opcodes"""
  
@@ -46,7 +54,7 @@
  
          with open(abspath("call_stack.py")) as f:
              code_string = f.read()
-@@ -145,8 +165,82 @@
+@@ -145,8 +168,82 @@
  
          for instruction in get_function_instructions('start'):
              opcodes.discard(instruction.opname)
@@ -129,7 +137,7 @@
  
      def test_gc(self):
          self.run_case("gc")
-@@ -178,6 +272,9 @@
+@@ -178,6 +275,9 @@
      @classmethod
      def setUpClass(cls):
          if sysconfig.get_config_var('WITH_DTRACE'):
@@ -139,7 +147,7 @@
              readelf_major_version, readelf_minor_version = cls.get_readelf_version()
              if support.verbose:
                  print(f"readelf version: {readelf_major_version}.{readelf_minor_version}")
-@@ -215,7 +312,37 @@
+@@ -215,7 +315,37 @@
  
          return int(match.group(1)), int(match.group(2))
  
@@ -177,7 +185,7 @@
          command = ["readelf", "-n", sys.executable]
          stdout, _ = subprocess.Popen(
              command,
-@@ -240,7 +367,6 @@
+@@ -240,7 +370,6 @@
              with self.subTest(probe_name=probe_name):
                  self.assertIn(probe_name, readelf_output)
  
