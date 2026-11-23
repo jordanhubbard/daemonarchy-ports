@@ -46,14 +46,53 @@ The recipe also supplies the ports framework's selected Lua executable:
 upstream searches `lua5.3`, while the existing FreeBSD dependency supplies
 `lua53`. Selecting the observed interpreter allows the original breakpoint and
 comprehensive Lua scripts to finish, then exposes SIGSEGV in
-`TestFileHandle.lua`, starting in `TestLegacyFileErr`. The original Lua API case
-remains failed, and its process script is not reached.
+`TestFileHandle.lua`, starting in `TestLegacyFileErr`. That original R267 case
+remains failed; its process script was not reached. A subsequent debugger
+reproduction identifies `SWIG_TypeCheck` inside `SetErrorFile`: the generic
+`SBFile` branch treats native Lua file userdata as a SWIG object before the
+exact native-file branch can run.
 
-Fresh original checksum/full patch passes with zero fuzz for the combined
-candidate. Complete comparison of all 160,706 fresh source nodes against the
-sealed fresh baseline permits only the changed event test and its exact
-original backup. Every other body, type, owner, mode, flag and literal link
-matches. Default options, dependencies, jobs and test settings are preserved.
+The first candidate lowers the generic `SBFile` typecheck priority while
+retaining its existing conversion and null checks. Generated input, output and
+error setters now check exact native Lua file handles first. The original wrapper
+compile and shared-library link commands pass in separate output directories,
+with only the wrapper input/object and private output/dependency paths changed.
+Existing link inputs, warm products, source and SDK remain unchanged. Against
+that private candidate, all four unchanged original Lua scripts exit zero and
+all sixteen methods are observed, including all three file-handle cases and
+both process-launch cases. All final integrity guards pass. This direct-script
+control does not replace the normal ports target. An additive upstream method
+checks native and wrapped files plus invalid and closed handles for all three
+setters. Its separate control exposed another defect: all three setters report
+success for already closed Lua files. Lua marks those streams closed through
+`closef`, while their `FILE *` may remain non-null. The revised candidate checks
+that state before constructing a native file wrapper. Generation and the
+original private compile/link commands pass. The revised library passes all
+sixteen original methods plus the added contract method, covering all three
+setters. Lua and Python independently resolve the same candidate library, and
+all final source, existing-product, SDK140, base, registry, mount and test-cookie
+guards pass. Normal ports target and package qualification remain open. Earlier
+controller parser and literal-directory comparison failures remain recorded
+separately.
+
+Before those two additional Lua patches, R268 original checksum/full patch
+passed with zero fuzz. All 160,706 fresh source nodes matched the sealed fresh
+baseline except the changed event test and its exact original backup. Every
+other body, type, owner, mode, flag and literal link matched. Default options,
+dependencies, jobs and test settings were preserved. R313 then passes original
+checksum/full patch for the current revision7 origin with zero fuzz. All 160,708 fresh source nodes match R268 except the two
+Lua source changes and their exact original backups; all other full metadata,
+bodies and links match. Every current origin Git identity matches that native
+view; full native read/write permission observations remain separate. Normal
+revision7 configure/build/test, fresh stage/package and installed consumers
+remain unqualified.
+
+The complete event/Lua failed frontier is independently verified on both
+physical filesystems: 1,065,921 nodes, including the full source/build, both
+frozen ports views, fresh source and complete SDK140 prefix/raw database. Every
+body, literal link, hardlink group and the full gzip stream match; before/after
+source and SDK equality pass. This archive predates the separate Lua candidate
+probes and preserves their original failed predecessors.
 These source and selected-runtime checks do not qualify the complete original
 suite, new configure/package/installed consumers, ARM platforms or the release.
 The completed full R74 failure and all remaining defects retain their status.

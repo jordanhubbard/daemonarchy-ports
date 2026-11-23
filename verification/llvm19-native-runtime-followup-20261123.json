@@ -135,6 +135,11 @@
         "sha256": "3b13cb36b64e7a73e5c3b70faf71f6179d99d51a90d89efbae3f4648402047d7",
         "git_mode": "100644"
       },
+      "files/patch-lldb_bindings_lua_lua-typemaps.swig": {
+        "kind": "file",
+        "sha256": "6d836462ff8f1a07dbed7c0aee5e45fa10684b1d2ebccf47552a2ec65f3d6625",
+        "git_mode": "100644"
+      },
       "files/patch-compiler-rt_test_sanitizer__common_TestCases_FreeBSD_capsicum-msan.cpp": {
         "kind": "file",
         "sha256": "a2311d32fc54259a0481406e212f1c6f269bc5e48525e8cf669e4c04944e2ff1",
@@ -265,6 +270,11 @@
         "sha256": "2041765ca6c1859b3a4c1d8bc60e1ece9e578a929e42458cd048de0f09e6b1f4",
         "git_mode": "100644"
       },
+      "files/patch-lldb_test_API_lua__api_TestFileHandle.lua": {
+        "kind": "file",
+        "sha256": "58f7b8cdffd523eb4ec36070cb3890948a0e9b367d1eefc01b1dd7abf2d21604",
+        "git_mode": "100644"
+      },
       "files/patch-lldb_test_Shell_lit.cfg.py": {
         "kind": "file",
         "sha256": "6147d18d6d4ea45f105b87eed5f1604b56335d67f1bb17e4de05922423a21bef",
@@ -376,7 +386,7 @@
         "git_mode": "100644"
       }
     },
-    "identity_scope": "File bodies, types, literal links and Git executable modes match the native R268 origin, apart from the declared PORTREVISION6to7 bump. Native full read/write permission differences remain explicitly recorded in private manifests; Git identity is not full filesystem metadata equality."
+    "identity_scope": "All75 current origin bodies, types, literal links and Git executable modes match the native R313 full-patch view. Native full read/write permission differences remain explicitly retained; Git identity is not full filesystem metadata equality."
   },
   "native_boundary": {
     "platform": "FreeBSD16.0-amd64",
@@ -387,7 +397,8 @@
     "full_original_options_and_dependencies_preserved": true,
     "canonical_Component_or_SDK_admission": false,
     "lifecycle_receipt": false,
-    "complete_toolchain_provenance_admitted": false
+    "complete_toolchain_provenance_admitted": false,
+    "native_recipe_pkgname_scope": "Historical default builds and normal selected tests used revision6. R313 cold checksum/full patch uses revision7. R312 uses an isolated original-command link product; normal revision7 configure/build/test/package qualification remains open."
   },
   "default_build": {
     "producer": "R222",
@@ -520,9 +531,19 @@
       "nodes": 589235,
       "archive_sha256": "c7dc2028c99313559b47d9caa806b3ce03711a503faca82bd8fae8409909c286",
       "independent_two_physical_host_verification": "PASS"
+    },
+    {
+      "producer": "R284",
+      "scope": "Full event/Lua failed frontier including source/build, R184/R268 ports, fresh source, complete SDK140 prefix/raw database and original failed controls; predates isolated Lua candidate probes.",
+      "nodes": 1065921,
+      "archive_sha256": "c3c9afa3d1eb4c5a5ac62bd40e071a560f6b6974bcadf04a1cead3f682d371bb",
+      "inventory_sha256": "843dd31f074c380b1be5900c164a08c69a67601c2e8ddae65b992735e9883b33",
+      "independent_two_physical_host_verification": "PASS",
+      "source_and_SDK_before_after_equality": true
     }
   ],
   "remaining_gates": [
+    "Normal original revision7 configure/build/ports test targets for final Lua repairs, fresh stage/package and installed acceptance. Private original sixteen Lua methods and added regression plus full cold patch now pass.",
     "Full unfiltered original suite after all repairs; retained R74 full run remains failed with249 unexpected entries.",
     "Remaining LLDB, sanitizer, GNU libatomic, CFI, libFuzzer and OpenMP defects.",
     "Original normal configure/build/selected target with final revision7 recipe and fresh stage, license/SBOM hooks, check-plist/package and installed compiler consumers.",
@@ -530,5 +551,170 @@
     "Matching CURRENT source/toolchain and full ARM platform qualification.",
     "Canonical per-unit Component/SDK/provenance/lifecycle and complete1.6 release acceptance."
   ],
-  "raw_native_evidence": "Retained privately; this JSON summarizes observed commands and results and is not a canonical execution receipt."
+  "raw_native_evidence": "Retained privately; this JSON summarizes observed commands and results and is not a canonical execution receipt.",
+  "Lua_file_dispatch_followup": {
+    "original_crash_producer": "R280",
+    "original_Lua_SIGSEGV_reproduced": true,
+    "original_backtrace": [
+      "libc string comparison with null name",
+      "SWIG_TypeCheck(char const*, swig_type_info*)",
+      "_wrap_SBDebugger_SetErrorFile(lua_State*)"
+    ],
+    "cause": "Generic SBFile conversion interprets native Lua FILE userdata as SWIG userdata before exact FileSP branch.",
+    "candidate": "Initial priority-only candidate: retain original generic conversion/null checks with lower priority than exact native FILE typecheck.",
+    "generated_dispatchers_producer": "R291",
+    "all_three_setters_exact_FILE_before_generic_SBFile": true,
+    "isolated_original_compile_and_link_producer": "R293",
+    "original_compile_and_link_exits": [
+      0,
+      0
+    ],
+    "all_original_link_inputs_and_warm_products_unchanged": true,
+    "private_liblldb_sha256": "b9104e474a6fd46026e8741da07334c48780e56219c1fe6d0a21852115e6546f",
+    "original_unchanged_Lua_scripts_producer": "R297",
+    "original_script_results": [
+      {
+        "script": "TestBreakpointAPI.lua",
+        "exit": 0,
+        "PASS_methods": [
+          "TestBreakpointFrame",
+          "TestBreakpointHitCount",
+          "TestBreakpointIsValid",
+          "TestTargetDelete"
+        ]
+      },
+      {
+        "script": "TestComprehensive.lua",
+        "exit": 0,
+        "PASS_methods": [
+          "Test0_CreateTarget",
+          "Test1_Breakpoint",
+          "Test2_Launch",
+          "Test3_BreakpointFindVariables",
+          "Test3_RawData",
+          "Test4_ProcessExit",
+          "Test5_FileOutput"
+        ]
+      },
+      {
+        "script": "TestFileHandle.lua",
+        "exit": 0,
+        "PASS_methods": [
+          "TestLegacyFileErr",
+          "TestLegacyFileOut",
+          "TestLegacyFileOutScript"
+        ]
+      },
+      {
+        "script": "TestProcessAPI.lua",
+        "exit": 0,
+        "PASS_methods": [
+          "TestProcessLaunch",
+          "TestProcessLaunchSimple"
+        ]
+      }
+    ],
+    "original_methods_observed": 16,
+    "all_final_integrity_guards_pass": true,
+    "new_file_contract_regression_runtime_qualified": false,
+    "normal_original_ports_target_qualified": false,
+    "isolated_controller_failures_retained": [
+      "R295: method-name parser captured final newline; first original script itself exits0.",
+      "R298: literal shlib directory comparison rejects expected trailing slash before file-contract execution.",
+      "R302: required R298 parent-success gate rejects; no test fixture or test execution.",
+      "R304: corrected directory check passes; native/wrapped input and six invalid values pass, then required closed-file rejection fails. All final guards pass."
+    ]
+  },
+  "Lua_closed_handle_followup": {
+    "required_negative_contract_producer": "R304",
+    "explicit_API_status_probe_producer": "R309",
+    "all_three_closed_Lua_file_setters_return_success": true,
+    "underlying_Lua_contract_source": "https://www.lua.org/source/5.3/liolib.c.html",
+    "cause": "Lua closes a stream by clearing closef; FILE pointer may remain non-null. NativeFile validity alone does not reject the closed Lua handle.",
+    "candidate": "Check closef before constructing NativeFile, retaining existing Invalid file Lua error.",
+    "generation_producer": "R308",
+    "closed_input_checks_generated": 20,
+    "private_original_compile_link_producer": "R310",
+    "private_compile_and_link_exits": [
+      0,
+      0
+    ],
+    "private_liblldb_sha256": "482914cf8d3bdbf803fa84e34683274b210419ecebb73a7362412f8e0e68de4d",
+    "all_original_link_inputs_warm_products_and_dependency_outputs_unchanged": true,
+    "original_methods_plus_added_regression_qualified": true,
+    "earlier_API_probe_controller_failure_retained": "R307 expected nil return, but setters return SBError; raw pcall true results retained. R309 explicitly checks SBError.Success() for all three setters.",
+    "runtime_qualification_scope": "Private original-command link candidate only; normal ports target/package still open.",
+    "runtime_producer": "R312",
+    "original_methods_retained": 16,
+    "added_contract_methods": 1,
+    "methods_observed": 17,
+    "original_script_results": [
+      {
+        "script": "TestBreakpointAPI.lua",
+        "exit": 0,
+        "PASS_methods": [
+          "TestBreakpointFrame",
+          "TestBreakpointHitCount",
+          "TestBreakpointIsValid",
+          "TestTargetDelete"
+        ]
+      },
+      {
+        "script": "TestComprehensive.lua",
+        "exit": 0,
+        "PASS_methods": [
+          "Test0_CreateTarget",
+          "Test1_Breakpoint",
+          "Test2_Launch",
+          "Test3_BreakpointFindVariables",
+          "Test3_RawData",
+          "Test4_ProcessExit",
+          "Test5_FileOutput"
+        ]
+      },
+      {
+        "script": "TestFileHandle.lua",
+        "exit": 0,
+        "PASS_methods": [
+          "TestFileOverloadContracts",
+          "TestLegacyFileErr",
+          "TestLegacyFileOut",
+          "TestLegacyFileOutScript"
+        ]
+      },
+      {
+        "script": "TestProcessAPI.lua",
+        "exit": 0,
+        "PASS_methods": [
+          "TestProcessLaunch",
+          "TestProcessLaunchSimple"
+        ]
+      }
+    ],
+    "Lua_and_Python_resolve_same_candidate_library": true,
+    "all_final_integrity_guards_pass": true,
+    "new_regression_source_sha256": "4d98a982c3df11831aa974f6a6b0fb54f83748ff1ffb57ce727ae6fa279bfc8f"
+  },
+  "Lua_binding_fresh_original_patch": {
+    "producer": "R313",
+    "pkgname": "llvm19-19.1.7_7",
+    "original_checksum_patch_exits": [
+      0,
+      0
+    ],
+    "zero_fuzz": true,
+    "complete_fresh_source_nodes": 160708,
+    "complete_fresh_source_inventory_sha256": "ea2f7ef397c914e2d95c888ffc80af14f8541e60c3b65c44ef6040eaeeda9f37",
+    "reference": "R268 complete160706-node fresh source",
+    "only_source_changes": [
+      "lldb/bindings/lua/lua-typemaps.swig",
+      "lldb/test/API/lua_api/TestFileHandle.lua",
+      "exact original .orig backups for those two files"
+    ],
+    "all_other_full_source_bodies_types_owners_modes_flags_and_literal_links_equal": true,
+    "complete_public_origin_Git_file_identity_matches": true,
+    "default_options_dependencies_jobs_and_test_settings_preserved": true,
+    "all_final_integrity_guards_pass": true,
+    "normal_configure_build_test_package_qualified": false
+  }
 }
