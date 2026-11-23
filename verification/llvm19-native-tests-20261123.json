@@ -1,6 +1,6 @@
 {
   "schema": "daemonarchy/llvm19-native-test-development-evidence@1",
-  "status": "additional-API-repairs-cold-qualified-full-R22-incomplete-after-huge-malloc-and-LIT-memory-reclaim-kills",
+  "status": "targeted-API-allocation-and-scoped-TSan-teardown-repairs-native-validated-full-suite-and-release-incomplete",
   "port": "devel/llvm19",
   "original_makefile_sha256": "d43b3578b552dc5b393e81ea48e1bba8fbeede5fc9061414fdb825d2c436b721",
   "original_llvm_source_archive": {
@@ -1027,6 +1027,106 @@
       "bytes": 14186213,
       "sha256": "87767aa382476e3ca7bb4d1fa918e1894bff118cdf1a820339f3bacf2d2f1e8c"
     },
-    "fresh_full_package_or_release_acceptance": false
+    "fresh_full_package_or_release_acceptance": false,
+    "independent_retention": {
+      "archive_bytes": 419126573,
+      "archive_sha256": "4ec743979b4001d391259d4f9a1c42a82a07bab052603daf6e87974995d2d2df",
+      "inventory_sha256": "e970ecbbef486c92631f37ec33a2fbb2fc909230b0d764a33cbc7d9aa858d41b",
+      "nodes": 393529,
+      "before_after_complete_frontier_equal": true,
+      "scope": "Complete new R30-R33 cold source/work/ports/fixtures/controls/products/reports plus selected warm huge-allocation products/source and LIT/Ninja state. Other warm nodes remain bound to complete R22 archive; not a complete new warm frontier.",
+      "both_physical_filesystems_all_nodes_and_complete_gzip_verified": true,
+      "includes_actual_JSON_and_xUnit_report_bodies": true
+    }
+  },
+  "TSan_thread_exit_scope_correction": {
+    "status": "Fresh original checksum/patch R41 exits0/0 without fuzz; full default configure and named TSan/CXX/header build R42 exit0. Independent R43 original ignored-library and threaded-fork scripts pass. Compare_exchange and deadlock stress scripts still fail original runtime assertions; the four-case consumer controller remains failed. Negative original unbalanced user-ignore consumer R44 passes. No full original target, warm integration or complete package acceptance.",
+    "patch": "devel/llvm19/files/patch-compiler-rt_lib_tsan_rtl_tsan__interceptors__posix.cpp",
+    "patch_sha256": "18bcd4e6a6365c4b86ef3cba130582dfa7124adab2315e5514a6018cd65de672",
+    "source_before_sha256": "6b859fe57318b70dfa9e43367bc43d9c4c6fdeec02b43d0a1d75cca8250c67de",
+    "source_after_sha256": "aa0cd49d8643ad460c6655142b0166f849eabda75c8be376a967c2b8e028597b",
+    "change": "End the FreeBSD thr_exit ScopedInterceptor lifetime before DestroyThreadState, balancing its own ignores while preserving real user-ignore checks and releasing fork-child state. Keep initialized/not-dead guard.",
+    "original_sources_assertions_options_and_deflake_helpers_unchanged": true,
+    "preceding_diagnostics": {
+      "R38": "Unchanged archived original R22 ignored-library executable exits66; original FileCheck1 with ignore_noninstrumented_modules=1. All input/mount guards pass.",
+      "R36_R37_R39": "Fast-path-only candidate full patch/configure/build pass, but ignored-library script still fails. Not the accepted scope-balanced candidate. R39 additionally stops before fork execution on invalid CXX archive requirement for C. Failed results/products preserved.",
+      "R40": "Correct C routing allows fork script to pass. Both other consumers fail compilation because the diagnostic isystem header injection changes libc++ search order; these do not diagnose original R22 runtime failures. Failed controller preserved.",
+      "R43_resource_correction": "Private resource directory links original warm builtin include tree and fresh cold runtime lib tree, retaining normal header order without injected isystem. Actual driver link targets resolve exactly to required fresh archives for C/CXX."
+    },
+    "original_build_phase_exits": [
+      0,
+      0
+    ],
+    "build_selected_jobs": 4,
+    "all_default_components_options_normalized_configuration_and_dependencies_retained": true,
+    "runtime_archives": {
+      "libclang_rt.tsan.a": {
+        "bytes": 5698158,
+        "sha256": "1df502d19bd9f173c1a23a270e294e8a1ef78a3e95dd2c74f653e89943d1fdfa"
+      },
+      "libclang_rt.tsan_cxx.a": {
+        "bytes": 73912,
+        "sha256": "93a37e176bcec31a07ffb50aaaa3f4d6f7a0ffa78b8e4f4dd4874313741beafc"
+      }
+    },
+    "original_script_consumers": {
+      "ignore-lib0": {
+        "exit": 0,
+        "inspection_stop": false,
+        "source_sha256": "214a88bd006ed619fa4419744d9d8a6a6d2357ec7bd0f88384ea90b1cd63b768",
+        "original_script_sha256": "39d8617d7a9ce468b408b6acaf0bb85582ed96f1860c7975d20fd1e904222c00"
+      },
+      "threaded-fork": {
+        "exit": 0,
+        "inspection_stop": false,
+        "source_sha256": "31696c924d5c87d2cc6ebd3093b24e0d8caa9ff3e48f549d2beffe9146c40626",
+        "original_script_sha256": "26fdde5265aefd7e99f5b83867a7bd397ad8a02cea24eb54d2d8d47527595d97"
+      },
+      "compare-exchange": {
+        "exit": 1,
+        "inspection_stop": false,
+        "source_sha256": "dde5bc7f288c7deb5b9ee4dcf9a98714a678f0b9eeec0302b340bf37fe8d2d86",
+        "original_script_sha256": "dafe92780431a327a4e19fa637817de77c380fe3ebb3d8b7b77682f316711367"
+      },
+      "deadlock-stress": {
+        "exit": 1,
+        "inspection_stop": false,
+        "source_sha256": "014f53a99f6ac00e91b996d6fe78711755ed896dfa11704d037b5cc6a363e9ce",
+        "original_script_sha256": "3de5ad21a75516b5749285d11e1b3ecbbc07e2c202038d09178c91f3a7caf876"
+      }
+    },
+    "R43_controller_exit": 1,
+    "R43_failed_original_cases": [
+      "compare-exchange",
+      "deadlock-stress"
+    ],
+    "remaining_diagnostics": {
+      "compare_exchange": "Original expects four race warnings; actual reports five, matching preceding full R22.",
+      "deadlock_stress": "Original ordering assertion still fails with additional race report in native libthr, matching preceding full R22."
+    },
+    "negative_unbalanced_user_ignore": {
+      "source": "compiler-rt/test/tsan/thread_end_with_ignore.cpp",
+      "original_deflake_exit": 0,
+      "original_FileCheck_exit": 0,
+      "explicit_user_ignore_diagnostic_retained": true
+    },
+    "all_final_build_source_SDK140_rawdb_ports_registry_base_mount_and_stopped_data_guards_pass": true,
+    "all_bound_consumer_inputs_and_literal_resource_links_unchanged": true,
+    "complete_cold_frontier_independent_both_host_retention": {
+      "archive_bytes": 862845561,
+      "archive_sha256": "70a87f4029a41b21da329c15777ee4aa23af6b82379ffb8ab1a85d80d023575c",
+      "inventory_sha256": "40f8d07d0b8176dd768e014568ed92f0a193caabf4b89220a1b2e23820534983",
+      "nodes": 801282,
+      "before_after_complete_frontier_equal": true,
+      "scope": "Complete separate R36/R41 cold source/work/build/products/ports plus all R36-R44 diagnostic fixtures/controls/logs, literal resource links and failed results; other warm original inputs remain bound to complete R22 archive. Not a replacement complete warm frontier.",
+      "both_physical_filesystems_all_nodes_and_complete_gzip_verified": true,
+      "regular_files": 665120,
+      "directories": 136126,
+      "literal_symlinks": 36,
+      "complete_gzip_decode_bytes": 5059481600
+    },
+    "warm_source_or_runtime_modified": false,
+    "full_original_test_target_or_fresh_complete_package_qualified": false,
+    "canonical_lifecycle_or_release_acceptance": false
   }
 }

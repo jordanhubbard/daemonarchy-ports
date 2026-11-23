@@ -414,6 +414,47 @@ The separately cold-qualified R24 API changes are not yet integrated into this
 warm generation. All-runtime integration, remaining original failures, complete
 unfiltered outcomes, packaging and release gates remain open.
 
+The complete new allocator diagnosis, cold source/work/ports and scoped-test
+boundary is independently verified on both physical filesystems: 393,529 nodes,
+all bodies and literal links, both actual report files and the complete gzip
+stream. Before/after equality passes. Selected warm huge-allocation products
+and LIT/Ninja state are included; other warm nodes remain bound to the complete
+failed R22 archive. This is not a complete replacement warm frontier.
+
+Further native TSan diagnosis reproduces the ignored-library failure with the
+unchanged archived R22 executable. A fast-path-only candidate builds but still
+fails. The revised FreeBSD thread-exit interceptor instead ends its own scope
+before destroying initialized thread state. This balances the interceptor's
+ignore state before checking for real unmatched user ignores, and still frees
+state in forked children. Fresh original checksum/full patch and full default
+configure plus named TSan/CXX/header build phases pass. Source, SDK140/rawDB,
+ports, registry, base, mounts and stopped-data guards pass.
+
+Independent native consumers use the unchanged original generated scripts with
+only output relocation and a private compiler resource directory. Literal
+include/lib links retain normal builtin-header ordering and bind the actual
+fresh archives; language-specific driver checks confirm C and CXX routing.
+The complete ignored-library script and threaded-fork script each exit0 without
+triggering their external inspection guards. The unchanged original negative
+user-ignore testcase still emits its required diagnostic and passes its
+original upstream deflake/FileCheck checks.
+
+The four-script controller remains failed: compare_exchange still reports five
+warnings against its original four-warning check, and deadlock stress still
+fails its original ordering check with an additional native libthr race report.
+Both match the earlier full-run failures. Earlier consumer controllers also
+retain invalid CXX-for-C routing and injected-header-order failures; none is
+rewritten or counted as a pass. The new scope-balanced runtime is separately
+cold-built; warm source still contains only the allocation-fixture overlay.
+The complete separate cold candidate/build and diagnostic boundary is now
+independently verified on both physical filesystems: 801,282 nodes, including
+both failed and corrected candidates, all fixtures/results, 36 literal links
+and the complete gzip stream. Before/after equality passes. Other original
+warm input bodies remain bound to the complete failed R22 archive; this does
+not replace that warm frontier. Full original-target execution, other runtime/API
+integration, remaining TSan and other failures, fresh complete packaging and
+release gates remain open.
+
 These checks establish neither full upstream suite success nor a fresh full
 package build with the changed recipe. Full case discovery, per-project outcomes and explicit
 skip reasons remain open. Independent installed compiler consumers, final
