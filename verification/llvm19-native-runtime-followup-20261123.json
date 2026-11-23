@@ -17,7 +17,7 @@
       },
       "Makefile": {
         "kind": "file",
-        "sha256": "f05bd1776c8570e3b4af1323bd05933d6b3d738d4510600ed6610c0d3f8ce3ef",
+        "sha256": "93b8b8a3d3fdb5bf1e2658bf8fb6e1fbaef35bdd722a46c6532396db505094e7",
         "git_mode": "100644"
       },
       "pkg-plist": {
@@ -446,7 +446,7 @@
         "git_mode": "100644"
       }
     },
-    "identity_scope": "All87 current origin bodies/types/literal links/Git executable modes match native R350 full-patch view. Earlier R31375-file identity remains historical. Full native permissions/owners/flags are retained separately; Git identity is not full filesystem metadata equality."
+    "identity_scope": "All87 current origin bodies/types/literal links/Git executable modes match native R360 full-patch view. R313/R350 identities remain historical at their producer. Full native permissions/owners/flags are retained separately; Git identity is not full filesystem metadata equality."
   },
   "native_boundary": {
     "platform": "FreeBSD16.0-amd64",
@@ -458,7 +458,7 @@
     "canonical_Component_or_SDK_admission": false,
     "lifecycle_receipt": false,
     "complete_toolchain_provenance_admitted": false,
-    "native_recipe_pkgname_scope": "Historical R164/R228 selected targets used revision6. R313 cold checksum/full patch, R323 normal configure/build and R327 normal selected target use revision7. R327 retains17 unexpected outcomes. Fresh package and installed consumers remain unqualified."
+    "native_recipe_pkgname_scope": "Historical R164/R228 targets used revision6. R323 normal configure/build and R327 selected tests used revision7 before twelve libc++ additions and the short test-TMPDIR recipe. R360 fresh checksum/full patch qualifies current source extraction/patching, not normal build/test or package/installed consumers."
   },
   "default_build": {
     "producer": "R222",
@@ -611,10 +611,21 @@
       "independent_two_physical_host_verification": "PASS",
       "source_and_SDK_before_after_equality": true,
       "recovery_sidecar_and_original_helpers_verified_both_hosts": true
+    },
+    {
+      "producer": "R347",
+      "scope": "Complete failed normal R327 source/build/historical stage, original cookies, full SDK140 prefix/raw database, frozen views/cold sources/Lua controls, current-libc++ baselines and initial private candidate with failed diagnostics. Later corrected candidate/current-layout/legacy matrix and R350/R360 cold trees remain separate.",
+      "nodes": 1620504,
+      "archive_bytes": 6445199318,
+      "archive_sha256": "3b67cf68656a66dd8c3e22474b11a7ca5ff82fd42092b45a0acd2f878dfae7e9",
+      "inventory_sha256": "fd9f1eb3788816fdf072dc2514e215798223e460cf52159e03bb54101e47eb9a",
+      "independent_two_physical_host_verification": "PASS",
+      "source_and_SDK_before_after_equality": true,
+      "recovery_sidecar_and_original_helpers_verified_both_hosts": true
     }
   ],
   "remaining_gates": [
-    "Normal default build and original tests for twelve libc++ compatibility additions after failed-R327 frontier closure. Full original checksum/patch and160720-node fresh-source comparison now pass. Private65 mock layouts and eleven current values pass. Pre-addition R327 retained17 unexpected outcomes, with Lua/event passing.",
+    "Normal configure/default build and original selected tests for twelve libc++ additions plus short private test TMPDIR. R360 full original checksum/patch and160720-node strict comparison pass. Require all1769 prior names,60+5 expanded simulator methods and all9 original QEMU methods with real cleanup; controls do not substitute for these targets.",
     "Full unfiltered original suite after all repairs; retained R74 full run remains failed with249 unexpected entries.",
     "Remaining LLDB, sanitizer, GNU libatomic, CFI, libFuzzer and OpenMP defects.",
     "Fresh stage, license/SBOM hooks, check-plist/package and installed compiler consumers after final repairs.",
@@ -994,6 +1005,96 @@
     "default_options_dependencies_jobs_and_test_settings_preserved": true,
     "prior_R313_ports_and_cold_source_unchanged": true,
     "all_final_integrity_guards_pass": true,
-    "normal_build_test_package_qualified": false
+    "normal_build_test_package_qualified": false,
+    "candidate_scope": "R350 before the short test-TMPDIR recipe; same twelve libc++ source patches as current candidate."
+  },
+  "current_fresh_original_patch": {
+    "producer": "R360",
+    "original_checksum_patch_exits": [
+      0,
+      0
+    ],
+    "zero_fuzz": true,
+    "complete_fresh_source_nodes": 160720,
+    "complete_fresh_source_inventory_sha256": "0be00d39c06c17511ad04dc7b915b19915cc47e7cb9a04edc3bebc298844d2ff",
+    "reference": "R313 complete160708-node fresh source",
+    "only_source_changes": "The same twelve libc++ changes and exact original backups recorded by R350. All other full metadata/bodies/types/literal links equal.",
+    "complete87_file_current_origin_Git_identity_matches": true,
+    "candidate_Makefile_sha256": "93b8b8a3d3fdb5bf1e2658bf8fb6e1fbaef35bdd722a46c6532396db505094e7",
+    "default_options_dependencies_build_arguments_and_four_jobs_preserved": true,
+    "only_declared_TEST_ENV_change": "TMPDIR is expanded from per-run LLVM_TEST_TMPDIR instead of a deep build-directory path.",
+    "all_final_integrity_guards_pass": true,
+    "normal_current_build_test_package_qualified": false
+  },
+  "Qemu_LIT_socket_length_followup": {
+    "original_failed_target": "R327; eight of nine original QEMU methods fail Failed to set socket address.",
+    "direct_configured_TMPDIR_diagnostic": "R357: same66-byte configured TMPDIR produces98-byte socket and succeeds. Deliberate144-byte socket fails. Direct configured length alone did not reproduce original failure.",
+    "actual_LIT_nesting_causal_producer": "R358",
+    "actual_upstream_LIT_main_source_sha256": "ce699a9d6b3689e17a5d10586149b436ce75e34c9ecdd173dc57ff59d78233ba",
+    "actual_LIT_behavior": "tempfile.mkdtemp(prefix=lit-tmp-) replaces TMPDIR/TMP/TEMP/TEMPDIR for the run.",
+    "native_sun_path_capacity": 104,
+    "failing_configured_TMPDIR_bytes": 66,
+    "failing_actual_LIT_TMPDIR_bytes": 83,
+    "failing_actual_socket_bytes": 115,
+    "failing_actual_error": "Failed to set socket address",
+    "shorter_base_with_identical_LIT_nesting_actual_socket_bytes": 100,
+    "shorter_base_original_mock_exit_and_argument_assertions": "PASS",
+    "candidate": "Original do-test allocates a fresh private short /tmp root per run, exports LLVM_TEST_TMPDIR through both actor branches, preserves primary-group semantics and cleans on exit. Original test options, dependencies, cases, assertions and timeouts retained.",
+    "actual_recipe_control_producer": "R361",
+    "recipe_control_scope": "Actual original do-test recipe on private TEST_WRKSRC, with a controlled child instead of upstream Ninja. This is branch/permission/socket/cleanup evidence; not original upstream test acceptance.",
+    "recipe_controls": {
+      "root-0": {
+        "uid": 65534,
+        "gid": 65534,
+        "root_mode": 448,
+        "root_uid": 65534,
+        "root_gid": 65534,
+        "LIT_nested_actual_socket_bytes": 74,
+        "native_AF_UNIX_bind_pass": true,
+        "requested_exit": 0,
+        "actual_make_exit": 0,
+        "allocated_temp_root_removed": true
+      },
+      "root-47": {
+        "uid": 65534,
+        "gid": 65534,
+        "root_mode": 448,
+        "root_uid": 65534,
+        "root_gid": 65534,
+        "LIT_nested_actual_socket_bytes": 74,
+        "native_AF_UNIX_bind_pass": true,
+        "requested_exit": 47,
+        "actual_make_exit": 1,
+        "allocated_temp_root_removed": true
+      },
+      "nobody-0": {
+        "uid": 65534,
+        "gid": 65534,
+        "root_mode": 448,
+        "root_uid": 65534,
+        "root_gid": 65534,
+        "LIT_nested_actual_socket_bytes": 74,
+        "native_AF_UNIX_bind_pass": true,
+        "requested_exit": 0,
+        "actual_make_exit": 0,
+        "allocated_temp_root_removed": true
+      },
+      "nobody-47": {
+        "uid": 65534,
+        "gid": 65534,
+        "root_mode": 448,
+        "root_uid": 65534,
+        "root_gid": 65534,
+        "LIT_nested_actual_socket_bytes": 74,
+        "native_AF_UNIX_bind_pass": true,
+        "requested_exit": 47,
+        "actual_make_exit": 1,
+        "allocated_temp_root_removed": true
+      }
+    },
+    "original_failure47_reaches_make_as_failure1": true,
+    "all_selected_original_products_headers_build_metadata_unchanged": true,
+    "owned_diagnostic_jails_removed": true,
+    "original_normal_Qemu_nine_methods_with_current_recipe_qualified": false
   }
 }

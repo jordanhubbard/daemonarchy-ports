@@ -7,8 +7,8 @@ FreeBSD sanitizer and LLDB fixes change production bytes. The native partial
 R164/R228 results below used the private `_6` recipe. R323 now passes normal
 `_7` configure/build before the twelve libc++ compatibility additions, and R327
 runs that version's normal selected tests with 17 unexpected outcomes remaining.
-The current candidate includes those additional patches and requires a new normal
-build/test run. A fresh `_7` package and its installed consumers remain
+The current candidate includes those additional patches and the short private
+test-TMPDIR recipe; it requires a new normal build/test run. A fresh `_7` package and its installed consumers remain
 unqualified. The
 [runtime follow-up record](../../verification/llvm19-native-runtime-followup-20261123.json)
 binds the current candidate's Git file identities and these observations.
@@ -138,6 +138,32 @@ backups; all other full metadata, bodies, types and literal links match. All 87
 current origin Git identities match the native view, and default options,
 dependencies and four jobs remain unchanged. Normal build/test and package
 qualification for these additions is pending.
+
+The QEMU launch failure also has a native causal reproduction. A 66-byte base
+TMPDIR alone yields a working 98-byte socket. Upstream LIT adds its own
+`lit-tmp-*` directory and replaces the test environment's temporary paths;
+reproducing that behavior produces a 115-byte socket, beyond the actual FreeBSD
+104-byte capacity, and the same `Failed to set socket address` error. A shorter
+base passes with identical LIT nesting and original emulator exit/argument
+assertions. The recipe now allocates a fresh short private directory per run,
+exports it through both actor branches, preserves primary-group inheritance and
+cleans it on exit. Controls run the actual original recipe with a diagnostic
+child: root and unprivileged success/failure cases all keep mode 0700 and correct
+ownership/group, bind real nested Unix sockets, remove the allocated directory
+and retain child failure47 as make failure1. These controls do not qualify the
+nine original QEMU methods; those still require the normal target.
+
+R360 passes original checksum/full patch for the current recipe with zero fuzz.
+All 160,720 fresh nodes match R313 except the same twelve libc++ changes and exact
+original backups. All 87 current origin Git identities match. Options,
+dependencies, build arguments and four jobs remain unchanged; the explicit test
+environment change is the runtime-allocated TMPDIR.
+
+R347 now preserves the complete failed normal R327 frontier: 1,620,504 nodes,
+archive SHA-256
+`3b67cf68656a66dd8c3e22474b11a7ca5ff82fd42092b45a0acd2f878dfae7e9`.
+Both physical filesystems independently verify the complete archive, source/SDK
+before/after equality and recovery helpers. Original failures remain failures.
 
 These source and selected-runtime checks do not qualify the complete original
 suite, fresh package/installed consumers, ARM platforms or the release.

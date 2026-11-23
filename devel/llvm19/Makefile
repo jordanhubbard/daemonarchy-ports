@@ -608,19 +608,28 @@ TEST_ARGS=	${MAKE_ARGS} ${_MAKE_JOBS}
 TEST_ENV=	${MAKE_ENV} \
 		LIT_OPTS="${LIT_OPTS} -j${MAKE_JOBS_NUMBER}" \
 		HOME=${TEST_WRKSRC}/.test-home \
-		TMPDIR=${TEST_WRKSRC}/.test-tmp \
+		TMPDIR=$${LLVM_TEST_TMPDIR} \
 		XDG_CACHE_HOME=${TEST_WRKSRC}/.test-home/.cache \
 		XDG_CONFIG_HOME=${TEST_WRKSRC}/.test-home/.config \
 		XDG_DATA_HOME=${TEST_WRKSRC}/.test-home/.local/share
 TEST_CMD=	'(cd ${TEST_WRKSRC}; ${SETENV} ${TEST_ENV} ${MAKE_CMD} ${TEST_ARGS} ${TEST_TARGET})'
+# LIT adds its own temporary subdirectory. Keep the base short enough for
+# QEMU Unix sockets, and allocate it privately for each complete test run.
 # FreeBSD inherits file groups from the parent directory. Match the actor's
 # group so unprivileged setgid permission tests can exercise their own files.
 do-test:
-	${MKDIR} ${TEST_WRKSRC}/.test-home ${TEST_WRKSRC}/.test-tmp
+	${MKDIR} ${TEST_WRKSRC}/.test-home
+	@set -eu; \
+	LLVM_TEST_TMPDIR=`${MKTEMP} -d /tmp/llvm${LLVM_SUFFIX}-test.XXXXXXXX`; \
+	export LLVM_TEST_TMPDIR; \
+	trap '${RM} -r "$$LLVM_TEST_TMPDIR"' EXIT; \
+	trap 'exit 1' HUP INT TERM; \
 	if [ `${ID} -u` = 0 ]; then \
+		${CHOWN} nobody:nobody "$$LLVM_TEST_TMPDIR"; \
 		${CHOWN} -Rh nobody:nobody ${TEST_WRKSRC}; \
 		su -m nobody -c ${TEST_CMD}; \
 	else \
+		${CHGRP} `${ID} -g` "$$LLVM_TEST_TMPDIR"; \
 		${SH} -c ${TEST_CMD}; \
 	fi
 
