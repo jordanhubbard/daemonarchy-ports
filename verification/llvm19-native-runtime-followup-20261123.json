@@ -398,7 +398,7 @@
     "canonical_Component_or_SDK_admission": false,
     "lifecycle_receipt": false,
     "complete_toolchain_provenance_admitted": false,
-    "native_recipe_pkgname_scope": "Historical default builds and normal selected tests used revision6. R313 cold checksum/full patch uses revision7. R312 uses an isolated original-command link product; normal revision7 configure/build/test/package qualification remains open."
+    "native_recipe_pkgname_scope": "Historical R164/R228 selected targets used revision6. R313 cold checksum/full patch, R323 normal configure/build and R327 normal selected target use revision7. R327 retains17 unexpected outcomes. Fresh package and installed consumers remain unqualified."
   },
   "default_build": {
     "producer": "R222",
@@ -540,13 +540,24 @@
       "inventory_sha256": "843dd31f074c380b1be5900c164a08c69a67601c2e8ddae65b992735e9883b33",
       "independent_two_physical_host_verification": "PASS",
       "source_and_SDK_before_after_equality": true
+    },
+    {
+      "producer": "R325",
+      "scope": "Complete normally configured revision7 warm source/build/historical stage, untouched original cookies, full SDK140 prefix/raw database, frozen ports/cold sources and all twenty Lua controls. Predates R327 normal selected tests and libc++ compatibility probes.",
+      "nodes": 1620278,
+      "archive_bytes": 6434106847,
+      "archive_sha256": "bb02021b19038fecad556733977703ffe18034a5237700c75e4d12c2c5637e95",
+      "inventory_sha256": "fd0dafbd1e8c9b3a8779370a4abe17502f2993fad022cd6659b13fcd26beec29",
+      "independent_two_physical_host_verification": "PASS",
+      "source_and_SDK_before_after_equality": true,
+      "recovery_sidecar_and_original_helpers_verified_both_hosts": true
     }
   ],
   "remaining_gates": [
-    "Normal original revision7 configure/build/ports test targets for final Lua repairs, fresh stage/package and installed acceptance. Private original sixteen Lua methods and added regression plus full cold patch now pass.",
+    "Integrate the privately qualified libc++ formatter compatibility patches, fresh original checksum/full patch, normal default build and original tests; all65 private mock layouts and eleven current values pass. Revision7 Lua/event repairs now pass the normal selected R327 target, which retains17 unexpected outcomes.",
     "Full unfiltered original suite after all repairs; retained R74 full run remains failed with249 unexpected entries.",
     "Remaining LLDB, sanitizer, GNU libatomic, CFI, libFuzzer and OpenMP defects.",
-    "Original normal configure/build/selected target with final revision7 recipe and fresh stage, license/SBOM hooks, check-plist/package and installed compiler consumers.",
+    "Fresh stage, license/SBOM hooks, check-plist/package and installed compiler consumers after final repairs.",
     "Independent sealed-product and disposable VM install/update/reboot/rollback acceptance.",
     "Matching CURRENT source/toolchain and full ARM platform qualification.",
     "Canonical per-unit Component/SDK/provenance/lifecycle and complete1.6 release acceptance."
@@ -716,5 +727,119 @@
     "default_options_dependencies_jobs_and_test_settings_preserved": true,
     "all_final_integrity_guards_pass": true,
     "normal_configure_build_test_package_qualified": false
+  },
+  "normal_revision7_configure_build": {
+    "producer": "R323",
+    "pkgname": "llvm19-19.1.7_7",
+    "original_make_configure_build_exits": [
+      0,
+      0
+    ],
+    "make_jobs": 4,
+    "default_options_dependencies_preserved": true,
+    "fresh_owned_configure_build_cookies": true,
+    "all_original_top_level_completion_cookies_preserved": true,
+    "generated_SUB_FILES_actor_ownership_scope": "Only private WRKDIR and actual metadata-selected llvm-wrapper.sh/xtoolchain.mk; original mode/flags/body preserved before normal regeneration. R316/R319 permission failures retained.",
+    "configured_and_generated_LIT_Lua_executable": "/usr/local/bin/lua53",
+    "normal_liblldb_sha256": "482914cf8d3bdbf803fa84e34683274b210419ecebb73a7362412f8e0e68de4d",
+    "complete_source_inventory_sha256": "b02d04b35d38e4681c58288f3a91437f4278f8696968f676a7b793a4f8bfb0fe",
+    "all_final_integrity_guards_pass": true
+  },
+  "normal_revision7_selected_target": {
+    "producer": "R327",
+    "original_make_exit": 1,
+    "entries": 1769,
+    "counts": {
+      "UNRESOLVED": 3,
+      "FAIL": 14,
+      "PASS": 1230,
+      "XFAIL": 27,
+      "UNSUPPORTED": 495
+    },
+    "all_1761_original_names_retained": true,
+    "additional_Capsicum_variants": {
+      "SanitizerCommon-asan-x86_64-FreeBSD :: FreeBSD/capsicum-msan.cpp": "UNSUPPORTED",
+      "SanitizerCommon-asan-x86_64-FreeBSD :: FreeBSD/capsicum.cpp": "PASS",
+      "SanitizerCommon-msan-x86_64-FreeBSD :: FreeBSD/capsicum-msan.cpp": "PASS",
+      "SanitizerCommon-msan-x86_64-FreeBSD :: FreeBSD/capsicum.cpp": "PASS",
+      "SanitizerCommon-tsan-x86_64-FreeBSD :: FreeBSD/capsicum-msan.cpp": "UNSUPPORTED",
+      "SanitizerCommon-tsan-x86_64-FreeBSD :: FreeBSD/capsicum.cpp": "PASS",
+      "SanitizerCommon-ubsan-x86_64-FreeBSD :: FreeBSD/capsicum-msan.cpp": "UNSUPPORTED",
+      "SanitizerCommon-ubsan-x86_64-FreeBSD :: FreeBSD/capsicum.cpp": "PASS"
+    },
+    "shared_status_changes": {
+      "lldb-api :: lua_api/TestLuaAPI.py": {
+        "before": "UNRESOLVED",
+        "after": "PASS"
+      },
+      "lldb-api :: python_api/event/TestEvents.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      }
+    },
+    "remaining_unexpected": {
+      "lldb-api :: commands/gui/spawn-threads/TestGuiSpawnThreads.py": "UNRESOLVED",
+      "lldb-api :: qemu/TestQemuLaunch.py": "FAIL",
+      "lldb-api :: commands/process/detach-resumes/TestDetachResumes.py": "FAIL",
+      "lldb-api :: tools/lldb-dap/evaluate/TestDAP_evaluate.py": "FAIL",
+      "lldb-api :: tools/lldb-dap/variables/TestDAP_variables.py": "UNRESOLVED",
+      "lldb-api :: python_api/find_in_memory/TestFindRangesInMemory.py": "FAIL",
+      "lldb-api :: functionalities/thread/exit_during_step/TestExitDuringStep.py": "FAIL",
+      "lldb-api :: python_api/find_in_memory/TestFindInMemory.py": "FAIL",
+      "lldb-api :: tools/lldb-server/TestGdbRemoteSaveCore.py": "FAIL",
+      "lldb-api :: functionalities/data-formatter/data-formatter-disabling/TestDataFormatterDisabling.py": "FAIL",
+      "lldb-api :: functionalities/data-formatter/data-formatter-advanced/TestDataFormatterAdv.py": "FAIL",
+      "lldb-api :: functionalities/data-formatter/stringprinter/TestStringPrinter.py": "FAIL",
+      "lldb-api :: commands/expression/call-function/TestCallStdStringFunction.py": "FAIL",
+      "lldb-api :: functionalities/data-formatter/data-formatter-skip-summary/TestDataFormatterSkipSummary.py": "FAIL",
+      "lldb-api :: functionalities/rerun_and_expr/TestRerunAndExpr.py": "UNRESOLVED",
+      "lldb-api :: python_api/sbvalue_persist/TestSBValuePersist.py": "FAIL",
+      "lldb-shell :: Expr/TestObjCInCXXContext.test": "FAIL"
+    },
+    "json_report_sha256": "a537fe9b8814644c8519531a2a6dfa3e9af3a8f0877a04fb6aebc48618da943f",
+    "xunit_report_sha256": "e49bdeecd9472726ada9e5f66c66ce00f71b7ef4df784c62a11b5a5993298072",
+    "independent_JSON_XML_body_review": "PASS; all1769 selected names and status families match;84259 explicitly filtered XML cases remain excluded. XFAIL uses successful xunit encoding and is distinguished by original lit JSON.",
+    "all_final_integrity_guards_pass": true,
+    "full_unfiltered_suite_qualified": false
+  },
+  "private_current_libcxx_layout_followup": {
+    "baseline_producers": [
+      "R326",
+      "R330"
+    ],
+    "baseline": "Actual normal R323 LLDB fails current base string summaries and multiple container counts. Same R330 program self-checks its constructed data successfully; native raw string/vector memory independently agrees.",
+    "source_candidate_publicly_integrated": false,
+    "private_build_producer": "R345",
+    "original_five_object_compiles_archive_shared_and_CLI_link_exits": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "all_other_archive_members_and_original_ELF_dependency_contracts_preserved": true,
+    "current_layout_runtime_producer": "R346",
+    "unchanged_baseline_executable_sha256": "2d7dc074e60978cbe36d1897d6e272497e52e23d87c99d5c348723cd9335a958",
+    "actual_private_CLI_mapped_library_and_Python_binding_identity": "PASS",
+    "all_eleven_values_summaries_counts_and_typed_payloads": "PASS",
+    "unordered_map_initial_private_candidate_failure": "R342 size2 exposed empty wrapper values; revised R345 uses actual table value_type instead of an obsolete forward-declared __hash_value_type. Original failed evidence retained.",
+    "legacy_matrix_producer": "R348",
+    "string_layout_combinations": 60,
+    "unique_pointer_pair_layouts": 5,
+    "legacy_matrix_passed": 65,
+    "legacy_matrix_failed": 0,
+    "original_simulator_assertions_retained": true,
+    "both_unique_pointer_contents_and_stateful_deleter_additionally_checked": true,
+    "all_selected_original_sources_headers_products_and_build_metadata_unchanged": true,
+    "owned_runtime_jails_removed": true,
+    "upstream_references": [
+      "https://github.com/llvm/llvm-project/pull/155153",
+      "https://github.com/llvm/llvm-project/commit/d5e610a6dc8491a9fd6908fb10e4fae65691ed95"
+    ],
+    "upstream_source_bytes_and_Git_blobs_bound_to_commit": "d5e610a6dc8491a9fd6908fb10e4fae65691ed95",
+    "normal_original_ports_patch_build_test_package_acceptance": false
   }
 }

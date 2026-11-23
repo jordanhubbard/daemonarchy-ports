@@ -4,8 +4,10 @@
 
 The review candidate is `llvm19-19.1.7_7`. The revision changes because the
 FreeBSD sanitizer and LLDB fixes change production bytes. The native partial
-results below used the private `_6` recipe; a fresh `_7` package and its installed
-consumers remain unqualified. The
+R164/R228 results below used the private `_6` recipe. R323 now passes normal
+`_7` configure/build, and R327 runs its normal selected tests with 17 unexpected
+outcomes remaining. A fresh `_7` package and its installed consumers remain
+unqualified. The
 [runtime follow-up record](../../verification/llvm19-native-runtime-followup-20261123.json)
 binds the current candidate's Git file identities and these observations.
 
@@ -71,7 +73,8 @@ original private compile/link commands pass. The revised library passes all
 sixteen original methods plus the added contract method, covering all three
 setters. Lua and Python independently resolve the same candidate library, and
 all final source, existing-product, SDK140, base, registry, mount and test-cookie
-guards pass. Normal ports target and package qualification remain open. Earlier
+guards pass. The normal R327 target now passes this Lua case; package
+qualification remains open. Earlier
 controller parser and literal-directory comparison failures remain recorded
 separately.
 
@@ -83,9 +86,13 @@ dependencies, jobs and test settings were preserved. R313 then passes original
 checksum/full patch for the current revision7 origin with zero fuzz. All 160,708 fresh source nodes match R268 except the two
 Lua source changes and their exact original backups; all other full metadata,
 bodies and links match. Every current origin Git identity matches that native
-view; full native read/write permission observations remain separate. Normal
-revision7 configure/build/test, fresh stage/package and installed consumers
-remain unqualified.
+view; full native read/write permission observations remain separate. R323 then
+passes normal revision7 configure/build with fresh owned cookies while preserving
+all original top-level cookies. Actual metadata selects the generated wrapper
+and toolchain files that require build-actor ownership; their earlier permission
+failures remain recorded. The actual cache and generated LIT configuration both
+select `/usr/local/bin/lua53`. Fresh stage/package and installed consumers remain
+unqualified.
 
 The complete event/Lua failed frontier is independently verified on both
 physical filesystems: 1,065,921 nodes, including the full source/build, both
@@ -93,8 +100,40 @@ frozen ports views, fresh source and complete SDK140 prefix/raw database. Every
 body, literal link, hardlink group and the full gzip stream match; before/after
 source and SDK equality pass. This archive predates the separate Lua candidate
 probes and preserves their original failed predecessors.
+R325 separately retains the normally configured build and all twenty Lua
+controls: 1,620,278 nodes and archive SHA-256
+`bb02021b19038fecad556733977703ffe18034a5237700c75e4d12c2c5637e95`.
+Independent verification on both hosts covers every body, full metadata, literal
+link, hardlink group and gzip stream; source/SDK equality and recovery helpers
+are verified. It predates the following normal test run.
+
+R327 normal `make do-test` retains all 1,761 original names and adds the eight
+Capsicum variants. Its 1,769 entries contain 1,230 PASS, 14 FAIL, 3 UNRESOLVED,
+27 XFAIL and 495 UNSUPPORTED. Lua changes from UNRESOLVED to PASS and events
+from FAIL to PASS; every other shared status is unchanged. All four original
+Capsicum variants and the new MSan case pass; its three non-MSan variants remain
+explicitly UNSUPPORTED. Independent body/hash review reconciles JSON with all
+1,769 selected XML cases and keeps 84,259 explicitly filtered cases excluded.
+The original command exits 1 and its 17 unexpected outcomes remain failures.
+
+Private libc++ compatibility work now reproduces the current base layout
+failures against the actual normal debugger and fixes string, vector, map,
+unordered-map, forward-list, deque and unique-pointer extraction. The same
+unchanged native program verifies all eleven values, including typed map pairs,
+sequence values and pointer contents; list/shared-pointer/vector-bool controls
+also pass. Checking only counts initially missed empty unordered-map elements.
+The revised candidate obtains the actual table value type, following the
+[pinned LLVM implementation](https://github.com/llvm/llvm-project/commit/d5e610a6dc8491a9fd6908fb10e4fae65691ed95).
+It passes the original five object compiles, archive and both links in private
+outputs while preserving all other archive members and ELF dependency contracts.
+The actual private CLI mapping and Python binding identities are checked.
+All 60 string layout/pair/alternate combinations and five unique-pointer layouts
+pass the original simulator assertions, with additional pointer/deleter payload
+checks. These twelve source patches remain private; normal original patch,
+build and test qualification for them is pending.
+
 These source and selected-runtime checks do not qualify the complete original
-suite, new configure/package/installed consumers, ARM platforms or the release.
+suite, fresh package/installed consumers, ARM platforms or the release.
 The completed full R74 failure and all remaining defects retain their status.
 
 ## Retained native history
