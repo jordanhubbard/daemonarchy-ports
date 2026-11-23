@@ -1,6 +1,6 @@
 {
   "schema": "daemonarchy/llvm19-native-test-development-evidence@1",
-  "status": "integrated-default-build-pass-selected-original-do-test1435PASS2FAIL1UNSUPPORTED-full-suite-and-release-open",
+  "status": "integrated-default-and-unit-builds-pass-selected-original-do-test1437PASS1UNSUPPORTED-full-suite-and-release-open",
   "port": "devel/llvm19",
   "original_makefile_sha256": "d43b3578b552dc5b393e81ea48e1bba8fbeede5fc9061414fdb825d2c436b721",
   "original_llvm_source_archive": {
@@ -74,6 +74,7 @@
   "remaining": [
     "Full upstream case discovery, per-project results and skip reasons",
     "Final namespace-corrected original-target results and all source/dependency/runtime guards",
+    "Fresh changed-input complete stage/check-plist/package and independent installed compiler acceptance",
     "Independent installed compiler consumers and native arm64 coverage",
     "Final CURRENT source and dependency integration",
     "Complete original toolchain provenance and canonical Component/SDK/lifecycle admission",
@@ -82,7 +83,7 @@
   "canonical_lifecycle_receipt_earned": false,
   "release_acceptance": false,
   "first_test_target_candidate_makefile_sha256": "98d231377328a8e16d374669a1b6d6b5661d6ab99744a26ce5194e31468d1548",
-  "candidate_makefile_sha256": "7f97b6ec00e81f57e848f12e4038cb839fcad9b55792331370e9b28d2a16d31f",
+  "candidate_makefile_sha256": "c999babe9555d4470a9cc07180c11def3264f7727159bbbc41b52e3524d78530",
   "lit_namespace_fix": {
     "behavior": "Leave original source LIT imports unversioned and apply the same three existing namespace substitutions only to installed copies before creating the lit/llvm-lit hardlink.",
     "fresh_original_checksum_patch_exit": 0,
@@ -1364,5 +1365,115 @@
       "stage_tree_historical_not_fresh_package_qualified": true
     },
     "full_original_suite_fresh_stage_package_or_release_acceptance": false
+  },
+  "historical_candidate_makefile_sha256": "7f97b6ec00e81f57e848f12e4038cb839fcad9b55792331370e9b28d2a16d31f",
+  "CMake_unit_dependency_and_build_ID_followup": {
+    "diagnosis": {
+      "symbolizer": "Unchanged SupportTests lacked GNU build ID; original printDSOMarkup intentionally omits module/map context without it. Preserve original module/map/backtrace expectations and add a FreeBSD-only SupportTests link option.",
+      "TSan": "Unit executable remained byte-identical across R22/R59/R63 despite production runtime changes. Correct link command already selected the owned resource directory, but generate_compiler_rt_tests discarded declared dependencies before linking, and aggregate tsan supplied only ordering."
+    },
+    "changes": [
+      "Keep declared compiler-rt dependencies alongside object dependencies on the test link step.",
+      "Bind non-Apple TSan units to both concrete architecture-specific TSan/CXX archive targets so runtime updates invalidate their executable.",
+      "Set LINKER:--build-id only on FreeBSD SupportTests; no runtime, original case or expectation changes."
+    ],
+    "changed_source_hashes": {
+      "compiler-rt/cmake/Modules/AddCompilerRT.cmake": {
+        "before": "54d7f3f1e23ec8da711a009c9f020babfb0962b4a410b4900614b485738e0d22",
+        "after": "914ead38109f86be07c203307e687f684ea9cde0bd6d9d84252f3e11a3228938"
+      },
+      "compiler-rt/lib/tsan/tests/CMakeLists.txt": {
+        "before": "6a85fec7f87ec29c1f2de72786549058733de4ca914902b115c6d8c9343e38f6",
+        "after": "cf809f02712f3b9fb75ea0ad37053fa793ad5ef70cc237d41299b4f6cebecd41"
+      },
+      "llvm/unittests/Support/CMakeLists.txt": {
+        "before": "aecfb29c1031ac3c735ca85138d27449038e59dd1ec15d7669fc02c6fc7ab0e3",
+        "after": "de63d1008ba744c7a7fedda8ae64a98d749ec147fb74db3f04bed97de1e90ee7"
+      }
+    },
+    "fresh_original_checksum_and_full_patch_exit": [
+      0,
+      0
+    ],
+    "patch_fuzz": false,
+    "original_default_all_do_build_exit": 0,
+    "original_named_SupportTests_TsanUnitTests_do_build_exit": 0,
+    "default_components_options_dependencies_and_four_jobs_preserved": true,
+    "complete_source_nodes": 160684,
+    "complete_changed_source_inventory_sha256": "a3550d44377ae2b8835366ad8f850af91ebb68dcc5d96d63389bb59e6ebc62c4",
+    "old_TSan_unit_sha256": "bb6a95daebb106fd24db49153f38ea16841ab868ca5277af527dd90dd31c7433",
+    "new_unit_products": {
+      "TsanRtlTest-x86_64-Test": {
+        "sha256": "e2b72087429d2fb8ab68ca35f019ae6efafc90ef5ae519cb7acda9342d2de49a",
+        "bytes": 6577136
+      },
+      "SupportTests": {
+        "sha256": "10fed20f89265f1e18745ca736551d382eedf57f0cb797b99214ee8428d023f2",
+        "bytes": 8985192
+      }
+    },
+    "both_actual_TSan_archives_are_file_dependencies": true,
+    "new_unit_contains_setter_interceptor": true,
+    "SupportTests_has_GNU_build_ID": true,
+    "original_selected_target_exit": 0,
+    "per_case_JSON_counts": {
+      "PASS": 1437,
+      "UNSUPPORTED": 1
+    },
+    "exact_same_case_names_as_failed_R63": true,
+    "original_case_transitions": [
+      {
+        "name": "LLVM-Unit :: Support/./SupportTests/SignalsTest/PrintsSymbolizerMarkup",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "ThreadSanitizer-Unit :: rtl/./TsanRtlTest-x86_64-Test/Posix/ThreadSpecificDtors",
+        "before": "FAIL",
+        "after": "PASS"
+      }
+    ],
+    "json_report": {
+      "sha256": "ac4afc0eb96df0467ac1d1acafc425263c180e946ee17ad9f1250c650a30a77d",
+      "bytes": 333367
+    },
+    "xunit_report": {
+      "sha256": "083893c21e17d9eb2a5a1985b434fdf935e005a8658698313d70bef4ec0420e9",
+      "bytes": 14343397
+    },
+    "all_final_build_and_test_integrity_guards_pass": true,
+    "persistent_filter_added": false,
+    "full_test_completion_cookie_earned": false,
+    "complete_current_frontier_retention": {
+      "archive_sha256": "f4bd0f48c6edb3efa89bdc724f1e779c727cd133577747351febc178251a7e0b",
+      "archive_bytes": 3948778372,
+      "inventory_sha256": "851798c1ad560e4d9e65ce3babbfc41e70948ebae8f714e2a65f8176de9a42d6",
+      "all_nodes_verified": 711782,
+      "node_kinds": {
+        "directory": 92264,
+        "file": 619244,
+        "symlink": 256,
+        "socket": 12,
+        "fifo": 6
+      },
+      "hardlink_groups_verified": 5,
+      "complete_gzip_decode_bytes": 16298301440,
+      "independent_sparky_review": "pass",
+      "independent_madmax_review": "pass",
+      "complete_frontier_before_after_unchanged": true,
+      "cold_original_source_and_integrated_warm_source_build_stage_tests_reports_controls_retained": true,
+      "stage_tree_historical_not_fresh_package_qualified": true
+    },
+    "full_unfiltered_suite_fresh_stage_package_installed_or_release_acceptance": false
+  },
+  "unfiltered_original_target_after_unit_fixes": {
+    "status": "controller-launched-results-pending",
+    "original_target": "do-test/check-all",
+    "temporary_filter": null,
+    "persistent_filter_added": false,
+    "workers": 4,
+    "default_components_and_options_preserved": true,
+    "preceding_complete_current_frontier_independently_verified_both_physical_filesystems": true,
+    "full_original_tests_or_release_acceptance": false
   }
 }

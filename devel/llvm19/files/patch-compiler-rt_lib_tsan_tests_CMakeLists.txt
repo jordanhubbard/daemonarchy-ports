@@ -1,0 +1,23 @@
+--- compiler-rt/lib/tsan/tests/CMakeLists.txt.orig
++++ compiler-rt/lib/tsan/tests/CMakeLists.txt
+@@ -78,12 +78,19 @@
+   if(UNIX)
+     foreach(arch ${TSAN_TEST_ARCH})
+       set(TsanUnitTestsObjects)
++      set(TsanUnitTestsDeps ${TSAN_DEPS})
++      if(NOT APPLE)
++        # The driver links both archives implicitly via -fsanitize=thread.
++        # The aggregate tsan target only supplies ordering, not relink tracking.
++        list(APPEND TsanUnitTestsDeps clang_rt.tsan-${arch}
++                                     clang_rt.tsan_cxx-${arch})
++      endif()
+       generate_compiler_rt_tests(TsanUnitTestsObjects TsanUnitTests
+         "${testname}-${arch}-Test" ${arch}
+         SOURCES ${TEST_SOURCES} ${COMPILER_RT_GTEST_SOURCE}
+         RUNTIME ${TSAN_TEST_RUNTIME}
+         COMPILE_DEPS ${TEST_HEADERS} ${TSAN_RTL_HEADERS}
+-        DEPS ${TSAN_DEPS}
++        DEPS ${TsanUnitTestsDeps}
+         CFLAGS ${TSAN_UNITTEST_CFLAGS}
+         LINK_FLAGS ${TSAN_UNITTEST_LINK_FLAGS})
+     endforeach()

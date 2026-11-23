@@ -530,6 +530,34 @@ staging/package/installed acceptance and release gates remain open. The initial
 input-preparation status-label rejection is preserved; it occurred before any
 native test producer was created.
 
+The next CMake follow-up resolves both selected unit failures without changing
+original test bodies or assertions. SupportTests lacked the GNU build ID that
+printDSOMarkup requires before emitting module/map context. Its FreeBSD target
+now links with --build-id. The TSan unit executable was byte-identical across
+R22, the runtime rebuild and the failed selected run: the common test generator
+discarded declared dependencies before linking, while the aggregate tsan target
+provided ordering alone. The generator now retains declared link dependencies;
+non-Apple TSan units name both concrete per-architecture runtime archives.
+
+Fresh original checksum/full patch passes without fuzz. Original default all
+and named SupportTests/TsanUnitTests builds pass with unchanged components,
+options, dependencies and four jobs; all final integrity guards pass. The new
+Ninja rule has both actual archives as file inputs, the unit binary contains
+the new setter interceptor, and SupportTests has a GNU build-ID note.
+
+Original selected do-test/check-all now exits zero with 1,437 PASS and one
+unchanged UNSUPPORTED. Independent comparison of both JSON bodies verifies the
+same 1,438 case names as failed R63: only the symbolizer and destructor cases
+change from FAIL to PASS. Actual JSON/xUnit bodies match recorded hashes; all
+final SDK140/rawDB/source/ports/base/mount/registry/stopped-data guards pass.
+No full-suite test cookie is created. The complete current frontier is
+independently verified on both physical filesystems: 711,782 nodes, including
+cold original source, integrated source/build/historical stage, fixtures,
+controls and both reports. All bodies, 256 literal symlinks, twelve inert
+sockets, six FIFOs, five hardlink groups and the complete gzip stream match;
+before/after equality passes. The unfiltered original controller is launched
+with results pending; fresh package acceptance remains open.
+
 These checks establish neither full upstream suite success nor a fresh full
 package build with the changed recipe. Full case discovery, per-project outcomes and explicit
 skip reasons remain open. Independent installed compiler consumers, final
