@@ -1,6 +1,6 @@
 {
   "schema": "daemonarchy/llvm19-native-test-development-evidence@1",
-  "status": "namespace-fix-validated-original-target-now-reaches-discovery-with-additional-failures",
+  "status": "native-target-repairs-and-source-package-permission-recovery-validated-full-suite-open",
   "port": "devel/llvm19",
   "original_makefile_sha256": "d43b3578b552dc5b393e81ea48e1bba8fbeede5fc9061414fdb825d2c436b721",
   "original_llvm_source_archive": {
@@ -129,6 +129,53 @@
     "installed_SDK139_unchanged": true,
     "package_installed": false,
     "original_pytest_target_run": false,
-    "remaining": "Recover all affected original source packages in an explicitly retained SDK generation, run original tests and sealed installed consumers, then repeat full LLVM tests; sanitizer and MLIR discovery failures remain open."
+    "remaining": "Qualify original tests and sealed installed consumers for all 46 recovered packages in an explicitly retained SDK generation, then repeat full LLVM tests; sanitizer discovery failures remain open.",
+    "remaining_45_recovery": {
+      "original_checksum_package_check_plist_exit": 0,
+      "successful_packages": 45,
+      "failed_packages": 0,
+      "independent_nobody_stage_file_bodies_read_and_sha256_verified": 9364,
+      "package_bytes_total": 21500607,
+      "all_original_versions_options_distinfo_and_dependency_declarations_preserved": true,
+      "installed_SDK139_unchanged": true,
+      "full_source_work_stage_package_inputs_and_logs_archive_bytes": 147241223,
+      "full_archive_sha256": "94add005b05c78f0ca7905de0556f1175370b84af9bfb443cd81af097964f76d",
+      "full_inventory_sha256": "a39a7cec65c1e290c53664f6a5a00021ce3ed5fc39959eabd015a09734e217db",
+      "all_nodes_verified_on_two_physical_filesystems": 51332,
+      "original_unit_tests_and_installed_consumers_pending": true
+    }
+  },
+  "mlir_native_codegen_link_fix": {
+    "patch": "devel/llvm19/files/patch-mlir_unittests_Target_LLVM_CMakeLists.txt",
+    "patch_sha256": "a4f2c350d09e02dfe06db3b5f55f7295ed7fe884a913ac88d74ef4842da8641b",
+    "cause": "Unit target explicitly maps nativecodegen to static LLVM X86 libraries while already linking shared libLLVM, duplicating command-line option registration.",
+    "fix": "Set LLVM_LINK_COMPONENTS before add_mlir_unittest so the existing LLVM executable helper honors the selected shared-library policy.",
+    "fresh_original_checksum_and_patch_exit": [
+      0,
+      0
+    ],
+    "patch_fuzz": false,
+    "original_configure_with_distinct_new_cookie_exit": 0,
+    "original_make_test_build_with_TEST_TARGET_MLIRTargetLLVMTests_exit": 0,
+    "default_unit_binary_execution_as_nobody_exit": 0,
+    "test_cases_discovered": 7,
+    "test_cases_passed": 5,
+    "test_cases_failed": 0,
+    "test_cases_skipped": [
+      {
+        "case": "MLIRTargetLLVMNVVM.SerializeNVVMToBinary",
+        "reason": "PTXAS compiler not found"
+      },
+      {
+        "case": "MLIRTargetLLVMROCDL.SerializeROCDLToBinary",
+        "reason": "ROCm installation not found"
+      }
+    ],
+    "changed_unit_binary_sha256": "a7e2675ad62162a53356518fb15c1d4d3d4367b5a8229b3ad323ba5d1740d676",
+    "all_source_nodes_unchanged_except_explicit_CMake_file": true,
+    "source_cpp_case_bodies_and_assertions_unchanged": true,
+    "SDK139_registry_base_mount_stopped_data_guards_passed": true,
+    "scope": "Changed-input native diagnostic of one complete unit executable; not full check-all or package/release acceptance.",
+    "complete_post_change_source_work_retention": "Capture launched; full before-after and independent two-host archive review pending."
   }
 }

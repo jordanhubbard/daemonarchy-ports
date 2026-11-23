@@ -84,6 +84,30 @@ installed package consumer or recovery of the other affected packages.
 The complete LLVM discovery-failure frontier is also independently verified
 on both physical filesystems (621,320 nodes).
 
+The remaining 45 affected Python packages also pass fresh original checksum,
+package and plist targets with the original versions, options, distinfo and
+dependency declarations. Nobody reads and verifies the hashes of all 9,364
+regular staged files. Their complete source, work, stage, packages, inputs and
+logs are retained and independently verified on both physical filesystems
+(51,332 nodes). Together with PyYAML, all 46 replacement packages are built;
+the installed SDK is still unchanged. Their original unit tests and sealed
+installed consumers remain pending.
+
+The MLIR discovery crash comes from the unit target explicitly linking static
+native-codegen libraries alongside shared LLVM. The added CMake patch declares
+`LLVM_LINK_COMPONENTS` before creating the unit target, allowing the existing
+LLVM helper to honor shared-library selection. Fresh original checksum and
+patch targets pass without fuzz. The original configure target runs with a
+separate new configure cookie; no old completion cookie is deleted. The
+original `make test` entrypoint then builds `MLIRTargetLLVMTests` as nobody
+using an explicit diagnostic target override. Running that binary without case
+filters discovers all seven original cases: five pass, and the original cases
+skip PTXAS binary generation and ROCm binary generation because those tools
+are absent. All C++ cases and assertions are unchanged. Final SDK, registry,
+base, mount, stopped-data and source guards pass, with only the explicit CMake
+file changed relative to the retained preceding source frontier. Full LLVM
+`check-all`, fresh package acceptance and the sanitizer failures remain open.
+
 These checks establish neither upstream test success nor a fresh full package
 build with the changed recipe. Full case discovery, per-project outcomes and explicit
 skip reasons remain open. Independent installed compiler consumers, final
