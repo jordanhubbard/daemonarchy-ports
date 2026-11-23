@@ -196,15 +196,51 @@ retained and independently verified on both physical filesystems (547,931
 nodes). The complete SDK140 prefix/database, clone/install controls and local
 installed-consumer evidence are also independently verified on both physical
 filesystems (82,998 nodes). The next full unfiltered original `make test`
-controller passes explicit SDK140/raw-database, complete source,
-ports, registry, base, mount and stopped-data preflight guards and begins the
-original target. After28 changed-input preparatory actions, LIT reports87562
-test entries and four workers. These entries are not an inventory of every
-individual GoogleTest case. All selected components remain enabled. Early
-results still fail `atexit_stats.cpp` and `replaceable_new_delete_shared.cpp`
-in static and dynamic ASan configurations, and report an unexpected pass for
-the dynamic interception-failure case. Those outcomes remain unresolved.
-Complete suite results, final guards and fresh package acceptance are pending.
+controller passes explicit SDK140/raw-database, complete source, ports, registry,
+base, mount and stopped-data preflight guards. After28 changed-input preparatory
+actions, LIT reports87562 entries and four workers. The run again ends with
+Ninja137 and original make1 before a complete summary: the kernel records
+memory-reclaim kills of a threaded-fork test process and the LIT driver. The
+partial log contains43 FAIL and three XPASS result lines. All final SDK140/rawDB,
+source, ports, registry, base, mount and stopped-data guards pass. These partial
+entries are not an inventory of completed individual GoogleTest cases.
+Whole failed-run capture has started; two-host verification is pending before
+any warm source/runtime mutation. Full suite and fresh package acceptance
+remain open.
+
+Read-only follow-up replays isolate two additional sanitizer problems.
+Both original exit-statistics programs reach the memory-profile sysctl with
+its output-buffer and length arguments misplaced. A separate native ordinary
+user API probe reproduces the permission error and succeeds with the proper
+argument order, returning the current process record and positive resident
+pages. The original shared new/delete program also fails thread-key creation
+with ENOSYS. Its trace reaches initialization through readlink from libc
+startup. A debugger-only replay enables abort-on-error to obtain that trace;
+a subsequent register-memory inspection fails at address zero, so the
+debugger exit is1 and is not a test result. The separate plain replay retains
+the original program options and exits1. The candidate corrects the FreeBSD
+sysctl arguments and uses the existing internal readlink implementation before
+sanitizer initialization. Normal initialized bounds checking stays selected.
+
+The full run also exposes FreeBSD driver and interpreter failures. Explicit
+libstdc++ selection still produces libc++ linker arguments; its candidate
+uses the existing ToolChain implementation for non-libc++ selection. Three
+unchanged default interpreter exception replays crash with an out-of-range
+Delta32 relocation. Three otherwise identical diagnostic invocations with
+PIC enabled pass the original FileCheck assertions with ASLR still enabled.
+The candidate makes PIC the FreeBSD interpreter default before user options.
+All four new implementation patches pass combined fresh original native
+checksum and patch targets without fuzz. They have not yet been built into
+the running compiler/runtime or qualified through the original default tests.
+The fullR6 source, ports and SDK remained fixed through its terminal guards.
+The follow-up patches are still pending warm native builds and original tests.
+No test cases, assertions, expectation annotations or filters are changed.
+
+The next full run must retain upstream JSON and xUnit per-test reports as well
+as complete output, inventories and final guards. LIT JSON omits user-skipped
+entries, so xUnit is retained too. The original test environment whitelist
+does not pass LIT_OPTS to test subprocesses. This reporting change is pending;
+the active run keeps its original configuration.
 
 These checks establish neither full upstream suite success nor a fresh full
 package build with the changed recipe. Full case discovery, per-project outcomes and explicit

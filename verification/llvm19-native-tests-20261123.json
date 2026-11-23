@@ -434,7 +434,7 @@
     "selected_ninja_build_jobs": 4,
     "LIT_OPTS_workers": 4,
     "actual_upstream_argument_parser_environment_precedence_probe": "Command-line -j8 plus LIT_OPTS=-j4 parses to four workers. No cases executed in this argument probe.",
-    "status": "Observed original full test target running after completing native preflight and 28 changed-input preparatory actions; no complete suite result yet.",
+    "status": "Terminal incomplete: kernel memory-reclaim kills terminate fork_threaded and the LIT driver before a complete summary, despite four workers.",
     "full_suite_result_available": false,
     "observed_at": "2026-11-23T10:52:53.323329+00:00",
     "LIT_reported_test_entries": 87562,
@@ -447,6 +447,111 @@
       "XPASS: AddressSanitizer-x86_64-freebsd-dynamic :: TestCases/interception_failure_test.cpp (947 of 87562)",
       "FAIL: AddressSanitizer-x86_64-freebsd-dynamic :: TestCases/replaceable_new_delete_shared.cpp (984 of 87562)"
     ],
-    "known_remaining_failures_present": true
+    "known_remaining_failures_present": true,
+    "terminal_at": "2026-11-23T11:26:52.117313+00:00",
+    "original_make_test_exit": 1,
+    "ninja_exit": 137,
+    "kernel_memory_reclaim_killed_processes": [
+      "fork_threaded.c.tmp",
+      "python3.12 LIT driver"
+    ],
+    "all_final_source_SDK140_rawdb_ports_registry_base_mount_stopped_data_guards_passed": true,
+    "partial_result_line_counts": {
+      "FAIL": 43,
+      "XPASS": 3
+    },
+    "whole_failed_frontier_retention": "Native quiescent capture launched; two-host verification pending before warm mutation."
+  },
+  "further_FreeBSD_runtime_and_Clang_candidates": {
+    "status": "Fresh native normalized original checksum/patch pass without fuzz; no warm compiler/runtime build or default-test acceptance yet. Preceding fullR6 ended incomplete with all final integrity guards passing.",
+    "port_revision": 6,
+    "unreleased_revision_note": "Retain revision6 for this draft combined runtime repair; no final revision6 root package is produced or admitted. R7-R9 are experiment identifiers.",
+    "patches": [
+      {
+        "path": "devel/llvm19/files/patch-compiler-rt_lib_sanitizer__common_sanitizer__procmaps__bsd.cpp",
+        "sha256": "75d46bb8c2f4602853076677b07c060d7e4dd13b6435508065fdbf1411ddf683"
+      },
+      {
+        "path": "devel/llvm19/files/patch-compiler-rt_lib_sanitizer__common_sanitizer__common__interceptors.inc",
+        "sha256": "ae9b7dbb5c9d7c5dd77b2c936c18bf961ce395ee23e68c347b59cb284f566c7c"
+      },
+      {
+        "path": "devel/llvm19/files/patch-clang_lib_Driver_ToolChains_FreeBSD.cpp",
+        "sha256": "a45dbc27e59eeb9854d1ac60b228b1ac2ea9f0d801c7677ad908a3d15c19ff99"
+      },
+      {
+        "path": "devel/llvm19/files/patch-clang_lib_Interpreter_Interpreter.cpp",
+        "sha256": "da35cdd92642fd73a01aa0ce829e7f5d5581a936e79026ab591e8eddccb7eca9"
+      }
+    ],
+    "native_combined_original_checksum_and_patch_exits": [
+      0,
+      0
+    ],
+    "patch_fuzz": false,
+    "FreeBSD_memory_profile_sysctl": {
+      "observed": "Original static/dynamic atexit_stats binaries print exit stats then fail the memory-profile sysctl CHECK.",
+      "cause": "Output buffer and output-length pointers occupy the wrong internal_sysctl argument positions, with the length pointer incorrectly passed as a new-value buffer.",
+      "native_nobody_API_control": {
+        "original_layout_errno": 1,
+        "correct_layout_errno": 0,
+        "returned_and_expected_structure_bytes": 1088,
+        "returned_PID_matches_actual_process": true,
+        "resident_pages_positive": true,
+        "original_sysctl_return": -1,
+        "corrected_sysctl_return": 0,
+        "native_probe_process_exit": 0
+      },
+      "candidate": "Correct only the selected FreeBSD GetMemoryProfile argument layout; NetBSD branch unchanged."
+    },
+    "early_shared_ASan_initialization": {
+      "unchanged_shared_new_delete_program_exit": 1,
+      "original_pthread_key_create_errno": 78,
+      "native_errno_name": "ENOSYS",
+      "observed_stack": "libc startup -> readlink interceptor -> TryAsanInitFromRtl -> AsanTSDInit -> pthread_key_create CHECK",
+      "candidate": "Use existing internal_readlink before sanitizer initialization on FreeBSD; normal initialized interception and bounds checks remain selected.",
+      "debugger_only_option": "abort_on_error=1, solely to stop at the original CHECK instead of normal exit. Separate plain original replay retains its original options.",
+      "debugger_exit": 1,
+      "debugger_exit_note": "Trace acquired, then an inherited register-memory inspection command fails reading address zero; not an original-program or suite result.",
+      "diagnostic_binary_runtime_hashes_and_mounts_unchanged": true
+    },
+    "explicit_CXX_standard_library": {
+      "observed": "-stdlib=libstdc++ -fexperimental-library still emits -lc++ and -lc++experimental in the original FreeBSD linker arguments.",
+      "candidate": "Delegate non-libc++ selection to the existing ToolChain implementation; retain libc++ and legacy profiling handling.",
+      "installed_GNU_CXX_consumer_qualified": false
+    },
+    "interpreter_randomized_mapping": {
+      "unchanged_default_replays": 3,
+      "unchanged_default_program_exits": [
+        -11,
+        -11,
+        -11
+      ],
+      "unchanged_default_original_FileCheck_exits": [
+        2,
+        2,
+        2
+      ],
+      "observed_error": "External C++ type-info reference exceeds the x86_64 Delta32 relocation range between shared-library data and randomized JIT code.",
+      "diagnostic_only_option": "-Xcc=-fPIC",
+      "diagnostic_PIC_replays": 3,
+      "diagnostic_PIC_program_exits": [
+        0,
+        0,
+        0
+      ],
+      "diagnostic_PIC_original_FileCheck_exits": [
+        0,
+        0,
+        0
+      ],
+      "ASLR_disabled": false,
+      "source_binary_FileCheck_and_mounts_unchanged": true,
+      "candidate": "Default FreeBSD C++ interpreter invocations to PIC before appending user arguments; preserve explicit user overrides.",
+      "rebuilt_default_behavior_qualified": false
+    },
+    "original_case_bodies_assertions_and_selection_unchanged": true,
+    "next_full_run_reporting": "Use upstream JSON and xUnit reports through LIT_OPTS, keeping all default cases and four workers. JSON excludes user-skipped entries, so retain xUnit as well. Original TestingConfig excludes LIT_OPTS from test subprocesses.",
+    "native_normalized_patch_validation": "Fresh original checksum/patch R10 exits0/0 with zero fuzz; four implementation source hashes exactly match the prior candidate source bytes."
   }
 }
