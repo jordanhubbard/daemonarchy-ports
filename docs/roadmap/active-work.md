@@ -54,3 +54,15 @@ This selected-port workflow uses ordinary binary dependency bootstrap and a
 source-built libdvdcss dependency on FreeBSD 15.1 amd64. It does not establish
 the full matching-CURRENT source-built closure, graphical session, physical
 hardware, canonical per-unit SDK or retained lifecycle/release acceptance.
+
+### [ ] PORT-LLVM-001 — Qualify the LLVM 19 CMake upstream test target
+
+- **Priority:** P1
+- **Owner:** devel/llvm19 and native FreeBSD qualification
+- **Direction:** Run the original port test target against its complete configured CMake build while preserving all selected components and unprivileged execution.
+- **Conclusion:** The unchanged target exits before testing because it references the obsolete top-level test directory; the candidate selects check-all in the configured build tree.
+- **Depends on:** PORT-UNIT-001
+- **Implementation:**
+  - [ ] Retain the original failed target and complete built source/SDK139 frontier; repair the test target and writable test HOME/TMP/cache; review full upstream results, sealed package consumers and lifecycle/provenance gates.
+- **Evidence:**
+  - [ ] Original native make test exits 1 before the suite; SDK139, all 160681 extracted LLVM nodes, original ports and stopped-data/base guards pass. The baseline and additive failure frontier are independently retained on two physical filesystems. Candidate complete CMake tests are not yet qualified.

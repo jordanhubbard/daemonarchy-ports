@@ -598,10 +598,19 @@ post-install-LIT-on:
 post-install-LLD-on:
 	${LN} -s ld.lld ${STAGEDIR}${LLVM_PREFIX}/bin/ld
 
-TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKSRC}/Release/lib ${MAKE_CMD} check-local-lit)'
+TEST_TARGET=	check-all
+TEST_ARGS=	${MAKE_ARGS} ${_MAKE_JOBS}
+TEST_ENV=	${MAKE_ENV} \
+		HOME=${TEST_WRKSRC}/.test-home \
+		TMPDIR=${TEST_WRKSRC}/.test-tmp \
+		XDG_CACHE_HOME=${TEST_WRKSRC}/.test-home/.cache \
+		XDG_CONFIG_HOME=${TEST_WRKSRC}/.test-home/.config \
+		XDG_DATA_HOME=${TEST_WRKSRC}/.test-home/.local/share
+TEST_CMD=	'(cd ${TEST_WRKSRC}; ${SETENV} ${TEST_ENV} ${MAKE_CMD} ${TEST_ARGS} ${TEST_TARGET})'
 do-test:
+	${MKDIR} ${TEST_WRKSRC}/.test-home ${TEST_WRKSRC}/.test-tmp
 	if [ `${ID} -u` = 0 ]; then \
-		${CHOWN} -R nobody ${WRKSRC}/test; \
+		${CHOWN} -Rh nobody ${TEST_WRKSRC}; \
 		su -m nobody -c ${TEST_CMD}; \
 	else \
 		${SH} -c ${TEST_CMD}; \

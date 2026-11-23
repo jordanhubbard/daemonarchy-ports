@@ -6,6 +6,7 @@ their native tests remain implementation authority.
 - [Initial origin and shared framework](user/ports-units.md)
 - [Authority and acceptance map](architecture/design-traceability.md)
 - [Active native work](roadmap/active-work.md)
+- [LLVM 19 native upstream tests](user/llvm19-native-tests.md)
 
 Use explicit `--repo jordanhubbard/daemonarchy-ports` for GitHub commands; the
 fork's upstream repository must not receive downstream-only reviews. The owned

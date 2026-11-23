@@ -1,0 +1,69 @@
+{
+  "schema": "daemonarchy/llvm19-native-test-development-evidence@1",
+  "status": "original-target-failure-reproduced-corrected-target-initial-execution",
+  "port": "devel/llvm19",
+  "original_makefile_sha256": "d43b3578b552dc5b393e81ea48e1bba8fbeede5fc9061414fdb825d2c436b721",
+  "candidate_makefile_sha256": "98d231377328a8e16d374669a1b6d6b5661d6ab99744a26ce5194e31468d1548",
+  "original_llvm_source_archive": {
+    "name": "llvm-project-19.1.7.src.tar.xz",
+    "bytes": 141249332,
+    "sha256": "82401fea7b79d0078043f7598b835284d6650a75b93e64b6f761ea7b63097501"
+  },
+  "package": {
+    "name": "llvm19-19.1.7_5.pkg",
+    "bytes": 281434647,
+    "sha256": "f616dac3bb641eb6de511edcb25bda2d2f8cb5b6f96a102c8d2720a2062587ff",
+    "original_checksum_package_and_check_plist_exit": [0, 0, 0],
+    "root_package_installed_in_worker": false
+  },
+  "original_test": {
+    "target": "make test",
+    "exit": 1,
+    "failure": "chown of nonexistent WRKSRC/test before any upstream test execution",
+    "observed_dependency_package_count": 139,
+    "observed_prefix_nodes_unchanged": 82739,
+    "extracted_source_nodes_unchanged": 160681,
+    "original_frozen_ports_files_unchanged": 184142,
+    "registry_base_mounts_and_stopped_broker_data_guards_passed": true
+  },
+  "corrected_target_initial_observation": {
+    "upstream_target": "check-all",
+    "working_directory": "configured out-of-source CMake binary tree",
+    "ninja_arguments": "-v -j4 check-all",
+    "ninja_and_clang_observed_uid": 65534,
+    "all_default_selected_options_preserved": true,
+    "configure_arguments_and_dependencies_match_original_build": true,
+    "original_frozen_ports_view_retained_unchanged": true,
+    "candidate_full_ports_view_files_verified": 184142,
+    "test_filter_added": false,
+    "upstream_test_programs_building": true,
+    "complete_suite_result_recorded": false
+  },
+  "retention": {
+    "complete_baseline_archive_bytes": 6203574065,
+    "complete_baseline_archive_sha256": "226ed797668b87ed83761bbf5edb0d8b3db0bd416f764d25c282817eac5c787b",
+    "complete_baseline_inventory_sha256": "ef25c8ca276c0273151a8d6bc1f762604834be9d2b1366471f146c6dfe251fe5",
+    "baseline_nodes_checked_on_both_physical_filesystems": 585313,
+    "regular_file_bodies_checked": 475881,
+    "hardlink_entries_checked": 5598,
+    "hardlink_groups_checked": 5313,
+    "complete_baseline_gzip_decode_bytes": 14474608640,
+    "all_baseline_nodes_unchanged_after_original_test_failure": true,
+    "additive_failure_archive_bytes": 12735,
+    "additive_failure_archive_sha256": "da41dee9f179b94bfffaa0d8d2c74b291aeaafb27ee9552b6b08d127ee917f65",
+    "additive_failure_inventory_sha256": "87a61a7051c7d3d08e284ad4841c5af00dffe1baee56d3c1dec1bd0681fc8589",
+    "additive_failure_nodes_checked_on_both_physical_filesystems": 10,
+    "baseline_and_additive_archives_both_required": true,
+    "raw_evidence": "Retained privately, not published"
+  },
+  "remaining": [
+    "Full upstream case discovery, per-project results and skip reasons",
+    "Final corrected-target source, prefix, registry, base and stopped-data guards",
+    "Independent installed compiler consumers and native arm64 coverage",
+    "Final CURRENT source and dependency integration",
+    "Complete original toolchain provenance and canonical Component/SDK/lifecycle admission",
+    "Product release qualification and signed 1.6 acceptance"
+  ],
+  "canonical_lifecycle_receipt_earned": false,
+  "release_acceptance": false
+}
