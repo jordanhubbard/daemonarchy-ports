@@ -455,6 +455,81 @@ not replace that warm frontier. Full original-target execution, other runtime/AP
 integration, remaining TSan and other failures, fresh complete packaging and
 release gates remain open.
 
+Native diagnosis of the remaining TSan reports reaches libthr private allocator
+memset through pthread_setspecific during libc++ TLS setup. A FreeBSD-only
+interceptor/private alias now covers that setter, and nested interception is
+scoped to the native setter and mutex-init allocation calls. Application
+accesses and mutex annotations remain outside those guards; global sanitizer,
+allocator and kernel settings are unchanged. Fresh original checksum/full patch
+and full default configure/named TSan/CXX/header build phases pass.
+
+The new regression rejects the preceding runtime: its clean/API mode exits66
+and fails CLEAN checks. With the new runtime it exits0 and passes the same
+checks. A real application memset race after those calls still passes the
+required upstream deflake/FileCheck diagnostics, and the original unmatched
+user-ignore testcase still reports its error. Actual links bind the new runtime
+archives with normal builtin-header order. All bound inputs remain unchanged.
+
+The original ignored-library, fork and compare-exchange scripts now pass;
+compare-exchange retains its original four-warning requirement. The deadlock
+script then exposes a separate spelling assumption: FreeBSD can symbolize
+_pthread_ aliases at frame zero. Six exact checks, including two negative
+stack checks, now permit only that optional underscore. Every original RUN,
+C++ test body, warning/cycle/stack/order check and lock mode remains. All nine
+RUN commands pass, covering default/second-stack mutex, spin, read/write and
+recursive modes. Earlier failed debugger and alias-check results remain
+retained. The complete separate source/work/ports/products and diagnostic
+boundary is independently verified on both physical filesystems: 794,218 nodes,
+42 literal links and the complete gzip stream, with before/after equality.
+
+The API and TSan changes are now integrated into the warm source as five
+existing-file changes plus two new regressions, retaining the prior allocation
+fixture. Original default all do-build exits0 with all selected components,
+options and four jobs. All source nodes except the declared changes, historical
+backups/cache, SDK140/rawDB, ports, base, mounts, registry and stopped data pass
+integrity checks. This is default-build evidence; full tests, fresh staging,
+complete packaging and installed acceptance remain open.
+
+A separate paired original permissions case confirms a recipe ownership defect.
+With nobody UID/GID unchanged, a private TMPDIR inheriting wheel group makes the
+unchanged FileSystemTest.permissions fail its setgid checks. Giving that TMPDIR
+the actor's group makes the same original testcase pass. Both records show one
+completed, non-disabled testcase, with unchanged inputs. The original do-test
+recipe now retains its no-follow chown flags and sets nobody:nobody. The corrected recipe is frozen in the integrated build view. The selected
+original-target run below now verifies its actual directory group and the
+original permissions cases.
+
+The complete integrated default-build boundary is independently verified on
+both physical filesystems: 551,059 nodes, twelve inert sockets, six FIFOs, five
+hardlink groups and the complete gzip stream. Before/after equality passes.
+Historical stage/case products are preserved; they are not fresh package
+acceptance.
+
+The subsequent original do-test/check-all completes its disclosed temporary
+selection with 1,435 PASS, 2 FAIL and 1 unchanged original UNSUPPORTED in JSON.
+Initial LIT discovery has 87,566 entries and selects 74 entries including GTest
+shards; postprocessing reports individual cases. Unselected entries are not
+claimed as run. Both actual JSON and xUnit bodies are retained. Original make
+exits 1, so this target is still failed. Source, SDK140/rawDB, ports, base, mounts,
+registry and stopped-data guards pass, the owned jail is removed, and no full
+suite completion cookie is created.
+
+The complete failed selected-test boundary is independently verified on both
+physical filesystems: 551,067 nodes, including twelve inert sockets, six FIFOs
+and five hardlink groups. Every archived body and the complete gzip stream
+match the inventory; before/after frontier equality passes.
+
+Actual build/HOME/TMPDIR groups are nobody (65534). The unchanged permissions,
+no-execute-directory removal and both objcopy/dwarfutil mirror-permissions tests
+now pass, as do the selected repaired API/allocation/fork and TSan scripts and
+regressions. Two selected unit cases remain failed:
+SignalsTest.PrintsSymbolizerMarkup omits module/map records, and
+Posix.ThreadSpecificDtors reports an unexpected TSan diagnostic. Other original
+failures outside this temporary selection, complete unfiltered outcomes, fresh
+staging/package/installed acceptance and release gates remain open. The initial
+input-preparation status-label rejection is preserved; it occurred before any
+native test producer was created.
+
 These checks establish neither full upstream suite success nor a fresh full
 package build with the changed recipe. Full case discovery, per-project outcomes and explicit
 skip reasons remain open. Independent installed compiler consumers, final

@@ -612,10 +612,12 @@ TEST_ENV=	${MAKE_ENV} \
 		XDG_CONFIG_HOME=${TEST_WRKSRC}/.test-home/.config \
 		XDG_DATA_HOME=${TEST_WRKSRC}/.test-home/.local/share
 TEST_CMD=	'(cd ${TEST_WRKSRC}; ${SETENV} ${TEST_ENV} ${MAKE_CMD} ${TEST_ARGS} ${TEST_TARGET})'
+# FreeBSD inherits file groups from the parent directory. Match the actor's
+# group so unprivileged setgid permission tests can exercise their own files.
 do-test:
 	${MKDIR} ${TEST_WRKSRC}/.test-home ${TEST_WRKSRC}/.test-tmp
 	if [ `${ID} -u` = 0 ]; then \
-		${CHOWN} -Rh nobody ${TEST_WRKSRC}; \
+		${CHOWN} -Rh nobody:nobody ${TEST_WRKSRC}; \
 		su -m nobody -c ${TEST_CMD}; \
 	else \
 		${SH} -c ${TEST_CMD}; \

@@ -1,6 +1,6 @@
 {
   "schema": "daemonarchy/llvm19-native-test-development-evidence@1",
-  "status": "targeted-API-allocation-and-scoped-TSan-teardown-repairs-native-validated-full-suite-and-release-incomplete",
+  "status": "integrated-default-build-pass-selected-original-do-test1435PASS2FAIL1UNSUPPORTED-full-suite-and-release-open",
   "port": "devel/llvm19",
   "original_makefile_sha256": "d43b3578b552dc5b393e81ea48e1bba8fbeede5fc9061414fdb825d2c436b721",
   "original_llvm_source_archive": {
@@ -1127,6 +1127,242 @@
     },
     "warm_source_or_runtime_modified": false,
     "full_original_test_target_or_fresh_complete_package_qualified": false,
+    "canonical_lifecycle_or_release_acceptance": false,
+    "historical_candidate_commit": "ae3edbf4555d6038dabda96d7daa0f04fb07afbd",
+    "superseded_by": "TSan_native_private_allocator_correction"
+  },
+  "TSan_native_private_allocator_correction": {
+    "status": "Fresh original checksum/full patch R51 and R57 pass without fuzz. Full default configure/named TSan/CXX/header build R52 passes. Original ignore-lib0, threaded-fork and compare_exchange scripts pass in R54; its original deadlock source fails a separate alias spelling check. With six precise portable symbol checks, all nine original deadlock RUN commands pass in R58. New positive/API, real application memset-race and original unbalanced user-ignore consumers pass. Full original target/package qualification remains open.",
+    "patch_sha256": {
+      "devel/llvm19/files/patch-compiler-rt_lib_tsan_rtl_tsan__interceptors__posix.cpp": "8da0011467d1b1a919b555eb3da887d67525c9134a9aa7b7b7bb026eacf89114",
+      "devel/llvm19/files/patch-compiler-rt_test_tsan_freebsd-pthread-private-allocator.cpp": "56a6d56c8e79ba768b24125b6414dca913ed8b82bd2285bba8e758f78a6ba7a4",
+      "devel/llvm19/files/patch-compiler-rt_test_tsan_deadlock__detector__stress__test.cpp": "c1f73d1060cac9d58819c00836737ad36ff7935e783aa144b1a76c8fd54a0561"
+    },
+    "runtime_source_sha256": "f89061e21a85f26db6603e65a5dbdba40761f25ff6396edc9d5ac27c750227e3",
+    "new_regression_source_sha256": "946977f2f2c71fac26de4f3f0d12939c4dfd5c9ce02f234b2309c9e867ac3489",
+    "native_causal_diagnosis": "Nobody LLDB actual ReportRace stack in R48 identifies libthr private allocator memset reached through pthread_setspecific from libc++ TLS setup. Preserve ASLR and original process options. R47 unresolved named breakpoint/exec stop and R50 intentional sanitizer-report stop remain failed diagnostics.",
+    "change": "FreeBSD-only pthread_setspecific interceptor/private alias and registration. Scope nested-interceptor ignoring to native setterspecific and mutex-init implementation calls, whose private allocator uses uninstrumented locks/reused storage. MutexCreate and application accesses remain outside the native call guard; no global sanitizer flag or suppression file. Retain balanced thread-exit scope.",
+    "global_sanitizer_allocator_kernel_configuration_changed": false,
+    "old_runtime_new_regression": {
+      "positive_program_exit": 66,
+      "CLEAN_FileCheck_exit": 1,
+      "true_application_race_FileCheck_exit": 0
+    },
+    "new_runtime_new_regression": {
+      "positive_program_exit": 0,
+      "CLEAN_FileCheck_exit": 0,
+      "true_application_race_deflake_exit": 0,
+      "true_application_race_FileCheck_exit": 0,
+      "API_checks": "Valid key roundtrip, invalid key EINVAL without changing stored value, non-dereferenced pointer value, private mutex create/lock/unlock/destroy; concurrent thread pairs."
+    },
+    "original_user_ignore_negative_FileCheck_exit": 0,
+    "R54_original_script_exits": {
+      "ignore-lib0": 0,
+      "threaded-fork": 0,
+      "compare-exchange": 0,
+      "deadlock-stress": 1
+    },
+    "R54_controller_remains_failed": true,
+    "portable_deadlock_test": {
+      "original_source_sha256": "014f53a99f6ac00e91b996d6fe78711755ed896dfa11704d037b5cc6a363e9ce",
+      "corrected_source_sha256": "74b46182d42a914ede7621d5cc3a7e13cf2617dc5b1212459e18ac080c156dcf",
+      "exact_frame_zero_spelling_checks_changed": 6,
+      "includes_negative_stack_checks": 2,
+      "change": "Allow only an optional leading underscore before literal pthread_ at frame zero, accepting FreeBSD private aliases. Preserve all warning/cycle/stack/order expectations, original RUN lines and C++ test body.",
+      "original_RUN_commands": 9,
+      "execution_modes": [
+        "mutex default",
+        "mutex second_deadlock_stack",
+        "spin lock",
+        "read/write lock",
+        "recursive mutex"
+      ],
+      "complete_script_exit": 0,
+      "external_inspection_stop": false
+    },
+    "runtime_archives": {
+      "libclang_rt.tsan.a": {
+        "bytes": 5708182,
+        "sha256": "749cde183eb600f15df5800d91855c37818cb050a1025d54442cb46f88da95c6"
+      },
+      "libclang_rt.tsan_cxx.a": {
+        "bytes": 74080,
+        "sha256": "9cc29e21f5fb18578d70ab7c5537f1043c80ad89d9d680f8ac8225339cdf21c4"
+      }
+    },
+    "all_build_and_bound_consumer_integrity_guards_pass": true,
+    "complete_cold_and_diagnostic_retention": {
+      "nodes": 794218,
+      "archive_bytes": 846951858,
+      "archive_sha256": "843fecc7a24f62e66dd6f3e72923568c2c1c3972bd2e93463264ad993d0d7f37",
+      "inventory_sha256": "53a1167be7f5233ef8130986eab2c3de677d51f097b0a1eaa13a5e21f6c0a280",
+      "before_after_complete_frontier_equal": true,
+      "both_physical_filesystems_all_nodes_and_complete_gzip_verified": true,
+      "regular_files": 663160,
+      "directories": 131016,
+      "literal_symlinks": 42,
+      "complete_gzip_decode_bytes": 4878950400,
+      "scope": "Complete separate R51/R57 source/work/ports, R52 products, all R47-R58 controls/fixtures/results and failed records. Other original warm inputs remain bound to preceding full R22 and R36-R44 archives; not the integrated R59 frontier."
+    },
+    "full_original_suite_or_complete_package_qualified": false,
     "canonical_lifecycle_or_release_acceptance": false
+  },
+  "integrated_default_build_followup": {
+    "status": "R59 original default all do-build exits0 with all selected default components/options and four jobs. Five existing source files and two new regression sources integrated from fresh R57 source; prior sole huge-allocation fixture retained. All other source nodes, historical backups/cache and SDK140/rawDB/ports/base/mount/registry/stopped data guards pass. Original target tests, fresh stage/package and installed consumers remain pending.",
+    "original_ALL_TARGET": "all",
+    "original_phase_exits": [
+      0
+    ],
+    "default_selected_jobs": 4,
+    "complete_source_nodes_before_integration": 160682,
+    "complete_source_after_inventory_sha256": "1c0955f6e6004fe17e3d742fb0f7e60e96c0208e20d9092a8c14c12f68b22eef",
+    "existing_source_changes": {
+      "compiler-rt/lib/sanitizer_common/sanitizer_common_interceptors.inc": [
+        "f937579236379f97c2506bfeefcd3e6da961c0b905ff1ee5d688fbe615527020",
+        "2c3d8c93d8acea3db48576209d78e2a02885b5279b07a650cf2b7d8bff27bf78"
+      ],
+      "compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp": [
+        "6b859fe57318b70dfa9e43367bc43d9c4c6fdeec02b43d0a1d75cca8250c67de",
+        "f89061e21a85f26db6603e65a5dbdba40761f25ff6396edc9d5ac27c750227e3"
+      ],
+      "compiler-rt/test/sanitizer_common/TestCases/FreeBSD/procctl.cpp": [
+        "2e0f6e273fb966851153fde388fb2e254a141e03d0c498f435bf825b08d1f275",
+        "29df46554b9b7a3f5a51323bccaaf57341b1eae270971cbc8c652a8a34a75678"
+      ],
+      "compiler-rt/test/sanitizer_common/TestCases/Posix/posix_spawn.c": [
+        "9cee89fa91e6c2af63c727d632abb7c56ca1f0d1cf35c3afa4bb86841eb738be",
+        "7eb5aee867bc40d9f3b57daac692acaaf779f92a7a7b2af1b87a48f4c05a8977"
+      ],
+      "compiler-rt/test/tsan/deadlock_detector_stress_test.cpp": [
+        "014f53a99f6ac00e91b996d6fe78711755ed896dfa11704d037b5cc6a363e9ce",
+        "74b46182d42a914ede7621d5cc3a7e13cf2617dc5b1212459e18ac080c156dcf"
+      ]
+    },
+    "new_regression_sources": {
+      "compiler-rt/test/msan/procctl.cpp": "8ca0bfe13ad10604e2519c482d245aa1b01bdf1127ab14b7b17f3ea2a4180fbc",
+      "compiler-rt/test/tsan/freebsd-pthread-private-allocator.cpp": "946977f2f2c71fac26de4f3f0d12939c4dfd5c9ce02f234b2309c9e867ac3489"
+    },
+    "same_default_configuration_and_dependencies_after_test_group_only_recipe_change": true,
+    "all_final_source_SDK140_rawdb_ports_base_mount_registry_data_guards_pass": true,
+    "runtime_product_files_hashed": 40,
+    "complete_integrated_frontier_retention": {
+      "nodes": 551059,
+      "archive_bytes": 3656565919,
+      "archive_sha256": "47716c47cbf2806b02d968ce251d0384df0d28b8edc7f37afdc7d7f1438ee179",
+      "inventory_sha256": "475b5517287c201caa151b631c6b3c87ee109d66fd9fba245eef18e7aaa76539",
+      "before_after_complete_frontier_equal": true,
+      "both_physical_filesystems_all_nodes_and_complete_gzip_verified": true,
+      "sockets": 12,
+      "fifos": 6,
+      "hardlink_groups": 5,
+      "complete_gzip_decode_bytes": 14573946880
+    },
+    "fresh_stage_or_complete_package_qualified": false,
+    "full_original_tests_or_release_qualified": false
+  },
+  "unprivileged_test_group_correction": {
+    "change": "Original do-test chown retains -Rh and sets nobody:nobody instead of owner alone. FreeBSD inherits child file group from the parent; match the actual unprivileged actor group for setgid permission checks. No test/expectation edits or actor privilege/group-membership change.",
+    "Makefile_sha256": "c999babe9555d4470a9cc07180c11def3264f7727159bbbc41b52e3524d78530",
+    "causal_original_case": "FileSystemTest.permissions from unchanged original R22 SupportTests",
+    "actor_uid": 65534,
+    "actor_gid": 65534,
+    "variants": [
+      {
+        "temporary_directory_gid": 0,
+        "original_program_exit": 1,
+        "original_test_failures": 1
+      },
+      {
+        "temporary_directory_gid": 65534,
+        "original_program_exit": 0,
+        "original_test_failures": 0
+      }
+    ],
+    "both_single_original_cases_RUN_COMPLETED_and_not_disabled": true,
+    "all_bound_inputs_and_mounts_unchanged": true,
+    "frozen_corrected_recipe_in_integrated_build": true,
+    "original_do_test_after_group_correction_qualified": false,
+    "full_suite_or_release_acceptance": false,
+    "original_recipe_selected_scope_executed": true,
+    "original_do_test_exit": 1,
+    "actual_test_directory_groups": [
+      65534,
+      65534,
+      65534
+    ],
+    "unchanged_original_permissions_cases": [
+      {
+        "name": "LLVM :: tools/llvm-dwarfutil/ELF/X86/mirror-permissions-unix.test",
+        "code": "PASS"
+      },
+      {
+        "name": "LLVM :: tools/llvm-objcopy/ELF/mirror-permissions-unix.test",
+        "code": "PASS"
+      },
+      {
+        "name": "LLVM-Unit :: Support/./SupportTests/FileSystemTest/permissions",
+        "code": "PASS"
+      },
+      {
+        "name": "LLVM-Unit :: Support/./SupportTests/FileSystemTest/RemoveDirectoriesNoExePerm",
+        "code": "PASS"
+      }
+    ]
+  },
+  "integrated_original_target_followup": {
+    "status": "Original ports do-test/check-all R63 completes selected cases with original make1 and complete JSON/xUnit reports:1435PASS,2FAIL,1unchanged original UNSUPPORTED. All final source/SDK140/rawDB/ports/base/mount/registry/stopped-data guards pass. Correct actor group and repaired API/TSan/fork/allocation plus original permissions/mirror cases pass. This remains a failed selected target, not complete unfiltered suite/package qualification.",
+    "original_target": "do-test/check-all",
+    "disclosed_temporary_filter": "SupportTests|TsanRtlTest|mirror-permissions-unix|procctl[.]cpp|posix_spawn[.]c|fork_threaded[.]c|huge_malloc[.]c|ignore_lib0[.]cpp|compare_exchange[.]cpp|deadlock_detector_stress_test[.]cpp|freebsd-pthread-private-allocator[.]cpp|thread_end_with_ignore",
+    "persistent_filter_added": false,
+    "original_make_exit": 1,
+    "initial_LIT_entries": 87566,
+    "initial_selected_LIT_entries_including_GTest_shards": 74,
+    "per_case_JSON_counts": {
+      "PASS": 1435,
+      "UNSUPPORTED": 1,
+      "FAIL": 2
+    },
+    "remaining_selected_failed_cases": [
+      "LLVM-Unit :: Support/./SupportTests/SignalsTest/PrintsSymbolizerMarkup",
+      "ThreadSanitizer-Unit :: rtl/./TsanRtlTest-x86_64-Test/Posix/ThreadSpecificDtors"
+    ],
+    "json_report": {
+      "sha256": "36fccb6c734185aa15d8663c416d2ab3609fa668d94cff1a89a8fafe4690a262",
+      "bytes": 335112
+    },
+    "xunit_report": {
+      "sha256": "3c379a1d4e8af0123bb951950b201d61d439821400ed98c97dafb62d4862b9fd",
+      "bytes": 14345104
+    },
+    "unselected_cases_not_claimed_as_executed_or_passed": true,
+    "all_final_integrity_guards_pass": true,
+    "test_completion_cookies_unchanged": true,
+    "actual_build_HOME_TMPDIR_groups": [
+      65534,
+      65534,
+      65534
+    ],
+    "launch_preparation_failure_preserved": "First bootstrap rejected a valid long-form SDK140 review status before native producer creation. Input preparation continued using already accepted review status and exact archive/inventory digest checks; initial failed stdout/stderr and native sidecar retained. No test was restarted.",
+    "complete_failed_frontier_retention": {
+      "archive_sha256": "61ce916a194efdb4aa4fb22055b3dc413e8cde287a11c076a25c0c3b70a05a49",
+      "archive_bytes": 3654711860,
+      "inventory_sha256": "ad794cef9aed14332e2531936c1e4a739f76d202a9b3bd89ccd4ad28bd66b2c5",
+      "all_nodes_verified": 551067,
+      "node_kinds": {
+        "directory": 77980,
+        "file": 472829,
+        "symlink": 240,
+        "socket": 12,
+        "fifo": 6
+      },
+      "hardlink_groups_verified": 5,
+      "complete_gzip_decode_bytes": 14563727360,
+      "independent_sparky_review": "pass",
+      "independent_madmax_review": "pass",
+      "complete_frontier_before_after_unchanged": true,
+      "source_runtime_and_failed_test_products_retained": true,
+      "stage_tree_historical_not_fresh_package_qualified": true
+    },
+    "full_original_suite_fresh_stage_package_or_release_acceptance": false
   }
 }
