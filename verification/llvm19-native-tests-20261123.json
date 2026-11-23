@@ -65,7 +65,11 @@
     "second_failure_source_work_stage_test_products_archive_bytes": 2637445244,
     "second_failure_source_work_stage_test_products_archive_sha256": "1a888fea49fb2d6adaec2e8682221e1607fdc26e59196d4a5631302ecf553ab2",
     "second_failure_inventory_sha256": "94d03bd37b4a853400a2df331d6c2eabab788d1d11ba9e3e3a87b3a4a697bd4f",
-    "second_failure_nodes_checked_on_both_physical_filesystems": 435967
+    "second_failure_nodes_checked_on_both_physical_filesystems": 435967,
+    "third_failure_archive_bytes": 3937042403,
+    "third_failure_archive_sha256": "7b66745378de5f40da0ae2a5f2da370e3fdebc6fb3ba54296c5e71704f7f7787",
+    "third_failure_inventory_sha256": "fb77ba7a1a7c76a49f0948e37ff20cb24fc799231455ba9efc1d407b5fa03e2b",
+    "third_failure_nodes_checked_on_both_physical_filesystems": 621320
   },
   "remaining": [
     "Full upstream case discovery, per-project results and skip reasons",
@@ -107,5 +111,24 @@
     "all_source_dependency_registry_base_mount_and_stopped_data_guards_passed": true,
     "source_change_boundary": "Exactly 18 of 24 selected LIT Python files copied from fresh original checksum/patch source; every other source node unchanged",
     "raw_evidence": "Retained privately; this run is not a test-suite pass"
+  },
+  "dependency_permission_diagnosis": {
+    "cause": "Qualification controller inherited umask 077 into normal source package production.",
+    "native_causal_probe": "Actual installed setuptools build_py and installer methods produce mode 0600 under 077 and 0644 under 022 using byte-identical original source.",
+    "affected_installed_python_packages": 46,
+    "affected_installed_python_files": 8009,
+    "affected_packages_all_added_during_llvm_dependency_build": true,
+    "prior_87_package_baseline_affected": false,
+    "recovery": "Fresh original default PyYAML checksum/package/check-plist with build child umask 022 all exit zero; all staged regular files readable, exact staged-module identity asserted and both pure-Python and libyaml parsers pass as nobody.",
+    "recovered_package": {
+      "name": "py312-pyyaml-6.0.3_1.pkg",
+      "bytes": 186060,
+      "sha256": "ead2809704dcc11be33be7204d988cb4f68448b32949e1fc8d61ccaa46a6f7a3"
+    },
+    "fixture_control": "First staged consumer blocked by a private controller-created ancestor mode 0700; complete failure retained and independently verified on two physical filesystems before explicit search-only correction to 0701. Whole fixture otherwise unchanged.",
+    "installed_SDK139_unchanged": true,
+    "package_installed": false,
+    "original_pytest_target_run": false,
+    "remaining": "Recover all affected original source packages in an explicitly retained SDK generation, run original tests and sealed installed consumers, then repeat full LLVM tests; sanitizer and MLIR discovery failures remain open."
   }
 }

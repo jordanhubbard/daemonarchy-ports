@@ -65,6 +65,25 @@ source, dependency, registry, base, mount and stopped-data guards pass. Exactly
 18 selected source LIT files match their fresh original patched replacements;
 all other extracted source nodes remain unchanged.
 
+The dependency permission cause is the qualification controller's inherited
+umask 077. A native causal probe using the installed build and installer
+methods reproduces mode 0600 under 077 and 0644 under 022 with identical
+source bytes. A read-only audit finds 8,009 unreadable Python payload files
+across 46 packages; all were added during the LLVM dependency build, and
+none belongs to the earlier 87-package baseline.
+
+A fresh original default PyYAML checksum/package/check-plist run with build
+child umask 022 passes. Its staged files are readable, and both pure-Python
+and libyaml consumers pass as nobody with the exact staged module path
+asserted. The initial staged consumer was blocked by its private fixture
+ancestor mode 0700. Its complete failed frontier was retained and verified
+on both physical filesystems before adding only that ancestor's search bit;
+the remaining fixture and sealed package are unchanged. The installed SDK
+remains unchanged. This does not qualify the original pytest target, an
+installed package consumer or recovery of the other affected packages.
+The complete LLVM discovery-failure frontier is also independently verified
+on both physical filesystems (621,320 nodes).
+
 These checks establish neither upstream test success nor a fresh full package
 build with the changed recipe. Full case discovery, per-project outcomes and explicit
 skip reasons remain open. Independent installed compiler consumers, final
