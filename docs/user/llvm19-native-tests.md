@@ -575,6 +575,36 @@ twelve inert sockets, twelve FIFOs, six hardlink groups and the full gzip
 stream. The JSON and xUnit report hashes are recorded in the verification
 record. This does not qualify the historical stage tree as a fresh package.
 
+Nine fixture corrections then pass fresh original checksum/full patch without
+fuzz. They propagate the configured shell to LLDB API/Shell tests, select the
+existing FreeBSD lldb-server for DAP, correct the anonymous-mapping fd, and
+check the platform's exact loader diagnostics. Passing dynamic-ASan and x86_64
+MSan DTLS variants must now pass; static ASan retains its demonstrated XFAIL.
+Original compile/program runs and behavioral checks remain; the OMPT
+FileCheck invocation selects the platform diagnostic prefixes.
+
+Original R100 do-test/check-all completes an explicitly temporary selection
+of all LLDB API/Shell tests and the corrected sanitizer/CFI/OMPT cases. The
+same 1,747 names appeared in R74. Results are 1,040 PASS, 179 FAIL,
+4 UNRESOLVED, 28 XFAIL and 496 UNSUPPORTED, with original make exit 1.
+Thirteen FAIL, three TIMEOUT and three XPASS entries become PASS. One
+previously passing thread-exit testcase becomes FAIL and remains unresolved;
+it is not discarded or classified as flaky. All final integrity guards pass,
+the jail is removed and test cookies are unchanged.
+
+The CFI fd correction lets all four supported shadow tests complete their
+original mmap RUN. Their later dlopen RUN still fails before its expected
+crash marker. Four other variants retain UNSUPPORTED; complete CFI success
+is not claimed. The new full run remains necessary after all fixes.
+
+The complete 749,919-node R99/R100/R108 frontier is independently verified
+on both physical filesystems, including cold and integrated source, build,
+historical stage, controls, reports, all regular bodies and literal links,
+twelve sockets, twelve FIFOs, six hardlink groups and the full gzip stream.
+The R108 diagnostic reproduced the expression failure but used an invalid
+expression logging category; it is retained with that limitation. Later
+separate diagnosis does not replace the failed original run.
+
 These checks establish neither full upstream suite success nor a fresh full
 package build with the changed recipe. The complete R74 reports provide discovery and per-entry outcomes; diagnosis
 and resolution of the unexpected results remain open. Independent installed compiler consumers, final

@@ -1,6 +1,6 @@
 {
   "schema": "daemonarchy/llvm19-native-test-development-evidence@1",
-  "status": "complete-unfiltered-original-target-failed249-unexpected-report-entries-full-qualification-and-release-open",
+  "status": "full-R74-failure-retained-selected-R100-fixture-followup-completed183-unexpected-entries-release-open",
   "port": "devel/llvm19",
   "original_makefile_sha256": "d43b3578b552dc5b393e81ea48e1bba8fbeede5fc9061414fdb825d2c436b721",
   "original_llvm_source_archive": {
@@ -1554,5 +1554,185 @@
       "stage_tree_historical_not_fresh_package_qualified": true
     },
     "fresh_stage_package_installed_canonical_lifecycle_or_release_qualified": false
+  },
+  "nine_fixture_corrections_followup": {
+    "scope": "Forward configured shell into both LLDB LIT environments, use built-in FreeBSD debugserver for DAP, correct CFI anonymous mmap fd, select exact platform OMPT loader diagnostics, and require success for observed passing ASan/MSan variants. Preserve every original compile/program execution and behavioral check; the CFI body corrects its anonymous mmap fd and the OMPT FileCheck invocation selects platform diagnostic prefixes. One new local OMPT config.",
+    "patch_sha256": {
+      "devel/llvm19/files/patch-compiler-rt_test_asan_TestCases_interception__failure__test.cpp": "b7b62ea6b939c0a2952c03780eaa13cb4880605ea2696904cffefbcb10111ede",
+      "devel/llvm19/files/patch-compiler-rt_test_cfi_cross-dso_shadow__is__read__only.cpp": "bf3304c8c8821a95217da78fce95abca63259d7475a1dc111640700d1bea9cc6",
+      "devel/llvm19/files/patch-compiler-rt_test_msan_dtls__test.c": "5a6a627f641a53d821660a1474a31f3ceb70a107b974612f61f98ee8284265f0",
+      "devel/llvm19/files/patch-lldb_packages_Python_lldbsuite_test_tools_lldb-dap_lldbdap__testcase.py": "7da587e77436fcf1c63d849ccaa79f2cb90c86aa5c78bb409eab2df45cae7540",
+      "devel/llvm19/files/patch-lldb_test_API_lit.cfg.py": "6aa16db4ed5124481a3705507b2ef5d136ea611f34906428b80e3f36ea788afb",
+      "devel/llvm19/files/patch-lldb_test_API_tools_lldb-dap_attach_TestDAP__attachByPortNum.py": "20de91aeff638d446c783d582fe51ece7e5c79511df95d7029871243eaf4b374",
+      "devel/llvm19/files/patch-lldb_test_Shell_lit.cfg.py": "6147d18d6d4ea45f105b87eed5f1604b56335d67f1bb17e4de05922423a21bef",
+      "devel/llvm19/files/patch-openmp_runtime_test_ompt_loadtool_tool__available__search_lit.local.cfg": "63f3c7ce9734f90f6465cda55ef0c7ddcb194bee0fd7d30c1c90b1cd4a140951",
+      "devel/llvm19/files/patch-openmp_runtime_test_ompt_loadtool_tool__available__search_tool__available__search.c": "9b728850351f01ab9ffbb6eac09c43d639e1ffc0e87810a708f9b9cb3c73588f"
+    },
+    "fresh_original_checksum_and_full_patch_exit": [
+      0,
+      0
+    ],
+    "patch_fuzz": false,
+    "original_target": "do-test/check-all",
+    "original_make_exit": 1,
+    "explicit_temporary_filter": "(interception_failure_test|dtls_test|shadow_is_read_only|tool_available_search|lldb-api|lldb-shell)",
+    "persistent_filter_added": false,
+    "default_components_options_dependencies_and_four_workers_preserved": true,
+    "selected_LIT_and_report_entries": 1747,
+    "same1747_names_in_previous_full_R74": true,
+    "R74_same_scope_counts": {
+      "TIMEOUT": 3,
+      "UNRESOLVED": 4,
+      "FAIL": 191,
+      "XPASS": 3,
+      "PASS": 1022,
+      "XFAIL": 28,
+      "UNSUPPORTED": 496
+    },
+    "R100_counts": {
+      "PASS": 1040,
+      "UNRESOLVED": 4,
+      "FAIL": 179,
+      "XFAIL": 28,
+      "UNSUPPORTED": 496
+    },
+    "unexpected_entries": 183,
+    "case_transitions": [
+      {
+        "name": "lldb-api :: tools/lldb-dap/attach/TestDAP_attachByPortNum.py",
+        "before": "TIMEOUT",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: tools/lldb-dap/attach/TestDAP_attach.py",
+        "before": "TIMEOUT",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: tools/lldb-dap/disconnect/TestDAP_disconnect.py",
+        "before": "TIMEOUT",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: tools/lldb-server/attach-wait/TestGdbRemoteAttachWait.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: python_api/hello_world/TestHelloWorld.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: functionalities/deleted-executable/TestDeletedExecutable.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: tools/lldb-server/TestGdbRemoteCompletion.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: commands/platform/process/list/TestProcessList.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: functionalities/load_after_attach/TestLoadAfterAttach.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: commands/target/auto-install-main-executable/TestAutoInstallMainExecutable.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: commands/process/attach/attach_denied/TestAttachDenied.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: commands/platform/connect/TestPlatformConnect.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: tools/lldb-dap/launch/TestDAP_launch.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: commands/platform/basic/TestPlatformCommand.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "libomp :: ompt/loadtool/tool_available_search/tool_available_search.c",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: python_api/sbplatform/TestSBPlatform.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "AddressSanitizer-x86_64-freebsd-dynamic :: TestCases/interception_failure_test.cpp",
+        "before": "XPASS",
+        "after": "PASS"
+      },
+      {
+        "name": "MemorySanitizer-X86_64 :: dtls_test.c",
+        "before": "XPASS",
+        "after": "PASS"
+      },
+      {
+        "name": "MemorySanitizer-lld-X86_64 :: dtls_test.c",
+        "before": "XPASS",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: functionalities/thread/exit_during_step/TestExitDuringStep.py",
+        "before": "PASS",
+        "after": "FAIL"
+      }
+    ],
+    "previously_passing_case_now_failed": "lldb-api :: functionalities/thread/exit_during_step/TestExitDuringStep.py",
+    "new_failure_discarded_or_classified_as_flaky": false,
+    "json_report": {
+      "bytes": 8136039,
+      "sha256": "da38d1c36b71e64070d3f3bab9fd9950fedb257ebb28ca9328e7c699c4b95c11"
+    },
+    "xunit_report": {
+      "bytes": 15790875,
+      "sha256": "eab650709e3481fda3dbe67fb6717cd713e1ccd11c25ce726341c98aa896feb1"
+    },
+    "all_final_source_SDK140_rawdb_ports_base_registry_mount_data_guards_pass": true,
+    "test_completion_cookies_unchanged": true,
+    "static_ASan_interception_retains_original_XFAIL": true,
+    "dynamic_ASan_and_both_x86_64_MSan_DTLS_variants_now_required_PASS": true,
+    "CFI_scope": "All four supported original shadow tests complete start and corrected mmap RUNs, then remain FAIL on the later dlopen RUN before its expected crash marker. Four other variants retain original UNSUPPORTED. No complete CFI success claimed.",
+    "complete_failed_frontier_retention": {
+      "archive_sha256": "50c1fc213dea965038ed63a26e078582f139f0961c686ba94845abc6b6554fd1",
+      "archive_bytes": 5029479116,
+      "inventory_sha256": "a9c682045f12954c56516dba24be42cf4b96a8f6da2eccde03863f02f7572cb3",
+      "all_nodes_verified": 749919,
+      "node_kinds": {
+        "directory": 97745,
+        "file": 651873,
+        "symlink": 277,
+        "socket": 12,
+        "fifo": 12
+      },
+      "hardlink_groups_verified": 6,
+      "complete_gzip_decode_bytes": 26549637120
+    },
+    "complete_frontier_before_after_equal": true,
+    "independent_sparky_review": "pass",
+    "independent_madmax_review": "pass",
+    "R108_diagnostic_limitation": "Expression failure reproduced, but expressions was an invalid logging category and command success alone did not detect its error string. Later separate diagnosis uses expr; this original record remains retained.",
+    "complete_unfiltered_fresh_package_installed_canonical_lifecycle_or_release_acceptance": false
   }
 }
