@@ -129,7 +129,7 @@
     "installed_SDK139_unchanged": true,
     "package_installed": false,
     "original_pytest_target_run": false,
-    "remaining": "Qualify original tests and sealed installed consumers for all 46 recovered packages in an explicitly retained SDK generation, then repeat full LLVM tests; sanitizer discovery failures remain open.",
+    "remaining": "Qualify original tests and sealed installed consumers for all 52 recovered dependencies in an explicitly retained SDK generation, then repeat full LLVM tests; sanitizer discovery failures remain open.",
     "remaining_45_recovery": {
       "original_checksum_package_check_plist_exit": 0,
       "successful_packages": 45,
@@ -143,7 +143,28 @@
       "full_inventory_sha256": "a39a7cec65c1e290c53664f6a5a00021ce3ed5fc39959eabd015a09734e217db",
       "all_nodes_verified_on_two_physical_filesystems": 51332,
       "original_unit_tests_and_installed_consumers_pending": true
-    }
+    },
+    "remaining_six_nonpython_recovery": {
+      "scope": "Generated SBOM files were unreadable; runtime files were readable. Fresh original source rebuilds correct production permissions.",
+      "packages": [
+        "ca_root_nss",
+        "libedit",
+        "lua53",
+        "lua54",
+        "snowballstemmer",
+        "swig"
+      ],
+      "successful_packages": 6,
+      "failed_packages": 0,
+      "original_checksum_package_and_plist_checks_passed": true,
+      "independent_nobody_stage_file_bodies_read_and_sha256_verified": 6122,
+      "installed_SDK139_unchanged": true,
+      "archive_bytes": 32930947,
+      "archive_sha256": "503ab172b3755b6f538c291fbb98018c153a2282ca0f014326b064cff11ed89d",
+      "inventory_sha256": "e2403439e384b22bd19301bdffce44a3e08dc792e957c0ed855112168772749f",
+      "all_nodes_verified_on_two_physical_filesystems": 17267
+    },
+    "all_rebuilt_llvm_dependency_packages": 52
   },
   "mlir_native_codegen_link_fix": {
     "patch": "devel/llvm19/files/patch-mlir_unittests_Target_LLVM_CMakeLists.txt",
@@ -176,6 +197,15 @@
     "source_cpp_case_bodies_and_assertions_unchanged": true,
     "SDK139_registry_base_mount_stopped_data_guards_passed": true,
     "scope": "Changed-input native diagnostic of one complete unit executable; not full check-all or package/release acceptance.",
-    "complete_post_change_source_work_retention": "Capture launched; full before-after and independent two-host archive review pending."
+    "complete_post_change_source_work_retention": {
+      "before_after_all_nodes_equal": true,
+      "archive_bytes": 2922990682,
+      "archive_sha256": "bf86708f861dec8280be73ea7f87bf2525c745d12cb5094881c4283f7681a5bf",
+      "inventory_sha256": "9d147e775011e184e1536252a28df57283e5db960c915e3fe0d26e56d78e745a",
+      "all_nodes_verified_on_two_physical_filesystems": 596640,
+      "all_regular_bodies_checked": 512460,
+      "all_hardlink_groups_checked": 3,
+      "complete_gzip_decode_bytes": 12790753280
+    }
   }
 }

@@ -93,6 +93,15 @@ logs are retained and independently verified on both physical filesystems
 the installed SDK is still unchanged. Their original unit tests and sealed
 installed consumers remain pending.
 
+The six non-Python dependencies from the same build each also have a generated
+SBOM file with mode 0600, although their runtime files are readable. Fresh
+original builds of ca_root_nss, libedit, Lua 5.3, Lua 5.4, snowballstemmer and
+SWIG pass checksum/package/plist and nobody verifies all 6,122 staged file
+bodies. Their complete frontier is independently verified on both physical
+filesystems (17,267 nodes). All 52 replacement dependency packages are now
+built; original tests, installed consumers and the installed SDK transition
+remain open.
+
 The MLIR discovery crash comes from the unit target explicitly linking static
 native-codegen libraries alongside shared LLVM. The added CMake patch declares
 `LLVM_LINK_COMPONENTS` before creating the unit target, allowing the existing
@@ -105,7 +114,9 @@ filters discovers all seven original cases: five pass, and the original cases
 skip PTXAS binary generation and ROCm binary generation because those tools
 are absent. All C++ cases and assertions are unchanged. Final SDK, registry,
 base, mount, stopped-data and source guards pass, with only the explicit CMake
-file changed relative to the retained preceding source frontier. Full LLVM
+file changed relative to the retained preceding source frontier. The complete
+post-change source, work, stage, test products and controls are independently
+verified on both physical filesystems (596,640 nodes). Full LLVM
 `check-all`, fresh package acceptance and the sanitizer failures remain open.
 
 These checks establish neither upstream test success nor a fresh full package
