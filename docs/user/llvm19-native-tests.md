@@ -204,9 +204,10 @@ memory-reclaim kills of a threaded-fork test process and the LIT driver. The
 partial log contains43 FAIL and three XPASS result lines. All final SDK140/rawDB,
 source, ports, registry, base, mount and stopped-data guards pass. These partial
 entries are not an inventory of completed individual GoogleTest cases.
-Whole failed-run capture has started; two-host verification is pending before
-any warm source/runtime mutation. Full suite and fresh package acceptance
-remain open.
+The complete failed-run boundary is now independently verified on both physical
+filesystems: 942,954 nodes, including eight inert sockets, four FIFOs and all
+regular bodies and hardlink groups. Before/after equality passes. Full suite
+and fresh package acceptance remain open.
 
 Read-only follow-up replays isolate two additional sanitizer problems.
 Both original exit-statistics programs reach the memory-profile sysctl with
@@ -219,8 +220,8 @@ startup. A debugger-only replay enables abort-on-error to obtain that trace;
 a subsequent register-memory inspection fails at address zero, so the
 debugger exit is1 and is not a test result. The separate plain replay retains
 the original program options and exits1. The candidate corrects the FreeBSD
-sysctl arguments and uses the existing internal readlink implementation before
-sanitizer initialization. Normal initialized bounds checking stays selected.
+sysctl arguments. An initial early-readlink bypass was built but did not fix
+the shared new/delete failure; it is removed from the revised candidate.
 
 The full run also exposes FreeBSD driver and interpreter failures. Explicit
 libstdc++ selection still produces libc++ linker arguments; its candidate
@@ -229,18 +230,57 @@ unchanged default interpreter exception replays crash with an out-of-range
 Delta32 relocation. Three otherwise identical diagnostic invocations with
 PIC enabled pass the original FileCheck assertions with ASLR still enabled.
 The candidate makes PIC the FreeBSD interpreter default before user options.
-All four new implementation patches pass combined fresh original native
-checksum and patch targets without fuzz. They have not yet been built into
-the running compiler/runtime or qualified through the original default tests.
-The fullR6 source, ports and SDK remained fixed through its terminal guards.
-The follow-up patches are still pending warm native builds and original tests.
-No test cases, assertions, expectation annotations or filters are changed.
+The initial follow-up candidates and an additional FreeBSD TSan cleanup fix pass
+fresh original checksum/patch targets without fuzz. Original native ports
+`do-build` then successfully rebuilds Clang, the interpreter, static/dynamic
+ASan and static TSan. Both unchanged exit-statistics scripts, the original
+three-command stdlib driver script and the original default interpreter
+exception script pass. Both default dynamic ASan unit programs still exit0.
+The two original shared new/delete scripts continue to fail; this is partial
+qualification. Every other warm source node, including historical backups and
+caches, is preserved. All source, ports, SDK140/rawDB, registry, base, mount and
+stopped-data guards pass.
+
+The threaded-fork diagnosis isolates a FreeBSD TSan bookkeeping failure:
+`thr_exit` takes an instrumentation-ignore fast path in the fork child without
+marking the thread finished, so the parent allocates indefinitely while the
+child waits in ThreadRegistry join. The runtime fix uses the raw interceptor
+and tears down initialized live thread state even when instrumentation is
+ignored. Public `thr_exit@FBSD_1.0` is the actual libthr import; private syscall
+aliases are not the cause. ASan, MSan and UBSan original binaries return0 in
+the paired guarded diagnosis. Its complete 37-node boundary is independently
+verified on both physical filesystems before the warm build.
+
+The rebuilt original TSan case now returns0 with unchanged compile arguments,
+case body and `die_after_fork=0`. Earlier diagnostic stops at128MiB sampled RSS
+and two seconds are retained failures, not passes: after the child finishes,
+the original runtime deliberately sleeps during shutdown while the original
+allocator thread continues. A subsequent standalone replay finishes naturally
+within the10-second/8GiB diagnostic budget, reaching about2.7GiB sampled RSS.
+No sanitizer option, kernel setting or ordinary testcase timeout changed.
+This does not establish full original-target acceptance.
+
+A separate shared-ASan paired control compiles the unchanged testcase twice.
+Without pthread it fails its original FileCheck; adding only `-pthread` makes
+those original checks pass, including the intentional heap-use-after-free
+report. Both program exits are1 as that upstream test expects. ELF inspection
+shows the latter has a direct libthr dependency before libc, avoiding libc's
+pthread stubs during initialization. The revised FreeBSD driver requests
+runtime dependencies for shared ASan when runtime linking is enabled. A new
+driver regression also checks disabled runtime linking and shared-libsan with
+no sanitizer enabled. The ineffective readlink bypass is removed. Revised
+cold checksum and full patch pass without fuzz. The new regression detects
+the old linker bug while its two negative controls pass. Warm runtime
+qualification remains pending; the complete
+R12-R18 failed source/work/products and diagnostic boundary is being retained
+before any further warm mutation. Original testcase assertions and selection
+remain unchanged.
 
 The next full run must retain upstream JSON and xUnit per-test reports as well
 as complete output, inventories and final guards. LIT JSON omits user-skipped
 entries, so xUnit is retained too. The original test environment whitelist
 does not pass LIT_OPTS to test subprocesses. This reporting change is pending;
-the active run keeps its original configuration.
+the completed failed run retained its original configuration.
 
 These checks establish neither full upstream suite success nor a fresh full
 package build with the changed recipe. Full case discovery, per-project outcomes and explicit

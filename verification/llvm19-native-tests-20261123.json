@@ -1,6 +1,6 @@
 {
   "schema": "daemonarchy/llvm19-native-test-development-evidence@1",
-  "status": "native-port-repairs-and-updated-observed-SDK-validated-full-unfiltered-tests-launched",
+  "status": "native-original-followup-cases-partly-qualified-shared-ASan-driver-revision-pending",
   "port": "devel/llvm19",
   "original_makefile_sha256": "d43b3578b552dc5b393e81ea48e1bba8fbeede5fc9061414fdb825d2c436b721",
   "original_llvm_source_archive": {
@@ -460,10 +460,21 @@
       "FAIL": 43,
       "XPASS": 3
     },
-    "whole_failed_frontier_retention": "Native quiescent capture launched; two-host verification pending before warm mutation."
+    "whole_failed_frontier_retention": {
+      "status": "Complete before/after-equal boundary independently verified on both physical filesystems before warm source mutation.",
+      "archive_bytes": 4030211757,
+      "archive_sha256": "9a4ffc9ebf0b7390965416571bfb80b9f709bea08dd23ccf8ba091dd55255d25",
+      "inventory_sha256": "0902b060d976c9233e08bc8bb723daaddaa41bc1fe9db085dea0020f4d1f6a37",
+      "nodes": 942954,
+      "regular_files": 801874,
+      "sockets": 8,
+      "fifos": 4,
+      "hardlink_groups": 5,
+      "complete_gzip_decode_bytes": 16763658240
+    }
   },
   "further_FreeBSD_runtime_and_Clang_candidates": {
-    "status": "Fresh native normalized original checksum/patch pass without fuzz; no warm compiler/runtime build or default-test acceptance yet. Preceding fullR6 ended incomplete with all final integrity guards passing.",
+    "status": "Five implementation files built by original native ports do-build. Original exit-stats, stdlib driver and default interpreter scripts pass; both shared new/delete scripts still fail, so ineffective readlink bypass removed from revised candidate. New shared-ASan linker candidate cold checksum/full patch passes without fuzz; no revised warm build or full-suite/package acceptance.",
     "port_revision": 6,
     "unreleased_revision_note": "Retain revision6 for this draft combined runtime repair; no final revision6 root package is produced or admitted. R7-R9 are experiment identifiers.",
     "patches": [
@@ -472,16 +483,20 @@
         "sha256": "75d46bb8c2f4602853076677b07c060d7e4dd13b6435508065fdbf1411ddf683"
       },
       {
-        "path": "devel/llvm19/files/patch-compiler-rt_lib_sanitizer__common_sanitizer__common__interceptors.inc",
-        "sha256": "ae9b7dbb5c9d7c5dd77b2c936c18bf961ce395ee23e68c347b59cb284f566c7c"
-      },
-      {
         "path": "devel/llvm19/files/patch-clang_lib_Driver_ToolChains_FreeBSD.cpp",
-        "sha256": "a45dbc27e59eeb9854d1ac60b228b1ac2ea9f0d801c7677ad908a3d15c19ff99"
+        "sha256": "2036cfe799d9dd848669c974bb5e5a823411b6caabb0fba298ed0f500ff8f721"
       },
       {
         "path": "devel/llvm19/files/patch-clang_lib_Interpreter_Interpreter.cpp",
         "sha256": "da35cdd92642fd73a01aa0ce829e7f5d5581a936e79026ab591e8eddccb7eca9"
+      },
+      {
+        "path": "devel/llvm19/files/patch-compiler-rt_lib_tsan_rtl_tsan__interceptors__posix.cpp",
+        "sha256": "0dee78ba1c92e2bf71aa8f38bbd17cd5aeea0df78ab765c81fc5771ce0286dee"
+      },
+      {
+        "path": "devel/llvm19/files/patch-clang_test_Driver_freebsd-shared-asan.c",
+        "sha256": "f3d25790589f08a6a21775b429ed18849ce3b6bba5bd582df64b0c92aa66f8a4"
       }
     ],
     "native_combined_original_checksum_and_patch_exits": [
@@ -502,14 +517,18 @@
         "corrected_sysctl_return": 0,
         "native_probe_process_exit": 0
       },
-      "candidate": "Correct only the selected FreeBSD GetMemoryProfile argument layout; NetBSD branch unchanged."
+      "candidate": "Correct only the selected FreeBSD GetMemoryProfile argument layout; NetBSD branch unchanged.",
+      "original_static_and_dynamic_atexit_stats_script_exits": [
+        0,
+        0
+      ]
     },
     "early_shared_ASan_initialization": {
       "unchanged_shared_new_delete_program_exit": 1,
       "original_pthread_key_create_errno": 78,
       "native_errno_name": "ENOSYS",
       "observed_stack": "libc startup -> readlink interceptor -> TryAsanInitFromRtl -> AsanTSDInit -> pthread_key_create CHECK",
-      "candidate": "Use existing internal_readlink before sanitizer initialization on FreeBSD; normal initialized interception and bounds checks remain selected.",
+      "candidate": "Abandoned: pre-initialization readlink bypass built but both original shared new/delete scripts still exit1 at pthread_key_create. Removed from the current candidate; failed implementation/products/results retained.",
       "debugger_only_option": "abort_on_error=1, solely to stop at the original CHECK instead of normal exit. Separate plain original replay retains its original options.",
       "debugger_exit": 1,
       "debugger_exit_note": "Trace acquired, then an inherited register-memory inspection command fails reading address zero; not an original-program or suite result.",
@@ -518,7 +537,8 @@
     "explicit_CXX_standard_library": {
       "observed": "-stdlib=libstdc++ -fexperimental-library still emits -lc++ and -lc++experimental in the original FreeBSD linker arguments.",
       "candidate": "Delegate non-libc++ selection to the existing ToolChain implementation; retain libc++ and legacy profiling handling.",
-      "installed_GNU_CXX_consumer_qualified": false
+      "installed_GNU_CXX_consumer_qualified": false,
+      "original_three_RUN_script_exit": 0
     },
     "interpreter_randomized_mapping": {
       "unchanged_default_replays": 3,
@@ -548,10 +568,102 @@
       "ASLR_disabled": false,
       "source_binary_FileCheck_and_mounts_unchanged": true,
       "candidate": "Default FreeBSD C++ interpreter invocations to PIC before appending user arguments; preserve explicit user overrides.",
-      "rebuilt_default_behavior_qualified": false
+      "rebuilt_default_behavior_qualified": true,
+      "original_default_script_exit": 0
     },
     "original_case_bodies_assertions_and_selection_unchanged": true,
     "next_full_run_reporting": "Use upstream JSON and xUnit reports through LIT_OPTS, keeping all default cases and four workers. JSON excludes user-skipped entries, so retain xUnit as well. Original TestingConfig excludes LIT_OPTS from test subprocesses.",
-    "native_normalized_patch_validation": "Fresh original checksum/patch R10 exits0/0 with zero fuzz; four implementation source hashes exactly match the prior candidate source bytes."
+    "native_normalized_patch_validation": "Fresh original checksum/patch R10 exits0/0 with zero fuzz; four implementation source hashes exactly match the prior candidate source bytes.",
+    "native_combined_original_checksum_and_patch_exits_note": "Revised shared-ASan driver, removed readlink bypass, new regression and retained fixes all pass fresh original checksum/patch R19 exits0/0 without fuzz.",
+    "shared_ASan_pthread_dependency": {
+      "original_script_exits_with_readlink_candidate": [
+        1,
+        1
+      ],
+      "diagnostic_original_case_compile_exit_without_and_with_explicit_pthread": [
+        0,
+        0
+      ],
+      "diagnostic_original_case_FileCheck_exit_without_and_with_explicit_pthread": [
+        1,
+        0
+      ],
+      "diagnostic_case_program_exit_without_and_with_explicit_pthread": [
+        1,
+        1
+      ],
+      "expected_nonzero_program_exit_note": "Upstream deliberately triggers heap-use-after-free; successful behavior requires replacement new/delete output and the original ASan error checks, not program exit0.",
+      "ELF_observation": "Without pthread, direct libc precedes transitive libthr. Explicit pthread adds direct libthr before libc. Shared-runtime-only addSanitizerRuntimes returns false for static dependency linking.",
+      "candidate": "FreeBSD driver includes sanitizer runtime dependencies for shared ASan when runtime linking is enabled. New driver test also checks disabled-runtime linking and shared-libsan without an enabled sanitizer.",
+      "candidate_built": false,
+      "original_tests_pass_with_revised_driver": false,
+      "new_regression_unfixed_compiler_RUN_exits": [
+        1,
+        0,
+        0
+      ],
+      "new_regression_causal_control": "First RUN detects missing direct pthread dependency; disabled runtime linking and no-enabled-sanitizer controls pass on unchanged old compiler. Revised compiler not yet built."
+    },
+    "warm_original_build_r12": {
+      "original_make_do_build_exit": 0,
+      "targets": [
+        "clang",
+        "clang-repl",
+        "clang_rt.asan-x86_64",
+        "clang_rt.asan-dynamic-x86_64",
+        "clang_rt.tsan-x86_64"
+      ],
+      "all_other_warm_source_nodes_preserved": true,
+      "all_source_ports_SDK140_rawdb_registry_base_mount_data_guards_pass": true,
+      "original_script_exits": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "original_script_order": [
+        "static atexit_stats",
+        "dynamic atexit_stats",
+        "static-config shared new/delete",
+        "dynamic-config shared new/delete",
+        "FreeBSD CXX stdlib",
+        "default interpreter exception"
+      ],
+      "both_default_dynamic_ASan_unit_program_exits": [
+        0,
+        0
+      ]
+    },
+    "FreeBSD_TSan_thread_exit": {
+      "cause": "Ignored instrumentation in a multithreaded fork child bypasses SCOPED_TSAN_INTERCEPTOR cleanup in FreeBSD thr_exit; kernel thread exits but TSan registry join never completes.",
+      "ELF_identity": "libthr imports public thr_exit@FBSD_1.0; private __sys_thr_exit alias is not the cause.",
+      "candidate": "Use raw interceptor and explicitly destroy initialized live thread state even when instrumentation is ignored; leave NetBSD path unchanged.",
+      "original_compile_arguments_and_case_source_preserved": true,
+      "original_TSAN_OPTIONS": "die_after_fork=0",
+      "prior_diagnostic_stops": [
+        "128MiB RSS sampling threshold",
+        "two-second inspection deadline"
+      ],
+      "prior_stops_are_not_passes": true,
+      "normal_replay_program_exit": 0,
+      "normal_replay_peak_sampled_RSS_KiB": 2824344,
+      "normal_replay_guard_limits": {
+        "RSS_KiB": 8388608,
+        "seconds": 10
+      },
+      "normal_replay_guard_triggered": false,
+      "normal_replay_input_and_mount_guards_pass": true,
+      "full_suite_acceptance": false,
+      "original_failed_binary_diagnostic_retention": {
+        "archive_sha256": "f9c40dfa03deab0c2913db8f4a1938b8738ca57cde518b9a7f1dac71460bcaff",
+        "archive_bytes": 9759,
+        "inventory_sha256": "a174cb986a7b91c65e7a3c66ad18d7f69f76400023b48d3484e2ca633cce06ad",
+        "nodes": 37,
+        "independently_verified_on_two_physical_filesystems": true
+      }
+    },
+    "followup_source_work_and_diagnostic_retention": "R12-R18 complete capture streaming; require terminal before/after equality and independent two-host verification before revising warm source."
   }
 }
