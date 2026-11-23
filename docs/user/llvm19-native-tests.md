@@ -5,8 +5,10 @@
 The review candidate is `llvm19-19.1.7_7`. The revision changes because the
 FreeBSD sanitizer and LLDB fixes change production bytes. The native partial
 R164/R228 results below used the private `_6` recipe. R323 now passes normal
-`_7` configure/build, and R327 runs its normal selected tests with 17 unexpected
-outcomes remaining. A fresh `_7` package and its installed consumers remain
+`_7` configure/build before the twelve libc++ compatibility additions, and R327
+runs that version's normal selected tests with 17 unexpected outcomes remaining.
+The current candidate includes those additional patches and requires a new normal
+build/test run. A fresh `_7` package and its installed consumers remain
 unqualified. The
 [runtime follow-up record](../../verification/llvm19-native-runtime-followup-20261123.json)
 binds the current candidate's Git file identities and these observations.
@@ -85,8 +87,8 @@ other body, type, owner, mode, flag and literal link matched. Default options,
 dependencies, jobs and test settings were preserved. R313 then passes original
 checksum/full patch for the current revision7 origin with zero fuzz. All 160,708 fresh source nodes match R268 except the two
 Lua source changes and their exact original backups; all other full metadata,
-bodies and links match. Every current origin Git identity matches that native
-view; full native read/write permission observations remain separate. R323 then
+bodies and links match. All 75 origin Git identities at that point match that
+native view; full native read/write permission observations remain separate. R323 then
 passes normal revision7 configure/build with fresh owned cookies while preserving
 all original top-level cookies. Actual metadata selects the generated wrapper
 and toolchain files that require build-actor ownership; their earlier permission
@@ -129,8 +131,13 @@ outputs while preserving all other archive members and ELF dependency contracts.
 The actual private CLI mapping and Python binding identities are checked.
 All 60 string layout/pair/alternate combinations and five unique-pointer layouts
 pass the original simulator assertions, with additional pointer/deleter payload
-checks. These twelve source patches remain private; normal original patch,
-build and test qualification for them is pending.
+checks. These twelve source patches are now proposed in the port. R350 passes
+the original checksum/full-patch targets with zero fuzz. All 160,720 fresh nodes
+match R313 except those twelve declared source changes and their exact original
+backups; all other full metadata, bodies, types and literal links match. All 87
+current origin Git identities match the native view, and default options,
+dependencies and four jobs remain unchanged. Normal build/test and package
+qualification for these additions is pending.
 
 These source and selected-runtime checks do not qualify the complete original
 suite, fresh package/installed consumers, ARM platforms or the release.

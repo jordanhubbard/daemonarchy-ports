@@ -45,6 +45,11 @@
         "sha256": "0568760c099d4e9422d8775effd3856c1e9847d327731c05a8930d1772b2887f",
         "git_mode": "100644"
       },
+      "files/patch-lldb_test_API_functionalities_data-formatter_data-formatter-stl_libcxx-simulators_unique__ptr_TestDataFormatterLibcxxUniquePtrSimulator.py": {
+        "kind": "file",
+        "sha256": "1c7a7002a04ec21a4dae401beb3892e1a276dcf05fa4c704183a5de81e26adf7",
+        "git_mode": "100644"
+      },
       "files/patch-openmp_runtime_test_ompt_loadtool_tool__available__search_tool__available__search.c": {
         "kind": "file",
         "sha256": "9b728850351f01ab9ffbb6eac09c43d639e1ffc0e87810a708f9b9cb3c73588f",
@@ -55,9 +60,19 @@
         "sha256": "2c117d777dc955dfbaeb5e10cdb1facc64262de7591d55786e77ab59be9ca8ca",
         "git_mode": "100644"
       },
+      "files/patch-lldb_source_Plugins_Language_CPlusPlus_LibCxx.cpp": {
+        "kind": "file",
+        "sha256": "e6a27e2e51fa3ae2da57c7973a57d85a06ea3760ac14a8a144fa18b491264d9f",
+        "git_mode": "100644"
+      },
       "files/patch-clang_lib_Interpreter_Interpreter.cpp": {
         "kind": "file",
         "sha256": "da35cdd92642fd73a01aa0ce829e7f5d5581a936e79026ab591e8eddccb7eca9",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_Language_CPlusPlus_LibCxxVector.cpp": {
+        "kind": "file",
+        "sha256": "2c09264d01f4c1e5702eb147ebba06314e1492aeead3f4eaffd89c2784322089",
         "git_mode": "100644"
       },
       "files/patch-lldb_source_Plugins_ObjectFile_ELF_ObjectFileELF.h": {
@@ -100,6 +115,11 @@
         "sha256": "47a2aec5b1d8ab3d496589e771bb10c8dce5221b764b34cb04cba2b2ec95f5cd",
         "git_mode": "100644"
       },
+      "files/patch-lldb_source_Plugins_Language_CPlusPlus_LibCxxMap.cpp": {
+        "kind": "file",
+        "sha256": "dae7f457069d7a4a8cc0d995abfbea6337a63f574cb61f00d3e0adba12fcfdaa",
+        "git_mode": "100644"
+      },
       "files/patch-lldb_source_Plugins_ObjectFile_ELF_ObjectFileELF.cpp": {
         "kind": "file",
         "sha256": "952f2d2fd518cbaa3883b1bf989e59affaa09015c92b20c172cfcd95cfe6ee66",
@@ -138,6 +158,16 @@
       "files/patch-lldb_bindings_lua_lua-typemaps.swig": {
         "kind": "file",
         "sha256": "6d836462ff8f1a07dbed7c0aee5e45fa10684b1d2ebccf47552a2ec65f3d6625",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_Language_CPlusPlus_LibCxxUnorderedMap.cpp": {
+        "kind": "file",
+        "sha256": "db88c8e794951fc6cc11029c14e065fa665b298c9829eade82485af459cfb996",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_Language_CPlusPlus_LibCxxList.cpp": {
+        "kind": "file",
+        "sha256": "43e4af9a8a8921430a4acee1802ec11e241ca861a3605004db1ac2abec19abd9",
         "git_mode": "100644"
       },
       "files/patch-compiler-rt_test_sanitizer__common_TestCases_FreeBSD_capsicum-msan.cpp": {
@@ -255,6 +285,11 @@
         "sha256": "7da587e77436fcf1c63d849ccaa79f2cb90c86aa5c78bb409eab2df45cae7540",
         "git_mode": "100644"
       },
+      "files/patch-lldb_packages_Python_lldbsuite_test_make_libcxx-simulators-common_compressed__pair.h": {
+        "kind": "file",
+        "sha256": "c1c1b09be1f1ae0ef70145418a01de397d318c452494369879ef5b79fe4c05ce",
+        "git_mode": "100644"
+      },
       "files/patch-clang_lib_Driver_ToolChains_FreeBSD.cpp": {
         "kind": "file",
         "sha256": "2036cfe799d9dd848669c974bb5e5a823411b6caabb0fba298ed0f500ff8f721",
@@ -275,14 +310,29 @@
         "sha256": "58f7b8cdffd523eb4ec36070cb3890948a0e9b367d1eefc01b1dd7abf2d21604",
         "git_mode": "100644"
       },
+      "files/patch-lldb_test_API_functionalities_data-formatter_data-formatter-stl_libcxx-simulators_unique__ptr_main.cpp": {
+        "kind": "file",
+        "sha256": "6d0415fd1b9b8597a96620161c56267ef1780fbc3f31d39d23dbc953a9ad1b04",
+        "git_mode": "100644"
+      },
       "files/patch-lldb_test_Shell_lit.cfg.py": {
         "kind": "file",
         "sha256": "6147d18d6d4ea45f105b87eed5f1604b56335d67f1bb17e4de05922423a21bef",
         "git_mode": "100644"
       },
+      "files/patch-lldb_test_API_functionalities_data-formatter_data-formatter-stl_libcxx-simulators_string_TestDataFormatterLibcxxStringSimulator.py": {
+        "kind": "file",
+        "sha256": "a2a9e2a968274f254e87fc00ff5a01624b0dee87e60c6cabc3dbeabe3fae73fa",
+        "git_mode": "100644"
+      },
       "files/patch-compiler-rt_lib_profile_InstrProfilingPlatformLinux.c": {
         "kind": "file",
         "sha256": "893b98fd180ad7678fe2e812734185925e8eeeaff60ff67ea380ec2632a62099",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_Language_CPlusPlus_LibCxx.h": {
+        "kind": "file",
+        "sha256": "39eaa6753d9d5b7ae3786d80f132d115c02a780b44e2cfd225ed69fd86620409",
         "git_mode": "100644"
       },
       "files/patch-compiler-rt_test_tsan_freebsd-pthread-private-allocator.cpp": {
@@ -330,6 +380,11 @@
         "sha256": "9b6863c744204ceb4d9a140e809a18ab9c41143dc511a9df4837a5dc43913c08",
         "git_mode": "100644"
       },
+      "files/patch-lldb_examples_synthetic_libcxx.py": {
+        "kind": "file",
+        "sha256": "7e3b96c5fdd7fd484c83f359305be9194be0612ffd4f19997aa073c85238a0d8",
+        "git_mode": "100644"
+      },
       "files/patch-compiler-rt_test_tsan_mutexset5.cpp": {
         "kind": "file",
         "sha256": "da7e66eddd1c02872a950732bb1fd0caaa016ab962e359b2ad93eb841da96e4b",
@@ -375,6 +430,11 @@
         "sha256": "86c1048775129a50d1c0492a55b9cc7bbab47b71b0070f9395dc10523cda1f60",
         "git_mode": "100644"
       },
+      "files/patch-lldb_test_API_functionalities_data-formatter_data-formatter-stl_libcxx-simulators_string_main.cpp": {
+        "kind": "file",
+        "sha256": "cb8f13955ce413d7f15aea30aa279a6ce789e9345cb426aafa67d39170876cda",
+        "git_mode": "100644"
+      },
       "files/patch-clang_test_Driver_freebsd-shared-asan.c": {
         "kind": "file",
         "sha256": "f3d25790589f08a6a21775b429ed18849ce3b6bba5bd582df64b0c92aa66f8a4",
@@ -386,7 +446,7 @@
         "git_mode": "100644"
       }
     },
-    "identity_scope": "All75 current origin bodies, types, literal links and Git executable modes match the native R313 full-patch view. Native full read/write permission differences remain explicitly retained; Git identity is not full filesystem metadata equality."
+    "identity_scope": "All87 current origin bodies/types/literal links/Git executable modes match native R350 full-patch view. Earlier R31375-file identity remains historical. Full native permissions/owners/flags are retained separately; Git identity is not full filesystem metadata equality."
   },
   "native_boundary": {
     "platform": "FreeBSD16.0-amd64",
@@ -554,7 +614,7 @@
     }
   ],
   "remaining_gates": [
-    "Integrate the privately qualified libc++ formatter compatibility patches, fresh original checksum/full patch, normal default build and original tests; all65 private mock layouts and eleven current values pass. Revision7 Lua/event repairs now pass the normal selected R327 target, which retains17 unexpected outcomes.",
+    "Normal default build and original tests for twelve libc++ compatibility additions after failed-R327 frontier closure. Full original checksum/patch and160720-node fresh-source comparison now pass. Private65 mock layouts and eleven current values pass. Pre-addition R327 retained17 unexpected outcomes, with Lua/event passing.",
     "Full unfiltered original suite after all repairs; retained R74 full run remains failed with249 unexpected entries.",
     "Remaining LLDB, sanitizer, GNU libatomic, CFI, libFuzzer and OpenMP defects.",
     "Fresh stage, license/SBOM hooks, check-plist/package and installed compiler consumers after final repairs.",
@@ -743,7 +803,8 @@
     "configured_and_generated_LIT_Lua_executable": "/usr/local/bin/lua53",
     "normal_liblldb_sha256": "482914cf8d3bdbf803fa84e34683274b210419ecebb73a7362412f8e0e68de4d",
     "complete_source_inventory_sha256": "b02d04b35d38e4681c58288f3a91437f4278f8696968f676a7b793a4f8bfb0fe",
-    "all_final_integrity_guards_pass": true
+    "all_final_integrity_guards_pass": true,
+    "candidate_scope": "R323/R327 revision7 before twelve libc++ compatibility additions; current candidate still needs normal original build/tests."
   },
   "normal_revision7_selected_target": {
     "producer": "R327",
@@ -800,7 +861,8 @@
     "xunit_report_sha256": "e49bdeecd9472726ada9e5f66c66ce00f71b7ef4df784c62a11b5a5993298072",
     "independent_JSON_XML_body_review": "PASS; all1769 selected names and status families match;84259 explicitly filtered XML cases remain excluded. XFAIL uses successful xunit encoding and is distinguished by original lit JSON.",
     "all_final_integrity_guards_pass": true,
-    "full_unfiltered_suite_qualified": false
+    "full_unfiltered_suite_qualified": false,
+    "candidate_scope": "R323/R327 revision7 before twelve libc++ compatibility additions; current candidate still needs normal original build/tests."
   },
   "private_current_libcxx_layout_followup": {
     "baseline_producers": [
@@ -808,7 +870,7 @@
       "R330"
     ],
     "baseline": "Actual normal R323 LLDB fails current base string summaries and multiple container counts. Same R330 program self-checks its constructed data successfully; native raw string/vector memory independently agrees.",
-    "source_candidate_publicly_integrated": false,
+    "source_candidate_publicly_integrated": true,
     "private_build_producer": "R345",
     "original_five_object_compiles_archive_shared_and_CLI_link_exits": [
       0,
@@ -840,6 +902,98 @@
       "https://github.com/llvm/llvm-project/commit/d5e610a6dc8491a9fd6908fb10e4fae65691ed95"
     ],
     "upstream_source_bytes_and_Git_blobs_bound_to_commit": "d5e610a6dc8491a9fd6908fb10e4fae65691ed95",
-    "normal_original_ports_patch_build_test_package_acceptance": false
+    "normal_original_ports_patch_build_test_package_acceptance": false,
+    "integration_scope": "Twelve proposed port patches; no merge/package or normal build/test qualification from private runtime proof."
+  },
+  "libcxx_layout_fresh_original_patch": {
+    "producer": "R350",
+    "original_checksum_patch_exits": [
+      0,
+      0
+    ],
+    "zero_fuzz": true,
+    "complete_fresh_source_nodes": 160720,
+    "complete_fresh_source_inventory_sha256": "cec684f4e9e1a227566433bb40f5fdbf2974ec651f04964d6b747372d930511c",
+    "reference": "R313 complete160708-node fresh source",
+    "only_source_changes": {
+      "lldb/test/API/functionalities/data-formatter/data-formatter-stl/libcxx-simulators/string/main.cpp": {
+        "patch_name": "patch-lldb_test_API_functionalities_data-formatter_data-formatter-stl_libcxx-simulators_string_main.cpp",
+        "patch_sha256": "cb8f13955ce413d7f15aea30aa279a6ce789e9345cb426aafa67d39170876cda",
+        "original_source_sha256": "64586eef789f4d86c13034c5b4acbc4399063af064291f05a71bcce3faa2cc3c",
+        "candidate_source_sha256": "b300c45a693052fac4db3d59289a0ebd1ceb05eb938673c79566513e0ad09e78"
+      },
+      "lldb/test/API/functionalities/data-formatter/data-formatter-stl/libcxx-simulators/string/TestDataFormatterLibcxxStringSimulator.py": {
+        "patch_name": "patch-lldb_test_API_functionalities_data-formatter_data-formatter-stl_libcxx-simulators_string_TestDataFormatterLibcxxStringSimulator.py",
+        "patch_sha256": "a2a9e2a968274f254e87fc00ff5a01624b0dee87e60c6cabc3dbeabe3fae73fa",
+        "original_source_sha256": "4672dc64090c8f3a84907030f1b9133525f01c14b96285853ccc6e41f31d2132",
+        "candidate_source_sha256": "ef340bf10889891f114c7aab2f18392a8f8aad5e5459bd58516bfc3e3e99894a"
+      },
+      "lldb/test/API/functionalities/data-formatter/data-formatter-stl/libcxx-simulators/unique_ptr/main.cpp": {
+        "patch_name": "patch-lldb_test_API_functionalities_data-formatter_data-formatter-stl_libcxx-simulators_unique__ptr_main.cpp",
+        "patch_sha256": "6d0415fd1b9b8597a96620161c56267ef1780fbc3f31d39d23dbc953a9ad1b04",
+        "original_source_sha256": "4ac1c686174b95f7259f4a6308fa2917683c171b4266751e3962ca167314d87b",
+        "candidate_source_sha256": "d0480e869506bf0d48dcc6996e07b7277b369ecef1501da36d8fb98acb2461fb"
+      },
+      "lldb/test/API/functionalities/data-formatter/data-formatter-stl/libcxx-simulators/unique_ptr/TestDataFormatterLibcxxUniquePtrSimulator.py": {
+        "patch_name": "patch-lldb_test_API_functionalities_data-formatter_data-formatter-stl_libcxx-simulators_unique__ptr_TestDataFormatterLibcxxUniquePtrSimulator.py",
+        "patch_sha256": "1c7a7002a04ec21a4dae401beb3892e1a276dcf05fa4c704183a5de81e26adf7",
+        "original_source_sha256": "c8a64cb7333553fe285b3d15b3509f45ba3efc6045f524c55384aec77ef7f5de",
+        "candidate_source_sha256": "08e62e8c319700ba441d50b31cdfa872cd5401fb71b32d5fa33ddd9bbf2d3be1"
+      },
+      "lldb/examples/synthetic/libcxx.py": {
+        "patch_name": "patch-lldb_examples_synthetic_libcxx.py",
+        "patch_sha256": "7e3b96c5fdd7fd484c83f359305be9194be0612ffd4f19997aa073c85238a0d8",
+        "original_source_sha256": "aa7fbc267ca7231badec651ceab63adf8472290a5581125c48a1f0e881d8220f",
+        "candidate_source_sha256": "389bfdc243bba50fd77380c687c27130802df9123e4174d9deddf7be503b305b"
+      },
+      "lldb/source/Plugins/Language/CPlusPlus/LibCxx.h": {
+        "patch_name": "patch-lldb_source_Plugins_Language_CPlusPlus_LibCxx.h",
+        "patch_sha256": "39eaa6753d9d5b7ae3786d80f132d115c02a780b44e2cfd225ed69fd86620409",
+        "original_source_sha256": "307ea4ad96312c338210a42b8953c417d9095be72a317a12af8377c6f538a793",
+        "candidate_source_sha256": "325d248f0a82e3a77a13b6faea7490a65e4380705fcaa2014466444399a06c52"
+      },
+      "lldb/source/Plugins/Language/CPlusPlus/LibCxxVector.cpp": {
+        "patch_name": "patch-lldb_source_Plugins_Language_CPlusPlus_LibCxxVector.cpp",
+        "patch_sha256": "2c09264d01f4c1e5702eb147ebba06314e1492aeead3f4eaffd89c2784322089",
+        "original_source_sha256": "622011fbc1d306d28457142a44a8bffab12e161f68ad1cd6a19356051e2d69ba",
+        "candidate_source_sha256": "2e3cf69a5a778b89bfaee543c69d823658de3045a1cfa9bf3e4cc3a621d6042a"
+      },
+      "lldb/source/Plugins/Language/CPlusPlus/LibCxxList.cpp": {
+        "patch_name": "patch-lldb_source_Plugins_Language_CPlusPlus_LibCxxList.cpp",
+        "patch_sha256": "43e4af9a8a8921430a4acee1802ec11e241ca861a3605004db1ac2abec19abd9",
+        "original_source_sha256": "4d7b4455300f3a560f19d0092f57f4ab77c24313c2fba34aee0cdfe62e858e2b",
+        "candidate_source_sha256": "43c02f4ba44ad33e08da278c3997f6031b8bc9eada1f3d4924f5c56c34c768e3"
+      },
+      "lldb/source/Plugins/Language/CPlusPlus/LibCxx.cpp": {
+        "patch_name": "patch-lldb_source_Plugins_Language_CPlusPlus_LibCxx.cpp",
+        "patch_sha256": "e6a27e2e51fa3ae2da57c7973a57d85a06ea3760ac14a8a144fa18b491264d9f",
+        "original_source_sha256": "32a159d24878bf9fe3544a2630d531caa5e73cb4904a9aa528052fece7bf5c96",
+        "candidate_source_sha256": "57cc18085239e906add281742468387850084fd6155f7f9fc029cddbbd6dfd03"
+      },
+      "lldb/source/Plugins/Language/CPlusPlus/LibCxxMap.cpp": {
+        "patch_name": "patch-lldb_source_Plugins_Language_CPlusPlus_LibCxxMap.cpp",
+        "patch_sha256": "dae7f457069d7a4a8cc0d995abfbea6337a63f574cb61f00d3e0adba12fcfdaa",
+        "original_source_sha256": "2025dbf04f8b8b36d07ab3023329340218300f375d42b7e61460eae36819faa8",
+        "candidate_source_sha256": "ad7ea9401302a724c89467334802da4e8d4c062c0015aae24827f23b1ed52266"
+      },
+      "lldb/source/Plugins/Language/CPlusPlus/LibCxxUnorderedMap.cpp": {
+        "patch_name": "patch-lldb_source_Plugins_Language_CPlusPlus_LibCxxUnorderedMap.cpp",
+        "patch_sha256": "db88c8e794951fc6cc11029c14e065fa665b298c9829eade82485af459cfb996",
+        "original_source_sha256": "caeb5e81edb5bd97005d164c10922f078d99b68e1c8aabfba471148a4bd1cc5b",
+        "candidate_source_sha256": "401cafd929e757521b4744927a00a3c718bff3e063280989ca8d9f5a5d1791ea"
+      },
+      "lldb/packages/Python/lldbsuite/test/make/libcxx-simulators-common/compressed_pair.h": {
+        "patch_name": "patch-lldb_packages_Python_lldbsuite_test_make_libcxx-simulators-common_compressed__pair.h",
+        "patch_sha256": "c1c1b09be1f1ae0ef70145418a01de397d318c452494369879ef5b79fe4c05ce",
+        "original_source_sha256": "44cb53b042297015928d9975814a367402bc06627b06a7db23dcbdd2a7af6008",
+        "candidate_source_sha256": "9223ab74c4c0a26800a29be94f3fe124838f1be70856dc6f6b29fa90cf36900c"
+      }
+    },
+    "only_additions": "Exact original .orig backups for twelve changed source files. All other full metadata/bodies/types/links equal.",
+    "complete87_file_public_origin_Git_identity_matches": true,
+    "default_options_dependencies_jobs_and_test_settings_preserved": true,
+    "prior_R313_ports_and_cold_source_unchanged": true,
+    "all_final_integrity_guards_pass": true,
+    "normal_build_test_package_qualified": false
   }
 }
