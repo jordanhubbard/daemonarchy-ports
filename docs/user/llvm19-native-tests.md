@@ -555,12 +555,29 @@ independently verified on both physical filesystems: 711,782 nodes, including
 cold original source, integrated source/build/historical stage, fixtures,
 controls and both reports. All bodies, 256 literal symlinks, twelve inert
 sockets, six FIFOs, five hardlink groups and the complete gzip stream match;
-before/after equality passes. The unfiltered original controller is launched
-with results pending; fresh package acceptance remains open.
+before/after equality passes.
+
+The subsequent unfiltered original R74 do-test/check-all completes with make
+exit 1 and both structured reports. It starts with 87,566 LIT entries and
+reports 117,174 entries after expansion of GTest cases: 111,246 PASS,
+5,410 UNSUPPORTED, 269 XFAIL, 3 XPASS, 239 FAIL, 4 UNRESOLVED and
+3 TIMEOUT. Initial discovery entries, console shards and final report entries
+are different counting units. The 249 unexpected entries remain failures to
+resolve; this is a completed failing run. Most are in LLDB API/Shell, with
+additional sanitizer, CFI, libFuzzer and OpenMP failures. Existing explicit
+skip reasons and expected failures remain recorded in the reports.
+
+All final source, SDK140/rawDB, ports, base, registry, mounts and stopped-data
+guards pass; the owned jail is removed and full-test cookies are unchanged.
+The complete 589,383-node failure frontier is independently verified on both
+physical filesystems, including all regular bodies, 260 literal symlinks,
+twelve inert sockets, twelve FIFOs, six hardlink groups and the full gzip
+stream. The JSON and xUnit report hashes are recorded in the verification
+record. This does not qualify the historical stage tree as a fresh package.
 
 These checks establish neither full upstream suite success nor a fresh full
-package build with the changed recipe. Full case discovery, per-project outcomes and explicit
-skip reasons remain open. Independent installed compiler consumers, final
+package build with the changed recipe. The complete R74 reports provide discovery and per-entry outcomes; diagnosis
+and resolution of the unexpected results remain open. Independent installed compiler consumers, final
 CURRENT integration, complete toolchain provenance, canonical Component/SDK/
 lifecycle admission and full 1.6 release acceptance remain open. Raw worker
 evidence stays private.

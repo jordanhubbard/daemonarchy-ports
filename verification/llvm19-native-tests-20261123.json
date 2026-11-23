@@ -1,6 +1,6 @@
 {
   "schema": "daemonarchy/llvm19-native-test-development-evidence@1",
-  "status": "integrated-default-and-unit-builds-pass-selected-original-do-test1437PASS1UNSUPPORTED-full-suite-and-release-open",
+  "status": "complete-unfiltered-original-target-failed249-unexpected-report-entries-full-qualification-and-release-open",
   "port": "devel/llvm19",
   "original_makefile_sha256": "d43b3578b552dc5b393e81ea48e1bba8fbeede5fc9061414fdb825d2c436b721",
   "original_llvm_source_archive": {
@@ -1467,13 +1467,92 @@
     "full_unfiltered_suite_fresh_stage_package_installed_or_release_acceptance": false
   },
   "unfiltered_original_target_after_unit_fixes": {
-    "status": "controller-launched-results-pending",
+    "status": "complete-original-target-exit1-structured-reports-retained-failures-open",
     "original_target": "do-test/check-all",
     "temporary_filter": null,
     "persistent_filter_added": false,
     "workers": 4,
     "default_components_and_options_preserved": true,
     "preceding_complete_current_frontier_independently_verified_both_physical_filesystems": true,
-    "full_original_tests_or_release_acceptance": false
+    "full_original_tests_or_release_acceptance": false,
+    "original_make_exit": 1,
+    "initial_LIT_entries": 87566,
+    "structured_report_entries": 117174,
+    "report_granularity": "Structured report entries include expanded GTest cases; do not equate the initial LIT inventory, console shard lines and final report entries.",
+    "per_entry_JSON_counts": {
+      "PASS": 111246,
+      "UNSUPPORTED": 5410,
+      "XFAIL": 269,
+      "XPASS": 3,
+      "FAIL": 239,
+      "UNRESOLVED": 4,
+      "TIMEOUT": 3
+    },
+    "unexpected_report_entries": 249,
+    "unexpected_by_suite": {
+      "AddressSanitizer-x86_64-freebsd-dynamic": 1,
+      "MemorySanitizer-X86_64": 8,
+      "MemorySanitizer-lld-X86_64": 8,
+      "OMPT multiplex": 2,
+      "SanitizerCommon-asan-x86_64-FreeBSD": 1,
+      "SanitizerCommon-msan-x86_64-FreeBSD": 5,
+      "SanitizerCommon-tsan-x86_64-FreeBSD": 1,
+      "SanitizerCommon-ubsan-x86_64-FreeBSD": 1,
+      "ThreadSanitizer-x86_64": 14,
+      "cfi-devirt-lld-thinlto-x86_64": 2,
+      "cfi-devirt-lld-x86_64": 2,
+      "cfi-standalone-lld-thinlto-x86_64": 2,
+      "cfi-standalone-lld-x86_64": 2,
+      "libFuzzer-x86_64-default-FreeBSD": 5,
+      "libomp": 2,
+      "lldb-api": 175,
+      "lldb-shell": 18
+    },
+    "XPASS": [
+      "AddressSanitizer-x86_64-freebsd-dynamic :: TestCases/interception_failure_test.cpp",
+      "MemorySanitizer-X86_64 :: dtls_test.c",
+      "MemorySanitizer-lld-X86_64 :: dtls_test.c"
+    ],
+    "UNRESOLVED": [
+      "lldb-api :: commands/gui/spawn-threads/TestGuiSpawnThreads.py",
+      "lldb-api :: functionalities/rerun_and_expr/TestRerunAndExpr.py",
+      "lldb-api :: lua_api/TestLuaAPI.py",
+      "lldb-api :: tools/lldb-dap/variables/TestDAP_variables.py"
+    ],
+    "TIMEOUT": [
+      "lldb-api :: tools/lldb-dap/attach/TestDAP_attach.py",
+      "lldb-api :: tools/lldb-dap/attach/TestDAP_attachByPortNum.py",
+      "lldb-api :: tools/lldb-dap/disconnect/TestDAP_disconnect.py"
+    ],
+    "all_final_integrity_guards_pass": true,
+    "full_test_completion_cookies_unchanged": true,
+    "json_report": {
+      "sha256": "57754eca62bb4b48ace5a35e2f2280839f3f774282afe0a6320e7be01e067e1e",
+      "bytes": 471945501
+    },
+    "xunit_report": {
+      "sha256": "06fec4fe580f023630bb441051237e7dc4ba611c88b6944d29aa462d95239256",
+      "bytes": 14390942
+    },
+    "complete_failed_frontier_retention": {
+      "archive_sha256": "c1149accaeddb048bfc0c35c85e2177b91ddba6491c73026f11b06f97451f59d",
+      "archive_bytes": 4754030063,
+      "inventory_sha256": "953d8db0e5e63904311a20a3c2606dff0aa4978c669f3d978458932021a9d7f6",
+      "all_nodes_verified": 589383,
+      "node_kinds": {
+        "directory": 83517,
+        "file": 505582,
+        "symlink": 260,
+        "socket": 12,
+        "fifo": 12
+      },
+      "hardlink_groups_verified": 6,
+      "complete_gzip_decode_bytes": 25206374400,
+      "independent_sparky_review": "pass",
+      "independent_madmax_review": "pass",
+      "complete_frontier_before_after_unchanged": true,
+      "stage_tree_historical_not_fresh_package_qualified": true
+    },
+    "fresh_stage_package_installed_canonical_lifecycle_or_release_qualified": false
   }
 }
