@@ -300,6 +300,11 @@
         "missing hardlink group",
         "missing node"
       ]
+    },
+    "partial_log_observations_before_kernel_kill": {
+      "FAIL_result_lines": 269,
+      "XPASS_result_lines": 2,
+      "scope": "Observed lines in the incomplete run only; no complete suite summary or final outcome inventory. Includes both failed dynamic GoogleTest discovery placeholders and other sanitizer failures."
     }
   },
   "asan_FreeBSD_TLS_diagnosis": {
@@ -345,7 +350,20 @@
       "ASAN_OPTIONS_override": false,
       "nobody_lo_only_VNET_execution": true,
       "all_final_SDK_source_ports_registry_base_mount_data_guards_passed": true,
-      "scope": "Named runtime build and both original default dynamic unit programs; not full make test, all sanitizer variants or fresh package acceptance."
+      "scope": "Named runtime build and both original default dynamic unit programs; not full make test, all sanitizer variants or fresh package acceptance.",
+      "complete_source_work_stage_products_retention": {
+        "before_after_all_nodes_equal": true,
+        "archive_format": "gzip-compressed standard newc with retained inert-socket restoration helper",
+        "archive_bytes": 3617220292,
+        "archive_sha256": "8e55d4f706812c1c28f1d012efd12d8d397a1a80f87a88b3e454ba41aa7f55a1",
+        "inventory_sha256": "21c283c8c8e7de58251678f7fa9924e81c557a885286c6bc33dab5d51a41986b",
+        "all_nodes_verified_on_two_physical_filesystems": 547931,
+        "regular_file_nodes_checked": 469893,
+        "hardlink_groups_checked": 5,
+        "socket_nodes_checked": 4,
+        "fifo_nodes_checked": 2,
+        "complete_gzip_decode_bytes": 14413199360
+      }
     }
   },
   "psutil_test_support_source_build": {
@@ -362,7 +380,7 @@
     "staged_nobody_APIs": "Process identity, memory and threads; system memory and PID enumeration.",
     "active_SDK139_prefix_and_raw_database_unchanged": true,
     "original_upstream_tests_qualified": false,
-    "installed_consumer_qualified": false,
+    "installed_consumer_qualified": true,
     "complete_source_work_stage_package_retention": {
       "archive_bytes": 2125033,
       "archive_sha256": "a44dc2044053e3dba96a70f931a295eed6865bbbc7d6761185f1c1f3eb885648",
@@ -373,5 +391,62 @@
       "complete_gzip_decode_bytes": 5509120,
       "before_after_all_nodes_equal": true
     }
+  },
+  "installed_psutil_test_support": {
+    "generation": "SDK140-psutil-r1",
+    "method": "Exact independent prefix/rawDB copy with disjoint regular inodes, explicit nonforced nullfs alias switch, normal source-built psutil pkg add; all139 prior packages preserved.",
+    "prior_sdk_copy_nodes_identical": 82744,
+    "original_prefix_and_raw_database_retained_unchanged": true,
+    "original139_prefix_nodes_preserved": 82739,
+    "exactly_one_declared_package_added": true,
+    "registry_count": 140,
+    "all140_checksum_and_no_fetch_dependency_checks_exit": [
+      0,
+      0
+    ],
+    "installed_regular_bodies_read_and_hash_verified_as_nobody": 40,
+    "installed_process_memory_threads_system_memory_and_PID_APIs_pass": true,
+    "fstab_unchanged": true,
+    "persistent_boot_profile": "Unchanged original SDK; the observed SDK140 generation applies to the running worker.",
+    "active_prefix_and_database_inventory_sha256": "376e368c77f9c2632ab61a675f870d6552d4ab14bb279db15cb56ce3f10e6ef7",
+    "complete_post_transition_retention": {
+      "archive_bytes": 548987186,
+      "archive_sha256": "0b0b3d1c0674c9321bb1eb4d4e07a9a3fec024da33cff1e985013e46c4530182",
+      "inventory_sha256": "1ac56bea6d656a8a8c173cef6a8536db0374e479b1c7af61dff908ee0a48b583",
+      "all_nodes_verified_on_two_physical_filesystems": 82998,
+      "all_regular_bodies_checked": 75927,
+      "hardlink_groups_checked": 8,
+      "complete_gzip_decode_bytes": 1373532160,
+      "before_after_all_nodes_equal": true
+    },
+    "original_upstream_unit_tests_qualified": false,
+    "independent_disposable_VM_and_reboot_qualified": false,
+    "canonical_SDK_admission_earned": false
+  },
+  "follow_up_full_upstream_tests_r6": {
+    "entrypoint": "Original make test/check-all",
+    "generation": "SDK140-psutil-r1",
+    "port_revision": 6,
+    "all_original_default_components_retained": true,
+    "case_filters_added": false,
+    "assertions_edited": false,
+    "timeout_padding_added": false,
+    "selected_ninja_build_jobs": 4,
+    "LIT_OPTS_workers": 4,
+    "actual_upstream_argument_parser_environment_precedence_probe": "Command-line -j8 plus LIT_OPTS=-j4 parses to four workers. No cases executed in this argument probe.",
+    "status": "Observed original full test target running after completing native preflight and 28 changed-input preparatory actions; no complete suite result yet.",
+    "full_suite_result_available": false,
+    "observed_at": "2026-11-23T10:52:53.323329+00:00",
+    "LIT_reported_test_entries": 87562,
+    "LIT_reported_workers": 4,
+    "LIT_entries_are_not_a_complete_individual_GoogleTest_case_inventory": true,
+    "early_result_lines_at_recorded_observation": [
+      "FAIL: AddressSanitizer-x86_64-freebsd :: TestCases/atexit_stats.cpp (393 of 87562)",
+      "FAIL: AddressSanitizer-x86_64-freebsd :: TestCases/replaceable_new_delete_shared.cpp (483 of 87562)",
+      "FAIL: AddressSanitizer-x86_64-freebsd-dynamic :: TestCases/atexit_stats.cpp (893 of 87562)",
+      "XPASS: AddressSanitizer-x86_64-freebsd-dynamic :: TestCases/interception_failure_test.cpp (947 of 87562)",
+      "FAIL: AddressSanitizer-x86_64-freebsd-dynamic :: TestCases/replaceable_new_delete_shared.cpp (984 of 87562)"
+    ],
+    "known_remaining_failures_present": true
   }
 }

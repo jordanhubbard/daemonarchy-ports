@@ -119,7 +119,7 @@ post-change source, work, stage, test products and controls are independently
 verified on both physical filesystems (596,640 nodes). Full LLVM
 `check-all`, fresh package acceptance and the sanitizer failures remain open.
 
-The worker now runs a separate observed SDK generation with all 52 replacement
+The worker first switches to a separate observed SDK generation with all 52 replacement
 packages installed through normal package operations and original scripts.
 Before switching the running worker, the original prefix/database and an
 independent copy matched all 82,744 entries, with disjoint regular-file inodes.
@@ -147,8 +147,10 @@ the Python LIT driver. Four selected Ninja build jobs did not constrain LIT,
 which used eight workers. A subsequent run must bind actual LIT concurrency
 to the worker resource budget while retaining every original case. All final
 active-SDK, source, ports, registry, base, stopped-data and mount guards pass.
-Missing psutil and two dynamic ASan programs failing discovery also leave
-coverage incomplete; the discovered count is not a completed-case count.
+The partial log contains269 FAIL and two XPASS result lines, including both
+dynamic ASan discovery failures; these are incomplete observations. Missing
+psutil also leaves coverage incomplete. The discovered count is not a
+completed-case count.
 
 Native debugger observations identify a separate ASan startup mechanism:
 its TLS beginning is unsigned -128, yielding an invalid shadow address.
@@ -180,9 +182,29 @@ parser gives the environment precedence over generated command arguments.
 The runtime change increments the port revision to 6. Native metadata checks
 confirm the selected psutil flavor and a LIT worker limit of four. Psutil also passes
 fresh original checksum/package/plist targets and ordinary-user staged APIs,
-including hashes of all 40 staged regular files; installed acceptance and its
-original upstream tests remain open. Full LLVM and fresh package acceptance
-remain pending.
+including hashes of all 40 staged regular files. An exact independent copy of
+the active SDK then receives the source-built psutil package through normal
+package installation. The new observed SDK140 preserves every original139
+prefix node and registry identity, and all140 package checksum/dependency
+checks pass. Nobody reads all40 installed regular bodies and passes the
+installed process, memory, thread and PID APIs. The preceding SDK139 prefix
+and raw database remain unchanged; the persistent boot profile is unchanged.
+Original psutil tests and independent disposable-VM/reboot acceptance stay open.
+
+The complete dynamic-runtime source/work/stage/products boundary is separately
+retained and independently verified on both physical filesystems (547,931
+nodes). The complete SDK140 prefix/database, clone/install controls and local
+installed-consumer evidence are also independently verified on both physical
+filesystems (82,998 nodes). The next full unfiltered original `make test`
+controller passes explicit SDK140/raw-database, complete source,
+ports, registry, base, mount and stopped-data preflight guards and begins the
+original target. After28 changed-input preparatory actions, LIT reports87562
+test entries and four workers. These entries are not an inventory of every
+individual GoogleTest case. All selected components remain enabled. Early
+results still fail `atexit_stats.cpp` and `replaceable_new_delete_shared.cpp`
+in static and dynamic ASan configurations, and report an unexpected pass for
+the dynamic interception-failure case. Those outcomes remain unresolved.
+Complete suite results, final guards and fresh package acceptance are pending.
 
 These checks establish neither full upstream suite success nor a fresh full
 package build with the changed recipe. Full case discovery, per-project outcomes and explicit
