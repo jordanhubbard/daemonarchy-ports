@@ -366,6 +366,54 @@ not integrated into the failed R22 source. Full tests
 with these changes, rebuilt other sanitizer runtimes, fresh complete packaging,
 installed consumers and lifecycle/release acceptance remain open.
 
+
+The complete failed R22 boundary is now independently verified on both physical
+filesystems: 551,031 nodes, all bodies and links, twelve inert sockets, six
+FIFOs, five hardlink groups and the complete gzip stream. Before/after equality
+passes. Its original ASan and MSan huge-allocation binaries each return0 under
+their original options. The original UBSan binary instead exceeds the external
+256MiB inspection threshold; it is stopped at sampled RSS358872KiB, never a
+pass. Its stack reaches libc memset through the main free(p) call. TSan is
+already unsupported by the unchanged original source. The complete28-node
+diagnostic boundary is independently verified on both filesystems. LLDB obtains
+the stack but prints a kill-packet error despite debugger exit0; owned-process
+and jail cleanup completes with observed SIGKILL9.
+
+A read-only mallctl probe identifies debug jemalloc5.3.0 with fill and junk
+filling enabled by default, retain enabled, no MALLOC_CONF environment entry
+and no /etc/malloc.conf. The same original UBSan body and UBSAN_OPTIONS then
+complete all64 original iterations in a separate diagnostic process with only
+MALLOC_CONF=junk:false added. This fast process exits before any positive RSS
+sample, so its recorded sample0 is not a measured process footprint. This
+confirms the allocator-option relationship; it is not original-option test
+acceptance or a release fix. Global allocator, kernel, SDK and source settings
+are unchanged. The intended release-worker profile and testcase preconditions
+need review before integration. No case is dropped, allocation size reduced,
+full-suite concurrency lowered or diagnostic override adopted as acceptance.
+
+
+Review of the matching source controller confirms that the worker is following
+its intended defaults: [src.conf](https://github.com/jordanhubbard/daemonarchy-src/blob/f4eb2cff7f8b5c511c448f0158f071105d19aaf5/tools/daemonarchy/src.conf)
+keeps upstream world defaults and MALLOC_PRODUCTION defaults to no. The source
+fixture now declares MALLOC_CONF=junk:false only for the huge-allocation
+program. This avoids unrelated debug-allocator filling in the virtual-allocation
+regression. All64 allocation sizes/calls, sanitizer options and original skip
+annotations remain. No worker/profile/global setting changes.
+
+Fresh original checksum/full patch passes without fuzz. After independently
+retaining the failed R22 boundary on both filesystems, only that fixture is
+overlaid on its warm source. Original ports do-test/check-all then exits0 with
+a disclosed temporary Posix/huge_malloc.c filter. JSON reports ASan/MSan/UBSan
+PASS and the unchanged original TSan UNSUPPORTED result. The header has87563
+entries; upstream postprocessing reports86020 total,86016 excluded. Those
+excluded entries are not claimed as run. Both JSON and xUnit reports are
+retained. Source except the single declared fixture, SDK140/rawDB, ports,
+registry, base, mounts and stopped-data guards pass. Full test completion
+cookies remain unchanged; filtered execution earns no full-suite acceptance.
+The separately cold-qualified R24 API changes are not yet integrated into this
+warm generation. All-runtime integration, remaining original failures, complete
+unfiltered outcomes, packaging and release gates remain open.
+
 These checks establish neither full upstream suite success nor a fresh full
 package build with the changed recipe. Full case discovery, per-project outcomes and explicit
 skip reasons remain open. Independent installed compiler consumers, final

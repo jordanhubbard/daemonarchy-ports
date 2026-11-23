@@ -730,7 +730,20 @@
         "python3.12 LIT driver"
       ],
       "all_final_source_SDK140_rawdb_ports_base_registry_mount_data_guards_pass": true,
-      "whole_failed_frontier_retention": "Complete quiescent source/work/products/ports/R22-controls capture is streaming; independent two-host verification pending before warm mutation.",
+      "whole_failed_frontier_retention": {
+        "status": "Complete before/after-equal failed source/work/products/ports/controls boundary independently verified on both physical filesystems before further diagnosis.",
+        "archive_bytes": 3647994866,
+        "archive_sha256": "b3237f6c6b250e20ba8dd6f0339736a4311b9c7884234298ac250e00285113aa",
+        "inventory_sha256": "c58686fa9281f695957d183489e4021570ea70fad4a66038e3b373b3bee90da7",
+        "nodes": 551031,
+        "regular_files": 472792,
+        "directories": 77981,
+        "symlinks": 240,
+        "sockets": 12,
+        "fifos": 6,
+        "hardlink_groups": 5,
+        "complete_gzip_decode_bytes": 14532464640
+      },
       "reported_entries_are_not_completed_individual_case_counts": true
     },
     "last_canonical_checks": {
@@ -913,5 +926,107 @@
       "Complete TCB/source ownership and canonical Component/SDK/lifecycle admission",
       "Full1.6 release acceptance"
     ]
+  },
+  "huge_allocation_termination_diagnosis": {
+    "status": "Read-only guarded original-binary replays and per-process allocator-option causal control; no production fix or complete original-target acceptance yet.",
+    "original_options": "allocator_may_return_null=1:hard_rss_limit_mb=50:quarantine_size_mb=1",
+    "original_supported_variants": {
+      "asan": {
+        "program_exit": 0,
+        "peak_sampled_RSS_KiB": 4412
+      },
+      "msan": {
+        "program_exit": 0,
+        "peak_sampled_RSS_KiB": 5068
+      },
+      "ubsan": {
+        "ordinary_case_completed": false,
+        "external_diagnostic_RSS_stop": true,
+        "peak_sampled_RSS_KiB": 358872,
+        "trace": "libc memset, through libc frames, from main free(p)",
+        "diagnostic_not_a_pass": true
+      }
+    },
+    "tsan": "Already unsupported by the unchanged original upstream testcase; not a new exclusion.",
+    "external_diagnostic_inspection_limits": {
+      "RSS_KiB": 262144,
+      "seconds": 2
+    },
+    "LLDB_note": "Backtrace acquired and debugger exits0, but kill command prints failed-send-k-packet; owned process/group/jail cleanup completes with observedSIGKILL9. No ordinary-program success is inferred.",
+    "all_selected_source_binary_debugger_library_and_mount_guards_pass": true,
+    "guarded_diagnostic_retention": {
+      "archive_sha256": "970a7a75dffa41cdc5f4d08dffdad613770ffbbc3577885d8bbc821915068387",
+      "archive_bytes": 8627,
+      "inventory_sha256": "dde52a0e62f9221c132761e4610f23d355c1c6a8fdbe31ea714cddc5f0601265",
+      "nodes": 28,
+      "both_physical_filesystems_verified": true
+    },
+    "native_read_only_base_allocator_probe": {
+      "jemalloc_version": "5.3.0-0-g54eaed1d8b56b1aa528be3bdd1877e59c56fa90c",
+      "config_debug": true,
+      "config_fill": true,
+      "opt_junk": "true",
+      "opt_retain": true,
+      "opt_zero": false,
+      "opt_abort": true,
+      "MALLOC_CONF_in_environment": false,
+      "etc_malloc_conf_exists": false,
+      "source_base_compiler_libc_header_and_mount_guards_pass": true
+    },
+    "per_process_causal_control": {
+      "same_original_UBSan_binary": true,
+      "same_original_UBSAN_OPTIONS": true,
+      "one_added_environment_override": "MALLOC_CONF=junk:false",
+      "program_exit": 0,
+      "all_original_64_iterations_observed": true,
+      "external_guard_triggered": false,
+      "positive_RSS_sample_obtained": false,
+      "not_an_original_option_pass_or_release_fix": true,
+      "global_allocator_kernel_SDK_source_configuration_changed": false
+    },
+    "next": "Source review confirms upstream-world/debug-malloc defaults are intended. The following explicit one-process testcase precondition is now separately qualified; no global allocator change or full-suite acceptance."
+  },
+  "huge_allocation_fixture_correction": {
+    "status": "Fresh original checksum/patch R32 exits0/0 without fuzz. Original ports do-test/check-all R33 exits0 with an explicit temporary four-case filter; JSON records3PASS/1originalUNSUPPORTED. Full original suite and current combined API/runtime generation remain unqualified.",
+    "patch": "devel/llvm19/files/patch-compiler-rt_test_sanitizer__common_TestCases_Posix_huge_malloc.c",
+    "patch_sha256": "39624d6f5ee0d12ca0e4966404003280da6c9ffc1620006cbce190b7bce1f9ea",
+    "source_before_sha256": "712e667e52a349dedf8d13e915dd4eb6b7bf58c2a7133c63948f9fb8f2af1e00",
+    "source_after_sha256": "47995df341d22cd2b14f5722e5e8e1464c7621a5a98da2e0e7ccce31caac9d02",
+    "source_profile_review": {
+      "source_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
+      "src_conf": "Explicitly retains upstream world defaults.",
+      "src_options": "MALLOC_PRODUCTION defaults to no.",
+      "native_debug_allocator_defaults_are_expected": true,
+      "profile_or_global_configuration_change": false
+    },
+    "testcase_precondition": "Add env MALLOC_CONF=junk:false only to the huge-allocation program invocation, avoiding debug jemalloc touching enormous freed blocks in a virtual-allocation regression.",
+    "all_64_original_allocation_sizes_calls_and_sanitizer_options_preserved": true,
+    "skip_or_expectation_annotations_changed": false,
+    "persistent_test_filter_added": false,
+    "temporary_validation_filter": "Posix/huge_malloc[.]c",
+    "selected_case_results": {
+      "asan": "PASS",
+      "msan": "PASS",
+      "ubsan": "PASS",
+      "tsan": "UNSUPPORTED by unchanged original annotation"
+    },
+    "upstream_header_entries": 87563,
+    "upstream_final_discovered_entries_after_postprocessing": 86020,
+    "excluded_entries_in_this_explicitly_scoped_validation": 86016,
+    "excluded_entries_not_claimed_as_executed": true,
+    "make_target": "Original do-test/check-all; avoid earning a complete-suite meta-target cookie from filtered execution.",
+    "source_integration_scope": "Only this fixture is overlaid on retained R22 warm source under frozen ports19. Additional R24 API/runtime patches remain separately cold-qualified and are not yet integrated into this warm generation.",
+    "all_final_SDK140_rawdb_source_except_declared_fixture_ports_registry_base_mount_data_guards_pass": true,
+    "full_test_completion_cookies_unchanged": true,
+    "root_LLVM_package_installed": false,
+    "json_report": {
+      "bytes": 14306,
+      "sha256": "b8e69d13180faa75786e4c6257f9c9503ad99b956339b1df056734ddac492c7c"
+    },
+    "xunit_report": {
+      "bytes": 14186213,
+      "sha256": "87767aa382476e3ca7bb4d1fa918e1894bff118cdf1a820339f3bacf2d2f1e8c"
+    },
+    "fresh_full_package_or_release_acceptance": false
   }
 }
