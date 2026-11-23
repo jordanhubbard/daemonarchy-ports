@@ -80,16 +80,22 @@ python3 Tools/daemonarchy/native-probes/test-brcmfmac-nvram.py \
     /path/to/patched/src/pcie.c --output /path/to/parser-result.json
 ```
 
-Fresh native FreeBSD arm64 checksum/patch, build, stage, plist, stage-QA and
-package targets pass for revision 5, including the parser regression against
-the actual ports-patched source. Source, kernel capsule and observed host
+Fresh native FreeBSD arm64 and amd64 checksum/patch, build, stage, plist,
+stage-QA and package targets pass for revision 5, including the parser
+regression against the actual ports-patched source. Source, kernel capsule and observed host
 before/after guards pass. The ports `test` target still declares no upstream
-suite. A fresh disposable ARM64 VM installs the resulting package with its
-original scripts, verifies all five payloads and package checksums, and passes
+suite. Fresh disposable ARM64 and amd64 VMs install the resulting packages
+with their original scripts, verify all five payloads and package checksums, and pass
 two installed-driver load/unload cycles across deletion and reinstallation.
-Both PCIe and SDIO frontends register; module and interface state is restored.
+Both PCIe and SDIO frontends register. On arm64 module and interface state is
+restored without reboot. On amd64 the base SDIO module again refuses normal
+unload with `EOPNOTSUPP`; an actual reboot of the same private disk restores
+baseline modules and verifies that the deleted package's registry and all
+five payloads are absent. Both owned amd64 QEMU process exits are observed;
+the immutable backing is unchanged. No forced unload is used.
 
-This uses the same retained F4 GENERIC-MMCCAM development kernel as revision
-4, not the final CURRENT release kernel. These parser and idle-module checks
-do not establish firmware loading or radio operation. The physical Pi test
+These use the same retained F4 arm64 GENERIC-MMCCAM and amd64 GENERIC
+development kernels as revision 4, not the final CURRENT release kernels.
+These parser and idle-module checks do not establish firmware loading or
+radio operation. The physical Pi test
 image remains unchanged and does not include this revision 5 package.
