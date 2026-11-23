@@ -483,12 +483,6 @@ PLIST_SUB+=	${opt}="@comment "
 .endfor
 
 post-patch:
-	${REINPLACE_CMD} -e 's|import lit|import lit${LLVM_SUFFIX}|' \
-	    -e 's|from lit|from lit${LLVM_SUFFIX}|' \
-	    -e 's|lit\.|lit${LLVM_SUFFIX}.|g' \
-	    ${WRKSRC}/llvm/utils/lit/lit.py \
-	    ${WRKSRC}/llvm/utils/lit/lit/*.py \
-	    ${WRKSRC}/llvm/utils/lit/lit/formats/*.py
 	${REINPLACE_CMD} -e 's,/usr/local/,${LOCALBASE}/,' \
 	    ${WRKSRC}/llvm/CMakeLists.txt
 
@@ -572,15 +566,13 @@ post-install-FLANG-on:
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/Optimizer/CMakeFiles
 	${RMDIR} ${STAGEDIR}${LLVM_PREFIX}/include/flang/CMakeFiles
 
+_LIT_NAMESPACE_ARGS=	-e 's|import lit|import lit${LLVM_SUFFIX}|' \
+			-e 's|from lit|from lit${LLVM_SUFFIX}|' \
+			-e 's|lit\.|lit${LLVM_SUFFIX}.|g'
+
 post-install-LIT-on:
 	${INSTALL_SCRIPT} ${PATCH_WRKSRC}/llvm/utils/lit/lit.py \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/lit
-	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
-	    ${STAGEDIR}${LLVM_PREFIX}/bin/llvm-lit
-	${LN} -fs ../${LLVM_DIR}/bin/lit \
-	    ${STAGEDIR}${PREFIX}/bin/lit${LLVM_SUFFIX}
-	${LN} -fs ../${LLVM_DIR}/bin/llvm-lit \
-	    ${STAGEDIR}${PREFIX}/bin/llvm-lit${LLVM_SUFFIX}
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/builtin_commands
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/formats
@@ -590,6 +582,17 @@ post-install-LIT-on:
 	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/builtin_commands/
 	${INSTALL_DATA} ${WRKSRC}/llvm/utils/lit/lit/formats/*.py \
 	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/formats/
+	# Keep build-tree imports upstream-compatible; namespace installed copies.
+	${SED} -i '' ${_LIT_NAMESPACE_ARGS} \
+	    ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
+	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/*.py \
+	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/formats/*.py
+	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
+	    ${STAGEDIR}${LLVM_PREFIX}/bin/llvm-lit
+	${LN} -fs ../${LLVM_DIR}/bin/lit \
+	    ${STAGEDIR}${PREFIX}/bin/lit${LLVM_SUFFIX}
+	${LN} -fs ../${LLVM_DIR}/bin/llvm-lit \
+	    ${STAGEDIR}${PREFIX}/bin/llvm-lit${LLVM_SUFFIX}
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/bin/FileCheck \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/
 	${LN} -fs ../${LLVM_DIR}/bin/FileCheck \

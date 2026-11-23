@@ -36,9 +36,29 @@ Clang running as UID 65534 while building upstream test programs. The private
 worker's four root-owned work ancestors were explicitly made searchable for
 that test user; their original permissions are recorded separately.
 
-This is an initial execution observation, not a completed test-suite result.
-Full case discovery, per-project outcomes, explicit skip reasons and final
-source/dependency/data guards remain to be reviewed. Independent installed
-compiler consumers, final CURRENT integration, complete toolchain provenance,
-canonical Component/SDK/lifecycle admission and full 1.6 release acceptance
-remain open. Raw worker evidence stays private.
+That execution completed 1,663 preparatory build actions, then failed before
+case discovery: generated build-tree LIT imports `lit`, but the original port
+rewrites source imports to the installed `lit19` namespace. All final source,
+dependency, registry, base, mount and stopped-data guards passed. The complete
+second failure source, work, stage and test products are retained and independently
+verified on both physical filesystems (435,967 nodes).
+
+The additional fix keeps source imports upstream-compatible and applies the
+same existing namespace substitutions to installed copies. The `lit`/`llvm-lit`
+hardlink is created after rewriting; sed leaves no backup files in the package.
+Fresh original checksum and patch targets pass. Running the original LIT install
+hook on a separate complete stage copy reproduces all 12,340 original stage
+entries, including bytes, modes, owners, flags, symlinks and hardlink groups.
+The original stage is unchanged, and both raw-source and namespaced staged
+LIT version commands exit zero without installing the root LLVM package.
+An initial probe's three symlink modes differed because its umask differed;
+that failure is retained, and a fresh probe with the original producer umask
+passes all unchanged assertions.
+
+The full original test target with both fixes remains pending. These checks
+establish neither upstream test success nor a fresh full package build with
+the changed recipe. Full case discovery, per-project outcomes and explicit
+skip reasons remain open. Independent installed compiler consumers, final
+CURRENT integration, complete toolchain provenance, canonical Component/SDK/
+lifecycle admission and full 1.6 release acceptance remain open. Raw worker
+evidence stays private.

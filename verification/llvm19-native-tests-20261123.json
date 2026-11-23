@@ -1,9 +1,8 @@
 {
   "schema": "daemonarchy/llvm19-native-test-development-evidence@1",
-  "status": "original-target-failure-reproduced-corrected-target-initial-execution",
+  "status": "second-original-target-failure-retained-native-stage-namespace-fix-validated-full-tests-pending",
   "port": "devel/llvm19",
   "original_makefile_sha256": "d43b3578b552dc5b393e81ea48e1bba8fbeede5fc9061414fdb825d2c436b721",
-  "candidate_makefile_sha256": "98d231377328a8e16d374669a1b6d6b5661d6ab99744a26ce5194e31468d1548",
   "original_llvm_source_archive": {
     "name": "llvm-project-19.1.7.src.tar.xz",
     "bytes": 141249332,
@@ -13,7 +12,11 @@
     "name": "llvm19-19.1.7_5.pkg",
     "bytes": 281434647,
     "sha256": "f616dac3bb641eb6de511edcb25bda2d2f8cb5b6f96a102c8d2720a2062587ff",
-    "original_checksum_package_and_check_plist_exit": [0, 0, 0],
+    "original_checksum_package_and_check_plist_exit": [
+      0,
+      0,
+      0
+    ],
     "root_package_installed_in_worker": false
   },
   "original_test": {
@@ -36,8 +39,12 @@
     "original_frozen_ports_view_retained_unchanged": true,
     "candidate_full_ports_view_files_verified": 184142,
     "test_filter_added": false,
-    "upstream_test_programs_building": true,
-    "complete_suite_result_recorded": false
+    "upstream_test_programs_building": false,
+    "complete_suite_result_recorded": false,
+    "terminal_exit": 1,
+    "completed_preparatory_build_actions": 1663,
+    "failure": "Build-tree LIT imports upstream lit, but original post-patch rewrites source imports to installed lit19 namespace; ModuleNotFoundError before test case discovery",
+    "final_source_dependency_registry_base_mount_and_stopped_data_guards_passed": true
   },
   "retention": {
     "complete_baseline_archive_bytes": 6203574065,
@@ -54,16 +61,37 @@
     "additive_failure_inventory_sha256": "87a61a7051c7d3d08e284ad4841c5af00dffe1baee56d3c1dec1bd0681fc8589",
     "additive_failure_nodes_checked_on_both_physical_filesystems": 10,
     "baseline_and_additive_archives_both_required": true,
-    "raw_evidence": "Retained privately, not published"
+    "raw_evidence": "Retained privately, not published",
+    "second_failure_source_work_stage_test_products_archive_bytes": 2637445244,
+    "second_failure_source_work_stage_test_products_archive_sha256": "1a888fea49fb2d6adaec2e8682221e1607fdc26e59196d4a5631302ecf553ab2",
+    "second_failure_inventory_sha256": "94d03bd37b4a853400a2df331d6c2eabab788d1d11ba9e3e3a87b3a4a697bd4f",
+    "second_failure_nodes_checked_on_both_physical_filesystems": 435967
   },
   "remaining": [
     "Full upstream case discovery, per-project results and skip reasons",
-    "Final corrected-target source, prefix, registry, base and stopped-data guards",
+    "Final namespace-corrected original-target results and all source/dependency/runtime guards",
     "Independent installed compiler consumers and native arm64 coverage",
     "Final CURRENT source and dependency integration",
     "Complete original toolchain provenance and canonical Component/SDK/lifecycle admission",
     "Product release qualification and signed 1.6 acceptance"
   ],
   "canonical_lifecycle_receipt_earned": false,
-  "release_acceptance": false
+  "release_acceptance": false,
+  "first_test_target_candidate_makefile_sha256": "98d231377328a8e16d374669a1b6d6b5661d6ab99744a26ce5194e31468d1548",
+  "candidate_makefile_sha256": "7f97b6ec00e81f57e848f12e4038cb839fcad9b55792331370e9b28d2a16d31f",
+  "lit_namespace_fix": {
+    "behavior": "Leave original source LIT imports unversioned and apply the same three existing namespace substitutions only to installed copies before creating the lit/llvm-lit hardlink.",
+    "fresh_original_checksum_patch_exit": 0,
+    "isolated_original_post_install_LIT_hook_exit": 0,
+    "complete_staged_nodes_compared": 12340,
+    "all_stage_bytes_modes_owners_flags_symlinks_and_hardlink_groups_identical": true,
+    "original_stage_unchanged": true,
+    "backup_files_added": false,
+    "raw_source_and_namespaced_staged_cli_version_exit": [
+      0,
+      0
+    ],
+    "full_upstream_test_result_pending": true,
+    "initial_probe_failure": "Three symlink modes differed because the probe used a different umask; retained failure and reran on a fresh stage with the original producer umask. No product change or assertion relaxation."
+  }
 }
