@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 DISTVERSION=	19.1.7
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION}/
 #MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/
@@ -175,6 +175,7 @@ LLDB_BUILD_DEPENDS=	\
 	${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
 	swig:devel/swig
 LLDB_CMAKE_ON= \
+	-DLua_EXECUTABLE=${LUA_BASE}/bin/${LUA_CMD} \
 	-DLUA_INCLUDE_DIR=${LOCALBASE}/include/lua${LUA_VER_STR} \
 	-DLUA_LIBRARY=${LOCALBASE}/lib/liblua-${LUA_VER}.so \
 	-DCURSES_INCLUDE_PATH=/usr/include \

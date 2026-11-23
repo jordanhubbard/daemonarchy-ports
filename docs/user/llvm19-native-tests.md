@@ -1,5 +1,65 @@
 # LLVM 19 native upstream tests
 
+## Current candidate and qualification boundary
+
+The review candidate is `llvm19-19.1.7_7`. The revision changes because the
+FreeBSD sanitizer and LLDB fixes change production bytes. The native partial
+results below used the private `_6` recipe; a fresh `_7` package and its installed
+consumers remain unqualified. The
+[runtime follow-up record](../../verification/llvm19-native-runtime-followup-20261123.json)
+binds the current candidate's Git file identities and these observations.
+
+LLDB now follows ordered optional ELF `DT_AUXILIARY` providers when resolving
+filter exports. This handles FreeBSD libc's syscall placeholders and libsys
+without removing libc from the debugger's module list. The original selected
+target still exits 1: its 1,761 report entries contain 1,223 PASS, 15 FAIL,
+4 UNRESOLVED, 27 XFAIL and 492 UNSUPPORTED. All 1,734 shared names from the
+preceding selection remain; 161 FAIL entries become PASS. Its one new
+PASS-to-FAIL result is the event test discussed below. The new ELF regression,
+fourteen selected original TSan scripts and twelve original MSan dlopen/poison
+controls pass. Exact optional `_pthread_` spellings retain the original warning,
+stack and negative assertions. Failed dlopen handles are checked before native
+linker-map inspection.
+
+FreeBSD Capsicum interception now uses the actual versioned and variadic rights
+interfaces. It preserves native validation and short-circuit behavior, checks
+inputs to merge/remove operations, and marks only output slots actually written
+by `cap_ioctls_get`, preserving its error and `CAP_IOCTLS_ALL` behavior. The
+original Capsicum test has a three-slot output buffer matching its requested
+capacity. Both original default/named builds pass. Original selected do-test
+then exits 0 with 17 PASS and three explicit non-MSan UNSUPPORTED variants of
+the new MSan-only regression. All four original Capsicum variants pass, as do
+the new rights/ioctl shadow checks and retained dlopen/poison controls.
+
+The event failure is reproduced with the original four test methods and logged
+to a stdout notification carrying a cached stopped state. The helper counted
+that notification as another stop hook before consuming the next state-change
+event. It now matches every primary/shadow notification while counting and
+returning only actual state-change events. Every original assertion, timeout
+and original test-method body remains. A deterministic data-bearing notification
+regression fails against the original helper; the corrected helper passes all
+four original methods and the new regression. Earlier failed injection fixtures
+and their required-parent gate failures remain recorded. Compiler, debugger,
+SDK, source, base and registry guards pass.
+
+The recipe also supplies the ports framework's selected Lua executable:
+upstream searches `lua5.3`, while the existing FreeBSD dependency supplies
+`lua53`. Selecting the observed interpreter allows the original breakpoint and
+comprehensive Lua scripts to finish, then exposes SIGSEGV in
+`TestFileHandle.lua`, starting in `TestLegacyFileErr`. The original Lua API case
+remains failed, and its process script is not reached.
+
+Fresh original checksum/full patch passes with zero fuzz for the combined
+candidate. Complete comparison of all 160,706 fresh source nodes against the
+sealed fresh baseline permits only the changed event test and its exact
+original backup. Every other body, type, owner, mode, flag and literal link
+matches. Default options, dependencies, jobs and test settings are preserved.
+These source and selected-runtime checks do not qualify the complete original
+suite, new configure/package/installed consumers, ARM platforms or the release.
+The completed full R74 failure and all remaining defects retain their status.
+
+## Retained native history
+
 The original `devel/llvm19` test recipe references `${WRKSRC}/test`,
 `${WRKSRC}/Release/lib` and `check-local-lit`. With the current monorepo
 release and out-of-source CMake build, native `make test` exits at the

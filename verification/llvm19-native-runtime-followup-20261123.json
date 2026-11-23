@@ -1,0 +1,534 @@
+{
+  "schema_version": 1,
+  "kind": "native-progress-observations",
+  "status": "partial-full-qualification-open",
+  "origin": "devel/llvm19",
+  "review_base_commit": "54ca58533362bc32da68383503a9f4e700e7a30d",
+  "candidate": {
+    "pkgname": "llvm19-19.1.7_7",
+    "PORTREVISION": 7,
+    "new_package_published": false,
+    "changed_recipe_package_qualified": false,
+    "origin_git_representable_files": {
+      "pkg-descr": {
+        "kind": "file",
+        "sha256": "8015180e9fc7f49f50d42fe6497c07a025d3a965e1744adeabea86629a270ab5",
+        "git_mode": "100644"
+      },
+      "Makefile": {
+        "kind": "file",
+        "sha256": "f05bd1776c8570e3b4af1323bd05933d6b3d738d4510600ed6610c0d3f8ce3ef",
+        "git_mode": "100644"
+      },
+      "pkg-plist": {
+        "kind": "file",
+        "sha256": "56af1b70f340bcb1ee828e5046386fb339e203857fddbdf12a99f45fd73258d8",
+        "git_mode": "100644"
+      },
+      "Makefile.MAN1SRCS": {
+        "kind": "file",
+        "sha256": "c0a1073dd38aea0aae3404466fdb12fb160c369e23c5f23a0a4b202c3458eb2b",
+        "git_mode": "100644"
+      },
+      "distinfo": {
+        "kind": "file",
+        "sha256": "a07b870149986db320738778bf7d962a901055152a2fc351dc2bfb3b755fc93b",
+        "git_mode": "100644"
+      },
+      "Makefile.RUNTIMES": {
+        "kind": "file",
+        "sha256": "2900f85a3a55ef78fbd5609eb2ad3b190f3a4d8063e8d4e891f28512e5caaf1f",
+        "git_mode": "100644"
+      },
+      "Makefile.COMMANDS": {
+        "kind": "file",
+        "sha256": "0568760c099d4e9422d8775effd3856c1e9847d327731c05a8930d1772b2887f",
+        "git_mode": "100644"
+      },
+      "files/patch-openmp_runtime_test_ompt_loadtool_tool__available__search_tool__available__search.c": {
+        "kind": "file",
+        "sha256": "9b728850351f01ab9ffbb6eac09c43d639e1ffc0e87810a708f9b9cb3c73588f",
+        "git_mode": "100644"
+      },
+      "files/patch-backport-3b10e31d3a4a": {
+        "kind": "file",
+        "sha256": "2c117d777dc955dfbaeb5e10cdb1facc64262de7591d55786e77ab59be9ca8ca",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_lib_Interpreter_Interpreter.cpp": {
+        "kind": "file",
+        "sha256": "da35cdd92642fd73a01aa0ce829e7f5d5581a936e79026ab591e8eddccb7eca9",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_ObjectFile_ELF_ObjectFileELF.h": {
+        "kind": "file",
+        "sha256": "3094741d73ad7e7fa17a448eb8db195457c9d2f00573b8941afa2db2813902f3",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_msan_procctl.cpp": {
+        "kind": "file",
+        "sha256": "afe11c0143bf5169722880dca713e1c49755e0f40c34fa8972257c65f1582578",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_lib_sanitizer__common_sanitizer__linux__libcdep.cpp": {
+        "kind": "file",
+        "sha256": "2d84e5042a1775e0f9ba9a9a270a6845398165cfaed6f35d82d45933df42bdf0",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_lib_sanitizer__common_sanitizer__platform__limits__freebsd.h": {
+        "kind": "file",
+        "sha256": "978d90573b05d5a2a5e4f5ae2923f998d02220ba6909ba8c4281a60a3580baca",
+        "git_mode": "100644"
+      },
+      "files/patch-mlir_unittests_Target_LLVM_CMakeLists.txt": {
+        "kind": "file",
+        "sha256": "a4f2c350d09e02dfe06db3b5f55f7295ed7fe884a913ac88d74ef4842da8641b",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_include_lldb_Symbol_ObjectFile.h": {
+        "kind": "file",
+        "sha256": "643f264f2d514c3a8d49e7ac2c3022f968006f8851b8ff0015cb2af773e24ec2",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_lib_sanitizer__common_sanitizer__platform__limits__freebsd.cpp": {
+        "kind": "file",
+        "sha256": "a98174efa94902e1de2441491ff094924556535544ba4765cb84e4f8d6de4aa5",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutex__lock__destroyed.cpp": {
+        "kind": "file",
+        "sha256": "47a2aec5b1d8ab3d496589e771bb10c8dce5221b764b34cb04cba2b2ec95f5cd",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_ObjectFile_ELF_ObjectFileELF.cpp": {
+        "kind": "file",
+        "sha256": "952f2d2fd518cbaa3883b1bf989e59affaa09015c92b20c172cfcd95cfe6ee66",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutexset7.cpp": {
+        "kind": "file",
+        "sha256": "aa32d0e59fe506dbbda4ac625831b5a7837bac40dc4291aebb9367e301e2e033",
+        "git_mode": "100644"
+      },
+      "files/patch-openmp_runtime_test_ompt_loadtool_tool__available__search_lit.local.cfg": {
+        "kind": "file",
+        "sha256": "63f3c7ce9734f90f6465cda55ef0c7ddcb194bee0fd7d30c1c90b1cd4a140951",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutexset8.cpp": {
+        "kind": "file",
+        "sha256": "072219bb699561f7c02a96c8b9b23e9a82f8f630178c44918745f1fedd8e7dc0",
+        "git_mode": "100644"
+      },
+      "files/patch-cmake_modules_AddSphinxTarget.cmake": {
+        "kind": "file",
+        "sha256": "3653d036865d677f12de4dc2583fcfc70e218fabda8b7ab9974da86c73197f00",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Core_ModuleList.cpp": {
+        "kind": "file",
+        "sha256": "696c36f9813e759fdf89d52550eccffd6a679fc1f6fab58a5ebd83768abd0ef1",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_cmake_Modules_AddCompilerRT.cmake": {
+        "kind": "file",
+        "sha256": "3b13cb36b64e7a73e5c3b70faf71f6179d99d51a90d89efbae3f4648402047d7",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_sanitizer__common_TestCases_FreeBSD_capsicum-msan.cpp": {
+        "kind": "file",
+        "sha256": "a2311d32fc54259a0481406e212f1c6f269bc5e48525e8cf669e4c04944e2ff1",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_lib_tsan_tests_CMakeLists.txt": {
+        "kind": "file",
+        "sha256": "33da48312cbbaf95262f135fcfaf85b6cb5a759e7129317b64a37f4a323faf3b",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_tools_clang-format_clang-format.py": {
+        "kind": "file",
+        "sha256": "9dd867da0eb44250d2d4c44a37aeda9d790d7c92ffb1fd8aaaaf4d4f47442505",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_cfi_cross-dso_shadow__is__read__only.cpp": {
+        "kind": "file",
+        "sha256": "bf3304c8c8821a95217da78fce95abca63259d7475a1dc111640700d1bea9cc6",
+        "git_mode": "100644"
+      },
+      "files/patch-llvm_tools_CMakeLists.txt": {
+        "kind": "file",
+        "sha256": "89d99708f7555d6f65a189f7fefdf274521057fe8d2345415347bba2be806800",
+        "git_mode": "100644"
+      },
+      "files/patch-revert-6d7e428df611": {
+        "kind": "file",
+        "sha256": "f0a60f4244734494ee07c08c8c3609473b6e76a05482db729f876eb557758cb9",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutex__destroy__locked2.cpp": {
+        "kind": "file",
+        "sha256": "e2342311105951aafeb2336aaaae1ba707a8bb4a4dac80676f76e626f63b12f7",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_API_tools_lldb-dap_attach_TestDAP__attachByPortNum.py": {
+        "kind": "file",
+        "sha256": "20de91aeff638d446c783d582fe51ece7e5c79511df95d7029871243eaf4b374",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutexset4.cpp": {
+        "kind": "file",
+        "sha256": "31c9fd98b5090976a1c1b7497d33d878f84898b48ae6d3a2c54ea39b42ce30ca",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_sanitizer__common_TestCases_Posix_huge_malloc.c": {
+        "kind": "file",
+        "sha256": "39624d6f5ee0d12ca0e4966404003280da6c9ffc1620006cbce190b7bce1f9ea",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_lib_Driver_ToolChain.cpp": {
+        "kind": "file",
+        "sha256": "9d7fb2bfa5ad734c93365d533b4cbb84a38c1936d1c7c7f19f7378381fa091a2",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_longjmp4.cpp": {
+        "kind": "file",
+        "sha256": "3ce25730aafabbf33296ab723fc22040912023e67f11cdc587ad1def4ad84e6d",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_sanitizer__common_TestCases_FreeBSD_procctl.cpp": {
+        "kind": "file",
+        "sha256": "25034f9c5153874d943fd51ca008fcf46c4b595fa02044c70ebb3dae7f02d1fb",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutexset3.cpp": {
+        "kind": "file",
+        "sha256": "965b183f01c6d2c8a1d9d5bfd6aec68081bfe9abf7b636b9e0ceae2583145730",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutexset1.cpp": {
+        "kind": "file",
+        "sha256": "618de2dfdc2330b202e12fbdb1f623571d27f11fc137224adaa0d2e44626b932",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_lib_tsan_rtl_tsan__interceptors__posix.cpp": {
+        "kind": "file",
+        "sha256": "8da0011467d1b1a919b555eb3da887d67525c9134a9aa7b7b7bb026eacf89114",
+        "git_mode": "100644"
+      },
+      "files/patch-flang_runtime_Float128Math_math-entries.h": {
+        "kind": "file",
+        "sha256": "43de4047d74712a53556807defc44b3c25af7bc822b68d1927ba6cbc3eba4b4e",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_sanitizer__common_TestCases_FreeBSD_capsicum.cpp": {
+        "kind": "file",
+        "sha256": "0aa3ef24b5466517865533d8756cf7ddd10c3e35b1733104dc59a002a6624611",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_API_lit.cfg.py": {
+        "kind": "file",
+        "sha256": "6aa16db4ed5124481a3705507b2ef5d136ea611f34906428b80e3f36ea788afb",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_lib_sanitizer__common_sanitizer__common__interceptors.inc": {
+        "kind": "file",
+        "sha256": "dbe93f0f48996c7d83ea4548b651649e2b4a1cbdaa278f939c9351a275d001eb",
+        "git_mode": "100644"
+      },
+      "files/libc++21-flang_runtime_io-api-minimal.cpp": {
+        "kind": "file",
+        "sha256": "e1d130c0f54915c9851dbbf4f90154dc49316c6053f832252a3ff6183490c2fe",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_lib_Basic_Targets_PPC.h": {
+        "kind": "file",
+        "sha256": "bde111331984db64c139869acd3b7e3e53e556ccadbba6c44799f2f9652a01f7",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_packages_Python_lldbsuite_test_tools_lldb-dap_lldbdap__testcase.py": {
+        "kind": "file",
+        "sha256": "7da587e77436fcf1c63d849ccaa79f2cb90c86aa5c78bb409eab2df45cae7540",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_lib_Driver_ToolChains_FreeBSD.cpp": {
+        "kind": "file",
+        "sha256": "2036cfe799d9dd848669c974bb5e5a823411b6caabb0fba298ed0f500ff8f721",
+        "git_mode": "100644"
+      },
+      "files/patch-llvm_unittests_Support_CMakeLists.txt": {
+        "kind": "file",
+        "sha256": "570ae7380bc315ef336e38a10ffda01501612ab985b8f7df616908d4ada4c471",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_longjmp3.cpp": {
+        "kind": "file",
+        "sha256": "2041765ca6c1859b3a4c1d8bc60e1ece9e578a929e42458cd048de0f09e6b1f4",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_Shell_lit.cfg.py": {
+        "kind": "file",
+        "sha256": "6147d18d6d4ea45f105b87eed5f1604b56335d67f1bb17e4de05922423a21bef",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_lib_profile_InstrProfilingPlatformLinux.c": {
+        "kind": "file",
+        "sha256": "893b98fd180ad7678fe2e812734185925e8eeeaff60ff67ea380ec2632a62099",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_freebsd-pthread-private-allocator.cpp": {
+        "kind": "file",
+        "sha256": "56a6d56c8e79ba768b24125b6414dca913ed8b82bd2285bba8e758f78a6ba7a4",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutexset2.cpp": {
+        "kind": "file",
+        "sha256": "876be0990242c9dc9da4653ff131554e8d562ed21ab9b557fc1d59182e5acfa8",
+        "git_mode": "100644"
+      },
+      "files/patch-fopenmp.diff": {
+        "kind": "file",
+        "sha256": "7d65cc0feedce7b2e5f9122edafdbcddff60d1e0eb17f96c7a29d1bf80821b4b",
+        "git_mode": "100644"
+      },
+      "files/llvm-wrapper.sh.in": {
+        "kind": "file",
+        "sha256": "18c5b1162c04e24a3509ecd722d341029f3ee26d6d35d4bfb6d4812c97737378",
+        "git_mode": "100644"
+      },
+      "files/xtoolchain.mk.in": {
+        "kind": "file",
+        "sha256": "f9258f96b4b40f3d4c11a7c52cbda077073338f99eb3133635d58329f78aa4c6",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_asan_TestCases_interception__failure__test.cpp": {
+        "kind": "file",
+        "sha256": "b7b62ea6b939c0a2952c03780eaa13cb4880605ea2696904cffefbcb10111ede",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_deadlock__detector__stress__test.cpp": {
+        "kind": "file",
+        "sha256": "c1f73d1060cac9d58819c00836737ad36ff7935e783aa144b1a76c8fd54a0561",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_sanitizer__common_TestCases_Posix_posix_spawn.c": {
+        "kind": "file",
+        "sha256": "11eda552233f4f85923b80b374529e8903e8dacd0b1aa67814cbf72b248027df",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_race__on__mutex.c": {
+        "kind": "file",
+        "sha256": "9b6863c744204ceb4d9a140e809a18ab9c41143dc511a9df4837a5dc43913c08",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutexset5.cpp": {
+        "kind": "file",
+        "sha256": "da7e66eddd1c02872a950732bb1fd0caaa016ab962e359b2ad93eb841da96e4b",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_lib_sanitizer__common_sanitizer__procmaps__bsd.cpp": {
+        "kind": "file",
+        "sha256": "75d46bb8c2f4602853076677b07c060d7e4dd13b6435508065fdbf1411ddf683",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_CMakeLists.txt": {
+        "kind": "file",
+        "sha256": "9e02acc1cc04996ab4fe26fde606a534d512ae9d7eebb03b2cd666fc5172f301",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_lib_CodeGen_CGBuiltin.cpp": {
+        "kind": "file",
+        "sha256": "b8f8e244646c2d248c95beab2f85f8c3886aa4f9469e94c888191f27445e70b7",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutex__destroy__locked.cpp": {
+        "kind": "file",
+        "sha256": "078d365cbc232a69fd59dd11ebd5db913f92a1b582d21ca080bdf921d947c1e5",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_API_python__api_event_TestEvents.py": {
+        "kind": "file",
+        "sha256": "8b5326dcd6d7308db01d5f2fcd8e233a845843c29071413a3a55ea37b54a50b8",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_msan_dtls__test.c": {
+        "kind": "file",
+        "sha256": "5a6a627f641a53d821660a1474a31f3ceb70a107b974612f61f98ee8284265f0",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_Shell_ObjectFile_ELF_auxiliary-lookup.test": {
+        "kind": "file",
+        "sha256": "aeff9edd04cfb934dde976f789fe057d4041948ce1f5e50e7ad324807d13d990",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_tools_clang-format_git-clang-format": {
+        "kind": "file",
+        "sha256": "86c1048775129a50d1c0492a55b9cc7bbab47b71b0070f9395dc10523cda1f60",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_test_Driver_freebsd-shared-asan.c": {
+        "kind": "file",
+        "sha256": "f3d25790589f08a6a21775b429ed18849ce3b6bba5bd582df64b0c92aa66f8a4",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_tools_clang-format_clang-format-sublime.py": {
+        "kind": "file",
+        "sha256": "a173ac8beddfb54eee2502c9825722f997374dc190e4d2b91806594d52901bca",
+        "git_mode": "100644"
+      }
+    },
+    "identity_scope": "File bodies, types, literal links and Git executable modes match the native R268 origin, apart from the declared PORTREVISION6to7 bump. Native full read/write permission differences remain explicitly recorded in private manifests; Git identity is not full filesystem metadata equality."
+  },
+  "native_boundary": {
+    "platform": "FreeBSD16.0-amd64",
+    "observed_dependency_packages": 140,
+    "native_recipe_pkgname": "llvm19-19.1.7_6",
+    "root_llvm_package_installed": false,
+    "make_jobs": 4,
+    "full_original_options_and_dependencies_preserved": true,
+    "canonical_Component_or_SDK_admission": false,
+    "lifecycle_receipt": false,
+    "complete_toolchain_provenance_admitted": false
+  },
+  "default_build": {
+    "producer": "R222",
+    "original_default_and_named_unit_build_exits": [
+      0,
+      0
+    ],
+    "all_final_integrity_guards_pass": true,
+    "source_inventory_sha256": "d2640b04e0fcb8405851784a5a7de4cb54ac9a33fb30335d2d259ca3820bd68f"
+  },
+  "ELF_auxiliary_TSan_and_dlopen_selected_target": {
+    "producer": "R164",
+    "original_make_exit": 1,
+    "entries": 1761,
+    "counts": {
+      "UNRESOLVED": 4,
+      "FAIL": 15,
+      "PASS": 1223,
+      "XFAIL": 27,
+      "UNSUPPORTED": 492
+    },
+    "FAIL_to_PASS": 161,
+    "PASS_to_FAIL": 1,
+    "new_failure": "lldb-api :: python_api/event/TestEvents.py",
+    "new_ELF_auxiliary_lookup_regression": "PASS",
+    "all_fourteen_selected_TSan_originals_including_neighbor": "PASS",
+    "original_MSan_dlerror_and_dlopen_executable_controls": "PASS",
+    "full_original_Lldb_name_set_preserved": true,
+    "all_final_integrity_guards_pass": true,
+    "json_report_sha256": "510d92879c35e166c42c4430e2207ccf7e339c7336128710867b898456406955",
+    "shared_names_with_R100": 1734
+  },
+  "Capsicum_selected_original_target": {
+    "producer": "R228",
+    "original_make_exit": 0,
+    "counts": {
+      "PASS": 17,
+      "UNSUPPORTED": 3
+    },
+    "all_four_original_Capsicum_names": "PASS",
+    "new_MSan_regression": "PASS",
+    "new_non_MSan_variants": "UNSUPPORTED: Missing required feature(s): msan",
+    "json_report_sha256": "55533f757d330bfedbf085a31e3a8943e1af340637577f998d5bf0618caf3e4b",
+    "xunit_report_sha256": "91f6192b035ff24c571bb042fbdafed76a947a950d85f132e818e55dc821c0c0",
+    "xunit_filter_exclusions_not_executed": 86008,
+    "all_final_integrity_guards_pass": true
+  },
+  "shadow_listener_regression": {
+    "producer_original": "R241",
+    "original_methods": "3PASS1FAIL",
+    "original_failure": "stdout notification with stopped payload counted as a stop-hook event; actual state-change event had not yet been consumed",
+    "producer_negative": "R265",
+    "negative_original_helper_exit": 1,
+    "required_negative_assertion_observed": true,
+    "producer_positive": "R266",
+    "positive_corrected_helper_exit": 0,
+    "PASS_methods": [
+      "test_add_listener_to_broadcaster",
+      "test_listen_for_and_print_event",
+      "test_shadow_listener",
+      "test_shadow_listener_ignores_stdout",
+      "test_wait_for_event"
+    ],
+    "all_four_original_method_ASTs_preserved": true,
+    "all_original_helper_assertion_ASTs_and_timeout_values_preserved": true,
+    "new_regression_AST_identical_between_negative_and_positive": true,
+    "compiler_debugger_SDK_base_registry_mount_source_and_cookie_guards_pass": true,
+    "positive_source_sha256": "97f1ad9cb107395a012a544faefa0ec355fb6c58779cdde7ade2f74116c6cd13",
+    "positive_source_inventory_sha256": "5b0c82bac54df0000301f3d755c4eaf0ccbf3a5a712f2577127912f3c5d1b984",
+    "earlier_failed_fixtures_and_parent_gates_retained": true,
+    "normal_ports_target_after_correction_qualified": false
+  },
+  "Lua_executable_and_remaining_failure": {
+    "producer": "R267",
+    "original_unresolved_input": "Lua_EXECUTABLE-NOTFOUND; upstream searches lua5.3 while existing FreeBSD dependency provides lua53",
+    "candidate_CMake_binding": "-DLua_EXECUTABLE=${LUA_BASE}/bin/${LUA_CMD}",
+    "observed_interpreter_sha256": "8966f5b8417c67829a26b2d68ecd0d643c9d2b877383db246374b8747269d618",
+    "original_Lua_API_case": "FAIL",
+    "completed_original_scripts": [
+      "TestBreakpointAPI.lua",
+      "TestComprehensive.lua"
+    ],
+    "crashed_original_script": "TestFileHandle.lua",
+    "crashed_group_first_case": "TestLegacyFileErr",
+    "Lua_subprocess_returncode": -11,
+    "not_reached": [
+      "TestProcessAPI.lua"
+    ],
+    "all_final_integrity_guards_pass": true,
+    "no_complete_Lua_API_success_claimed": true
+  },
+  "fresh_original_patch": {
+    "producer": "R268",
+    "original_checksum_patch_exits": [
+      0,
+      0
+    ],
+    "zero_fuzz": true,
+    "complete_fresh_source_nodes": 160706,
+    "complete_fresh_source_inventory_sha256": "6db3bfe2c537f55b2e2b885c0bb0fc97946f450f03bea231db5919f8986cd20d",
+    "reference_fresh_source_nodes": 160705,
+    "only_source_changes": [
+      "lldb/test/API/python_api/event/TestEvents.py",
+      "lldb/test/API/python_api/event/TestEvents.py.orig exact original backup"
+    ],
+    "all_other_body_type_owner_mode_flag_and_literal_link_entries_equal": true,
+    "actual_Lua_binding": "-DLua_EXECUTABLE=/usr/local/bin/lua53",
+    "default_options_dependencies_jobs_and_test_settings_preserved": true,
+    "original_view_and_cold_source_registry_base_mount_guards_pass": true,
+    "new_recipe_configure_build_package_qualified": false
+  },
+  "retained_complete_frontiers": [
+    {
+      "producer": "R194",
+      "scope": "Complete failed R164 selected-test frontier",
+      "nodes": 589230,
+      "archive_sha256": "52db664aa420e8425c1dda112b45c94162a1dad61a7e7a57ee895b2f1ffd687b",
+      "independent_two_physical_host_verification": "PASS"
+    },
+    {
+      "producer": "R216",
+      "scope": "Cold Capsicum source, failed setups and eight original object compiles",
+      "nodes": 393614,
+      "archive_sha256": "315fa1677640e3b7728fcabdfe1e858bd093f1e33b716d7d89ef56d0f6549637",
+      "independent_two_physical_host_verification": "PASS"
+    },
+    {
+      "producer": "R238",
+      "scope": "Complete post-R228 tested build before event-helper correction",
+      "nodes": 589235,
+      "archive_sha256": "c7dc2028c99313559b47d9caa806b3ce03711a503faca82bd8fae8409909c286",
+      "independent_two_physical_host_verification": "PASS"
+    }
+  ],
+  "remaining_gates": [
+    "Full unfiltered original suite after all repairs; retained R74 full run remains failed with249 unexpected entries.",
+    "Remaining LLDB, sanitizer, GNU libatomic, CFI, libFuzzer and OpenMP defects.",
+    "Original normal configure/build/selected target with final revision7 recipe and fresh stage, license/SBOM hooks, check-plist/package and installed compiler consumers.",
+    "Independent sealed-product and disposable VM install/update/reboot/rollback acceptance.",
+    "Matching CURRENT source/toolchain and full ARM platform qualification.",
+    "Canonical per-unit Component/SDK/provenance/lifecycle and complete1.6 release acceptance."
+  ],
+  "raw_native_evidence": "Retained privately; this JSON summarizes observed commands and results and is not a canonical execution receipt."
+}
