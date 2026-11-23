@@ -296,16 +296,75 @@ intended RSS guard was ineffective; this is explicitly corrected in retained
 evidence. The original script naturally exits0. Corrected three-field parsing
 passes a separate native PID/jail/positive-RSS control. No R21 resource peak or
 effective guard coverage is claimed; the earlier R18 measurement is separate.
-The full unfiltered original target is now launched with the revised candidate,
-four workers and upstream JSON/xUnit reports. Complete outcomes remain pending.
+The subsequent full unfiltered original target again ends incomplete with
+original make1/Ninja137. The kernel kills huge_malloc and the LIT driver for
+memory reclaim. The partial log contains38 FAIL and3 XPASS lines; no final
+summary or requested JSON/xUnit reports are written. All final complete source,
+SDK140/rawDB, ports, registry, base, mount and stopped-data guards pass. The
+failed source/work/products and controls are being retained before warm mutation.
 Original testcase assertions and selection remain unchanged; the new driver
 regression is additive.
 
 The next full run must retain upstream JSON and xUnit per-test reports as well
 as complete output, inventories and final guards. LIT JSON omits user-skipped
 entries, so xUnit is retained too. The original test environment whitelist
-does not pass LIT_OPTS to test subprocesses. The new run adds these reporting options;
-the completed failed run retained its original configuration.
+does not pass LIT_OPTS to test subprocesses. The R22 run added these reporting options, but LIT was killed before either
+report was emitted. The older failed run retained its original configuration.
+
+
+Separate API diagnosis leaves that frozen generation unchanged. The original
+FreeBSD procctl assertion compares a signed value against the policy minimum,
+but the [documented status](https://man.freebsd.org/cgi/man.cgi?query=procctl&sektion=2&manpath=FreeBSD+16.0-CURRENT)
+also includes PROC_ASLR_ACTIVE. A native query returns raw0x80000003: valid
+policy3 plus that flag, rejected by the original comparison. The candidate
+masks only the local flag value and checks the exact legal policies. This is
+an explicit portability assertion correction; it does not change ASLR policy.
+Base/ASan/TSan/UBSan isolated candidates pass; MSan still reports uninitialized
+input in its procctl interceptor, so the test correction alone is insufficient.
+
+The original spawn test zero-initializes opaque attribute/action handles and
+passes them without their initialization APIs. FreeBSD documents initialization
+of [attributes](https://raw.githubusercontent.com/freebsd/freebsd-src/main/lib/libc/gen/posix_spawnattr_init.3)
+and [file actions](https://man.freebsd.org/cgi/man.cgi?query=posix_spawn_file_actions_init&sektion=3).
+The corrected source initializes and destroys both, preserves both spawn calls,
+arguments and output checks, and adds waitpid/normal-child-exit assertions.
+All side-effecting API calls remain outside assert. Both unchanged and corrected
+sources are exercised with the base compiler and four original sanitizer flag
+sets. Every original spawn case fails; all five corrected programs and their
+original output checks pass. This strengthens the original test instead of
+skipping it. No expectation annotations, filters or sanitizer suppressions change.
+
+The additional runtime patch correctly models output-only reaper-status and
+standard integer-status queries: do not read the output as input, and mark it
+written only on success. Existing control-input and mixed reaper paths remain.
+A new MSan regression detects the old false read while retaining the warning
+for genuinely uninitialized control input. Failed queries must retain poison.
+Fresh original checksum/patch passes without fuzz. In a separate complete cold
+source tree, original make configure and the selected MSan/CXX-runtime/header
+build both exit0 as nobody with all default component options and normalized
+configuration preserved. This diagnostic uses one low-priority build job while
+the then-running R22 suite kept its original four workers. Cold source, SDK140/rawDB,
+ports, base, registry, mounts and stopped-data guards all pass.
+
+Two diagnostic controller failures remain explicitly retained. An arbitrary
+100KB archive-size minimum rejects the legitimate62KB CXX archive after the
+successful build. A subsequent routing check incorrectly requires that C
+source link the CXX archive. Independent archive-format/object-member and
+native link/consumer checks replace those invalid criteria without rebuilding
+or rewriting either failed result. The new status regression passes with
+origin tracking off and on, failed-query poison checks pass, and uninitialized
+input still gives the expected warning. Both corrected and unchanged original
+common procctl MSan cases exit0 with the new runtime. The already compiled C
+spawn consumer correctly links only the fresh core archive, exits0, and passes
+its original output checks. All bound consumer inputs remain unchanged.
+
+Complete cold source/work/objects, ports, fixtures, controls, logs, compiled
+products and exact copied input bodies are independently verified on both
+physical filesystems: 400,902 nodes, all bodies and literal links, and the
+complete gzip stream. Before/after equality passes. The new API patches are
+not integrated into the failed R22 source. Full tests
+with these changes, rebuilt other sanitizer runtimes, fresh complete packaging,
+installed consumers and lifecycle/release acceptance remain open.
 
 These checks establish neither full upstream suite success nor a fresh full
 package build with the changed recipe. Full case discovery, per-project outcomes and explicit

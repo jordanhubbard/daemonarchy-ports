@@ -1,6 +1,6 @@
 {
   "schema": "daemonarchy/llvm19-native-test-development-evidence@1",
-  "status": "native-original-followup-cases-pass-full-unfiltered-structured-report-run-launched",
+  "status": "additional-API-repairs-cold-qualified-full-R22-incomplete-after-huge-malloc-and-LIT-memory-reclaim-kills",
   "port": "devel/llvm19",
   "original_makefile_sha256": "d43b3578b552dc5b393e81ea48e1bba8fbeede5fc9061414fdb825d2c436b721",
   "original_llvm_source_archive": {
@@ -474,7 +474,7 @@
     }
   },
   "further_FreeBSD_runtime_and_Clang_candidates": {
-    "status": "Revised original ports do-build R20 passes. All eleven R21 targeted executions pass, including both original shared-ASan scripts, new driver regression, complete original sanitizer driver regression, original TSan compile/run script and both default dynamic ASan unit programs. Full unfiltered R22 target launched with JSON/xUnit reporting; complete outcomes and package/lifecycle qualification remain pending.",
+    "status": "Revised original ports do-build R20 passes. All eleven R21 targeted executions pass, including both original shared-ASan scripts, new driver regression, complete original sanitizer driver regression, original TSan compile/run script and both default dynamic ASan unit programs. Full unfiltered R22 ends incomplete with make1/Ninja137 after kernel memory-reclaim kills huge_malloc and LIT. Requested JSON/xUnit reports are absent;38 FAIL and3 XPASS partial lines remain. All final integrity guards pass. Complete outcomes and package/lifecycle qualification remain open.",
     "port_revision": 6,
     "unreleased_revision_note": "Retain revision6 for this draft combined runtime repair; no final revision6 root package is produced or admitted. R7-R9 are experiment identifiers.",
     "patches": [
@@ -703,7 +703,7 @@
       "original_test_input_bodies_and_compiled_case_products_retained_before_full_target_overwrites_outputs": true
     },
     "full_unfiltered_r22": {
-      "status": "Launched; native preflight and complete test execution remain pending.",
+      "status": "Terminal incomplete: kernel memory reclaim kills huge_malloc and LIT before final summary or report emission.",
       "entrypoint": "Original make test/check-all",
       "all_default_components_and_original_assertions_preserved": true,
       "case_filters_added": false,
@@ -714,12 +714,204 @@
         "upstream xUnit XML"
       ],
       "full_suite_result_available": false,
-      "fresh_complete_package_qualified": false
+      "fresh_complete_package_qualified": false,
+      "terminal_at": "2026-11-23T13:11:15.155153+00:00",
+      "original_make_exit": 1,
+      "ninja_internal_exit": 137,
+      "LIT_reported_entries": 87563,
+      "partial_framed_result_line_counts": {
+        "FAIL": 38,
+        "XPASS": 3
+      },
+      "JSON_report_exists": false,
+      "xunit_report_exists": false,
+      "kernel_memory_reclaim_killed_processes": [
+        "huge_malloc.c.tmp",
+        "python3.12 LIT driver"
+      ],
+      "all_final_source_SDK140_rawdb_ports_base_registry_mount_data_guards_pass": true,
+      "whole_failed_frontier_retention": "Complete quiescent source/work/products/ports/R22-controls capture is streaming; independent two-host verification pending before warm mutation.",
+      "reported_entries_are_not_completed_individual_case_counts": true
     },
     "last_canonical_checks": {
       "project_validate": "fails stale documentation-authority review",
       "verify": "authority and receipt fail; both committed locks pass",
       "receipt_earned": false
-    }
+    },
+    "scope": "R19-R22 generation, before the following explicit API portability corrections; its original case bodies and assertions remain unchanged in that frozen running generation."
+  },
+  "additional_API_portability_candidates_r24": {
+    "status": "Fresh original checksum/full patch R24 exits0/0 without fuzz; full default configuration and named MSan/CXX runtime/header build phases exit0. Independent native archive/link and positive/negative consumer checks pass. The preceding frozen R22 generation ends incomplete after huge_malloc/LIT memory-reclaim kills and does not cover these additional patches.",
+    "port_revision": 6,
+    "patches": [
+      {
+        "path": "devel/llvm19/files/patch-compiler-rt_lib_sanitizer__common_sanitizer__common__interceptors.inc",
+        "sha256": "01dafdb985471d2f8a247ecdd94c45a6de433b17a3ec49101f4ba1190af95556"
+      },
+      {
+        "path": "devel/llvm19/files/patch-compiler-rt_test_sanitizer__common_TestCases_FreeBSD_procctl.cpp",
+        "sha256": "25034f9c5153874d943fd51ca008fcf46c4b595fa02044c70ebb3dae7f02d1fb"
+      },
+      {
+        "path": "devel/llvm19/files/patch-compiler-rt_test_sanitizer__common_TestCases_Posix_posix_spawn.c",
+        "sha256": "11eda552233f4f85923b80b374529e8903e8dacd0b1aa67814cbf72b248027df"
+      },
+      {
+        "path": "devel/llvm19/files/patch-compiler-rt_test_msan_procctl.cpp",
+        "sha256": "afe11c0143bf5169722880dca713e1c49755e0f40c34fa8972257c65f1582578"
+      }
+    ],
+    "explicit_original_test_corrections": {
+      "ASLR_status": "Mask documented PROC_ASLR_ACTIVE flag locally before checking exact legal policy values; do not change kernel or process policy in this test. Original signed minimum assertion rejects raw0x80000003 although policy3 is valid.",
+      "spawn": "Initialize and destroy POSIX attribute/action objects through their APIs, preserve both spawn calls, arguments and SPAWNED checks, and assert both waitpid results and successful child exit statuses. Initialization/destruction side effects occur outside assert.",
+      "original_assertions_are_corrected": true,
+      "original_coverage_removed": false,
+      "case_filters_or_sanitizer_option_suppressions_added": false,
+      "test_expectation_or_skip_annotations_changed": false
+    },
+    "primary_API_contracts": [
+      "https://man.freebsd.org/cgi/man.cgi?query=procctl&sektion=2&manpath=FreeBSD+16.0-CURRENT",
+      "https://raw.githubusercontent.com/freebsd/freebsd-src/main/lib/libc/gen/posix_spawnattr_init.3",
+      "https://man.freebsd.org/cgi/man.cgi?query=posix_spawn_file_actions_init&sektion=3"
+    ],
+    "original_and_candidate_API_case_controls_r23": {
+      "runtime_scope": "Existing R22 compiler and resources; isolated source/output copies, not a rebuilt all-runtime R24 generation.",
+      "procctl_original_and_corrected_exits_by_variant": {
+        "base": [
+          -6,
+          0
+        ],
+        "asan": [
+          0,
+          0
+        ],
+        "msan": [
+          1,
+          1
+        ],
+        "tsan": [
+          0,
+          0
+        ],
+        "ubsan": [
+          -6,
+          0
+        ]
+      },
+      "spawn_original_and_corrected_exits_by_variant": {
+        "base": [
+          -11,
+          0
+        ],
+        "asan": [
+          1,
+          0
+        ],
+        "msan": [
+          1,
+          0
+        ],
+        "tsan": [
+          66,
+          0
+        ],
+        "ubsan": [
+          1,
+          0
+        ]
+      },
+      "all_five_corrected_spawn_FileCheck_exits": 0,
+      "ASLR_native_read_only_query": {
+        "raw_hex": "80000003",
+        "active_bit": true,
+        "policy": 3,
+        "original_signed_comparison": false,
+        "exact_policy_comparison": true
+      },
+      "remaining_MSan_failure": "Interceptor checks the output-only integer status buffer as initialized input before the real syscall. Test-only ASLR correction correctly remains failing until the runtime is fixed.",
+      "all_source_compiler_runtime_mount_registry_guards_pass": true
+    },
+    "procctl_runtime_change": {
+      "scope": "Correct output-only reaper-status and standard integer-status commands; preserve existing input-control and mixed reaper request paths.",
+      "status_output_input_reads_removed": true,
+      "output_marked_written_only_after_success": true,
+      "new_MSan_regression": "Reaper and available integer statuses produce initialized outputs; failed status queries retain poison; uninitialized control input still produces the original MSan warning.",
+      "new_regression_source_sha256": "8ca0bfe13ad10604e2519c482d245aa1b01bdf1127ab14b7b17f3ea2a4180fbc",
+      "runtime_source_sha256": "2c3d8c93d8acea3db48576209d78e2a02885b5279b07a650cf2b7d8bff27bf78",
+      "old_runtime_new_regression_control": {
+        "positive_query_program_exit": 1,
+        "uninitialized_input_warning_FileCheck_exit": 0
+      }
+    },
+    "fresh_selected_runtime_build_r25": {
+      "original_configure_exit": 0,
+      "original_do_build_exit": 0,
+      "all_default_components_options_and_normalized_configuration_preserved": true,
+      "named_build_targets": [
+        "clang_rt.msan-x86_64",
+        "clang_rt.msan_cxx-x86_64",
+        "compiler-rt-headers"
+      ],
+      "actor_uid": 65534,
+      "build_jobs": 1,
+      "priority_nice": 15,
+      "source_and_all_SDK140_rawdb_ports_base_registry_mount_data_guards_pass": true,
+      "warm_source_or_root_installation_changed": false,
+      "controller_exit": 1,
+      "controller_failure": "Arbitrary100000byte minimum rejects legitimate62338byte CXX archive; prior archive is62466bytes. The failed controller result is retained; no rebuild or rewriting of results.",
+      "core_archive": {
+        "bytes": 3784394,
+        "sha256": "045c9c3724cd963eceb57051fb4b11cf63bc8df267a6422589439ea3cd564212"
+      },
+      "CXX_archive": {
+        "bytes": 62338,
+        "sha256": "e53038d9eab9acb60135204bba5b0d55853aa0e312293dc1a21ec340f71bdd85"
+      }
+    },
+    "independent_native_consumers_r27_r28": {
+      "standard_archive_format_and_nonempty_object_member_lists": "pass",
+      "CXX_link_uses_both_fresh_archives": true,
+      "new_regression_origins0": {
+        "program_exit": 0,
+        "uninitialized_input_exit": 1,
+        "warning_FileCheck_exit": 0
+      },
+      "new_regression_origins2": {
+        "program_exit": 0,
+        "uninitialized_input_exit": 1,
+        "warning_FileCheck_exit": 0
+      },
+      "corrected_common_procctl_MSan_program_exit": 0,
+      "unchanged_original_common_procctl_MSan_program_exit": 0,
+      "C_spawn_program_exit": 0,
+      "C_spawn_original_FileCheck_exit": 0,
+      "C_link_uses_only_fresh_core_archive": true,
+      "first_consumer_controller_exit": 1,
+      "first_consumer_controller_failure": "Overstrict routing check requires CXX archive for C source. Four CXX executions and negative controls completed; C body was compiled but not run. Failed result retained.",
+      "continuation": "Independently verify C routing and run the same already compiled C product; no recompilation. Program/FileCheck0, all input body guards pass.",
+      "all_source_compiler_header_runtime_program_input_guards_pass": true,
+      "R27_mount_guard_pass": true
+    },
+    "retention": {
+      "status": "Complete before/after-equal cold source/work/products/ports, R20/R21/R23-R28 fixtures/controls/logs, and hash-verified actual input bodies independently verified on both physical filesystems.",
+      "archive_bytes": 461303302,
+      "archive_sha256": "fdc99e6f711d70aed33defa72ed96e6d4c6981751beadc109943beb4b7ded46e",
+      "inventory_sha256": "9803305f16ad1b44c2ba04166402520ba52d4122d0e402fb9eae61e568114f36",
+      "nodes": 400902,
+      "regular_files": 332798,
+      "directories": 68088,
+      "symlinks": 16,
+      "hardlink_groups": 0,
+      "complete_gzip_decode_bytes": 2623979520,
+      "preceding_failed_full_R22_source_not_mutated": true
+    },
+    "not_yet_qualified": [
+      "Original full upstream target with these additional API changes",
+      "Other sanitizer runtimes rebuilt with this additional interceptor change",
+      "Fresh complete LLVM revision6 package and installed consumers",
+      "arm64/final CURRENT hardware and native qualification",
+      "Complete TCB/source ownership and canonical Component/SDK/lifecycle admission",
+      "Full1.6 release acceptance"
+    ]
   }
 }
