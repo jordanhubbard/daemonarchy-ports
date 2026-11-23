@@ -268,18 +268,43 @@ shows the latter has a direct libthr dependency before libc, avoiding libc's
 pthread stubs during initialization. The revised FreeBSD driver requests
 runtime dependencies for shared ASan when runtime linking is enabled. A new
 driver regression also checks disabled runtime linking and shared-libsan with
-no sanitizer enabled. The ineffective readlink bypass is removed. Revised
-cold checksum and full patch pass without fuzz. The new regression detects
-the old linker bug while its two negative controls pass. Warm runtime
-qualification remains pending; the complete
-R12-R18 failed source/work/products and diagnostic boundary is being retained
-before any further warm mutation. Original testcase assertions and selection
-remain unchanged.
+no sanitizer enabled. The ineffective readlink bypass is removed. Fresh
+original checksum/full patch passes without fuzz, and the new regression
+detects the preceding compiler bug while its two negative controls pass.
+
+The complete R12-R18 source/work/products and diagnostic boundary is
+independently verified on both physical filesystems: 710,219 nodes, all bodies
+and hardlinks, eight sockets, four FIFOs and the complete gzip stream.
+Before/after equality passes. Only then does original ports do-build rebuild
+the revised compiler and runtimes successfully. All source nodes except the
+two explicit replacements and one new regression are preserved; SDK140/rawDB,
+ports, registry, base, mounts and stopped-data guards pass.
+
+All eleven subsequent targeted executions pass: both static/dynamic exit-stats
+scripts, both original shared new/delete scripts, the stdlib driver script,
+default interpreter exception, both default dynamic ASan programs (95 passes
+and24 original disabled cases each), the new driver regression, the complete
+original sanitizer driver regression, and the original TSan threaded-fork
+compile/run script. Original assertions, options and runtime startup behavior
+are retained. Compiler/runtime/script/unit inputs, case sources and mounts
+remain unchanged; the owned jail is removed. Exact input bodies and compiled
+case products are retained before the full target can overwrite output paths.
+
+The R21 resource sampler used `ps -axo jid=,rss=`, which FreeBSD interprets as
+one field and a replacement header. Its reported peak0 is invalid and its
+intended RSS guard was ineffective; this is explicitly corrected in retained
+evidence. The original script naturally exits0. Corrected three-field parsing
+passes a separate native PID/jail/positive-RSS control. No R21 resource peak or
+effective guard coverage is claimed; the earlier R18 measurement is separate.
+The full unfiltered original target is now launched with the revised candidate,
+four workers and upstream JSON/xUnit reports. Complete outcomes remain pending.
+Original testcase assertions and selection remain unchanged; the new driver
+regression is additive.
 
 The next full run must retain upstream JSON and xUnit per-test reports as well
 as complete output, inventories and final guards. LIT JSON omits user-skipped
 entries, so xUnit is retained too. The original test environment whitelist
-does not pass LIT_OPTS to test subprocesses. This reporting change is pending;
+does not pass LIT_OPTS to test subprocesses. The new run adds these reporting options;
 the completed failed run retained its original configuration.
 
 These checks establish neither full upstream suite success nor a fresh full

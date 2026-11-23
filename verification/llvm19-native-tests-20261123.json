@@ -1,6 +1,6 @@
 {
   "schema": "daemonarchy/llvm19-native-test-development-evidence@1",
-  "status": "native-original-followup-cases-partly-qualified-shared-ASan-driver-revision-pending",
+  "status": "native-original-followup-cases-pass-full-unfiltered-structured-report-run-launched",
   "port": "devel/llvm19",
   "original_makefile_sha256": "d43b3578b552dc5b393e81ea48e1bba8fbeede5fc9061414fdb825d2c436b721",
   "original_llvm_source_archive": {
@@ -474,7 +474,7 @@
     }
   },
   "further_FreeBSD_runtime_and_Clang_candidates": {
-    "status": "Five implementation files built by original native ports do-build. Original exit-stats, stdlib driver and default interpreter scripts pass; both shared new/delete scripts still fail, so ineffective readlink bypass removed from revised candidate. New shared-ASan linker candidate cold checksum/full patch passes without fuzz; no revised warm build or full-suite/package acceptance.",
+    "status": "Revised original ports do-build R20 passes. All eleven R21 targeted executions pass, including both original shared-ASan scripts, new driver regression, complete original sanitizer driver regression, original TSan compile/run script and both default dynamic ASan unit programs. Full unfiltered R22 target launched with JSON/xUnit reporting; complete outcomes and package/lifecycle qualification remain pending.",
     "port_revision": 6,
     "unreleased_revision_note": "Retain revision6 for this draft combined runtime repair; no final revision6 root package is produced or admitted. R7-R9 are experiment identifiers.",
     "patches": [
@@ -595,14 +595,21 @@
       "expected_nonzero_program_exit_note": "Upstream deliberately triggers heap-use-after-free; successful behavior requires replacement new/delete output and the original ASan error checks, not program exit0.",
       "ELF_observation": "Without pthread, direct libc precedes transitive libthr. Explicit pthread adds direct libthr before libc. Shared-runtime-only addSanitizerRuntimes returns false for static dependency linking.",
       "candidate": "FreeBSD driver includes sanitizer runtime dependencies for shared ASan when runtime linking is enabled. New driver test also checks disabled-runtime linking and shared-libsan without an enabled sanitizer.",
-      "candidate_built": false,
-      "original_tests_pass_with_revised_driver": false,
+      "candidate_built": true,
+      "original_tests_pass_with_revised_driver": true,
       "new_regression_unfixed_compiler_RUN_exits": [
         1,
         0,
         0
       ],
-      "new_regression_causal_control": "First RUN detects missing direct pthread dependency; disabled runtime linking and no-enabled-sanitizer controls pass on unchanged old compiler. Revised compiler not yet built."
+      "new_regression_causal_control": "First RUN detects missing pthread dependency on unchanged preceding compiler; both negative controls pass. After revision, the complete new regression passes through original LIT.",
+      "warm_build_status": "Original ports do-build R20 exits0; all source except the two explicit replacements and new regression, SDK140/rawDB, ports, base, registry, mounts and stopped-data guards pass.",
+      "revised_original_shared_new_delete_script_exits": [
+        0,
+        0
+      ],
+      "new_driver_regression_LIT_exit": 0,
+      "complete_original_sanitizer_driver_regression_LIT_exit": 0
     },
     "warm_original_build_r12": {
       "original_make_do_build_exit": 0,
@@ -662,8 +669,57 @@
         "inventory_sha256": "a174cb986a7b91c65e7a3c66ad18d7f69f76400023b48d3484e2ca633cce06ad",
         "nodes": 37,
         "independently_verified_on_two_physical_filesystems": true
-      }
+      },
+      "original_compile_and_run_script_after_readlink_removal_exit": 0
     },
-    "followup_source_work_and_diagnostic_retention": "R12-R18 complete capture streaming; require terminal before/after equality and independent two-host verification before revising warm source."
+    "followup_source_work_and_diagnostic_retention": {
+      "status": "Complete before/after-equal R12-R18 boundary independently verified on both physical filesystems before R20 warm mutation.",
+      "archive_sha256": "5c9d3b4ed21fef115eaf37005ecf5a5b4ce49b836de71a5a6c7bd2efd3479009",
+      "archive_bytes": 3904426423,
+      "inventory_sha256": "bb9165a2c1d21c0a1931edfa7c8179255a6cec3f31e5c8e60635c35c4c120b95",
+      "nodes": 710219,
+      "regular_files": 617749,
+      "directories": 92210,
+      "symlinks": 248,
+      "sockets": 8,
+      "fifos": 4,
+      "hardlink_groups": 5,
+      "complete_gzip_decode_bytes": 16122777600
+    },
+    "original_followup_executions_r21": {
+      "executions": 11,
+      "all_program_or_script_exits": 0,
+      "new_driver_regression_LIT_cases_passed": 1,
+      "complete_original_sanitizer_driver_regression_LIT_cases_passed": 1,
+      "original_TSan_compile_and_run_script_exit": 0,
+      "both_default_dynamic_ASan_programs": {
+        "each_enabled_cases_passed": 95,
+        "each_original_disabled_cases": 24
+      },
+      "compiler_runtime_scripts_unit_inputs_and_case_sources_unchanged": true,
+      "owned_jail_removed": true,
+      "mounts_unchanged": true,
+      "resource_observation_correction": "The R21 jid=,rss= ps format produces one field on FreeBSD; its peak0 is invalid and intended RSS guard ineffective. Original script naturally exits0. Corrected three-field native parsing separately checks PID/jid/positive RSS. No R21 peak memory or effective resource guard is claimed; valid R18 observation remains separate.",
+      "original_test_input_bodies_and_compiled_case_products_retained_before_full_target_overwrites_outputs": true
+    },
+    "full_unfiltered_r22": {
+      "status": "Launched; native preflight and complete test execution remain pending.",
+      "entrypoint": "Original make test/check-all",
+      "all_default_components_and_original_assertions_preserved": true,
+      "case_filters_added": false,
+      "new_case": "FreeBSD shared-ASan driver regression",
+      "workers": 4,
+      "report_formats": [
+        "upstream JSON",
+        "upstream xUnit XML"
+      ],
+      "full_suite_result_available": false,
+      "fresh_complete_package_qualified": false
+    },
+    "last_canonical_checks": {
+      "project_validate": "fails stale documentation-authority review",
+      "verify": "authority and receipt fail; both committed locks pass",
+      "receipt_earned": false
+    }
   }
 }
