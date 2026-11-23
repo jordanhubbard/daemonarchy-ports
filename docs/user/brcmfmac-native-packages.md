@@ -51,3 +51,45 @@ pin sequencing, board-specific firmware/NVRAM/CLM, association, traffic,
 recovery, and native SD/Ethernet regression. Physical PCIe radio operation,
 product install/update/rollback and final 1.6 release acceptance also remain
 open. These packages have not been published to a signed feed.
+
+## NVRAM parser correction in revision 5
+
+The [dated development record](../../verification/brcmfmac-nvram-eof-20261123.json)
+binds the corrected source, package and independent consumer results.
+
+An NVRAM file ending in a comment without a newline leaves the original
+`brcmf_nvram_parse` cursor unchanged. Both SDIO and PCIe firmware attachment
+use that parser and can loop indefinitely on this input. Advance to the end
+of every line before skipping its terminators, including ignored comments.
+All nine existing downstream patches and the pinned upstream archive remain
+in use.
+
+`Tools/daemonarchy/native-probes/test-brcmfmac-nvram.py` extracts the actual
+parser body from a patched `src/pcie.c` and replaces only kernel allocation
+with zeroed userspace allocation. Each child has a two-second timeout. Its
+13 cases cover empty input, LF/CRLF, final records without newlines, blank
+lines, comments and embedded equals signs, checking the entire binary output
+and its length token. The original times out on four final-comment cases on
+native FreeBSD arm64 and Linux; the correction passes all 13 on both, and
+under Linux Clang AddressSanitizer/UndefinedBehaviorSanitizer.
+
+For example, after the original port's `patch` target:
+
+```sh
+python3 Tools/daemonarchy/native-probes/test-brcmfmac-nvram.py \
+    /path/to/patched/src/pcie.c --output /path/to/parser-result.json
+```
+
+Fresh native FreeBSD arm64 checksum/patch, build, stage, plist, stage-QA and
+package targets pass for revision 5, including the parser regression against
+the actual ports-patched source. Source, kernel capsule and observed host
+before/after guards pass. The ports `test` target still declares no upstream
+suite. A fresh disposable ARM64 VM installs the resulting package with its
+original scripts, verifies all five payloads and package checksums, and passes
+two installed-driver load/unload cycles across deletion and reinstallation.
+Both PCIe and SDIO frontends register; module and interface state is restored.
+
+This uses the same retained F4 GENERIC-MMCCAM development kernel as revision
+4, not the final CURRENT release kernel. These parser and idle-module checks
+do not establish firmware loading or radio operation. The physical Pi test
+image remains unchanged and does not include this revision 5 package.
