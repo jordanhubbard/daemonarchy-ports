@@ -55,9 +55,18 @@ An initial probe's three symlink modes differed because its umask differed;
 that failure is retained, and a fresh probe with the original producer umask
 passes all unchanged assertions.
 
-The full original test target with both fixes remains pending. These checks
-establish neither upstream test success nor a fresh full package build with
-the changed recipe. Full case discovery, per-project outcomes and explicit
+The full original test target with both fixes now reaches test discovery but
+exits 1: an installed PyYAML file is root-owned mode 0600 and unreadable to
+the unprivileged test user. Its original dependency stage has the same mode.
+Discovery also records two dynamic ASan GoogleTest programs crashing with
+SIGBUS in libc and an MLIR unit program aborting on duplicate option
+registration. These failures remain unresolved; no cases are filtered. Final
+source, dependency, registry, base, mount and stopped-data guards pass. Exactly
+18 selected source LIT files match their fresh original patched replacements;
+all other extracted source nodes remain unchanged.
+
+These checks establish neither upstream test success nor a fresh full package
+build with the changed recipe. Full case discovery, per-project outcomes and explicit
 skip reasons remain open. Independent installed compiler consumers, final
 CURRENT integration, complete toolchain provenance, canonical Component/SDK/
 lifecycle admission and full 1.6 release acceptance remain open. Raw worker

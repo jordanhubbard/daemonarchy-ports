@@ -1,6 +1,6 @@
 {
   "schema": "daemonarchy/llvm19-native-test-development-evidence@1",
-  "status": "second-original-target-failure-retained-native-stage-namespace-fix-validated-full-tests-pending",
+  "status": "namespace-fix-validated-original-target-now-reaches-discovery-with-additional-failures",
   "port": "devel/llvm19",
   "original_makefile_sha256": "d43b3578b552dc5b393e81ea48e1bba8fbeede5fc9061414fdb825d2c436b721",
   "original_llvm_source_archive": {
@@ -91,7 +91,21 @@
       0,
       0
     ],
-    "full_upstream_test_result_pending": true,
+    "full_upstream_test_result_pending": false,
     "initial_probe_failure": "Three symlink modes differed because the probe used a different umask; retained failure and reran on a fresh stage with the original producer umask. No product change or assertion relaxation."
+  },
+  "namespace_corrected_original_target_result": {
+    "exit": 1,
+    "phase": "test discovery",
+    "lit_import_failure_resolved": true,
+    "fatal": "PyYAML yaml/__init__.py installed root-owned mode 0600 is unreadable to nobody; original dependency stage has the same mode",
+    "additional_discovery_failures": [
+      "Two dynamic ASan GoogleTest discovery programs crash with SIGBUS in libc",
+      "MLIRTargetLLVMTests aborts with duplicate enable-branch-hint command-line option registration"
+    ],
+    "complete_suite_case_results_available": false,
+    "all_source_dependency_registry_base_mount_and_stopped_data_guards_passed": true,
+    "source_change_boundary": "Exactly 18 of 24 selected LIT Python files copied from fresh original checksum/patch source; every other source node unchanged",
+    "raw_evidence": "Retained privately; this run is not a test-suite pass"
   }
 }
