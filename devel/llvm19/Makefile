@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 DISTVERSION=	19.1.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION}/
 #MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/
@@ -15,6 +15,7 @@ WWW=		https://llvm.org/
 .include "${.CURDIR}/../llvm-devel/Makefile.LICENSE"
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR}
 
 FLAVORS=	default lite
 FLAVOR?=	${FLAVORS:[1]}
@@ -604,6 +605,7 @@ post-install-LLD-on:
 TEST_TARGET=	check-all
 TEST_ARGS=	${MAKE_ARGS} ${_MAKE_JOBS}
 TEST_ENV=	${MAKE_ENV} \
+		LIT_OPTS="${LIT_OPTS} -j${MAKE_JOBS_NUMBER}" \
 		HOME=${TEST_WRKSRC}/.test-home \
 		TMPDIR=${TEST_WRKSRC}/.test-tmp \
 		XDG_CACHE_HOME=${TEST_WRKSRC}/.test-home/.cache \

@@ -1,6 +1,6 @@
 {
   "schema": "daemonarchy/llvm19-native-test-development-evidence@1",
-  "status": "native-target-repairs-and-source-package-permission-recovery-validated-full-suite-open",
+  "status": "native-port-repairs-and-updated-observed-SDK-validated-full-unfiltered-tests-launched",
   "port": "devel/llvm19",
   "original_makefile_sha256": "d43b3578b552dc5b393e81ea48e1bba8fbeede5fc9061414fdb825d2c436b721",
   "original_llvm_source_archive": {
@@ -206,6 +206,172 @@
       "all_regular_bodies_checked": 512460,
       "all_hardlink_groups_checked": 3,
       "complete_gzip_decode_bytes": 12790753280
+    }
+  },
+  "installed_sdk_permission_recovery": {
+    "generation": "SDK139-umask022-r1",
+    "method": "Independent prefix/raw-database copy, explicit runtime nullfs alias switch, normal source pkg add -f for all 52 replacements with original install scripts and build umask 022.",
+    "copied_prefix_and_database_nodes_identical": 82744,
+    "old_and_new_regular_file_inodes_disjoint": true,
+    "source_package_bodies_and_typed_identities_verified": 52,
+    "normal_package_adds_exit_zero": 52,
+    "all_139_installed_package_checksum_and_no_fetch_dependency_checks_exit": [
+      0,
+      0
+    ],
+    "registry_139_names_versions_origins_preserved": true,
+    "original_87_owned_prefix_paths_preserved": 60473,
+    "original_prefix_and_raw_database_preserved_unchanged": true,
+    "nobody_installed_regular_file_bodies_read_and_sha256_verified": 15554,
+    "nobody_functional_consumers": [
+      "YAML safe loader and libyaml C loader",
+      "Jinja2 template rendering",
+      "Docutils HTML rendering",
+      "LLVM Python dependency imports",
+      "Sphinx CLI version"
+    ],
+    "all_local_consumer_commands_exit_zero": true,
+    "selected_base_and_stopped_broker_data_guards_passed": true,
+    "persistent_boot_profile": "Unchanged; this SDK generation switch applies to the running worker. Reboot and installed disposable-VM qualification remain open.",
+    "pre_transition_retention": {
+      "archive_bytes": 1079864329,
+      "archive_sha256": "2a3bb0606911085b11fa403525d0483e35bf346a0e00bc11513ba78274a27bf0",
+      "inventory_sha256": "954b8682baf02f9de7f9de6cd8a8a5925650149d3037cbc89b6a5a25e05371cc",
+      "all_nodes_verified_on_two_physical_filesystems": 165677
+    },
+    "post_transition_retention": {
+      "archive_bytes": 544383032,
+      "archive_sha256": "1000bbba7a3e32726effda1ce37a45a19e7e988777a8acb8693d8973f66b0cd3",
+      "inventory_sha256": "fb369ffcaf79efcd13a409b36215257d42732330e03930a02614889d9fe59b78",
+      "all_nodes_verified_on_two_physical_filesystems": 83051
+    },
+    "original_dependency_unit_tests_qualified": false,
+    "independent_disposable_VM_acceptance_qualified": false,
+    "canonical_SDK_admission_earned": false
+  },
+  "subsequent_full_upstream_tests": {
+    "entrypoint": "Original make test/check-all",
+    "default_component_selection_preserved": true,
+    "test_filters_added": false,
+    "status": "Terminal incomplete: kernel memory-reclaim kills terminated the LIT driver before a complete suite summary.",
+    "active_SDK_prefix_guard": "Binds the new active generation and both mount aliases; retained original SDK prefix is not used as the active runtime guard.",
+    "full_suite_result_available": false,
+    "fresh_full_package_build_with_updated_inputs_qualified": false,
+    "original_make_test_exit": 1,
+    "ninja_exit": 137,
+    "discovered_test_count": 87540,
+    "discovered_count_is_not_completed_case_count": true,
+    "selected_ninja_build_jobs": 4,
+    "observed_lit_test_workers": 8,
+    "kernel_memory_reclaim_killed_processes": [
+      "fork_threaded.c.tmp",
+      "huge_malloc.c.tmp",
+      "python3.12 LIT driver"
+    ],
+    "postguards_all_passed": true,
+    "unresolved_coverage": [
+      "Two dynamic ASan GoogleTest programs fail case discovery.",
+      "Missing psutil disables per-test timeout support and leaves optional coverage skipped."
+    ],
+    "next_run_requirement": "Preserve all original cases; explicitly bind actual LIT concurrency to the worker resource budget.",
+    "candidate_follow_up": {
+      "test_dependency": "sysutils/py-psutil for the selected Python flavor",
+      "LIT_OPTS": "Append -j${MAKE_JOBS_NUMBER} to bind actual test workers.",
+      "original_lit_environment_precedence_verified_from_source": true,
+      "native_changed_input_validation_complete": false,
+      "original_patch_and_native_metadata_checks_pass": true
+    },
+    "complete_source_work_tests_and_diagnostics_retention": {
+      "before_after_all_nodes_equal": true,
+      "archive_format": "gzip-compressed standard newc with explicit inert-socket restoration helper",
+      "archive_bytes": 3617373247,
+      "archive_sha256": "164d95a29c02d0995405a728e2f28d4bb869b6d7c50dfa56e7b312155ab7215a",
+      "inventory_sha256": "ca852bea03065af46231f9857734adc786b639f5f6f3f88dcda3c33dac506aa3",
+      "all_nodes_verified_on_two_physical_filesystems": 547967,
+      "all_regular_file_nodes_checked": 469906,
+      "all_hardlink_groups_checked": 5,
+      "socket_nodes_checked": 4,
+      "fifo_nodes_checked": 2,
+      "complete_gzip_decode_bytes": 14415308800,
+      "restoration_note": "FreeBSD bsdtar preserves socket type in newc headers but extracts sockets as empty regular files. The retained manifest-bound helper recreates inert sockets with their original mode/owner/group/flags. Actual socket and FIFO native replay passes. Original source/work remains retained.",
+      "verifier_negative_controls_rejected": [
+        "wrong socket kind",
+        "wrong regular body hash",
+        "missing hardlink group",
+        "missing node"
+      ]
+    }
+  },
+  "asan_FreeBSD_TLS_diagnosis": {
+    "status": "Native changed-input dynamic runtime and both original dynamic ASan unit programs pass; static runtime, broader sanitizer/full-suite and package qualification remain open.",
+    "observed_invalid_TLS_begin": "0xffffffffffffff80",
+    "observed_TLS_end": "0x0",
+    "cause": "Static TLS boundary discovery assumes module ID 1. A native dl_iterate_phdr probe instead observes libc PT_TLS at module ID 2 with no module ID 1. The absent anchor yields address zero, followed by a 128-byte FreeBSD TLS reserve subtraction.",
+    "candidate": "Use the minimum allocated FreeBSD TLS module ID as the local anchor while preserving real TLS range discovery.",
+    "original_test_bodies_and_assertions_unchanged": true,
+    "runtime_fix_qualified": false,
+    "candidate_port_revision": 6,
+    "native_dynamic_runtime_validation": {
+      "fresh_original_checksum_and_patch_exits": [
+        0,
+        0
+      ],
+      "patch_fuzz": false,
+      "original_ports_entrypoint": "make do-build ALL_TARGET=clang_rt.asan-dynamic-x86_64 as nobody",
+      "new_shared_runtime_sha256": "da641a85bffb05830a5f5f5ffc611b7d5fb0a8ba3bd03bc2c17718fd6954c300",
+      "source_cpp_before_sha256": "a294e96915780fd9a0aac8594693d537cea2766e1ce7306b62988585549099e9",
+      "source_cpp_after_sha256": "48c51043f0f97a23caa9cce7604f37c5adc06bdfb6cc76f04c2befe51bc47bc3",
+      "original_test_binaries_unchanged": true,
+      "all_other_source_nodes_unchanged": true,
+      "programs": [
+        {
+          "variant": "calls",
+          "discovery_exit": 0,
+          "listed_cases_including_disabled": 119,
+          "default_execution_exit": 0,
+          "original_default_cases_passed": 95,
+          "original_default_disabled_cases": 24
+        },
+        {
+          "variant": "inline",
+          "discovery_exit": 0,
+          "listed_cases_including_disabled": 119,
+          "default_execution_exit": 0,
+          "original_default_cases_passed": 95,
+          "original_default_disabled_cases": 24
+        }
+      ],
+      "new_filters_or_assertion_edits": false,
+      "ASAN_OPTIONS_override": false,
+      "nobody_lo_only_VNET_execution": true,
+      "all_final_SDK_source_ports_registry_base_mount_data_guards_passed": true,
+      "scope": "Named runtime build and both original default dynamic unit programs; not full make test, all sanitizer variants or fresh package acceptance."
+    }
+  },
+  "psutil_test_support_source_build": {
+    "package": "py312-psutil-7.2.2_1",
+    "package_bytes": 218834,
+    "package_sha256": "fb120807ec0dc526b52089e6924ceb5d62121a3d412206333b7968c823ae6527",
+    "original_checksum_package_and_check_plist_exits": [
+      0,
+      0,
+      0
+    ],
+    "all_original_declared_build_dependencies_present": true,
+    "staged_regular_file_bodies_read_as_nobody": 40,
+    "staged_nobody_APIs": "Process identity, memory and threads; system memory and PID enumeration.",
+    "active_SDK139_prefix_and_raw_database_unchanged": true,
+    "original_upstream_tests_qualified": false,
+    "installed_consumer_qualified": false,
+    "complete_source_work_stage_package_retention": {
+      "archive_bytes": 2125033,
+      "archive_sha256": "a44dc2044053e3dba96a70f931a295eed6865bbbc7d6761185f1c1f3eb885648",
+      "inventory_sha256": "da53f7de9b91e8d102531c3bbeda34ad3ee9aae21a674b814e3f1cb2570544d4",
+      "all_nodes_verified_on_two_physical_filesystems": 805,
+      "all_regular_bodies_checked": 337,
+      "hardlink_groups_checked": 1,
+      "complete_gzip_decode_bytes": 5509120,
+      "before_after_all_nodes_equal": true
     }
   }
 }
