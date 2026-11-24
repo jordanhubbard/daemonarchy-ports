@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 81,
+  "normal_development_package_count": 83,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -479,6 +479,45 @@
         }
       },
       "test_scope": "TypingExtensions full original tox unittest command onPython3.12 passes with11original version skips. Outcome original full suite needs declared pytest-asyncio. Independent sealed/default checks support development integration only."
+    },
+    {
+      "name": "PytestAsyncio and Trio",
+      "packages": [
+        {
+          "name": "py312-pytest-asyncio-1.5.0.pkg",
+          "bytes": 37321,
+          "sha256": "a8ee506a354d48e2679263ba0d48355bc45f4a668030a4a3a0a5e2e4ff6e9777"
+        },
+        {
+          "name": "py312-trio-0.35.0.pkg",
+          "bytes": 1092622,
+          "sha256": "7a0676347daed0d9c3477b54af0226b180ceef25ca0b0967578314c5cbf48675"
+        }
+      ],
+      "source_revisions": [
+        "511743d7327c93e9ff0117d04f0176ebc572f444"
+      ],
+      "sealed_payloads": 466,
+      "normal_packages_before": 81,
+      "normal_packages_after": 83,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "actual_private_and_default_path_checks": "Trio real native event loop/channels/nurseries/cancellation, loopback TCP with changed input values, original child errors and recovery; actual pytest async fixtures, cancellation/errors with three own cases. Import origins match sealed/default site.",
+      "two_host_evidence": {
+        "source_builds_private": {
+          "nodes": 2560,
+          "archive_bytes": 13944713,
+          "archive_sha256": "41acf2e6ea942e30e89adbaa794734489b958e62f0dc83db38c54fdba2f9903c",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 30,
+          "archive_bytes": 8686475,
+          "archive_sha256": "4a1105c0d1e066385db44888224ee160d56132bb4424953945dc8aa517b5625c",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "test_scope": "Independent actual runtime integration only. Both complete original self-suite declared tool closures remain pending; not replaced by three own asyncio cases or Trio runtime controls."
     }
   ],
   "complete_original_source_suites": {
@@ -1408,6 +1447,27 @@
     },
     "Outcome": {
       "original_make_test_target": "not run: declared pytest-asyncio missing at source build",
+      "runtime_private_and_default_checks": "pass"
+    },
+    "PytestAsyncio": {
+      "original_make_test_target": "not run: declared test dependencies missing",
+      "missing": [
+        "py312-coverage>=6.2:devel/py-coverage@py312",
+        "py312-hypothesis>=5.7.1:devel/py-hypothesis@py312"
+      ],
+      "runtime_private_and_default_checks": "pass"
+    },
+    "Trio": {
+      "original_make_test_target": "not run: declared test dependencies missing",
+      "missing": [
+        "py312-astor>=0:devel/py-astor@py312",
+        "py312-black>=0:devel/py-black@py312",
+        "py312-jedi>=0.18.0:devel/py-jedi@py312",
+        "py312-pyopenssl>=0:security/py-pyopenssl@py312",
+        "py312-ruff>=0:devel/py-ruff@py312",
+        "py312-trustme>=0:security/py-trustme@py312",
+        "pylint-py312>=0:devel/pylint@py312"
+      ],
       "runtime_private_and_default_checks": "pass"
     }
   }
