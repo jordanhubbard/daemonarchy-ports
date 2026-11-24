@@ -1305,6 +1305,33 @@
         "all_nodes_verified_on_both_hosts": true
       },
       "scope": "Fresh full original source construction and unfiltered native make test. Existing normal package was not replaced; normal83 prefix/logical registry/base/kernel/mounts and original inputs preserved. ARM64 Python3.12 only; no canonical receipt/AMD64/release admission."
+    },
+    "Jinja2": {
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/106",
+      "source_revision": "8ff82a27e4a8f3c580a3947b1333be7c9b6ea4c7",
+      "original_make_test_target": "pass with declared source-built Trio dependency",
+      "passed": 909,
+      "original_skips": [],
+      "failures": 0,
+      "errors": 0,
+      "original_default_options": [
+        "BABEL",
+        "EXAMPLES"
+      ],
+      "fresh_original_port_construction_targets_passed": 8,
+      "package_sha256": "12abc09e5feaeab9564e14c747d4c72164afcd6d1b51ca2af47ad0f8f2423642",
+      "raw_stdout_sha256": "aab1739d072103fab25d186b9c1e81cc5306970e04604091feab8d4fdfd2693d",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "JUnit_sha256": "823b96ae86e940da7071bb3a7b4fd4fe3f771d88373d2e0bec2996ae3b899872",
+      "source_members_verified": 184369,
+      "sealed_package_checks": "Template inheritance/autoescape/strict undefined/sandbox/async/syntax errors/recovery, changed filesystem bytecode caches and real Babel MO translation pass.",
+      "two_host_evidence": {
+        "nodes": 4076,
+        "archive_bytes": 18238747,
+        "archive_sha256": "998b68752a11c0801274a924084e489f782e3f07def0251b8d21e3f34de6d0c3",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "scope": "Full unchanged native original target on ARM64 Python3.12. Four-package normal transaction held after separate TOML counterexample. No AMD64/canonical/release acceptance claim."
     }
   },
   "pending": [
@@ -1318,7 +1345,8 @@
     "Original IDNA properties suite with declared source-built default Hypothesis/Rust/maturin/runtime closure; PR107",
     "Pycparser FreeBSD original cpp suite candidate passes451withzero skips; draft PR108 review, AMD64 and canonical receipt remain pending",
     "Complete AsyncGenerator/Pycparser peers Sniffio/SortedContainers/Hatch plugins/Cython original self-suites and declared test-tool closure",
-    "Complete Attrs declared original self-suite tools and CFFI conditional meson-python/virtualenv/installed-CLI coverage"
+    "Complete Attrs declared original self-suite tools and CFFI conditional meson-python/virtualenv/installed-CLI coverage",
+    "TOML array EOF fix PR109 exact native port/committed regression tests/sealed/default acceptance; original NumPy coverage and full CI closure remain pending"
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -1326,7 +1354,8 @@
     "Pathspec": "https://github.com/jordanhubbard/daemonarchy-ports/pull/103",
     "Jinja2_Trio_test_dependency": "https://github.com/jordanhubbard/daemonarchy-ports/pull/106",
     "IDNA_Hypothesis_test_dependency": "https://github.com/jordanhubbard/daemonarchy-ports/pull/107",
-    "Pycparser_FreeBSD_cpp": "https://github.com/jordanhubbard/daemonarchy-ports/pull/108"
+    "Pycparser_FreeBSD_cpp": "https://github.com/jordanhubbard/daemonarchy-ports/pull/108",
+    "TOML_array_EOF": "https://github.com/jordanhubbard/daemonarchy-ports/pull/109"
   },
   "held_packages": [
     {
@@ -1367,6 +1396,42 @@
         "fixed_version": "1.33.0_1",
         "normal_development_package_count_after": 65,
         "scope": "Actual sealed/default original counterexample and31case matrix pass; complete original pytest suite and release acceptance pending."
+      }
+    },
+    {
+      "name": "py312-toml-0.10.2_1.pkg",
+      "bytes": 41516,
+      "sha256": "3967c413d4707f4679d99446c91414fc8cb7bbb76feb2a7b44b1974d55dc17d2",
+      "source_revision": "511743d7327c93e9ff0117d04f0176ebc572f444",
+      "original_eight_construction_targets": "all exit0",
+      "normal_development_installation": "held; no normal transaction for Jinja2/Markdown/Smartypants/TOML has run",
+      "actual_counterexample": "Unterminated arrays are accepted with silently truncated data; an unfinished quoted-element array raises IndexError. Independent stdlib oracle rejects all eight malformed fixtures.",
+      "candidate": {
+        "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/109",
+        "head": "f6ac11e5647d9fed43103517542ead0ce3cf367a",
+        "version": "0.10.2_2",
+        "change": "Check existing array depth at EOF; add20regressions without removing original assertions.",
+        "prototype_matrix": "12valid and8invalid cases pass with typed EOF errors/recovery",
+        "original_tests": {
+          "reported": 23,
+          "passed": 21,
+          "original_numpy_skips": 2,
+          "failures": 0,
+          "errors": 0,
+          "fixture_revision": "9767d201b51ac9c50630f181828bcd922bf3e9e5",
+          "fixture_Git_members": 207,
+          "valid_TOML": 66,
+          "invalid_TOML": 66,
+          "fixture_selection": "OriginalCI clones without a pin. Explicitly reconstruct with latest fixture commit before original0.10.2release, retaining original test loops and every fixture.",
+          "scope": "Original upstream pytest selection on baseline and prototype. Full tox/Python-version/NumPy/GoCI closure not qualified."
+        },
+        "pending": "Fresh exact-commit original port build, newly committed regression patch execution and sealed/default package acceptance; normal installation; AMD64/canonical/release."
+      },
+      "two_host_failure_and_prototype_evidence": {
+        "nodes": 4076,
+        "archive_bytes": 18238747,
+        "archive_sha256": "998b68752a11c0801274a924084e489f782e3f07def0251b8d21e3f34de6d0c3",
+        "all_nodes_verified_on_both_hosts": true
       }
     }
   ],
