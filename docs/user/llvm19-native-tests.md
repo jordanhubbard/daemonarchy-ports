@@ -2,18 +2,17 @@
 
 ## Current candidate and qualification boundary
 
-The review candidate is `llvm19-19.1.7_7`. Production fixes change package
-bytes, but no new package is published. R355 normal configure/full build and
-R364 actual normal runtime checks pass for the twelve libc++ additions plus the
-short test-TMPDIR recipe. R365 retains all 1,769 selected names with seven unexpected
-outcomes. The current candidate adds six memory-region production/doc/test
-patches. R385 normal configure/default build and R386 actual normal-server
-runtime now pass for these additions. R387 original selected tests complete with
+The review candidate is `llvm19-19.1.7_7`; no new package is published.
+Its current 94 port files include the newest one-line aligned-search fix.
+R419 fresh checksum/full patch and strict 160,727-node comparison pass, and
+R416/R417 private runtime checks pass all 17 original memory-search methods.
+The latest completed normal selected target, R387, predates this one-line fix:
 1,240 PASS, 3 FAIL, 2 TIMEOUT, 2 UNRESOLVED, 27 XFAIL and 495 UNSUPPORTED.
-The new memory-region method passes, but seven unexpected outcomes remain.
-Fresh package and installed consumers remain unqualified. The
+Its new memory-region method passes, while seven unsuccessful outcomes remain.
+Current normal build/original-target, package and installed-consumer acceptance
+are still required. The
 [runtime follow-up record](../../verification/llvm19-native-runtime-followup-20261123.json)
-binds the exact candidate identities and these observations.
+binds exact candidate identities and producer-specific qualification boundaries.
 
 LLDB now follows ordered optional ELF `DT_AUXILIARY` providers when resolving
 filter exports. This handles FreeBSD libc's syscall placeholders and libsys
@@ -261,12 +260,34 @@ The two original find-memory entries change from FAIL to TIMEOUT; neither is a
 repair success. Five other unsuccessful outcomes retain their status. The
 controller's assertion requiring both find-memory entries to pass remains
 failed; independent report integrity review does not turn that into a test pass.
-A likely aligned-search progression defect matches the still-open, unmerged
+The aligned-search progression defect matches the still-open, unmerged
 [LLVM proposal 189950](https://github.com/llvm/llvm-project/pull/189950), pinned at
 `29cd5097556a1c3f00407508327b0c651155f187`. Private original compiler/archive/DLL/CLI commands now pass for the one-object
 candidate, preserving every other archive member and all 1,383 guarded inputs.
-Its runtime qualification and current full-frontier custody are in progress; no new warm
-source integration, accepted upstream backport or package is claimed.
+R416 uses the identical original R366 native executable and fixed actual normal
+server for both libraries. The original succeeds at alignment1 but reaches the
+separate 20-second diagnostic deadline inside alignment8; the candidate passes
+all four original unaligned FindInMemory/FindRangesInMemory contracts, each
+under one second. This diagnostic deadline does not replace the retained R387
+original target TIMEOUTs.
+
+R417 then runs both unchanged original dotest commands in fresh private outputs,
+changing only output/cache paths and private CLI/library binding. All seven
+TestFindInMemory and ten TestFindRangesInMemory methods pass, preserving every
+original assertion, compiler option and selected method. Kernel inspection
+verifies the actual Python drivers' private mapped DLL and actual normal server
+executables. Independent original stderr/stdout body/hash/method review passes.
+All original sources/products/metadata and private Python modules stay unchanged;
+short temporary roots are removed and owned jails are removed.
+
+R419 original checksum/full patch exits0/0 without fuzz. All 94 current origin
+Git identities match the frozen native view. Its 160,727 fresh nodes match R313
+except the 19 declared bodies and their exact original backups; every other
+recorded native owner/mode/flag/body/type/link matches. Defaults/dependencies/four
+jobs and the established short test-TMPDIR recipe are preserved. The newest
+patch changes only aligned-search progression and records the pinned, unmerged
+upstream proposal. Current tested-frontier custody remains in progress. New warm
+integration and normal original-target/package qualification remain required.
 
 Separate direct native ptrace controls reproduce EBUSY for initial attach stops
 on running and confirmed sleeping children. The same program with a trace-me
