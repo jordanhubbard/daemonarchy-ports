@@ -304,12 +304,35 @@
       "original_optional_backend_subtest_skips": 294,
       "failures": 0,
       "errors": 0,
-      "scope": "Unfiltered original unittest discovery, including upstream132 regressions, also passes on fresh original port extract/patch output. 147 Hyperscan and147 RE2 subtest skips preserve original reasons; declared pytest bridge remains pending."
+      "scope": "Unfiltered original unittest discovery, including upstream132 regressions, also passes on fresh original port extract/patch output. 147 Hyperscan and147 RE2 subtest skips preserve original reasons; declared pytest bridge remains pending.",
+      "declared_original_pytest_bridge": {
+        "name": "Pathspec",
+        "passed": 200,
+        "original_optional_skips": 294,
+        "additional_passed_subtests": 148,
+        "actual_original_summary": "============ 200 passed, 294 skipped, 148 subtests passed in 0.46s =============",
+        "raw_stdout_sha256": "3ca9d3831c8a6f2617cca8f06f081c5d268ca52192182f1462d38f5af6e61ca2",
+        "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "Pluggy": {
+      "original_make_test_target": "pass",
+      "passed": 219,
+      "failures": 0,
+      "errors": 0,
+      "original_skips": 0
+    },
+    "IniConfig": {
+      "original_make_test_target": "pass",
+      "passed": 54,
+      "failures": 0,
+      "errors": 0,
+      "original_skips": 0
     }
   },
   "pending": [
-    "Complete original suites for SCM/Calver/Pluggy/IniConfig/Trove/PoetryCore/TOMLKit/Hatchling and source-built pytest closure",
-    "Declared Pathspec pytest bridge and optional backend coverage",
+    "Complete original SCM/Calver/Trove/PoetryCore/TOMLKit/Hatchling/Pygments/Pytest self-suite and declared test-tool closure",
+    "Optional Pathspec RE2/Hyperscan backend coverage remains originally skipped; selected original pytest bridge now passes",
     "Fresh libuv full port construction and three existing network fixture failures; see PR102",
     "Matching CURRENT desktop dependency closure and graphical acceptance",
     "Canonical complete per-unit ownership, provenance, lifecycle and SDK/TCB admission",
@@ -361,5 +384,50 @@
         "scope": "Actual sealed/default original counterexample and31case matrix pass; complete original pytest suite and release acceptance pending."
       }
     }
-  ]
+  ],
+  "original_native_port_test_targets": {
+    "normal_development_package_count": 67,
+    "original_make_test_targets": true,
+    "original_test_selection_and_input_bodies_unchanged": true,
+    "source_revisions": [
+      "087f30829b60c5222b6af04082ec5a9850b03de6"
+    ],
+    "units": [
+      {
+        "name": "Pathspec",
+        "passed": 200,
+        "original_optional_skips": 294,
+        "additional_passed_subtests": 148,
+        "actual_original_summary": "============ 200 passed, 294 skipped, 148 subtests passed in 0.46s =============",
+        "raw_stdout_sha256": "3ca9d3831c8a6f2617cca8f06f081c5d268ca52192182f1462d38f5af6e61ca2",
+        "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "Pluggy",
+        "passed": 219,
+        "original_optional_skips": 0,
+        "additional_passed_subtests": 0,
+        "actual_original_summary": "============================= 219 passed in 0.44s ==============================",
+        "raw_stdout_sha256": "5fe9c6becff9677a1fed79bd83a203b19f85c3be8fd7a6020eb9c9c30d770da2",
+        "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "IniConfig",
+        "passed": 54,
+        "original_optional_skips": 0,
+        "additional_passed_subtests": 0,
+        "actual_original_summary": "============================== 54 passed in 0.07s ==============================",
+        "raw_stdout_sha256": "4220975837bc5b6cf0e52664619582c0ed876fe53c6c5e8a6da62b57b4d96529",
+        "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "observer_correction": "Initial reporter variable PYTEST_ARGS was unused by original python.mk, which uses TEST_ARGS. Existing full verbose case IDs/collection/results and all initial source/prefix/logical-registry/base guards were audited; no test rerun or original assertion/filter change.",
+    "two_host_original_test_evidence": {
+      "nodes": 20,
+      "archive_bytes": 1190673,
+      "archive_sha256": "b66f91ddff794fc188f85a042f21a48eac17eaeb3ddf4a31a8fa161663cc2752",
+      "all_nodes_verified_on_both_hosts": true
+    },
+    "scope": "Original native source/port test bridges and independent package API acceptance; not canonical lifecycle/SDK, AMD64 or full release acceptance."
+  }
 }
