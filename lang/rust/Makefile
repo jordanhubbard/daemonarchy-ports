@@ -1,6 +1,6 @@
 PORTNAME=	rust
 PORTVERSION?=	1.99.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://dev-static.rust-lang.org/dist/:src \
@@ -28,11 +28,9 @@ ONLY_FOR_ARCHS_REASON?=	requires prebuilt bootstrap compiler
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cmake:indirect cpe ninja:build pkgconfig python:build shebangfix ssl tar:xz
+USES=		cmake:indirect cpe ninja:build pkgconfig python:build ssl tar:xz
 
 CPE_VENDOR=	rust-lang
-
-SHEBANG_FILES=	compiler/rustc_codegen_cranelift/.github/scripts/free-disk-space.sh
 
 MAKE_ENV=	DESTDIR=${STAGEDIR} \
 		LIBGIT2_NO_PKG_CONFIG=1 \
@@ -71,6 +69,8 @@ SOURCES_VARS=		_COMPONENTS+=rust-src-${_PACKAGE_VERS} \
 			_RUST_TOOLS+=src
 WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown rust-std-${_PACKAGE_VERS}-wasm32-unknown-unknown" \
 			_RUST_TARGETS+=wasm32-unknown-unknown
+
+EXTRACT_AFTER_ARGS=	--exclude .github --no-same-owner --no-same-permissions
 
 # See WRKSRC/src/stage0 for the date and version values
 BOOTSTRAPS_DATE?=		2026-08-20
