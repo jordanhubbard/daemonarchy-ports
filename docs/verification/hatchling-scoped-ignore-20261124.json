@@ -55,7 +55,6 @@
     "No original upstream test filters/assertions changed; full source suite remains pending actual pytest/test dependencies"
   ],
   "remaining": [
-    "Normal default-path development integration",
     "Full original upstream test source/tool closure and suite",
     "AMD64",
     "Canonical per-unit lifecycle/SDK and release qualification"
@@ -65,5 +64,27 @@
     "archive_bytes": 7431940,
     "archive_sha256": "f4d5797458f11b96b5fb0f7c9a5df69d4164a5ba9584ff9863523b1bf26c5176",
     "all_nodes_independently_verified_on_both_hosts": true
+  },
+  "normal_development_integration": {
+    "original_dependencies_and_scripts_enforced": true,
+    "all220_sealed_payloads_exact": true,
+    "all64_inherited_packages_preserved": true,
+    "actual_default_unchanged_counterexample_and31_case_backend_matrix_pass": true,
+    "observed_development_packages_after": 65,
+    "frozen_bootstrap_base_kernel_shells_mounts_advisory_preserved": true,
+    "two_host_transaction_evidence": {
+      "nodes": 1346,
+      "archive_bytes": 7929642,
+      "archive_sha256": "bb3f8014b1ac3b7f4b31ae705d4185238afb605dc3043ad80e767b6eac0cf169",
+      "all_nodes_verified_on_both_hosts": true
+    }
+  },
+  "full_original_upstream_test_source": {
+    "head": "4a8bd728cad2a99d95e2e6814ddd852b3c4e5a23",
+    "all_Git_source_members": 549,
+    "backend_Python_test_modules": 33,
+    "source_archive_sha256": "20ec129e1888b43b3f8737c7f880c6384d4ac9b738d0dbc2add65acdcf30efd5",
+    "all_bodies_links_modes_membership_independently_verified_two_hosts": true,
+    "original_pytest_execution": "Pending source-built pytest and complete original test dependency closure; no upstream-reported test counts claimed as local."
   }
 }
