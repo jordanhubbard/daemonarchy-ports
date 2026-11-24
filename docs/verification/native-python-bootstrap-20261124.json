@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 65,
+  "normal_development_package_count": 66,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -219,6 +219,39 @@
           "nodes": 1346,
           "archive_bytes": 7929642,
           "archive_sha256": "bb3f8014b1ac3b7f4b31ae705d4185238afb605dc3043ad80e767b6eac0cf169",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      }
+    },
+    {
+      "label": "Pygments",
+      "packages": [
+        {
+          "name": "py312-pygments-2.21.0.pkg",
+          "bytes": 2015888,
+          "sha256": "41fd4efa041a93ddf6e68c7d29e335c7ac35054c234fbbb5b9b5182edcde7b15"
+        }
+      ],
+      "source_revisions": [
+        "511743d7327c93e9ff0117d04f0176ebc572f444"
+      ],
+      "sealed_payloads": 1041,
+      "actual_private_and_default_path_checks": "Actual Python/JSON token identities and symbols, HTML escaping with independent rendered-text parser, ANSI formatter, real CLI, unknown-lexer API/CLI error and changed-file recovery",
+      "normal_packages_before": 65,
+      "normal_packages_after": 66,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "two_host_evidence": {
+        "source_build_tests_private": {
+          "nodes": 6052,
+          "archive_bytes": 22719766,
+          "archive_sha256": "6847687967010f46aafb079dd8f32a7f90e48a808877ba06dbeb998b12d30652",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 20,
+          "archive_bytes": 7894456,
+          "archive_sha256": "5e4279399d229561a2d7e788e9b5f428a46841b402568df228ec223d25ade869",
           "all_nodes_verified_on_both_hosts": true
         }
       }
