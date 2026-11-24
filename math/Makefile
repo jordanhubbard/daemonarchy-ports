@@ -52,6 +52,7 @@
     SUBDIR += R-cran-combinat
     SUBDIR += R-cran-conf.design
     SUBDIR += R-cran-conquer
+    SUBDIR += R-cran-corpcor
     SUBDIR += R-cran-cvar
     SUBDIR += R-cran-date
     SUBDIR += R-cran-ddalpha
@@ -62,6 +63,7 @@
     SUBDIR += R-cran-dplyr
     SUBDIR += R-cran-eRm
     SUBDIR += R-cran-energy
+    SUBDIR += R-cran-epitools
     SUBDIR += R-cran-exactRankTests
     SUBDIR += R-cran-expm
     SUBDIR += R-cran-forcats
@@ -98,6 +100,7 @@
     SUBDIR += R-cran-maps
     SUBDIR += R-cran-mathjaxr
     SUBDIR += R-cran-matrixStats
+    SUBDIR += R-cran-matrixcalc
     SUBDIR += R-cran-maxLik
     SUBDIR += R-cran-mclust
     SUBDIR += R-cran-mcmc
@@ -138,6 +141,7 @@
     SUBDIR += R-cran-quadprog
     SUBDIR += R-cran-qualityTools
     SUBDIR += R-cran-quantreg
+    SUBDIR += R-cran-ranger
     SUBDIR += R-cran-raster
     SUBDIR += R-cran-recipes
     SUBDIR += R-cran-reformulas
@@ -163,6 +167,7 @@
     SUBDIR += R-cran-uroot
     SUBDIR += R-cran-wk
     SUBDIR += R-cran-xts
+    SUBDIR += R-cran-yardstick
     SUBDIR += R-cran-zoo
     SUBDIR += SCIP
     SUBDIR += SoPlex
@@ -271,7 +276,6 @@
     SUBDIR += combblas
     SUBDIR += conauto
     SUBDIR += concorde
-    SUBDIR += convertall
     SUBDIR += coq
     SUBDIR += cosma
     SUBDIR += costa
@@ -971,6 +975,7 @@
     SUBDIR += py-arviz-stats
     SUBDIR += py-arybo
     SUBDIR += py-autograd
+    SUBDIR += py-autograd-gamma
     SUBDIR += py-awkward
     SUBDIR += py-awkward-cpp
     SUBDIR += py-baycomp
@@ -1014,6 +1019,7 @@
     SUBDIR += py-evalidate
     SUBDIR += py-fairlearn
     SUBDIR += py-faiss
+    SUBDIR += py-fast-simplification
     SUBDIR += py-fastcluster
     SUBDIR += py-fdasrsf
     SUBDIR += py-fenics-basix
@@ -1077,6 +1083,7 @@
     SUBDIR += py-mip
     SUBDIR += py-mixsimulator
     SUBDIR += py-ml-dtypes
+    SUBDIR += py-mlc-z3-static
     SUBDIR += py-mnnpy
     SUBDIR += py-moarchiving
     SUBDIR += py-modin
@@ -1126,6 +1133,7 @@
     SUBDIR += py-pygsl
     SUBDIR += py-pyhdfe
     SUBDIR += py-pyhull
+    SUBDIR += py-pylinalg
     SUBDIR += py-pymc3
     SUBDIR += py-pynauty
     SUBDIR += py-pyneqsys
@@ -1197,6 +1205,7 @@
     SUBDIR += py-uncertainties
     SUBDIR += py-unyt
     SUBDIR += py-vector
+    SUBDIR += py-vhacdx
     SUBDIR += py-vincenty
     SUBDIR += py-yt
     SUBDIR += py-z3-solver

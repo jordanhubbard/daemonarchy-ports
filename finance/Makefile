@@ -58,6 +58,7 @@
     SUBDIR += odoo16
     SUBDIR += odoo17
     SUBDIR += odoo18
+    SUBDIR += odoo19
     SUBDIR += ord
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Business-MaxMind-CreditCardFraudDetection
@@ -180,6 +181,7 @@
     SUBDIR += py-pandas-ta-openbb
     SUBDIR += py-pycoin
     SUBDIR += py-pycoingecko
+    SUBDIR += py-pyiso8583
     SUBDIR += py-pythclient
     SUBDIR += py-python-binance
     SUBDIR += py-python-bitcoinlib

@@ -4,6 +4,7 @@
     SUBDIR += bsdadminscripts2
     SUBDIR += caronade
     SUBDIR += create-rb-port
+    SUBDIR += daemonarchy-pkg
     SUBDIR += dialog4ports
     SUBDIR += dialog4ports-static
     SUBDIR += distilator
@@ -11,6 +12,7 @@
     SUBDIR += fastest_pkg
     SUBDIR += freebsd-bugzilla-cli
     SUBDIR += genpatch
+    SUBDIR += git-proxy
     SUBDIR += hs-cabal2tuple
     SUBDIR += hs-panopticum
     SUBDIR += jailaudit
@@ -39,6 +41,7 @@
     SUBDIR += pkg_search
     SUBDIR += pkg_tree
     SUBDIR += pkgcompare
+    SUBDIR += pkgfe
     SUBDIR += pkgs_which
     SUBDIR += port-authoring-tools
     SUBDIR += port-index-uniquifier
@@ -79,6 +82,7 @@
     SUBDIR += py-skog
     SUBDIR += rc-subr-jail
     SUBDIR += reprise
+    SUBDIR += sbom-generator
     SUBDIR += sccache-overlay
     SUBDIR += submodules2tuple
     SUBDIR += synth

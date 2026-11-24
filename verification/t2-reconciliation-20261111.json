@@ -1,0 +1,17 @@
+{
+  "schema": "daemonarchy/ports-t2-reconciliation@1",
+  "observed_utc": "2026-11-11T05:52:49.508262+00:00",
+  "legacy_review": 33,
+  "legacy_head": "b3ec7ea63fe394443b13c76a3bc1dcba15ee27ea",
+  "integration_merge": "7954b9888f8180ebbccbdf8986c71d19ad7e247b",
+  "source_commit": "16b58080ebc8542d7b11486a45722350f277ed33",
+  "source_archive_sha256": "9c9363db524019d0110ebd7f064100079d241c39a134ec120675c748230916da",
+  "source_archive_bytes": 18055535,
+  "retained_port_bytes": "identical to reviewed legacy port; newer shared category/changelog entries preserved",
+  "patch_application": "all retained patches applied with zero fuzz",
+  "service_shell_syntax": "pass",
+  "native_build_test_package_install": "pending",
+  "current_package_closure": false,
+  "canonical_lifecycle_receipt": false,
+  "physical_qualification": false
+}

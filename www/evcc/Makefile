@@ -1,5 +1,5 @@
 PORTNAME=	evcc
-DISTVERSION=	0.318.1
+DISTVERSION=	0.319.1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/mfechner/${PORTNAME}/:npmcache
 DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	npm-node24>0:www/npm-node24
 USES=		gmake go:1.27+,modules,no_targets nodejs:24,build tar:zstd
 
 # Find here: https://github.com/evcc-io/evcc/releases
-_SHA=		e967a35e789081adc7bbd1a730c355e8a870c3fb
+_SHA=		29ef1eb4d0fff3186f6d9574496691b09cd6ae43
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	evcc-io
@@ -66,6 +66,7 @@ do-install:
 # make makesum
 # make clean extract do-patch
 # cd work/evcc-*
+# npm install --force
 # (for maintainer) helper target to generate the .npm cache tarball
 make-npm-cache: patch
 	@cd ${WRKDIR} && ${RM} -r .npm
@@ -78,6 +79,7 @@ make-npm-cache: patch
 		&& ${ECHO} "Please upload the file: scp ${WRKDIR}/${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX} mfechner@freefall.freebsd.org:public_distfiles/${PORTNAME}/"
 # cd ../..
 # make makepatch
+# make clean
 # make make-npm-cache
 # uncomment DISTFILES
 # make makesum

@@ -1,7 +1,7 @@
 PORTNAME=	typescript-go
 DISTVERSIONPREFIX=	typescript/v
 DISTVERSION=	7.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -21,6 +21,8 @@ GH_TUPLE=	microsoft:TypeScript:4d4f005c8541e0255a9d8791205fdce326e462bc:typescri
 GO_MOD_DIST=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${GH_TAGNAME}/
 GO_MODULE=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_TARGET=	./cmd/tsgo
+
+CONFLICTS_INSTALL=	typescript-devel
 
 PLIST_FILES=	bin/tsc
 PORTDOCS=	CHANGES.md CONTRIBUTING.md README.md SECURITY.md SUPPORT.md

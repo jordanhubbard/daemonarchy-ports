@@ -451,7 +451,9 @@
     SUBDIR += openfhe
     SUBDIR += openfortivpn
     SUBDIR += openiked
+    SUBDIR += openpgp-card-ssh-agent
     SUBDIR += openpgp-card-tools
+    SUBDIR += openpgp-card-tools-git
     SUBDIR += opensaml
     SUBDIR += opensc
     SUBDIR += openssh-askpass
@@ -876,6 +878,9 @@
     SUBDIR += plasma6-kscreenlocker
     SUBDIR += plasma6-ksshaskpass
     SUBDIR += plasma6-kwallet-pam
+    SUBDIR += plasma6lts-kscreenlocker
+    SUBDIR += plasma6lts-ksshaskpass
+    SUBDIR += plasma6lts-kwallet-pam
     SUBDIR += portacl-rc
     SUBDIR += proftpd-mod_clamav
     SUBDIR += proxytunnel
@@ -1105,6 +1110,7 @@
     SUBDIR += py-slip10
     SUBDIR += py-social-auth-core
     SUBDIR += py-social-auth-core4
+    SUBDIR += py-social-auth-core5
     SUBDIR += py-spake2
     SUBDIR += py-ssh-audit
     SUBDIR += py-sshpubkeys
@@ -1171,6 +1177,7 @@
     SUBDIR += rubygem-attr_encrypted3
     SUBDIR += rubygem-auth-sanitizer
     SUBDIR += rubygem-auth-sanitizer-gitlab
+    SUBDIR += rubygem-az-identity
     SUBDIR += rubygem-bcrypt
     SUBDIR += rubygem-bcrypt-ruby
     SUBDIR += rubygem-bcrypt_pbkdf
@@ -1225,14 +1232,18 @@
     SUBDIR += rubygem-metasploit_payloads-mettle
     SUBDIR += rubygem-nessus_rest
     SUBDIR += rubygem-net-scp
+    SUBDIR += rubygem-net-scp-gitlab
     SUBDIR += rubygem-net-scp1
     SUBDIR += rubygem-net-sftp
+    SUBDIR += rubygem-net-sftp-gitlab
     SUBDIR += rubygem-net-ssh
     SUBDIR += rubygem-net-ssh-gateway
+    SUBDIR += rubygem-net-ssh-gitlab
     SUBDIR += rubygem-net-ssh-krb
     SUBDIR += rubygem-net-ssh-multi
     SUBDIR += rubygem-net-ssh5
     SUBDIR += rubygem-net-ssh6
+    SUBDIR += rubygem-net-ssh7
     SUBDIR += rubygem-net-telnet
     SUBDIR += rubygem-nexpose
     SUBDIR += rubygem-nmap-parser

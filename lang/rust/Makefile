@@ -1,6 +1,6 @@
 PORTNAME=	rust
 PORTVERSION?=	1.99.1
-PORTREVISION?=	1
+PORTREVISION?=	3
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://dev-static.rust-lang.org/dist/:src \
@@ -70,6 +70,8 @@ SOURCES_VARS=		_COMPONENTS+=rust-src-${_PACKAGE_VERS} \
 WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown rust-std-${_PACKAGE_VERS}-wasm32-unknown-unknown" \
 			_RUST_TARGETS+=wasm32-unknown-unknown
 
+EXTRACT_AFTER_ARGS=	--exclude .github --no-same-owner --no-same-permissions
+
 # See WRKSRC/src/stage0 for the date and version values
 BOOTSTRAPS_DATE?=		2026-08-20
 RUST_BOOTSTRAP_VERSION?=	1.98.1
@@ -96,7 +98,8 @@ _COMPONENTS+=		cargo-${_PACKAGE_VERS}-${_RUST_TARGET} \
 			rustc-${_PACKAGE_VERS}-${_RUST_TARGET} \
 			rustfmt-${_PACKAGE_VERS}-${_RUST_TARGET} \
 			rust-analysis-${_PACKAGE_VERS}-${_RUST_TARGET} \
-			rust-std-${_PACKAGE_VERS}-${_RUST_TARGET}
+			rust-std-${_PACKAGE_VERS}-${_RUST_TARGET} \
+			rustc-dev-${_PACKAGE_VERS}-${_RUST_TARGET}
 
 .include <bsd.port.pre.mk>
 
@@ -128,12 +131,10 @@ MAKE_ENV+=	RUST_BACKTRACE=1
 MAKE_ENV+=	RUST_LIB_BACKTRACE=0
 .endif
 
-# per https://rust-lang.github.io/rustup/concepts/components.html
-# rustc-dev and miri are only useful on nightly
+# miri and cargo-miri are for dev/nightly channels
 .if defined(NIGHTLY_DATE)
 _RUST_TOOLS+=	miri cargo-miri
-_COMPONENTS+=	rustc-dev-${_PACKAGE_VERS}-${_RUST_TARGET} \
-		miri-${_PACKAGE_VERS}-${_RUST_TARGET}
+_COMPONENTS+=	miri-${_PACKAGE_VERS}-${_RUST_TARGET}
 .endif
 
 .if ${PORT_OPTIONS:MWASM} && ${PORT_OPTIONS:MDOCS}
@@ -295,7 +296,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/lib/rustlib/uninstall.sh
 	@${FIND} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/lib \
 		${STAGEDIR}${PREFIX}/libexec -exec ${FILE} -i {} + | \
-		${AWK} -F: '/executable|sharedlib/ { print $$1 }' | ${XARGS} ${STRIP_CMD}
+		${AWK} -F: '/executable|sharedlib/ { print $$1 }' | ${XARGS} ${STRIP_CMD} --strip-unneeded
+
 	@${FIND} ${STAGEDIR}${PREFIX} -not -type d | \
 		${SED} -E -e 's,^${STAGEDIR}${PREFIX}/,,' \
 			-e 's,(share/man/man[1-9]/.*\.[0-9]),\1.gz,' >> ${TMPPLIST}

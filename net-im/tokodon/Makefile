@@ -1,6 +1,5 @@
 PORTNAME=	tokodon
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,7 +8,7 @@ WWW=		https://apps.kde.org/tokodon/
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6 \
+LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain \
 		libmpv.so:multimedia/mpv \
 		libMpvQt.so:multimedia/mpvqt
 

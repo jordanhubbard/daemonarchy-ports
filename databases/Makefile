@@ -107,7 +107,6 @@
     SUBDIR += innotop
     SUBDIR += iowow
     SUBDIR += ip4r
-    SUBDIR += ipa_sdb
     SUBDIR += iplike
     SUBDIR += jdb
     SUBDIR += jetbrains-datagrip
@@ -205,9 +204,9 @@
     SUBDIR += mysql-connector-j
     SUBDIR += mysql-connector-odbc
     SUBDIR += mysql-shell
+    SUBDIR += mysql2610-client
+    SUBDIR += mysql2610-server
     SUBDIR += mysql2pgsql
-    SUBDIR += mysql267-client
-    SUBDIR += mysql267-server
     SUBDIR += mysql80-client
     SUBDIR += mysql80-server
     SUBDIR += mysql84-client
@@ -457,6 +456,7 @@
     SUBDIR += p5-Metadata
     SUBDIR += p5-Mojo-Pg
     SUBDIR += p5-Mojo-SQL
+    SUBDIR += p5-Mojo-SQLite
     SUBDIR += p5-MongoDB
     SUBDIR += p5-Mongoose
     SUBDIR += p5-MySQL-Diff
@@ -802,6 +802,7 @@
     SUBDIR += py-asyncmy
     SUBDIR += py-asyncpg
     SUBDIR += py-berkeleydb
+    SUBDIR += py-burner-redis
     SUBDIR += py-chroma-hnswlib
     SUBDIR += py-chromadb
     SUBDIR += py-couchdb
@@ -844,6 +845,7 @@
     SUBDIR += py-marshmallow-sqlalchemy
     SUBDIR += py-minidb
     SUBDIR += py-mongoengine
+    SUBDIR += py-mongomock
     SUBDIR += py-motor
     SUBDIR += py-mycli
     SUBDIR += py-mysql-connector-python
@@ -877,6 +879,7 @@
     SUBDIR += py-pum
     SUBDIR += py-pyarrow
     SUBDIR += py-pyarrow-stubs
+    SUBDIR += py-pydocket
     SUBDIR += py-pyiceberg
     SUBDIR += py-pylance
     SUBDIR += py-pylibmc
@@ -928,6 +931,7 @@
     SUBDIR += py-sqlparse
     SUBDIR += py-sqlrelay
     SUBDIR += py-squall-sql
+    SUBDIR += py-surrealdb
     SUBDIR += py-tableschema
     SUBDIR += py-tarantool
     SUBDIR += py-tiledb
@@ -1123,6 +1127,7 @@
     SUBDIR += rubygem-redis-actionpack-rails61
     SUBDIR += rubygem-redis-actionpack-rails70
     SUBDIR += rubygem-redis-client
+    SUBDIR += rubygem-redis-cloud-auth
     SUBDIR += rubygem-redis-cluster-client
     SUBDIR += rubygem-redis-clustering
     SUBDIR += rubygem-redis-clustering-gitlab

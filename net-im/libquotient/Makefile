@@ -1,6 +1,6 @@
 PORTNAME=	libquotient
 DISTVERSION=	0.9.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/quotient-im/libQuotient
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6 \
+LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain \
 		libolm.so:security/olm
 
 USES=		cmake compiler:c++20-lang qt:6 tar:xz

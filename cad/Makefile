@@ -11,8 +11,6 @@
     SUBDIR += apio
     SUBDIR += appcsxcad
     SUBDIR += archimedes
-    SUBDIR += astk-client
-    SUBDIR += astk-serveur
     SUBDIR += atlc
     SUBDIR += brlcad
     SUBDIR += calculix
@@ -108,6 +106,7 @@
     SUBDIR += pcb-rnd
     SUBDIR += pdnmesh
     SUBDIR += py-amaranth
+    SUBDIR += py-cascadio
     SUBDIR += py-cocotb
     SUBDIR += py-csxcad
     SUBDIR += py-edalize

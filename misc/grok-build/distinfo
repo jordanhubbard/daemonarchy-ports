@@ -1,5 +1,5 @@
-TIMESTAMP = 1793165828
-SHA256 (grok-build-1.0.70/grok-1.0.70-linux-x86_64) = 22d281c5964c5444147328096ba2a221f3f0874c6858e27c825656a80f6e58e9
-SIZE (grok-build-1.0.70/grok-1.0.70-linux-x86_64) = 195700192
-SHA256 (grok-build-1.0.70/grok-1.0.70-linux-aarch64) = 3aa36883574b263088e5addffe241f55430e8daaee1a0c4934b02180007a9761
-SIZE (grok-build-1.0.70/grok-1.0.70-linux-aarch64) = 166639048
+TIMESTAMP = 1795039139
+SHA256 (grok-build-1.0.89/grok-1.0.89-linux-x86_64) = a3dface51d9bdc71fd121e0481dd02d9b46a721f7a6b892f756480e9666eba1f
+SIZE (grok-build-1.0.89/grok-1.0.89-linux-x86_64) = 207850592
+SHA256 (grok-build-1.0.89/grok-1.0.89-linux-aarch64) = 641b3e500d6420d3b07117a2c857cceeb82b33f4b53d23a95895bd76a4773f96
+SIZE (grok-build-1.0.89/grok-1.0.89-linux-aarch64) = 177313192

@@ -19,12 +19,11 @@ BUILD_DEPENDS=	boost-libs>=1.85.0:devel/boost-libs \
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
 		libboost_chrono.so:devel/boost-libs \
 		libboost_thread.so:devel/boost-libs \
-		libcryptopp.so:security/cryptopp \
-		libminizip.so:archivers/minizip
+		libcryptopp.so:security/cryptopp
 RUN_DEPENDS=	${_QWT_LIB}:x11-toolkits/qwt6@qt6
 
-USES=		cmake compiler:c++17-lang eigen:3 gl localbase:ldflags pkgconfig \
-		qt:6
+USES=		cmake compiler:c++17-lang eigen:3 gl localbase:ldflags minizip \
+		pkgconfig qt:6
 USE_GL=		gl opengl
 USE_LDCONFIG=	yes
 USE_QT=		base svg
@@ -62,13 +61,17 @@ CMAKE_OFF=	ZENO_BUILD_DESIGNER ZENO_BUILD_PLAYER ZENO_INSTALL_TARGET \
 # ZENO_BUILD_DESIGNER - bug https://github.com/zenustech/zeno/issues/1907
 OPTIONS_DEFINE=	ALEMBIC AUDIO CALCUV CGMESH DEMBONES FBX FEM FUNCTIONAL \
 		GUI IMGCV LSYSTEM MESHER MESHSUBDIV OLDZENBASE PBD RIGID \
-		SKINNING TREESKETCH ZENOFX
+		SKINNING TREESKETCH
+# ZFX, the wrangler expression compiler, JITs x86-64 machine code only
+# (projects/ZenoFX/ZFX/x64), so ZenoFX cannot be built anywhere else
+OPTIONS_DEFINE_amd64=	ZENOFX
 OPTIONS_GROUP=	TOOLS
 OPTIONS_GROUP_TOOLS=	BULLETTOOLS CGMESHTOOLS FLIPTOOLS HERCULESTOOLS
 OPTIONS_DEFAULT=	ALEMBIC AUDIO CALCUV CGMESH DEMBONES FBX FEM \
 			FUNCTIONAL GUI IMGCV LSYSTEM MESHER MESHSUBDIV \
-			OLDZENBASE PBD RIGID SKINNING TREESKETCH ZENOFX \
+			OLDZENBASE PBD RIGID SKINNING TREESKETCH \
 			BULLETTOOLS CGMESHTOOLS FLIPTOOLS HERCULESTOOLS
+OPTIONS_DEFAULT_amd64=	ZENOFX
 
 ALEMBIC_DESC=		Alembic (.abc) import and export nodes
 AUDIO_DESC=		Audio analysis nodes (bundled Aquila)

@@ -452,6 +452,7 @@
     SUBDIR += malint
     SUBDIR += mamba
     SUBDIR += maolan
+    SUBDIR += maolan-plugins
     SUBDIR += mate-media
     SUBDIR += mclk-lv2
     SUBDIR += mda-lv2
@@ -609,6 +610,9 @@
     SUBDIR += plasma6-ocean-sound-theme
     SUBDIR += plasma6-oxygen-sounds
     SUBDIR += plasma6-plasma-pa
+    SUBDIR += plasma6lts-kpipewire
+    SUBDIR += plasma6lts-ocean-sound-theme
+    SUBDIR += plasma6lts-plasma-pa
     SUBDIR += playgsf
     SUBDIR += playmidi
     SUBDIR += playumidi
@@ -760,6 +764,7 @@
     SUBDIR += sonivox
     SUBDIR += sonivox-eas
     SUBDIR += sorcer-lv2
+    SUBDIR += sound-firmware-cirrus
     SUBDIR += sound-juicer
     SUBDIR += soundgrab
     SUBDIR += soundtouch

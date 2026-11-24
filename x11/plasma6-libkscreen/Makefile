@@ -9,12 +9,11 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	${LOCALBASE}/share/hwdata/pnp.ids:misc/hwdata
 
-USES=		cmake compiler:c++11-lib gl kde:6 pkgconfig qt:6 tar:xz xorg
+USES=		cmake compiler:c++11-lib gl kde:6 pkgconfig qt:6 tar:xz
 USE_GL=		gl opengl
-USE_KDE=	config \
-		ecm:build plasma-wayland-protocols:build
-USE_QT=		base wayland
-USE_XORG=	xcb
+USE_KDE=	ecm:build plasma-wayland-protocols:build
+USE_QT=		base \
+		tools:build
 
 post-patch:
 # Looking for pnp.ids

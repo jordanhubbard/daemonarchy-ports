@@ -1,5 +1,5 @@
 PORTNAME=	fuse-utils
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -7,7 +7,7 @@ MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Utilities from the Free Unix Spectrum Emulator
 WWW=		https://fuse-emulator.sourceforge.net/
 
-LICENSE=	GPLv2
+LICENSE=	GPL-2.0-only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \

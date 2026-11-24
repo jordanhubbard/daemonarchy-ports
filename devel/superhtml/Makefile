@@ -1,6 +1,6 @@
 PORTNAME=	superhtml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	devel
 
 MAINTAINER=	dave@freedave.net
@@ -14,9 +14,11 @@ USES=		zig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kristoff-it
-GH_PROJECT=	${PORTNAME}
 
 PLIST_FILES=	bin/superhtml
+
+post-patch:
+	${REINPLACE_CMD} -e 's:%%PORTVERSION%%:${PORTVERSION}:' ${WRKSRC}/build.zig
 
 # `make WITH_DEBUG=yes test` to test against debug build
 do-test:

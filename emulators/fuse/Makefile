@@ -1,5 +1,5 @@
 PORTNAME=	fuse
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}-emulator/${PORTNAME}/${PORTVERSION}
 
@@ -7,7 +7,13 @@ MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Free Unix (Sinclair ZX-)Spectrum Emulator
 WWW=		https://fuse-emulator.sourceforge.net
 
-LICENSE=	GPLv2
+# The included ROM files have various licenses and conditions
+LICENSE=	GPL-2.0-only LGPL-2.1-or-later
+LICENSE_COMB=	multi
+LICENSE_FILE_GPL_2.0-only=	${WRKSRC}/COPYING
+# This file has its license in a comment block, so the license of this port
+# would change depening on the GTK3 option being set or not?
+LICENSE_FILE_LGPL-2.1-or-later=	${WRKSRC}/ui/gtk3/resources.c
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgcrypt.so:security/libgcrypt \
@@ -31,7 +37,7 @@ AUDIO_DESC=		Audio output interface
 UI_DESC=		User Interface
 ROMS_DESC=		Extra ROM images (128p, 256s, Gluck, IF1, Opus, TrDOS)
 OPTIONS_SINGLE_AUDIO=	ALSA AO OSS PULSEAUDIO
-OPTIONS_SINGLE_UI=	GTK3 SDL SDL2
+OPTIONS_SINGLE_UI=	GTK3 SDL2
 
 OPTIONS_SUB=		yes
 ALSA_CONFIGURE_ON=	--with-audio-driver=alsa
@@ -45,22 +51,16 @@ ICONS_USES=		desktop-file-utils shared-mime-info
 ICONS_CONFIGURE_ENABLE=	desktop-integration
 GTK3_USE=		GNOME=cairo,gtk30
 GTK3_CONFIGURE_WITH=	gtk
-SDL_USES=		sdl
-SDL_USE=		SDL=sdl XORG=ice,sm,xext
-SDL_CONFIGURE_WITH=	sdl
 SDL2_DESC=		${SDL_DESC}, version 2
 SDL2_USES=		sdl
 SDL2_USE=		SDL=sdl2 XORG=ice,sm,xext
 SDL2_CONFIGURE_WITH=	sdl
-SDL_CONFIGURE_ENABLE=	sdl2
+SDL2_CONFIGURE_ENABLE=	sdl2
 ROMS_RUN_DEPENDS=	fuse-roms>0:emulators/fuse-roms
 
 PORTDOCS=	AUTHORS ChangeLog README README.copyright THANKS
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MICONS}
-.endif
 
 post-extract:
 	${CP} ${WRKSRC}/roms/README.copyright ${WRKSRC}
