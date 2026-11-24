@@ -54,3 +54,21 @@ This selected-port workflow uses ordinary binary dependency bootstrap and a
 source-built libdvdcss dependency on FreeBSD 15.1 amd64. It does not establish
 the full matching-CURRENT source-built closure, graphical session, physical
 hardware, canonical per-unit SDK or retained lifecycle/release acceptance.
+
+### Native libuv kqueue poll repair
+
+The original FreeBSD ARM64 `poll_nested_kqueue` test fails because both
+nonblocking operations reject the kqueue descriptor with `ENOTTY`. The candidate
+checks that descriptor using a zero-event, zero-timeout `kevent` call before
+accepting this specific failure. Native controls preserve a pending event and
+reject five other descriptor cases. Seven original poll cases pass; the two
+Windows-only cases keep their original skips. Test code and filters stay unchanged.
+
+The [native observation](../verification/libuv-freebsd-kqueue-20261124.json)
+binds the original and candidate source bodies. The probe relinks original test
+objects; it is separate from a fresh complete port build. The full unfiltered
+runner invokes all 451 cases: 436 pass, 12 keep original skips, and three
+pre-existing connect/UDP failures remain. Network-policy and IPv6 fixture
+qualification is still needed.
+AMD64, independent packages, normal installation and canonical lifecycle/SDK
+acceptance remain open. No kernel or network policy is changed by this repair.

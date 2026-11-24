@@ -1,0 +1,57 @@
+{
+  "schema": "daemonarchy-native-development-observation@1",
+  "date": "2026-11-24",
+  "scope": "Unprivileged FreeBSD16 ARM64 prototype using original compiled libuv1.52.1 test objects and unchanged static-library members; not a fresh complete port recipe or admitted lifecycle result.",
+  "problem": "uv_poll_init rejects kqueue descriptors because both FIONBIO and F_SETFL return ENOTTY.",
+  "change": "On FreeBSD only, after both nonblock methods fail with ENOTTY, accept the descriptor only when kevent with zero changes, zero events and a zero timeout confirms it is a kqueue.",
+  "original_poll_sha256": "1251826732affd254647829bb43bcdf5bc251915dac601b9eadea13f237b7c79",
+  "patched_poll_sha256": "59392adb620efde73330b5c3a196cba336aada8ae6b85adbd629f43602deff99",
+  "actual_native_controls": {
+    "queued_event_survives_probe": true,
+    "non_kqueue_controls_rejected": [
+      "pipe read end",
+      "pipe write end",
+      "stream socket",
+      "character device",
+      "invalid descriptor"
+    ],
+    "original_nested_kqueue_test": "baseline fails ENOTTY; prototype passes unchanged assertions",
+    "original_poll_cases": {
+      "passed": [
+        "poll_bad_fdtype",
+        "poll_close",
+        "poll_duplex",
+        "poll_multiple_handles",
+        "poll_nested_kqueue",
+        "poll_oob",
+        "poll_unidirectional"
+      ],
+      "original_skips": {
+        "poll_close_doesnt_corrupt_stack": "Test only relevant on Windows",
+        "poll_closesocket": "Test only relevant on Windows"
+      }
+    },
+    "unfiltered_original_suite_relinked_with_prototype": {
+      "invoked": 451,
+      "passed": 436,
+      "original_skips": 12,
+      "failed": [
+        "connect_unspecified",
+        "udp_connect",
+        "udp_connect6"
+      ],
+      "result": "Nested kqueue failure removed; existing address-policy and IPv6-fixture failures remain. Static relinking does not need LD_LIBRARY_PATH, so original spawn_empty_env now runs and passes. No test sources or filters changed."
+    }
+  },
+  "preservation": [
+    "Original source, test objects and static library unchanged",
+    "Observed normal development prefix/package registry/base/kernel/mounts unchanged",
+    "No kernel or network-policy changes; no new skips or test filters"
+  ],
+  "remaining": [
+    "Fresh original complete port construction and full test run",
+    "Three existing connect/UDP failures require separate network-policy/IPv6-fixture qualification",
+    "AMD64 native checks",
+    "Independent sealed products, normal integration, canonical lifecycle/SDK and release qualification"
+  ]
+}
