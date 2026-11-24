@@ -220,5 +220,41 @@
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
     "libuv": "https://github.com/jordanhubbard/daemonarchy-ports/pull/102",
     "Pathspec": "https://github.com/jordanhubbard/daemonarchy-ports/pull/103"
-  }
+  },
+  "held_packages": [
+    {
+      "name": "py312-hatchling-1.33.0.pkg",
+      "bytes": 163693,
+      "sha256": "dfd03269aeae8c4112116eb2954ff12c2a8f076a29e7257892ca62bf26c95219",
+      "source_revision": "087f30829b60c5222b6af04082ec5a9850b03de6",
+      "original_eight_construction_targets": "all exit0",
+      "private_sealed_payloads_exact": 213,
+      "normal_development_installation": "HELD; environment remains64 packages",
+      "actual_counterexample": "With project under /build, project-local build/ and !keep.py rules are discarded because the absolute project path matches build/. Wheel incorrectly contains native_probe/build/keep.py; independent real Git excludes it. Original assertion and failure retained.",
+      "source_cause": "load_vcs_exclusion_patterns matches self.root against unscoped patterns, then returns an empty list.",
+      "two_host_failure_evidence": {
+        "nodes": 1193,
+        "archive_bytes": 3289187,
+        "archive_sha256": "4ef08d9648dd700c9534949c2468961ee4eca9f78acd899c603bbbcf4e576496",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "upstream_review": {
+        "issue": "https://github.com/pypa/hatch/issues/1964",
+        "narrow_PR": "https://github.com/pypa/hatch/pull/2415",
+        "narrow_PR_status": "closed without merge; superseded because inherited rules and sdist rebuild cases remain incorrect",
+        "broader_PR": "https://github.com/pypa/hatch/pull/2445",
+        "broader_PR_status": "open and unmerged; candidate only, not applied or natively qualified",
+        "candidate_complete_diff": {
+          "url": "https://github.com/pypa/hatch/compare/740565ac2929597cb9def8d46338cbef6493fc8d...4a8bd728cad2a99d95e2e6814ddd852b3c4e5a23.diff",
+          "base": "740565ac2929597cb9def8d46338cbef6493fc8d",
+          "head": "4a8bd728cad2a99d95e2e6814ddd852b3c4e5a23",
+          "PR_commits": 3,
+          "bytes": 59531,
+          "sha256": "b915a7cebd0b856ea9ed7e2bed829f48d8dd436fc422e9693a3effbc7bc9e260",
+          "scope": "Complete immutable base-to-head PR diff, not just head-commit patch. Unmerged review candidate, not locally qualified."
+        },
+        "scope": "The head-commit patch alone omits prerequisite commits. Review the complete pinned three-commit diff and preserve inherited/local/nested rules, directory exclusions and repeated sdist-to-wheel behavior. Upstream-reported test counts are not local evidence."
+      }
+    }
+  ]
 }
