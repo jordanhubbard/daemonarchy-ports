@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 67,
+  "normal_development_package_count": 69,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -288,6 +288,50 @@
           "all_nodes_verified_on_both_hosts": true
         }
       }
+    },
+    {
+      "label": "MarkupSafe and Babel",
+      "packages": [
+        {
+          "name": "py312-markupsafe-3.0.4.pkg",
+          "bytes": 18634,
+          "sha256": "a823deac4f0ef3c367b26cf5ffe5447986622ddadb41c074af94fb1199957117"
+        },
+        {
+          "name": "py312-Babel-2.18.0.pkg",
+          "bytes": 7085180,
+          "sha256": "7342195035423cf3f589ac4af9a106ac1561f2a147c574f02f4465c35e72ca9a"
+        }
+      ],
+      "source_revisions": [
+        "511743d7327c93e9ff0117d04f0176ebc572f444"
+      ],
+      "sealed_payloads": 1243,
+      "default_options": {
+        "MarkupSafe": [],
+        "Babel": [
+          "DOCS"
+        ]
+      },
+      "actual_private_and_default_path_checks": "Real native MarkupSafe extension, HTML escaping/formatting/trusted-hook/exception recovery; Babel locale, currency/decimal/calendar/plural rules and unknown-locale recovery; two changed PO catalogs compiled by actual pybabel CLI and independently parsed with stdlib gettext.",
+      "normal_packages_before": 67,
+      "normal_packages_after": 69,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "two_host_evidence": {
+        "source_build_tests_private": {
+          "nodes": 6150,
+          "archive_bytes": 63851771,
+          "archive_sha256": "792b34bd136a3ad320eb2a90d24196e8fd6de56ef48ab5983e3521d13aaf13bc",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 24,
+          "archive_bytes": 8178521,
+          "archive_sha256": "7380dcc927eb5789c2421b150d248ccbbeca10fd93ba72c249e6dba65ec6ce8d",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      }
     }
   ],
   "complete_original_source_suites": {
@@ -358,15 +402,32 @@
         "all_nodes_verified_on_both_hosts": true
       },
       "scope": "Full original pytest collection and original python -m tests.lib validation, using normally source-built package and pytest. No test filters/source edits. Upstream Makefile virtualenv/pip provisioning and lint/dev tooling were not run; not a stock port make test target or canonical lifecycle receipt."
+    },
+    "MarkupSafe": {
+      "collected": 80,
+      "passed": 79,
+      "failures": 0,
+      "errors": 0,
+      "original_skips": [
+        {
+          "name": "test_ext_init[markupsafe._native]",
+          "reason": "speedups not active"
+        }
+      ],
+      "raw_stdout_sha256": "ae6d86633b31118391b1954baa678c1355f8f2af4800faa29d7aef0c755ce90b",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "JUnit_sha256": "1dab1e1b31a2b613156f2b11ce338d8bfb25f7b11a7bf0f046a4430f42f467ba",
+      "scope": "Full original pytest selection against the exact sealed package, retaining native/pure parametrization and warning-as-error configuration. Python3.12 ARM64 only. No filters, original source/test edits, or stock port make test claim. Other Python versions/free-threading/style/docs remain unqualified."
     }
   },
   "pending": [
-    "Complete original SCM/Calver/PoetryCore/TOMLKit/Hatchling/Pygments/Pytest self-suite and declared test-tool closure",
+    "Complete original SCM/Calver/PoetryCore/TOMLKit/Hatchling/Pygments/Pytest/Babel self-suite and declared test-tool closure",
     "Optional Pathspec RE2/Hyperscan backend coverage remains originally skipped; selected original pytest bridge now passes",
     "Fresh libuv full port construction and three existing network fixture failures; see PR102",
     "Matching CURRENT desktop dependency closure and graphical acceptance",
     "Canonical complete per-unit ownership, provenance, lifecycle and SDK/TCB admission",
-    "Full release/fleet/physical hardware qualification"
+    "Full release/fleet/physical hardware qualification",
+    "Current documentation changes require authority review; preserve the existing authority attestation and report stale validation rather than manufacturing a new attestation."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -459,5 +520,14 @@
       "all_nodes_verified_on_both_hosts": true
     },
     "scope": "Original native source/port test bridges and independent package API acceptance; not canonical lifecycle/SDK, AMD64 or full release acceptance."
-  }
+  },
+  "observer_corrections": [
+    {
+      "package": "MarkupSafe",
+      "original_failed_probe_retained_in_source_private_archive": true,
+      "cause": "Own probe passed a trusted Markup instance directly to internal _escape_inner and compared native/pure behavior. Public escape dispatches trusted __html__ before invoking that helper.",
+      "correction": "Compare internal implementations on plain strings; retain separate public trusted-Markup assertion. Full original suite subsequently runs unchanged, including both upstream backend variants.",
+      "upstream_or_package_changes": "None"
+    }
+  ]
 }
