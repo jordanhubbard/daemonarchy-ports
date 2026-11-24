@@ -17,6 +17,9 @@ CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 USES=		gettext perl5
 USE_PERL5=	configure
 
+# gettext suppresses translations in C.UTF-8; keep the translation tests active.
+TEST_ENV=	${MAKE_ENV} LC_ALL=en_US.UTF-8
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Locale/gettext/gettext.so
 
