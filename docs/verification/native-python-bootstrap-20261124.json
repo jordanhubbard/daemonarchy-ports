@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 83,
+  "normal_development_package_count": 87,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -518,6 +518,57 @@
         }
       },
       "test_scope": "Independent actual runtime integration only. Both complete original self-suite declared tool closures remain pending; not replaced by three own asyncio cases or Trio runtime controls."
+    },
+    {
+      "name": "Jinja2, Markdown, Smartypants and fixed TOML",
+      "packages": [
+        {
+          "name": "py312-Jinja2-3.1.6.pkg",
+          "bytes": 307117,
+          "sha256": "12abc09e5feaeab9564e14c747d4c72164afcd6d1b51ca2af47ad0f8f2423642"
+        },
+        {
+          "name": "py312-markdown-3.11.3.pkg",
+          "bytes": 201364,
+          "sha256": "8f75596f225e08e171f08165822c82a8bd0a6548d0467dde58e8f9af536f4bcd"
+        },
+        {
+          "name": "py312-smartypants-2.0.2.pkg",
+          "bytes": 14887,
+          "sha256": "6e4dc8d6e3dc1572be76eec84f9c914a4af57d2b5fbdaa4d236f69e248785fb7"
+        },
+        {
+          "name": "py312-toml-0.10.2_2.pkg",
+          "bytes": 41529,
+          "sha256": "38414ea8d7f29c0fca00232abdb919aaf7053307e6f0786bdab0bd67d0e157ef"
+        }
+      ],
+      "source_revisions": [
+        "8ff82a27e4a8f3c580a3947b1333be7c9b6ea4c7",
+        "511743d7327c93e9ff0117d04f0176ebc572f444",
+        "f6ac11e5647d9fed43103517542ead0ce3cf367a"
+      ],
+      "sealed_payloads": 239,
+      "normal_packages_before": 83,
+      "normal_packages_after": 87,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "actual_private_and_default_path_checks": "Template inheritance/autoescape/strict undefined/sandbox/async/syntax recovery, changed filesystem bytecode cache and real Babel MO; Markdown API/CLI/extensions/changed input, typography/code protection and TOML stdlib oracle/roundtrip/datetime/malformed EOF rejection/error recovery.",
+      "two_host_evidence": {
+        "source_builds_tests_private": {
+          "nodes": 3543,
+          "archive_bytes": 25073344,
+          "archive_sha256": "bf2c904c0dd7f9c5efdeb0e4fd76020c55503dbde7f905276bd8f1b671a3644e",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 27,
+          "archive_bytes": 8786718,
+          "archive_sha256": "74208101f4a6e4d45211089414561a226f1707a3fb42a476eb9344776b9dca36",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "test_scope": "Jinja2 full original make test909passed0skips. FixedTOML original upstream selected pytest command plus20backported regression cases41passed2originalNumPyskips. Original port has no selected test bridge. Markdown/Smartypants complete original suites, NumPy/fulltox/GoCI/AMD64/canonical/release remain pending."
     }
   ],
   "complete_original_source_suites": {
@@ -1331,7 +1382,50 @@
         "archive_sha256": "998b68752a11c0801274a924084e489f782e3f07def0251b8d21e3f34de6d0c3",
         "all_nodes_verified_on_both_hosts": true
       },
-      "scope": "Full unchanged native original target on ARM64 Python3.12. Four-package normal transaction held after separate TOML counterexample. No AMD64/canonical/release acceptance claim."
+      "scope": "Full unchanged native original target on ARM64 Python3.12 and independent sealed/default runtime checks pass. Full release/AMD64/canonical lifecycle admission remains open.",
+      "normal_development_integration": {
+        "packages_after": 87,
+        "two_host_transaction": {
+          "nodes": 27,
+          "archive_bytes": 8786718,
+          "archive_sha256": "74208101f4a6e4d45211089414561a226f1707a3fb42a476eb9344776b9dca36",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "actual_default_rendering_sandbox_async_i18n_cache_checks": "pass"
+      }
+    },
+    "TOML_fixed": {
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/109",
+      "source_revision": "f6ac11e5647d9fed43103517542ead0ce3cf367a",
+      "version": "0.10.2_2",
+      "original_upstream_command": "python -m pytest tests, as selected by original tox.ini; no stock port test bridge",
+      "reported": 43,
+      "passed": 41,
+      "added_regressions": 20,
+      "original_skips": [
+        {
+          "name": "test_numpy_floats",
+          "reason": "could not import 'numpy': No module named 'numpy'"
+        },
+        {
+          "name": "test_numpy_ints",
+          "reason": "could not import 'numpy': No module named 'numpy'"
+        }
+      ],
+      "failures": 0,
+      "errors": 0,
+      "raw_stdout_sha256": "812fc429b49f9e986923cc286b2fac137b4081e5e698980215c827ca42c923d1",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "JUnit_sha256": "e145dfc1d1c8e57b1318c6a79032c415d170185c8374d7dbcc69947e912a7d3c",
+      "all_eight_original_port_targets_and_zero_fuzz_patches": "pass",
+      "published_decoder_and_test_body_hashes": "exact",
+      "two_host_source_tests_private": {
+        "nodes": 3543,
+        "archive_bytes": 25073344,
+        "archive_sha256": "bf2c904c0dd7f9c5efdeb0e4fd76020c55503dbde7f905276bd8f1b671a3644e",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "scope": "Original assertions retained plus20additive regressions. Reconstructed documented external fixture closure explicitly pinned; optional NumPy coverage/fulltox/pytest-cov/GoCI/Python-version matrix/AMD64 and canonical lifecycle remain unqualified."
     }
   },
   "pending": [
@@ -1346,7 +1440,7 @@
     "Pycparser FreeBSD original cpp suite candidate passes451withzero skips; draft PR108 review, AMD64 and canonical receipt remain pending",
     "Complete AsyncGenerator/Pycparser peers Sniffio/SortedContainers/Hatch plugins/Cython original self-suites and declared test-tool closure",
     "Complete Attrs declared original self-suite tools and CFFI conditional meson-python/virtualenv/installed-CLI coverage",
-    "TOML array EOF fix PR109 exact native port/committed regression tests/sealed/default acceptance; original NumPy coverage and full CI closure remain pending"
+    "TOML EOF fix PR109 native port/20committedregressions/sealed/default controls now pass; original NumPy/fullCI/AMD64/canonical gates remain pending"
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -1404,7 +1498,7 @@
       "sha256": "3967c413d4707f4679d99446c91414fc8cb7bbb76feb2a7b44b1974d55dc17d2",
       "source_revision": "511743d7327c93e9ff0117d04f0176ebc572f444",
       "original_eight_construction_targets": "all exit0",
-      "normal_development_installation": "held; no normal transaction for Jinja2/Markdown/Smartypants/TOML has run",
+      "normal_development_installation": "Original0.10.2_1 remains held after real malformed-array counterexample. Separately fixed0.10.2_2 is now integrated with all239newpayloads/83inheritedpackages exact.",
       "actual_counterexample": "Unterminated arrays are accepted with silently truncated data; an unfinished quoted-element array raises IndexError. Independent stdlib oracle rejects all eight malformed fixtures.",
       "candidate": {
         "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/109",
@@ -1425,7 +1519,27 @@
           "fixture_selection": "OriginalCI clones without a pin. Explicitly reconstruct with latest fixture commit before original0.10.2release, retaining original test loops and every fixture.",
           "scope": "Original upstream pytest selection on baseline and prototype. Full tox/Python-version/NumPy/GoCI closure not qualified."
         },
-        "pending": "Fresh exact-commit original port build, newly committed regression patch execution and sealed/default package acceptance; normal installation; AMD64/canonical/release."
+        "pending": "NumPy/fulltox/GoCI/AMD64/canonical lifecycle/release acceptance remain pending.",
+        "fresh_exact_port_and_committed_regressions": {
+          "passed": 41,
+          "original_numpy_skips": 2,
+          "added_regressions": 20,
+          "package_sha256": "38414ea8d7f29c0fca00232abdb919aaf7053307e6f0786bdab0bd67d0e157ef",
+          "all_eight_original_port_targets": "pass",
+          "sealed_and_default_API_rejection_and_recovery": "pass",
+          "two_host_source_tests_private": {
+            "nodes": 3543,
+            "archive_bytes": 25073344,
+            "archive_sha256": "bf2c904c0dd7f9c5efdeb0e4fd76020c55503dbde7f905276bd8f1b671a3644e",
+            "all_nodes_verified_on_both_hosts": true
+          },
+          "two_host_normal": {
+            "nodes": 27,
+            "archive_bytes": 8786718,
+            "archive_sha256": "74208101f4a6e4d45211089414561a226f1707a3fb42a476eb9344776b9dca36",
+            "all_nodes_verified_on_both_hosts": true
+          }
+        }
       },
       "two_host_failure_and_prototype_evidence": {
         "nodes": 4076,
