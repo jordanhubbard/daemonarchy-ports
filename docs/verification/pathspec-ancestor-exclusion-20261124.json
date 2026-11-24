@@ -1,0 +1,81 @@
+{
+  "schema": "daemonarchy-native-development-observation@1",
+  "date": "2026-11-24",
+  "source_revision": "087f30829b60c5222b6af04082ec5a9850b03de6",
+  "scope": "Original FreeBSD ARM64 construction and development package integration; not canonical lifecycle/SDK or release acceptance.",
+  "upstream_fix": "https://github.com/cpburnz/python-pathspec/pull/132",
+  "official_patch": {
+    "commit": "f404ca47871a9f2f854bbadc5cb3d77155f64db3",
+    "bytes": 11009,
+    "sha256": "ed65a56d61c25ebdccff5d182f34265337dc7d48445d4c892a6c15cbb271c4d4"
+  },
+  "actual_original_tests": {
+    "baseline": {
+      "testsRun": 197,
+      "successful": true,
+      "optional_backend_subtest_skips": 276
+    },
+    "old_production_with_upstream_regressions": {
+      "testsRun": 200,
+      "assertion_failures": 4,
+      "errors": 0,
+      "optional_backend_subtest_skips": 294
+    },
+    "candidate_and_fresh_port_extract": {
+      "testsRun": 200,
+      "successful": true,
+      "failures": 0,
+      "errors": 0,
+      "optional_backend_subtest_skips": 294
+    },
+    "skip_scope": "Original optional RE2 and Hyperscan backend cases retain their original reasons; skip records include subtests and are not a count of distinct test methods. Original declared pytest bridge has not run."
+  },
+  "original_port_targets": {
+    "checksum": "exit0",
+    "extract": "exit0",
+    "patch": "exit0",
+    "configure": "exit0",
+    "build": "exit0",
+    "stage": "exit0",
+    "check-plist": "exit0",
+    "package": "exit0"
+  },
+  "package": {
+    "name": "py312-pathspec-1.1.1_1.pkg",
+    "bytes": 76575,
+    "sha256": "175927c5aa83a5d2127635805f4da82d2d85efa9001b0d2fd8fed30a9733d746",
+    "sealed_payloads": 105
+  },
+  "private_and_default_path_consumers": [
+    "Original directory exclusion/file negation counterexample agrees with independent real Git",
+    "Parent directory unignore",
+    "Actual filesystem traversal before and after a file rename",
+    "Invalid regex range raises re.error, then valid patterns recover"
+  ],
+  "normal_development_integration": {
+    "original_dependencies_and_scripts_enforced": true,
+    "all105_sealed_payloads_exact": true,
+    "inherited58_packages_preserved": true,
+    "observed_packages_after": 59,
+    "frozen_bootstrap_base_kernel_mounts_advisory_preserved": true
+  },
+  "two_host_evidence": {
+    "source_build_tests_and_private": {
+      "nodes": 1495,
+      "archive_sha256": "4187d5b77e15b056d2fdc09c8d8dc8986543b7b6e4e7777306d91f65d9d664a3",
+      "all_nodes_independently_verified_on_both_hosts": true
+    },
+    "normal_transaction": {
+      "nodes": 27,
+      "archive_sha256": "5123afe14fbbffba8a8359d039490285e829baacd4ea383f39ff21d0ea7df7a5",
+      "all_nodes_independently_verified_on_both_hosts": true
+    }
+  },
+  "remaining": [
+    "Declared source-built pytest bridge",
+    "Optional RE2/Hyperscan backend coverage",
+    "AMD64 coverage",
+    "Canonical per-unit lifecycle/SDK admission",
+    "Full release and physical hardware acceptance"
+  ]
+}
