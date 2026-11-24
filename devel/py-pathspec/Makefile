@@ -1,8 +1,12 @@
 PORTNAME=	pathspec
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+PATCH_SITES=	https://github.com/cpburnz/python-pathspec/commit/
+PATCHFILES=	f404ca47871a9f2f854bbadc5cb3d77155f64db3.patch:-p1
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Utility library for pattern matching of file paths
