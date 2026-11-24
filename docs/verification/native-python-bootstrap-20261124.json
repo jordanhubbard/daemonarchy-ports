@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 62,
+  "normal_development_package_count": 63,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -123,6 +123,39 @@
           "all_nodes_verified_on_both_hosts": true
         }
       }
+    },
+    {
+      "label": "Poetry Core",
+      "packages": [
+        {
+          "name": "py312-poetry-core-2.5.0.pkg",
+          "bytes": 817673,
+          "sha256": "2847dc5a540167df45e29f3dbb3cafd5a52723dc326cb06a9df102e69c4a07d7"
+        }
+      ],
+      "source_revisions": [
+        "087f30829b60c5222b6af04082ec5a9850b03de6"
+      ],
+      "sealed_payloads": 476,
+      "actual_private_and_default_path_checks": "Actual backend metadata/wheel/all RECORD hashes/wheel execution/sdist; invalid project version fails, changed source rebuild recovers with changed wheel contents",
+      "normal_packages_before": 62,
+      "normal_packages_after": 63,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "two_host_evidence": {
+        "source_build_tests_private": {
+          "nodes": 2619,
+          "archive_bytes": 7350169,
+          "archive_sha256": "05e14a2fc0b75fb69671f2e4a84743825731f6486920038f7bbedc76d5bb25a3",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 31,
+          "archive_bytes": 7456564,
+          "archive_sha256": "e305e1eab20f1a98b507dea5f773905849d9df1d7d7e345fa25e994e610d7549",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      }
     }
   ],
   "complete_original_source_suites": {
@@ -143,7 +176,7 @@
     }
   },
   "pending": [
-    "Complete original suites for SCM/Calver/Pluggy/IniConfig/Trove and source-built pytest closure",
+    "Complete original suites for SCM/Calver/Pluggy/IniConfig/Trove/PoetryCore/TOMLKit/Hatchling and source-built pytest closure",
     "Declared Pathspec pytest bridge and optional backend coverage",
     "Fresh libuv full port construction and three existing network fixture failures; see PR102",
     "Matching CURRENT desktop dependency closure and graphical acceptance",
