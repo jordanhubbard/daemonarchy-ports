@@ -26,7 +26,8 @@
       "successful": true,
       "failures": 0,
       "errors": 0,
-      "optional_backend_subtest_skips": 294
+      "optional_backend_subtest_skips": 294,
+      "declared_original_pytest_bridge_now_passes": true
     },
     "skip_scope": "Original optional RE2 and Hyperscan backend cases retain their original reasons; skip records include subtests and are not a count of distinct test methods. Original declared pytest bridge has not run."
   },
@@ -72,10 +73,36 @@
     }
   },
   "remaining": [
-    "Declared source-built pytest bridge",
     "Optional RE2/Hyperscan backend coverage",
     "AMD64 coverage",
     "Canonical per-unit lifecycle/SDK admission",
     "Full release and physical hardware acceptance"
-  ]
+  ],
+  "original_declared_pytest_bridge": {
+    "normal_development_package_count": 67,
+    "original_make_test_targets": true,
+    "original_test_selection_and_input_bodies_unchanged": true,
+    "source_revisions": [
+      "087f30829b60c5222b6af04082ec5a9850b03de6"
+    ],
+    "units": [
+      {
+        "name": "Pathspec",
+        "passed": 200,
+        "original_optional_skips": 294,
+        "additional_passed_subtests": 148,
+        "actual_original_summary": "============ 200 passed, 294 skipped, 148 subtests passed in 0.46s =============",
+        "raw_stdout_sha256": "3ca9d3831c8a6f2617cca8f06f081c5d268ca52192182f1462d38f5af6e61ca2",
+        "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "observer_correction": "Initial reporter variable PYTEST_ARGS was unused by original python.mk, which uses TEST_ARGS. Existing full verbose case IDs/collection/results and all initial source/prefix/logical-registry/base guards were audited; no test rerun or original assertion/filter change.",
+    "two_host_original_test_evidence": {
+      "nodes": 20,
+      "archive_bytes": 1190673,
+      "archive_sha256": "b66f91ddff794fc188f85a042f21a48eac17eaeb3ddf4a31a8fa161663cc2752",
+      "all_nodes_verified_on_both_hosts": true
+    },
+    "scope": "Original native source/port test bridges and independent package API acceptance; not canonical lifecycle/SDK, AMD64 or full release acceptance."
+  }
 }

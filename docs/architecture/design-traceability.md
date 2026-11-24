@@ -1,6 +1,6 @@
 # Ports authority and acceptance map
 
-<!-- literate-ai:authority-reviewed sha256:0eb4d71b7439966f5963b909bcbf60842d6dcbbab354f832314182dd33e65eb0 -->
+<!-- literate-ai:authority-reviewed sha256:261c7269f2519ec58d23234e69d8d41fe330cb2eb54715d221a77802415c4adc -->
 
 `PROJECT.md` owns the complete ports requirements. The
 [unit guide](../user/ports-units.md) defines the initial real closure; the
