@@ -2,21 +2,20 @@
 
 ## Current candidate and qualification boundary
 
-The review candidate is `llvm19-19.1.7_7`. The revision changes because the
-FreeBSD sanitizer and LLDB fixes change production bytes. The native partial
-R164/R228 results below used the private `_6` recipe. R323 now passes normal
-`_7` configure/build before the twelve libc++ compatibility additions, and R327
-runs that version's normal selected tests with 17 unexpected outcomes remaining.
-The current candidate includes those additional patches and the short private
-test-TMPDIR recipe; it requires a new normal build/test run. A fresh `_7` package and its installed consumers remain
-unqualified. The
+The review candidate is `llvm19-19.1.7_7`. Production fixes change package
+bytes, but no new package is published. R355 normal configure/full build and
+R364 actual normal runtime checks pass for the twelve libc++ additions plus the
+short test-TMPDIR recipe. R365 retains all 1,769 selected names with seven unexpected
+outcomes. The current candidate adds six memory-region production/doc/test
+patches; their fresh source and private causal checks pass, while a new normal
+build/test run, package and installed consumers remain unqualified. The
 [runtime follow-up record](../../verification/llvm19-native-runtime-followup-20261123.json)
-binds the current candidate's Git file identities and these observations.
+binds the exact candidate identities and these observations.
 
 LLDB now follows ordered optional ELF `DT_AUXILIARY` providers when resolving
 filter exports. This handles FreeBSD libc's syscall placeholders and libsys
-without removing libc from the debugger's module list. The original selected
-target still exits 1: its 1,761 report entries contain 1,223 PASS, 15 FAIL,
+without removing libc from the debugger's module list. The historical R164
+selected target exits 1: its 1,761 report entries contain 1,223 PASS, 15 FAIL,
 4 UNRESOLVED, 27 XFAIL and 492 UNSUPPORTED. All 1,734 shared names from the
 preceding selection remain; 161 FAIL entries become PASS. Its one new
 PASS-to-FAIL result is the event test discussed below. The new ELF regression,
@@ -136,8 +135,8 @@ the original checksum/full-patch targets with zero fuzz. All 160,720 fresh nodes
 match R313 except those twelve declared source changes and their exact original
 backups; all other full metadata, bodies, types and literal links match. All 87
 current origin Git identities match the native view, and default options,
-dependencies and four jobs remain unchanged. Normal build/test and package
-qualification for these additions is pending.
+dependencies and four jobs remain unchanged. Normal R355 configure/full build and R365 selected tests now cover these
+additions. The later six memory-region patches still need a new normal run.
 
 The QEMU launch failure also has a native causal reproduction. A 66-byte base
 TMPDIR alone yields a working 98-byte socket. Upstream LIT adds its own
@@ -150,8 +149,8 @@ exports it through both actor branches, preserves primary-group inheritance and
 cleans it on exit. Controls run the actual original recipe with a diagnostic
 child: root and unprivileged success/failure cases all keep mode 0700 and correct
 ownership/group, bind real nested Unix sockets, remove the allocated directory
-and retain child failure47 as make failure1. These controls do not qualify the
-nine original QEMU methods; those still require the normal target.
+and retain child failure47 as make failure1. These controls are separate from upstream qualification. R365 now passes all
+nine original QEMU methods and independently verifies cleanup after make failure.
 
 R360 passes original checksum/full patch for the current recipe with zero fuzz.
 All 160,720 fresh nodes match R313 except the same twelve libc++ changes and exact
@@ -164,6 +163,69 @@ archive SHA-256
 `3b67cf68656a66dd8c3e22474b11a7ca5ff82fd42092b45a0acd2f878dfae7e9`.
 Both physical filesystems independently verify the complete archive, source/SDK
 before/after equality and recovery helpers. Original failures remain failures.
+
+R355 normal configure/full default build both exit 0 with fresh owned cookies,
+four jobs, all original options/dependencies and 49 build actions. The complete
+preceding warm tree and hardlink groups match the verified R347 frontier before
+exactly twelve source changes and original backups are integrated. Every final
+source/SDK/ports/base/registry/stopped-data/mount/cookie guard passes. R364 then
+uses the actual normal CLI and binding, without a private library substitution
+or loader override, to verify all eleven current-layout values against the
+unchanged native probe.
+
+R365 original selected do-test exits 1 with 1,240 PASS, 5 FAIL, 2 UNRESOLVED,
+27 XFAIL and 495 UNSUPPORTED. All 1,769 names remain; ten unexpected results
+become PASS with no shared regressions. All 60 string simulator methods, five
+unique-pointer methods and nine QEMU methods pass through the original target.
+The thread-exit case also changes to PASS, but its cause is not established.
+Seven unexpected results remain: GUI spawn-threads, detach-resumes, two memory
+search cases, save-core, rerun/expression and Objective-C expressions. Lua,
+events and the expected Capsicum outcomes remain passing.
+
+The controller's cleanup review initially assumed a launcher-private variable
+would remain in the upstream emulator environment. That assumption fails and
+its result is retained. Independent original JSON/XML body/hash/name/status
+review passes for all selected cases and keeps 84,259 filter exclusions separate.
+Eight actual current-run emulator state files retain standard TMPDIR and identify
+one short private root; all socket paths fit the native limit and the allocated
+root is absent after make failure. No upstream test was rerun or result rewritten.
+Normal product and build-metadata copies were sealed before testing and remain
+unchanged, with all final integrity guards passing. Complete current tested-state
+archival remains pending; this is not a package or canonical lifecycle receipt.
+
+A separate memory-range diagnosis reads valid heap data while the original
+FreeBSD server reports those addresses as unmapped. Its map cache is never
+invalidated between stops. A private stop-ID override refreshes it and passes
+the unchanged original fixture with the same normal client. A four-stop test
+then exposes another defect: mapped PROT_NONE pages lose their mapped identity
+because the server omits an empty permissions tuple. The existing client already
+distinguishes tuple presence from absence. The revised server preserves that
+identity and the documentation clarifies zero-access mapped ranges.
+
+The same compiled mmap fixture and unchanged normal client compare three real
+server executables, verified through the inferior parent's kernel-reported path:
+
+| Private server control | Failed four-stop contracts |
+| --- | --- |
+| Original | Mapped no-access, read/write, read-only |
+| Cache refresh only | Mapped no-access |
+| Cache refresh and empty-permissions encoding | None |
+
+The fixture checks real mmap/mprotect/munmap results, a target-written byte,
+permission changes, unmapped read failure and normal program exit. All original
+mapping assertions remain. Original compiler/archive/link commands pass privately
+for the two changed objects and archives, preserving every other member and ELF
+dependency contract. These object experiments do not replace a normal rebuild.
+An additive original API method covers all four states; every original Python
+method AST and old C++ body is retained. The new POSIX method alone excludes
+Windows. Its actual normal upstream execution remains required.
+
+R382 original checksum/full patch passes with zero fuzz for all 93 current
+origin identities. Its 160,726 fresh source nodes match R313 except the eighteen
+declared changes and exact original backups; all other recorded full native
+metadata, bodies, types and literal links match. Default options, dependencies,
+build arguments and four jobs are retained. The six new memory-region patches
+still need normal full header-dependent build, original tests and packaging.
 
 These source and selected-runtime checks do not qualify the complete original
 suite, fresh package/installed consumers, ARM platforms or the release.

@@ -205,6 +205,11 @@
         "sha256": "e2342311105951aafeb2336aaaae1ba707a8bb4a4dac80676f76e626f63b12f7",
         "git_mode": "100644"
       },
+      "files/patch-lldb_docs_resources_lldbgdbremote.md": {
+        "kind": "file",
+        "sha256": "f03dfcd4cc1a01e0affbc9d8cbce13ac4c93e8671e3b3e8083fcfb5d4ea6b1d2",
+        "git_mode": "100644"
+      },
       "files/patch-lldb_test_API_tools_lldb-dap_attach_TestDAP__attachByPortNum.py": {
         "kind": "file",
         "sha256": "20de91aeff638d446c783d582fe51ece7e5c79511df95d7029871243eaf4b374",
@@ -265,6 +270,11 @@
         "sha256": "6aa16db4ed5124481a3705507b2ef5d136ea611f34906428b80e3f36ea788afb",
         "git_mode": "100644"
       },
+      "files/patch-lldb_test_API_functionalities_memory-region_TestMemoryRegion.py": {
+        "kind": "file",
+        "sha256": "062cebcfa1483d4c33d22c92bc3635bc6dc827aac4dfed1320b8fb9ea7d2c788",
+        "git_mode": "100644"
+      },
       "files/patch-compiler-rt_lib_sanitizer__common_sanitizer__common__interceptors.inc": {
         "kind": "file",
         "sha256": "dbe93f0f48996c7d83ea4548b651649e2b4a1cbdaa278f939c9351a275d001eb",
@@ -293,6 +303,11 @@
       "files/patch-clang_lib_Driver_ToolChains_FreeBSD.cpp": {
         "kind": "file",
         "sha256": "2036cfe799d9dd848669c974bb5e5a823411b6caabb0fba298ed0f500ff8f721",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_API_functionalities_memory-region_main.cpp": {
+        "kind": "file",
+        "sha256": "5b23724982cf660a1128f4b31af52e97ba58a252cfb9fb08b8a719d0d8c0bfdc",
         "git_mode": "100644"
       },
       "files/patch-llvm_unittests_Support_CMakeLists.txt": {
@@ -350,6 +365,11 @@
         "sha256": "7d65cc0feedce7b2e5f9122edafdbcddff60d1e0eb17f96c7a29d1bf80821b4b",
         "git_mode": "100644"
       },
+      "files/patch-lldb_source_Plugins_Process_FreeBSD_NativeProcessFreeBSD.cpp": {
+        "kind": "file",
+        "sha256": "4b1e6424af3504f597dd6362a2ff321a86cf8443be07a8c706d38e081eee0514",
+        "git_mode": "100644"
+      },
       "files/llvm-wrapper.sh.in": {
         "kind": "file",
         "sha256": "18c5b1162c04e24a3509ecd722d341029f3ee26d6d35d4bfb6d4812c97737378",
@@ -393,6 +413,11 @@
       "files/patch-compiler-rt_lib_sanitizer__common_sanitizer__procmaps__bsd.cpp": {
         "kind": "file",
         "sha256": "75d46bb8c2f4602853076677b07c060d7e4dd13b6435508065fdbf1411ddf683",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_Process_FreeBSD_NativeProcessFreeBSD.h": {
+        "kind": "file",
+        "sha256": "cfbc310ce697b9ade5b03790b7fba8d88c90d7cf05885adb4d8e782067470784",
         "git_mode": "100644"
       },
       "files/patch-lldb_CMakeLists.txt": {
@@ -440,13 +465,19 @@
         "sha256": "f3d25790589f08a6a21775b429ed18849ce3b6bba5bd582df64b0c92aa66f8a4",
         "git_mode": "100644"
       },
+      "files/patch-lldb_source_Plugins_Process_gdb-remote_GDBRemoteCommunicationServerLLGS.cpp": {
+        "kind": "file",
+        "sha256": "961daf1202972c7e972960777af099bfa44184c9ea3f24efd88eece102f9cacf",
+        "git_mode": "100644"
+      },
       "files/patch-clang_tools_clang-format_clang-format-sublime.py": {
         "kind": "file",
         "sha256": "a173ac8beddfb54eee2502c9825722f997374dc190e4d2b91806594d52901bca",
         "git_mode": "100644"
       }
     },
-    "identity_scope": "All87 current origin bodies/types/literal links/Git executable modes match native R360 full-patch view. R313/R350 identities remain historical at their producer. Full native permissions/owners/flags are retained separately; Git identity is not full filesystem metadata equality."
+    "identity_scope": "All93 current origin bodies/types/literal links/Git executable modes match native R382 full-patch view. Earlier75/87-file identities remain historical at their producer. Full native owners/modes/flags are retained separately; Git identity is not full filesystem metadata equality.",
+    "latest_normal_qualification_scope": "R355/R364/R365 cover twelve libc++ additions and short test TMPDIR before the six new memory-region production/doc/test patches. Current full normal build/tests/package remain unqualified."
   },
   "native_boundary": {
     "platform": "FreeBSD16.0-amd64",
@@ -458,7 +489,7 @@
     "canonical_Component_or_SDK_admission": false,
     "lifecycle_receipt": false,
     "complete_toolchain_provenance_admitted": false,
-    "native_recipe_pkgname_scope": "Historical R164/R228 targets used revision6. R323 normal configure/build and R327 selected tests used revision7 before twelve libc++ additions and the short test-TMPDIR recipe. R360 fresh checksum/full patch qualifies current source extraction/patching, not normal build/test or package/installed consumers."
+    "native_recipe_pkgname_scope": "Historical R164/R228 used revision6. R355 configure/full build, R364 actual normal runtime and R365 selected tests use revision7 before the six memory-region additions. Current R38293-file source checksum/patch proof does not qualify new normal build/tests or package/installed consumers."
   },
   "default_build": {
     "producer": "R222",
@@ -625,7 +656,7 @@
     }
   ],
   "remaining_gates": [
-    "Normal configure/default build and original selected tests for twelve libc++ additions plus short private test TMPDIR. R360 full original checksum/patch and160720-node strict comparison pass. Require all1769 prior names,60+5 expanded simulator methods and all9 original QEMU methods with real cleanup; controls do not substitute for these targets.",
+    "Normal full source/header-dependent configure/default build and original tests for six memory-region production/doc/test additions after complete current failed-frontier custody. Prior R355 normal build, R364 actual11-value runtime and R365 all1769 selected cases are recorded; R365 retains7 unexpected outcomes. New original memory-region method must pass without changing existing assertions, and all65 simulator/9 QEMU/Lua/event/Capsicum contracts must remain covered.",
     "Full unfiltered original suite after all repairs; retained R74 full run remains failed with249 unexpected entries.",
     "Remaining LLDB, sanitizer, GNU libatomic, CFI, libFuzzer and OpenMP defects.",
     "Fresh stage, license/SBOM hooks, check-plist/package and installed compiler consumers after final repairs.",
@@ -1009,20 +1040,57 @@
     "candidate_scope": "R350 before the short test-TMPDIR recipe; same twelve libc++ source patches as current candidate."
   },
   "current_fresh_original_patch": {
-    "producer": "R360",
+    "producer": "R382",
     "original_checksum_patch_exits": [
       0,
       0
     ],
     "zero_fuzz": true,
-    "complete_fresh_source_nodes": 160720,
-    "complete_fresh_source_inventory_sha256": "0be00d39c06c17511ad04dc7b915b19915cc47e7cb9a04edc3bebc298844d2ff",
+    "complete_fresh_source_nodes": 160726,
+    "complete_fresh_source_inventory_sha256": "716650fac356ebe6dc05424c73eb7834ebac2e33a9107b3aef31c83204987a46",
     "reference": "R313 complete160708-node fresh source",
-    "only_source_changes": "The same twelve libc++ changes and exact original backups recorded by R350. All other full metadata/bodies/types/literal links equal.",
-    "complete87_file_current_origin_Git_identity_matches": true,
-    "candidate_Makefile_sha256": "93b8b8a3d3fdb5bf1e2658bf8fb6e1fbaef35bdd722a46c6532396db505094e7",
+    "only_source_changes": "Eighteen declared source/doc/test bodies and eighteen exact original backups. All other recorded full metadata/bodies/types/literal links match.",
+    "complete93_file_current_origin_Git_identity_matches": true,
     "default_options_dependencies_build_arguments_and_four_jobs_preserved": true,
-    "only_declared_TEST_ENV_change": "TMPDIR is expanded from per-run LLVM_TEST_TMPDIR instead of a deep build-directory path.",
+    "only_declared_TEST_ENV_delta_from_R313": "Existing short private per-run TMPDIR recipe",
+    "new_memory_region_source_patches": {
+      "lldb/source/Plugins/Process/FreeBSD/NativeProcessFreeBSD.cpp": {
+        "original_sha256": "d90d1761686fffe8522b7b240b19fe5e8ffe2d29abbe134180dd0d03af43de17",
+        "candidate_sha256": "10a1f6932b068ea374309ce2b17f3fc40bd2a29274f3dee2263c7ec33be11372",
+        "patch_name": "patch-lldb_source_Plugins_Process_FreeBSD_NativeProcessFreeBSD.cpp",
+        "patch_sha256": "4b1e6424af3504f597dd6362a2ff321a86cf8443be07a8c706d38e081eee0514"
+      },
+      "lldb/source/Plugins/Process/FreeBSD/NativeProcessFreeBSD.h": {
+        "original_sha256": "e0a551815a83c979571cd798addd229dca60e44fc7cee3fb001cc7850fc8e03d",
+        "candidate_sha256": "4e86365a52aa282e1d901aa621b5ac787008ac4f1c1ec7e20bac731aa8bbf795",
+        "patch_name": "patch-lldb_source_Plugins_Process_FreeBSD_NativeProcessFreeBSD.h",
+        "patch_sha256": "cfbc310ce697b9ade5b03790b7fba8d88c90d7cf05885adb4d8e782067470784"
+      },
+      "lldb/source/Plugins/Process/gdb-remote/GDBRemoteCommunicationServerLLGS.cpp": {
+        "original_sha256": "634ce2e441f959555ae6cbb32e25c5a7c1d66bef01290cb479a71b3ecf3e9e87",
+        "candidate_sha256": "c52a197dc29aac3374156597f0541b7fb048ee5b7888523ba12ecefacbde53c4",
+        "patch_name": "patch-lldb_source_Plugins_Process_gdb-remote_GDBRemoteCommunicationServerLLGS.cpp",
+        "patch_sha256": "961daf1202972c7e972960777af099bfa44184c9ea3f24efd88eece102f9cacf"
+      },
+      "lldb/docs/resources/lldbgdbremote.md": {
+        "original_sha256": "0186eac06737505b0eb42fe63dbe21d95299a3f2c1d9f364d0f60dd46eab8af2",
+        "candidate_sha256": "8d97197e07d5872c6a9c806d8a16971d91155024bef21481838190d01469339f",
+        "patch_name": "patch-lldb_docs_resources_lldbgdbremote.md",
+        "patch_sha256": "f03dfcd4cc1a01e0affbc9d8cbce13ac4c93e8671e3b3e8083fcfb5d4ea6b1d2"
+      },
+      "lldb/test/API/functionalities/memory-region/main.cpp": {
+        "original_sha256": "5fde8cd1afa9773459a991958612d2f3a7446e5b49660436ced3cf65dc72530a",
+        "candidate_sha256": "9aa1297e19b5400ce5c46b682765d695824e08028df525c047b0ca60e1854f39",
+        "patch_name": "patch-lldb_test_API_functionalities_memory-region_main.cpp",
+        "patch_sha256": "5b23724982cf660a1128f4b31af52e97ba58a252cfb9fb08b8a719d0d8c0bfdc"
+      },
+      "lldb/test/API/functionalities/memory-region/TestMemoryRegion.py": {
+        "original_sha256": "ed4d5b4ae658a16c0142f60ce918027fbfb6013e9b150a993e23d39f5465df7d",
+        "candidate_sha256": "5cae80bde530d846c2d8102863a9e4089d0c664beac34e31bb79be33103592a8",
+        "patch_name": "patch-lldb_test_API_functionalities_memory-region_TestMemoryRegion.py",
+        "patch_sha256": "062cebcfa1483d4c33d22c92bc3635bc6dc827aac4dfed1320b8fb9ea7d2c788"
+      }
+    },
     "all_final_integrity_guards_pass": true,
     "normal_current_build_test_package_qualified": false
   },
@@ -1095,6 +1163,186 @@
     "original_failure47_reaches_make_as_failure1": true,
     "all_selected_original_products_headers_build_metadata_unchanged": true,
     "owned_diagnostic_jails_removed": true,
-    "original_normal_Qemu_nine_methods_with_current_recipe_qualified": false
+    "original_normal_Qemu_nine_methods_with_current_recipe_qualified": true,
+    "normal_qualification_producer": "R365 before six memory-region additions; same short-TMPDIR recipe remains current."
+  },
+  "normal_libcxx_and_short_TMPDIR_configure_build": {
+    "producer": "R355",
+    "candidate_scope": "Before six memory-region additions",
+    "original_configure_and_default_all_build_exits": [
+      0,
+      0
+    ],
+    "normal_build_actions": 49,
+    "make_jobs": 4,
+    "all_default_options_dependencies_build_arguments_preserved": true,
+    "complete_preceding_failed_warm_nodes_and_hardlink_groups_match_verified_R347_archive_before_integration": true,
+    "only_warm_source_changes": "Twelve declared source bodies plus twelve exact original backups; all other source metadata/bodies/links preserved.",
+    "complete_source_nodes": 160699,
+    "complete_source_inventory_sha256": "1b912c5a4f3631627d659004f2e0448d896955d9a36564a182c5e684191c13ca",
+    "new_normal_liblldb_sha256": "602d5e659e0213b370ef24d61326dd97ce4ef15d86044492d526004e0a8ba0d6",
+    "actual_cache_and_LIT_Lua_executable": "/usr/local/bin/lua53",
+    "fresh_owned_configure_and_build_cookies": true,
+    "original_top_level_completion_cookies_preserved": true,
+    "all_final_source_SDK_cold_view_base_registry_stopped_data_mount_cookie_and_jail_guards_pass": true
+  },
+  "normal_libcxx_current_layout_runtime": {
+    "producer": "R364",
+    "candidate_scope": "Actual normal R355 products before six memory-region additions",
+    "same_unchanged_R330_executable_sha256": "2d7dc074e60978cbe36d1897d6e272497e52e23d87c99d5c348723cd9335a958",
+    "actual_normal_CLI_mapped_library_and_Python_binding_identity": "PASS",
+    "private_library_substitution": false,
+    "LD_LIBRARY_PATH_override": false,
+    "all_eleven_summaries_counts_and_typed_payloads": "PASS",
+    "original_raw_string_vector_data_checks": "PASS",
+    "all_selected_products_headers_build_metadata_unchanged": true,
+    "owned_jail_removed": true
+  },
+  "normal_libcxx_and_short_TMPDIR_selected_target": {
+    "producer": "R365",
+    "candidate_scope": "Before six memory-region additions",
+    "original_make_exit": 1,
+    "entries": 1769,
+    "counts": {
+      "UNRESOLVED": 2,
+      "PASS": 1240,
+      "FAIL": 5,
+      "XFAIL": 27,
+      "UNSUPPORTED": 495
+    },
+    "all1769_prior_names_retained": true,
+    "shared_status_changes": {
+      "lldb-api :: qemu/TestQemuLaunch.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      "lldb-api :: tools/lldb-dap/evaluate/TestDAP_evaluate.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      "lldb-api :: tools/lldb-dap/variables/TestDAP_variables.py": {
+        "before": "UNRESOLVED",
+        "after": "PASS"
+      },
+      "lldb-api :: functionalities/thread/exit_during_step/TestExitDuringStep.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      "lldb-api :: functionalities/data-formatter/data-formatter-disabling/TestDataFormatterDisabling.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      "lldb-api :: functionalities/data-formatter/data-formatter-advanced/TestDataFormatterAdv.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      "lldb-api :: functionalities/data-formatter/stringprinter/TestStringPrinter.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      "lldb-api :: commands/expression/call-function/TestCallStdStringFunction.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      "lldb-api :: functionalities/data-formatter/data-formatter-skip-summary/TestDataFormatterSkipSummary.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      "lldb-api :: python_api/sbvalue_persist/TestSBValuePersist.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      }
+    },
+    "shared_regressions": [],
+    "thread_exit_status_change_cause_not_established": true,
+    "remaining_unexpected": {
+      "lldb-api :: commands/gui/spawn-threads/TestGuiSpawnThreads.py": "UNRESOLVED",
+      "lldb-api :: commands/process/detach-resumes/TestDetachResumes.py": "FAIL",
+      "lldb-api :: python_api/find_in_memory/TestFindRangesInMemory.py": "FAIL",
+      "lldb-api :: python_api/find_in_memory/TestFindInMemory.py": "FAIL",
+      "lldb-api :: tools/lldb-server/TestGdbRemoteSaveCore.py": "FAIL",
+      "lldb-api :: functionalities/rerun_and_expr/TestRerunAndExpr.py": "UNRESOLVED",
+      "lldb-shell :: Expr/TestObjCInCXXContext.test": "FAIL"
+    },
+    "original_method_counts": {
+      "lldb-api :: functionalities/data-formatter/data-formatter-stl/libcxx-simulators/string/TestDataFormatterLibcxxStringSimulator.py": 60,
+      "lldb-api :: functionalities/data-formatter/data-formatter-stl/libcxx-simulators/unique_ptr/TestDataFormatterLibcxxUniquePtrSimulator.py": 5,
+      "lldb-api :: qemu/TestQemuLaunch.py": 9
+    },
+    "Lua_event_and_expected_Capsicum_contracts": "PASS",
+    "json_report_sha256": "0b0aec1e95851b3a8b614f957549128387bd9b932a70f0e97df26cdd9d478d22",
+    "xunit_report_sha256": "d0fbff0ac233666b44bccefa38ba4524ad8757f3421ab6a1aab28796ab28a3c8",
+    "independent_actual_JSON_XML_body_hash_name_status_review": "PASS",
+    "XML_selected_entries": 1769,
+    "XML_explicit_filter_exclusions": 84259,
+    "original_controller_cleanup_review_error_retained": true,
+    "independent_review_correction": "Upstream emulator state retains standard TMPDIR while omitting the launcher-private variable. Eight current-run state files identify one short allocated root, all actual sockets are within104 bytes, and that root is absent after make1. No upstream test rerun or original result rewrite.",
+    "actual_upstream_Qemu_state_files": 8,
+    "actual_Qemu_socket_byte_lengths": [
+      74
+    ],
+    "actual_allocated_private_test_root_removed_after_failed_make": true,
+    "all_original_final_integrity_guards_pass": true,
+    "exact_normal_product_and_build_metadata_copies_sealed_before_tests_and_unchanged_after": true,
+    "retention_scope": "Complete preceding R327 frontier is verified on both hosts. Current R365 normal products are separately sealed and source/SDK guarded; complete current tested-frontier archival remains pending."
+  },
+  "short_TMPDIR_fresh_original_patch": {
+    "producer": "R360",
+    "original_checksum_patch_exits": [
+      0,
+      0
+    ],
+    "zero_fuzz": true,
+    "complete_fresh_source_nodes": 160720,
+    "complete_fresh_source_inventory_sha256": "0be00d39c06c17511ad04dc7b915b19915cc47e7cb9a04edc3bebc298844d2ff",
+    "reference": "R313 complete160708-node fresh source",
+    "only_source_changes": "The same twelve libc++ changes and exact original backups recorded by R350. All other full metadata/bodies/types/literal links equal.",
+    "complete87_file_current_origin_Git_identity_matches": true,
+    "candidate_Makefile_sha256": "93b8b8a3d3fdb5bf1e2658bf8fb6e1fbaef35bdd722a46c6532396db505094e7",
+    "default_options_dependencies_build_arguments_and_four_jobs_preserved": true,
+    "only_declared_TEST_ENV_change": "TMPDIR is expanded from per-run LLVM_TEST_TMPDIR instead of a deep build-directory path.",
+    "all_final_integrity_guards_pass": true,
+    "normal_current_build_test_package_qualified": false
+  },
+  "private_memory_region_followup": {
+    "native_original_fixture_baseline": "R366 actual normal client and original server read all heap data and expressions correctly but report three heap addresses unmapped/unreadable; stack positive control passes.",
+    "cache_only_private_build_producer": "R370",
+    "cache_only_private_server_sha256": "3b0d9181e4d9bf120afafd6f0b2dfd3e39d4789584d1f6f0c9d5e1a1f18bac9c",
+    "cache_only_original_fixture_runtime_producer": "R371",
+    "same_original_fixture_and_normal_client_heap_stack_contracts": "PASS with actual kernel-reported private inferior-parent server identity",
+    "four_stop_original_and_cache_only_failure_retained": "R373: original fails mapped-none/RW/RO; cache-only still fails PROT_NONE mapped identity. R372 earlier function-name diagnostic assumption also remains recorded. No mapping assertion was removed.",
+    "second_cause": "Common native server omits permissions tuple when all rwx flags are false. Existing client uses tuple presence to identify mapped ranges and already supports an empty value. Emit permissions:; for mapped no-access regions and clarify existing protocol documentation.",
+    "combined_private_build_producer": "R377",
+    "combined_private_compile_archive_link_exits": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "combined_private_server_sha256": "2208ebb969d8f324f16fb39a0178fa6cac181b324eca42489a01b5b11c871912",
+    "unchanged_archive_members_original_inputs_dependency_outputs_and_ELF_contracts": "PASS",
+    "three_variant_causal_runtime_producer": "R379",
+    "same_compiled_fixture_sha256": "d1fec44c4341c902d9d886304465e281af572993ff9cf8e74b4b3a8950d12516",
+    "unchanged_normal_client_liblldb_sha256": "602d5e659e0213b370ef24d61326dd97ce4ef15d86044492d526004e0a8ba0d6",
+    "actual_kernel_reported_server_executable_identity_each_variant": "PASS",
+    "contract_mismatches": {
+      "original": [
+        "stop_none",
+        "stop_rw",
+        "stop_ro"
+      ],
+      "cache_only": [
+        "stop_none"
+      ],
+      "candidate": []
+    },
+    "all_four_original_mapping_expectations_retained": true,
+    "actual_mmap_mprotect_RW_written42_mprotect_RO_munmap_and_program_exit_checks": "PASS",
+    "selected_original_products_headers_build_metadata_unchanged_and_owned_jails_removed": true,
+    "new_upstream_regression": "MemoryCommandRegion.test_memory_region_refresh_after_resume with the same four mapping states and actual breakpoint identities. All original Python method ASTs and the full old C++ body retained; only new POSIX method excludes Windows.",
+    "actual_authored_new_upstream_method_normal_qualification": false,
+    "private_experiment_scope": "Original-command object substitutions and real native runtime causal probes; normal full source/header-dependent rebuild and upstream tests remain required.",
+    "existing_upstream_fix_backport_claimed": false
   }
 }
