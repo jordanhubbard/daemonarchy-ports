@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 79,
+  "normal_development_package_count": 81,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -440,6 +440,45 @@
         }
       },
       "test_scope": "CFFI full original make test passes with original skips/xfails. Attrs complete original suite remains blocked on declared test tools. Development integration only."
+    },
+    {
+      "name": "TypingExtensions and Outcome",
+      "packages": [
+        {
+          "name": "py312-typing-extensions-4.16.0.pkg",
+          "bytes": 91337,
+          "sha256": "1040d23ae4cd95a663d5f57c3e35a7006854930440c33e029f9cf7fe20d78543"
+        },
+        {
+          "name": "py312-outcome-1.3.0_2.pkg",
+          "bytes": 15303,
+          "sha256": "88e2d02ec04c9abec0fc3f088ea326fdd609ec094e911119aa792f9f5ad31143"
+        }
+      ],
+      "source_revisions": [
+        "511743d7327c93e9ff0117d04f0176ebc572f444"
+      ],
+      "sealed_payloads": 34,
+      "normal_packages_before": 79,
+      "normal_packages_after": 81,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "actual_private_and_default_path_checks": "TypedDict required/optional metadata, runtime protocols, type aliases, assertion rejection; Outcome synchronous/asynchronous capture, errors, single-use rejection, generator value/error sends and recovery.",
+      "two_host_evidence": {
+        "source_build_tests_private": {
+          "nodes": 1158,
+          "archive_bytes": 4724867,
+          "archive_sha256": "c4701de4a5e092ea634c29382b018fb946f364ef753fa2263296ee35f1b0c7b3",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 19,
+          "archive_bytes": 8653409,
+          "archive_sha256": "f681f46d437c8a3e00e7a29f369922eb0e432bb2e204ddc62c9950cd3d698a52",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "test_scope": "TypingExtensions full original tox unittest command onPython3.12 passes with11original version skips. Outcome original full suite needs declared pytest-asyncio. Independent sealed/default checks support development integration only."
     }
   ],
   "complete_original_source_suites": {
@@ -1180,6 +1219,29 @@
         }
       ],
       "scope": "Original full unchanged selection. One collection-level meson-python skip has no XML type attribute. Missing virtualenv and not-yet-installed cffi-gen-src account for conditional integration skips. Other original platform/backend limitations retained. No complete conditional coverage or canonical admission claim."
+    },
+    "TypingExtensions": {
+      "original_upstream_command": "python -m unittest discover from src, as selected by original tox.ini",
+      "reported": 579,
+      "passed": 568,
+      "original_skips": [
+        "test_inherited_owner (test_typing_extensions.EvaluateForwardRefTests.test_inherited_owner) ... skipped 'Not yet implemented in Python < 3.14'",
+        "test_partial_evaluation (test_typing_extensions.EvaluateForwardRefTests.test_partial_evaluation) ... skipped 'Not yet implemented in Python < 3.14'",
+        "test_setname_raises_the_same_as_on_other_classes_py311_minus (test_typing_extensions.NamedTupleTests.test_setname_raises_the_same_as_on_other_classes_py311_minus) ... skipped '__set_name__ behaviour changed on py312+ to use BaseException.add_note()'",
+        "test_repr_py315 (test_typing_extensions.NoExtraItemsTests.test_repr_py315) ... skipped 'repr changed in 3.15'",
+        "test_sentinel_removed_deprecated_apis (test_typing_extensions.TestSentinels.test_sentinel_removed_deprecated_apis) ... skipped 'Deprecated sentinel APIs are available before 3.15'",
+        "test_invalid_cases_before_3_10 (test_typing_extensions.TypeAliasTypeTests.test_invalid_cases_before_3_10) ... skipped 'Most arguments are allowed in 3.11+ or with GenericAlias'",
+        "test_repr_py315 (test_typing_extensions.TypeVarTupleTests.test_repr_py315) ... skipped 'TypeVarTuples have a bad repr on this version'",
+        "test_deferred_evaluation (test_typing_extensions.TypedDictTests.test_deferred_evaluation) ... skipped 'Only supported on 3.14'",
+        "test_delayed_type_check (test_typing_extensions.TypedDictTests.test_delayed_type_check) ... skipped 'Only supported on 3.14'",
+        "test_keywords_syntax_raises_on_3_13 (test_typing_extensions.TypedDictTests.test_keywords_syntax_raises_on_3_13) ... skipped 'Change in behavior in 3.13'",
+        "test_repr_py315 (test_typing_extensions.UnpackTests.test_repr_py315) ... skipped 'TypeVarTuples have a bad repr on this version'"
+      ],
+      "failures": 0,
+      "errors": 0,
+      "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_stderr_sha256": "609f217706faeb28fbcc98333054ce2977405331861e23b2725808376cf6c8fc",
+      "scope": "Original unfiltered source selection and helper files unchanged, Python3.12 ARM64 only. Other Python versions, AMD64, canonical lifecycle and full release acceptance remain pending."
     }
   },
   "pending": [
@@ -1342,6 +1404,10 @@
         "py312-pytest-mypy-plugins>=0:devel/py-pytest-mypy-plugins@py312",
         "py312-pytest-xdist>=0:devel/py-pytest-xdist@py312"
       ],
+      "runtime_private_and_default_checks": "pass"
+    },
+    "Outcome": {
+      "original_make_test_target": "not run: declared pytest-asyncio missing at source build",
       "runtime_private_and_default_checks": "pass"
     }
   }
