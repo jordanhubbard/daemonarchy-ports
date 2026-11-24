@@ -1281,6 +1281,30 @@
       "raw_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "raw_stderr_sha256": "609f217706faeb28fbcc98333054ce2977405331861e23b2725808376cf6c8fc",
       "scope": "Original unfiltered source selection and helper files unchanged, Python3.12 ARM64 only. Other Python versions, AMD64, canonical lifecycle and full release acceptance remain pending."
+    },
+    "Outcome": {
+      "original_make_test_target": "pass after source-built original pytest-asyncio dependency closure",
+      "passed": 10,
+      "original_skips": [],
+      "failures": 0,
+      "errors": 0,
+      "source_revision": "511743d7327c93e9ff0117d04f0176ebc572f444",
+      "fresh_original_port_construction_targets_passed": 8,
+      "fresh_original_package": {
+        "name": "py312-outcome-1.3.0_2.pkg",
+        "bytes": 15295,
+        "sha256": "521bc982ea78ccbc822c345bebf1dee73078cb472de68ad99f4d5a0dec9944f8"
+      },
+      "raw_stdout_sha256": "959c0e6f5d3f71a670be408ac1db19db7e4b05c267188d4cd8b7c9140b42f197",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "JUnit_sha256": "f2c1fd59c5b91999558d09e056b82c46efb37914e1001f62b812d72f34d8022e",
+      "two_host_evidence": {
+        "nodes": 583,
+        "archive_bytes": 1416155,
+        "archive_sha256": "061cd262fcf6236ac34efd3c8627fe982d64544219f1df3337cfc68c24dcb5f8",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "scope": "Fresh full original source construction and unfiltered native make test. Existing normal package was not replaced; normal83 prefix/logical registry/base/kernel/mounts and original inputs preserved. ARM64 Python3.12 only; no canonical receipt/AMD64/release admission."
     }
   },
   "pending": [
@@ -1443,10 +1467,6 @@
         "py312-pytest-mypy-plugins>=0:devel/py-pytest-mypy-plugins@py312",
         "py312-pytest-xdist>=0:devel/py-pytest-xdist@py312"
       ],
-      "runtime_private_and_default_checks": "pass"
-    },
-    "Outcome": {
-      "original_make_test_target": "not run: declared pytest-asyncio missing at source build",
       "runtime_private_and_default_checks": "pass"
     },
     "PytestAsyncio": {
