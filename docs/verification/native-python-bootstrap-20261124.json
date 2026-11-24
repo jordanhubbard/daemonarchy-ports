@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 69,
+  "normal_development_package_count": 77,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -332,6 +332,75 @@
           "all_nodes_verified_on_both_hosts": true
         }
       }
+    },
+    {
+      "label": "Eight Trio bootstrap prerequisites",
+      "packages": [
+        {
+          "name": "py312-async_generator-1.10_1.pkg",
+          "bytes": 51400,
+          "sha256": "9c9930a69703851e9b67905853ca1003ef3c3a04201251cd4761cddcdd797f95"
+        },
+        {
+          "name": "py312-pycparser-3.12.pkg",
+          "bytes": 134798,
+          "sha256": "b8971c3d1b5ede90bc8c6d6a2ee2d2fa193205d97ca1fba8994ddf46356425b8"
+        },
+        {
+          "name": "py312-idna-3.20.pkg",
+          "bytes": 91656,
+          "sha256": "ba2dd09ee4f70aea5bf8a96d9f4e78fd5ebab048f97f77757278643bf0adb6b9"
+        },
+        {
+          "name": "py312-sniffio-1.3.1.pkg",
+          "bytes": 13499,
+          "sha256": "e26dd277e71494e73ed6de8bbc5cd30d5bfc1c77f0310d47c15af4100206d768"
+        },
+        {
+          "name": "py312-sortedcontainers-2.4.0_1.pkg",
+          "bytes": 51053,
+          "sha256": "b56d42a85c733f7c2f747b5fa4d6aafbcaa444b99a52f34e24104b5331bbd017"
+        },
+        {
+          "name": "py312-hatch-fancy-pypi-readme-25.1.0.pkg",
+          "bytes": 17956,
+          "sha256": "2e557aea4ab75debc2cf460db9aa99dd4b521ccbc6c5282189fc767f042de5eb"
+        },
+        {
+          "name": "py312-hatch-vcs-0.5.0_1.pkg",
+          "bytes": 12477,
+          "sha256": "2230390bcf588c007fac3986cd64e64a81be8780af37922b2c0187a5f3631a35"
+        },
+        {
+          "name": "py312-cython-3.2.9.pkg",
+          "bytes": 3348330,
+          "sha256": "f86d87444f497520afca4a692c6f7b249b8290815e15064cfc74b58b363da78a"
+        }
+      ],
+      "source_revisions": [
+        "511743d7327c93e9ff0117d04f0176ebc572f444"
+      ],
+      "sealed_payloads": 820,
+      "actual_private_and_default_path_checks": "Real async-generator/async-library detection; IDNA encode/decode/error recovery; sorted collections against stdlib oracles; parsed/generated C compiled and executed with changed-input failure/recovery; Cython builds native extensions with changed results, syntax-error rejection and recovery; actual Hatch plugins produce metadata/readme/version files/wheels, all RECORD hashes and executed wheel code, with changed input/error/recovery.",
+      "normal_packages_before": 69,
+      "normal_packages_after": 77,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "two_host_evidence": {
+        "source_build_tests_private": {
+          "nodes": 9536,
+          "archive_bytes": 48548711,
+          "archive_sha256": "856a6251e0789012ece24764bc49cfb206e2072b8d1a89fc33ecef4957d416bc",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction_and_corrected_observer": {
+          "nodes": 109,
+          "archive_bytes": 9983122,
+          "archive_sha256": "185f7b306726f2cc0cc643db6691db44efbb09b6c64ab5c9ee2f3a5228227035",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "test_scope": "Development runtime integration only. AsyncGenerator original suite passes; Pycparser retains original cpp skips; IDNA original property module still cannot import missing Hypothesis. Other complete original self-suites/test-tool closures remain pending; no release admission."
     }
   ],
   "complete_original_source_suites": {
@@ -418,6 +487,35 @@
       "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "JUnit_sha256": "1dab1e1b31a2b613156f2b11ce338d8bfb25f7b11a7bf0f046a4430f42f467ba",
       "scope": "Full original pytest selection against the exact sealed package, retaining native/pure parametrization and warning-as-error configuration. Python3.12 ARM64 only. No filters, original source/test edits, or stock port make test claim. Other Python versions/free-threading/style/docs remain unqualified."
+    },
+    "AsyncGenerator": {
+      "original_make_test_target": "pass",
+      "passed": 43,
+      "original_skips": [],
+      "failures": 0,
+      "errors": 0,
+      "raw_stdout_sha256": "d58f092b27b60fc67bc55c5d7d18f16bfe46bc3e7c0b3ac661df23f35b39ce44",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "JUnit_sha256": "997494fc7ec03dd8f4102b439520bffb23138ff3786c8daa79d0b1fb2fd7e63a"
+    },
+    "Pycparser": {
+      "original_make_test_target": "pass with original skips",
+      "reported": 451,
+      "passed": 444,
+      "original_skips": [
+        "test_to_type_with_cpp (tests.test_c_generator.TestCasttoC.test_to_type_with_cpp) ... skipped 'cpp only works on Unix'",
+        "test_all_examples (tests.test_examples.TestExamplesSucceed.test_all_examples) ... skipped 'cpp only works on Unix'",
+        "test_c11_with_cpp (tests.test_general.TestParsing.test_c11_with_cpp) ... skipped 'cpp only works on Unix'",
+        "test_cpp_funkydir (tests.test_general.TestParsing.test_cpp_funkydir) ... skipped 'cpp only works on Unix'",
+        "test_no_real_content_after_cpp (tests.test_general.TestParsing.test_no_real_content_after_cpp) ... skipped 'cpp only works on Unix'",
+        "test_va_arg_preserves_type (tests.test_general.TestParsing.test_va_arg_preserves_type) ... skipped 'cpp only works on Unix'",
+        "test_with_cpp (tests.test_general.TestParsing.test_with_cpp) ... skipped 'cpp only works on Unix'"
+      ],
+      "failures": 0,
+      "errors": 0,
+      "raw_stdout_sha256": "91a64aec02de5ae3e863fc405869faba7c7bef0cc1a969b65dfd3614dac9c158",
+      "raw_stderr_sha256": "0b3406bdfbc4bd73b8aa22d14e88eb8d7e199d027cf87b35aaa55cec2afda417",
+      "scope": "Original full unittest discovery returns OK(skipped=7). tests/test_util.py only supports platform.system()==Linux for cpp, so seven original cases skip on FreeBSD. Original fixture/platform repair and actual cpp coverage remain pending. Count is not451passed."
     }
   },
   "pending": [
@@ -427,12 +525,17 @@
     "Matching CURRENT desktop dependency closure and graphical acceptance",
     "Canonical complete per-unit ownership, provenance, lifecycle and SDK/TCB admission",
     "Full release/fleet/physical hardware qualification",
-    "Current documentation changes require authority review; preserve the existing authority attestation and report stale validation rather than manufacturing a new attestation."
+    "Current documentation changes require authority review; preserve the existing authority attestation and report stale validation rather than manufacturing a new attestation.",
+    "Original IDNA properties suite with declared source-built default Hypothesis/Rust/maturin/runtime closure; PR107",
+    "Pycparser original seven cpp platform skips require FreeBSD fixture qualification",
+    "Complete AsyncGenerator/Pycparser peers Sniffio/SortedContainers/Hatch plugins/Cython original self-suites and declared test-tool closure"
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
     "libuv": "https://github.com/jordanhubbard/daemonarchy-ports/pull/102",
-    "Pathspec": "https://github.com/jordanhubbard/daemonarchy-ports/pull/103"
+    "Pathspec": "https://github.com/jordanhubbard/daemonarchy-ports/pull/103",
+    "Jinja2_Trio_test_dependency": "https://github.com/jordanhubbard/daemonarchy-ports/pull/106",
+    "IDNA_Hypothesis_test_dependency": "https://github.com/jordanhubbard/daemonarchy-ports/pull/107"
   },
   "held_packages": [
     {
@@ -528,6 +631,29 @@
       "cause": "Own probe passed a trusted Markup instance directly to internal _escape_inner and compared native/pure behavior. Public escape dispatches trusted __html__ before invoking that helper.",
       "correction": "Compare internal implementations on plain strings; retain separate public trusted-Markup assertion. Full original suite subsequently runs unchanged, including both upstream backend variants.",
       "upstream_or_package_changes": "None"
+    },
+    {
+      "packages": "Eight Trio prerequisites",
+      "original_failed_probe_retained_in_normal_archive": true,
+      "cause": "Own Hatch backend child used Python -S, which strips default installed site-packages; first normal child fails ModuleNotFoundError hatchling. Original private check had explicit private/dependency paths and passed.",
+      "correction": "Use -s to suppress user sites while retaining normal installed packages; rerun affected real backend/wheel/RECORD/execution/changed-input/error/recovery checks in a fresh case. Do not reinstall packages or rewrite first failed observer. Complete payload/inherited/frozen/base/kernel/mount/registry postguards pass.",
+      "original_tests_or_package_changes": "None"
     }
-  ]
+  ],
+  "incomplete_original_source_suites": {
+    "IDNA": {
+      "original_make_test_target": "failed: missing original property-test dependency",
+      "reported": 6426,
+      "errors": 1,
+      "original_skips": 1,
+      "assertion_failures": 0,
+      "missing_module": "hypothesis",
+      "upstream_minimum": "6.141.1",
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/107",
+      "review_state": "draft; full default source-built Hypothesis closure and fixed rerun pending",
+      "raw_stdout_sha256": "0f0fb42cbb4ced847c35fda520b61fc364baa215008845ffc524fe590b08e1cf",
+      "raw_stderr_sha256": "3fdbe1648ef0e5da1caea2677da2601f59e1c14cf037f0a3863ed03b1af0680e",
+      "scope": "Runtime APIs pass against sealed/default products; that supports development integration only. Original property suite remains unqualified and its failure is preserved."
+    }
+  }
 }
