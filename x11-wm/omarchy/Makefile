@@ -1,6 +1,5 @@
 PORTNAME=	omarchy
-DISTVERSION=	4.5.0.20261113
-PORTREVISION=	1
+DISTVERSION=	4.5.0.20261119
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -49,9 +48,9 @@ USES=		fonts perl5 python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	jordanhubbard
 # Reviewed dated snapshot after v4.5.0; retain the exact owned integration.
-GH_TAGNAME=	853c91cea133c203fe199329b85278dc213ccf9c
+GH_TAGNAME=	0640b8c1c761fd962298907712596c1197c13a29
 # The FreeBSD compatibility layer: freebsdize, compat tools, FreeBSD commands.
-GH_TUPLE=	jordanhubbard:omarchy-freebsd:0c139ec87394775ea948a8ad945c9a8035ef3485:freebsd
+GH_TUPLE=	jordanhubbard:omarchy-freebsd:029e0eba6ff69392e416abb5bbd58206d4d20443:freebsd
 USE_PERL5=	run
 
 SHEBANG_FILES=	bin/* config/omarchy/hooks/*/* default/systemd/system-sleep/* \
@@ -85,7 +84,7 @@ COMPAT_TOOLS=	brightnessctl journalctl powerprofilesctl setpriv systemctl \
 		systemd-cat systemd-inhibit systemd-run timedatectl uwsm uwsm-app
 
 # Directories copied into ${DATADIR} as-is (after the FreeBSD adjustments).
-DATA_DIRS=	applications config default install migrations shell themes
+DATA_DIRS=	applications config default icons install migrations shell themes
 
 # Paths the Arch package uses that live under ${PREFIX} on FreeBSD. (The
 # rewrite below also maps Arch's chromium.desktop to www/chromium's
