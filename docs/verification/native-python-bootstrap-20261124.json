@@ -304,7 +304,7 @@
       "original_optional_backend_subtest_skips": 294,
       "failures": 0,
       "errors": 0,
-      "scope": "Unfiltered original unittest discovery, including upstream132 regressions, also passes on fresh original port extract/patch output. 147 Hyperscan and147 RE2 subtest skips preserve original reasons; declared pytest bridge remains pending.",
+      "scope": "Unfiltered original unittest discovery, including upstream132 regressions, also passes on fresh original port extract/patch output. 147 Hyperscan and147 RE2 subtest skips preserve original reasons; declared pytest bridge also passes, as recorded below.",
       "declared_original_pytest_bridge": {
         "name": "Pathspec",
         "passed": 200,
@@ -328,10 +328,40 @@
       "failures": 0,
       "errors": 0,
       "original_skips": 0
+    },
+    "Trove": {
+      "passed": 18,
+      "failures": 0,
+      "errors": 0,
+      "original_skips": 0,
+      "classifier_validation": "pass",
+      "source_revision": "087f30829b60c5222b6af04082ec5a9850b03de6",
+      "original_source_inputs_and_normal_prefix_registry_base_kernel_mounts_unchanged": true,
+      "actual_command_outputs": [
+        {
+          "name": "pytest",
+          "exit": 0,
+          "stdout_sha256": "ce0687acd818e8b9d0b9c3bcd4e875c66b41df82ebe90a2a71dacf4bdce9bdae",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "name": "classifier-validation",
+          "exit": 0,
+          "stdout_sha256": "e06d81a1ee39302ff452fd1df96fdcb77003bdcef639255b5a5197c50d8d34a1",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "two_host_evidence": {
+        "nodes": 11,
+        "archive_bytes": 1162671,
+        "archive_sha256": "04131b8893d80a192800689bc5c3d8186394923688b0eda346909c8a88cf4c4e",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "scope": "Full original pytest collection and original python -m tests.lib validation, using normally source-built package and pytest. No test filters/source edits. Upstream Makefile virtualenv/pip provisioning and lint/dev tooling were not run; not a stock port make test target or canonical lifecycle receipt."
     }
   },
   "pending": [
-    "Complete original SCM/Calver/Trove/PoetryCore/TOMLKit/Hatchling/Pygments/Pytest self-suite and declared test-tool closure",
+    "Complete original SCM/Calver/PoetryCore/TOMLKit/Hatchling/Pygments/Pytest self-suite and declared test-tool closure",
     "Optional Pathspec RE2/Hyperscan backend coverage remains originally skipped; selected original pytest bridge now passes",
     "Fresh libuv full port construction and three existing network fixture failures; see PR102",
     "Matching CURRENT desktop dependency closure and graphical acceptance",
@@ -365,7 +395,7 @@
         "narrow_PR": "https://github.com/pypa/hatch/pull/2415",
         "narrow_PR_status": "closed without merge; superseded because inherited rules and sdist rebuild cases remain incorrect",
         "broader_PR": "https://github.com/pypa/hatch/pull/2445",
-        "broader_PR_status": "open and unmerged; candidate only, not applied or natively qualified",
+        "broader_PR_status": "Open and unmerged at review cutoff. Complete production backport locally qualified as a candidate; see resolution and fixed package above. Full original upstream pytest suite remains pending.",
         "candidate_complete_diff": {
           "url": "https://github.com/pypa/hatch/compare/740565ac2929597cb9def8d46338cbef6493fc8d...4a8bd728cad2a99d95e2e6814ddd852b3c4e5a23.diff",
           "base": "740565ac2929597cb9def8d46338cbef6493fc8d",
@@ -373,7 +403,7 @@
           "PR_commits": 3,
           "bytes": 59531,
           "sha256": "b915a7cebd0b856ea9ed7e2bed829f48d8dd436fc422e9693a3effbc7bc9e260",
-          "scope": "Complete immutable base-to-head PR diff, not just head-commit patch. Unmerged review candidate, not locally qualified."
+          "scope": "Complete immutable base-to-head PR diff, not just head-commit patch. Production subset applied in PR105 and locally qualified as a candidate; upstream remains unmerged and full original pytest suite is pending."
         },
         "scope": "The head-commit patch alone omits prerequisite commits. Review the complete pinned three-commit diff and preserve inherited/local/nested rules, directory exclusions and repeated sdist-to-wheel behavior. Upstream-reported test counts are not local evidence."
       },
