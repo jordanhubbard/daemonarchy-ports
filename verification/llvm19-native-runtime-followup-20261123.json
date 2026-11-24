@@ -482,7 +482,7 @@
       }
     },
     "identity_scope": "All94 current origin Git bodies/types/literal links/executable bits match native R419 full-patch view. Previous93-file R382 identity remains historical. Full native owner/mode/flags metadata is checked separately from Git projection.",
-    "latest_normal_qualification_scope": "R385/R386/R387 cover the93-file origin before the newest one-line aligned-search patch. R387 retains7 unsuccessful outcomes. Current94-file R419 fresh patch and R416/R417 private causal/all17 original method checks pass; new normal build/original target/package/installed acceptance remains open."
+    "latest_normal_qualification_scope": "Current94-file origin: R421 normal configure/default all build and R427 actual normal CLI/Python/search/formatter/server runtime pass. R428 original selected target is running with no result claimed. Latest completed R387 predates newest one-line patch and retains7 unsuccessful outcomes; no package/installed qualification."
   },
   "native_boundary": {
     "platform": "FreeBSD16.0-amd64",
@@ -494,7 +494,7 @@
     "canonical_Component_or_SDK_admission": false,
     "lifecycle_receipt": false,
     "complete_toolchain_provenance_admitted": false,
-    "native_recipe_pkgname_scope": "Historical R164/R228 used revision6. Current R385 normal build, R386 runtime and R387 original selected target use revision7. R387 completes failed with7 unexpected outcomes. Package/installed consumers remain unqualified."
+    "native_recipe_pkgname_scope": "Historical R164/R228 used revision6. Current R421 normal default build, R427 actual runtime and running R428 original selected target use revision7. R387 remains the latest completed selected result with7 unsuccessful outcomes before newest search patch. No package/installed acceptance."
   },
   "default_build": {
     "producer": "R222",
@@ -674,7 +674,7 @@
     }
   ],
   "remaining_gates": [
-    "After R399 complete current source/build/SDK custody closes on both hosts with recovery proof, integrate the R419 one-line aligned-search patch into the warm source, run fresh-cookie normal configure/default build and original selected target. R416 native pair and all17 original methods privately pass; preserve all1769 prior entries,65simulator/9QEMU/Lua/event/Capsicum/newmapping coverage and every remaining failure. R387 original twoTIMEOUTs stay unsuccessful until normal qualification.",
+    "Complete and independently review R428 original selected target on current normal products: retain all1769 prior names,17find methods,65simulator/9QEMU/Lua/event/Capsicum/new mapping coverage and every remaining failure. R421 normal configure/default build and R427 actual normal runtime pass after accepted R399 both-host custody/recovery. Retain the new tested frontier before further warm source/product/SDK mutation.",
     "Full unfiltered original suite after all repairs; retained R74 full run remains failed with249 unexpected entries.",
     "Remaining LLDB, sanitizer, GNU libatomic, CFI, libFuzzer and OpenMP defects.",
     "Fresh stage, license/SBOM hooks, check-plist/package and installed compiler consumers after final repairs.",
@@ -1363,6 +1363,195 @@
     "new_authored_upstream_method_qualified": false
   },
   "current_original_selected_tests": {
+    "producer": "R428",
+    "state": "launched-preflight-or-running-not-terminal",
+    "original_target": "do-test/check-all",
+    "required_prior_names": 1769,
+    "required_original_find_memory_methods": 17,
+    "all_previous65_simulator9Qemu_Lua_event_Capsicum_and_new_mapping_method_required": true,
+    "result_claimed": false,
+    "prior_completed_target_producer": "R387"
+  },
+  "unaligned_search_followup": {
+    "source_analysis_producer": "R408",
+    "primary_upstream_proposal": "https://github.com/llvm/llvm-project/pull/189950",
+    "proposal_head": "29cd5097556a1c3f00407508327b0c651155f187",
+    "upstream_state": "OPEN-not-merged",
+    "candidate_change": "Advance from actual rejected unaligned found_addr, preserving all original validation/alignment/result assertions.",
+    "private_build_producer": "R411",
+    "private_original_compiler_archive_shared_and_CLI_command_exits": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "private_build_pass": true,
+    "private_liblldb_sha256": "6f942c50f24cc2195ed0cfbc7e40e0860e593a3b0aa4599204871137315989b7",
+    "private_CLI_sha256": "8ea21f01be8fb51f7417becb508cfc354ec0cc2af8befa5f17dd5416c4fa3cb3",
+    "all_other_archive_members_and_original_inputs_products_metadata_and_dependency_outputs_unchanged": true,
+    "original_guarded_nodes": 1383,
+    "normal_object_header_and_source_dependencies": 1080,
+    "both_ELF_dependency_SONAME_rpath_contracts_preserved": true,
+    "private_runtime_qualified": true,
+    "new_port_patch": "files/patch-lldb_source_Target_Process.cpp",
+    "new_port_patch_sha256": "03727621c49a2c89bc1f2f918a634f94774f04b50739e2f4853fb34a9aec3e62",
+    "private_native_pair_producer": "R416",
+    "actual_same_original_executable_and_kernel_verified_normal_server": true,
+    "original_alignment1_pass_then_alignment8_diagnostic20second_deadline": true,
+    "candidate_all4_original_unaligned_FindInMemory_FindRangesInMemory_contracts_pass": true,
+    "candidate_each_contract_under_one_second": true,
+    "diagnostic_deadline_not_original_test_timeout": true,
+    "original_driver_private_runtime_producer": "R417",
+    "private_original_methods": {
+      "TestFindRangesInMemory": {
+        "exit": 0,
+        "actual_original_methods": [
+          "test_find_in_memory_unaligned",
+          "test_find_ranges_in_memory_empty_ranges",
+          "test_find_ranges_in_memory_invalid_alignment",
+          "test_find_ranges_in_memory_invalid_buffer",
+          "test_find_ranges_in_memory_invalid_max_matches",
+          "test_find_ranges_in_memory_invalid_range",
+          "test_find_ranges_in_memory_one_match",
+          "test_find_ranges_in_memory_one_match_max",
+          "test_find_ranges_in_memory_one_match_multiple_ranges",
+          "test_find_ranges_in_memory_two_matches"
+        ],
+        "count": 10,
+        "actual_driver_mapped_DLL_verified": true,
+        "actual_normal_server_executable_verified": true,
+        "source_sha256": "b289b7fb41ece1cd5e35e653995b33ecd699d7a6f6bfe09964ef678527b39d1f",
+        "stdout_sha256": "86786de21ccc027d9d514e080b212082246d8df894ba40fbd778c5f39dfb945a",
+        "stderr_sha256": "6efe0904d202cc04f7c14a64f50574a1242141379a2c2680e7f9b74ca64cfe83"
+      },
+      "TestFindInMemory": {
+        "exit": 0,
+        "actual_original_methods": [
+          "test_check_stack_pointer",
+          "test_find_in_memory_double_instance_ok",
+          "test_find_in_memory_invalid_address_range",
+          "test_find_in_memory_invalid_alignment",
+          "test_find_in_memory_invalid_buffer",
+          "test_find_in_memory_ok",
+          "test_find_in_memory_unaligned"
+        ],
+        "count": 7,
+        "actual_driver_mapped_DLL_verified": true,
+        "actual_normal_server_executable_verified": true,
+        "source_sha256": "a110e9b1c62cd4520c969f68d66b47d795d5648a30354e18fad88e0d154ada40",
+        "stdout_sha256": "86786de21ccc027d9d514e080b212082246d8df894ba40fbd778c5f39dfb945a",
+        "stderr_sha256": "c7afb2ac4f5124c61c673c883b25ffe0573d26c160b552d87c3c2fce70e17949"
+      }
+    },
+    "all17_original_methods_pass": true,
+    "actual_driver_mapped_DLL_and_kernel_server_identity_verified": true,
+    "all_original_source_product_metadata_private_module_guards_and_TMPDIR_cleanup_jail_removal_pass": true,
+    "independent_actual_original_output_hash_body_method_review_producer": "R418",
+    "fresh_source_validation_producer": "R419",
+    "warm_source_modified": true,
+    "normal_default_all_changed_input_build_qualified": true,
+    "normal_actual_CLI_binding_search_formatter_runtime_qualified": true,
+    "normal_original_selected_target_qualified": false,
+    "upstream_merge_acceptance_claimed": false
+  },
+  "direct_native_ptrace_core_control": {
+    "producer": "R404",
+    "matching_kernel_sha256": "83690f1f4fa3001a1e77852c44e9234ff6f9c4b6fa3e11cf7cf2a6e0c504ef35",
+    "matching_source_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
+    "actual_base_compiler_one_private_source_three_distinct_invocations": true,
+    "trace_me_raw_savecore_result": 0,
+    "trace_me_core_ELF_bytes": 12181504,
+    "normal_binding_exact_core_PID_and_thread_acceptance": "PASS",
+    "attached_running_and_confirmed_sleeping_raw_savecore_errno": 16,
+    "attached_zero_byte_files_rejected_as_cores": true,
+    "documented_post_core_waitpid_WNOHANG_and_all_three_detaches": "PASS",
+    "manual_reference": "https://cgit.freebsd.org/src/tree/lib/libsys/ptrace.2?id=3ff56f81a1a58d708d0101d601e88c289cfc5882",
+    "original_failed_controls_R398_R400_R401_retained": true,
+    "all_selected_kernel_compiler_headers_products_metadata_and_global_setting_guards_pass": true,
+    "owned_jail_removed": true,
+    "exact_kernel_branch_or_fix_or_original_savecore_test_qualified": false
+  },
+  "current_tested_frontier_custody": {
+    "producer": "R399",
+    "state": "pass-independent-both-host-full-archive-and-recovery-review",
+    "current_source_nodes": 160705,
+    "complete_warm_build_source_SDK140_rawdb_views_cold_sources_controls_and_failed_original_reports_retained": true,
+    "two_host_or_recovery_pass_claimed": true,
+    "no_warm_mutation_until_complete_custody_and_recovery_review": true,
+    "archive_sha256": "4d35efbe3bf0f0b7abec75975722d462bc1cb8b7d7dcc76f8069e873c3bb5832",
+    "archive_bytes": 7936886455,
+    "inventory_sha256": "0c63ace0023cf456eaa4a1e7717ba239ae8e1bb88997759b27faaa9e8547a65f",
+    "nodes": 2802519,
+    "node_types": {
+      "directory": 419426,
+      "file": 2382400,
+      "symlink": 666,
+      "socket": 15,
+      "fifo": 12
+    },
+    "hardlink_groups": 14,
+    "complete_decoded_bytes": 40907212800,
+    "both_host_verification_pass": true,
+    "recovery_document_and_original_helper_digests_match_both_hosts": true,
+    "no_extraction_or_overlay_performed": true,
+    "scope": "Complete preceding R387 tested source/build/SDK140/view/cold/control frontier before newest one-line client-search patch; later R411/R416/R417/R419/R421/R427/R428 outputs remain separate."
+  },
+  "memory_region_fresh_original_patch_R382": {
+    "producer": "R382",
+    "original_checksum_patch_exits": [
+      0,
+      0
+    ],
+    "zero_fuzz": true,
+    "complete_fresh_source_nodes": 160726,
+    "complete_fresh_source_inventory_sha256": "716650fac356ebe6dc05424c73eb7834ebac2e33a9107b3aef31c83204987a46",
+    "reference": "R313 complete160708-node fresh source",
+    "only_source_changes": "Eighteen declared source/doc/test bodies and eighteen exact original backups. All other recorded full metadata/bodies/types/literal links match.",
+    "complete93_file_current_origin_Git_identity_matches": true,
+    "default_options_dependencies_build_arguments_and_four_jobs_preserved": true,
+    "only_declared_TEST_ENV_delta_from_R313": "Existing short private per-run TMPDIR recipe",
+    "new_memory_region_source_patches": {
+      "lldb/source/Plugins/Process/FreeBSD/NativeProcessFreeBSD.cpp": {
+        "original_sha256": "d90d1761686fffe8522b7b240b19fe5e8ffe2d29abbe134180dd0d03af43de17",
+        "candidate_sha256": "10a1f6932b068ea374309ce2b17f3fc40bd2a29274f3dee2263c7ec33be11372",
+        "patch_name": "patch-lldb_source_Plugins_Process_FreeBSD_NativeProcessFreeBSD.cpp",
+        "patch_sha256": "4b1e6424af3504f597dd6362a2ff321a86cf8443be07a8c706d38e081eee0514"
+      },
+      "lldb/source/Plugins/Process/FreeBSD/NativeProcessFreeBSD.h": {
+        "original_sha256": "e0a551815a83c979571cd798addd229dca60e44fc7cee3fb001cc7850fc8e03d",
+        "candidate_sha256": "4e86365a52aa282e1d901aa621b5ac787008ac4f1c1ec7e20bac731aa8bbf795",
+        "patch_name": "patch-lldb_source_Plugins_Process_FreeBSD_NativeProcessFreeBSD.h",
+        "patch_sha256": "cfbc310ce697b9ade5b03790b7fba8d88c90d7cf05885adb4d8e782067470784"
+      },
+      "lldb/source/Plugins/Process/gdb-remote/GDBRemoteCommunicationServerLLGS.cpp": {
+        "original_sha256": "634ce2e441f959555ae6cbb32e25c5a7c1d66bef01290cb479a71b3ecf3e9e87",
+        "candidate_sha256": "c52a197dc29aac3374156597f0541b7fb048ee5b7888523ba12ecefacbde53c4",
+        "patch_name": "patch-lldb_source_Plugins_Process_gdb-remote_GDBRemoteCommunicationServerLLGS.cpp",
+        "patch_sha256": "961daf1202972c7e972960777af099bfa44184c9ea3f24efd88eece102f9cacf"
+      },
+      "lldb/docs/resources/lldbgdbremote.md": {
+        "original_sha256": "0186eac06737505b0eb42fe63dbe21d95299a3f2c1d9f364d0f60dd46eab8af2",
+        "candidate_sha256": "8d97197e07d5872c6a9c806d8a16971d91155024bef21481838190d01469339f",
+        "patch_name": "patch-lldb_docs_resources_lldbgdbremote.md",
+        "patch_sha256": "f03dfcd4cc1a01e0affbc9d8cbce13ac4c93e8671e3b3e8083fcfb5d4ea6b1d2"
+      },
+      "lldb/test/API/functionalities/memory-region/main.cpp": {
+        "original_sha256": "5fde8cd1afa9773459a991958612d2f3a7446e5b49660436ced3cf65dc72530a",
+        "candidate_sha256": "9aa1297e19b5400ce5c46b682765d695824e08028df525c047b0ca60e1854f39",
+        "patch_name": "patch-lldb_test_API_functionalities_memory-region_main.cpp",
+        "patch_sha256": "5b23724982cf660a1128f4b31af52e97ba58a252cfb9fb08b8a719d0d8c0bfdc"
+      },
+      "lldb/test/API/functionalities/memory-region/TestMemoryRegion.py": {
+        "original_sha256": "ed4d5b4ae658a16c0142f60ce918027fbfb6013e9b150a993e23d39f5465df7d",
+        "candidate_sha256": "5cae80bde530d846c2d8102863a9e4089d0c664beac34e31bb79be33103592a8",
+        "patch_name": "patch-lldb_test_API_functionalities_memory-region_TestMemoryRegion.py",
+        "patch_sha256": "062cebcfa1483d4c33d22c92bc3635bc6dc827aac4dfed1320b8fb9ea7d2c788"
+      }
+    },
+    "all_final_integrity_guards_pass": true,
+    "normal_current_build_test_package_qualified": false
+  },
+  "completed_original_selected_tests_R387": {
     "producer": "R387",
     "state": "terminal-original-selected-target-failed",
     "original_target": "do-test/check-all",
@@ -1503,164 +1692,35 @@
     "sealed_normal_product_copies_unchanged": true,
     "full_unfiltered_or_package_acceptance_implied": false
   },
-  "unaligned_search_followup": {
-    "source_analysis_producer": "R408",
-    "primary_upstream_proposal": "https://github.com/llvm/llvm-project/pull/189950",
-    "proposal_head": "29cd5097556a1c3f00407508327b0c651155f187",
-    "upstream_state": "OPEN-not-merged",
-    "candidate_change": "Advance from actual rejected unaligned found_addr, preserving all original validation/alignment/result assertions.",
-    "private_build_producer": "R411",
-    "private_original_compiler_archive_shared_and_CLI_command_exits": [
-      0,
-      0,
+  "normal_unaligned_search_configure_build": {
+    "producer": "R421",
+    "original_configure_and_default_all_build_exits": [
       0,
       0
     ],
-    "private_build_pass": true,
-    "private_liblldb_sha256": "6f942c50f24cc2195ed0cfbc7e40e0860e593a3b0aa4599204871137315989b7",
-    "private_CLI_sha256": "8ea21f01be8fb51f7417becb508cfc354ec0cc2af8befa5f17dd5416c4fa3cb3",
-    "all_other_archive_members_and_original_inputs_products_metadata_and_dependency_outputs_unchanged": true,
-    "original_guarded_nodes": 1383,
-    "normal_object_header_and_source_dependencies": 1080,
-    "both_ELF_dependency_SONAME_rpath_contracts_preserved": true,
-    "private_runtime_qualified": true,
-    "new_port_patch": "files/patch-lldb_source_Target_Process.cpp",
-    "new_port_patch_sha256": "03727621c49a2c89bc1f2f918a634f94774f04b50739e2f4853fb34a9aec3e62",
-    "private_native_pair_producer": "R416",
-    "actual_same_original_executable_and_kernel_verified_normal_server": true,
-    "original_alignment1_pass_then_alignment8_diagnostic20second_deadline": true,
-    "candidate_all4_original_unaligned_FindInMemory_FindRangesInMemory_contracts_pass": true,
-    "candidate_each_contract_under_one_second": true,
-    "diagnostic_deadline_not_original_test_timeout": true,
-    "original_driver_private_runtime_producer": "R417",
-    "private_original_methods": {
-      "TestFindRangesInMemory": {
-        "exit": 0,
-        "actual_original_methods": [
-          "test_find_in_memory_unaligned",
-          "test_find_ranges_in_memory_empty_ranges",
-          "test_find_ranges_in_memory_invalid_alignment",
-          "test_find_ranges_in_memory_invalid_buffer",
-          "test_find_ranges_in_memory_invalid_max_matches",
-          "test_find_ranges_in_memory_invalid_range",
-          "test_find_ranges_in_memory_one_match",
-          "test_find_ranges_in_memory_one_match_max",
-          "test_find_ranges_in_memory_one_match_multiple_ranges",
-          "test_find_ranges_in_memory_two_matches"
-        ],
-        "count": 10,
-        "actual_driver_mapped_DLL_verified": true,
-        "actual_normal_server_executable_verified": true,
-        "source_sha256": "b289b7fb41ece1cd5e35e653995b33ecd699d7a6f6bfe09964ef678527b39d1f",
-        "stdout_sha256": "86786de21ccc027d9d514e080b212082246d8df894ba40fbd778c5f39dfb945a",
-        "stderr_sha256": "6efe0904d202cc04f7c14a64f50574a1242141379a2c2680e7f9b74ca64cfe83"
-      },
-      "TestFindInMemory": {
-        "exit": 0,
-        "actual_original_methods": [
-          "test_check_stack_pointer",
-          "test_find_in_memory_double_instance_ok",
-          "test_find_in_memory_invalid_address_range",
-          "test_find_in_memory_invalid_alignment",
-          "test_find_in_memory_invalid_buffer",
-          "test_find_in_memory_ok",
-          "test_find_in_memory_unaligned"
-        ],
-        "count": 7,
-        "actual_driver_mapped_DLL_verified": true,
-        "actual_normal_server_executable_verified": true,
-        "source_sha256": "a110e9b1c62cd4520c969f68d66b47d795d5648a30354e18fad88e0d154ada40",
-        "stdout_sha256": "86786de21ccc027d9d514e080b212082246d8df894ba40fbd778c5f39dfb945a",
-        "stderr_sha256": "c7afb2ac4f5124c61c673c883b25ffe0573d26c160b552d87c3c2fce70e17949"
-      }
-    },
-    "all17_original_methods_pass": true,
-    "actual_driver_mapped_DLL_and_kernel_server_identity_verified": true,
-    "all_original_source_product_metadata_private_module_guards_and_TMPDIR_cleanup_jail_removal_pass": true,
-    "independent_actual_original_output_hash_body_method_review_producer": "R418",
-    "fresh_source_validation_producer": "R419",
-    "normal_build_and_original_target_qualified": false,
-    "warm_source_modified": false,
-    "normal_full_build_or_upstream_merge_acceptance_claimed": false
+    "all_closed_warm_nodes_and_hardlinks_equal_before_exact_one_change_and_backup": true,
+    "source_nodes": 160706,
+    "source_inventory_sha256": "4062f6a9ba837fae182b77104f1c627302a34f8cb797b20671e2d510ee4854c6",
+    "actual_original_Process_cpp_compile_action_observed": true,
+    "normal_DLL_sha256": "e93701092cfbbe9232d1e61bf0c2b50a681d3c3884ea4d068d7ec2d02aec9a21",
+    "normal_server_sha256": "634e3029e08de7d9bc96d42af4c75eb5b7cae56aabf34305c47ebd982d21fa4f",
+    "normal_DLL_changed_server_unchanged": true,
+    "all_default_options_dependencies_and_four_jobs_retained": true,
+    "original_completion_cookies_preserved_fresh_owned_cookies_used": true,
+    "all_final_source_SDK_ports_cold_base_registry_stopped_data_mount_guards_and_jail_removal_pass": true,
+    "original_selected_target_or_package_qualification_implied": false
   },
-  "direct_native_ptrace_core_control": {
-    "producer": "R404",
-    "matching_kernel_sha256": "83690f1f4fa3001a1e77852c44e9234ff6f9c4b6fa3e11cf7cf2a6e0c504ef35",
-    "matching_source_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
-    "actual_base_compiler_one_private_source_three_distinct_invocations": true,
-    "trace_me_raw_savecore_result": 0,
-    "trace_me_core_ELF_bytes": 12181504,
-    "normal_binding_exact_core_PID_and_thread_acceptance": "PASS",
-    "attached_running_and_confirmed_sleeping_raw_savecore_errno": 16,
-    "attached_zero_byte_files_rejected_as_cores": true,
-    "documented_post_core_waitpid_WNOHANG_and_all_three_detaches": "PASS",
-    "manual_reference": "https://cgit.freebsd.org/src/tree/lib/libsys/ptrace.2?id=3ff56f81a1a58d708d0101d601e88c289cfc5882",
-    "original_failed_controls_R398_R400_R401_retained": true,
-    "all_selected_kernel_compiler_headers_products_metadata_and_global_setting_guards_pass": true,
-    "owned_jail_removed": true,
-    "exact_kernel_branch_or_fix_or_original_savecore_test_qualified": false
-  },
-  "current_tested_frontier_custody": {
-    "producer": "R399",
-    "state": "native-inventory-and-stream-capture-in-progress",
-    "current_source_nodes": 160705,
-    "complete_warm_build_source_SDK140_rawdb_views_cold_sources_controls_and_failed_original_reports_retained": true,
-    "two_host_or_recovery_pass_claimed": false,
-    "no_warm_mutation_until_complete_custody_and_recovery_review": true
-  },
-  "memory_region_fresh_original_patch_R382": {
-    "producer": "R382",
-    "original_checksum_patch_exits": [
-      0,
-      0
-    ],
-    "zero_fuzz": true,
-    "complete_fresh_source_nodes": 160726,
-    "complete_fresh_source_inventory_sha256": "716650fac356ebe6dc05424c73eb7834ebac2e33a9107b3aef31c83204987a46",
-    "reference": "R313 complete160708-node fresh source",
-    "only_source_changes": "Eighteen declared source/doc/test bodies and eighteen exact original backups. All other recorded full metadata/bodies/types/literal links match.",
-    "complete93_file_current_origin_Git_identity_matches": true,
-    "default_options_dependencies_build_arguments_and_four_jobs_preserved": true,
-    "only_declared_TEST_ENV_delta_from_R313": "Existing short private per-run TMPDIR recipe",
-    "new_memory_region_source_patches": {
-      "lldb/source/Plugins/Process/FreeBSD/NativeProcessFreeBSD.cpp": {
-        "original_sha256": "d90d1761686fffe8522b7b240b19fe5e8ffe2d29abbe134180dd0d03af43de17",
-        "candidate_sha256": "10a1f6932b068ea374309ce2b17f3fc40bd2a29274f3dee2263c7ec33be11372",
-        "patch_name": "patch-lldb_source_Plugins_Process_FreeBSD_NativeProcessFreeBSD.cpp",
-        "patch_sha256": "4b1e6424af3504f597dd6362a2ff321a86cf8443be07a8c706d38e081eee0514"
-      },
-      "lldb/source/Plugins/Process/FreeBSD/NativeProcessFreeBSD.h": {
-        "original_sha256": "e0a551815a83c979571cd798addd229dca60e44fc7cee3fb001cc7850fc8e03d",
-        "candidate_sha256": "4e86365a52aa282e1d901aa621b5ac787008ac4f1c1ec7e20bac731aa8bbf795",
-        "patch_name": "patch-lldb_source_Plugins_Process_FreeBSD_NativeProcessFreeBSD.h",
-        "patch_sha256": "cfbc310ce697b9ade5b03790b7fba8d88c90d7cf05885adb4d8e782067470784"
-      },
-      "lldb/source/Plugins/Process/gdb-remote/GDBRemoteCommunicationServerLLGS.cpp": {
-        "original_sha256": "634ce2e441f959555ae6cbb32e25c5a7c1d66bef01290cb479a71b3ecf3e9e87",
-        "candidate_sha256": "c52a197dc29aac3374156597f0541b7fb048ee5b7888523ba12ecefacbde53c4",
-        "patch_name": "patch-lldb_source_Plugins_Process_gdb-remote_GDBRemoteCommunicationServerLLGS.cpp",
-        "patch_sha256": "961daf1202972c7e972960777af099bfa44184c9ea3f24efd88eece102f9cacf"
-      },
-      "lldb/docs/resources/lldbgdbremote.md": {
-        "original_sha256": "0186eac06737505b0eb42fe63dbe21d95299a3f2c1d9f364d0f60dd46eab8af2",
-        "candidate_sha256": "8d97197e07d5872c6a9c806d8a16971d91155024bef21481838190d01469339f",
-        "patch_name": "patch-lldb_docs_resources_lldbgdbremote.md",
-        "patch_sha256": "f03dfcd4cc1a01e0affbc9d8cbce13ac4c93e8671e3b3e8083fcfb5d4ea6b1d2"
-      },
-      "lldb/test/API/functionalities/memory-region/main.cpp": {
-        "original_sha256": "5fde8cd1afa9773459a991958612d2f3a7446e5b49660436ced3cf65dc72530a",
-        "candidate_sha256": "9aa1297e19b5400ce5c46b682765d695824e08028df525c047b0ca60e1854f39",
-        "patch_name": "patch-lldb_test_API_functionalities_memory-region_main.cpp",
-        "patch_sha256": "5b23724982cf660a1128f4b31af52e97ba58a252cfb9fb08b8a719d0d8c0bfdc"
-      },
-      "lldb/test/API/functionalities/memory-region/TestMemoryRegion.py": {
-        "original_sha256": "ed4d5b4ae658a16c0142f60ce918027fbfb6013e9b150a993e23d39f5465df7d",
-        "candidate_sha256": "5cae80bde530d846c2d8102863a9e4089d0c664beac34e31bb79be33103592a8",
-        "patch_name": "patch-lldb_test_API_functionalities_memory-region_TestMemoryRegion.py",
-        "patch_sha256": "062cebcfa1483d4c33d22c92bc3635bc6dc827aac4dfed1320b8fb9ea7d2c788"
-      }
-    },
-    "all_final_integrity_guards_pass": true,
-    "normal_current_build_test_package_qualified": false
+  "normal_unaligned_search_runtime": {
+    "producer": "R427",
+    "actual_normal_CLI_mapped_DLL_and_Python_binding_identity": "PASS",
+    "normal_DLL_sha256": "e93701092cfbbe9232d1e61bf0c2b50a681d3c3884ea4d068d7ec2d02aec9a21",
+    "normal_server_sha256": "634e3029e08de7d9bc96d42af4c75eb5b7cae56aabf34305c47ebd982d21fa4f",
+    "actual_kernel_normal_server_executable_identity": "PASS",
+    "private_library_server_or_LD_LIBRARY_PATH_substitution": false,
+    "all4_original_unaligned_search_contracts": "PASS",
+    "all11_current_formatter_summaries_counts_typed_payloads_and_raw_program_data": "PASS",
+    "original_formatter_module_body_unchanged": true,
+    "all_original_products_headers_build_metadata_unchanged_and_owned_jail_removed": true,
+    "full_original_target_package_installed_or_release_acceptance_implied": false
   }
 }

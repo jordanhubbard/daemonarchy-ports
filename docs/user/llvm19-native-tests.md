@@ -9,8 +9,10 @@ R416/R417 private runtime checks pass all 17 original memory-search methods.
 The latest completed normal selected target, R387, predates this one-line fix:
 1,240 PASS, 3 FAIL, 2 TIMEOUT, 2 UNRESOLVED, 27 XFAIL and 495 UNSUPPORTED.
 Its new memory-region method passes, while seven unsuccessful outcomes remain.
-Current normal build/original-target, package and installed-consumer acceptance
-are still required. The
+R421 now passes the current normal configure/default build, and R427 passes
+actual normal CLI/binding/search/formatter runtime. R428 original selected tests
+are running; no result is claimed yet. Package and installed consumers remain
+unqualified. The
 [runtime follow-up record](../../verification/llvm19-native-runtime-followup-20261123.json)
 binds exact candidate identities and producer-specific qualification boundaries.
 
@@ -286,8 +288,25 @@ except the 19 declared bodies and their exact original backups; every other
 recorded native owner/mode/flag/body/type/link matches. Defaults/dependencies/four
 jobs and the established short test-TMPDIR recipe are preserved. The newest
 patch changes only aligned-search progression and records the pinned, unmerged
-upstream proposal. Current tested-frontier custody remains in progress. New warm
-integration and normal original-target/package qualification remain required.
+upstream proposal. The preceding R387 tested-frontier custody is now independently verified on
+both hosts with matching recovery instructions/helpers. No extraction or active
+overlay was performed.
+
+R421 first matches every warm node and hardlink against that complete R399
+closure. Exactly one Process.cpp body and original backup produce 160,706 source
+nodes. Original normal configure and default all build both exit0; the actual
+original Process.cpp compile action is observed. The normal client DLL changes
+from602d5e659e02 to e93701092cfb; server634e3029e08d is unchanged. Default options,
+dependencies, four jobs, original cookies and all final source/SDK/view/cold/base/
+registry/stopped-data/mount guards pass.
+
+R427 verifies the actual normal CLI mapped DLL, normal Python binding, unchanged
+formatter module and actual normal server executable. All four original unaligned
+search contracts and all eleven current formatter values/typed payloads pass,
+without private DLL/server or LD_LIBRARY_PATH substitution. Original products,
+headers and build metadata stay unchanged, and the owned jail is removed.
+R428 original selected tests are now running against these normal products;
+no test result, fresh package or installed-consumer acceptance is claimed.
 
 Separate direct native ptrace controls reproduce EBUSY for initial attach stops
 on running and confirmed sleeping children. The same program with a trace-me
