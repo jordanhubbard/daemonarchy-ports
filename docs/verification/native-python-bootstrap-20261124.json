@@ -554,7 +554,25 @@
       "errors": 0,
       "raw_stdout_sha256": "91a64aec02de5ae3e863fc405869faba7c7bef0cc1a969b65dfd3614dac9c158",
       "raw_stderr_sha256": "0b3406bdfbc4bd73b8aa22d14e88eb8d7e199d027cf87b35aaa55cec2afda417",
-      "scope": "Original full unittest discovery returns OK(skipped=7). tests/test_util.py only supports platform.system()==Linux for cpp, so seven original cases skip on FreeBSD. Original fixture/platform repair and actual cpp coverage remain pending. Count is not451passed."
+      "scope": "Original full unittest discovery returns OK(skipped=7). tests/test_util.py only supports platform.system()==Linux for cpp, so seven original cases skip on FreeBSD. Original fixture/platform repair and actual cpp coverage remain pending. Count is not451passed.",
+      "candidate_resolution": {
+        "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/108",
+        "source_revision": "be0d1166092f3e99e3928b77e0c8a03856d30fbf",
+        "fresh_original_port_targets_passed": 8,
+        "original_make_test_passed": 451,
+        "skips": 0,
+        "failures": 0,
+        "errors": 0,
+        "patches_zero_fuzz_and_prototype_bytes_verified": true,
+        "runtime_comparison": "All non-bytecode payloads identical. Regenerated pyc metadata/build filenames differ; decoded code equal after filename normalization. Existing normal package not replaced.",
+        "two_host_evidence": {
+          "nodes": 1289,
+          "archive_bytes": 3407539,
+          "archive_sha256": "26431c8bb0778fdb7cf174a19108facdd5c2b1cecc2fa15a155e27ead6e375e6",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "scope": "Separate draft candidate; not landed in main/release. ARM64 native qualification only; canonical receipt and AMD64 remain pending."
+      }
     },
     "CFFI": {
       "original_make_test_target": "pass",
@@ -1173,7 +1191,7 @@
     "Full release/fleet/physical hardware qualification",
     "Current documentation changes require authority review; preserve the existing authority attestation and report stale validation rather than manufacturing a new attestation.",
     "Original IDNA properties suite with declared source-built default Hypothesis/Rust/maturin/runtime closure; PR107",
-    "Pycparser original seven cpp platform skips require FreeBSD fixture qualification",
+    "Pycparser FreeBSD original cpp suite candidate passes451withzero skips; draft PR108 review, AMD64 and canonical receipt remain pending",
     "Complete AsyncGenerator/Pycparser peers Sniffio/SortedContainers/Hatch plugins/Cython original self-suites and declared test-tool closure",
     "Complete Attrs declared original self-suite tools and CFFI conditional meson-python/virtualenv/installed-CLI coverage"
   ],
@@ -1182,7 +1200,8 @@
     "libuv": "https://github.com/jordanhubbard/daemonarchy-ports/pull/102",
     "Pathspec": "https://github.com/jordanhubbard/daemonarchy-ports/pull/103",
     "Jinja2_Trio_test_dependency": "https://github.com/jordanhubbard/daemonarchy-ports/pull/106",
-    "IDNA_Hypothesis_test_dependency": "https://github.com/jordanhubbard/daemonarchy-ports/pull/107"
+    "IDNA_Hypothesis_test_dependency": "https://github.com/jordanhubbard/daemonarchy-ports/pull/107",
+    "Pycparser_FreeBSD_cpp": "https://github.com/jordanhubbard/daemonarchy-ports/pull/108"
   },
   "held_packages": [
     {
