@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 66,
+  "normal_development_package_count": 67,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -252,6 +252,39 @@
           "nodes": 20,
           "archive_bytes": 7894456,
           "archive_sha256": "5e4279399d229561a2d7e788e9b5f428a46841b402568df228ec223d25ade869",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      }
+    },
+    {
+      "label": "Pytest",
+      "packages": [
+        {
+          "name": "py312-pytest-9.1.1,1.pkg",
+          "bytes": 793063,
+          "sha256": "49b51736de4461f323e38711c1cdceec7ccc0b03122daa5b32d1ddfa19cb3a5b"
+        }
+      ],
+      "source_revisions": [
+        "511743d7327c93e9ff0117d04f0176ebc572f444"
+      ],
+      "sealed_payloads": 260,
+      "actual_private_and_default_path_checks": "Actual native pytest CLI parameterized tests, fixtures, explicit skip/xfail semantics and JUnit; changed subject yields3 failures, syntax error aborts collection and corrected source recovers. Own runner acceptance; original self-suite remains pending.",
+      "normal_packages_before": 66,
+      "normal_packages_after": 67,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "two_host_evidence": {
+        "source_build_tests_private": {
+          "nodes": 1918,
+          "archive_bytes": 10222695,
+          "archive_sha256": "9386b8dc4310ff2e760192e9e8a9864c7ebbb827e500e9e7e8c327226d143fb7",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 42,
+          "archive_bytes": 8069996,
+          "archive_sha256": "15f7dd78f5fd48b57bf67195e9953bb4860fdcc88e5c0c0a0279685333e50f39",
           "all_nodes_verified_on_both_hosts": true
         }
       }
