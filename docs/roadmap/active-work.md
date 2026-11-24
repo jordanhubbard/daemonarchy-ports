@@ -121,3 +121,23 @@ revised build and the full upstream test target remain required.
 - **Direction:** Retain the original default build and bind its actual compiler requirement through the shared Zig framework.
 - **Implementation:** Select `USES=zig:016` and bump PORTREVISION. The current unversioned Zig port supplies 0.17, while the vendored Ghostty build requires 0.16 and fails with removed Build API members under 0.17. The existing `lang/zig016` origin supplies the required compiler at the existing command path.
 - **Evidence:** The original default AMD64 source99/ports2ba0 bulk reached the actual vendored Ghostty compile and failed with both the version requirement and missing `Build.build_root`. The complete failed log and frozen port inputs are preserved on two healthy hosts. Actual native FreeBSD metadata resolves the original compiler dependency to `lang/zig` 0.17 and the candidate to `lang/zig016` 0.16, retaining the original Cargo flags, four jobs and options in the isolated view. A clean source-built compiler/package build, original runtime controls and the complete selected closure still require qualification; no passing build or SDK/lifecycle receipt is implied by this repair.
+
+### Current Omarchy snapshot for SYNC-001
+
+The dated desktop snapshot selects Omarchy
+`0640b8c1c761fd962298907712596c1197c13a29` and the FreeBSD adapter
+`029e0eba6ff69392e416abb5bbd58206d4d20443`. Their original source archives
+match every Git blob, executable mode and path: 5,719 desktop files, including
+six literal symbolic links, and 87 adapter files. Each selected tree is
+identical to its reviewed reference/native compatibility test head.
+
+The port carries the 179 built-in icon templates used by the installed icon
+selector, alongside the refreshed source packing list. Its native installed
+command control runs as nobody with an empty user icon directory and requires
+Arcade, Papercraft and Original to remain discoverable. Original source,
+staging, products and failure statuses remain retained by the native driver.
+
+This selected-port workflow uses ordinary binary dependency bootstrap and a
+source-built libdvdcss dependency on FreeBSD 15.1 amd64. It does not establish
+the full matching-CURRENT source-built closure, graphical session, physical
+hardware, canonical per-unit SDK or retained lifecycle/release acceptance.

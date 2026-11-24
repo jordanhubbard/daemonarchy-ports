@@ -1,5 +1,7 @@
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
+U_BOOT_SLAVE_PORTREVISION_2026.10=	2
+
 EXTRA_PATCHES=	${.CURDIR}/files/
 
 MODEL=		rpi4
