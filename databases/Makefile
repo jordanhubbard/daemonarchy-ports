@@ -107,7 +107,6 @@
     SUBDIR += innotop
     SUBDIR += iowow
     SUBDIR += ip4r
-    SUBDIR += ipa_sdb
     SUBDIR += iplike
     SUBDIR += jdb
     SUBDIR += jetbrains-datagrip
@@ -457,6 +456,7 @@
     SUBDIR += p5-Metadata
     SUBDIR += p5-Mojo-Pg
     SUBDIR += p5-Mojo-SQL
+    SUBDIR += p5-Mojo-SQLite
     SUBDIR += p5-MongoDB
     SUBDIR += p5-Mongoose
     SUBDIR += p5-MySQL-Diff
@@ -1127,6 +1127,7 @@
     SUBDIR += rubygem-redis-actionpack-rails61
     SUBDIR += rubygem-redis-actionpack-rails70
     SUBDIR += rubygem-redis-client
+    SUBDIR += rubygem-redis-cloud-auth
     SUBDIR += rubygem-redis-cluster-client
     SUBDIR += rubygem-redis-clustering
     SUBDIR += rubygem-redis-clustering-gitlab
