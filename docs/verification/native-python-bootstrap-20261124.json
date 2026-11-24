@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 87,
+  "normal_development_package_count": 89,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -569,6 +569,46 @@
         }
       },
       "test_scope": "Jinja2 full original make test909passed0skips. FixedTOML original upstream selected pytest command plus20backported regression cases41passed2originalNumPyskips. Original port has no selected test bridge. Markdown/Smartypants complete original suites, NumPy/fulltox/GoCI/AMD64/canonical/release remain pending."
+    },
+    {
+      "name": "Fixed Typogrify and JsonCpp",
+      "packages": [
+        {
+          "name": "py312-typogrify-2.1.0_1.pkg",
+          "bytes": 23130,
+          "sha256": "44a5d3f0ef051518599ec0cd6bbd784c2cbe28dd42f5f408f23cf715efbd4523"
+        },
+        {
+          "name": "jsoncpp-1.9.8.pkg",
+          "bytes": 133656,
+          "sha256": "e0ee0e708bcac4250e77eb4a57ead3cfa63f888bf27906a965ae61cdfe559acf"
+        }
+      ],
+      "source_revisions": [
+        "4b88c3c22a3b89057eaf5a901ee0c48128fb7c89",
+        "511743d7327c93e9ff0117d04f0176ebc572f444"
+      ],
+      "sealed_payloads": 53,
+      "normal_packages_before": 87,
+      "normal_packages_after": 89,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "actual_private_and_default_path_checks": "HTML typography/code protection, registered Jinja filters/changed input/argument and dependency errors/recovery. Real C++ shared/static clients: stdlib JSON oracle, Unicode/UInt64/nested data, explicit strict-mode malformed input/schema errors, real compiler failure/recovery. Default shared loader verified without LD_LIBRARY_PATH; static client independent of JsonCpp shared library.",
+      "two_host_evidence": {
+        "source_builds_tests_private": {
+          "nodes": 1832,
+          "archive_bytes": 12300167,
+          "archive_sha256": "3770300dcd2f1bfba9fb3bb2cd00c369c0efa16bef95e7d07ad705febdcfa0d0",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 68,
+          "archive_bytes": 8934802,
+          "archive_sha256": "6c78248f56e701c70fa5d3f71ec25dfc332b9ad0334357bf42bea514fef80eee",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "test_scope": "Typogrify original41task-selected cases plus1additive Jinja doctest42pass0skip; original port has no test bridge and provisioning/coverage/lint remain unqualified. JsonCpp all3original Meson suites pass (127/69/96reported counts overlap). AMD64/canonical/release remain pending."
     }
   ],
   "complete_original_source_suites": {
@@ -1426,6 +1466,72 @@
         "all_nodes_verified_on_both_hosts": true
       },
       "scope": "Original assertions retained plus20additive regressions. Reconstructed documented external fixture closure explicitly pinned; optional NumPy coverage/fulltox/pytest-cov/GoCI/Python-version matrix/AMD64 and canonical lifecycle remain unqualified."
+    },
+    "Typogrify_fixed": {
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/110",
+      "source_revision": "4b88c3c22a3b89057eaf5a901ee0c48128fb7c89",
+      "version": "2.1.0_1",
+      "original_upstream_command": "Original tasks.py default pytest doctest/titlecase selection plus additive Jinja doctest; direct command, no stock port bridge",
+      "original_cases": 41,
+      "added_regression_cases": 1,
+      "passed": 42,
+      "skips": [],
+      "failures": 0,
+      "errors": 0,
+      "raw_stdout_sha256": "99a38f6189871c0cf20bacbf5c055907d725c035b167afb4e6e415b58dbcbe7f",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "JUnit_sha256": "4f87f3fd8dd42947f8f7aa86181f382569eb967315e337b603d03615663f1688",
+      "zero_fuzz_patch_and_prototype_bytes": "exact",
+      "two_host_evidence": {
+        "nodes": 1832,
+        "archive_bytes": 12300167,
+        "archive_sha256": "3770300dcd2f1bfba9fb3bb2cd00c369c0efa16bef95e7d07ad705febdcfa0d0",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "scope": "Original assertions/default warning behavior retained. Invoke/uv provisioning, pytest-cov/sugar/lint, other platforms and canonical lifecycle remain unqualified."
+    },
+    "JsonCpp": {
+      "source_revision": "511743d7327c93e9ff0117d04f0176ebc572f444",
+      "version": "1.9.8",
+      "original_eight_port_targets": "all pass",
+      "original_make_test": "pass",
+      "original_Meson_suites": [
+        {
+          "name": "jsoncpp:unittest_jsoncpp_test",
+          "result": "OK",
+          "exit": 0,
+          "stdout_sha256": "471c7e27b276bed66ae2626b899dc7b617deb899cc798c978063531419891e11"
+        },
+        {
+          "name": "jsoncpp:unittest_jsontestrunner",
+          "result": "OK",
+          "exit": 0,
+          "stdout_sha256": "682e10c62ba2dea4b4fa1b2846870b4616c6df25925549e7c5f6eed7952dfacd"
+        },
+        {
+          "name": "jsoncpp:jsonchecker_jsontestrunner",
+          "result": "OK",
+          "exit": 0,
+          "stdout_sha256": "d287ff8133ab2eab2a022e3dcf11dc96332691ddb9158dd28d3ce44a053c026f"
+        }
+      ],
+      "suite_reported_counts": {
+        "CXX_units": 127,
+        "fixture_runner": 69,
+        "fixture_runner_with_jsonchecker": 96
+      },
+      "counts_overlap_do_not_sum_as_unique_tests": true,
+      "raw_stdout_sha256": "4fdb33b9d1155ed5ded255b5d21a3805e77aee0c46441b0f9e75ed2ad2760b9f",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_Meson_testlog_json_sha256": "e6d8180346d56a1eaac35add71b0fc4663dfeacb0dc0b9e37f046b52b91f0b06",
+      "default_shared_and_static_libraries": "both built and exercised by real clients",
+      "two_host_evidence": {
+        "nodes": 1832,
+        "archive_bytes": 12300167,
+        "archive_sha256": "3770300dcd2f1bfba9fb3bb2cd00c369c0efa16bef95e7d07ad705febdcfa0d0",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "scope": "Original complete make test selection and original defaults retained on native ARM64. Independent sealed/default clients verify actual library behavior and loader bindings. AMD64/canonical/full release admission remains pending."
     }
   },
   "pending": [
@@ -1449,7 +1555,8 @@
     "Jinja2_Trio_test_dependency": "https://github.com/jordanhubbard/daemonarchy-ports/pull/106",
     "IDNA_Hypothesis_test_dependency": "https://github.com/jordanhubbard/daemonarchy-ports/pull/107",
     "Pycparser_FreeBSD_cpp": "https://github.com/jordanhubbard/daemonarchy-ports/pull/108",
-    "TOML_array_EOF": "https://github.com/jordanhubbard/daemonarchy-ports/pull/109"
+    "TOML_array_EOF": "https://github.com/jordanhubbard/daemonarchy-ports/pull/109",
+    "Typogrify_Jinja_errors": "https://github.com/jordanhubbard/daemonarchy-ports/pull/110"
   },
   "held_packages": [
     {
@@ -1546,6 +1653,41 @@
         "archive_bytes": 18238747,
         "archive_sha256": "998b68752a11c0801274a924084e489f782e3f07def0251b8d21e3f34de6d0c3",
         "all_nodes_verified_on_both_hosts": true
+      }
+    },
+    {
+      "name": "py312-typogrify-2.1.0.pkg",
+      "bytes": 22849,
+      "sha256": "4c8a787ea4cc141a23303f66d1f5d26d35d75721d96ff94ae040e19a8f05d2a4",
+      "source_revision": "511743d7327c93e9ff0117d04f0176ebc572f444",
+      "original_eight_construction_targets": "all pass",
+      "original_selected_source_cases_passed": 41,
+      "actual_counterexample": "Real registered Jinja dependency-error route catches TypogrifyError then accesses Python2-only exception.message, masking intended TemplateError with AttributeError.",
+      "normal_development_installation": "Original2.1.0 held. Separately fixed2.1.0_1 source/42tests/sealed/default controls pass and normally installed.",
+      "two_host_failure_and_prototype_evidence": {
+        "nodes": 717,
+        "archive_bytes": 2890705,
+        "archive_sha256": "d252936c4a62c1d7f64e310f08a6417513bfd14ac468ea92172e26015827aa14",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "resolution": {
+        "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/110",
+        "head": "4b88c3c22a3b89057eaf5a901ee0c48128fb7c89",
+        "change": "Use str(exception), add Jinja error/safeMarkup regression doctest, bump PORTREVISION1.",
+        "fixed_package_sha256": "44a5d3f0ef051518599ec0cd6bbd784c2cbe28dd42f5f408f23cf715efbd4523",
+        "two_host_source_tests_private": {
+          "nodes": 1832,
+          "archive_bytes": 12300167,
+          "archive_sha256": "3770300dcd2f1bfba9fb3bb2cd00c369c0efa16bef95e7d07ad705febdcfa0d0",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "two_host_normal": {
+          "nodes": 68,
+          "archive_bytes": 8934802,
+          "archive_sha256": "6c78248f56e701c70fa5d3f71ec25dfc332b9ad0334357bf42bea514fef80eee",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "remaining": "Provisioning/coverage/lint/AMD64/canonical/release acceptance pending."
       }
     }
   ],
