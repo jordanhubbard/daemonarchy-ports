@@ -69,7 +69,8 @@ do-install-ZSH-on:
 
 do-test: build
 	cd ${WRKSRC} && \
-		${SETENVI} ${CONFIGURE_ENV} ${NINJA_ENV} ${PYTHON_CMD} configure.py \
+		${SETENVI} ${CONFIGURE_ENV} ${NINJA_ENV} \
+		LDFLAGS="${LDFLAGS} -pthread" ${PYTHON_CMD} configure.py \
 		--gtest-source-dir=${WRKDIR}/googletest-${_GTEST_VERSION}
 	cd ${WRKSRC} && ./ninja -j${MAKE_JOBS_NUMBER} ninja_test && ./ninja_test
 
