@@ -1,0 +1,158 @@
+{
+  "schema": "daemonarchy-native-development-observation@1",
+  "date": "2026-11-24",
+  "planned_release": "1.6",
+  "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
+  "normal_development_package_count": 62,
+  "groups": [
+    {
+      "label": "Docutils, Setuptools-SCM and Calver",
+      "packages": [
+        {
+          "name": "py312-docutils-0.22.4,1.pkg",
+          "bytes": 996296,
+          "sha256": "9dcd1ecaa3fd25a817a8b869b2259fee42c59c9ebaa51932bdc35caaf1db81a9"
+        },
+        {
+          "name": "py312-setuptools-scm-9.2.2.pkg",
+          "bytes": 121094,
+          "sha256": "8f892b2627a8ca918554af8af3a3a1195f2ea80ea8826bdb3437b5bd3cba240f"
+        },
+        {
+          "name": "py312-calver-2025.10.20.pkg",
+          "bytes": 9627,
+          "sha256": "6e4cb8486b8c681e73a45b2e16f50d6e91fe8cb90237e66ec5b0be5b43323a21"
+        }
+      ],
+      "source_revisions": [
+        "49c1f8f2fe7a21f58c9146a621950dd069b16e58"
+      ],
+      "sealed_payloads": 634,
+      "actual_private_and_default_path_checks": "HTML/manual API and rst2man CLI; SCM archive/fallback/version-file/override failure and recovery; actual Calver Distribution hook/epoch/metadata precedence",
+      "normal_packages_before": 55,
+      "normal_packages_after": 58,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "two_host_evidence": {
+        "source_build_tests_private": {
+          "nodes": 7230,
+          "archive_bytes": 29528608,
+          "archive_sha256": "78e1cbe4adb4ed4d90749a3ce8132c29ad7df436d93070dcf7dab9f616aae079",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 30,
+          "archive_bytes": 7279227,
+          "archive_sha256": "2dd8ff86cd0bc66b3b1fd5f6522bb2c082895d6aba230c3229bdacba29f4fd3c",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      }
+    },
+    {
+      "label": "Pathspec upstream132 backport",
+      "packages": [
+        {
+          "name": "py312-pathspec-1.1.1_1.pkg",
+          "bytes": 76575,
+          "sha256": "175927c5aa83a5d2127635805f4da82d2d85efa9001b0d2fd8fed30a9733d746"
+        }
+      ],
+      "source_revisions": [
+        "087f30829b60c5222b6af04082ec5a9850b03de6"
+      ],
+      "sealed_payloads": 105,
+      "actual_private_and_default_path_checks": "Unchanged original Git counterexample agrees with real Git; parent-unignore/filesystem/regex error and recovery",
+      "normal_packages_before": 58,
+      "normal_packages_after": 59,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "two_host_evidence": {
+        "source_build_tests_private": {
+          "nodes": 1495,
+          "archive_bytes": 4489090,
+          "archive_sha256": "4187d5b77e15b056d2fdc09c8d8dc8986543b7b6e4e7777306d91f65d9d664a3",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 27,
+          "archive_bytes": 7393029,
+          "archive_sha256": "5123afe14fbbffba8a8359d039490285e829baacd4ea383f39ff21d0ea7df7a5",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      }
+    },
+    {
+      "label": "Pluggy, IniConfig and Trove",
+      "packages": [
+        {
+          "name": "py312-pluggy-1.7.0.pkg",
+          "bytes": 55272,
+          "sha256": "1b189dc4166ae4ac6ed40451faff392aafa0daab00a1687e3889de0de1d34cc1"
+        },
+        {
+          "name": "py312-iniconfig-2.3.1.pkg",
+          "bytes": 16188,
+          "sha256": "fa8e9aaa34d89c3238b80c4000184785ff21427b627925d3576c61b3efaac2f6"
+        },
+        {
+          "name": "py312-trove-classifiers-2026.9.21.13.pkg",
+          "bytes": 19302,
+          "sha256": "beb5a27da8779388c621f2d654c55d4a901c73128759cf2b119f048244090682"
+        }
+      ],
+      "source_revisions": [
+        "087f30829b60c5222b6af04082ec5a9850b03de6"
+      ],
+      "sealed_payloads": 94,
+      "actual_private_and_default_path_checks": "Hook/wrapper/exception/unregister/recovery; actual file parser/comments/locations/duplicate-error/UTF8/recovery; data-only classifier set/mapping API",
+      "normal_packages_before": 59,
+      "normal_packages_after": 62,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "two_host_evidence": {
+        "source_build_tests_private": {
+          "nodes": 1926,
+          "archive_bytes": 5008925,
+          "archive_sha256": "82c12f44f118b7c31321852052274e93eb14f756da8d19efb4da993825228778",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 20,
+          "archive_bytes": 7416785,
+          "archive_sha256": "8ae33d408d489ace282013b9f112c21951a2af49307230a8b068012094c779f6",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      }
+    }
+  ],
+  "complete_original_source_suites": {
+    "Docutils": {
+      "runner": "test/alltests.py",
+      "testsRun": 2308,
+      "original_optional_skips": 28,
+      "failures": 0,
+      "errors": 0,
+      "scope": "Original source/test working directory and unchanged runner. Optional PIL/Markdown/Pygments/external math coverage remains pending."
+    },
+    "Pathspec": {
+      "testsRun": 200,
+      "original_optional_backend_subtest_skips": 294,
+      "failures": 0,
+      "errors": 0,
+      "scope": "Unfiltered original unittest discovery, including upstream132 regressions, also passes on fresh original port extract/patch output. 147 Hyperscan and147 RE2 subtest skips preserve original reasons; declared pytest bridge remains pending."
+    }
+  },
+  "pending": [
+    "Complete original suites for SCM/Calver/Pluggy/IniConfig/Trove and source-built pytest closure",
+    "Declared Pathspec pytest bridge and optional backend coverage",
+    "Fresh libuv full port construction and three existing network fixture failures; see PR102",
+    "Matching CURRENT desktop dependency closure and graphical acceptance",
+    "Canonical complete per-unit ownership, provenance, lifecycle and SDK/TCB admission",
+    "Full release/fleet/physical hardware qualification"
+  ],
+  "related_reviews": {
+    "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
+    "libuv": "https://github.com/jordanhubbard/daemonarchy-ports/pull/102",
+    "Pathspec": "https://github.com/jordanhubbard/daemonarchy-ports/pull/103"
+  }
+}
