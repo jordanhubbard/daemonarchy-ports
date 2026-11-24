@@ -6,13 +6,13 @@ The review candidate is `llvm19-19.1.7_7`; no new package is published.
 Its current 94 port files include the newest one-line aligned-search fix.
 R419 fresh checksum/full patch and strict 160,727-node comparison pass, and
 R416/R417 private runtime checks pass all 17 original memory-search methods.
-The latest completed normal selected target, R387, predates this one-line fix:
-1,240 PASS, 3 FAIL, 2 TIMEOUT, 2 UNRESOLVED, 27 XFAIL and 495 UNSUPPORTED.
-Its new memory-region method passes, while seven unsuccessful outcomes remain.
-R421 now passes the current normal configure/default build, and R427 passes
-actual normal CLI/binding/search/formatter runtime. R428 original selected tests
-are running; no result is claimed yet. Package and installed consumers remain
-unqualified. The
+R421 normal configure/default build and R427 actual normal runtime pass.
+The latest completed original selected target, R428, exits 1 with all 1,769
+preceding names: 1,241 PASS, 4 FAIL, 2 UNRESOLVED, 27 XFAIL and 495 UNSUPPORTED.
+Both preceding memory-search TIMEOUT files now pass all 17 original methods.
+An original thread-exit case changes from PASS to FAIL; six unsuccessful outcomes
+remain. Independent report, method and cleanup review passes. Package and
+installed consumers remain unqualified. The
 [runtime follow-up record](../../verification/llvm19-native-runtime-followup-20261123.json)
 binds exact candidate identities and producer-specific qualification boundaries.
 
@@ -305,8 +305,22 @@ formatter module and actual normal server executable. All four original unaligne
 search contracts and all eleven current formatter values/typed payloads pass,
 without private DLL/server or LD_LIBRARY_PATH substitution. Original products,
 headers and build metadata stay unchanged, and the owned jail is removed.
-R428 original selected tests are now running against these normal products;
-no test result, fresh package or installed-consumer acceptance is claimed.
+R428 original selected target completes with make exit 1 and all 1,769 names
+retained: 1,241 PASS, 4 FAIL, 2 UNRESOLVED, 27 XFAIL and 495 UNSUPPORTED.
+Both previous search TIMEOUTs become PASS, covering all 17 original methods.
+The thread-exit case changes from PASS to FAIL, with no established cause;
+it remains an unsuccessful result alongside GUI spawn-threads, detach-resumes,
+save-core, rerun/expression and Objective-C expressions. All 65 simulator,
+nine QEMU, Lua/event/Capsicum and new mapping contracts pass. Independent R429
+reviews actual JSON/XML bodies, hashes, names, status families, methods and
+standard TMPDIR cleanup; all final integrity guards and sealed copies pass.
+
+The review branch now includes the synchronized owned main. All 94 LLVM origin
+Git bodies, modes and types still match the tested R419 view. R428 used its
+frozen source/SDK/ports inputs; unchanged origin identity does not qualify the
+new shared ports framework or refreshed CURRENT closure. Preserve the complete
+R428 tested frontier before another warm source/product/SDK mutation. No fresh
+package or installed-consumer acceptance is claimed.
 
 Separate direct native ptrace controls reproduce EBUSY for initial attach stops
 on running and confirmed sleeping children. The same program with a trace-me

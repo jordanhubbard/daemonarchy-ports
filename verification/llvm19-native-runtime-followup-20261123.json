@@ -494,7 +494,7 @@
     "canonical_Component_or_SDK_admission": false,
     "lifecycle_receipt": false,
     "complete_toolchain_provenance_admitted": false,
-    "native_recipe_pkgname_scope": "Historical R164/R228 used revision6. Current R421 normal default build, R427 actual runtime and running R428 original selected target use revision7. R387 remains the latest completed selected result with7 unsuccessful outcomes before newest search patch. No package/installed acceptance."
+    "native_recipe_pkgname_scope": "Historical R164/R228 used revision6. Normal R421 build, R427 runtime and completed R428 failed original selected target use revision7 with frozen pre-synchronization source/SDK/ports views. Six unsuccessful outcomes remain. No fresh matching-CURRENT/shared-framework/package/installed acceptance."
   },
   "default_build": {
     "producer": "R222",
@@ -674,7 +674,7 @@
     }
   ],
   "remaining_gates": [
-    "Complete and independently review R428 original selected target on current normal products: retain all1769 prior names,17find methods,65simulator/9QEMU/Lua/event/Capsicum/new mapping coverage and every remaining failure. R421 normal configure/default build and R427 actual normal runtime pass after accepted R399 both-host custody/recovery. Retain the new tested frontier before further warm source/product/SDK mutation.",
+    "Resolve the six retained R428 unsuccessful outcomes, including the original thread-exit PASS-to-FAIL change. Both memory-search files now PASS all17 original methods; all1769 prior names and original assertions/skips remain. Preserve the complete new tested frontier before any warm source/product/SDK mutation.",
     "Full unfiltered original suite after all repairs; retained R74 full run remains failed with249 unexpected entries.",
     "Remaining LLDB, sanitizer, GNU libatomic, CFI, libFuzzer and OpenMP defects.",
     "Fresh stage, license/SBOM hooks, check-plist/package and installed compiler consumers after final repairs.",
@@ -1364,13 +1364,82 @@
   },
   "current_original_selected_tests": {
     "producer": "R428",
-    "state": "launched-preflight-or-running-not-terminal",
+    "state": "terminal-original-selected-target-failed-independent-report-integrity-pass",
     "original_target": "do-test/check-all",
-    "required_prior_names": 1769,
-    "required_original_find_memory_methods": 17,
-    "all_previous65_simulator9Qemu_Lua_event_Capsicum_and_new_mapping_method_required": true,
-    "result_claimed": false,
-    "prior_completed_target_producer": "R387"
+    "original_make_exit": 1,
+    "entries": 1769,
+    "counts": {
+      "PASS": 1241,
+      "UNRESOLVED": 2,
+      "FAIL": 4,
+      "XFAIL": 27,
+      "UNSUPPORTED": 495
+    },
+    "all_prior_1769_names_retained": true,
+    "added_names": [],
+    "shared_status_changes": {
+      "lldb-api :: python_api/find_in_memory/TestFindRangesInMemory.py": {
+        "before": "TIMEOUT",
+        "after": "PASS"
+      },
+      "lldb-api :: python_api/find_in_memory/TestFindInMemory.py": {
+        "before": "TIMEOUT",
+        "after": "PASS"
+      },
+      "lldb-api :: functionalities/thread/exit_during_step/TestExitDuringStep.py": {
+        "before": "PASS",
+        "after": "FAIL"
+      }
+    },
+    "remaining_unexpected": {
+      "lldb-api :: commands/gui/spawn-threads/TestGuiSpawnThreads.py": "UNRESOLVED",
+      "lldb-api :: commands/process/detach-resumes/TestDetachResumes.py": "FAIL",
+      "lldb-api :: tools/lldb-server/TestGdbRemoteSaveCore.py": "FAIL",
+      "lldb-api :: functionalities/rerun_and_expr/TestRerunAndExpr.py": "UNRESOLVED",
+      "lldb-shell :: Expr/TestObjCInCXXContext.test": "FAIL",
+      "lldb-api :: functionalities/thread/exit_during_step/TestExitDuringStep.py": "FAIL"
+    },
+    "normal_original_find_memory_methods": {
+      "lldb-api :: python_api/find_in_memory/TestFindRangesInMemory.py": {
+        "code": "PASS",
+        "actual_PASS_methods": [
+          "test_find_in_memory_unaligned",
+          "test_find_ranges_in_memory_empty_ranges",
+          "test_find_ranges_in_memory_invalid_alignment",
+          "test_find_ranges_in_memory_invalid_buffer",
+          "test_find_ranges_in_memory_invalid_max_matches",
+          "test_find_ranges_in_memory_invalid_range",
+          "test_find_ranges_in_memory_one_match",
+          "test_find_ranges_in_memory_one_match_max",
+          "test_find_ranges_in_memory_one_match_multiple_ranges",
+          "test_find_ranges_in_memory_two_matches"
+        ],
+        "all_original_methods_PASS": true
+      },
+      "lldb-api :: python_api/find_in_memory/TestFindInMemory.py": {
+        "code": "PASS",
+        "actual_PASS_methods": [
+          "test_check_stack_pointer",
+          "test_find_in_memory_double_instance_ok",
+          "test_find_in_memory_invalid_address_range",
+          "test_find_in_memory_invalid_alignment",
+          "test_find_in_memory_invalid_buffer",
+          "test_find_in_memory_ok",
+          "test_find_in_memory_unaligned"
+        ],
+        "all_original_methods_PASS": true
+      }
+    },
+    "new_authored_memory_region_method_pass": true,
+    "all_previous65_simulator9Qemu_Lua_event_Capsicum_contracts_pass": true,
+    "independent_reviewer": "R429",
+    "JSON_SHA256": "9cc51d97f5a6be92bc15b2e58520caecc3604a7225be341e0baa2600f1b9f5e7",
+    "XML_SHA256": "3090a1a5ae84eba83af1a00e3e4a236733bc6bbb6f08bd9eac64378b67fefc09",
+    "all_selected_XML_names_and_status_families_match_JSON": true,
+    "explicit_XML_filter_exclusions": 84259,
+    "actual_short_TMPDIR_cleanup_and_all_final_integrity_guards_and_sealed_copies_pass": true,
+    "thread_exit_regression_cause_established": false,
+    "package_installed_or_full_unfiltered_acceptance": false
   },
   "unaligned_search_followup": {
     "source_analysis_producer": "R408",
@@ -1722,5 +1791,12 @@
     "original_formatter_module_body_unchanged": true,
     "all_original_products_headers_build_metadata_unchanged_and_owned_jail_removed": true,
     "full_original_target_package_installed_or_release_acceptance_implied": false
+  },
+  "post_upstream_sync_origin_identity": {
+    "producer": "R437",
+    "origin_files": 94,
+    "all_actual_Git_blob_bodies_types_and_modes_equal_tested_R419_native_view": true,
+    "new_owned_main_ancestor": "e6b24255020e080668e527d54cea197d6897de60",
+    "frozen_native_result_does_not_qualify_new_shared_framework_or_current_base": true
   }
 }
