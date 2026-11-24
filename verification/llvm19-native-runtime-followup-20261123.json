@@ -477,7 +477,7 @@
       }
     },
     "identity_scope": "All93 current origin bodies/types/literal links/Git executable modes match native R382 full-patch view. Earlier75/87-file identities remain historical at their producer. Full native owners/modes/flags are retained separately; Git identity is not full filesystem metadata equality.",
-    "latest_normal_qualification_scope": "R355/R364/R365 cover twelve libc++ additions and short test TMPDIR before the six new memory-region production/doc/test patches. Current full normal build/tests/package remain unqualified."
+    "latest_normal_qualification_scope": "R385 normal configure/default all build and R386 actual normal-server memory runtime cover all six newest additions. R387 original selected tests including the authored method are running; no test result/package/installed qualification claimed. R365 remains the latest completed normal selected target with7 unexpected outcomes."
   },
   "native_boundary": {
     "platform": "FreeBSD16.0-amd64",
@@ -489,7 +489,7 @@
     "canonical_Component_or_SDK_admission": false,
     "lifecycle_receipt": false,
     "complete_toolchain_provenance_admitted": false,
-    "native_recipe_pkgname_scope": "Historical R164/R228 used revision6. R355 configure/full build, R364 actual normal runtime and R365 selected tests use revision7 before the six memory-region additions. Current R38293-file source checksum/patch proof does not qualify new normal build/tests or package/installed consumers."
+    "native_recipe_pkgname_scope": "Historical R164/R228 used revision6. R385 normal configure/default build and R386 actual normal-server memory runtime use current revision7; R387 original selected tests are running. Current package/installed consumers remain unqualified."
   },
   "default_build": {
     "producer": "R222",
@@ -653,10 +653,23 @@
       "independent_two_physical_host_verification": "PASS",
       "source_and_SDK_before_after_equality": true,
       "recovery_sidecar_and_original_helpers_verified_both_hosts": true
+    },
+    {
+      "producer": "R378",
+      "scope": "Complete R365 failed normal selected frontier and R355 normally configured warmsource/build/historicalstage, fullSDK140, frozenviews/coldsource and controls throughR373; laterR377/R379/R382 remain separately retained. All7failed/unresolved original outcomes and original report-review error plus independent corrected review retained.",
+      "nodes": 2408651,
+      "archive_bytes": 7406193277,
+      "archive_sha256": "d116927604e0ed73938f0a516250a6fab8a648a03929ee8e87503fe9d9f6b75e",
+      "inventory_sha256": "bbc35277788914e9cf1aa3c66579f5a00f53a110fca6177eca6b906a97f13e75",
+      "hardlink_groups": 14,
+      "independent_two_physical_host_verification": "PASS",
+      "source_and_SDK_before_after_equality": true,
+      "recovery_sidecar_and_original_helpers_verified_both_hosts": true,
+      "extraction_or_overlay_performed": false
     }
   ],
   "remaining_gates": [
-    "Normal full source/header-dependent configure/default build and original tests for six memory-region production/doc/test additions after complete current failed-frontier custody. Prior R355 normal build, R364 actual11-value runtime and R365 all1769 selected cases are recorded; R365 retains7 unexpected outcomes. New original memory-region method must pass without changing existing assertions, and all65 simulator/9 QEMU/Lua/event/Capsicum contracts must remain covered.",
+    "Complete R387 original selected tests for six memory-region additions; retain all1769 prior names,65 simulator/9QEMU/Lua/event/Capsicum contracts and run the authored memory-region method plus both original find-memory cases. R385 normal full/header-dependent build and R386 actual normal-server runtime pass. R365 remains the last completed selected target with7 unexpected outcomes.",
     "Full unfiltered original suite after all repairs; retained R74 full run remains failed with249 unexpected entries.",
     "Remaining LLDB, sanitizer, GNU libatomic, CFI, libFuzzer and OpenMP defects.",
     "Fresh stage, license/SBOM hooks, check-plist/package and installed compiler consumers after final repairs.",
@@ -846,7 +859,7 @@
     "normal_liblldb_sha256": "482914cf8d3bdbf803fa84e34683274b210419ecebb73a7362412f8e0e68de4d",
     "complete_source_inventory_sha256": "b02d04b35d38e4681c58288f3a91437f4278f8696968f676a7b793a4f8bfb0fe",
     "all_final_integrity_guards_pass": true,
-    "candidate_scope": "R323/R327 revision7 before twelve libc++ compatibility additions; current candidate still needs normal original build/tests."
+    "candidate_scope": "Historical R323/R327 revision7 before twelve libc++ additions. Later R355/R365 cover those additions; R385/R386 cover all six newer memory-region additions in normal build/runtime. New original selected tests and package acceptance remain pending."
   },
   "normal_revision7_selected_target": {
     "producer": "R327",
@@ -904,7 +917,7 @@
     "independent_JSON_XML_body_review": "PASS; all1769 selected names and status families match;84259 explicitly filtered XML cases remain excluded. XFAIL uses successful xunit encoding and is distinguished by original lit JSON.",
     "all_final_integrity_guards_pass": true,
     "full_unfiltered_suite_qualified": false,
-    "candidate_scope": "R323/R327 revision7 before twelve libc++ compatibility additions; current candidate still needs normal original build/tests."
+    "candidate_scope": "Historical R323/R327 revision7 before twelve libc++ additions. Later R355/R365 cover those additions; R385/R386 cover all six newer memory-region additions in normal build/runtime. New original selected tests and package acceptance remain pending."
   },
   "private_current_libcxx_layout_followup": {
     "baseline_producers": [
@@ -1284,7 +1297,7 @@
     "actual_allocated_private_test_root_removed_after_failed_make": true,
     "all_original_final_integrity_guards_pass": true,
     "exact_normal_product_and_build_metadata_copies_sealed_before_tests_and_unchanged_after": true,
-    "retention_scope": "Complete preceding R327 frontier is verified on both hosts. Current R365 normal products are separately sealed and source/SDK guarded; complete current tested-frontier archival remains pending."
+    "retention_scope": "Complete R378 R365 tested frontier now independently verifies on both hosts, including2408651 nodes,14hardlink groups/full archive decode and matching recovery helpers. R365 products were separately sealed before tests and remain retained."
   },
   "short_TMPDIR_fresh_original_patch": {
     "producer": "R360",
@@ -1342,7 +1355,50 @@
     "selected_original_products_headers_build_metadata_unchanged_and_owned_jails_removed": true,
     "new_upstream_regression": "MemoryCommandRegion.test_memory_region_refresh_after_resume with the same four mapping states and actual breakpoint identities. All original Python method ASTs and the full old C++ body retained; only new POSIX method excludes Windows.",
     "actual_authored_new_upstream_method_normal_qualification": false,
-    "private_experiment_scope": "Original-command object substitutions and real native runtime causal probes; normal full source/header-dependent rebuild and upstream tests remain required.",
+    "private_experiment_scope": "Original-command object substitutions and native runtime causal probes. R385 normal full/header-dependent rebuild and R386 normal runtime separately pass; new authored upstream method and original selected test result remain pending.",
     "existing_upstream_fix_backport_claimed": false
+  },
+  "normal_memory_region_configure_build": {
+    "producer": "R385",
+    "original_configure_and_default_all_build_exits": [
+      0,
+      0
+    ],
+    "normal_build_actions": 38,
+    "normal_full_Ninja_dependency_graph_including_header_dependents": true,
+    "complete_closed_warm_nodes_and_hardlinks_equal_before_integration": true,
+    "exact_six_changes_and_original_backups_only": true,
+    "source_nodes": 160705,
+    "source_inventory_sha256": "dbc7b6ee3527eb52628cf668d3cbbba98b64c74c87018ae8a089e0cd6000170f",
+    "normal_server_sha256": "634e3029e08de7d9bc96d42af4c75eb5b7cae56aabf34305c47ebd982d21fa4f",
+    "normal_DLL_sha256": "602d5e659e0213b370ef24d61326dd97ce4ef15d86044492d526004e0a8ba0d6",
+    "normal_server_changed_and_DLL_unchanged": true,
+    "fresh_owned_cookies_original_top_level_cookies_preserved": true,
+    "all_default_options_dependencies_and_four_jobs_retained": true,
+    "all_final_integrity_guards_pass": true,
+    "test_package_installed_release_acceptance_implied": false
+  },
+  "normal_memory_region_runtime": {
+    "producer": "R386",
+    "normal_server_sha256": "634e3029e08de7d9bc96d42af4c75eb5b7cae56aabf34305c47ebd982d21fa4f",
+    "normal_DLL_sha256": "602d5e659e0213b370ef24d61326dd97ce4ef15d86044492d526004e0a8ba0d6",
+    "identical_four_stop_executable_sha256": "d1fec44c4341c902d9d886304465e281af572993ff9cf8e74b4b3a8950d12516",
+    "identical_original_find_executable_sha256": "067268ad66236491a6968e52563ec007aed73b5362dbe881c69ad0eb503e4b51",
+    "actual_kernel_server_identity_both_runs": "PASS",
+    "private_server_or_DLL_or_LD_LIBRARY_PATH_substitution": false,
+    "four_stop_mapping_contracts": "PASS",
+    "actual_target_written_byte42_RO_read_unmapped_read_failure_and_exit0": "PASS",
+    "original_three_heap_and_stack_find_helper_contracts": "PASS",
+    "all_original_fixture_raw_strings_correct": true,
+    "all_products_fixtures_headers_and_build_metadata_unchanged": true,
+    "owned_jail_removed": true,
+    "new_authored_upstream_method_qualified": false
+  },
+  "current_original_selected_tests": {
+    "producer": "R387",
+    "state": "launched-preflight-or-running-not-terminal-result",
+    "original_target": "do-test/check-all",
+    "new_authored_method_and_all_prior_cases_required": true,
+    "result_claimed": false
   }
 }

@@ -7,8 +7,9 @@ bytes, but no new package is published. R355 normal configure/full build and
 R364 actual normal runtime checks pass for the twelve libc++ additions plus the
 short test-TMPDIR recipe. R365 retains all 1,769 selected names with seven unexpected
 outcomes. The current candidate adds six memory-region production/doc/test
-patches; their fresh source and private causal checks pass, while a new normal
-build/test run, package and installed consumers remain unqualified. The
+patches. R385 normal configure/default build and R386 actual normal-server
+runtime now pass for these additions. The new original selected test run is in
+progress; its outcome, fresh package and installed consumers remain unqualified. The
 [runtime follow-up record](../../verification/llvm19-native-runtime-followup-20261123.json)
 binds the exact candidate identities and these observations.
 
@@ -136,7 +137,7 @@ match R313 except those twelve declared source changes and their exact original
 backups; all other full metadata, bodies, types and literal links match. All 87
 current origin Git identities match the native view, and default options,
 dependencies and four jobs remain unchanged. Normal R355 configure/full build and R365 selected tests now cover these
-additions. The later six memory-region patches still need a new normal run.
+additions. R385 now covers the later six memory-region patches in a normal build; their new original test run remains in progress.
 
 The QEMU launch failure also has a native causal reproduction. A 66-byte base
 TMPDIR alone yields a working 98-byte socket. Upstream LIT adds its own
@@ -224,8 +225,28 @@ R382 original checksum/full patch passes with zero fuzz for all 93 current
 origin identities. Its 160,726 fresh source nodes match R313 except the eighteen
 declared changes and exact original backups; all other recorded full native
 metadata, bodies, types and literal links match. Default options, dependencies,
-build arguments and four jobs are retained. The six new memory-region patches
-still need normal full header-dependent build, original tests and packaging.
+build arguments and four jobs are retained.
+
+R378 independently retains the complete previous R365 tested frontier on both
+hosts: 2,408,651 nodes and fourteen hardlink groups, with matching full archive
+decode and recovery instructions/helper digests. No extraction or active overlay
+was performed. R385 verifies the complete warm tree and hardlinks against that
+closure before integrating exactly six changes and exact original backups.
+All 160,705 source nodes then match the expected transition. Original normal
+configure and default all build both exit 0, with 38 actions through the full
+Ninja dependency graph, including header dependents. Original cookies, defaults,
+four jobs and all final source/SDK/cold/view/base/registry/data/mount guards pass.
+
+R386 uses the actual normal server and normal client/binding with the identical
+R379 four-stop executable and original R366 find-memory executable. Kernel
+procstat verifies the selected server in both runs, without private server/DLL
+or LD_LIBRARY_PATH substitution. All four mapping states, actual target byte42,
+unmapped read failure and final program exit pass. All three heap queries and
+the stack query satisfy the original helper contracts with correct raw strings.
+Products, fixtures, headers and build metadata remain unchanged, and the owned
+jail is removed. Original upstream selected tests, including the new authored
+memory-region method, are now running; no result is claimed yet. Package and
+installed-consumer acceptance remain open.
 
 These source and selected-runtime checks do not qualify the complete original
 suite, fresh package/installed consumers, ARM platforms or the release.
