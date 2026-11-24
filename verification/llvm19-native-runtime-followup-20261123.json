@@ -477,7 +477,7 @@
       }
     },
     "identity_scope": "All93 current origin bodies/types/literal links/Git executable modes match native R382 full-patch view. Earlier75/87-file identities remain historical at their producer. Full native owners/modes/flags are retained separately; Git identity is not full filesystem metadata equality.",
-    "latest_normal_qualification_scope": "R385 normal configure/default all build and R386 actual normal-server memory runtime cover all six newest additions. R387 original selected tests including the authored method are running; no test result/package/installed qualification claimed. R365 remains the latest completed normal selected target with7 unexpected outcomes."
+    "latest_normal_qualification_scope": "R385/R386 current normal build/runtime pass. R387 original selected target completes make1:1240PASS/3FAIL/2TIMEOUT/2UNRESOLVED/27XFAIL/495UNSUPPORTED. New authored mapping method passes;7 unexpected outcomes remain. Two previous find-memory FAILs becomeTIMEOUT. Package/installed qualification remains open."
   },
   "native_boundary": {
     "platform": "FreeBSD16.0-amd64",
@@ -489,7 +489,7 @@
     "canonical_Component_or_SDK_admission": false,
     "lifecycle_receipt": false,
     "complete_toolchain_provenance_admitted": false,
-    "native_recipe_pkgname_scope": "Historical R164/R228 used revision6. R385 normal configure/default build and R386 actual normal-server memory runtime use current revision7; R387 original selected tests are running. Current package/installed consumers remain unqualified."
+    "native_recipe_pkgname_scope": "Historical R164/R228 used revision6. Current R385 normal build, R386 runtime and R387 original selected target use revision7. R387 completes failed with7 unexpected outcomes. Package/installed consumers remain unqualified."
   },
   "default_build": {
     "producer": "R222",
@@ -669,7 +669,7 @@
     }
   ],
   "remaining_gates": [
-    "Complete R387 original selected tests for six memory-region additions; retain all1769 prior names,65 simulator/9QEMU/Lua/event/Capsicum contracts and run the authored memory-region method plus both original find-memory cases. R385 normal full/header-dependent build and R386 actual normal-server runtime pass. R365 remains the last completed selected target with7 unexpected outcomes.",
+    "Repair and qualify the7 unsuccessful R387 original selected outcomes, including two memory-search TIMEOUTs replacing priorFAILs; retain all1769 names,65 simulator/9QEMU/Lua/event/Capsicum and new authored mapping-method coverage. R399 tested source/build/SDK custody must close on both hosts with recovery proof before any new warm source/product mutation.",
     "Full unfiltered original suite after all repairs; retained R74 full run remains failed with249 unexpected entries.",
     "Remaining LLDB, sanitizer, GNU libatomic, CFI, libFuzzer and OpenMP defects.",
     "Fresh stage, license/SBOM hooks, check-plist/package and installed compiler consumers after final repairs.",
@@ -1354,9 +1354,10 @@
     "actual_mmap_mprotect_RW_written42_mprotect_RO_munmap_and_program_exit_checks": "PASS",
     "selected_original_products_headers_build_metadata_unchanged_and_owned_jails_removed": true,
     "new_upstream_regression": "MemoryCommandRegion.test_memory_region_refresh_after_resume with the same four mapping states and actual breakpoint identities. All original Python method ASTs and the full old C++ body retained; only new POSIX method excludes Windows.",
-    "actual_authored_new_upstream_method_normal_qualification": false,
-    "private_experiment_scope": "Original-command object substitutions and native runtime causal probes. R385 normal full/header-dependent rebuild and R386 normal runtime separately pass; new authored upstream method and original selected test result remain pending.",
-    "existing_upstream_fix_backport_claimed": false
+    "actual_authored_new_upstream_method_normal_qualification": true,
+    "private_experiment_scope": "Private controls alone remain diagnostic. R385/R386 normal full/header-dependent build/runtime and R387 original authored mapping method pass separately; complete original selected target still fails on7 outcomes.",
+    "existing_upstream_fix_backport_claimed": false,
+    "actual_authored_new_upstream_method_normal_producer": "R387"
   },
   "normal_memory_region_configure_build": {
     "producer": "R385",
@@ -1396,9 +1397,192 @@
   },
   "current_original_selected_tests": {
     "producer": "R387",
-    "state": "launched-preflight-or-running-not-terminal-result",
+    "state": "terminal-original-selected-target-failed",
     "original_target": "do-test/check-all",
-    "new_authored_method_and_all_prior_cases_required": true,
-    "result_claimed": false
+    "original_make_exit": 1,
+    "entries": 1769,
+    "counts": {
+      "UNRESOLVED": 2,
+      "FAIL": 3,
+      "TIMEOUT": 2,
+      "PASS": 1240,
+      "XFAIL": 27,
+      "UNSUPPORTED": 495
+    },
+    "all_prior_1769_names_retained": true,
+    "added_names": [],
+    "shared_status_changes": {
+      "lldb-api :: python_api/find_in_memory/TestFindRangesInMemory.py": {
+        "before": "FAIL",
+        "after": "TIMEOUT"
+      },
+      "lldb-api :: python_api/find_in_memory/TestFindInMemory.py": {
+        "before": "FAIL",
+        "after": "TIMEOUT"
+      }
+    },
+    "remaining_unexpected": {
+      "lldb-api :: commands/gui/spawn-threads/TestGuiSpawnThreads.py": "UNRESOLVED",
+      "lldb-api :: commands/process/detach-resumes/TestDetachResumes.py": "FAIL",
+      "lldb-api :: python_api/find_in_memory/TestFindRangesInMemory.py": "TIMEOUT",
+      "lldb-api :: python_api/find_in_memory/TestFindInMemory.py": "TIMEOUT",
+      "lldb-api :: tools/lldb-server/TestGdbRemoteSaveCore.py": "FAIL",
+      "lldb-api :: functionalities/rerun_and_expr/TestRerunAndExpr.py": "UNRESOLVED",
+      "lldb-shell :: Expr/TestObjCInCXXContext.test": "FAIL"
+    },
+    "JSON_sha256": "ab1f0220a260e04315fc87123a4614aeff98c0da48d3611622440f1f16855d98",
+    "XML_sha256": "07ae57e1c138656c79111fbc2942b955064e69c45154d3163de126b37ef62c47",
+    "explicit_XML_filter_exclusions": 84259,
+    "independent_actual_JSON_XML_body_name_status_method_and_cleanup_review": "PASS",
+    "new_authored_memory_region_method_normal_original_execution": "PASS",
+    "original_simulator_and_Qemu_method_results": {
+      "lldb-api :: functionalities/data-formatter/data-formatter-stl/libcxx-simulators/string/TestDataFormatterLibcxxStringSimulator.py": {
+        "code": "PASS",
+        "actual_PASS_methods": [
+          "test_r0",
+          "test_r0_ALTERNATE_LAYOUT",
+          "test_r0_c1",
+          "test_r0_c1_ALTERNATE_LAYOUT",
+          "test_r0_c2",
+          "test_r0_c2_ALTERNATE_LAYOUT",
+          "test_r0_c3",
+          "test_r0_c3_ALTERNATE_LAYOUT",
+          "test_r0_c4",
+          "test_r0_c4_ALTERNATE_LAYOUT",
+          "test_r1",
+          "test_r1_ALTERNATE_LAYOUT",
+          "test_r1_c1",
+          "test_r1_c1_ALTERNATE_LAYOUT",
+          "test_r1_c2",
+          "test_r1_c2_ALTERNATE_LAYOUT",
+          "test_r1_c3",
+          "test_r1_c3_ALTERNATE_LAYOUT",
+          "test_r1_c4",
+          "test_r1_c4_ALTERNATE_LAYOUT",
+          "test_r2",
+          "test_r2_ALTERNATE_LAYOUT",
+          "test_r2_c1",
+          "test_r2_c1_ALTERNATE_LAYOUT",
+          "test_r2_c2",
+          "test_r2_c2_ALTERNATE_LAYOUT",
+          "test_r2_c3",
+          "test_r2_c3_ALTERNATE_LAYOUT",
+          "test_r2_c4",
+          "test_r2_c4_ALTERNATE_LAYOUT",
+          "test_r3",
+          "test_r3_ALTERNATE_LAYOUT",
+          "test_r3_c1",
+          "test_r3_c1_ALTERNATE_LAYOUT",
+          "test_r3_c2",
+          "test_r3_c2_ALTERNATE_LAYOUT",
+          "test_r3_c3",
+          "test_r3_c3_ALTERNATE_LAYOUT",
+          "test_r3_c4",
+          "test_r3_c4_ALTERNATE_LAYOUT",
+          "test_r4",
+          "test_r4_ALTERNATE_LAYOUT",
+          "test_r4_c1",
+          "test_r4_c1_ALTERNATE_LAYOUT",
+          "test_r4_c2",
+          "test_r4_c2_ALTERNATE_LAYOUT",
+          "test_r4_c3",
+          "test_r4_c3_ALTERNATE_LAYOUT",
+          "test_r4_c4",
+          "test_r4_c4_ALTERNATE_LAYOUT",
+          "test_r5",
+          "test_r5_ALTERNATE_LAYOUT",
+          "test_r5_c1",
+          "test_r5_c1_ALTERNATE_LAYOUT",
+          "test_r5_c2",
+          "test_r5_c2_ALTERNATE_LAYOUT",
+          "test_r5_c3",
+          "test_r5_c3_ALTERNATE_LAYOUT",
+          "test_r5_c4",
+          "test_r5_c4_ALTERNATE_LAYOUT"
+        ],
+        "all_previous_methods_PASS": true
+      },
+      "lldb-api :: functionalities/data-formatter/data-formatter-stl/libcxx-simulators/unique_ptr/TestDataFormatterLibcxxUniquePtrSimulator.py": {
+        "code": "PASS",
+        "actual_PASS_methods": [
+          "test",
+          "test_compressed_pair_revision_1",
+          "test_compressed_pair_revision_2",
+          "test_compressed_pair_revision_3",
+          "test_compressed_pair_revision_4"
+        ],
+        "all_previous_methods_PASS": true
+      },
+      "lldb-api :: qemu/TestQemuLaunch.py": {
+        "code": "PASS",
+        "actual_PASS_methods": [
+          "test_arg0",
+          "test_bad_emulator_path",
+          "test_basic_launch",
+          "test_env_vars",
+          "test_extra_args",
+          "test_find_in_PATH",
+          "test_stdio_pty",
+          "test_stdio_redirect",
+          "test_sysroot"
+        ],
+        "all_previous_methods_PASS": true
+      }
+    },
+    "Lua_event_Capsicum_contracts": "PASS",
+    "original_controller_assertion_requiring_both_find_memory_cases_PASS": "FAIL-retained-actual-TIMEOUT",
+    "actual_short_standard_TMPDIR_cleanup": "PASS",
+    "all_final_source_SDK_products_ports_base_registry_data_mount_guards_and_jail_removal": true,
+    "sealed_normal_product_copies_unchanged": true,
+    "full_unfiltered_or_package_acceptance_implied": false
+  },
+  "unaligned_search_followup": {
+    "source_analysis_producer": "R408",
+    "primary_upstream_proposal": "https://github.com/llvm/llvm-project/pull/189950",
+    "proposal_head": "29cd5097556a1c3f00407508327b0c651155f187",
+    "upstream_state": "OPEN-not-merged",
+    "candidate_change": "Advance from actual rejected unaligned found_addr, preserving all original validation/alignment/result assertions.",
+    "normal_source_modified": false,
+    "private_build_producer": "R411",
+    "normal_source_or_upstream_acceptance_claimed": false,
+    "private_original_compiler_archive_shared_and_CLI_command_exits": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "private_build_pass": true,
+    "private_liblldb_sha256": "6f942c50f24cc2195ed0cfbc7e40e0860e593a3b0aa4599204871137315989b7",
+    "private_CLI_sha256": "8ea21f01be8fb51f7417becb508cfc354ec0cc2af8befa5f17dd5416c4fa3cb3",
+    "all_other_archive_members_and_original_inputs_products_metadata_and_dependency_outputs_unchanged": true,
+    "original_guarded_nodes": 1383,
+    "normal_object_header_and_source_dependencies": 1080,
+    "both_ELF_dependency_SONAME_rpath_contracts_preserved": true,
+    "private_runtime_qualified": false
+  },
+  "direct_native_ptrace_core_control": {
+    "producer": "R404",
+    "matching_kernel_sha256": "83690f1f4fa3001a1e77852c44e9234ff6f9c4b6fa3e11cf7cf2a6e0c504ef35",
+    "matching_source_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
+    "actual_base_compiler_one_private_source_three_distinct_invocations": true,
+    "trace_me_raw_savecore_result": 0,
+    "trace_me_core_ELF_bytes": 12181504,
+    "normal_binding_exact_core_PID_and_thread_acceptance": "PASS",
+    "attached_running_and_confirmed_sleeping_raw_savecore_errno": 16,
+    "attached_zero_byte_files_rejected_as_cores": true,
+    "documented_post_core_waitpid_WNOHANG_and_all_three_detaches": "PASS",
+    "manual_reference": "https://cgit.freebsd.org/src/tree/lib/libsys/ptrace.2?id=3ff56f81a1a58d708d0101d601e88c289cfc5882",
+    "original_failed_controls_R398_R400_R401_retained": true,
+    "all_selected_kernel_compiler_headers_products_metadata_and_global_setting_guards_pass": true,
+    "owned_jail_removed": true,
+    "exact_kernel_branch_or_fix_or_original_savecore_test_qualified": false
+  },
+  "current_tested_frontier_custody": {
+    "producer": "R399",
+    "state": "native-inventory-and-stream-capture-in-progress",
+    "current_source_nodes": 160705,
+    "complete_warm_build_source_SDK140_rawdb_views_cold_sources_controls_and_failed_original_reports_retained": true,
+    "two_host_or_recovery_pass_claimed": false,
+    "no_warm_mutation_until_complete_custody_and_recovery_review": true
   }
 }

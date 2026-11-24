@@ -8,8 +8,10 @@ R364 actual normal runtime checks pass for the twelve libc++ additions plus the
 short test-TMPDIR recipe. R365 retains all 1,769 selected names with seven unexpected
 outcomes. The current candidate adds six memory-region production/doc/test
 patches. R385 normal configure/default build and R386 actual normal-server
-runtime now pass for these additions. The new original selected test run is in
-progress; its outcome, fresh package and installed consumers remain unqualified. The
+runtime now pass for these additions. R387 original selected tests complete with
+1,240 PASS, 3 FAIL, 2 TIMEOUT, 2 UNRESOLVED, 27 XFAIL and 495 UNSUPPORTED.
+The new memory-region method passes, but seven unexpected outcomes remain.
+Fresh package and installed consumers remain unqualified. The
 [runtime follow-up record](../../verification/llvm19-native-runtime-followup-20261123.json)
 binds the exact candidate identities and these observations.
 
@@ -137,7 +139,7 @@ match R313 except those twelve declared source changes and their exact original
 backups; all other full metadata, bodies, types and literal links match. All 87
 current origin Git identities match the native view, and default options,
 dependencies and four jobs remain unchanged. Normal R355 configure/full build and R365 selected tests now cover these
-additions. R385 now covers the later six memory-region patches in a normal build; their new original test run remains in progress.
+additions. R385 now covers the later six memory-region patches in a normal build; R387 now covers them in the original selected target, retaining seven unexpected outcomes.
 
 The QEMU launch failure also has a native causal reproduction. A 66-byte base
 TMPDIR alone yields a working 98-byte socket. Upstream LIT adds its own
@@ -244,9 +246,37 @@ or LD_LIBRARY_PATH substitution. All four mapping states, actual target byte42,
 unmapped read failure and final program exit pass. All three heap queries and
 the stack query satisfy the original helper contracts with correct raw strings.
 Products, fixtures, headers and build metadata remain unchanged, and the owned
-jail is removed. Original upstream selected tests, including the new authored
-memory-region method, are now running; no result is claimed yet. Package and
-installed-consumer acceptance remain open.
+jail is removed.
+
+R387 original do-test exits 1 with all 1,769 preceding names retained. Its actual
+JSON/XML agree on 1,240 PASS, 3 FAIL, 2 TIMEOUT, 2 UNRESOLVED, 27 XFAIL and
+495 UNSUPPORTED. The new `test_memory_region_refresh_after_resume` method passes
+through the original driver. All 60 string, five unique-pointer and nine QEMU
+methods remain passing, along with the Lua/event/Capsicum contracts. Independent
+report and standard-TMPDIR review verifies actual hashes, names, status families,
+method output and cleanup. All final source/SDK/products/ports/base/registry/data/
+mount guards pass, sealed normal copies stay unchanged, and the jail is removed.
+
+The two original find-memory entries change from FAIL to TIMEOUT; neither is a
+repair success. Five other unsuccessful outcomes retain their status. The
+controller's assertion requiring both find-memory entries to pass remains
+failed; independent report integrity review does not turn that into a test pass.
+A likely aligned-search progression defect matches the still-open, unmerged
+[LLVM proposal 189950](https://github.com/llvm/llvm-project/pull/189950), pinned at
+`29cd5097556a1c3f00407508327b0c651155f187`. Private original compiler/archive/DLL/CLI commands now pass for the one-object
+candidate, preserving every other archive member and all 1,383 guarded inputs.
+Its runtime qualification and current full-frontier custody are in progress; no new warm
+source integration, accepted upstream backport or package is claimed.
+
+Separate direct native ptrace controls reproduce EBUSY for initial attach stops
+on running and confirmed sleeping children. The same program with a trace-me
+stop writes a valid ELF core with the exact PID, accepted by the actual normal
+binding. Following the [documented post-core waitpid(WNOHANG) contract](https://cgit.freebsd.org/src/tree/lib/libsys/ptrace.2?id=3ff56f81a1a58d708d0101d601e88c289cfc5882) also makes
+detach succeed. The earlier failed controls remain retained. Kernel, compiler,
+headers, normal products/build metadata and the global transparent-attach setting
+stay unchanged, and each owned jail is removed. This isolates a syscall-level
+core-save limitation; the exact kernel fix and original save-core test acceptance
+remain unproven. Package and installed-consumer acceptance remain open.
 
 These source and selected-runtime checks do not qualify the complete original
 suite, fresh package/installed consumers, ARM platforms or the release.
