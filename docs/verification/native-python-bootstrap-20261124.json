@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 77,
+  "normal_development_package_count": 79,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -401,6 +401,45 @@
         }
       },
       "test_scope": "Development runtime integration only. AsyncGenerator original suite passes; Pycparser retains original cpp skips; IDNA original property module still cannot import missing Hypothesis. Other complete original self-suites/test-tool closures remain pending; no release admission."
+    },
+    {
+      "name": "Attrs and CFFI",
+      "packages": [
+        {
+          "name": "py312-attrs-26.1.0.pkg",
+          "bytes": 113840,
+          "sha256": "2a27ee9cc564c201855aea13088825725c6397e93d539d718beaa3943b17191f"
+        },
+        {
+          "name": "py312-cffi-2.1.1.pkg",
+          "bytes": 287955,
+          "sha256": "526ecf0790df4780a33c80734ac47311da170c075527afe6fe15a0c116c311b1"
+        }
+      ],
+      "source_revisions": [
+        "511743d7327c93e9ff0117d04f0176ebc572f444"
+      ],
+      "sealed_payloads": 155,
+      "normal_packages_before": 77,
+      "normal_packages_after": 79,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "actual_private_and_default_path_checks": "attrs frozen/slots/conversion/validation/evolve/serialization/error recovery; CFFI actual native backend, libc calls, struct-by-value and callbacks; changed compiled C libraries and real FFI-built extension with executed results, rejected declaration and recovery. Native libffi linkage checked.",
+      "two_host_evidence": {
+        "source_build_tests_private": {
+          "nodes": 4331,
+          "archive_bytes": 15203523,
+          "archive_sha256": "85830209dca5cfdd962d67c3b7c14e7453d3b4082dd9bdb8bbf639da3bfa2a2f",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 35,
+          "archive_bytes": 8637125,
+          "archive_sha256": "2d1687acbf79270ef4cb90f4b335187fcfabfbe2ea2e5bd3df33f7201abc471a",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "test_scope": "CFFI full original make test passes with original skips/xfails. Attrs complete original suite remains blocked on declared test tools. Development integration only."
     }
   ],
   "complete_original_source_suites": {
@@ -516,6 +555,613 @@
       "raw_stdout_sha256": "91a64aec02de5ae3e863fc405869faba7c7bef0cc1a969b65dfd3614dac9c158",
       "raw_stderr_sha256": "0b3406bdfbc4bd73b8aa22d14e88eb8d7e199d027cf87b35aaa55cec2afda417",
       "scope": "Original full unittest discovery returns OK(skipped=7). tests/test_util.py only supports platform.system()==Linux for cpp, so seven original cases skip on FreeBSD. Original fixture/platform repair and actual cpp coverage remain pending. Count is not451passed."
+    },
+    "CFFI": {
+      "original_make_test_target": "pass",
+      "passed": 1933,
+      "original_skips": 144,
+      "original_xfails": 4,
+      "failures": 0,
+      "errors": 0,
+      "JUnit_records": 2081,
+      "JUnit_sha256": "ab4ad1dbf4a3342ad1763e82aaeec819917c38d051f754e2104ce4f8ca82d80d",
+      "raw_stdout_sha256": "1b3cd05dae9919cf781e6e8f6a390df273a151d146f4a16f91bf3276422abfc8",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_skip_and_xfail_records": [
+        {
+          "name": "testing.cffi1.test_cffi_gen_src_meson",
+          "reason": "collection skipped"
+        },
+        {
+          "name": "test_read_variable",
+          "reason": "untested"
+        },
+        {
+          "name": "test_read_variable_as_unknown_length_array",
+          "reason": "untested"
+        },
+        {
+          "name": "test_write_variable",
+          "reason": "untested"
+        },
+        {
+          "name": "test_variable_length_struct",
+          "reason": "later"
+        },
+        {
+          "name": "test_GetLastError",
+          "reason": "GetLastError(): only for Windows"
+        },
+        {
+          "name": "test_wchar_t",
+          "reason": "NotImplementedError: wchar_t"
+        },
+        {
+          "name": "test_unicode_from_wchar_pointer",
+          "reason": "NotImplementedError: wchar_t"
+        },
+        {
+          "name": "test_string_from_wchar_array",
+          "reason": "NotImplementedError: wchar_t"
+        },
+        {
+          "name": "test_fetch_const_wchar_p_field",
+          "reason": "NotImplementedError: wchar_t"
+        },
+        {
+          "name": "test_wchar_cast",
+          "reason": "NotImplementedError: wchar_t"
+        },
+        {
+          "name": "test_ffi_buffer_ptr",
+          "reason": "buffer() with ctypes backend"
+        },
+        {
+          "name": "test_ffi_buffer_array",
+          "reason": "buffer() with ctypes backend"
+        },
+        {
+          "name": "test_ffi_buffer_ptr_size",
+          "reason": "buffer() with ctypes backend"
+        },
+        {
+          "name": "test_ffi_buffer_array_size",
+          "reason": "buffer() with ctypes backend"
+        },
+        {
+          "name": "test_ffi_buffer_with_file",
+          "reason": "buffer() with ctypes backend"
+        },
+        {
+          "name": "test_ffi_buffer_with_io",
+          "reason": "buffer() with ctypes backend"
+        },
+        {
+          "name": "test_ffi_buffer_comparisons",
+          "reason": "buffer() with ctypes backend"
+        },
+        {
+          "name": "test_new_struct_containing_array_varsize",
+          "reason": "later?"
+        },
+        {
+          "name": "test_vararg_callback",
+          "reason": "callback with '...'"
+        },
+        {
+          "name": "test_array_slicing",
+          "reason": "ctypes backend: not supported: slice of array"
+        },
+        {
+          "name": "test_array_of_func_ptr",
+          "reason": "ctypes backend: not supported: initializers for function pointers"
+        },
+        {
+          "name": "test_structptr_argument",
+          "reason": "ctypes backend: not supported: passing a list for a pointer argument"
+        },
+        {
+          "name": "test_array_argument_as_list",
+          "reason": "ctypes backend: not supported: passing a list for a pointer argument"
+        },
+        {
+          "name": "test_cast_to_array_type",
+          "reason": "ctypes backend: not supported: casting to array"
+        },
+        {
+          "name": "test_nested_anonymous_struct",
+          "reason": "ctypes backend: not supported: nested anonymous struct"
+        },
+        {
+          "name": "test_nested_field_offset_align",
+          "reason": "ctypes backend: not supported: nested anonymous struct"
+        },
+        {
+          "name": "test_nested_anonymous_union",
+          "reason": "ctypes backend: not supported: nested anonymous union"
+        },
+        {
+          "name": "test_nested_anonymous_struct_2",
+          "reason": "ctypes backend: not supported: nested anonymous union"
+        },
+        {
+          "name": "test_CData_CType_2",
+          "reason": "ctypes backend: not supported in Python 3: CType"
+        },
+        {
+          "name": "test_dlopen_handle",
+          "reason": "uses 'dl' explicitly"
+        },
+        {
+          "name": "test_tlsalloc",
+          "reason": "win32 only"
+        },
+        {
+          "name": "test_fputs",
+          "reason": "probably no symbol 'stderr' in the lib"
+        },
+        {
+          "name": "test_fputs_without_const",
+          "reason": "probably no symbol 'stderr' in the lib"
+        },
+        {
+          "name": "test_vararg",
+          "reason": "probably no symbol 'stderr' in the lib"
+        },
+        {
+          "name": "test_function_pointer",
+          "reason": "probably no symbol 'stderr' in the lib"
+        },
+        {
+          "name": "test_write_variable",
+          "reason": "probably no symbol 'stdout' in the lib"
+        },
+        {
+          "name": "test_windows_stdcall",
+          "reason": "Windows-only test"
+        },
+        {
+          "name": "test_explicit_cdecl_stdcall",
+          "reason": "Windows-only test"
+        },
+        {
+          "name": "test_new_struct_containing_array_varsize",
+          "reason": "later?"
+        },
+        {
+          "name": "test_vararg_callback",
+          "reason": "callback with '...'"
+        },
+        {
+          "name": "test_bitfield_anonymous_no_align",
+          "reason": "condition: not (sys.platform == 'darwin' and platform.machine() == 'arm64') and platform.machine().startswith(('arm', 'aarch64'))"
+        },
+        {
+          "name": "test_bitfield_zero",
+          "reason": "condition: not (sys.platform == 'darwin' and platform.machine() == 'arm64') and platform.machine().startswith(('arm', 'aarch64'))"
+        },
+        {
+          "name": "test_getwinerror",
+          "reason": "condition: sys.platform != 'win32'"
+        },
+        {
+          "name": "test_tlsalloc",
+          "reason": "win32 only"
+        },
+        {
+          "name": "test_fputs",
+          "reason": "probably no symbol 'stderr' in the lib"
+        },
+        {
+          "name": "test_fputs_without_const",
+          "reason": "probably no symbol 'stderr' in the lib"
+        },
+        {
+          "name": "test_vararg",
+          "reason": "probably no symbol 'stderr' in the lib"
+        },
+        {
+          "name": "test_function_pointer",
+          "reason": "probably no symbol 'stderr' in the lib"
+        },
+        {
+          "name": "test_callback_returning_struct_three_bytes",
+          "reason": "not supported with the ctypes backend"
+        },
+        {
+          "name": "test_write_variable",
+          "reason": "probably no symbol 'stdout' in the lib"
+        },
+        {
+          "name": "test_fputs_custom_FILE",
+          "reason": "FILE not supported with the ctypes backend"
+        },
+        {
+          "name": "test_signed_char_star_accepts_string",
+          "reason": "not supported by the ctypes backend"
+        },
+        {
+          "name": "test_unsigned_char_star_accepts_string",
+          "reason": "not supported by the ctypes backend"
+        },
+        {
+          "name": "test_free_callback_cycle",
+          "reason": "seems to fail with the ctypes backend on windows"
+        },
+        {
+          "name": "test_windows_stdcall",
+          "reason": "Windows-only test"
+        },
+        {
+          "name": "test_explicit_cdecl_stdcall",
+          "reason": "Windows-only test"
+        },
+        {
+          "name": "test_dlclose",
+          "reason": "not with the ctypes backend"
+        },
+        {
+          "name": "test_passing_large_list",
+          "reason": "the ctypes backend doesn't support this"
+        },
+        {
+          "name": "test_my_array_7",
+          "reason": "not supported by the ctypes backend"
+        },
+        {
+          "name": "test_my_array_no_length",
+          "reason": "not supported by the ctypes backend"
+        },
+        {
+          "name": "test_addressof_lib",
+          "reason": "not implemented with the ctypes backend"
+        },
+        {
+          "name": "test_char16_char32_t",
+          "reason": "not implemented with the ctypes backend"
+        },
+        {
+          "name": "test_modify_struct_value",
+          "reason": "fails with the ctypes backend on some architectures"
+        },
+        {
+          "name": "test_dlopen_handle",
+          "reason": "uses 'dl' explicitly"
+        },
+        {
+          "name": "test_return_three_bytes",
+          "reason": "not working on win32 on the ctypes backend"
+        },
+        {
+          "name": "test_WPARAM_on_windows",
+          "reason": "Only for Windows"
+        },
+        {
+          "name": "test_longdouble_precision",
+          "reason": "don't know the very exact precision of 'long double'"
+        },
+        {
+          "name": "test_all_complex_types",
+          "reason": "not implemented in verify(): complex types"
+        },
+        {
+          "name": "test_char16_char32_type",
+          "reason": "XXX test or fully prevent char16_t and char32_t from working in ffi.verify() mode"
+        },
+        {
+          "name": "test_verify_typedefs",
+          "reason": "ignored so far"
+        },
+        {
+          "name": "test_FILE_stored_in_stdout",
+          "reason": "likely, we cannot assign to stdout"
+        },
+        {
+          "name": "test_getlasterror_working_even_with_pypys_jit",
+          "reason": "win32-only test"
+        },
+        {
+          "name": "test_implicit_unicode_on_windows",
+          "reason": "win32-only test"
+        },
+        {
+          "name": "test_ffi_gc_size_arg",
+          "reason": "only running the memory-intensive test on Linux"
+        },
+        {
+          "name": "test_ffi_gc_size_arg_2",
+          "reason": "find a way to tweak the cyclic GC of CPython"
+        },
+        {
+          "name": "test_ffi_new_with_cycles",
+          "reason": "find a way to tweak the cyclic GC of CPython"
+        },
+        {
+          "name": "test_longdouble_precision",
+          "reason": "don't know the very exact precision of 'long double'"
+        },
+        {
+          "name": "test_all_complex_types",
+          "reason": "not implemented in verify(): complex types"
+        },
+        {
+          "name": "test_char16_char32_type",
+          "reason": "XXX test or fully prevent char16_t and char32_t from working in ffi.verify() mode"
+        },
+        {
+          "name": "test_verify_typedefs",
+          "reason": "ignored so far"
+        },
+        {
+          "name": "test_FILE_stored_in_stdout",
+          "reason": "likely, we cannot assign to stdout"
+        },
+        {
+          "name": "test_getlasterror_working_even_with_pypys_jit",
+          "reason": "win32-only test"
+        },
+        {
+          "name": "test_implicit_unicode_on_windows",
+          "reason": "win32-only test"
+        },
+        {
+          "name": "test_ffi_gc_size_arg",
+          "reason": "only running the memory-intensive test on Linux"
+        },
+        {
+          "name": "test_ffi_gc_size_arg_2",
+          "reason": "find a way to tweak the cyclic GC of CPython"
+        },
+        {
+          "name": "test_ffi_new_with_cycles",
+          "reason": "find a way to tweak the cyclic GC of CPython"
+        },
+        {
+          "name": "test_longdouble_precision",
+          "reason": "don't know the very exact precision of 'long double'"
+        },
+        {
+          "name": "test_all_complex_types",
+          "reason": "not implemented in verify(): complex types"
+        },
+        {
+          "name": "test_char16_char32_type",
+          "reason": "XXX test or fully prevent char16_t and char32_t from working in ffi.verify() mode"
+        },
+        {
+          "name": "test_verify_typedefs",
+          "reason": "ignored so far"
+        },
+        {
+          "name": "test_FILE_stored_in_stdout",
+          "reason": "likely, we cannot assign to stdout"
+        },
+        {
+          "name": "test_getlasterror_working_even_with_pypys_jit",
+          "reason": "win32-only test"
+        },
+        {
+          "name": "test_implicit_unicode_on_windows",
+          "reason": "win32-only test"
+        },
+        {
+          "name": "test_ffi_gc_size_arg",
+          "reason": "only running the memory-intensive test on Linux"
+        },
+        {
+          "name": "test_ffi_gc_size_arg_2",
+          "reason": "find a way to tweak the cyclic GC of CPython"
+        },
+        {
+          "name": "test_ffi_new_with_cycles",
+          "reason": "find a way to tweak the cyclic GC of CPython"
+        },
+        {
+          "name": "test_longdouble_precision",
+          "reason": "don't know the very exact precision of 'long double'"
+        },
+        {
+          "name": "test_all_complex_types",
+          "reason": "not implemented in verify(): complex types"
+        },
+        {
+          "name": "test_char16_char32_type",
+          "reason": "XXX test or fully prevent char16_t and char32_t from working in ffi.verify() mode"
+        },
+        {
+          "name": "test_verify_typedefs",
+          "reason": "ignored so far"
+        },
+        {
+          "name": "test_FILE_stored_in_stdout",
+          "reason": "likely, we cannot assign to stdout"
+        },
+        {
+          "name": "test_getlasterror_working_even_with_pypys_jit",
+          "reason": "win32-only test"
+        },
+        {
+          "name": "test_implicit_unicode_on_windows",
+          "reason": "win32-only test"
+        },
+        {
+          "name": "test_ffi_gc_size_arg",
+          "reason": "only running the memory-intensive test on Linux"
+        },
+        {
+          "name": "test_ffi_gc_size_arg_2",
+          "reason": "find a way to tweak the cyclic GC of CPython"
+        },
+        {
+          "name": "test_ffi_new_with_cycles",
+          "reason": "find a way to tweak the cyclic GC of CPython"
+        },
+        {
+          "name": "test_infrastructure",
+          "reason": "Cannot execute virtualenv: [Errno 2] No such file or directory: 'virtualenv'"
+        },
+        {
+          "name": "test_distutils_module",
+          "reason": "Cannot execute virtualenv: [Errno 2] No such file or directory: 'virtualenv'"
+        },
+        {
+          "name": "test_distutils_package_1",
+          "reason": "Cannot execute virtualenv: [Errno 2] No such file or directory: 'virtualenv'"
+        },
+        {
+          "name": "test_distutils_package_2",
+          "reason": "Cannot execute virtualenv: [Errno 2] No such file or directory: 'virtualenv'"
+        },
+        {
+          "name": "test_setuptools_module",
+          "reason": "Cannot execute virtualenv: [Errno 2] No such file or directory: 'virtualenv'"
+        },
+        {
+          "name": "test_setuptools_package_1",
+          "reason": "Cannot execute virtualenv: [Errno 2] No such file or directory: 'virtualenv'"
+        },
+        {
+          "name": "test_setuptools_package_2",
+          "reason": "Cannot execute virtualenv: [Errno 2] No such file or directory: 'virtualenv'"
+        },
+        {
+          "name": "test_no_unknown_exported_symbols",
+          "reason": "linux-only"
+        },
+        {
+          "name": "test_exec_python[script]",
+          "reason": "the cffi-gen-src script is not installed"
+        },
+        {
+          "name": "test_exec_python_ffi_var[script]",
+          "reason": "the cffi-gen-src script is not installed"
+        },
+        {
+          "name": "test_exec_python_supports_file_and_script_imports[script]",
+          "reason": "the cffi-gen-src script is not installed"
+        },
+        {
+          "name": "test_exec_python_name_not_found[script]",
+          "reason": "the cffi-gen-src script is not installed"
+        },
+        {
+          "name": "test_exec_python_wrong_type[script-simple]",
+          "reason": "the cffi-gen-src script is not installed"
+        },
+        {
+          "name": "test_exec_python_wrong_type[script-callable]",
+          "reason": "the cffi-gen-src script is not installed"
+        },
+        {
+          "name": "test_read_sources[script]",
+          "reason": "the cffi-gen-src script is not installed"
+        },
+        {
+          "name": "test_read_sources_same_input_fails[script]",
+          "reason": "the cffi-gen-src script is not installed"
+        },
+        {
+          "name": "test_no_subcommand[script]",
+          "reason": "the cffi-gen-src script is not installed"
+        },
+        {
+          "name": "test_script_help_names_script_invocation",
+          "reason": "the cffi-gen-src script is not installed"
+        },
+        {
+          "name": "test_ffi_getwinerror",
+          "reason": "for windows"
+        },
+        {
+          "name": "test_types",
+          "reason": "this test is skipped because it keeps finding failures in libffi, instead of cffi"
+        },
+        {
+          "name": "test_new_struct_containing_array_varsize",
+          "reason": "later?"
+        },
+        {
+          "name": "test_vararg_callback",
+          "reason": "callback with '...'"
+        },
+        {
+          "name": "test_dlopen_handle",
+          "reason": "uses 'dl' explicitly"
+        },
+        {
+          "name": "test_unicode_libraries",
+          "reason": "for python 2.x"
+        },
+        {
+          "name": "test_function_arg_opaque",
+          "reason": "can currently declare a function with an opaque struct as argument, but AFAICT it's impossible to call it later"
+        },
+        {
+          "name": "test_cdef_using_windows_complex",
+          "reason": "only for MSVC"
+        },
+        {
+          "name": "test_longdouble_precision",
+          "reason": "don't know the very exact precision of 'long double'"
+        },
+        {
+          "name": "test_verify_typedefs",
+          "reason": "ignored so far"
+        },
+        {
+          "name": "test_relative_to",
+          "reason": "not available"
+        },
+        {
+          "name": "test_callback_in_thread",
+          "reason": "adapt or remove"
+        },
+        {
+          "name": "test_keepalive_lib",
+          "reason": "adapt or remove"
+        },
+        {
+          "name": "test_keepalive_ffi",
+          "reason": "adapt or remove"
+        },
+        {
+          "name": "test_FILE_stored_in_stdout",
+          "reason": "likely, we cannot assign to stdout"
+        },
+        {
+          "name": "test_bad_global_array_with_dotdotdot_length",
+          "reason": "was detected only because 23 bytes cannot be divided by 4; redo more generally"
+        },
+        {
+          "name": "test_getlasterror_working_even_with_pypys_jit",
+          "reason": "win32-only test"
+        },
+        {
+          "name": "test_implicit_unicode_on_windows",
+          "reason": "win32-only test"
+        },
+        {
+          "name": "test_windows_dllimport_data",
+          "reason": "Windows only"
+        },
+        {
+          "name": "test_win_common_types",
+          "reason": "Windows only"
+        },
+        {
+          "name": "test_ffi_gc_size_arg",
+          "reason": "only running the memory-intensive test on Linux"
+        },
+        {
+          "name": "test_ffi_gc_size_arg_2",
+          "reason": "find a way to tweak the cyclic GC of CPython"
+        },
+        {
+          "name": "test_ffi_new_with_cycles",
+          "reason": "find a way to tweak the cyclic GC of CPython"
+        }
+      ],
+      "scope": "Original full unchanged selection. One collection-level meson-python skip has no XML type attribute. Missing virtualenv and not-yet-installed cffi-gen-src account for conditional integration skips. Other original platform/backend limitations retained. No complete conditional coverage or canonical admission claim."
     }
   },
   "pending": [
@@ -528,7 +1174,8 @@
     "Current documentation changes require authority review; preserve the existing authority attestation and report stale validation rather than manufacturing a new attestation.",
     "Original IDNA properties suite with declared source-built default Hypothesis/Rust/maturin/runtime closure; PR107",
     "Pycparser original seven cpp platform skips require FreeBSD fixture qualification",
-    "Complete AsyncGenerator/Pycparser peers Sniffio/SortedContainers/Hatch plugins/Cython original self-suites and declared test-tool closure"
+    "Complete AsyncGenerator/Pycparser peers Sniffio/SortedContainers/Hatch plugins/Cython original self-suites and declared test-tool closure",
+    "Complete Attrs declared original self-suite tools and CFFI conditional meson-python/virtualenv/installed-CLI coverage"
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -638,6 +1285,17 @@
       "cause": "Own Hatch backend child used Python -S, which strips default installed site-packages; first normal child fails ModuleNotFoundError hatchling. Original private check had explicit private/dependency paths and passed.",
       "correction": "Use -s to suppress user sites while retaining normal installed packages; rerun affected real backend/wheel/RECORD/execution/changed-input/error/recovery checks in a fresh case. Do not reinstall packages or rewrite first failed observer. Complete payload/inherited/frozen/base/kernel/mount/registry postguards pass.",
       "original_tests_or_package_changes": "None"
+    },
+    {
+      "package": "CFFI",
+      "cause": "Own first observer used a 600-second timeout; its closed stdout pipe caused original pytest BrokenPipeError. Original native processes confirmed absent before fresh construction.",
+      "correction": "Fresh original construction and full streamed original make test with no wall-time cutoff passes after 759.60 seconds. Original assertions and selection unchanged.",
+      "first_failure_evidence": {
+        "nodes": 2723,
+        "archive_bytes": 7897601,
+        "archive_sha256": "20d78102dc20081bbb72eb93dc3662b67b203b6d71408021006a8eb3672c95da",
+        "all_nodes_verified_on_both_hosts": true
+      }
     }
   ],
   "incomplete_original_source_suites": {
@@ -654,6 +1312,18 @@
       "raw_stdout_sha256": "0f0fb42cbb4ced847c35fda520b61fc364baa215008845ffc524fe590b08e1cf",
       "raw_stderr_sha256": "3fdbe1648ef0e5da1caea2677da2601f59e1c14cf037f0a3863ed03b1af0680e",
       "scope": "Runtime APIs pass against sealed/default products; that supports development integration only. Original property suite remains unqualified and its failure is preserved."
+    },
+    "Attrs": {
+      "original_make_test_target": "not run: declared test dependencies missing",
+      "missing": [
+        "py312-cloudpickle>=0:devel/py-cloudpickle@py312",
+        "py312-hypothesis>=0:devel/py-hypothesis@py312",
+        "py312-mypy>=1.11.1:devel/py-mypy@py312",
+        "py312-Pympler>=0:devel/py-pympler@py312",
+        "py312-pytest-mypy-plugins>=0:devel/py-pytest-mypy-plugins@py312",
+        "py312-pytest-xdist>=0:devel/py-pytest-xdist@py312"
+      ],
+      "runtime_private_and_default_checks": "pass"
     }
   }
 }
