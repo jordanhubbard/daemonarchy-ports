@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 64,
+  "normal_development_package_count": 65,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -189,6 +189,39 @@
           "all_nodes_verified_on_both_hosts": true
         }
       }
+    },
+    {
+      "label": "Hatchling full2445 backport",
+      "packages": [
+        {
+          "name": "py312-hatchling-1.33.0_1.pkg",
+          "bytes": 172906,
+          "sha256": "3a1766f3d7423aa09449c3261b593ac056552a1748b8bdf6d335d4b24067b8ee"
+        }
+      ],
+      "source_revisions": [
+        "511743d7327c93e9ff0117d04f0176ebc572f444"
+      ],
+      "sealed_payloads": 220,
+      "actual_private_and_default_path_checks": "Unchanged backend Gitignore counterexample, metadata/wheel/RECORD/execution/invalid-version/changed-source recovery;31 real backend cases including28 double-sdist relocated-wheel byte identities",
+      "normal_packages_before": 64,
+      "normal_packages_after": 65,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "two_host_evidence": {
+        "source_build_tests_private": {
+          "nodes": 4231,
+          "archive_bytes": 7431940,
+          "archive_sha256": "f4d5797458f11b96b5fb0f7c9a5df69d4164a5ba9584ff9863523b1bf26c5176",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 1346,
+          "archive_bytes": 7929642,
+          "archive_sha256": "bb3f8014b1ac3b7f4b31ae705d4185238afb605dc3043ad80e767b6eac0cf169",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      }
     }
   ],
   "complete_original_source_suites": {
@@ -229,7 +262,7 @@
       "source_revision": "087f30829b60c5222b6af04082ec5a9850b03de6",
       "original_eight_construction_targets": "all exit0",
       "private_sealed_payloads_exact": 213,
-      "normal_development_installation": "HELD; environment remains64 packages",
+      "normal_development_installation": "Original unpatched product remains held; fixed1.33.0_1 now separately integrated",
       "actual_counterexample": "With project under /build, project-local build/ and !keep.py rules are discarded because the absolute project path matches build/. Wheel incorrectly contains native_probe/build/keep.py; independent real Git excludes it. Original assertion and failure retained.",
       "source_cause": "load_vcs_exclusion_patterns matches self.root against unscoped patterns, then returns an empty list.",
       "two_host_failure_evidence": {
@@ -254,6 +287,12 @@
           "scope": "Complete immutable base-to-head PR diff, not just head-commit patch. Unmerged review candidate, not locally qualified."
         },
         "scope": "The head-commit patch alone omits prerequisite commits. Review the complete pinned three-commit diff and preserve inherited/local/nested rules, directory exclusions and repeated sdist-to-wheel behavior. Upstream-reported test counts are not local evidence."
+      },
+      "resolution": {
+        "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/105",
+        "fixed_version": "1.33.0_1",
+        "normal_development_package_count_after": 65,
+        "scope": "Actual sealed/default original counterexample and31case matrix pass; complete original pytest suite and release acceptance pending."
       }
     }
   ]
