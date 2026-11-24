@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 63,
+  "normal_development_package_count": 64,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -153,6 +153,39 @@
           "nodes": 31,
           "archive_bytes": 7456564,
           "archive_sha256": "e305e1eab20f1a98b507dea5f773905849d9df1d7d7e345fa25e994e610d7549",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      }
+    },
+    {
+      "label": "TOMLKit",
+      "packages": [
+        {
+          "name": "py312-tomlkit-0.15.2.pkg",
+          "bytes": 408357,
+          "sha256": "bd8f6e69626c669188f27cad0028586756f20b3e4a005596c42119b295df04d5"
+        }
+      ],
+      "source_revisions": [
+        "087f30829b60c5222b6af04082ec5a9850b03de6"
+      ],
+      "sealed_payloads": 1160,
+      "actual_private_and_default_path_checks": "Exact format/comment preservation, actual mutations and UTF8 files, independent stdlib TOML semantic comparison, malformed-input exception and recovery",
+      "normal_packages_before": 63,
+      "normal_packages_after": 64,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "two_host_evidence": {
+        "source_build_tests_private": {
+          "nodes": 4094,
+          "archive_bytes": 4589884,
+          "archive_sha256": "b29b012e3e6fbec3fd484269cffbcf3bdf70afebe4d463a8e2e623bede72eeef",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 20,
+          "archive_bytes": 7590103,
+          "archive_sha256": "b852386f841433d9add318901ac50f419a44cd2fbaab110514dc0bc6e7deec0c",
           "all_nodes_verified_on_both_hosts": true
         }
       }
