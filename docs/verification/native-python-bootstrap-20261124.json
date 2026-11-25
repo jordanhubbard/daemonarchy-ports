@@ -1670,7 +1670,7 @@
     "TOML EOF fix PR109 native port/20committedregressions/sealed/default controls now pass; original NumPy/fullCI/AMD64/canonical gates remain pending",
     "GI-docgen full original Graphviz render_dot/SVG test and complete CI/tool closure remain open despite successful default runtime generation; source-built Graphviz required, original test failure retained.",
     "CMake original upstream self-suite and forced BSD-make space-path failure remain open; original source construction, sealed and normal default-finder/GNUmake consumers pass. No full upstream/backend qualification claimed.",
-    "PCRE2 source construction and all four original CTest programs pass; independent sealed/default 8/16/32-bit, JIT, shared/static and CLI consumers plus two-host retention remain pending."
+    "PCRE2 source construction and all four original CTest programs pass; independent sealed 8/16/32-bit, JIT, shared/static and CLI consumers plus two-host source/private retention now pass; normal integration remains pending."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2181,7 +2181,7 @@
       "qualification": "Development observations only; upstream self-suite, forced BSD-make space paths, AMD64, canonical and release qualification remain open."
     },
     {
-      "name": "PCRE2 preliminary source construction and original tests",
+      "name": "PCRE2 original source and sealed acceptance",
       "source_revision": "511743d7327c93e9ff0117d04f0176ebc572f444",
       "package_name": "pcre2-10.49.pkg",
       "package": {
@@ -2272,9 +2272,23 @@
       "original_CTest_log_sha256": "878152390a12077ed377a7f5c7d0d7561d4d91aa835b0dffa34142d9051a089c",
       "test_count_scope": "Four original CTest programs/suites, not four individual regex assertions; nested per-suite counts are not summed as unique cases.",
       "native_original_source_prefix_registry_base_mount_guards": "pass; normal92 unchanged",
-      "sealed_default_consumers_and_two_host_custody": "pending; preliminary observation retained on allocated native worker",
+      "sealed_default_consumers_and_two_host_custody": "Sealed consumers and source/private/failures custody pass; normal integration pending.",
       "normal_integration": "pending; not included in the current 92-package count",
-      "qualification": "Original native source/test observation only; independent exact-package API/CLI acceptance, custody, canonical and release admission remain pending."
+      "qualification": "Original native source/test and independent sealed-package development observation; normal-path, AMD64, canonical and release admission remain pending.",
+      "sealed_payloads": 247,
+      "actual_sealed_command_count": 58,
+      "native_client_variants": 8,
+      "actual_sealed_checks": "All8/16/32-bit shared/static clients verify UTF/UCP/named capture offsets, invalid pattern and UTF errors, actual JIT stack/execution, DFA and serialization roundtrip; both POSIX linkage variants verify captures/errors/recovery. Real CLI compares Unicode captures against Python oracle, changed input, no-match1, malformedpattern2, singleUTFmatcherror1 with typed diagnostic, too-many-errors2 and recovery0. Original pcre2grep uses static PCRE2 archives; library shared binding/static independence verified. Whole normal92prefix/rawdb preserved.",
+      "observer_corrections": [
+        "First observer incorrectly required pcre2grep shared linkage; original source/Ninja link rule proves static PCRE2 linkage under unchanged defaults. All8native clients already passed.",
+        "Second observer incorrectly expected single UTF matching error exit2; original manual/source specify matching-error no-match1 and too-many-errors2. Specific UTF diagnostic/offset, error-limit2 and recovery are verified in the final fixture. Original products/tests/options unchanged."
+      ],
+      "source_private_evidence": {
+        "nodes": 2769,
+        "archive_bytes": 31914505,
+        "archive_sha256": "5572b6d0e44c63e8d02d8443ad43deaab696604c1c672ff715d25da38581e390",
+        "all_nodes_verified_on_both_hosts": true
+      }
     }
   ]
 }
