@@ -4970,7 +4970,7 @@
   },
   "actual_installed_development_package_count": 105,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-25T18:49:20.168085+00:00",
+  "last_updated_utc": "2026-11-25T19:58:01.054636+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -5035,5 +5035,89 @@
     "sdk104_inventory_matches_precrash_after_upgrade_inventory": true,
     "normal_upgrade_evidence_captured_and_verified_on_both_hosts_after_recovery": true,
     "scope": "Completed pre-crash upgrade recovered and retained; no new build, installed-runtime requalification, Pi image or release acceptance implied."
+  },
+  "manifest_script_decoding_correction_20261125": {
+    "issue": "Earlier direct keyword controls executed percent-encoded +MANIFEST script text. pkg2.9.3/libpkg/pkg_manifest.c URL-decodes script strings before pkg_addscript; raw manifest text is not necessarily the executed body. Withdraw the earlier runtime-body-exact claim while retaining its results. Real normal pkg transactions already ran through the actual pkg decoder and remain separate evidence.",
+    "corrected_semantics": "Apply percent decoding without plus-to-space conversion to exact old/new package manifest strings; bind both encoded and decoded hashes. Fresh controls use decoded runtime bodies, not a handwritten renderer.",
+    "fresh_decoded_hook_commands": {
+      "xmlcharent_0_3_4": 13,
+      "sdocbook_xml_1_1_3_epoch2": 18,
+      "iso8879_1986_4": 17
+    },
+    "actual_installed_DB_script_checks": 4,
+    "installed_DB_validation": "A byte-verified isolated copy of native DB/WAL/SHM was read independently. Both installed Xmlcharent and Simplified DocBook post-install/post-deinstall bodies exactly equal decoded package manifests. All original native DB files and metadata stayed unchanged; copied DB bodies also stayed unchanged after SQL reads.",
+    "installed_runtime_bodies": [
+      {
+        "package": "xmlcharent",
+        "version": "0.3_4",
+        "phase": "post-install",
+        "runtime_sha256": "713166d3ac884dbd35cb599632dddb70c995c09ddc2a4470681492231f2b36d9"
+      },
+      {
+        "package": "xmlcharent",
+        "version": "0.3_4",
+        "phase": "post-deinstall",
+        "runtime_sha256": "4bf8f7f75ce9f4465ef5dceba675db969d2cde847abcf838cd2125dbaac9ce8d"
+      },
+      {
+        "package": "sdocbook-xml",
+        "version": "1.1_3,2",
+        "phase": "post-install",
+        "runtime_sha256": "c746ca595f8122bfe3636afb8cbe8337264b111616e75717edf91e86d9d1c250"
+      },
+      {
+        "package": "sdocbook-xml",
+        "version": "1.1_3,2",
+        "phase": "post-deinstall",
+        "runtime_sha256": "96f1bbbe10a205fd4e83ec7dcec8ce2ed378eee6d3bdce6562b72c3b2899e4ee"
+      }
+    ],
+    "preserved_installed_development_packages_during_controls": 105,
+    "negative_control_correction": "Retain ISO observer failures: expected diagnostic wording differed, and xmlcatmgr accepted the unfinished SGML quote fixture without error. Corrected invalid-document control requires its actual explicit BAD-element error; SGML hook negative control uses a real catalog I/O error. XML malformed-catalog controls remain passing. No product parser or package script was changed for these observer corrections.",
+    "both_host_source_private_and_correction_evidence": {
+      "nodes": 5370,
+      "archive_bytes": 53858703,
+      "archive_sha256": "f142f4eafb4ec3eafede192015103dd5b1bffb6d6ea20be3ea238784f9a1868d",
+      "inventory_sha256": "820fb9f5b0fa88bca7f95e153cd467293d195423fc3b4bc1c1ec49364d1e95ba",
+      "all_node_bodies_types_modes_owners_nanosecond_mtimes_flags_and_links_verified": true
+    },
+    "scope": "Fresh bounded native ARM64 controls supersede encoded-text controls. No canonical/lifecycle, complete upstream-suite, AMD64, desktop, physical or release acceptance.",
+    "observed_utc": "2026-11-25T19:53:51.417214+00:00"
+  },
+  "ISO8879_source_private_checkpoint_20261125": {
+    "source_revision": "74ee006accba1fd1b9da68ac6e0579cf88527b6d",
+    "version": "1986_4",
+    "package_bytes": 15737,
+    "package_sha256": "b5287bac8795a9eede78ee8c9fe6257841a67918c86394aaab7fd4d03506a73e",
+    "original_construction_targets_passed": 8,
+    "old_version": "1986_3",
+    "old_source_revision": "204235a1a16b913c52b98ce5533a2cf16f114dc0",
+    "old_package_sha256": "6b15e3540767fc139f2faf93cdf665f684efbc326c63e401f7dd3f68bcbf79fd",
+    "old_construction_targets_passed": 8,
+    "sealed_payloads": 24,
+    "explicit_directories": 0,
+    "SGML_resources": 19,
+    "PUBLIC_mappings": 38,
+    "independent_SDATA_definitions": 978,
+    "private_commands": 228,
+    "checks": "All38PUBLIClookups and full-data SGML parsing, invalid-document rejection, missing-catalog rejection, changed-resource values and recovery. Unmodified source-built OpenSP test tool is privately bound; it is not an accepted installed parser.",
+    "decoded_generated_hook_commands": 17,
+    "normal_installation": "pending at this source/private checkpoint",
+    "original_selected_upstream_test_bridge": false,
+    "OpenSP_original_full_suite": {
+      "selected_cases": 23,
+      "pass": 17,
+      "fail": 6,
+      "failed_cases": [
+        "catalog-2",
+        "af-7",
+        "af-8",
+        "af-9",
+        "af-10",
+        "af-11"
+      ],
+      "qualified": false
+    },
+    "two_host_evidence_archive_sha256": "f142f4eafb4ec3eafede192015103dd5b1bffb6d6ea20be3ea238784f9a1868d"
   }
 }
