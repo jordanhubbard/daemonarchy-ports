@@ -24,7 +24,7 @@ post-install: <<EOD
     exit "${status}"
   fi
   if ! printf '%s\n' "${entries}" | grep -q "^${xmlcatmgr_type} "; then
-    ${xmlcatmgr_cmd} add "${xmlcatmgr_type}" "${cat}"
+    ${xmlcatmgr_cmd} add "${xmlcatmgr_type}" "${cat}" || exit "$?"
   fi
 EOD
 post-deinstall: <<EOD
@@ -40,5 +40,5 @@ post-deinstall: <<EOD
     xmlcatmgr_cmd="xmlcatmgr -sc ${PKG_ROOTDIR}%D/share/sgml/catalog.ports remove CATALOG"
   ;;
   esac
-  ${xmlcatmgr_cmd} ${cat}
+  ${xmlcatmgr_cmd} ${cat} || exit "$?"
 EOD

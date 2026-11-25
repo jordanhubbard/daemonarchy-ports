@@ -3,7 +3,7 @@
   "date": "2026-11-25",
   "planned_release": "1.6",
   "problem": "PUBLIC resolution returns HTTP identifiers that libxml2 does not recursively remap through rewriteURI/rewriteSystem. Simplified DocBook custom DTDs consequently fail offline despite installed character resources. Existing system-ID rewrite checks did not cover this consumer.",
-  "change": "Map all19PUBLICidentifiers directly to existing relative entity filenames, preserving identifiers, entity bodies, system/URI rewrites and SGML catalog. Xmlcharent0.3_4 includes21native port regressions and the shared typed/idempotent catalog registration fix. Bump the other20known keyword consumers so ordinary upgrades receive regenerated scripts.",
+  "change": "Map19PUBLICidentifiers directly to existing local entity files, preserving entities/systemrewrites/SGMLcatalog. Typed idempotent upgrade registration is retained. Candidate0.3_5 additionally exits on the first failed catalog add/remove so subsequent package-script fragments cannot mask it; bump all21known keyword consumers for regenerated hooks. Fresh candidate native construction/version/generated-hook/normal qualification remains pending.",
   "causal_native_ARM64": {
     "original_catalog_exit": 1,
     "fixed_catalog_exit": 0,
@@ -15,10 +15,11 @@
   "consumer_failure": "Retain Simplified DocBook failed customization consumer; stock flattened article profile passed before custom profile failed on three PUBLIC entity identifiers remapped to HTTP.",
   "observer_correction": "First new regression script lost final expected value at shell read EOF; preserve failed run. Fixed script caches the last expected value, all21scenarios pass.",
   "remaining": [
+    "Qualify the candidate fail-fast keyword and all21new revision bumps on the native worker: fresh generated packages must preserve first add/remove failures across later script blocks, then repeat normal upgrades. The decoded v1 controls and healthy normal results do not close this newly proven error-path gate.",
     "Other selected catalog consumers still require fresh construction, pkg-decoded hook controls and normal global-catalog/upgrade checks. Xmlcharent0.3_4, SimplifiedDocBook1.1_3,2 and ISO8879_4 have bounded native normal integration; all21known version comparisons pass, not all21package qualifications.",
     "Complete canonical authority/lifecycle, AMD64, desktop, physical and release acceptance."
   ],
-  "observed": "2026-11-25T20:01:30.612670+00:00",
+  "observed": "2026-11-25T20:12:09.482419+00:00",
   "Simplified_Docbook_consumer_causal": {
     "actual_commands": 20,
     "profiles": [
@@ -30,7 +31,7 @@
     "checks": "Both XML/SGML PUBLIC mappings; valid changed values and supported Latin entities; invalid content/excluded Greek rejection and recovery in all4profiles.",
     "scope": "Original sealed15payloads from failed private consumer remain unmodified. Explicit derived private root catalog puts corrected19entityPUBLICmappings ahead of unchanged installed default parent catalog. Original installed104package environment/prefix/rawdb/base/mounts unchanged. This proves the parent mapping cause; it is not a passing original private run or normal default-global integration."
   },
-  "current_candidate_version": "0.3_4",
+  "current_candidate_version": "0.3_5",
   "original_0_3_3_fresh_package_validation": {
     "source_revision": "204235a1a16b913c52b98ce5533a2cf16f114dc0",
     "original_construction_targets": 8,
@@ -51,7 +52,7 @@
     "file": "Keywords/xmlcatmgr.ucl",
     "reason": "Documented pkg upgrade invokes newpreinstall/oldpredeinstall/replace/newpostinstall, withoutoldpostdeinstall. Originalpostinstallblindaddthereforerejectsretainedregistration.",
     "reference": "https://man.freebsd.org/cgi/man.cgi?query=pkg-script&sektion=5&manpath=FreeBSD+15.1-RELEASE+and+Ports",
-    "change": "Lookup registrations and check entry type before adding. Preserve correct existing entries instead of rewriting/reordering. Add genuinely missing registrations, including identifiers already used by another type. Propagate abnormal lookup exits; failed adds remain failures.",
+    "change": "Lookup exact registration types before adding and preserve valid existing entries and same-key user types. The initial version propagated abnormal lookup exits but could mask an earlier add/remove failure with a later block success. Candidate fail-fast guards repair that error path; fresh generated-package qualification is pending.",
     "native_causal_commands": 13,
     "checks": "Old duplicate failure; new existing registration and repetition preserve full namespace snapshot; missing registration plus repetition; same-key different-type user entries survive add/remove/reinstall; malformed catalog rejected normally.",
     "renderer_scope": "Earlier direct manifest-text controls did not percent-decode runtime bodies; their runtime-body-exact claim is superseded by manifest_script_decoding_correction_20261125. Fresh13decoded Xmlcharent controls pass and decoded bytes match the actual installed DB. Original failures and encoded controls remain retained.",
@@ -454,5 +455,131 @@
       "all_nodes_verified_on_both_hosts": true
     },
     "scope": "Bounded native ARM64 data/catalog development integration. No original ISO selected upstream test bridge, canonical/lifecycle, AMD64, desktop, physical or release acceptance."
+  },
+  "multi_block_error_propagation_followup_20261125": {
+    "problem": "With an actual first SGML catalog I/O error and healthy later XML block, both decoded post-install and post-deinstall scripts return0 although the first add/remove returns1. Pinned pkg2.9.3 launches the concatenated body without set-e. The isolated probes preserve the installed106package SDK. Earlier single/last-block negative controls did not cover this path.",
+    "pinned_pkg_shell_runtime_source_sha256": "89d82ff0750449d504eaaa001417461c66da520ed3834fa6b4d464c5ad3a13fa",
+    "causal_add": {
+      "first_operation_exit": 1,
+      "whole_script_exit": 0,
+      "product_pass": false
+    },
+    "causal_remove": {
+      "first_operation_exit": 1,
+      "whole_script_exit": 0,
+      "product_pass": false
+    },
+    "prototype": "Six actual native commands on copies of real decoded scripts pass: healthy install/repetition/removal and first-add/first-remove failures; later XML changes are prevented after a failed first operation. This is a narrow repair prototype, not generated candidate package qualification.",
+    "candidate_keyword_sha256": "989bf174a13ed3466591db32eae0b2ff2c78c8c568635afb2eb75294ef26e7a8",
+    "candidate_revision_bumps": [
+      {
+        "origin": "security/vuxml",
+        "old_revision": 7,
+        "new_revision": 8
+      },
+      {
+        "origin": "textproc/docbook-sgml",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/docbook-xml",
+        "old_revision": 4,
+        "new_revision": 5
+      },
+      {
+        "origin": "textproc/docbook-xsl",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/docbook-xsl-ns",
+        "old_revision": 1,
+        "new_revision": 2
+      },
+      {
+        "origin": "textproc/dsssl-docbook-modular",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/html",
+        "old_revision": 3,
+        "new_revision": 4
+      },
+      {
+        "origin": "textproc/iso12083",
+        "old_revision": 3,
+        "new_revision": 4
+      },
+      {
+        "origin": "textproc/iso8879",
+        "old_revision": 4,
+        "new_revision": 5
+      },
+      {
+        "origin": "textproc/jade",
+        "old_revision": 12,
+        "new_revision": 13
+      },
+      {
+        "origin": "textproc/libfo",
+        "old_revision": 6,
+        "new_revision": 7
+      },
+      {
+        "origin": "textproc/linuxdoc",
+        "old_revision": 3,
+        "new_revision": 4
+      },
+      {
+        "origin": "textproc/openjade",
+        "old_revision": 6,
+        "new_revision": 7
+      },
+      {
+        "origin": "textproc/sdocbook-xml",
+        "old_revision": 3,
+        "new_revision": 4
+      },
+      {
+        "origin": "textproc/slides",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/website",
+        "old_revision": 1,
+        "new_revision": 2
+      },
+      {
+        "origin": "textproc/xhtml",
+        "old_revision": 6,
+        "new_revision": 7
+      },
+      {
+        "origin": "textproc/xhtml-11",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/xhtml-basic",
+        "old_revision": 3,
+        "new_revision": 4
+      },
+      {
+        "origin": "textproc/xhtml-modularization",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/xmlcharent",
+        "old_revision": 4,
+        "new_revision": 5
+      }
+    ],
+    "fresh_native_candidate_qualification": "pending",
+    "normal_development_SDK": "106 earlier-revision packages retained; no candidate upgrade or release acceptance claimed",
+    "observed_utc": "2026-11-25T20:12:09.482394+00:00"
   }
 }

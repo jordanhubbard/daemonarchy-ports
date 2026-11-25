@@ -1,6 +1,6 @@
 PORTNAME=	docbook
 PORTVERSION=	4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	${DBFILES:C,(.*):(.*),https://www.oasis-open.org/docbook/sgml/\1/:\2,:C,:docbook-([0-9]+).([0-9]+),:db\1\2,}
 PKGNAMESUFFIX=	-sgml

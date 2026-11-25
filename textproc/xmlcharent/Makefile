@@ -1,6 +1,6 @@
 PORTNAME=	xmlcharent
 PORTVERSION=	0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.oasis-open.org/docbook/${PORTNAME}/${PORTVERSION}/ \
 		https://library.syr.edu/digital/guides/lavender/

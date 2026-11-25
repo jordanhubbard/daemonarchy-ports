@@ -1,6 +1,6 @@
 PORTNAME=	xhtml-basic
 PORTVERSION=	1.0.${RECDATE}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.w3.org/TR/2000/REC-xhtml-basic-${RECDATE}/
 DISTNAME=	xhtml-basic
