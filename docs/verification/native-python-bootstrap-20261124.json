@@ -4115,7 +4115,7 @@
       "version": "2.9.3_2",
       "source_revision": "d65aae9b1fb9293f1d4d26da12aaf3c334b10f99",
       "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/116",
-      "status": "native-causal-and-upgrade-file-ATF-pass-full-ports-pending",
+      "status": "full-native-ports-package-and-sealed34upgrade-file-ATF-pass-custody-normal-pending",
       "fix": "Include and process installed candidate for local archive install/upgrade jobs before adding new file request; preserve original upgrade cleanup and hooks.",
       "causal_control": {
         "original_preview_reports_new_install": true,
@@ -4137,7 +4137,67 @@
       },
       "patches": "Both actual BSD patch applications at zero fuzz produce exact candidate C and complete test bodies.",
       "retained_failures": "Initial copied build config relinked library but left stale executable; separate corrected configure/make succeeds. A missing observer import and ATF PATH/argument-order failures are retained, not passing.",
-      "qualification": "Derived native causal and original upgrade-file ATF evidence only. Fresh full ports package, sealed package acceptance, entire upstream suite, normal install/update, AMD64 and canonical/release acceptance remain pending. No live pkg or xmlcatmgr update."
+      "qualification": "Full native ARM64 default DOCS package and sealed77payloads/1dir plus34freshupgrade-fileATF cases pass. Entirepkgfrontendsuite remains pending: port exposes no selected test bridge; empty make-check is not original suite evidence. New complete source/private/failure capture and two-host custody in progress. Normal manager/XML upgrade, AMD64, canonical/GUI/hardware/release remain pending.",
+      "full_Git_source_members_verified": 184370,
+      "construction_targets": [
+        {
+          "target": "checksum",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "extract",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "patch",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "configure",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "build",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "stage",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "check-plist",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "package",
+          "exit": 0,
+          "uid": 65534
+        }
+      ],
+      "package": {
+        "bytes": 5633007,
+        "sha256": "9b97b192960c0156ed1d6008c18c661aba5f1ecd4bca12ab205c6b8a5841227c"
+      },
+      "sealed_acceptance": {
+        "payloads": 77,
+        "declared_directories": 1,
+        "all_exact": true,
+        "original_upgrade_ATF_cases": 34,
+        "pass": 34,
+        "binary": "Exact sealed installed pkg-static",
+        "whole_live102_prefix_rawdb_frozen17_base_mounts_unchanged": true
+      },
+      "locked_package_control": {
+        "upgrade_exit": 1,
+        "old_version_lock_payload_hooks_preserved": true
+      }
     }
   ],
   "installed_Python_metadata_recovery": {
