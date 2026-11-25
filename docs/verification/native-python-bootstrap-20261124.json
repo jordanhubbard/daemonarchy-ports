@@ -3520,7 +3520,7 @@
         "sha256": "3b71a90a9b00ed5aa4accb0d4ee0606f50203711e6706e7ed2f6aca9b2a7c16e"
       },
       "guards": "Whole100package prefix/logical registry/base/kernel/mounts and selected original source unchanged. Original source/distfiles/objects/stage/package/logs retained.",
-      "qualification": "Source-built default CRYPTO/PLUGINS/STATIC package is held: original make test exits0 but its DocBook checks print4unpropagated diffs. Main runner751cases/0errors does not establish complete-suite success. Independent sealed acceptance, two-host custody and normal installation remain pending; no AMD64/canonical/desktop/hardware/release qualification.",
+      "qualification": "Original default source build and independent sealed30command acceptance pass; mainrunner751cases/0errors. Four originalDocBook comparison mismatches are explained by XMLCDATApreservation but remain non-green. Source/private/failedobserver capsule3714nodes verified on Sparky; secondhost copy blocked by70GiBreserve. Normalinstallation not started. NoAMD64/canonical/desktop/hardware/releasequalification.",
       "DocBook_causal_diagnosis": {
         "actual_commands": 8,
         "composition": "Five commands retained from first executed diagnostic, two from its first completion and one remaining chunk transform. Prior failed observers stay failed; successful commands are revalidated rather than rerun.",
@@ -3537,6 +3537,28 @@
         "status_propagation_defect": "Original single/xtchunk captures diff stdout inside command substitution; later successful rm/grep/echo masks its exit status. Original suite is not green.",
         "qualification": "Discrepancy explained by expected-output trimming versus XML CDATA preservation. Original suite remains non-green; independent package acceptance and normal installation pending.",
         "guards": "Whole100prefix/rawdb/base/mounts unchanged."
+      },
+      "independent_sealed_acceptance": {
+        "payloads": 85,
+        "declared_directories": 1,
+        "actual_commands": 30,
+        "changed_states": [
+          73,
+          91,
+          104
+        ],
+        "checks": "Real shared/static primary xslt/exslt libraries and packaged xsltproc match independent Python XML/math/hash oracles. Includes namespaces, include/document dependencies, sorting, key grouping, quoted parameters, Unicode, EXSLT node-set/math/sets/strings/dynamic/date/crypto. Compiled dynamic extension loads and computes changed values; missing-plugin/invalid-input/terminating-message errors and recovery pass. C clients recover from invalid stylesheet and malformed XML before each valid operation.",
+        "binding": "Original pkgconf flags drive dependencies, replacing only primary library tokens with sealed shared/archive paths. Shared/static native clients have no loader override; sealed packaged CLI explicitly selects its own DSO. System/crypto dependencies may remain shared.",
+        "guards": "All85payloads/1directory exact before and after; whole100prefix/rawdb/base/kernel/mounts unchanged."
+      },
+      "source_private_custody": {
+        "nodes": 3714,
+        "archive_bytes": 20548213,
+        "archive_sha256": "7f69fdb056b87dba7c05feee2dc869bd36beb8e57d7b1bcbb86140fba4acff03",
+        "source_objects_stage_packages_controllers_and_all_failed_diagnostics_retained": true,
+        "Sparky_all_nodes_verified": true,
+        "second_host_all_nodes_verified": false,
+        "blocked_reason": "Second evidence host has approximately47GiB available, below archive plus inventory plus70GiB reserve. Guard stopped before creating/uploading remote copy. No deletion, NAS use or normal installation."
       }
     }
   ],
