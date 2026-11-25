@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 90,
+  "normal_development_package_count": 91,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -646,6 +646,51 @@
         }
       },
       "test_scope": "Development runtime observation only. Original unfiltered CIpytest10cases:9passed1failed due absent Graphvizdot, zero skips; no filters/synthesized skips. Optional hierarchySVG/full original CI/AMD64/canonical/release qualification remains open."
+    },
+    {
+      "name": "libuv FreeBSD kqueue fix",
+      "source_revisions": [
+        "86769890c4d34f2ff57404a7b62409c05fdefbff"
+      ],
+      "packages": [
+        {
+          "name": "libuv-1.52.1_2.pkg",
+          "bytes": 138406,
+          "sha256": "fb84b3f8bf1047ed19016eef650f2236921c0fc8860c9bb41ae1ce8cc211ac65"
+        }
+      ],
+      "sealed_payloads": 15,
+      "normal_packages_before": 90,
+      "normal_packages_after": 91,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "actual_private_and_default_path_checks": "Both static and shared C clients preserve pending EVFILT_USER events across initialization, receive actual nested kqueue readiness, close handles/loop, preserve EBADF, accept changed identifiers, reject invalid input and recover. Shared binding and static independence verified; default normal loader uses no LD_LIBRARY_PATH override.",
+      "original_full_test_summary": {
+        "total": 451,
+        "pass": 435,
+        "original_skips": 13,
+        "fail": [
+          "connect_unspecified",
+          "udp_connect",
+          "udp_connect6"
+        ]
+      },
+      "original_full_suite_pass": false,
+      "two_host_evidence": {
+        "source_and_private": {
+          "nodes": 1659,
+          "archive_bytes": 12899902,
+          "archive_sha256": "3485a4ce82b6e80dde8cb4f45a1406d6120693f7454a8519b472379e792114aa",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 46,
+          "archive_bytes": 8962492,
+          "archive_sha256": "978d4b1a9bd8e177c0d5db5f794096b980ac8551254b40eb2b0183a85527123e",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "qualification": "Development runtime only. Three original wildcard-address network failures retained under unchanged kernel/network policy; AMD64/full-suite/canonical/release gates remain open."
     }
   ],
   "complete_original_source_suites": {
@@ -1574,7 +1619,7 @@
   "pending": [
     "Complete original SCM/Calver/PoetryCore/TOMLKit/Hatchling/Pygments/Pytest/Babel self-suite and declared test-tool closure",
     "Optional Pathspec RE2/Hyperscan backend coverage remains originally skipped; selected original pytest bridge now passes",
-    "Libuv fresh full port construction and sealed clients pass; original full suite retains three wildcard-address network failures. Normal integration pending; see PR102",
+    "Libuv original three wildcard-address network failures, AMD64 and canonical qualification remain open; fresh full port construction, sealed clients and normal runtime integration now pass. See PR102.",
     "Matching CURRENT desktop dependency closure and graphical acceptance",
     "Canonical complete per-unit ownership, provenance, lifecycle and SDK/TCB admission",
     "Full release/fleet/physical hardware qualification",
@@ -1908,6 +1953,21 @@
         "all_nodes_verified_on_both_hosts": true
       },
       "scope": "Full original unit suite remains failed until the source-built Graphviz dependency and SVG coverage are qualified. No filtered/synthetic pass or canonical receipt."
+    },
+    "Libuv": {
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/102",
+      "original_make_test_target": "failed: three original wildcard-address network cases",
+      "reported": 451,
+      "passed": 435,
+      "original_skips": 13,
+      "failures": [
+        "connect_unspecified",
+        "udp_connect",
+        "udp_connect6"
+      ],
+      "original_test_filters_sources_kernel_policy_modified": false,
+      "sealed_and_default_static_shared_kqueue_consumers": "pass",
+      "qualification": "Full suite remains failed despite successful development runtime integration."
     }
   },
   "source_built_candidates": [
@@ -1997,7 +2057,7 @@
         "archive_sha256": "3485a4ce82b6e80dde8cb4f45a1406d6120693f7454a8519b472379e792114aa",
         "all_nodes_verified_on_both_hosts": true
       },
-      "normal_integration": "pending",
+      "normal_integration": "Pass: all 15 payloads and 90 inherited packages verified; actual static/shared default-loader consumers pass. See normal libuv group. Full original suite remains failed.",
       "qualification": "Development observations only; full original suite retains three wildcard-address network failures. Canonical and release admission remain unearned."
     }
   ]
