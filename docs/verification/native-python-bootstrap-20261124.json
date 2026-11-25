@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 98,
+  "normal_development_package_count": 99,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -1005,6 +1005,48 @@
         }
       },
       "qualification": "Development runtime only; AMD64/GUI/physical/canonical/lifecycle/release open."
+    },
+    {
+      "name": "Fixed libgpg-error default NLS static metadata and real consumers",
+      "source_revisions": [
+        "486f80fdbab7188d158d8bf23634a9d0ae9c1539"
+      ],
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/113",
+      "packages": [
+        {
+          "name": "libgpg-error-1.61_1.pkg",
+          "bytes": 390019,
+          "sha256": "733d10e7261393080bacd7f0998a6cd1f673e2d0552136680730221c58ffaed8"
+        }
+      ],
+      "sealed_payloads": 51,
+      "normal_packages_before": 98,
+      "normal_packages_after": 99,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_base_kernel_mounts_and_frozen_bootstrap_preserved": true,
+      "expected_original_Info_index_update": {
+        "before_sha256": "70a0f1839f32ba2e392a095a67a1ea907617e8f36e1db0770311e052f711bc00",
+        "after_sha256": "8f0fe7f3fdccc66077ebec49a223eb179b9cfce79bc4a1027a49018aba7ab53b",
+        "all_old_entries_preserved": true,
+        "exact_original_indexinfo_replay": true
+      },
+      "actual_private_and_default_path_checks": "24actualcommands percontext: real metadata-driven static archive/shared linking; error/errno/source/version, Unicode formatted allocation, memory streams and two-thread locking across changed values/errors/recovery; packaged error mapping/rejection/recovery and config/yat2m commands. Sealed CLI explicitly binds own DSO, actual native clients have no loader override; normal commands/clients all use default loader. Three extra normal automatic gpgrt-config/pkgconf queries match consumed staticflags and registered provider.",
+      "original_test_scope": "Default1originalconfigprogram plus additive1staticconsumerregression. SeparateTEST+NLS andTEST-without-NLS each15originalprograms plus same additive regression; no nested assertion or unique-test sum. NLSoff has no gettext link/runtime dependency.",
+      "two_host_evidence": {
+        "source_private_failed_observers_causal_controls_and_variants": {
+          "nodes": 7008,
+          "archive_bytes": 45983658,
+          "archive_sha256": "e6ba04478af3fe1619f7a4224060b281b62fceb11d1fcb1210d84eb33f0f43ec",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction_and_default_metadata": {
+          "nodes": 84,
+          "archive_bytes": 12562472,
+          "archive_sha256": "e4ea178cdddf729009b70f3f8c2aecefc05e82bcde8f711869480f203c8d403e",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "qualification": "Development runtime only; AMD64/GUI/physical/canonical/lifecycle/release remain open."
     }
   ],
   "complete_original_source_suites": {
@@ -2029,7 +2071,8 @@
     "Full default GLib is integrated among96developmentpackages with DOCS/MANPAGES/NLS/TEST preserved; all8construction targets and41sealed/default commands pass. Original full suite still needs three declared source-built test tools. Required named bootstrap intermediates remain distinct.",
     "Introspection required bootstrap is integrated among95developmentpackages; all64originalMesonprograms and27sealed/default commands percontext pass with both-host evidence. PR111 review,AMD64,canonical/lifecycle admission remain pending. Full default GLib is now integrated among96developmentpackages with all options preserved; original full suite still needs three declared source-built tools.",
     "DesktopFileUtils fixed0.29_1 is integrated among97developmentpackages, PR112. Full default GLib original suite now still needs source-built D-Bus and shared-mime-info tools; no GUI/physical/AMD64/canonical/release qualification.",
-    "Shared MIME-Info is integrated among98developmentpackages; full default GLib original test closure now needs D-Bus. Preserve original D-Bus MANPAGES/X11 defaults: libxslt/libgcrypt/libgpg-error and DocBook/catalog dependencies are next. Canonical/full release and physical platform scope remains open."
+    "Shared MIME-Info is integrated among98developmentpackages; full default GLib original test closure now needs D-Bus. Preserve original D-Bus MANPAGES/X11 defaults: libxslt/libgcrypt/libgpg-error and DocBook/catalog dependencies are next. Canonical/full release and physical platform scope remains open.",
+    "Fixed default libgpg-error1.61_1 is integrated among99developmentpackages, PR113. Continue original default libgcrypt(DOCS/INFO/STATIC), libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and defaultD-Bus(MANPAGES/X11) closure, then fullGLib original suite. All broad release/fleet/physical/canonical gates remain open."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -3012,6 +3055,12 @@
         "committed_regression_before": "The same new static-pkgconfig C regression fails against the original archive/metadata before repair.",
         "regression_sha256": "97ef576e880ddbcad5ab53c28f4a26f72e79c594a796c6ef6bfdd80be210fd8b",
         "repair_review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/113"
+      },
+      "resolution": {
+        "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/113",
+        "fixed_version": "1.61_1",
+        "normal_development_package_count_after": 99,
+        "scope": "Fixeddefaultsource/3variants/sealed/normalacceptance pass, alloriginalfaults preserved separately. No release/canonical admission."
       }
     },
     {
@@ -3020,7 +3069,7 @@
       "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/113",
       "change": "Publish -lintl in original static metadata only with NLS, preserve other private flags; PORTREVISION1. Add real static C consumer after unchanged original tests, with explicit archive selection; declare pkgconf TEST_DEPENDS.",
       "causal_regression_before": "Fails on original metadata with libintl symbols unresolved; adding only gettext link resolves original full client.",
-      "qualification": "Native source/variants/sealed acceptance and both-host custody pass. Normal installation in progress, not yet qualified in this report. Original1.61remains held. AMD64/canonical/lifecycle/fullrelease open.",
+      "qualification": "Normally installed ARM64 development default package among99. All51payloads exact; all98inheritedpackages preserved except independently reconstructed aggregateInfoindex/allowedparentmtimes. Originaloffline dependencies/ldconfig/indexinfo scripts enforced.24actualcommands persealed/normalcontext pass, normal has no loader override.3extra default metadata queries prove automatic gpgrt-config/pkgconf staticflags match actual compiled client and exact registered provider. Both-host source/private/failures/variants and normal evidence verified. Original1.61remains held. AMD64/GUI/physical/canonical/lifecycle/fullrelease open.",
       "construction": "Fresh exact full184371Gitmember source at486f80fdbab7; all8constructiontargets exit0 independently for defaultDOCS/NLS, separateDOCS/NLS/TEST and separateDOCS/TEST(NLSoff).",
       "variant_results": {
         "default": {
@@ -3207,7 +3256,14 @@
         "archive_sha256": "e6ba04478af3fe1619f7a4224060b281b62fceb11d1fcb1210d84eb33f0f43ec",
         "all_nodes_verified_on_both_hosts": true
       },
-      "normal_Info_index_control": "Original indexinfo exactly reproduces existing index and independently predicts the updated index after adding packaged gpgrt.info; all old entries preserved. Only that exact inherited aggregate update may change. Loader hints before state retained; original package scripts stay enabled."
+      "normal_Info_index_control": "Original indexinfo exactly reproduces existing index and independently predicts the updated index after adding packaged gpgrt.info; all old entries preserved. Only that exact inherited aggregate update may change. Loader hints before state retained; original package scripts stay enabled.",
+      "normal_two_host_evidence": {
+        "nodes": 84,
+        "archive_bytes": 12562472,
+        "archive_sha256": "e4ea178cdddf729009b70f3f8c2aecefc05e82bcde8f711869480f203c8d403e",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "normal_automatic_static_metadata_queries": 3
     }
   ],
   "installed_Python_metadata_recovery": {
