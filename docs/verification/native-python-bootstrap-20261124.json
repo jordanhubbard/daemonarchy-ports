@@ -5008,7 +5008,7 @@
   },
   "actual_installed_development_package_count": 106,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-25T20:36:09.542843+00:00",
+  "last_updated_utc": "2026-11-25T20:48:03.560672+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -5389,5 +5389,108 @@
       "scope": "Native bounded normal data/catalog integration. Not original upstream self-suite,canonical,AMD64,desktop,physical or release admission."
     },
     "observed_utc": "2026-11-25T20:36:09.541118+00:00"
-  }
+  },
+  "selected_Simplified_DocBook_failfast_upgrade_20261125": {
+    "source_revision": "1d0dc88cb0d7e2087bd7acaefb2f030e1036b3de",
+    "old_version": "1.1_3,2",
+    "new_version": "1.1_4,2",
+    "original_construction_targets": 8,
+    "artifact": {
+      "bytes": 17071,
+      "sha256": "160ec890d914955bf47d851a8373893ea57a45915a4b9041142d29bd42663a75"
+    },
+    "private_and_normal_payloads": 15,
+    "explicit_directories": 0,
+    "independent_DTD_profiles": 4,
+    "private_and_normal_DTD_commands_each": 20,
+    "actual_pkg_decoded_generated_hook_controls": 24,
+    "normal_local_only_original_pkg_dependencies_hooks": true,
+    "normal_upgrade_empty_stderr_and_no_hook_errors": true,
+    "four_global_catalog_files_body_and_mtime_preserved": true,
+    "other_package_prefixes_preserved": 105,
+    "unchanged_Xmlcharent5_normal_dependency_commands": 136,
+    "independent_entity_values": 975,
+    "accepted_bounded_development_count": 106,
+    "two_host_source_private_capsule": {
+      "nodes": 649,
+      "archive_sha256": "bcba754b5c8ae4f430bef1ea93dea40d30d8606ce1c764af76670af0b462a4cd",
+      "inventory_sha256": "574e38c91f74039845f6254e15fc82543ed3928e5202342e86ec4bf9dab30d7a",
+      "all_nodes_independently_verified_on_both_hosts": true
+    },
+    "two_host_normal_capsule": {
+      "nodes": 454,
+      "archive_sha256": "41abf49c1db80bb60f16040ecaab37f5e0000a7cc05a6b8eaf04416d97f43948",
+      "inventory_sha256": "6f01c1fe5da159c036eb0d335ef59c3c1dc51e5078449e6369cf9b5cc59b96c9",
+      "all_nodes_independently_verified_on_both_hosts": true
+    },
+    "upstream_test_scope": "Original selected port exposes no upstream self-suite bridge. Independent consumers and generated-hook controls do not establish original self-suite acceptance.",
+    "remaining": "ISO8879_5 and remaining selected consumers require fresh generated-hook/private/normal qualification; completecanonical lifecycle/AMD64/desktop/physical/release scope remains open.",
+    "observed_utc": "2026-11-25T20:42:23.435584+00:00"
+  },
+  "selected_ISO8879_failfast_upgrade_20261125": {
+    "source_revision": "1d0dc88cb0d7e2087bd7acaefb2f030e1036b3de",
+    "old_version": "1986_4",
+    "new_version": "1986_5",
+    "original_construction_targets": 8,
+    "artifact": {
+      "bytes": 15752,
+      "sha256": "42754dcbd4ff1d895fc167c44d5dd23f81fa53dac04431cef5fc15e1a560eb55"
+    },
+    "private_and_normal_payloads": 24,
+    "explicit_directories": 0,
+    "private_commands": 228,
+    "actual_pkg_decoded_generated_hook_controls": 21,
+    "resources": 19,
+    "PUBLIC_identifiers": 38,
+    "independent_SDATA_definitions": 978,
+    "normal_local_only_original_pkg_dependencies_hooks": true,
+    "normal_upgrade_empty_stderr_and_no_hook_errors": true,
+    "four_global_catalog_files_body_and_mtime_preserved": true,
+    "other_package_prefixes_preserved": 105,
+    "normal_default_global_resource_commands": 114,
+    "normal_outputs_match_private": true,
+    "catalog_environment_overrides": false,
+    "external_uninstalled_OpenSP_test_tool_explicit_private_library_binding": true,
+    "normal_installed_parser_qualification": false,
+    "OpenSP_original_suite_cases": 23,
+    "OpenSP_original_suite_failed_cases": 6,
+    "accepted_bounded_development_count": 106,
+    "two_host_source_private_capsule": {
+      "nodes": 1869,
+      "archive_sha256": "872980a11c880bbf9b85f92d3f2fc30c9c538664abcbaa359488680f9d7fe85a",
+      "inventory_sha256": "b2973e11864e46abcc4605fcae43987a01a2e09532ce7327c50c3b7c239c6109",
+      "all_nodes_independently_verified_on_both_hosts": true
+    },
+    "two_host_normal_capsule": {
+      "nodes": 258,
+      "archive_sha256": "a4c41741ab028133d8e19178123947e3aa2c40f10828094e9f3c75af4eded2c6",
+      "inventory_sha256": "640ecd0f490bcca2cb6232225e1497daa486684c10286ffc417c69d3bef7115b",
+      "all_nodes_independently_verified_on_both_hosts": true
+    },
+    "observer_failure_preserved": "One retired verifier-field KeyError before package mutation; corrected fresh attempt retains all guards.",
+    "remaining": "Original upstream self-suite,normal parser,canonical lifecycle,AMD64,desktop,physical and release acceptance remain open.",
+    "observed_utc": "2026-11-25T20:48:03.560672+00:00"
+  },
+  "next_DocBook_failfast_construction_20261125": [
+    {
+      "source_revision": "1d0dc88cb0d7e2087bd7acaefb2f030e1036b3de",
+      "original_construction_targets": 8,
+      "all_original_targets_pass": true,
+      "artifact": {
+        "bytes": 144739,
+        "sha256": "974d769e8db5ffefe66e6b2e153ce1eeed880949639f799ea5dc4771ee707514"
+      },
+      "scope": "Fresh construction only; private/generated-hook/normal/full-suite/canonical/release qualification separate."
+    },
+    {
+      "source_revision": "1d0dc88cb0d7e2087bd7acaefb2f030e1036b3de",
+      "original_construction_targets": 8,
+      "all_original_targets_pass": true,
+      "artifact": {
+        "bytes": 565315,
+        "sha256": "1325b1bcdae273f3a226728e2ce88a7597b8384317c74184a489f050d716c2a5"
+      },
+      "scope": "Fresh construction only; private/generated-hook/normal/full-suite/canonical/release qualification separate."
+    }
+  ]
 }
