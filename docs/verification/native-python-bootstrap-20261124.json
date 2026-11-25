@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 103,
+  "normal_development_package_count": 104,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -2263,9 +2263,8 @@
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
     "Normalpkg2.9.3_2/XMLcatmgr2.2_6/xmlcharent0.3_2 allpassdevelopmentintegration; actualandacceptednormal103, completebothhostsource/failure/normalcustody. DocbookXML5.0_3 all8originaldataporttargets nowpasswith6originaldistributions; nextindependentDTD/schema/privatecatalogs/originalkeywordcontrols,custody/normalintegration. ContinueSGML/sdocbook/meta/XSL\u2192defaultD-BusMANPAGES/X11\u2192fulloriginalGLib/desktopclosure; no xmlto detour.",
     "DocbookXML5.0_3 now normally integrated among104developmentpackages:195payloads/42freshdefaultglobalcatalogDTD/schema/upgradecommands,7originalkeywordcontrols, source/private/failures2282nodes andnormal137nodes verifiedbothhosts. Originalcatalogadvertises4aliasesfor2absentschemas;preservedandunqualified. ContinueSimplifiedDocbook/ISO8879/SGML/meta/XSL todefaultD-BusMANPAGES/X11,thenfullGLib/desktop; imagecapacity/canonical/fleet/physical/releasegatesremainopen.",
-    "Installed104,currentlyaccepted103:holdxmlcharent0.3_2forrealPUBLIC-onlyofflinefailure. PR117candidate0.3_3passes21portregressionsand20realSimplifiedDocbookcausalcommands; completefreshnativeoriginalconstruction+maketest,sealed/all975entityacceptance,bothhostcustody,normalupgradeanddefaultglobalconsumersbeforeresumingSimplifiedDocbookintegration. PreserveMANPAGES/X11andallbroader1.6scope.",
-    "Actual104/accepted103,installedXmlcharent_3heldforoldsharedkeywordduplicatepostinstallfailureonupgrade. NewPUBLICdatafix136defaultglobal/all975definitionsand20Simplifiedcommandsalreadypassread-only. PR117now_4includesupgrade-safeKeywords/xmlcatmgr.ucl;13nativecausalcontrols pass. Rebuild_4/actualmanifest/sealed/custody/normal_3to_4beforeresumingSimplified/ISO8879/SGML/meta/XSL/defaultD-Bus/fullGLib/desktop.",
-    "SharedKeywords/xmlcatmgr.uclfixhas20fullGitpkg-plistconsumers(inventoryrecorded);auditdynamicplistconsumersandrebuild/versiontransitionsforselected1.6packagesbeforeclaimingreleaseupdatecoverage. Thisdoesnotqualifyall20origins."
+    "SharedKeywords/xmlcatmgr.uclfixhas20fullGitpkg-plistconsumers(inventoryrecorded);auditdynamicplistconsumersandrebuild/versiontransitionsforselected1.6packagesbeforeclaimingreleaseupdatecoverage. Thisdoesnotqualifyall20origins.",
+    "Xmlcharent 0.3_4 clean normal upgrade now passes; all 104 development packages accepted. Continue Simplified DocBook/ISO8879/SGML/meta/XSL, original default D-Bus MANPAGES/X11, full GLib original suite and desktop closure. Shared catalog keyword affects 21 known origins; selected-package rebuild/version coverage remains open. Full builds and image assembly remain subject to their original capacity gates."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -4773,13 +4772,13 @@
       "version": "0.3_4",
       "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
       "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/117",
-      "status": "fresh-construction-make-test-sealed-actual-generated-hook-controls-and-bothhost-custody-pass-normal-pending",
+      "status": "normal-upgrade-and-default-consumers-pass-evidence-verified-on-both-hosts",
       "change": "Keep_3localPUBLICrepair;sharedKeywords/xmlcatmgr.ucltypedlookupbeforeaddpreservescorrectregistrationsonpkgupgrade,makesmissingones,doesnotskipdifferent-typecollisions. Abnormallookupandfailedaddremainfailures.",
       "native_causal_commands": 13,
       "renderer_matches_old_actual_manifest_bodies_exactly": true,
       "candidate_keyword_sha256": "5d5c76b5aeb36f480f8cb7bd50e94fdcbeb00437998d000936609580a1eb769a",
       "normal104_prefix_rawdb_base_mounts_unchanged": true,
-      "qualification": "NativeARM64dataresourceand21addedportregressions,notoriginalupstreamselfsuite. Normal_3to_4transaction/defaultglobalacceptancepending;AMD64/canonical/desktop/physical/releasegatesopen.",
+      "qualification": "Native ARM64 development integration of the data resource and 21 added port regressions. Original upstream self-suite, AMD64, canonical lifecycle, desktop, physical and release qualification remain open.",
       "construction_targets": [
         {
           "target": "checksum",
@@ -4850,6 +4849,30 @@
         "archive_sha256": "16b3f8dc6171b399dad9dd8db3bb4fe90c6f4928158d8abc07ec2c92fa9cbb71",
         "all_nodes_verified_on_both_hosts": true,
         "includes": "Failed2190_2to_3replacement/originalhookdiagnostics/rawbeforedb,failedfirstaudit2194,readonlyheld2196data136+20andcausal2197,plusnew_4source/package/private/generatedscripts. Parent_3source/private1916nodebothhostreceiptbound."
+      },
+      "normal_upgrade": {
+        "from_version": "0.3_3",
+        "to_version": "0.3_4",
+        "finished_utc": "2026-11-25T10:23:31.389082+00:00",
+        "original_dependency_checks_and_package_hooks": true,
+        "zero_stderr_and_no_hook_failure_diagnostics": true,
+        "exact_installed_payloads": 25,
+        "explicit_directories": 0,
+        "other_package_prefixes_preserved": 103,
+        "all_four_catalog_files_and_mtimes_unchanged": true,
+        "default_global_entity_commands": 136,
+        "independent_entity_definitions": 975,
+        "simplified_docbook_commands": 20,
+        "added_port_regressions": 21,
+        "accepted_package_count": 104,
+        "frozen_sdk17_and_base_kernel_preserved": true,
+        "both_host_evidence": {
+          "nodes": 538,
+          "archive_bytes": 12685403,
+          "archive_sha256": "6a3f2eed16e04ffbb24c9520e387dfb6a011636a5f1d3dce376ef63bafa912a5",
+          "inventory_sha256": "af913c325310f449bc9d3b41b718de6a975069abe0915c9f2a04abcb4685aca6",
+          "all_nodes_verified_on_both_hosts": true
+        }
       }
     }
   ],
@@ -4896,15 +4919,8 @@
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
   "actual_installed_development_package_count": 104,
-  "current_installed_held_packages": [
-    {
-      "name": "xmlcharent",
-      "version": "0.3_3",
-      "origin": "textproc/xmlcharent",
-      "reason": "Originalcatalogpost-installhookreportsduplicateentriesonactual_2to_3upgrade;pkgreturns0buttransactionnotaccepted. All25newpayloads/103otherprefixesand4catalogbodiesverified;136normaldataand20Simplifiedconsumerspass. Candidate_4fixessharedkeyword,13nativecausalcontrols;freshpackage/normalupgradepending."
-    }
-  ],
-  "last_updated_utc": "2026-11-25T10:22:49.423341+00:00",
+  "current_installed_held_packages": [],
+  "last_updated_utc": "2026-11-25T15:42:49.098824+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -4960,5 +4976,14 @@
     ],
     "known_unique_origin_count": 21,
     "other_literal_Git_references": "OnlyCHANGEShistoryandMk/Scripts/functions.shsyntaxrecognitionremainoutsidepkg-plistsandxhtml-basicMakefile. Generatedindirectconsumersstillrequireselected-closureaudit."
+  },
+  "crash_recovery_20261125": {
+    "native_worker_recovered_with_fresh_overlays": true,
+    "original_crash_disks_preserved": true,
+    "qcow2_scratch_consistency_check": "no errors",
+    "recovered_normal_result_matches_all_saved_summary_fields": true,
+    "sdk104_inventory_matches_precrash_after_upgrade_inventory": true,
+    "normal_upgrade_evidence_captured_and_verified_on_both_hosts_after_recovery": true,
+    "scope": "Completed pre-crash upgrade recovered and retained; no new build, installed-runtime requalification, Pi image or release acceptance implied."
   }
 }
