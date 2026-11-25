@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 93,
+  "normal_development_package_count": 94,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -781,6 +781,45 @@
         }
       },
       "qualification": "Native ARM64 development integration only; AMD64, canonical Component/SDK/TCB/lifecycle and release qualification remain pending."
+    },
+    {
+      "name": "GLib original required bootstrap intermediate",
+      "origin": "devel/glib20@bootstrap",
+      "purpose": "Mandatory prerequisite for original introspection bootstrap and then default GLib; does not qualify default GLib.",
+      "source_revisions": [
+        "511743d7327c93e9ff0117d04f0176ebc572f444"
+      ],
+      "packages": [
+        {
+          "name": "glib-bootstrap-2.88.3,2.pkg",
+          "bytes": 3025970,
+          "sha256": "b34dae0af956e6155aa0ee14d2422d5bc3a9bf78e70e64d6e61c3797c66cd8ea"
+        }
+      ],
+      "sealed_file_payloads": 412,
+      "explicit_directory_payloads": 4,
+      "normal_packages_before": 93,
+      "normal_packages_after": 94,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "actual_commands_per_context": 33,
+      "actual_private_and_default_path_checks": "Shared/static core,GObject,GIO:Unicode/hash/variants/keyfile/regex,signals/refcount/weak-finalization,mainloopidle,GFilechangedcontents/missingerror,UTCweekday/date;resource/schema generation/change/badXML/recovery and actual gsettings memory-backend lookup;D-BuscodegenCcompilation. Manifest-rootdirectoryownership andallfilesverified. Normal loader has no LD_LIBRARY_PATH override. No session/IPC/defaultGLib qualification.",
+      "two_host_evidence": {
+        "source_private_and_three_failed_observers": {
+          "nodes": 7057,
+          "archive_bytes": 61404799,
+          "archive_sha256": "4947f7c76db09cd58a7890193934cb11dad1e63b0aba875cc78b50f61055acd0",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 101,
+          "archive_bytes": 11330822,
+          "archive_sha256": "f6417952e44d76a76a8efa844ea41b32eec9e5287426c04c7ba00656fce75236",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "original_upstream_suite": "Not run: original declared D-Bus, desktop-file-utils, shared-mime-info test tools missing. Original bootstrap flavor option selection preserved; final default GLib must retain DOCS/NLS/MANPAGES/TEST.",
+      "qualification": "Named-intermediate ARM64 development only; defaultGLib/originalfullsuite/AMD64/canonical/release gates remain open."
     }
   ],
   "complete_original_source_suites": {
@@ -1721,7 +1760,8 @@
     "TOML EOF fix PR109 native port/20committedregressions/sealed/default controls now pass; original NumPy/fullCI/AMD64/canonical gates remain pending",
     "GI-docgen full original Graphviz render_dot/SVG test and complete CI/tool closure remain open despite successful default runtime generation; source-built Graphviz required, original test failure retained.",
     "CMake original upstream self-suite and forced BSD-make space-path failure remain open; original source construction, sealed and normal default-finder/GNUmake consumers pass. No full upstream/backend qualification claimed.",
-    "Default GLib remains pending. Follow original required flavor chain: glib20@bootstrap -> gobject-introspection@bootstrap -> glib20@default, preserving final DOCS/NLS/MANPAGES/TEST. Named intermediate bootstrap packages do not qualify default GLib or its full test closure."
+    "Default GLib remains pending. Follow original required flavor chain: glib20@bootstrap -> gobject-introspection@bootstrap -> glib20@default, preserving final DOCS/NLS/MANPAGES/TEST. Named intermediate bootstrap packages do not qualify default GLib or its full test closure.",
+    "Introspection bootstrap configure fails because two inherited Python pkg-config files point to a temporary test installation. Read-only audit of retained registered Python package verifies8031members and finds exactly those2alteredfiles; exact original payload restoration, preservation and regression checks pending. Do not bypass Python header check or alter frozen SDK17."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2066,6 +2106,14 @@
       "forced_BSD_make_with_space_paths": "failed; original full failure retained",
       "default_finder_with_installed_GNUmake": "Sealed and normal consumers pass; all 3797 payloads and 91 inherited packages exact.",
       "qualification": "Additional successful backend does not resolve the failed backend or establish full upstream self-suite qualification."
+    },
+    "IntrospectionBootstrap": {
+      "stage": "Original configure failed before build/tests",
+      "cause": "Inherited Python pkg-config prefix points to a temporary test installation; Python.h is not found",
+      "Python_registered_original_artifact_sha256": "3436996127141576dc3f282cb15fe0696f5f0930ce1f5c611f89f12008687be7",
+      "registered_file_entries_matching_artifact_manifest": 8031,
+      "installed_members_differing_from_original_artifact": 2,
+      "repair": "pending; restore exact retained registered payloads with preservation and independent native compiler/embedding checks; no header-check override"
     }
   },
   "source_built_candidates": [
@@ -2402,8 +2450,8 @@
         "update-mime-database:misc/shared-mime-info"
       ],
       "normal93_prefix_registry_base_mounts_preserved": true,
-      "independent_sealed_default_consumers_and_two_host_custody": "Sealed consumers and source/private/failures custody pass; normal installation pending.",
-      "normal_integration": "pending; not included in current93packages",
+      "independent_sealed_default_consumers_and_two_host_custody": "Pass for named intermediate only; source/private7057nodes andnormal101nodes verified on both hosts.",
+      "normal_integration": "Pass:412files+4manifestdirectories and93inheritedpackages verified; same33commands pass with default normal loader. Included as required intermediate among94developmentpackages.",
       "qualification": "Original native construction observation for mandatory intermediate only. Default GLib, original full test closure, AMD64, canonical and release qualification remain pending.",
       "sealed_files": 412,
       "sealed_explicit_directories": 4,
