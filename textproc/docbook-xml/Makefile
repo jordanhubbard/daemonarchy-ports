@@ -1,6 +1,6 @@
 PORTNAME=	docbook
 PORTVERSION=	5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	${DBFILES:C,(.*):(.*),https://docbook.org/xml/\1/:\2,:C,:docbook-xml-([0-9]+).([0-9]+).?([0-9]*),:db\1\2\3,:C,:docbook-([0-9]+).([0-9]+).?([0-9]*),:db\1\2\3,}
 PKGNAMESUFFIX=	-xml

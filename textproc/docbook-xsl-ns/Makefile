@@ -1,5 +1,6 @@
 PORTNAME=	docbook-xsl-ns
 PORTVERSION=	1.79.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/docbook/docbook-xsl-ns/${PORTVERSION}:src \
 		SF/docbook/docbook-xsl-doc/${PORTVERSION}:doc

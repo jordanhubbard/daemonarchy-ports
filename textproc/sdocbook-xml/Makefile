@@ -1,6 +1,6 @@
 PORTNAME=	sdocbook-xml
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.oasis-open.org/docbook/xml/simple/${PORTVERSION}/
