@@ -1629,7 +1629,8 @@
     "Complete AsyncGenerator/Pycparser peers Sniffio/SortedContainers/Hatch plugins/Cython original self-suites and declared test-tool closure",
     "Complete Attrs declared original self-suite tools and CFFI conditional meson-python/virtualenv/installed-CLI coverage",
     "TOML EOF fix PR109 native port/20committedregressions/sealed/default controls now pass; original NumPy/fullCI/AMD64/canonical gates remain pending",
-    "GI-docgen full original Graphviz render_dot/SVG test and complete CI/tool closure remain open despite successful default runtime generation; source-built Graphviz required, original test failure retained."
+    "GI-docgen full original Graphviz render_dot/SVG test and complete CI/tool closure remain open despite successful default runtime generation; source-built Graphviz required, original test failure retained.",
+    "CMake original upstream self-suite and forced BSD-make space-path failure remain open; original source construction and sealed default-finder/GNUmake consumers pass. Normal integration pending."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -1968,6 +1969,12 @@
       "original_test_filters_sources_kernel_policy_modified": false,
       "sealed_and_default_static_shared_kqueue_consumers": "pass",
       "qualification": "Full suite remains failed despite successful development runtime integration."
+    },
+    "CMake": {
+      "upstream_suite": "Not run: original port BUILD_TESTING OFF/no selected test bridge",
+      "forced_BSD_make_with_space_paths": "failed; original full failure retained",
+      "default_finder_with_installed_GNUmake": "sealed consumer passes; normal integration pending",
+      "qualification": "Additional successful backend does not resolve the failed backend or establish full upstream self-suite qualification."
     }
   },
   "source_built_candidates": [
@@ -2059,6 +2066,79 @@
       },
       "normal_integration": "Pass: all 15 payloads and 90 inherited packages verified; actual static/shared default-loader consumers pass. See normal libuv group. Full original suite remains failed.",
       "qualification": "Development observations only; full original suite retains three wildcard-address network failures. Canonical and release admission remain unearned."
+    },
+    {
+      "name": "CMake-core",
+      "source_revision": "511743d7327c93e9ff0117d04f0176ebc572f444",
+      "package": {
+        "bytes": 13852789,
+        "sha256": "afaece9e38edddf7c857c22ffbd9c7eae99377f083f819db92d6d551781e83f0"
+      },
+      "package_name": "cmake-core-3.31.12_3.pkg",
+      "original_construction_targets": [
+        {
+          "target": "checksum",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "extract",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "patch",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "configure",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "build",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "stage",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "check-plist",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "package",
+          "exit": 0,
+          "uid": 65534
+        }
+      ],
+      "original_selected_options": [
+        "DOCS"
+      ],
+      "original_upstream_self_suite": "Not run: unchanged original InitialCache.cmake sets BUILD_TESTING OFF and the port exposes no selected test bridge. No skipped/passing upstream cases invented.",
+      "sealed_payloads": 3797,
+      "actual_sealed_checks": "Twenty real CLI commands exercise packaged resource root, C/CXX/libuv configure/build, changed generated header and executable output, CTest twice per run over three states, malformed configuration and compilation rejection/recovery, installation and CPack TGZ payload execution. Source/build/install/package paths contain spaces.",
+      "actual_CLI_commands": 20,
+      "own_CTest_cases_per_run": 2,
+      "own_CTest_completed_runs": 3,
+      "actual_default_make_program": "/usr/local/bin/gmake",
+      "actual_default_make_sha256": "3e232a3a9cae030ed971f4068a7b979101c5522debd5a7d7aae6aa9529b338ac",
+      "CMAKE_MAKE_PROGRAM_override": false,
+      "preserved_failure": "First sealed variant forced BSD /usr/bin/make and failed to build the project in paths containing spaces. That backend remains unqualified. Additional successful variant keeps the same paths/project/assertions and uses the original finder selecting installed GNUmake. This does not resolve the failed BSD-make case.",
+      "normal91_complete_prefix_rawdb_unchanged": true,
+      "source_private_and_failure_evidence": {
+        "nodes": 43715,
+        "archive_bytes": 157636236,
+        "archive_sha256": "099ca2b862bf0ab5a6d35c7f75431d3211f966648523dedf18644bfbb71d49c0",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "normal_integration": "pending",
+      "qualification": "Development observations only; upstream self-suite, forced BSD-make space paths, AMD64, canonical and release qualification remain open."
     }
   ]
 }
