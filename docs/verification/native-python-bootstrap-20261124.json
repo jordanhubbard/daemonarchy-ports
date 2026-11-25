@@ -2353,6 +2353,22 @@
       "cause": "First own C client decoded newline escapes into source string literals; second static command lacked canonical dependency library search.",
       "correction": "Preserve literal C escapes; independently replay original pkgconfig static metadata with canonical /usr/local library search intact. That replay confirms a product metadata defect rather than qualifying a package through a manual flag. All failed inputs/outputs and unchanged-prefix guards retained.",
       "product_status": "Original package held; PR113 repairs missing NLS private dependency and adds regression."
+    },
+    {
+      "package": "Libgcrypt",
+      "causes": [
+        "Own scanner passed a zero byte count instead of the input length.",
+        "Own valid S-expression used an unquoted numeric atom, parsed as canonical-length syntax.",
+        "Own debug-dump substring check failed because a word crossed hexdump rows."
+      ],
+      "corrections": "Use explicit lengths and quoted numeric atoms, retaining strict malformed library input rejection. Reconstruct exact bytes from debug-dump output; the debug formatter is not a strict validator, so its negative CLI control uses missing-file I/O. Preserve all three failed observers and two actual cores. Continue from33journaled commands by revalidating actual outputs and executing only eight remaining CLI commands; do not relabel or rerun the successful crypto checks.",
+      "original_sources_tests_and_assertions_changed": false,
+      "two_host_evidence": {
+        "nodes": 2879,
+        "archive_bytes": 42567617,
+        "archive_sha256": "a0642cdb15dc052904ad92a6cec72bb8eaac24ebd66bca11743f1aaba136d2ca",
+        "all_nodes_verified_on_both_hosts": true
+      }
     }
   ],
   "incomplete_original_source_suites": {
@@ -3297,7 +3313,23 @@
         "sha256": "bf6136f848e33acee6738a26c09bf06b305933cfca65fc50cab49b84ace836d8"
       },
       "guards": "Whole99prefix/logicalregistry/base/kernel/mount/source unchanged. All original source/distfiles/objects/stage/package/logs retained.",
-      "qualification": "Source-built development candidate only. Sealed/default package API/CLI acceptance and both-host custody pending; not installed. AMD64, optional large-data coverage, canonical/lifecycle/release remain open."
+      "qualification": "Source/defaulttests/sealed acceptance and both-host source/private/failed-observer custody pass. Normal install is in progress, not yet qualified in this report. AMD64, optional large-data coverage and canonical/lifecycle/release remain open.",
+      "independent_sealed_acceptance": {
+        "payloads": 27,
+        "declared_directories": 0,
+        "actual_commands": 41,
+        "composition": "33 actual journaled commands revalidated from immutable outputs without rerunning crypto APIs; eight remaining CLI checks executed in a separate completion. The primary observer remains failed and preserved.",
+        "crypto_oracles": "Six shared/static states: SHA256/SHA512/HMAC/PBKDF2 and MPI math/inverse compared to Python; AES-CBC/GCM ciphertext and tags compared to observed baseOpenSSL, with MAC/GCM tamper rejection/errors/recovery.",
+        "S_expressions_and_CLI": "Strict library malformed-input rejection, quoted numeric atom parsing and exact canonical bytes; debug-dump output reconstructs original bytes rather than substring matching across wrapped rows. Packaged HMAC/calculator/debug-dump changed inputs, I/O/option errors and recovery.",
+        "bindings": "Original transitive static metadata; no hand-added dependencies. Native consumers have no loader override; sealed packaged CLI explicitly selects its own DSO. Whole99prefix/rawdb preserved."
+      },
+      "two_host_evidence": {
+        "nodes": 2879,
+        "archive_bytes": 42567617,
+        "archive_sha256": "a0642cdb15dc052904ad92a6cec72bb8eaac24ebd66bca11743f1aaba136d2ca",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "normal_Info_control": "Original indexinfo reconstructs current index exactly, then predicts only its aggregate update for packaged gcrypt.info with all old entries preserved; original normal ldconfig/indexinfo scripts remain enabled."
     }
   ],
   "installed_Python_metadata_recovery": {
