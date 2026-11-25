@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 103,
+  "normal_development_package_count": 104,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -2261,7 +2261,8 @@
     "Shared MIME-Info is integrated among98developmentpackages; full default GLib original test closure now needs D-Bus. Preserve original D-Bus MANPAGES/X11 defaults: libxslt/libgcrypt/libgpg-error and DocBook/catalog dependencies are next. Canonical/full release and physical platform scope remains open.",
     "Fixed default libgpg-error1.61_1 is integrated among99developmentpackages, PR113. Continue original default libgcrypt(DOCS/INFO/STATIC), libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and defaultD-Bus(MANPAGES/X11) closure, then fullGLib original suite. All broad release/fleet/physical/canonical gates remain open.",
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
-    "Normalpkg2.9.3_2/XMLcatmgr2.2_6/xmlcharent0.3_2 allpassdevelopmentintegration; actualandacceptednormal103, completebothhostsource/failure/normalcustody. DocbookXML5.0_3 all8originaldataporttargets nowpasswith6originaldistributions; nextindependentDTD/schema/privatecatalogs/originalkeywordcontrols,custody/normalintegration. ContinueSGML/sdocbook/meta/XSL\u2192defaultD-BusMANPAGES/X11\u2192fulloriginalGLib/desktopclosure; no xmlto detour."
+    "Normalpkg2.9.3_2/XMLcatmgr2.2_6/xmlcharent0.3_2 allpassdevelopmentintegration; actualandacceptednormal103, completebothhostsource/failure/normalcustody. DocbookXML5.0_3 all8originaldataporttargets nowpasswith6originaldistributions; nextindependentDTD/schema/privatecatalogs/originalkeywordcontrols,custody/normalintegration. ContinueSGML/sdocbook/meta/XSL\u2192defaultD-BusMANPAGES/X11\u2192fulloriginalGLib/desktopclosure; no xmlto detour.",
+    "DocbookXML5.0_3 now normally integrated among104developmentpackages:195payloads/42freshdefaultglobalcatalogDTD/schema/upgradecommands,7originalkeywordcontrols, source/private/failures2282nodes andnormal137nodes verifiedbothhosts. Originalcatalogadvertises4aliasesfor2absentschemas;preservedandunqualified. ContinueSimplifiedDocbook/ISO8879/SGML/meta/XSL todefaultD-BusMANPAGES/X11,thenfullGLib/desktop; imagecapacity/canonical/fleet/physical/releasegatesremainopen."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -4456,7 +4457,7 @@
       "component": "docbook-xml",
       "version": "5.0_3",
       "source_revision": "d65aae9b1fb9293f1d4d26da12aaf3c334b10f99",
-      "status": "original-constructors-sealed-private-consumers-and-original-keywords-pass-normal-pending",
+      "status": "normally-integrated-default-global-consumers-pass-development-only",
       "NO_BUILD_NO_ARCH_data_resource": true,
       "original_selected_options": [],
       "original_distributions": 6,
@@ -4508,7 +4509,7 @@
       },
       "declared_dependencies": "Installed source-built xmlcharent0.3_2 catalog andxmlcatmgr2.2_6; originalBUILD/RUN constraints preserved.",
       "whole103_prefix_registry_base_mounts_selected_sources_unchanged": true,
-      "qualification": "Native ARM64 data resource development only. Independent checks are not an original upstream test suite. Two advertised schemas absent from original distribution remain unqualified; aliases preserved. Normal integration pending; canonical/lifecycle, AMD64, desktop, physical and release acceptance remain open.",
+      "qualification": "Native ARM64 data resource development only. Independent consumers are not an original upstream test suite. Four advertised aliases for two absent schemas remain explicit unqualified gaps. Canonical/lifecycle, AMD64, desktop, physical and release acceptance remain open.",
       "sealed_payloads": 195,
       "declared_directories": 0,
       "private_consumers": {
@@ -4567,6 +4568,25 @@
         "archive_bytes": 25593828,
         "archive_sha256": "d39dc2864e762391bd4eca5de96d7f37d3eaa265f6c44a4b024b7dfd67615be9",
         "all_nodes_verified_on_both_hosts": true
+      },
+      "normal_integration": {
+        "normal_packages_before": 103,
+        "normal_packages_after": 104,
+        "sealed_and_installed_payloads": 195,
+        "original_local_only_solver_dependencies_and_keyword_hooks": true,
+        "exactly_two_predicted_catalog_ports_updates": true,
+        "two_masters_and_103_inherited_package_prefixes_preserved": true,
+        "fresh_actual_commands": 42,
+        "default_global_XML_and_SGML_catalogs": true,
+        "catalog_and_loader_environment_overrides": false,
+        "normal_exit_vector_matches_private": true,
+        "frozen17_base_mounts_advisory_preserved": true,
+        "both_host_custody": {
+          "nodes": 137,
+          "archive_bytes": 12565167,
+          "archive_sha256": "17c841de612662a9b85f1c21f510c18a9d82be96a30d4b95944d2db677335ac3",
+          "all_nodes_verified_on_both_hosts": true
+        }
       }
     }
   ],
@@ -4612,7 +4632,7 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 103,
+  "actual_installed_development_package_count": 104,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-25T09:38:16.099437+00:00"
+  "last_updated_utc": "2026-11-25T09:40:10.457810+00:00"
 }
