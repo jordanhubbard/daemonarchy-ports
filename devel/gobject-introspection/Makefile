@@ -40,6 +40,8 @@ TEST_LIB_DEPENDS=	libcairo.so:graphics/cairo
 MESON_ARGS+=	-Dcairo=disabled
 OPTIONS_DEFINE=
 PREFIX=		${LOCALBASE}/${PORTNAME}-bootstrap
+# Scanner test inputs need the same bootstrap metadata search path as builds.
+TEST_ENV+=		${MAKE_ENV:MPKG_CONFIG_LIBDIR=*}
 .endif
 
 .include <bsd.port.pre.mk>
