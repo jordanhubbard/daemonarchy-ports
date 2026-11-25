@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 101,
+  "normal_development_package_count": 102,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -1160,6 +1160,48 @@
       },
       "observer_scope_note": "Reusable API fixture retains older descriptive scope text about private context and masked DocBook failures. The fresh normal caller records real /usr/local paths/default loader and binds the repaired original_test_audit separately; raw old descriptions/failures were preserved, not relabeled.",
       "qualification": "Native ARM64 development only; no AMD64, fully static system, canonical/lifecycle, desktop, physical hardware or release admission."
+    },
+    {
+      "name": "XMLcatmgr attribute and entry validation repair, genuine normal upgrade",
+      "source_revisions": [
+        "b3e7f9b7235c73012d5b52ae708fb1f4df9f59a0"
+      ],
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/115",
+      "packages": [
+        {
+          "name": "xmlcatmgr-2.2_6.pkg",
+          "bytes": 24180,
+          "sha256": "4bae74d6ffc5e801f32d5e413dfda05f51560af8e7b4c2eaaaec36ef9a775f1f"
+        }
+      ],
+      "original_selected_options": [
+        "DOCS"
+      ],
+      "sealed_payloads": 11,
+      "declared_directories": 2,
+      "exact_original_generated_global_catalogs": 4,
+      "accepted_normal_packages_before": 101,
+      "accepted_normal_packages_after": 102,
+      "actual_registry_packages_before": 102,
+      "actual_registry_packages_after": 102,
+      "transition": "Replace previously installedHELD2.2_5 with2.2_6 via normallyintegratedrepairedpkg2.9.3_2. Preserve originaldependencies/hooks and101otherpackageprefixes.",
+      "fresh_private_and_normal_consumer_commands_each": 67,
+      "added_port_scenarios": 10,
+      "original_script_control_commands": 37,
+      "original_upstream_selfsuite": "None: originalcheckbuild-only; addedregressions andindependentconsumercommands remainseparatecounts.",
+      "two_host_evidence": {
+        "source_private_failure": {
+          "nodes": 1684,
+          "archive_sha256": "7409d6405afc00c45f30b4066aee00bfd9f43e11518bfdca2c850ac74b5fea0d",
+          "both_hosts_all_nodes_verified": true
+        },
+        "normal_transaction": {
+          "nodes": 179,
+          "archive_sha256": "0ed16839a062fd8844b1344610e87008c8568610bc52d7724ee9987ab9d7793a",
+          "both_hosts_all_nodes_verified": true
+        }
+      },
+      "qualification": "NativeARM64developmentonly; canonicalSDK/TCB/lifecycle,desktop/hardware/releaseopen."
     }
   ],
   "complete_original_source_suites": {
@@ -2187,9 +2229,8 @@
     "Shared MIME-Info is integrated among98developmentpackages; full default GLib original test closure now needs D-Bus. Preserve original D-Bus MANPAGES/X11 defaults: libxslt/libgcrypt/libgpg-error and DocBook/catalog dependencies are next. Canonical/full release and physical platform scope remains open.",
     "Fixed default libgpg-error1.61_1 is integrated among99developmentpackages, PR113. Continue original default libgcrypt(DOCS/INFO/STATIC), libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and defaultD-Bus(MANPAGES/X11) closure, then fullGLib original suite. All broad release/fleet/physical/canonical gates remain open.",
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
-    "Libxslt PR114 repaired package is now integrated among101developmentpackages. Strict original DocBook results,751mainrunnercases/0errors,8harnesscontrols,30sealed and30freshnormalcommands pass. Original/repaired source/private and normal evidence verified on both hosts. Continue xmlcatmgr/DocBook/catalog/defaultD-Bus/fullGLib closure.",
-    "Xmlcatmgr2.2_6 B3 full ports package/10regressions/strict67private/37originalscripts pass,1684nodes verified in Sparky nativeVM and Madmax. Installed2.2_5 stillHELD; normal upgrade pending original solver classification diagnosis and exact versioned-license path transition. Continue DocBook/defaultD-Bus/fullGLib closure afterward.",
-    "PR116 pkg2.9.3_2 now normally integrated, originaldeps/hooks active,77payloads/1dir/34freshnormalATF pass; source/private/failure andnormalcapsules verifiedbothhosts. Fullpkgfrontendsuite/AMD64/canonical/release gaps remain. XML_5-to_6 genuine local-only upgrade is next/in progress; acceptednormalcount remains101 until strictXMLnormalacceptance."
+    "PR116 pkg2.9.3_2 now normally integrated, originaldeps/hooks active,77payloads/1dir/34freshnormalATF pass; source/private/failure andnormalcapsules verifiedbothhosts. Fullpkgfrontendsuite/AMD64/canonical/release gaps remain. XML_5-to_6 genuine local-only upgrade is next/in progress; acceptednormalcount remains101 until strictXMLnormalacceptance.",
+    "Normalpkg2.9.3_2 andXMLcatmgr2.2_6 updates nowpass, acceptednormal102/actual102. Theircomplete source/private/failure/normalcapsules areverifiedbothhosts; no heldXML_5remainsinstalled. Continuexmlcharent andDocBookcatalog data/meta closure requiredbydefaultD-Bus MANPAGES/X11, then fulloriginalGLibsuite/desktoppackages. Preserve all defaults and earlierfailures; no unrelatedxmlto chainneededbyactualD-Bus metadata."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -3976,7 +4017,9 @@
         "core_bytes": 11128832,
         "core_sha256": "368f75ee298b47fb5f2e360f2d9025433c31ee03309775012625eb3301e620fc",
         "all_install_integrity_postguards_pass": true,
-        "corrected_candidate": "b3e7f9b7235c73012d5b52ae708fb1f4df9f59a0"
+        "corrected_candidate": "b3e7f9b7235c73012d5b52ae708fb1f4df9f59a0",
+        "currently_installed": false,
+        "historical_hold_superseded_by": "Accepted normal2.2_6 update after repairedpkg2.9.3_2; originalcrash/privateobservergap remain retained, not relabeled."
       }
     },
     {
@@ -3984,7 +4027,7 @@
       "version": "2.2_6",
       "source_revision": "b3e7f9b7235c73012d5b52ae708fb1f4df9f59a0",
       "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/115",
-      "status": "full-native-ports-package-strict-private-and-original-scripts-pass-normal-upgrade-pending",
+      "status": "normal-native-development-upgrade-and67strict-consumers-pass-complete-two-host-custody",
       "native_causal_control": {
         "old_installed_binary_rejected_by_strict_regression": true,
         "BSD_patch_zero_fuzz": true,
@@ -3992,7 +4035,7 @@
         "added_named_scenarios_pass": 10,
         "held102_prefix_rawdb_frozen17_original_sources_base_mounts_unchanged": true
       },
-      "qualification": "Full native ARM64 default ports package and ten added regressions pass; strict private67 and original-script37 controls pass, with1684nodes original/failure/core evidence verified on both hosts. Normal upgrade still pending; installed2.2_5 remains HELD. No canonical/GUI/hardware/release claim.",
+      "qualification": "FullnativeARM64defaultports/source10addedregressions/private67/originalscripts37 and freshnormal67consumers/11payloads/2dirs/4catalogs pass. Source/private/failure1684nodes andnormal179nodes verified in Sparky nativeVM and Madmax. No original XMLcatmgr selfsuite exists; no canonical/desktop/hardware/release admission.",
       "construction_targets": [
         {
           "target": "checksum",
@@ -4105,9 +4148,30 @@
         "storage_scope": "Original archive retained and fully verified inside allocated native VM on Sparky; independent copy streamed directly to Madmax and fully verified. No extra compressed archive on Sparky Linux filesystem."
       },
       "normal_upgrade_pending": {
-        "local_only_solver_dry_run": "Returned1 and classified2.2_6asnewinstallation despite existing2.2_5 in same mounted database. No package installed; digest/SQLite bookkeeping changed, separate read-only audit2083 confirms payloads/catalogs/inherited101/frozen/base/mounts and reseals102held. Retain anomaly for diagnosis.",
-        "guarded_add_preflight": "Stopped before installation: revision changes three versioned license paths. No add ran. Later upgrade guards must account for exact old/new license bodies and directories through original package upgrade semantics; do not waive old paths as untracked leftovers.",
-        "solver_diagnosis": "Causally reproduced missing installed candidate in pkg file-request solver path. PR116 fixes it; private genuine upgrade proves normal old-license cleanup/hooks and34upgrade-fileATF cases pass. Fresh pkg package/acceptance/integration still required; no live xmlcatmgr update."
+        "resolved": "Pkg2.9.3_2 repair enables genuine original solver upgrade; explicit license-path transition guarded. Normal2118 passes all67strict consumers and original global catalogs. Entireoriginalfailed2080/2084/2088 and_5core retained separately."
+      },
+      "normal_integration": {
+        "installed": true,
+        "accepted_native_development": true,
+        "original_local_only_solver_dependencies_hooks_enforced": true,
+        "installed_manager": "pkg2.9.3_2",
+        "all11payloads_two_dirs_four_catalogs_exact": true,
+        "three_old_license_files_removed_new_three_exact": true,
+        "all101_other_package_prefixes_preserved": true,
+        "fresh_normal_consumer_commands": 67,
+        "status_vector_matches_strict_sealed": true,
+        "all_statuses_nonnegative_below128": true,
+        "default_loader_without_override": true,
+        "actual_registry_packages_before": 102,
+        "actual_registry_packages_after": 102,
+        "accepted_normal_before": 101,
+        "accepted_normal_after": 102,
+        "custody": {
+          "nodes": 179,
+          "archive_bytes": 12559378,
+          "archive_sha256": "0ed16839a062fd8844b1344610e87008c8568610bc52d7724ee9987ab9d7793a",
+          "both_hosts_all_nodes_verified": true
+        }
       }
     },
     {
