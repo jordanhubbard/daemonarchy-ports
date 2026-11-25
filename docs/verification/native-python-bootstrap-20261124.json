@@ -2134,7 +2134,7 @@
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
     "Libxslt PR114 fresh construction, strict original DocBook results,751mainrunnercases,8harnesscontrols and30sealedconsumercommands pass. Normal integration awaits second verified evidence copy under70GiBreserve; then resume DocBook/catalog/defaultD-Bus/fullGLib closure.",
     "Xmlcatmgr original2.2_4isheldforinvalidXMLserializationofvalidURIqueryampersands. PR115 addsencoding/decodingand8nativepost-testscenarios;freshcurrentheadbuild/independentacceptance/custody/normalintegrationpending. Optionaldeprecatedlibxml2internalSGMLconversioncrashretainedseparately;publicSGMLresolutionpasses.",
-    "Xmlcatmgr PR115 current2.2_5passesfreshall8constructiontargets/8addedregressions/67independentconsumercommands;3103nodefullsource/private/failures/core capsuleverifiedonSparky. Needsecondhostcopyandexactoriginal4generatedcatalogscriptcontrolsandnormalintegrationbeforeDocBook/defaultD-Busclosure. Original2.2_4remainsheld."
+    "Xmlcatmgr PR115 current2.2_5passesfreshall8constructiontargets/8addedregressions/67independentconsumercommands;3103nodefullsource/private/failures/core capsuleverifiedonSparky. Original four-catalog script controls now pass37actualcommands;384node control capsule verified on Sparky. NeedsecondhostcopyandnormalintegrationbeforeDocBook/defaultD-Busclosure. Original2.2_4remainsheld."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -3826,7 +3826,64 @@
       },
       "guards": "Whole100prefix/rawdb/base/kernel/mounts/advisory unchanged;source/testinputidentitiesverified. No normalinstallation.",
       "canonical_gates": "At exactcodehead projectauthority and2selectedlocks pass;verifyexit1/nestedfalse becausecurrentcanonicalreceiptmissing.",
-      "qualification": "NativeARM64sourceandsealedacceptancepass. Originalgloballygeneratedcatalogscriptcontrols,secondhostcustody,normalintegration,AMD64/canonicalSDK-TCB/lifecycle/desktop/hardware/release remain open."
+      "qualification": "Native ARM64 source, sealed acceptance and bounded original-script file-effects controls pass. Second-host custody, normal package installation/trigger delivery, AMD64, canonical SDK/TCB/lifecycle, desktop/hardware and release qualification remain open.",
+      "original_package_script_controls": {
+        "actual_commands": 37,
+        "exit_zero": 35,
+        "expected_detached_consumer_exit_four": 2,
+        "scripts_manifest_bound_and_unmodified": true,
+        "expected_normal_catalog_files": {
+          "usr/local/share/sgml/catalog": {
+            "kind": "file",
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "flags": 0,
+            "bytes": 66,
+            "sha256": "b5494f5f944b245d05230d42614fa49ab1723e66d7b233cd90fdd35b9a22bfed"
+          },
+          "usr/local/share/sgml/catalog.ports": {
+            "kind": "file",
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "flags": 0,
+            "bytes": 41,
+            "sha256": "07a9676414220ca2242b661db16751266138f3fbc22ce4a9adac2a62f2d9f1e4"
+          },
+          "usr/local/share/xml/catalog": {
+            "kind": "file",
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "flags": 0,
+            "bytes": 356,
+            "sha256": "57f3e485d96e36c0455fe536b8f38bf4277b102835de8d65716e9edfc5e0c28d"
+          },
+          "usr/local/share/xml/catalog.ports": {
+            "kind": "file",
+            "mode": 420,
+            "uid": 0,
+            "gid": 0,
+            "flags": 0,
+            "bytes": 286,
+            "sha256": "024f8e40cc4633a7329a6a269fac116bfde8b525eb7357be0a163903973024a0"
+          }
+        },
+        "coverage": "Exact four generated catalogs; phase gating; repeat installation preserves bytes/modes/owners/flags/mtime; original compiled XML/SGML defaults and real public libxml2 master-child resolution, DTD entity/default-attribute parsing; user entries survive deinstallation; detached consumers fail as expected; reinstallation recovers; empty-catalog cleanup and recreation pass.",
+        "fixture_boundary": "No devfs/mount/device nodes: /dev/null inside each test directory is a regular capture sink used only by the original two write-only lookup redirects, with fd0 inherited from the real host null device. This is an explicitly limited script-file-effects control, not a normal OS/package installation; normal integration remains required.",
+        "normal_package_trigger_delivery_tested": false,
+        "SDK100_complete_prefix_rawdb_unchanged": true,
+        "base_mounts_borrowed_resources_unchanged": true,
+        "retained_failed_fixture": "First control copied libxml2 to the wrong path because the ldd resource probe inherited the observer Python library path; retained as failed. Fresh corrected control uses a clean resource-probe environment and proves canonical /usr/local/lib linkage.",
+        "custody": {
+          "nodes": 384,
+          "archive_bytes": 12793465,
+          "archive_sha256": "bfc380c085362619652a7aca47fd3887de87e975c476aad264daf9b34b75da49",
+          "Sparky_all_nodes_verified": true,
+          "second_host_all_nodes_verified": false
+        }
+      }
     }
   ],
   "installed_Python_metadata_recovery": {
