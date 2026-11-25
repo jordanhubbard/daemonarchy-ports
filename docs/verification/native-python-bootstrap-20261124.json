@@ -4456,7 +4456,7 @@
       "component": "docbook-xml",
       "version": "5.0_3",
       "source_revision": "d65aae9b1fb9293f1d4d26da12aaf3c334b10f99",
-      "status": "all8original-data-port-construction-targets-pass-private-and-normal-pending",
+      "status": "original-constructors-sealed-private-consumers-and-original-keywords-pass-normal-pending",
       "NO_BUILD_NO_ARCH_data_resource": true,
       "original_selected_options": [],
       "original_distributions": 6,
@@ -4508,7 +4508,66 @@
       },
       "declared_dependencies": "Installed source-built xmlcharent0.3_2 catalog andxmlcatmgr2.2_6; originalBUILD/RUN constraints preserved.",
       "whole103_prefix_registry_base_mounts_selected_sources_unchanged": true,
-      "qualification": "Constructor/data package only. No compilation or empty-test claim. IndependentDTD/schema/canonicalcatalogacceptance,originalkeywordcontrols,custody/normalintegrationstillpending."
+      "qualification": "Native ARM64 data resource development only. Independent checks are not an original upstream test suite. Two advertised schemas absent from original distribution remain unqualified; aliases preserved. Normal integration pending; canonical/lifecycle, AMD64, desktop, physical and release acceptance remain open.",
+      "sealed_payloads": 195,
+      "declared_directories": 0,
+      "private_consumers": {
+        "actual_commands": 42,
+        "DTD_versions": [
+          "4.1.2",
+          "4.2",
+          "4.3",
+          "4.4",
+          "4.5",
+          "5.0"
+        ],
+        "provided_XML_schema_profiles": [
+          "rng/docbook.rng",
+          "rng/docbookxi.rng",
+          "xsd/docbook.xsd"
+        ],
+        "acceptance": "Valid article and book values, invalid-content rejection and recovery for each shipped DTD/schema; PUBLIC/URI catalog resolution, four SGML root mappings, supplied db4-upgrade XSL followed by RelaxNG validation. Clean loader, nobody actor, original packaged bytes preserved. Derived private root catalogs only; normal default-global integration remains separate."
+      },
+      "original_keyword_controls": {
+        "actual_commands": 7,
+        "exact_manifest_bodies": true,
+        "only_two_catalog_ports_changes": true,
+        "two_masters_preserved": true,
+        "existing_Xmlcharent_and_user_entries_preserved": true,
+        "remove_and_reinstall_pass": true
+      },
+      "missing_advertised_catalog_targets": [
+        {
+          "version": "5.0",
+          "name": "http://www.oasis-open.org/docbook/xml/5.0/xsd/docbookxi.xsd",
+          "target": "xsd/docbookxi.xsd"
+        },
+        {
+          "version": "5.0",
+          "name": "http://docbook.org/xml/5.0/xsd/docbookxi.xsd",
+          "target": "xsd/docbookxi.xsd"
+        },
+        {
+          "version": "5.0",
+          "name": "http://www.oasis-open.org/docbook/xml/5.0/xsd/xi.xsd",
+          "target": "xsd/xi.xsd"
+        },
+        {
+          "version": "5.0",
+          "name": "http://docbook.org/xml/5.0/xsd/xi.xsd",
+          "target": "xsd/xi.xsd"
+        }
+      ],
+      "observer_failures_preserved": [
+        "First observer misparsed xmlcatalog mixed SYSTEM-miss/URI-success stdout; six DTD profiles passed before stop.",
+        "Second observer expected converter title at article/title, but original supplied stylesheet correctly produces article/info/title; schema checks passed before stop. Fresh corrected run requires exact converted location and values."
+      ],
+      "two_host_source_private_failed_and_keyword_custody": {
+        "nodes": 2282,
+        "archive_bytes": 25593828,
+        "archive_sha256": "d39dc2864e762391bd4eca5de96d7f37d3eaa265f6c44a4b024b7dfd67615be9",
+        "all_nodes_verified_on_both_hosts": true
+      }
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -4555,5 +4614,5 @@
   },
   "actual_installed_development_package_count": 103,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-25T09:21:31.883197+00:00"
+  "last_updated_utc": "2026-11-25T09:38:16.099437+00:00"
 }
