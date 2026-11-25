@@ -2652,11 +2652,22 @@
         "bytes": 51832,
         "sha256": "0e2444620e676a329c3d72dee805dad76ae20fde9aa4afb557333f36f1a787a9"
       },
-      "qualification": "Not installed. Sealed/default CLI validation/edit/install/cache/change/error/recovery qualification pending.",
+      "qualification": "HELD: original build/intent-cache target pass, but packaged validator rejects a specification-valid optional trailing semicolon in Implements. Strict default-loader binding succeeds in corrected sealed launcher. No normal install.",
       "observer_failures_retained": [
         "Initial launcher supplied FLAVOR=default to a nonflavored port; corrected launcher omits it.",
         "First sealed launcher retained an obsolete bootstrap library path ahead of normal lib. The strict ldd check rejected that dependency binding before running CLI fixtures. Corrected sealed launcher uses normal loader without LD_LIBRARY_PATH."
-      ]
+      ],
+      "packaged_validation_failure": {
+        "input": "Implements=org.freedesktop.Terminal;",
+        "actual": "Exit1: empty interface name reported for the optional final list terminator.",
+        "source_cause": "handle_implements_key splits on semicolons then validates the final empty split element as an interface.",
+        "normative_references": [
+          "https://specifications.freedesktop.org/desktop-entry/latest/value-types.html",
+          "https://specifications.freedesktop.org/desktop-entry/latest/recognized-keys.html"
+        ],
+        "contract": "Implements is string(s); multiple-value keys may optionally terminate with a semicolon.",
+        "repair": "Pending reviewed source fix and additive regression preserving invalid interior interface rejection. Original package/failed fixtures retained."
+      }
     }
   ],
   "installed_Python_metadata_recovery": {
