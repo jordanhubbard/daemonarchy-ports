@@ -52,6 +52,8 @@ run_case chunk-recovery pass xtchunk
 
 cat >"$trial/reject-generator" <<'EOF'
 #!/bin/sh
+# Single output is redirected to a file; chunk diagnostics use stderr files.
+echo DAEMONARCHY_DOCBOOK_FAILURE_CONTROL
 echo DAEMONARCHY_DOCBOOK_FAILURE_CONTROL >&2
 exit 42
 EOF
