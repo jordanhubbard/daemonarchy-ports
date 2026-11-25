@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 99,
+  "normal_development_package_count": 100,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -1047,6 +1047,64 @@
         }
       },
       "qualification": "Development runtime only; AMD64/GUI/physical/canonical/lifecycle/release remain open."
+    },
+    {
+      "name": "Libgcrypt default crypto and independent real consumers",
+      "source_revisions": [
+        "486f80fdbab7188d158d8bf23634a9d0ae9c1539"
+      ],
+      "packages": [
+        {
+          "name": "libgcrypt-1.12.4.pkg",
+          "bytes": 1159860,
+          "sha256": "bf6136f848e33acee6738a26c09bf06b305933cfca65fc50cab49b84ace836d8"
+        }
+      ],
+      "original_selected_options": [
+        "DOCS",
+        "INFO",
+        "STATIC"
+      ],
+      "sealed_payloads": 27,
+      "normal_packages_before": 99,
+      "normal_packages_after": 100,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_base_kernel_mounts_and_frozen_bootstrap_preserved": true,
+      "expected_original_Info_index_update": {
+        "before_sha256": "8f0fe7f3fdccc66077ebec49a223eb179b9cfce79bc4a1027a49018aba7ab53b",
+        "after_sha256": "b1b08456eb8252bf64f3a27c92e5411a8088dc5ef19542e3b5cad3396166d110",
+        "all_old_entries_preserved": true,
+        "exact_original_indexinfo_replay": true
+      },
+      "actual_private_and_default_path_checks": "41actualcommands percontext, separate from originalprogramcount. Sealed completion revalidates33journaledcommands and runs8remainingCLIchecks without repeating crypto APIs; normal runs full41commands fresh. Sixshared/staticAPIstates compare PythonSHA256/SHA512/HMAC/PBKDF2/MPI and observedbaseOpenSSL AES-CBC/GCMbytes/tags;tamper/algorithm/key/inputrejection/recovery. StrictlibraryS-expression and exact canonicalbytes;debugdumphexbytes/HMAC/calculatorchanged/error/recovery. Originaltransitivestaticmetadata, no hand-added dependencies; defaultnormalfinder/loadernooverrides.",
+      "original_make_test_exit": 0,
+      "original_program_outcomes": {
+        "PASS": 41,
+        "SKIP": 2
+      },
+      "original_skip_reason": "Original configure selection disables6GiB/256GiBlarge-data wrappers, which exit77. No test/filter/assertion changes; large-data coverage remains unqualified.",
+      "count_scope": "43originalprogramoutcomes;notnestedalgorithmvectors/assertions. Independent41commands percontext are a different scope and are not added as unique tests.",
+      "two_host_evidence": {
+        "source_private_failed_observers_and_cores": {
+          "nodes": 2879,
+          "archive_bytes": 42567617,
+          "archive_sha256": "a0642cdb15dc052904ad92a6cec72bb8eaac24ebd66bca11743f1aaba136d2ca",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "failed_normal_preflight": {
+          "nodes": 10,
+          "archive_bytes": 10451792,
+          "archive_sha256": "1c499ed797fccc5bc6536cb30c8b63702c8fe5bb81a302b6979e2700cf3f85a7",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 147,
+          "archive_bytes": 13188227,
+          "archive_sha256": "de1288842f26438701005a1d0e171e03f909d29f4b06efe98ac2d0beb27bbd1c",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "qualification": "NativeARMdevelopmentonly;notfully-static-system/FIPScertification/AMD64/canonical/lifecycle/releaseacceptance."
     }
   ],
   "complete_original_source_suites": {
@@ -2072,7 +2130,8 @@
     "Introspection required bootstrap is integrated among95developmentpackages; all64originalMesonprograms and27sealed/default commands percontext pass with both-host evidence. PR111 review,AMD64,canonical/lifecycle admission remain pending. Full default GLib is now integrated among96developmentpackages with all options preserved; original full suite still needs three declared source-built tools.",
     "DesktopFileUtils fixed0.29_1 is integrated among97developmentpackages, PR112. Full default GLib original suite now still needs source-built D-Bus and shared-mime-info tools; no GUI/physical/AMD64/canonical/release qualification.",
     "Shared MIME-Info is integrated among98developmentpackages; full default GLib original test closure now needs D-Bus. Preserve original D-Bus MANPAGES/X11 defaults: libxslt/libgcrypt/libgpg-error and DocBook/catalog dependencies are next. Canonical/full release and physical platform scope remains open.",
-    "Fixed default libgpg-error1.61_1 is integrated among99developmentpackages, PR113. Continue original default libgcrypt(DOCS/INFO/STATIC), libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and defaultD-Bus(MANPAGES/X11) closure, then fullGLib original suite. All broad release/fleet/physical/canonical gates remain open."
+    "Fixed default libgpg-error1.61_1 is integrated among99developmentpackages, PR113. Continue original default libgcrypt(DOCS/INFO/STATIC), libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and defaultD-Bus(MANPAGES/X11) closure, then fullGLib original suite. All broad release/fleet/physical/canonical gates remain open.",
+    "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2367,6 +2426,17 @@
         "nodes": 2879,
         "archive_bytes": 42567617,
         "archive_sha256": "a0642cdb15dc052904ad92a6cec72bb8eaac24ebd66bca11743f1aaba136d2ca",
+        "all_nodes_verified_on_both_hosts": true
+      }
+    },
+    {
+      "package": "Libgcrypt normal preflight",
+      "cause": "Controller carried obsolete SDK98 field name while reading the SDK99 Info-index control.",
+      "correction": "Failure occurred before any pkgcommand or normal_install_started. Preserve full failed preflight/prefix inventory/rawdb backup on both hosts, correct the key and use a fresh controller. Original normal pkg scripts then execute once; full payload/inherited/default API/Info/frozen/base/mount/advisory guards pass. No reinstall or failure relabel.",
+      "two_host_evidence": {
+        "nodes": 10,
+        "archive_bytes": 10451792,
+        "archive_sha256": "1c499ed797fccc5bc6536cb30c8b63702c8fe5bb81a302b6979e2700cf3f85a7",
         "all_nodes_verified_on_both_hosts": true
       }
     }
@@ -3313,7 +3383,7 @@
         "sha256": "bf6136f848e33acee6738a26c09bf06b305933cfca65fc50cab49b84ace836d8"
       },
       "guards": "Whole99prefix/logicalregistry/base/kernel/mount/source unchanged. All original source/distfiles/objects/stage/package/logs retained.",
-      "qualification": "Source/defaulttests/sealed acceptance and both-host source/private/failed-observer custody pass. Normal install is in progress, not yet qualified in this report. AMD64, optional large-data coverage and canonical/lifecycle/release remain open.",
+      "qualification": "Normally installed ARM64 development package among100. All27payloads exact;99inheritedpackages preserved except independently reconstructed aggregateInfoindex/allowedparentmtimes. Originaloffline deps/ldconfig/indexinfo enforced.41actualcommands in normal context pass with automatic original metadata/default loader and no overrides; independent crypto/math oracles and error/recovery checks retained. Both-host source/private/observers/cores, failed preflight and normal evidence verified. Optionallarge-data/AMD64/canonical/lifecycle/release remain open.",
       "independent_sealed_acceptance": {
         "payloads": 27,
         "declared_directories": 0,
@@ -3329,7 +3399,19 @@
         "archive_sha256": "a0642cdb15dc052904ad92a6cec72bb8eaac24ebd66bca11743f1aaba136d2ca",
         "all_nodes_verified_on_both_hosts": true
       },
-      "normal_Info_control": "Original indexinfo reconstructs current index exactly, then predicts only its aggregate update for packaged gcrypt.info with all old entries preserved; original normal ldconfig/indexinfo scripts remain enabled."
+      "normal_Info_control": "Original indexinfo reconstructs current index exactly, then predicts only its aggregate update for packaged gcrypt.info with all old entries preserved; original normal ldconfig/indexinfo scripts remain enabled.",
+      "normal_two_host_evidence": {
+        "nodes": 147,
+        "archive_bytes": 13188227,
+        "archive_sha256": "de1288842f26438701005a1d0e171e03f909d29f4b06efe98ac2d0beb27bbd1c",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "failed_normal_preflight_two_host_evidence": {
+        "nodes": 10,
+        "archive_bytes": 10451792,
+        "archive_sha256": "1c499ed797fccc5bc6536cb30c8b63702c8fe5bb81a302b6979e2700cf3f85a7",
+        "all_nodes_verified_on_both_hosts": true
+      }
     }
   ],
   "installed_Python_metadata_recovery": {
