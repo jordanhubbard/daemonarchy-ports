@@ -2112,9 +2112,10 @@
       "original_make_test_failure": "GIR test-input build cannot locate bootstrap GLib metadata; no Meson test records were completed.",
       "causal_control": "Same metadata lookup succeeds in original MAKE_ENV, fails in original TEST_ENV, and produces byte-identical successful flags when test reuses original build PKG_CONFIG_LIBDIR.",
       "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/111",
-      "code_head": "3d254ae00b7ad4866e52008bc20cef173587a9ea",
-      "fix": "Bootstrap flavor adds TEST_ENV from existing MAKE_ENV PKG_CONFIG_LIBDIR; original tests/assertions/selection/dependencies/options unchanged.",
-      "qualification": "Fresh exact-commit original port/test, sealed/default scanner acceptance and custody pending; no passing suite claimed."
+      "code_head": "af07b9b82fd4d0db8b7932aa41f671cb367f5dc8",
+      "fix": "Bootstrap TEST_ENV reuses original MAKE_ENV PKG_CONFIG_LIBDIR and original LDFLAGS, preserving LOCALBASE library search and ARM linker workaround; original test sources/assertions/selection/dependencies/options unchanged.",
+      "qualification": "Updated exact-commit native source verification/construction/original full-test qualification pending; no passing suite claimed.",
+      "first_fixed_variant": "3d254ae passes all8construction targets and gets original GIR test-input build past missing headers; next stops at missing -lintl because original test launcher also omits build LDFLAGS. No Meson tests completed."
     }
   },
   "source_built_candidates": [
