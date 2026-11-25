@@ -2133,7 +2133,8 @@
     "Fixed default libgpg-error1.61_1 is integrated among99developmentpackages, PR113. Continue original default libgcrypt(DOCS/INFO/STATIC), libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and defaultD-Bus(MANPAGES/X11) closure, then fullGLib original suite. All broad release/fleet/physical/canonical gates remain open.",
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
     "Libxslt PR114 fresh construction, strict original DocBook results,751mainrunnercases,8harnesscontrols and30sealedconsumercommands pass. Normal integration awaits second verified evidence copy under70GiBreserve; then resume DocBook/catalog/defaultD-Bus/fullGLib closure.",
-    "Xmlcatmgr original2.2_4isheldforinvalidXMLserializationofvalidURIqueryampersands. PR115 addsencoding/decodingand8nativepost-testscenarios;freshcurrentheadbuild/independentacceptance/custody/normalintegrationpending. Optionaldeprecatedlibxml2internalSGMLconversioncrashretainedseparately;publicSGMLresolutionpasses."
+    "Xmlcatmgr original2.2_4isheldforinvalidXMLserializationofvalidURIqueryampersands. PR115 addsencoding/decodingand8nativepost-testscenarios;freshcurrentheadbuild/independentacceptance/custody/normalintegrationpending. Optionaldeprecatedlibxml2internalSGMLconversioncrashretainedseparately;publicSGMLresolutionpasses.",
+    "Xmlcatmgr PR115 current2.2_5passesfreshall8constructiontargets/8addedregressions/67independentconsumercommands;3103nodefullsource/private/failures/core capsuleverifiedonSparky. Needsecondhostcopyandexactoriginal4generatedcatalogscriptcontrolsandnormalintegrationbeforeDocBook/defaultD-Busclosure. Original2.2_4remainsheld."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -3698,7 +3699,134 @@
         "observed": "CLIreturns0;independentElementTreeparsingrejectsserializedcatalogbecause&isnotescaped. Newnativeportregressionalsorejectstheoriginalsealedbinary;alloriginalfailedsamplesremainretained.",
         "default_100_prefix_rawdb_base_kernel_mounts_unchanged": true,
         "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/115"
-      }
+      },
+      "superseded_for_next_integration_by_source_revision": "eae16540cc4766e95b8ff4379a189c393adf47c9"
+    },
+    {
+      "component": "xmlcatmgr",
+      "variant": "XML-attribute-encoding-and-reference-roundtrip-fix",
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/115",
+      "source_revision": "eae16540cc4766e95b8ff4379a189c393adf47c9",
+      "version": "2.2_5",
+      "default_options": [
+        "DOCS"
+      ],
+      "runtime_dependencies": [],
+      "full_Git_source_members_verified": 184373,
+      "construction_targets": [
+        {
+          "target": "checksum",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "extract",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "patch",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "configure",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "build",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "stage",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "check-plist",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "package",
+          "exit": 0,
+          "uid": 65534
+        }
+      ],
+      "fix": "Escape XML attribute values; decode predefined/numeric references once, with UTF8 generation and XML literal/referenced whitespace semantics. Reject invalid references and control values without expanding DTD/general entities. Preserve original small parser; PORTREVISION5 reflects changed runtime.",
+      "causal_before": "Original sealed2.2_4returns0forvalidqueryURIcontaining&butserializesinvalidXML. IndependentXMLreaderandnewnativeportregressionrejecttheactualoutput. Originaldefectivepackage/commands/observersretained.",
+      "upstream_test_scope": "Originalprojecthasno selftests;generatedchecktargetbuild-only. Selectedporttestnowexecutesaddedregressions;no originalselfsuiteclaim.",
+      "make_test_exit": 0,
+      "added_native_regression_scenarios": [
+        {
+          "result": "PASS",
+          "name": "xml-attribute-query-roundtrip"
+        },
+        {
+          "result": "PASS",
+          "name": "xml-attribute-single-entity-decode"
+        },
+        {
+          "result": "PASS",
+          "name": "xml-attribute-predefined-references"
+        },
+        {
+          "result": "PASS",
+          "name": "xml-attribute-numeric-Unicode-references"
+        },
+        {
+          "result": "PASS",
+          "name": "xml-attribute-attribute-whitespace"
+        },
+        {
+          "result": "PASS",
+          "name": "xml-attribute-invalid-references"
+        },
+        {
+          "result": "PASS",
+          "name": "xml-attribute-rejection-and-recovery"
+        },
+        {
+          "result": "PASS",
+          "name": "xml-attribute-SGML-unchanged"
+        }
+      ],
+      "all8native_scenarios_pass": true,
+      "count_scope": "Eight added namedscenarios,includingmultipleinvalid-referencevectors;67independentactualcommandscountedseparately. No total of groups/vectors/assertions/commands.",
+      "package": {
+        "name": "xmlcatmgr-2.2_5.pkg",
+        "bytes": 24153,
+        "sha256": "fc5a186fef60f727e7521ba883ad0c96a2b3a6b434daf1b4e4b64d8117c13e25"
+      },
+      "independent_sealed_acceptance": {
+        "payloads": 11,
+        "declared_directories": 2,
+        "actual_commands": 67,
+        "states": [
+          73,
+          91,
+          104
+        ],
+        "coverage": "Actualpubliclibxml2XML/SGMLresolution,realcatalog-backedDTD/defaultattribute/entityparsingandPythonXML/SGMLoracles. Master-childregistry/public/system/URI/rewrites,changedinputs,duplicate/unsupported/missing/malformed/createerrorsandrecovery. PreviouslycorruptingqueryampersandURIisvalidXMLandresolvescorrectlythroughlibxml2,withlookup/removalworking.",
+        "normal_loader_override_present": false,
+        "original_compiled_catalog_defaults_reported_unchanged": true,
+        "all_payload_bytes_modes_owners_flags_and_literal_links_exact": true
+      },
+      "source_private_custody": {
+        "nodes": 3103,
+        "archive_bytes": 23159711,
+        "archive_sha256": "cb17fdb5d222cbf832c03c1cd718415442d525250d674b4bf3dfc67b27715bfd",
+        "all_three_producer_selected_port_Mk_Template_bodies_materialized": true,
+        "original_source_objects_stages_packages_failures_observers_and_core_retained": true,
+        "Sparky_all_nodes_verified": true,
+        "second_host_all_nodes_verified": false,
+        "pending": "Madmaxbelow70GiBreserve;operatorcapacity/alternatehostquestionpending. Sparkycopycompletedafterfreshcapacityguardpassed;no reserveweakened."
+      },
+      "guards": "Whole100prefix/rawdb/base/kernel/mounts/advisory unchanged;source/testinputidentitiesverified. No normalinstallation.",
+      "canonical_gates": "At exactcodehead projectauthority and2selectedlocks pass;verifyexit1/nestedfalse becausecurrentcanonicalreceiptmissing.",
+      "qualification": "NativeARM64sourceandsealedacceptancepass. Originalgloballygeneratedcatalogscriptcontrols,secondhostcustody,normalintegration,AMD64/canonicalSDK-TCB/lifecycle/desktop/hardware/release remain open."
     }
   ],
   "installed_Python_metadata_recovery": {
