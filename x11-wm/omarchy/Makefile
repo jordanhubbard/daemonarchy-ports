@@ -1,6 +1,6 @@
 PORTNAME=	omarchy
 DISTVERSION=	4.5.0.20261124
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -49,7 +49,7 @@ USES=		fonts perl5 python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	jordanhubbard
 # Reviewed dated snapshot after v4.5.0; retain the exact owned integration.
-GH_TAGNAME=	cb124aea8795f796ed04257d11099ea06b993add
+GH_TAGNAME=	9a8aad4c389194597316886576db3e0c84a31b5f
 # The FreeBSD compatibility layer: freebsdize, compat tools, FreeBSD commands.
 GH_TUPLE=	jordanhubbard:omarchy-freebsd:029e0eba6ff69392e416abb5bbd58206d4d20443:freebsd
 USE_PERL5=	run
