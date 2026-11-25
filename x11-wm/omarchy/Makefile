@@ -1,6 +1,6 @@
 PORTNAME=	omarchy
 DISTVERSION=	4.5.0.20261124
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -51,7 +51,7 @@ GH_ACCOUNT=	jordanhubbard
 # Reviewed dated snapshot after v4.5.0; retain the exact owned integration.
 GH_TAGNAME=	9a8aad4c389194597316886576db3e0c84a31b5f
 # The FreeBSD compatibility layer: freebsdize, compat tools, FreeBSD commands.
-GH_TUPLE=	jordanhubbard:omarchy-freebsd:029e0eba6ff69392e416abb5bbd58206d4d20443:freebsd
+GH_TUPLE=	jordanhubbard:omarchy-freebsd:1923ffefc9fb5328e7d2054a01433e7cb77551eb:freebsd
 USE_PERL5=	run
 
 SHEBANG_FILES=	bin/* config/omarchy/hooks/*/* default/systemd/system-sleep/* \
