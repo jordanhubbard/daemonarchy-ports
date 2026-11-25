@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 92,
+  "normal_development_package_count": 93,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -730,6 +730,57 @@
         }
       },
       "qualification": "Development runtime in the observed environment with GNUmake present. First forced BSD-make space-path failure remains unresolved and retained. Original CMake self-suite remains unrun: original port BUILD_TESTING OFF/no selected upstream test bridge preserved. AMD64/canonical/release gates remain open."
+    },
+    {
+      "name": "PCRE2 original defaults, all widths and both library forms",
+      "source_revisions": [
+        "511743d7327c93e9ff0117d04f0176ebc572f444"
+      ],
+      "packages": [
+        {
+          "name": "pcre2-10.49.pkg",
+          "bytes": 1289894,
+          "sha256": "91090de60e6f5f0a999ab35ed145fc428e960be57aa5a0f7684c5f604f7e365b"
+        }
+      ],
+      "sealed_payloads": 247,
+      "normal_packages_before": 92,
+      "normal_packages_after": 93,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "original_selected_options": [
+        "DOCS",
+        "STATIC"
+      ],
+      "original_make_test_exit": 0,
+      "original_CTest_counts": {
+        "Passed": 4
+      },
+      "original_CTest_programs": [
+        "pcre2posix_test",
+        "pcre2_grep_test",
+        "pcre2_test",
+        "pcre2_jit_test"
+      ],
+      "test_count_scope": "Four original CTest programs/suites, not four individual regex assertions. Nested counts are not summed as unique.",
+      "actual_private_and_default_path_checks": "58 commands per context: eight C clients cover8/16/32shared/static libraries and both POSIX linkage forms; UTF/UCP/named captures/code-unit offsets, pattern/UTF errors, JIT stack+execution,DFA,serialization,changedinput/recovery. Actual pcre2grep/config checks Unicode captures against Python oracle, changedinput,no-match1,badpattern2,singleUTFmatchingerror1 with typed diagnostic,too-many-errors2,recovery0. Original static CLI linkage is verified. Default normal clients use no LD_LIBRARY_PATH override.",
+      "native_client_variants": 8,
+      "actual_commands_per_context": 58,
+      "two_host_evidence": {
+        "source_private_and_two_failed_observers": {
+          "nodes": 2769,
+          "archive_bytes": 31914505,
+          "archive_sha256": "5572b6d0e44c63e8d02d8443ad43deaab696604c1c672ff715d25da38581e390",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 149,
+          "archive_bytes": 10864454,
+          "archive_sha256": "11e7a43a6210b2bc7bd6e71eedd3687d3e9b3dcf0a16a19c1ac35f49f690a972",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "qualification": "Native ARM64 development integration only; AMD64, canonical Component/SDK/TCB/lifecycle and release qualification remain pending."
     }
   ],
   "complete_original_source_suites": {
@@ -1670,7 +1721,7 @@
     "TOML EOF fix PR109 native port/20committedregressions/sealed/default controls now pass; original NumPy/fullCI/AMD64/canonical gates remain pending",
     "GI-docgen full original Graphviz render_dot/SVG test and complete CI/tool closure remain open despite successful default runtime generation; source-built Graphviz required, original test failure retained.",
     "CMake original upstream self-suite and forced BSD-make space-path failure remain open; original source construction, sealed and normal default-finder/GNUmake consumers pass. No full upstream/backend qualification claimed.",
-    "PCRE2 source construction and all four original CTest programs pass; independent sealed 8/16/32-bit, JIT, shared/static and CLI consumers plus two-host source/private retention now pass; normal integration remains pending."
+    "Default GLib remains pending. Follow original required flavor chain: glib20@bootstrap -> gobject-introspection@bootstrap -> glib20@default, preserving final DOCS/NLS/MANPAGES/TEST. Named intermediate bootstrap packages do not qualify default GLib or its full test closure."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2272,9 +2323,9 @@
       "original_CTest_log_sha256": "878152390a12077ed377a7f5c7d0d7561d4d91aa835b0dffa34142d9051a089c",
       "test_count_scope": "Four original CTest programs/suites, not four individual regex assertions; nested per-suite counts are not summed as unique cases.",
       "native_original_source_prefix_registry_base_mount_guards": "pass; normal92 unchanged",
-      "sealed_default_consumers_and_two_host_custody": "Sealed consumers and source/private/failures custody pass; normal integration pending.",
-      "normal_integration": "pending; not included in the current 92-package count",
-      "qualification": "Original native source/test and independent sealed-package development observation; normal-path, AMD64, canonical and release admission remain pending.",
+      "sealed_default_consumers_and_two_host_custody": "Pass: source/private/failures2769nodes and normal149nodes exhaustively verified on both hosts.",
+      "normal_integration": "Pass: all247newpayloads and92inheritedpackages verified; same58-command actual consumers pass using default normal loader. Actual93packages.",
+      "qualification": "Source/original-selected-tests and independent sealed/default development observations; AMD64/canonical/release gates remain open.",
       "sealed_payloads": 247,
       "actual_sealed_command_count": 58,
       "native_client_variants": 8,
