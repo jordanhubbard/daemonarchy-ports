@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 94,
+  "normal_development_package_count": 95,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -820,6 +820,45 @@
       },
       "original_upstream_suite": "Not run: original declared D-Bus, desktop-file-utils, shared-mime-info test tools missing. Original bootstrap flavor option selection preserved; final default GLib must retain DOCS/NLS/MANPAGES/TEST.",
       "qualification": "Named-intermediate ARM64 development only; defaultGLib/originalfullsuite/AMD64/canonical/release gates remain open."
+    },
+    {
+      "name": "Introspection original required bootstrap intermediate",
+      "origin": "devel/gobject-introspection@bootstrap",
+      "purpose": "Mandatory scanner prerequisite for original full default GLib. Named intermediate does not qualify default GLib.",
+      "source_revisions": [
+        "af07b9b82fd4d0db8b7932aa41f671cb367f5dc8"
+      ],
+      "packages": [
+        {
+          "name": "gobject-introspection-bootstrap-1.86.0,1.pkg",
+          "bytes": 654736,
+          "sha256": "78849ee2b70debf3fe67476823100480eb26bf44eabca7d016209f8fd255814d"
+        }
+      ],
+      "sealed_file_payloads": 240,
+      "explicit_directory_payloads": 2,
+      "normal_packages_before": 94,
+      "normal_packages_after": 95,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "actual_commands_per_context": 27,
+      "actual_private_and_default_path_checks": "Packaged g-ir-scanner creates real GIR; g-ir-compiler produces binary typelib; g-ir-inspect reports actual shared-library dependency; g-ir-generate roundtrips function metadata. C GIRepository client reflects integer argument/return and resolves/invokes actual changing shared-library implementation across73/91/104, with wrong-argument and missing-namespace typed errors. MalformedGIR and missingrequiredheader rejection/recovery. Normal loader has no LD_LIBRARY_PATH override.",
+      "two_host_evidence": {
+        "source_private_and_original_failures": {
+          "nodes": 11973,
+          "archive_bytes": 31970126,
+          "archive_sha256": "27cbab849e2f3544b1052bd25ed75821654ad393006b2a130b89d572d9424a85",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 88,
+          "archive_bytes": 10067903,
+          "archive_sha256": "971a200f2dbe51251b7f00384ad77beacf9c1d40de17827ef86dd07ea6ae347a",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "original_upstream_suite": "All64originalMesontestprogramsOK,noFAIL/noSKIP; nested cases not summed. Original test sources/assertions/selection/options unchanged. Test-only environment fix PR111.",
+      "qualification": "ARM64 development integration passes:240files/two declared directories,94inheritedpackages,actual95. Both contexts pass27actual commands; normal loader has no LD_LIBRARY_PATH override. Original64Mesonprograms pass separately. Both-host source/private and normal custody verified. DefaultGLib/AMD64/canonical/lifecycle/release remain open."
     }
   ],
   "complete_original_source_suites": {
@@ -1743,6 +1782,23 @@
         "all_nodes_verified_on_both_hosts": true
       },
       "scope": "Original complete make test selection and original defaults retained on native ARM64. Independent sealed/default clients verify actual library behavior and loader bindings. AMD64/canonical/full release admission remains pending."
+    },
+    "IntrospectionBootstrap": {
+      "source_revision": "af07b9b82fd4d0db8b7932aa41f671cb367f5dc8",
+      "original_make_test_exit": 0,
+      "original_Meson_result_counts": {
+        "OK": 64
+      },
+      "count_scope": "64 original Meson test programs, not total nested test cases. No failures or skips.",
+      "selected_flavor": "bootstrap",
+      "original_test_sources_assertions_selection_options_unchanged": true,
+      "two_host_evidence": {
+        "nodes": 11973,
+        "archive_bytes": 31970126,
+        "archive_sha256": "27cbab849e2f3544b1052bd25ed75821654ad393006b2a130b89d572d9424a85",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "AMD64_canonical_lifecycle_release_qualified": false
     }
   },
   "pending": [
@@ -1761,7 +1817,7 @@
     "GI-docgen full original Graphviz render_dot/SVG test and complete CI/tool closure remain open despite successful default runtime generation; source-built Graphviz required, original test failure retained.",
     "CMake original upstream self-suite and forced BSD-make space-path failure remain open; original source construction, sealed and normal default-finder/GNUmake consumers pass. No full upstream/backend qualification claimed.",
     "Default GLib remains pending. Follow original required flavor chain: glib20@bootstrap -> gobject-introspection@bootstrap -> glib20@default, preserving final DOCS/NLS/MANPAGES/TEST. Named intermediate bootstrap packages do not qualify default GLib or its full test closure.",
-    "Introspection Python header configure failure resolved by exact original metadata restoration. Original fresh package constructs, but make test fails building GIR inputs before tests launch: bootstrap test environment lacks the original build pkg-config path. Test-only fix PR111 is committed; exact-commit native full-port/test qualification pending."
+    "Introspection required bootstrap is integrated among95developmentpackages; all64originalMesonprograms and27sealed/default commands percontext pass with both-host evidence. PR111 review,AMD64,canonical/lifecycle admission remain pending. DefaultGLib full selected DOCS/MANPAGES/NLS/TEST source construction is in progress; original full suite still needs three declared source-built tools."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2010,6 +2066,18 @@
         "nodes": 3417,
         "archive_bytes": 37407613,
         "archive_sha256": "341b02d7c4eda09351fc98b9c19c3cea785443fdc37dda81c2188bdc31719f4f",
+        "all_nodes_verified_on_both_hosts": true
+      }
+    },
+    {
+      "component": "IntrospectionBootstrap",
+      "failed_observer": "Scanner error control originally inserted missing include in C implementation; scanner lexes C source and preprocesses header inputs, so that command succeeds. The implementation/GIR/typelib/native invocation checks had passed.",
+      "correction": "Place the actual missing required include in the header scanned by the original preprocessor. Assert rejection with its named diagnostic, restore same header, regenerate/recompile and invoke successfully. No product/source/test changes.",
+      "failed_original_and_observer_outputs_retained": true,
+      "two_host_evidence": {
+        "nodes": 11973,
+        "archive_bytes": 31970126,
+        "archive_sha256": "27cbab849e2f3544b1052bd25ed75821654ad393006b2a130b89d572d9424a85",
         "all_nodes_verified_on_both_hosts": true
       }
     }
@@ -2469,7 +2537,7 @@
       "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/111",
       "code_head": "af07b9b82fd4d0db8b7932aa41f671cb367f5dc8",
       "fix": "Bootstrap TEST_ENV reuses original MAKE_ENV PKG_CONFIG_LIBDIR and original LDFLAGS, preserving LOCALBASE library search and ARM linker workaround; original test sources/assertions/selection/dependencies/options unchanged.",
-      "qualification": "Fresh complete native ARM64 construction and original make test pass at the exact code head. Sealed/default installed consumers and both-host source/private custody remain pending; this source-built candidate is not installed.",
+      "qualification": "ARM64 development integration passes:240files/two declared directories,94inheritedpackages,actual95. Both contexts pass27actual commands; normal loader has no LD_LIBRARY_PATH override. Original64Mesonprograms pass separately. Both-host source/private and normal custody verified. DefaultGLib/AMD64/canonical/lifecycle/release remain open.",
       "first_fixed_variant": "3d254ae passes all8construction targets and gets original GIR test-input build past missing headers; next stops at missing -lintl because original test launcher also omits build LDFLAGS. No Meson tests completed.",
       "component": "gobject-introspection@bootstrap",
       "original_Meson_programs": {
