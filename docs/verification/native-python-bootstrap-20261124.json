@@ -2641,6 +2641,22 @@
       "original_full_suite": "NOT RUN: declared source-built dbus-uuidgen,update-desktop-database,update-mime-database tools missing. The latter two depend on default GLib itself.",
       "guards": "Installed95prefix/logicalregistry/base/kernel/mounts/selectedsource preserved.",
       "qualification": "ARM64 development integration passes:8130files/two declared directories,95inheritedpackages,actual96;41actualcommands each sealed/default context, normal loader without LD_LIBRARY_PATH. Both-host source/private/failure and normal evidence verified. Original full suite pending three declared source-built tools; no AMD64/canonical/lifecycle/release qualification."
+    },
+    {
+      "component": "desktop-file-utils",
+      "source_revision": "af07b9b82fd4d0db8b7932aa41f671cb367f5dc8",
+      "construction_targets": "All8originaltargets exit0. Original selected defaults/dependencies unchanged.",
+      "original_make_test": "Exit0; original intent-cache Meson program OK; no failures/skips. Nested shell checks are not summed as cases.",
+      "package": {
+        "name": "desktop-file-utils-0.29.pkg",
+        "bytes": 51832,
+        "sha256": "0e2444620e676a329c3d72dee805dad76ae20fde9aa4afb557333f36f1a787a9"
+      },
+      "qualification": "Not installed. Sealed/default CLI validation/edit/install/cache/change/error/recovery qualification pending.",
+      "observer_failures_retained": [
+        "Initial launcher supplied FLAVOR=default to a nonflavored port; corrected launcher omits it.",
+        "First sealed launcher retained an obsolete bootstrap library path ahead of normal lib. The strict ldd check rejected that dependency binding before running CLI fixtures. Corrected sealed launcher uses normal loader without LD_LIBRARY_PATH."
+      ]
     }
   ],
   "installed_Python_metadata_recovery": {
