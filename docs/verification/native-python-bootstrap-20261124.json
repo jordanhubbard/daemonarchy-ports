@@ -2668,6 +2668,22 @@
         "contract": "Implements is string(s); multiple-value keys may optionally terminate with a semicolon.",
         "repair": "Pending reviewed source fix and additive regression preserving invalid interior interface rejection. Original package/failed fixtures retained."
       }
+    },
+    {
+      "component": "desktop-file-utils-fixed",
+      "source_revision": "0c46d1810ffcbb14aebff4f3a4cf5f215c11b72c",
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/112",
+      "fix": "Ignore only final empty split field from optional Implements terminator; preserve leading/interior empty and invalid interface rejection. PORTREVISION1.",
+      "original_causal_control": "Same eight-scenario validator/installer regression fails on original binaries specifically for valid terminated lists, while plain/empty and invalid controls retain expected behavior. Original binaries/whole96prefix/rawdb/base/mounts unchanged.",
+      "construction": "Fresh exact full184372Gitmember source; checksum/extract/patch/configure/build/stage/check-plist/package all0.",
+      "original_test_target": "Both Meson programs OK,no skips/failures: unchanged original intent-cache plus additive eight-scenario validator/installer regression. Program count is not nested assertion count.",
+      "package": {
+        "name": "desktop-file-utils-0.29_1.pkg",
+        "bytes": 51825,
+        "sha256": "1f449b59ab8648e8e78053d95311f36f066a4a8f0913de28537b7a90fd3cdd65"
+      },
+      "preserved_failure": "First native fixed-source patch target rejected malformed Meson patch EOF framing; corrected using original no-final-newline marker. No original test/assertion/selection weakening.",
+      "qualification": "Source-built development candidate only, not installed. Packaged public-CLI/cache acceptance and both-host custody pending. Original0.29remains held. AMD64/canonical/lifecycle/release open."
     }
   ],
   "installed_Python_metadata_recovery": {
