@@ -1669,7 +1669,8 @@
     "Complete Attrs declared original self-suite tools and CFFI conditional meson-python/virtualenv/installed-CLI coverage",
     "TOML EOF fix PR109 native port/20committedregressions/sealed/default controls now pass; original NumPy/fullCI/AMD64/canonical gates remain pending",
     "GI-docgen full original Graphviz render_dot/SVG test and complete CI/tool closure remain open despite successful default runtime generation; source-built Graphviz required, original test failure retained.",
-    "CMake original upstream self-suite and forced BSD-make space-path failure remain open; original source construction, sealed and normal default-finder/GNUmake consumers pass. No full upstream/backend qualification claimed."
+    "CMake original upstream self-suite and forced BSD-make space-path failure remain open; original source construction, sealed and normal default-finder/GNUmake consumers pass. No full upstream/backend qualification claimed.",
+    "PCRE2 source construction and all four original CTest programs pass; independent sealed/default 8/16/32-bit, JIT, shared/static and CLI consumers plus two-host retention remain pending."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2178,6 +2179,102 @@
       },
       "normal_integration": "Pass: all 3797 payloads and 91 inherited packages verified; same default-finder/GNUmake real consumer passes with default loader. BSD-make failure and original upstream self-suite remain open.",
       "qualification": "Development observations only; upstream self-suite, forced BSD-make space paths, AMD64, canonical and release qualification remain open."
+    },
+    {
+      "name": "PCRE2 preliminary source construction and original tests",
+      "source_revision": "511743d7327c93e9ff0117d04f0176ebc572f444",
+      "package_name": "pcre2-10.49.pkg",
+      "package": {
+        "bytes": 1289894,
+        "sha256": "91090de60e6f5f0a999ab35ed145fc428e960be57aa5a0f7684c5f604f7e365b"
+      },
+      "original_construction_targets": [
+        {
+          "target": "checksum",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "extract",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "patch",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "configure",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "build",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "stage",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "check-plist",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "package",
+          "exit": 0,
+          "uid": 65534
+        }
+      ],
+      "original_selected_options": [
+        "DOCS",
+        "STATIC"
+      ],
+      "original_bridge": "USES=cmake:testing selects the original do-test bridge even though TEST_TARGET is empty. Original framework enables PCRE2_BUILD_TESTS, rebuilds with the default Ninja generator and runs the original CTest target. No manual test filters/options or source changes.",
+      "original_make_test_exit": 0,
+      "original_CTest_records": [
+        {
+          "number": 4,
+          "total": 4,
+          "name": "pcre2posix_test",
+          "status": "Passed",
+          "record_sha256": "d9926b446640d917ff5987c71d1f3fc969c0d2002b0309d916181834c0557431"
+        },
+        {
+          "number": 2,
+          "total": 4,
+          "name": "pcre2_grep_test",
+          "status": "Passed",
+          "record_sha256": "d4d9eb1775233a9e0ead0b8b0477d0a588cc2dba69304546023385be87bd701b"
+        },
+        {
+          "number": 1,
+          "total": 4,
+          "name": "pcre2_test",
+          "status": "Passed",
+          "record_sha256": "65d40218585f7c6ff9783fd42804f4129236dcd354005ee6136c57f0a558d04b"
+        },
+        {
+          "number": 3,
+          "total": 4,
+          "name": "pcre2_jit_test",
+          "status": "Passed",
+          "record_sha256": "020975bb35479509ab357028573afa337842fe5aa438ecc2bc77b53b2e0e6cc4"
+        }
+      ],
+      "original_CTest_counts": {
+        "Passed": 4
+      },
+      "original_CTest_log_sha256": "878152390a12077ed377a7f5c7d0d7561d4d91aa835b0dffa34142d9051a089c",
+      "test_count_scope": "Four original CTest programs/suites, not four individual regex assertions; nested per-suite counts are not summed as unique cases.",
+      "native_original_source_prefix_registry_base_mount_guards": "pass; normal92 unchanged",
+      "sealed_default_consumers_and_two_host_custody": "pending; preliminary observation retained on allocated native worker",
+      "normal_integration": "pending; not included in the current 92-package count",
+      "qualification": "Original native source/test observation only; independent exact-package API/CLI acceptance, custody, canonical and release admission remain pending."
     }
   ]
 }
