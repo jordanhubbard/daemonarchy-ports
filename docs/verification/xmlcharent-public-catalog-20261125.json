@@ -16,10 +16,10 @@
   "observer_correction": "First new regression script lost final expected value at shell read EOF; preserve failed run. Fixed script caches the last expected value, all21scenarios pass.",
   "remaining": [
     "Rebuild and qualify the other selected consumers with fail-fast keyword hooks and current normal dependencies. All21strict native version comparisons pass; Xmlcharent0.3_5 actualgenerated19controls and normal upgrade pass. This does not qualify all21packages.",
-    "Catalog provider packages and original DocBook1.5 metaport now have bounded normal qualification, accepted development count108. Continue original XSL defaults, D-Bus MANPAGES/X11, complete original GLib and desktop closure.",
+    "All current DocBook providers, original metaport and original default XSL now have bounded normal qualification, accepted development count109. Continue default D-Bus MANPAGES/X11 and complete original GLib/desktop closure; preserve XSL original failed wrappers and read-only completion scope.",
     "Complete canonical authority/lifecycle,AMD64,desktop,physical and release acceptance."
   ],
-  "observed": "2026-11-25T22:10:21.569749+00:00",
+  "observed": "2026-11-25T22:29:00.324840+00:00",
   "Simplified_Docbook_consumer_causal": {
     "actual_commands": 20,
     "profiles": [
@@ -1021,5 +1021,142 @@
     "qualification": "Original fresh data-port construction only. Uninstalled; independent sealed transformations/catalog/decoded scripts, original distributed test inventory, custody and normal installation pending. TESTS is an installed module option, not a reported passing original suite.",
     "retained_observer_failure": "First constructor required PKGNAME without PORTEPOCH; actual original native metadata includes ,1. Corrected observer preserves epoch; no original port or options changed.",
     "observed_utc": "2026-11-25T22:11:26.963381+00:00"
+  },
+  "selected_DocBook_XSL_qualified_20261125": {
+    "source_revision": "6defff971350efcf84889a03120ab5462ece1508",
+    "version": "1.79.1_3,1",
+    "artifact": {
+      "bytes": 20690058,
+      "sha256": "0bae6553ac8373189fdb42bcd0d59337fc7af9238699c5e03ebe7db6c606db94"
+    },
+    "original_construction_targets": 8,
+    "actual_selected_original_options": [
+      "DOCS",
+      "ECLIPSE",
+      "EPUB",
+      "EXTENSIONS",
+      "HIGHLIGHTING",
+      "HTMLHELP",
+      "JAVAHELP",
+      "PROFILING",
+      "ROUNDTRIP",
+      "SLIDES",
+      "TEMPLATE",
+      "TESTS",
+      "TOOLS",
+      "WEBSITE",
+      "XHTML11"
+    ],
+    "original_selected_source_members_verified": 269,
+    "original_options_distributions_dependencies_preserved": true,
+    "sealed_and_normal_payloads": 3085,
+    "explicit_directories": 0,
+    "original_upstream_smoke_Makefile_cases_each_private_and_installed": {
+      "discovered": 45,
+      "completed": 45,
+      "passed": 45,
+      "failed": 0,
+      "skipped": 0
+    },
+    "original_upstream_scope": "Unchanged distributed Makefile with two original fixtures. Argument-only adapter maps original XML-first/style-second/parameter syntax to installed xsltproc --nonet. Each native child status and stdout/stderr is separately journaled; no shell-loop masking. Makefile smoke tests check execution, not output content. TESTS module option is not itself a suite result.",
+    "independent_private_commands": 19,
+    "independent_semantic_scope": "Offline DTD validation; HTML declared encoding/title/entity/list/table/xref, XHTML and FO namespaces/content, profiling include/exclude behavior, generated man-page content. Native nondeprecated local catalog APIs verify all four original rewrite rules. Both advertised stylesheet aliases match direct output; empty catalog, shadow and recovery controls prove catalog/resource causality.",
+    "actual_pkg_decoded_generated_hook_controls": 17,
+    "generated_hook_scope": "Fresh/repeat registration, exact idempotence, removal, same-key different XML entry type, reinstall and add/remove I/O errors using decoded actual pkg scripts and copied private catalogs.",
+    "normal_original_local_only_solver_dependencies_hooks_empty_stderr": true,
+    "actual_original_installed_pkg_payload_and_dependency_checks": true,
+    "normal_global_catalog_change": "Only predicted share/xml/catalog.ports changes. Other three catalog files and all108 inherited prefixes outside that index retain bytes and timestamps; allowed new ancestor directory mtimes are separately scoped.",
+    "normal_original_smoke_cases_pass": 45,
+    "normal_retained_semantic_outputs_independently_revalidated": 17,
+    "normal_wrapper_failure_preserved": "Successful transaction/45 smoke cases/17 semantic checks preceded an incomplete URI-only shadow control. With installed global SYSTEM rewrite the shadow did not replace the stylesheet. Original normal and semantic wrappers remain failed.",
+    "normal_readonly_completion": "Binds both failed receipts and passing45 receipt, revalidates17 retained command outputs and actual loader/catalog guards, runs one actual read-only registry query, two native local-catalog API diagnostics, corrected dual-kind shadow and default-global recovery. No transaction,45-smoke or17-semantic replay.",
+    "normal_fresh_completion_commands": {
+      "actual_registry_query": 1,
+      "URI_vs_SYSTEM_diagnostics": 2,
+      "dual_kind_shadow_and_default_recovery": 2
+    },
+    "normal_positive_catalog_and_loader_overrides_absent": true,
+    "retained_observer_failures": [
+      "Initial epoch expectation excluded original PORTEPOCH.",
+      "First generated driver had a quoting error, so zero smoke cases ran. Corrected fresh run has all45 complete.",
+      "Independent HTML observer assumed UTF-8, then omitted quoted charset syntax. Original output declares ISO-8859-1.",
+      "Initial catalog API consumer used deprecated functions under -Werror. Final consumer uses current nondeprecated local-catalog APIs without weakening compiler checks.",
+      "Normal counterfactual initially shadowed URI only, without SYSTEM."
+    ],
+    "query_observer_scope": "Known byte-identical local.sqlite-shm mtime-only transition from actual read-only pkg query explicitly recorded; a fresh full SDK109/rawdb before/after guard then passes. No metadata reset or broad exclusion.",
+    "frozen17_base_mount_guards_pass": true,
+    "accepted_bounded_development_count": 109,
+    "two_host_evidence": {
+      "source": {
+        "nodes": 7179,
+        "archive_bytes": 102061134,
+        "archive_sha256": "53a52ca78380941cd6d54bdbb68bbdf20017a6e44b9b30006cf5ebf135840f08",
+        "inventory_sha256": "b9a3e142bf72136205deb89174a807a6d5de8d23100e3be95283a14a30ccc849",
+        "all_nodes_independently_verified_on_both_hosts": true
+      },
+      "private": {
+        "nodes": 6764,
+        "archive_bytes": 55358687,
+        "archive_sha256": "02cf0c65237809720c1bd03972ddd7299fa40cbc15852146dfc979e2b9ee095c",
+        "inventory_sha256": "5195148f327e6549fa1fa3bf68ecbc827ddb815757e0a0782c71de647d1bff88",
+        "all_nodes_independently_verified_on_both_hosts": true
+      },
+      "normal": {
+        "nodes": 297,
+        "archive_bytes": 15069063,
+        "archive_sha256": "82a46659c2e64c19a2cb98124727ff089d81a8585da399427435ef9df935e285",
+        "inventory_sha256": "c55f3bd6f9679a909135ed8e38d63de5358a53498c1f6d67ca813f8bcf637418",
+        "all_nodes_independently_verified_on_both_hosts": true
+      }
+    },
+    "remaining": "Original default D-Bus MANPAGES/X11 construction and selected original test inventory, sealed/runtime/custody/normal integration; then full original GLib suite and desktop closure. OpenSP six original failures, two absent XInclude XSDs, canonical lifecycle/SDK/TCB, matching AMD64, physical matrix, installer/update/rollback, final media/signing/publication remain open.",
+    "observed_utc": "2026-11-25T22:29:00.324840+00:00"
+  },
+  "next_default_DBus_original_build_and_tests_20261125": {
+    "source_revision": "6defff971350efcf84889a03120ab5462ece1508",
+    "version": "1.16.4_1,1",
+    "artifact": {
+      "bytes": 303628,
+      "sha256": "ee2bbb9870eeba634b2c75e63ee345f8a76e969d6c930971860beaf2916ff8c8"
+    },
+    "original_construction_targets": 8,
+    "original_selected_options": [
+      "EXAMPLES",
+      "MANPAGES",
+      "X11"
+    ],
+    "original_source_members_verified": 273,
+    "original_make_test_exit": 0,
+    "independent_generated_inventory_native_command_correspondence": true,
+    "original_Meson_programs": 6,
+    "original_Meson_programs_passed": 6,
+    "original_TAP_events": 43,
+    "original_TAP_passed": 30,
+    "original_TAP_skipped": 13,
+    "original_TAP_TODO": 0,
+    "original_skip_reasons": {
+      "unable to determine whether initial nss query leaked memory (not compiled with memory instrumentation)": 4,
+      "unable to determine whether skip_blank leaked memory (not compiled with memory instrumentation)": 1,
+      "unable to determine whether hash leaked memory (not compiled with memory instrumentation)": 1,
+      "unable to determine whether misc leaked memory (not compiled with memory instrumentation)": 1,
+      "unable to determine whether address leaked memory (not compiled with memory instrumentation)": 1,
+      "unable to determine whether server leaked memory (not compiled with memory instrumentation)": 1,
+      "unable to determine whether signature leaked memory (not compiled with memory instrumentation)": 1,
+      "unable to determine whether mem-pool leaked memory (not compiled with memory instrumentation)": 1,
+      "unable to determine whether list leaked memory (not compiled with memory instrumentation)": 1,
+      "unable to determine whether userdb leaked memory (not compiled with memory instrumentation)": 1
+    },
+    "original_port_modular_tests_disabled": true,
+    "selected_suite_scope": "All six programs in the generated original default-port inventory and their TAP plans/sequence are accounted for. This does not qualify the original disabled modular-test variant or broader complete D-Bus suite.",
+    "retained_failures": [
+      "Original deep WRKDIR construction passed all8targets; make test had5programsOK and misc-internals aborted because Unix socket name was too long. No source/test/golden/configuration options changed.",
+      "First short-WRKDIR attempt could not reset the directory because its parent was root-owned. Final fresh build uses a short separately owned parent and the original WRKDIR setting.",
+      "First independent audit assumed an empty stderr field was present; Meson omits it. Failed observer retained, corrected read-only audit defaults the absent optional field to empty without rerunning tests."
+    ],
+    "base_prefix_logical_registry_source_guards": true,
+    "independent_audit_full_SDK109_rawprefix_frozen17_base_mounts_preserved": true,
+    "installed": false,
+    "qualification": "Original selected source/default build and six-program test target only; actual59payloads/7explicitdirectories, private runtime, users/groups/sample/ldconfig lifecycle, both-host custody and normal integration remain pending. Accepted development count stays109.",
+    "observed_utc": "2026-11-25T22:35:23.990336+00:00"
   }
 }
