@@ -2439,6 +2439,10 @@
         "archive_sha256": "1c499ed797fccc5bc6536cb30c8b63702c8fe5bb81a302b6979e2700cf3f85a7",
         "all_nodes_verified_on_both_hosts": true
       }
+    },
+    {
+      "component": "libxslt diagnostic",
+      "correction": "First read-only preflight compared mount-p output against fstab text and stopped before commands. Next observer decoded historical ISO-8859-1 goldens as UTF-8; its five successful commands retained. Completion used raw unterminated-last-line semantics rather than original grep appended newline; its two successful commands retained. Final completion performs only missing chunk transform and exact bytewise original grep comparisons. All failed roots and full outputs preserved; no product source change."
     }
   ],
   "incomplete_original_source_suites": {
@@ -3516,7 +3520,24 @@
         "sha256": "3b71a90a9b00ed5aa4accb0d4ee0606f50203711e6706e7ed2f6aca9b2a7c16e"
       },
       "guards": "Whole100package prefix/logical registry/base/kernel/mounts and selected original source unchanged. Original source/distfiles/objects/stage/package/logs retained.",
-      "qualification": "Source-built default CRYPTO/PLUGINS/STATIC package is held: original make test exits0 but its DocBook checks print4unpropagated diffs. Main runner751cases/0errors does not establish complete-suite success. Independent sealed acceptance, two-host custody and normal installation remain pending; no AMD64/canonical/desktop/hardware/release qualification."
+      "qualification": "Source-built default CRYPTO/PLUGINS/STATIC package is held: original make test exits0 but its DocBook checks print4unpropagated diffs. Main runner751cases/0errors does not establish complete-suite success. Independent sealed acceptance, two-host custody and normal installation remain pending; no AMD64/canonical/desktop/hardware/release qualification.",
+      "DocBook_causal_diagnosis": {
+        "actual_commands": 8,
+        "composition": "Five commands retained from first executed diagnostic, two from its first completion and one remaining chunk transform. Prior failed observers stay failed; successful commands are revalidated rather than rerun.",
+        "independent_XML_CDATA_and_NMTOKENS_control": true,
+        "independent_XML_and_XSLT_exact_values_match": true,
+        "all_four_original_mismatches_explained": [
+          "html",
+          "fo",
+          "xhtml",
+          "xtchunk-indexs02.html"
+        ],
+        "checks": "After exactly reproducing original grep-v-id behavior, including its final-newline semantics, all four diffs are only eleven leading spaces from a multiline CDATA URL. Main HTML/FO/XHTML and all chunk outputs compared. No source, DTD, expected output or original test was changed.",
+        "standards_reference": "https://www.w3.org/TR/xml/#AVNormalize",
+        "status_propagation_defect": "Original single/xtchunk captures diff stdout inside command substitution; later successful rm/grep/echo masks its exit status. Original suite is not green.",
+        "qualification": "Discrepancy explained by expected-output trimming versus XML CDATA preservation. Original suite remains non-green; independent package acceptance and normal installation pending.",
+        "guards": "Whole100prefix/rawdb/base/mounts unchanged."
+      }
     }
   ],
   "installed_Python_metadata_recovery": {
