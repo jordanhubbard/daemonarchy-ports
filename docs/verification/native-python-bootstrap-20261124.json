@@ -2188,7 +2188,7 @@
     "Fixed default libgpg-error1.61_1 is integrated among99developmentpackages, PR113. Continue original default libgcrypt(DOCS/INFO/STATIC), libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and defaultD-Bus(MANPAGES/X11) closure, then fullGLib original suite. All broad release/fleet/physical/canonical gates remain open.",
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
     "Libxslt PR114 repaired package is now integrated among101developmentpackages. Strict original DocBook results,751mainrunnercases/0errors,8harnesscontrols,30sealed and30freshnormalcommands pass. Original/repaired source/private and normal evidence verified on both hosts. Continue xmlcatmgr/DocBook/catalog/defaultD-Bus/fullGLib closure.",
-    "Xmlcatmgr2.2_5 is installed but HELD for SIGSEGV on structural group entry. Candidate2.2_6 b3e7f9b rejects structural operations/invalid arities and guards one-attribute validation. Native causal rebuild passes10strict added scenarios; full ports/package/private/script controls and normal upgrade remain pending. Then continue DocBook/defaultD-Bus/fullGLib desktop closure."
+    "Xmlcatmgr2.2_6 B3 full ports package/10regressions/strict67private/37originalscripts pass,1684nodes verified in Sparky nativeVM and Madmax. Installed2.2_5 stillHELD; normal upgrade pending original solver classification diagnosis and exact versioned-license path transition. Continue DocBook/defaultD-Bus/fullGLib closure afterward."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -3982,7 +3982,7 @@
       "version": "2.2_6",
       "source_revision": "b3e7f9b7235c73012d5b52ae708fb1f4df9f59a0",
       "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/115",
-      "status": "native-causal-controls-pass-full-ports-pending",
+      "status": "full-native-ports-package-strict-private-and-original-scripts-pass-normal-upgrade-pending",
       "native_causal_control": {
         "old_installed_binary_rejected_by_strict_regression": true,
         "BSD_patch_zero_fuzz": true,
@@ -3990,7 +3990,122 @@
         "added_named_scenarios_pass": 10,
         "held102_prefix_rawdb_frozen17_original_sources_base_mounts_unchanged": true
       },
-      "qualification": "Fast causal control only; full native ports construction/package, independent sealed consumers, original-script controls and normal upgrade still required. No original upstream self-suite exists."
+      "qualification": "Full native ARM64 default ports package and ten added regressions pass; strict private67 and original-script37 controls pass, with1684nodes original/failure/core evidence verified on both hosts. Normal upgrade still pending; installed2.2_5 remains HELD. No canonical/GUI/hardware/release claim.",
+      "construction_targets": [
+        {
+          "target": "checksum",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "extract",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "patch",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "configure",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "build",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "stage",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "check-plist",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "package",
+          "exit": 0,
+          "uid": 65534
+        }
+      ],
+      "package": {
+        "bytes": 24180,
+        "sha256": "4bae74d6ffc5e801f32d5e413dfda05f51560af8e7b4c2eaaaec36ef9a775f1f"
+      },
+      "make_test_exit": 0,
+      "added_native_regression_scenarios": [
+        {
+          "result": "PASS",
+          "name": "xml-attribute-query-roundtrip"
+        },
+        {
+          "result": "PASS",
+          "name": "xml-attribute-single-entity-decode"
+        },
+        {
+          "result": "PASS",
+          "name": "xml-attribute-predefined-references"
+        },
+        {
+          "result": "PASS",
+          "name": "xml-attribute-numeric-Unicode-references"
+        },
+        {
+          "result": "PASS",
+          "name": "xml-attribute-attribute-whitespace"
+        },
+        {
+          "result": "PASS",
+          "name": "xml-attribute-invalid-references"
+        },
+        {
+          "result": "PASS",
+          "name": "xml-attribute-rejection-and-recovery"
+        },
+        {
+          "result": "PASS",
+          "name": "xml-attribute-entry-types"
+        },
+        {
+          "result": "PASS",
+          "name": "xml-attribute-single-attribute-validation"
+        },
+        {
+          "result": "PASS",
+          "name": "xml-attribute-SGML-unchanged"
+        }
+      ],
+      "independent_sealed_acceptance": {
+        "actual_commands": 67,
+        "all_statuses_nonnegative_below128": true,
+        "previously_crashing_group_exit": 1,
+        "all11payloads_2dirs_exact": true,
+        "whole102held_prefix_rawdb_base_mounts_unchanged": true,
+        "default_loader": true
+      },
+      "original_package_script_controls": {
+        "actual_commands": 37,
+        "all_match_expected_exit": true,
+        "four_generated_catalogs_exact": true,
+        "existing_global_catalogs_preserved": true,
+        "scope": "No devfs/mount/device nodes: /dev/null inside each test directory is a regular capture sink used only by the original two write-only lookup redirects, with fd0 inherited from the real host null device. This is an explicitly limited script-file-effects control, not a normal OS/package installation; normal integration remains required."
+      },
+      "source_private_script_failure_custody": {
+        "nodes": 1684,
+        "archive_bytes": 30322559,
+        "archive_sha256": "7409d6405afc00c45f30b4066aee00bfd9f43e11518bfdca2c850ac74b5fea0d",
+        "both_hosts_all_nodes_verified": true,
+        "storage_scope": "Original archive retained and fully verified inside allocated native VM on Sparky; independent copy streamed directly to Madmax and fully verified. No extra compressed archive on Sparky Linux filesystem."
+      },
+      "normal_upgrade_pending": {
+        "local_only_solver_dry_run": "Returned1 and classified2.2_6asnewinstallation despite existing2.2_5 in same mounted database. No package installed; digest/SQLite bookkeeping changed, separate read-only audit2083 confirms payloads/catalogs/inherited101/frozen/base/mounts and reseals102held. Retain anomaly for diagnosis.",
+        "guarded_add_preflight": "Stopped before installation: revision changes three versioned license paths. No add ran. Later upgrade guards must account for exact old/new license bodies and directories through original package upgrade semantics; do not waive old paths as untracked leftovers."
+      }
     }
   ],
   "installed_Python_metadata_recovery": {
