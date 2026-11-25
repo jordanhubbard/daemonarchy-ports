@@ -1761,7 +1761,7 @@
     "GI-docgen full original Graphviz render_dot/SVG test and complete CI/tool closure remain open despite successful default runtime generation; source-built Graphviz required, original test failure retained.",
     "CMake original upstream self-suite and forced BSD-make space-path failure remain open; original source construction, sealed and normal default-finder/GNUmake consumers pass. No full upstream/backend qualification claimed.",
     "Default GLib remains pending. Follow original required flavor chain: glib20@bootstrap -> gobject-introspection@bootstrap -> glib20@default, preserving final DOCS/NLS/MANPAGES/TEST. Named intermediate bootstrap packages do not qualify default GLib or its full test closure.",
-    "Introspection bootstrap configure fails because two inherited Python pkg-config files point to a temporary test installation. Read-only audit of retained registered Python package verifies8031members and finds exactly those2alteredfiles; exact original payload restoration, preservation and regression checks pending. Do not bypass Python header check or alter frozen SDK17."
+    "Introspection Python header configure failure resolved by exact original metadata restoration. Original fresh package constructs, but make test fails building GIR inputs before tests launch: bootstrap test environment lacks the original build pkg-config path. Test-only fix PR111 is committed; exact-commit native full-port/test qualification pending."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2108,12 +2108,13 @@
       "qualification": "Additional successful backend does not resolve the failed backend or establish full upstream self-suite qualification."
     },
     "IntrospectionBootstrap": {
-      "stage": "Original configure failed before build/tests",
-      "cause": "Inherited Python pkg-config prefix points to a temporary test installation; Python.h is not found",
-      "Python_registered_original_artifact_sha256": "3436996127141576dc3f282cb15fe0696f5f0930ce1f5c611f89f12008687be7",
-      "registered_file_entries_matching_artifact_manifest": 8031,
-      "installed_members_differing_from_original_artifact": 2,
-      "repair": "pending; restore exact retained registered payloads with preservation and independent native compiler/embedding checks; no header-check override"
+      "initial_configure_failure": "Inherited Python PC prefix corruption; restored exact original registered payloads. Fresh original configure/build/stage/check-plist/package pass.",
+      "original_make_test_failure": "GIR test-input build cannot locate bootstrap GLib metadata; no Meson test records were completed.",
+      "causal_control": "Same metadata lookup succeeds in original MAKE_ENV, fails in original TEST_ENV, and produces byte-identical successful flags when test reuses original build PKG_CONFIG_LIBDIR.",
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/111",
+      "code_head": "3d254ae00b7ad4866e52008bc20cef173587a9ea",
+      "fix": "Bootstrap flavor adds TEST_ENV from existing MAKE_ENV PKG_CONFIG_LIBDIR; original tests/assertions/selection/dependencies/options unchanged.",
+      "qualification": "Fresh exact-commit original port/test, sealed/default scanner acceptance and custody pending; no passing suite claimed."
     }
   },
   "source_built_candidates": [
@@ -2470,5 +2471,34 @@
         "all_nodes_verified_on_both_hosts": true
       }
     }
-  ]
+  ],
+  "installed_Python_metadata_recovery": {
+    "package": "python312-3.12.16",
+    "registered_original_package_sha256": "3436996127141576dc3f282cb15fe0696f5f0930ce1f5c611f89f12008687be7",
+    "cause": "Two inherited installed pkg-config files pointed to a temporary test prefix. The retained registered package has prefix=/usr/local. Corruption is present in the frozenSDK17 baseline too; frozen SDK17 was preserved.",
+    "original_registered_members_audited": 8031,
+    "pre_recovery_mismatches": 2,
+    "post_recovery_mismatches": 0,
+    "restored_paths": [
+      "/usr/local/libdata/pkgconfig/python-3.12-embed.pc",
+      "/usr/local/libdata/pkgconfig/python-3.12.pc"
+    ],
+    "restoration": "Exact original registered package payloads restored only to mutable SDK18. No text substitution, interpreter/library replacement, header-check override or frozenSDK17 mutation.",
+    "before_state_and_failed_introspection_evidence": {
+      "nodes": 2761,
+      "archive_bytes": 52468031,
+      "archive_sha256": "19381e3c602c8ab70df47d7689ef34244e280ab2faa60e232b379611fd97d660",
+      "all_nodes_verified_on_both_hosts": true
+    },
+    "after_recovery_and_full_reaudit_evidence": {
+      "nodes": 87,
+      "archive_bytes": 2357844,
+      "archive_sha256": "ed28cae0265c91ccec79e7866b870e3645284fb8f5e21be924d025d737b3618a",
+      "all_nodes_verified_on_both_hosts": true
+    },
+    "actual_native_consumers": "Both pkgconf implementations produce correct headers; real C extensions compile/import with changed73to91 and embedded Python executes104. Staged original and normal default contexts pass; default has no PC-path or loader override.",
+    "actual_commands_per_context": 16,
+    "guard_scope": "Only2mutableSDKfiles changed. Other installed members/rawpkgdb/frozenSDK17/base/kernel/mounts unchanged during guarded restoration. Subsequent full8031member artifact audit has zero mismatches.",
+    "qualification": "Installed-file integrity recovery only; original seed source-build provenance and canonical/release admission remain open."
+  }
 }
