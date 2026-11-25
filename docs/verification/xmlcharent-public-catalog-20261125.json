@@ -17,10 +17,20 @@
   "remaining": [
     "Fresh original port construction and make test invocation",
     "Independent sealed package consumers across all975characterdefinitions",
-    "Real Simplified DocBook custom and flattened article/refentry consumer with candidate parent catalog",
     "Both-host source/private/failure custody",
     "Normal local-only upgrade/dependencies/catalog hooks and default-global consumer regression",
     "Canonical authority/lifecycle, AMD64, desktop, physical and release acceptance"
   ],
-  "observed": "2026-11-25T09:48:27.834770+00:00"
+  "observed": "2026-11-25T09:48:27.834770+00:00",
+  "Simplified_Docbook_consumer_causal": {
+    "actual_commands": 20,
+    "profiles": [
+      "article flattened",
+      "article customization",
+      "refentry flattened",
+      "refentry customization"
+    ],
+    "checks": "Both XML/SGML PUBLIC mappings; valid changed values and supported Latin entities; invalid content/excluded Greek rejection and recovery in all4profiles.",
+    "scope": "Original sealed15payloads from failed private consumer remain unmodified. Explicit derived private root catalog puts corrected19entityPUBLICmappings ahead of unchanged installed default parent catalog. Original installed104package environment/prefix/rawdb/base/mounts unchanged. This proves the parent mapping cause; it is not a passing original private run or normal default-global integration."
+  }
 }
