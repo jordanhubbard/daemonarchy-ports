@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 100,
+  "normal_development_package_count": 101,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -1105,6 +1105,61 @@
         }
       },
       "qualification": "NativeARMdevelopmentonly;notfully-static-system/FIPScertification/AMD64/canonical/lifecycle/releaseacceptance."
+    },
+    {
+      "name": "Libxslt repaired original DocBook tests and real normal consumers",
+      "source_revisions": [
+        "c16cb8985b515b1b280d80f6d593f64a5ef9d270"
+      ],
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/114",
+      "packages": [
+        {
+          "name": "libxslt-1.1.45.pkg",
+          "bytes": 279331,
+          "sha256": "b8a53b6725bda202d587eb0654be7618274b3fd4da9e2782e00b13153738f67f"
+        }
+      ],
+      "original_selected_options": [
+        "CRYPTO",
+        "PLUGINS",
+        "STATIC"
+      ],
+      "sealed_payloads": 85,
+      "declared_directories": 1,
+      "normal_packages_before": 100,
+      "normal_packages_after": 101,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "all100_inherited_packages_preserved_except_justified_parent_mtimes": true,
+      "frozen_bootstrap_base_kernel_mounts_preserved": true,
+      "original_make_test_exit": 0,
+      "original_check_groups": 32,
+      "original_main_runner_reported_cases": 751,
+      "original_main_runner_reported_errors": 0,
+      "added_harness_scenarios": 8,
+      "actual_private_and_default_path_checks": "30 fresh actual commands in each context exercise real shared/static primary library APIs, EXSLT crypto, external dynamic plugins and xsltproc against independent Python XML/math/hash oracles. Changed inputs at states73/91/104, malformed input/stylesheet and terminating-message errors, missing-plugin rejection and recovery. Normal clients use original automatic metadata and default loader, no LD_LIBRARY_PATH or sealed-CLI library override. Primary xslt/exslt archives are static; system/crypto dependencies may remain shared.",
+      "count_scope": "Original751runnercaseinvocations,32checkgroups,8addedharnessscenariosand30commandsperconsumercontext are separate counts, not summed as unique tests.",
+      "two_host_evidence": {
+        "original_source_private_and_failed_observers": {
+          "nodes": 3714,
+          "archive_bytes": 20548213,
+          "archive_sha256": "7f69fdb056b87dba7c05feee2dc869bd36beb8e57d7b1bcbb86140fba4acff03",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "repaired_source_private_and_causal_controls": {
+          "nodes": 7263,
+          "archive_bytes": 27105882,
+          "archive_sha256": "c12bbc2d4124a132f114584ef58e800bb468d904b0759cdfb3857cc87c846a84",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 108,
+          "archive_bytes": 12652717,
+          "archive_sha256": "016612db075408a55e057fc35fe54f268d4ab9816ca9ece01534a953f5bc040e",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "observer_scope_note": "Reusable API fixture retains older descriptive scope text about private context and masked DocBook failures. The fresh normal caller records real /usr/local paths/default loader and binds the repaired original_test_audit separately; raw old descriptions/failures were preserved, not relabeled.",
+      "qualification": "Native ARM64 development only; no AMD64, fully static system, canonical/lifecycle, desktop, physical hardware or release admission."
     }
   ],
   "complete_original_source_suites": {
@@ -2132,9 +2187,9 @@
     "Shared MIME-Info is integrated among98developmentpackages; full default GLib original test closure now needs D-Bus. Preserve original D-Bus MANPAGES/X11 defaults: libxslt/libgcrypt/libgpg-error and DocBook/catalog dependencies are next. Canonical/full release and physical platform scope remains open.",
     "Fixed default libgpg-error1.61_1 is integrated among99developmentpackages, PR113. Continue original default libgcrypt(DOCS/INFO/STATIC), libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and defaultD-Bus(MANPAGES/X11) closure, then fullGLib original suite. All broad release/fleet/physical/canonical gates remain open.",
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
-    "Libxslt PR114 fresh construction, strict original DocBook results,751mainrunnercases,8harnesscontrols and30sealedconsumercommands pass. Normal integration awaits second verified evidence copy under70GiBreserve; then resume DocBook/catalog/defaultD-Bus/fullGLib closure.",
-    "Xmlcatmgr original2.2_4isheldforinvalidXMLserializationofvalidURIqueryampersands. PR115 addsencoding/decodingand8nativepost-testscenarios;freshcurrentheadbuild/independentacceptance/custody/normalintegrationpending. Optionaldeprecatedlibxml2internalSGMLconversioncrashretainedseparately;publicSGMLresolutionpasses.",
-    "Xmlcatmgr PR115 current2.2_5passesfreshall8constructiontargets/8addedregressions/67independentconsumercommands;3103nodefullsource/private/failures/core capsuleverifiedonSparky. Original four-catalog script controls now pass37actualcommands;384node control capsule verified on Sparky. NeedsecondhostcopyandnormalintegrationbeforeDocBook/defaultD-Busclosure. Original2.2_4remainsheld."
+    "Libxslt PR114 repaired package is now integrated among101developmentpackages. Strict original DocBook results,751mainrunnercases/0errors,8harnesscontrols,30sealed and30freshnormalcommands pass. Original/repaired source/private and normal evidence verified on both hosts. Continue xmlcatmgr/DocBook/catalog/defaultD-Bus/fullGLib closure.",
+    "Xmlcatmgr original2.2_4 remains held for invalid XML serialization of valid URI ampersands. Current PR115 2.2_5 source/8addedregressions/67privatecommands/37originalscript-controls pass with complete source/private/script evidence on both hosts. Normal integration is next; deprecated internal SGML converter crash remains a separate retained observer failure.",
+    "Xmlcatmgr PR115 current2.2_5 source/private/script-control custody is complete on both hosts. Run fresh normal installation against actual101packagebaseline, enforce exact4generatedcatalogpredictions and all inherited-prefix/rawdb/base guards, then continue DocBook/defaultD-Bus closure. Original2.2_4 remains held."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -3566,8 +3621,9 @@
         "archive_sha256": "7f69fdb056b87dba7c05feee2dc869bd36beb8e57d7b1bcbb86140fba4acff03",
         "source_objects_stage_packages_controllers_and_all_failed_diagnostics_retained": true,
         "Sparky_all_nodes_verified": true,
-        "second_host_all_nodes_verified": false,
-        "blocked_reason": "Second evidence host has approximately47GiB available, below archive plus inventory plus70GiB reserve. Guard stopped before creating/uploading remote copy. No deletion, NAS use or normal installation."
+        "second_host_all_nodes_verified": true,
+        "blocked_reason": "Second evidence host has approximately47GiB available, below archive plus inventory plus70GiB reserve. Guard stopped before creating/uploading remote copy. No deletion, NAS use or normal installation.",
+        "all_nodes_verified_on_both_hosts": true
       },
       "superseded_for_next_integration_by_source_revision": "c16cb8985b515b1b280d80f6d593f64a5ef9d270"
     },
@@ -3627,11 +3683,28 @@
         "archive_bytes": 27105882,
         "archive_sha256": "c12bbc2d4124a132f114584ef58e800bb468d904b0759cdfb3857cc87c846a84",
         "Sparky_all_nodes_verified": true,
-        "second_host_all_nodes_verified": false,
-        "pending": "Secondhost70GiBreserve unavailable; operator alternatehost/capacity question pending. No normal installation."
+        "second_host_all_nodes_verified": true,
+        "pending": "Source and all retained failures now verified on both existing hosts with unchanged archive/inventory/node/CRC checks.",
+        "all_nodes_verified_on_both_hosts": true
       },
       "canonical_gates": "At exact codehead authority and2selectedlocks pass; verifyexit1/nestedfalse because current canonical receipt is missing. No marker/lock/receipt rewrite.",
-      "qualification": "NativeARM64 source/tests and sealed acceptance pass. Normalintegration/custodysecondcopy/AMD64/canonicalSDK-TCB/desktop/hardware/release remain open. Original defective tests and failed observers remain distinct and retained."
+      "qualification": "Native ARM64 source/tests, sealed acceptance and normal development integration pass; original/fixed source/private and normal transaction evidence are verified on both hosts. AMD64, canonical SDK/TCB/lifecycle, desktop/hardware and release remain open. Original failed tests/observers remain retained separately.",
+      "normal_integration": {
+        "installed": true,
+        "packages_before": 100,
+        "packages_after": 101,
+        "actual_normal_commands": 30,
+        "original_offline_dependencies_and_scripts_enforced": true,
+        "default_metadata_and_loader_no_overrides": true,
+        "all85payloads_one_directory_exact": true,
+        "all100_inherited_packages_unchanged_except_justified_parent_mtimes": true,
+        "normal_transaction_custody": {
+          "nodes": 108,
+          "archive_bytes": 12652717,
+          "archive_sha256": "016612db075408a55e057fc35fe54f268d4ab9816ca9ece01534a953f5bc040e",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      }
     },
     {
       "component": "xmlcatmgr",
@@ -3821,12 +3894,13 @@
         "all_three_producer_selected_port_Mk_Template_bodies_materialized": true,
         "original_source_objects_stages_packages_failures_observers_and_core_retained": true,
         "Sparky_all_nodes_verified": true,
-        "second_host_all_nodes_verified": false,
-        "pending": "Madmaxbelow70GiBreserve;operatorcapacity/alternatehostquestionpending. Sparkycopycompletedafterfreshcapacityguardpassed;no reserveweakened."
+        "second_host_all_nodes_verified": true,
+        "pending": "Source and all retained failures now verified on both existing hosts with unchanged archive/inventory/node/CRC checks.",
+        "all_nodes_verified_on_both_hosts": true
       },
       "guards": "Whole100prefix/rawdb/base/kernel/mounts/advisory unchanged;source/testinputidentitiesverified. No normalinstallation.",
       "canonical_gates": "At exactcodehead projectauthority and2selectedlocks pass;verifyexit1/nestedfalse becausecurrentcanonicalreceiptmissing.",
-      "qualification": "Native ARM64 source, sealed acceptance and bounded original-script file-effects controls pass. Second-host custody, normal package installation/trigger delivery, AMD64, canonical SDK/TCB/lifecycle, desktop/hardware and release qualification remain open.",
+      "qualification": "Native ARM64 source, sealed acceptance and bounded original-script controls pass, with their complete original/failure capsules verified on both hosts. Normal package installation/trigger delivery, AMD64, canonical SDK/TCB/lifecycle, desktop/hardware and release remain open.",
       "original_package_script_controls": {
         "actual_commands": 37,
         "exit_zero": 35,
@@ -3881,7 +3955,8 @@
           "archive_bytes": 12793465,
           "archive_sha256": "bfc380c085362619652a7aca47fd3887de87e975c476aad264daf9b34b75da49",
           "Sparky_all_nodes_verified": true,
-          "second_host_all_nodes_verified": false
+          "second_host_all_nodes_verified": true,
+          "all_nodes_verified_on_both_hosts": true
         }
       }
     }
@@ -3914,5 +3989,18 @@
     "actual_commands_per_context": 16,
     "guard_scope": "Only2mutableSDKfiles changed. Other installed members/rawpkgdb/frozenSDK17/base/kernel/mounts unchanged during guarded restoration. Subsequent full8031member artifact audit has zero mismatches.",
     "qualification": "Installed-file integrity recovery only; original seed source-build provenance and canonical/release admission remain open."
+  },
+  "evidence_copy_capacity_correction": {
+    "previous_receiver_reserve_gib": 70,
+    "previous_receiver_reserve_origin": "Assistant-authored local copy-script assumption; no original project or user requirement for70GiB on evidence-only receiver found. It unnecessarily blocked84MB of already verified copies. Old failed controllers/results remain retained.",
+    "bounded_receiver_reserve_gib": 16,
+    "aggregate_payload_limit_mib": 128,
+    "actual_four_capsule_payload_bytes": 84185367,
+    "all_original_integrity_checks_unchanged": true,
+    "original_traced_build_free_space_requirement_gib": 100,
+    "build_requirement_unchanged": true,
+    "Sparky_workspace_reserve_gib": 64,
+    "no_source_or_failure_deleted": true,
+    "four_source_private_script_capsules_now_verified_on_both_hosts": true
   }
 }
