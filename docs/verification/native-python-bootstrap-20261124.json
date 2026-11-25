@@ -3264,6 +3264,40 @@
         "all_nodes_verified_on_both_hosts": true
       },
       "normal_automatic_static_metadata_queries": 3
+    },
+    {
+      "component": "libgcrypt",
+      "source_revision": "486f80fdbab7188d158d8bf23634a9d0ae9c1539",
+      "construction_targets": "All eight original targets exit zero. Original DOCS/INFO/STATIC defaults and build/runtime/test dependency selection preserved.",
+      "original_make_test_exit": 0,
+      "original_selected_options": [
+        "DOCS",
+        "INFO",
+        "STATIC"
+      ],
+      "original_program_outcomes": {
+        "PASS": 41,
+        "SKIP": 2
+      },
+      "all_original_expanded_TESTS_accounted_for": true,
+      "original_skips": [
+        {
+          "program": "hashtest-6g",
+          "reason": "Original generated wrapper contains test no = yes || exit77; large-data tests disabled by original configure selection. No filter or test modification."
+        },
+        {
+          "program": "hashtest-256g",
+          "reason": "Original generated wrapper contains test no = yes || exit77; large-data tests disabled by original configure selection. No filter or test modification."
+        }
+      ],
+      "count_scope": "43 original program outcomes, including41PASS/2originalSKIP. Nested algorithm vectors/assertions are not summed. Large-data coverage remains unqualified.",
+      "package": {
+        "name": "libgcrypt-1.12.4.pkg",
+        "bytes": 1159860,
+        "sha256": "bf6136f848e33acee6738a26c09bf06b305933cfca65fc50cab49b84ace836d8"
+      },
+      "guards": "Whole99prefix/logicalregistry/base/kernel/mount/source unchanged. All original source/distfiles/objects/stage/package/logs retained.",
+      "qualification": "Source-built development candidate only. Sealed/default package API/CLI acceptance and both-host custody pending; not installed. AMD64, optional large-data coverage, canonical/lifecycle/release remain open."
     }
   ],
   "installed_Python_metadata_recovery": {
