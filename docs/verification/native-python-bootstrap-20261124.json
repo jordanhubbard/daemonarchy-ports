@@ -4669,7 +4669,7 @@
       "version": "0.3_3",
       "source_revision": "204235a1a16b913c52b98ce5533a2cf16f114dc0",
       "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/117",
-      "status": "fresh-original-data-port-constructors-and21native-port-tests-pass-sealed-normal-pending",
+      "status": "original-construction-make-test-sealed-and-upgrade-hook-controls-pass-bothhost-custody-normal-pending",
       "change": "19PUBLICtargetsHTTP\u2192relativeexistingentityfiles;4system/URIrewrites,FPIs,19resourcebodiesandSGMLcatalogpreserved. Nativeportdo-testaddedwithdeclaredxmllintdependency.",
       "added_native_regression_scenarios": 21,
       "same_script_original_catalog_exit": 1,
@@ -4677,7 +4677,7 @@
       "real_Simplified_Docbook_causal_commands": 20,
       "normal104_prefix_rawdb_base_mounts_unchanged": true,
       "failed_observers_retained": "2164assumedGreekentitiesincluded;2167reproducedrealPUBLICofflinefailure;2173firstaddedregressionshellscriptlostexpectedvalueatreadEOF. Corrected2175/2177passwithoutchangingoriginalproductbytes.",
-      "qualification": "Fresh original native port construction and added21regressiondo-testbridge pass; this data distribution has no original upstream self-suite. Sealed/all975entityacceptance, normalupgrade/defaultglobal/bothhostcustody/canonical/desktop/physical/releaseadmission remain pending.",
+      "qualification": "NativeARM64dataresource and21addedportregressions,notoriginalupstreamselfsuite. Normalupgrade/defaultglobalcurrentheldpackageacceptance,AMD64/canonical/desktop/physical/releaseadmissionpending.",
       "full_source_members_verified": 184371,
       "selected_original_port_Mk_Templates_Keywords_blobs_and_modes_verified": 271,
       "construction_targets": [
@@ -4728,7 +4728,28 @@
       },
       "actual_make_test_exit": 0,
       "actual_make_test_PASS_records": 21,
-      "whole104_prefix_registry_base_mounts_selected_sources_unchanged": true
+      "whole104_prefix_registry_base_mounts_selected_sources_unchanged": true,
+      "sealed_payloads": 25,
+      "declared_directories": 0,
+      "private_consumers": {
+        "actual_commands": 136,
+        "resources": 19,
+        "independent_entity_definitions": 975,
+        "checks": "All975valuescomparedbetweenindependentExpatandvalidatinglibxml2;PUBLICarbitraryunmapped/W3C/canonicalfallbacksystemIDs,current/0.3system-onlyIDs,XML/SGMLresolution,missingcatalogandrecovery. Cleanloader,nobodyactor,exactpackagedbytesbefore/after."
+      },
+      "original_upgrade_keyword_controls": {
+        "actual_commands": 8,
+        "old_and_new_manifest_script_bodies_identical": true,
+        "exact_two_catalog_order_updates_predicted": true,
+        "two_masters_Docbook_and_user_entries_preserved": true,
+        "scope": "PKG_ROOTDIRnamespaceonly,notnormalhookdelivery."
+      },
+      "both_host_source_private_failed_causal_and_keyword_custody": {
+        "nodes": 1916,
+        "archive_bytes": 23084886,
+        "archive_sha256": "8f689e8335d026cd477461b2186117ad1dde019abad0f381949f839ab740dfdb",
+        "all_nodes_verified_on_both_hosts": true
+      }
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -4782,5 +4803,5 @@
       "reason": "Actual Simplified DocBook customization consumer fails offline because PUBLIC mappings yield HTTP and libxml2 does not recursively remap them. Historical98system-ID/canonicalPUBLICconsumer commands remain scoped passes, but do not prove this combined use. Replacement0.3_3 PR117 has native causal proof; fresh package/normal upgrade pending."
     }
   ],
-  "last_updated_utc": "2026-11-25T09:55:37.285756+00:00"
+  "last_updated_utc": "2026-11-25T09:59:15.266556+00:00"
 }
