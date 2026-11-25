@@ -5008,7 +5008,7 @@
   },
   "actual_installed_development_package_count": 106,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-25T20:48:03.560672+00:00",
+  "last_updated_utc": "2026-11-25T21:03:33.014859+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -5492,5 +5492,71 @@
       },
       "scope": "Fresh construction only; private/generated-hook/normal/full-suite/canonical/release qualification separate."
     }
-  ]
+  ],
+  "selected_DocBook_XML_failfast_upgrade_20261125": {
+    "source_revision": "1d0dc88cb0d7e2087bd7acaefb2f030e1036b3de",
+    "old_version": "5.0_3",
+    "new_version": "5.0_5",
+    "original_construction_targets": 8,
+    "artifact": {
+      "bytes": 565315,
+      "sha256": "1325b1bcdae273f3a226728e2ce88a7597b8384317c74184a489f050d716c2a5"
+    },
+    "private_and_normal_payloads": 195,
+    "explicit_directories": 0,
+    "private_and_normal_DTD_schema_catalog_conversion_commands_each": 42,
+    "DTD_profiles": 6,
+    "actually_shipped_schema_profiles": 3,
+    "actual_pkg_decoded_generated_hook_controls": 24,
+    "actual_script_orders_parsed_and_bound": {
+      "parent3-post-install": [
+        "share/xml/docbook/catalog.xml",
+        "share/xml/docbook/catalog"
+      ],
+      "parent3-post-deinstall": [
+        "share/xml/docbook/catalog.xml",
+        "share/xml/docbook/catalog"
+      ],
+      "new-post-install": [
+        "share/xml/docbook/catalog.xml",
+        "share/xml/docbook/catalog"
+      ],
+      "new-post-deinstall": [
+        "share/xml/docbook/catalog.xml",
+        "share/xml/docbook/catalog"
+      ]
+    },
+    "old_script_percent_decoding_changes_bodies": {
+      "post-install": false,
+      "post-deinstall": false
+    },
+    "original_seven_old_script_controls_runtime_byte_exact": true,
+    "two_incorrect_order_observers_preserved": true,
+    "normal_local_only_original_pkg_dependencies_hooks": true,
+    "normal_upgrade_empty_stderr_and_no_hook_errors": true,
+    "four_global_catalog_files_body_and_mtime_preserved": true,
+    "other_package_prefixes_preserved": 105,
+    "normal_wrapper_status": "Failed after successful transaction and all42consumercommands: absent optional reportflag caused KeyError. Original failed result stays unchanged.",
+    "read_only_completion": "Pass: binds original failedresult SHA and successful transaction, independently revalidates all42journaledcommands/outputs and actual sourceguards requiring no loader/catalog override, then executes only the remaining136Xmlcharentdependencycommands. No package transaction or42command replay.",
+    "remaining_normal_Xmlcharent5_dependency_commands": 136,
+    "independent_entity_values": 975,
+    "fresh_full_SDK106_prefix_and_rawdb_unchanged_through_read_only_completion": true,
+    "accepted_bounded_development_count": 106,
+    "two_host_source_private_capsule": {
+      "nodes": 1938,
+      "archive_sha256": "701deb251972d52be8f4605d8c2f850fa652fcd00997126b3f792d9160d395a2",
+      "inventory_sha256": "4d79633db2485fc9d9a936afbee62c00a32fc1146bebb48fea6334adfd2fa34d",
+      "all_nodes_independently_verified_on_both_hosts": true
+    },
+    "two_host_normal_and_read_only_completion_capsule": {
+      "nodes": 515,
+      "archive_sha256": "32cc97e62d6f38b900af533e017360db8c4700df18bfed675019b37228e1e2b1",
+      "inventory_sha256": "73362101f1cb7d2aa6086df912905ef140b13e7819775125dd920aa97eca137a",
+      "all_nodes_independently_verified_on_both_hosts": true
+    },
+    "unqualified_original_catalog_aliases": 4,
+    "absent_original_schema_targets": 2,
+    "remaining": "DocBookSGML4.5_3 construction passes but private/generated-hook/normal acceptance is pending. Continue selected SGML/meta/XSL/defaultD-Bus/fullGLib/desktop. Complete canonical lifecycle,AMD64,physical and release acceptance remains open.",
+    "observed_utc": "2026-11-25T21:03:33.014859+00:00"
+  }
 }
