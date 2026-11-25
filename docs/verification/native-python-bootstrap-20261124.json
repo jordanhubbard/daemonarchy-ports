@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 95,
+  "normal_development_package_count": 96,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -859,6 +859,69 @@
       },
       "original_upstream_suite": "All64originalMesontestprogramsOK,noFAIL/noSKIP; nested cases not summed. Original test sources/assertions/selection/options unchanged. Test-only environment fix PR111.",
       "qualification": "ARM64 development integration passes:240files/two declared directories,94inheritedpackages,actual95. Both contexts pass27actual commands; normal loader has no LD_LIBRARY_PATH override. Original64Mesonprograms pass separately. Both-host source/private and normal custody verified. DefaultGLib/AMD64/canonical/lifecycle/release remain open."
+    },
+    {
+      "name": "Full default GLib",
+      "origin": "devel/glib20@default",
+      "source_revisions": [
+        "af07b9b82fd4d0db8b7932aa41f671cb367f5dc8"
+      ],
+      "packages": [
+        {
+          "name": "glib-2.88.3,2.pkg",
+          "bytes": 11263561,
+          "sha256": "db3ed4eecb0cc8b9dc544bebc4f9c88d317b6e961cad8076d3e1ca2154411ed6"
+        }
+      ],
+      "original_selected_options": [
+        "DOCS",
+        "MANPAGES",
+        "NLS",
+        "TEST"
+      ],
+      "sealed_file_payloads": 8130,
+      "explicit_directory_payloads": 2,
+      "normal_packages_before": 95,
+      "normal_packages_after": 96,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "actual_commands_per_context": 41,
+      "actual_private_and_default_path_checks": "Shared/static core/GObject/GIO Unicode/hash/variants/keyfile/regex/signals/lifecycle/mainloop/GFile/date; resource/schema/codegen generation/change/rejection/recovery. Packaged GLib/Gio typelibs invoke actual monotonic-time and application-ID validation with typed wrong-argument errors and recovery; generated metadata inspection. Normal loader without LD_LIBRARY_PATH.",
+      "documentation_index_checks": {
+        "glib-2.0": {
+          "index_local_references": 1203,
+          "html_pages": 2470
+        },
+        "gobject-2.0": {
+          "index_local_references": 517,
+          "html_pages": 823
+        },
+        "gio-2.0": {
+          "index_local_references": 680,
+          "html_pages": 3291
+        },
+        "girepository-2.0": {
+          "index_local_references": 186,
+          "html_pages": 379
+        }
+      },
+      "packaged_man_and_translation_data": "Decompressed installed roff manpage and consumed actual German GNU-MO catalogue through GNUTranslations. No desktop locale/runtime NLS acceptance claimed.",
+      "two_host_evidence": {
+        "source_private_and_failed_observer": {
+          "nodes": 38348,
+          "archive_bytes": 135306178,
+          "archive_sha256": "814278a869b1d1f6de55f0a8783c656dc9fc18d35de80addab37aa83742a77d9",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 119,
+          "archive_bytes": 12939686,
+          "archive_sha256": "7f30fffe12cbdb29bb165e6ff6fb3d54925843c80ec9361ae06482535913ed88",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "original_upstream_suite": "NOT RUN: declared source-built dbus-uuidgen,update-desktop-database,update-mime-database tools missing. The latter two depend on default GLib itself.",
+      "qualification": "ARM64 development integration passes:8130files/two declared directories,95inheritedpackages,actual96;41actualcommands each sealed/default context, normal loader without LD_LIBRARY_PATH. Both-host source/private/failure and normal evidence verified. Original full suite pending three declared source-built tools; no AMD64/canonical/lifecycle/release qualification."
     }
   ],
   "complete_original_source_suites": {
@@ -1816,8 +1879,8 @@
     "TOML EOF fix PR109 native port/20committedregressions/sealed/default controls now pass; original NumPy/fullCI/AMD64/canonical gates remain pending",
     "GI-docgen full original Graphviz render_dot/SVG test and complete CI/tool closure remain open despite successful default runtime generation; source-built Graphviz required, original test failure retained.",
     "CMake original upstream self-suite and forced BSD-make space-path failure remain open; original source construction, sealed and normal default-finder/GNUmake consumers pass. No full upstream/backend qualification claimed.",
-    "Default GLib remains pending. Follow original required flavor chain: glib20@bootstrap -> gobject-introspection@bootstrap -> glib20@default, preserving final DOCS/NLS/MANPAGES/TEST. Named intermediate bootstrap packages do not qualify default GLib or its full test closure.",
-    "Introspection required bootstrap is integrated among95developmentpackages; all64originalMesonprograms and27sealed/default commands percontext pass with both-host evidence. PR111 review,AMD64,canonical/lifecycle admission remain pending. DefaultGLib full selected DOCS/MANPAGES/NLS/TEST source construction passes all8targets; sealed acceptance is in progress; original full suite still needs three declared source-built tools."
+    "Full default GLib is integrated among96developmentpackages with DOCS/MANPAGES/NLS/TEST preserved; all8construction targets and41sealed/default commands pass. Original full suite still needs three declared source-built test tools. Required named bootstrap intermediates remain distinct.",
+    "Introspection required bootstrap is integrated among95developmentpackages; all64originalMesonprograms and27sealed/default commands percontext pass with both-host evidence. PR111 review,AMD64,canonical/lifecycle admission remain pending. Full default GLib is now integrated among96developmentpackages with all options preserved; original full suite still needs three declared source-built tools."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2174,6 +2237,12 @@
       "forced_BSD_make_with_space_paths": "failed; original full failure retained",
       "default_finder_with_installed_GNUmake": "Sealed and normal consumers pass; all 3797 payloads and 91 inherited packages exact.",
       "qualification": "Additional successful backend does not resolve the failed backend or establish full upstream self-suite qualification."
+    },
+    "GLibDefault": {
+      "source_construction": "All8targets pass; full original DOCS/MANPAGES/NLS/TEST preserved.",
+      "development_normal_consumers": "41commands each sealed/default pass; actual96packages.",
+      "original_full_suite": "NOT RUN: missing dbus-uuidgen/update-desktop-database/update-mime-database declared tools. Latter two require normal default GLib. Build their original closures, then run unchanged original test target; preserve original pre-test machine-id effect and privilege requirements.",
+      "canonical_AMD64_release_qualified": false
     }
   },
   "source_built_candidates": [
@@ -2571,7 +2640,7 @@
       },
       "original_full_suite": "NOT RUN: declared source-built dbus-uuidgen,update-desktop-database,update-mime-database tools missing. The latter two depend on default GLib itself.",
       "guards": "Installed95prefix/logicalregistry/base/kernel/mounts/selectedsource preserved.",
-      "qualification": "Source-built candidate only. Sealed API/typelib/docs/man/MO acceptance in progress. Not installed; no complete upstream/canonical/release qualification."
+      "qualification": "ARM64 development integration passes:8130files/two declared directories,95inheritedpackages,actual96;41actualcommands each sealed/default context, normal loader without LD_LIBRARY_PATH. Both-host source/private/failure and normal evidence verified. Original full suite pending three declared source-built tools; no AMD64/canonical/lifecycle/release qualification."
     }
   ],
   "installed_Python_metadata_recovery": {
