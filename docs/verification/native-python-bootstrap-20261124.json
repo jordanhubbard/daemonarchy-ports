@@ -2340,6 +2340,71 @@
         "archive_sha256": "5572b6d0e44c63e8d02d8443ad43deaab696604c1c672ff715d25da38581e390",
         "all_nodes_verified_on_both_hosts": true
       }
+    },
+    {
+      "name": "GLib required named bootstrap flavor: preliminary construction",
+      "origin": "devel/glib20@bootstrap",
+      "source_revision": "511743d7327c93e9ff0117d04f0176ebc572f444",
+      "purpose": "Original dependency graph requires this separately named intermediate for gobject-introspection@bootstrap; that scanner is required by default GLib. It does not qualify or replace default GLib.",
+      "package_name": "glib-bootstrap-2.88.3,2.pkg",
+      "package": {
+        "bytes": 3025970,
+        "sha256": "b34dae0af956e6155aa0ee14d2422d5bc3a9bf78e70e64d6e61c3797c66cd8ea"
+      },
+      "original_construction_targets": [
+        {
+          "target": "checksum",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "extract",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "patch",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "configure",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "build",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "stage",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "check-plist",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "package",
+          "exit": 0,
+          "uid": 65534
+        }
+      ],
+      "flavor": "bootstrap",
+      "original_flavor_options": "The original named flavor disables introspection/documentation/man-pages/NLS; no operator option overrides. Final default GLib must preserve DOCS/NLS/MANPAGES/TEST.",
+      "original_make_test_target": "Not run: declared source-built test dependencies missing",
+      "missing_original_test_dependencies": [
+        "dbus-uuidgen:devel/dbus",
+        "update-desktop-database:devel/desktop-file-utils",
+        "update-mime-database:misc/shared-mime-info"
+      ],
+      "normal93_prefix_registry_base_mounts_preserved": true,
+      "independent_sealed_default_consumers_and_two_host_custody": "pending; source/build/package bytes retained on existing native worker",
+      "normal_integration": "pending; not included in current93packages",
+      "qualification": "Original native construction observation for mandatory intermediate only. Default GLib, original full test closure, AMD64, canonical and release qualification remain pending."
     }
   ]
 }
