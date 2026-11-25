@@ -16,10 +16,10 @@
   "observer_correction": "First new regression script lost final expected value at shell read EOF; preserve failed run. Fixed script caches the last expected value, all21scenarios pass.",
   "remaining": [
     "Rebuild and qualify the other selected consumers with fail-fast keyword hooks and current normal dependencies. All21strict native version comparisons pass; Xmlcharent0.3_5 actualgenerated19controls and normal upgrade pass. This does not qualify all21packages.",
-    "Xmlcharent0.3_5, SimplifiedDocBook1.1_4,2, ISO8879_5, DocBookXML5.0_6 and DocBookSGML4.5_4 have bounded normal qualification. Remaining selected metaport/XSL/default-D-Bus consumers and full original GLib/desktop qualification stay open.",
+    "Catalog provider packages and original DocBook1.5 metaport now have bounded normal qualification, accepted development count108. Continue original XSL defaults, D-Bus MANPAGES/X11, complete original GLib and desktop closure.",
     "Complete canonical authority/lifecycle,AMD64,desktop,physical and release acceptance."
   ],
-  "observed": "2026-11-25T22:00:11.073285+00:00",
+  "observed": "2026-11-25T22:10:21.569749+00:00",
   "Simplified_Docbook_consumer_causal": {
     "actual_commands": 20,
     "profiles": [
@@ -945,5 +945,81 @@
     },
     "unqualified": "Four original XML catalog aliases advertise two absent XInclude XSD files (docbookxi.xsd, xi.xsd); neither file is fabricated or replaced by ordinary XSD. Original upstream suites, remaining selected catalog consumers, canonical lifecycle, AMD64, desktop, physical fleet, media and release acceptance remain open.",
     "observed_utc": "2026-11-25T22:00:11.073285+00:00"
+  },
+  "selected_DocBook_metaport_20261125": {
+    "source_revision": "6defff971350efcf84889a03120ab5462ece1508",
+    "version": "1.5",
+    "artifact": {
+      "bytes": 1256,
+      "sha256": "e4315d1d3edb2dd78e34dadbe39f2e57244c240add2a4f694a6d85535fce9cec"
+    },
+    "original_construction_targets": 8,
+    "selected_original_source_files": 266,
+    "full_source_composition_members": 184377,
+    "actual_payloads": 4,
+    "explicit_directories": 0,
+    "generated_hooks": 0,
+    "payload_scope": "Three license files and one SBOM pc file; metadata aggregation, not compilation. Original metaport has no upstream source distribution/self-suite.",
+    "exact_normally_qualified_providers": {
+      "docbook-sgml": "4.5_4",
+      "docbook-xml": "5.0_6",
+      "sdocbook-xml": "1.1_4,2"
+    },
+    "private_scope": "Actual archive extraction explicitly skips dependency delivery; all four payloads and original pkg check -s pass. Exact three provider metadata bindings verify independently. Initialized empty registry causes original local-only solver to reject its first missing provider, docbook-sgml.",
+    "retained_harness_failures": "First negative root lacked a package database and exited before solving. Second incorrectly required all missing names, although original solver stops at the first missing provider. Both failures and diagnostic output retained; third checks actual first-missing-provider diagnostic.",
+    "normal_original_local_only_solver_and_dependencies": true,
+    "normal_install_empty_stderr": true,
+    "actual_installed_original_pkg_payload_and_dependency_checks": true,
+    "all107_inherited_prefixes_and_four_catalog_bodies_mtimes_preserved": true,
+    "frozen17_base_mounts_preserved": true,
+    "normal_packages_before": 107,
+    "accepted_bounded_development_count": 108,
+    "two_host_source_private_capsule": {
+      "nodes": 486,
+      "archive_bytes": 14483117,
+      "archive_sha256": "82834030b5d934c2ff982ce0822c9180fdd68416e30d82b3fef768bac6f7e6b2",
+      "inventory_sha256": "ca6454fc30d2010f5fff92aef09bba61e244a002061313b33502dc554b58fc6f",
+      "all_nodes_independently_verified_on_both_hosts": true
+    },
+    "two_host_normal_capsule": {
+      "nodes": 22,
+      "archive_bytes": 12638285,
+      "archive_sha256": "68d6c944f7977d90593a7c70434ae17bcf084c45cf2200ed110fe964b128ad97",
+      "inventory_sha256": "37deee0db3990943644258e67f5d727540c77dc534a81ef544681fb5c00dc407",
+      "all_nodes_independently_verified_on_both_hosts": true
+    },
+    "remaining": "Original default DocBook XSL (all14 feature options plus actual global defaults), D-Bus MANPAGES/X11, full original GLib suite and desktop. OpenSP original failures, missing XInclude XSDs, all canonical/AMD64/physical/installer/update/rollback/final media/signing/release gates remain open.",
+    "observed_utc": "2026-11-25T22:10:21.569749+00:00"
+  },
+  "next_DocBook_XSL_original_construction_20261125": {
+    "source_revision": "6defff971350efcf84889a03120ab5462ece1508",
+    "version": "1.79.1_3,1",
+    "artifact": {
+      "bytes": 20690058,
+      "sha256": "0bae6553ac8373189fdb42bcd0d59337fc7af9238699c5e03ebe7db6c606db94"
+    },
+    "original_construction_targets": 8,
+    "actual_selected_original_options": [
+      "DOCS",
+      "ECLIPSE",
+      "EPUB",
+      "EXTENSIONS",
+      "HIGHLIGHTING",
+      "HTMLHELP",
+      "JAVAHELP",
+      "PROFILING",
+      "ROUNDTRIP",
+      "SLIDES",
+      "TEMPLATE",
+      "TESTS",
+      "TOOLS",
+      "WEBSITE",
+      "XHTML11"
+    ],
+    "original_options_dependencies_preserved": true,
+    "SDK108_prefix_logical_registry_base_mounts_source_preserved": true,
+    "qualification": "Original fresh data-port construction only. Uninstalled; independent sealed transformations/catalog/decoded scripts, original distributed test inventory, custody and normal installation pending. TESTS is an installed module option, not a reported passing original suite.",
+    "retained_observer_failure": "First constructor required PKGNAME without PORTEPOCH; actual original native metadata includes ,1. Corrected observer preserves epoch; no original port or options changed.",
+    "observed_utc": "2026-11-25T22:11:26.963381+00:00"
   }
 }
