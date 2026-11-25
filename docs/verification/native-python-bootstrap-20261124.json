@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 97,
+  "normal_development_package_count": 98,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -964,6 +964,47 @@
         }
       },
       "qualification": "Development runtime only; AMD64/GUI/physical/canonical/lifecycle/release remain open."
+    },
+    {
+      "name": "Shared MIME-Info original database and real GIO consumption",
+      "source_revisions": [
+        "0c46d1810ffcbb14aebff4f3a4cf5f215c11b72c"
+      ],
+      "packages": [
+        {
+          "name": "shared-mime-info-2.4_2.pkg",
+          "bytes": 631503,
+          "sha256": "50b58216698e025d5372b77c57035c7a87cb007105392ab11abd18d94bafec33"
+        }
+      ],
+      "sealed_payloads": 88,
+      "declared_directories": 17,
+      "original_trigger_generated_files": 920,
+      "normal_packages_before": 97,
+      "normal_packages_after": 98,
+      "original_normal_dependencies_scripts_and_triggers_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "actual_private_and_default_path_checks": "Twenty actual commands per context: updater and real compiled GIO linkage; every908packagedMIMEtypeXMLfilename/body/type membership; real PDF magic/text lookups; three custom glob/magic/alias/subclass/cache states; stale removal; missing-directory rejection; original malformed-XML diagnostic-and-continue; recovery. All databases used for consumer checks are isolated, normal loader has no override. Original normal package trigger additionally generates only920exact expected files with root-owned metadata.",
+      "original_make_test_exit": 0,
+      "original_Meson_programs": {
+        "OK": 8
+      },
+      "count_scope": "Eight original Meson programs; nested MIME fixtures are not summed.",
+      "two_host_evidence": {
+        "source_private_failed_observer_and_trigger_control": {
+          "nodes": 5613,
+          "archive_bytes": 29838492,
+          "archive_sha256": "1e879512d652a948c768de886aef270590e2c544d9af09eb8d910d741eb71f2e",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 1099,
+          "archive_bytes": 13282392,
+          "archive_sha256": "f88f27a1153964b26ed97f6e6f9270f1b5cc18277033ca13874a30b5a5603b5c",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "qualification": "Development runtime only; AMD64/GUI/physical/canonical/lifecycle/release open."
     }
   ],
   "complete_original_source_suites": {
@@ -1924,6 +1965,22 @@
         "all_nodes_verified_on_both_hosts": true
       },
       "AMD64_canonical_lifecycle_release_qualified": false
+    },
+    "SharedMimeInfo": {
+      "source_revision": "0c46d1810ffcbb14aebff4f3a4cf5f215c11b72c",
+      "original_make_test_exit": 0,
+      "original_Meson_programs": {
+        "OK": 8
+      },
+      "count_scope": "Eight original Meson programs, not individual fixture assertions. No failures or skips.",
+      "original_defaults_dependencies_and_tests_unchanged": true,
+      "two_host_evidence": {
+        "nodes": 5613,
+        "archive_bytes": 29838492,
+        "archive_sha256": "1e879512d652a948c768de886aef270590e2c544d9af09eb8d910d741eb71f2e",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "AMD64_canonical_lifecycle_release_qualified": false
     }
   },
   "pending": [
@@ -1943,7 +2000,8 @@
     "CMake original upstream self-suite and forced BSD-make space-path failure remain open; original source construction, sealed and normal default-finder/GNUmake consumers pass. No full upstream/backend qualification claimed.",
     "Full default GLib is integrated among96developmentpackages with DOCS/MANPAGES/NLS/TEST preserved; all8construction targets and41sealed/default commands pass. Original full suite still needs three declared source-built test tools. Required named bootstrap intermediates remain distinct.",
     "Introspection required bootstrap is integrated among95developmentpackages; all64originalMesonprograms and27sealed/default commands percontext pass with both-host evidence. PR111 review,AMD64,canonical/lifecycle admission remain pending. Full default GLib is now integrated among96developmentpackages with all options preserved; original full suite still needs three declared source-built tools.",
-    "DesktopFileUtils fixed0.29_1 is integrated among97developmentpackages, PR112. Full default GLib original suite now still needs source-built D-Bus and shared-mime-info tools; no GUI/physical/AMD64/canonical/release qualification."
+    "DesktopFileUtils fixed0.29_1 is integrated among97developmentpackages, PR112. Full default GLib original suite now still needs source-built D-Bus and shared-mime-info tools; no GUI/physical/AMD64/canonical/release qualification.",
+    "Shared MIME-Info is integrated among98developmentpackages; full default GLib original test closure now needs D-Bus. Preserve original D-Bus MANPAGES/X11 defaults: libxslt/libgcrypt/libgpg-error and DocBook/catalog dependencies are next. Canonical/full release and physical platform scope remains open."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2204,6 +2262,18 @@
         "nodes": 11973,
         "archive_bytes": 31970126,
         "archive_sha256": "27cbab849e2f3544b1052bd25ed75821654ad393006b2a130b89d572d9424a85",
+        "all_nodes_verified_on_both_hosts": true
+      }
+    },
+    {
+      "package": "Shared MIME-Info",
+      "cause": "First own checker compared generated lowercase filenames directly to mixed-case original MIME names. Original write_out_type lowercases filesystem names but preserves the type inside XML.",
+      "correction": "Map filenames through original ASCII lowercase transformation, then check every generated filename and every XML type against original definitions. Real GIO lookup/change/error/recovery checks retained. No product or upstream test changes.",
+      "first_failed_observer_retained": true,
+      "two_host_evidence": {
+        "nodes": 5613,
+        "archive_bytes": 29838492,
+        "archive_sha256": "1e879512d652a948c768de886aef270590e2c544d9af09eb8d910d741eb71f2e",
         "all_nodes_verified_on_both_hosts": true
       }
     }
@@ -2778,7 +2848,24 @@
         "sha256": "50b58216698e025d5372b77c57035c7a87cb007105392ab11abd18d94bafec33"
       },
       "guards": "Complete97packageprefix/logicalregistry/base/kernel/mounts/selectedsource unchanged. Original full source and object evidence retained.",
-      "qualification": "Source-built development candidate only. Sealed package acceptance, both-host source/test/private custody and normal installation pending. Not AMD64/GUI/physical/canonical/lifecycle/release acceptance."
+      "qualification": "Normally installed ARM64 development package among98. All88payloads/17declared directories exact; original trigger generates exactly920files matching independently observed root control, including908XMLtypes.20actualcommands each sealed/default context pass without loader override.97inheritedpackages/frozenbootstrap/base/kernel/mount/advisory preserved. Both-host complete source/tests/private/failedobserver/control and normal evidence verified. AMD64/GUI/physical/canonical/lifecycle/release remain open.",
+      "two_host_evidence": {
+        "source_private_failed_observer_and_trigger_control": {
+          "nodes": 5613,
+          "archive_bytes": 29838492,
+          "archive_sha256": "1e879512d652a948c768de886aef270590e2c544d9af09eb8d910d741eb71f2e",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 1099,
+          "archive_bytes": 13282392,
+          "archive_sha256": "f88f27a1153964b26ed97f6e6f9270f1b5cc18277033ca13874a30b5a5603b5c",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "actual_CLI_commands_per_context": 20,
+      "packaged_generated_MIME_types_verified": 908,
+      "normal_original_trigger_generated_files": 920
     }
   ],
   "installed_Python_metadata_recovery": {
