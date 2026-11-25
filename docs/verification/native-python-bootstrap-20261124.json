@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 102,
+  "normal_development_package_count": 103,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -1202,6 +1202,38 @@
         }
       },
       "qualification": "NativeARM64developmentonly; canonicalSDK/TCB/lifecycle,desktop/hardware/releaseopen."
+    },
+    {
+      "name": "XML character entity data and normal global catalog registration",
+      "source_revisions": [
+        "d65aae9b1fb9293f1d4d26da12aaf3c334b10f99"
+      ],
+      "packages": [
+        {
+          "name": "xmlcharent-0.3_2.pkg",
+          "bytes": 14587,
+          "sha256": "3d5afe302af347e7854154d08814506b8269bec794c4678f4ae38dea3cd532e0"
+        }
+      ],
+      "NO_BUILD_NO_ARCH_data_resource": true,
+      "original_selected_options": [],
+      "sealed_payloads": 25,
+      "declared_directories": 0,
+      "normal_packages_before": 102,
+      "normal_packages_after": 103,
+      "actual_private_and_normal_consumer_commands_each": 98,
+      "independent_entity_definitions": 975,
+      "entity_resources": 19,
+      "original_keyword_controls": 7,
+      "original_dependencies_and_scripts_enforced": true,
+      "inherited_102_preserved_except_two_exact_catalog_outputs": true,
+      "two_master_catalogs_preserved": true,
+      "frozen_base_mounts_preserved": true,
+      "count_scope": "975definitions/19resources/98commandspercontext/7scriptcontrolsareseparatecounts, notsummedasuniquetests. Nooriginalselfsuiteexistsin19.entdatadistribution.",
+      "both_hosts_source_private_failure_keyword_nodes": 1236,
+      "both_hosts_normal_nodes": 277,
+      "both_hosts_all_nodes_verified": true,
+      "qualification": "NativeARM64developmentobservation,notcanonical/hardware/releaseacceptance."
     }
   ],
   "complete_original_source_suites": {
@@ -2229,8 +2261,7 @@
     "Shared MIME-Info is integrated among98developmentpackages; full default GLib original test closure now needs D-Bus. Preserve original D-Bus MANPAGES/X11 defaults: libxslt/libgcrypt/libgpg-error and DocBook/catalog dependencies are next. Canonical/full release and physical platform scope remains open.",
     "Fixed default libgpg-error1.61_1 is integrated among99developmentpackages, PR113. Continue original default libgcrypt(DOCS/INFO/STATIC), libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and defaultD-Bus(MANPAGES/X11) closure, then fullGLib original suite. All broad release/fleet/physical/canonical gates remain open.",
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
-    "Normalpkg2.9.3_2 andXMLcatmgr2.2_6 updates nowpass, acceptednormal102/actual102. Theircomplete source/private/failure/normalcapsules areverifiedbothhosts; no heldXML_5remainsinstalled. Continuexmlcharent andDocBookcatalog data/meta closure requiredbydefaultD-Bus MANPAGES/X11, then fulloriginalGLibsuite/desktoppackages. Preserve all defaults and earlierfailures; no unrelatedxmlto chainneededbyactualD-Bus metadata.",
-    "Xmlcharent0.3_2 originaldataonlyport andsealed25payloads/98commands/19resources/975independententitydefinitions pass. Nextoriginal@xmlcatmgr keywordscriptcontrols mustpredictexact2globalcatalog.ports changesandpreserve2masters, thencompletecustody/normalregistration/defaultglobalcatalogacceptance beforeDocBook XML/SGML/meta/XSL. Do notclaimnormal103untilactualaddandacceptance."
+    "Normalpkg2.9.3_2/XMLcatmgr2.2_6/xmlcharent0.3_2 allpassdevelopmentintegration; actualandacceptednormal103, completebothhostsource/failure/normalcustody. DocbookXML5.0_3 all8originaldataporttargets nowpasswith6originaldistributions; nextindependentDTD/schema/privatecatalogs/originalkeywordcontrols,custody/normalintegration. ContinueSGML/sdocbook/meta/XSL\u2192defaultD-BusMANPAGES/X11\u2192fulloriginalGLib/desktopclosure; no xmlto detour."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -4305,7 +4336,7 @@
       "component": "xmlcharent",
       "version": "0.3_2",
       "source_revision": "d65aae9b1fb9293f1d4d26da12aaf3c334b10f99",
-      "status": "native-data-port-and-sealed-real-catalog-entity-consumers-pass-normal-keyword-hooks-pending",
+      "status": "normal-native-data-catalog-registration-and98default-global-consumers-pass-custody-complete",
       "NO_BUILD_NO_ARCH_data_resource": true,
       "original_selected_options": [],
       "declared_runtime_dependency": {
@@ -4377,7 +4408,107 @@
         "whole102_prefix_rawdb_base_mounts_unchanged": true
       },
       "retained_observer_correction": "Firstprivate2125fixtureassumedautomaticsecondURIrewriteafterPUBLICmapwitharbitraryurnSYSTEM, beyonddeclaredcataloglookup. ActualpublicmappingreturnsdeclaredHTTPURI. Nonvalidatingxmllintprintsparsererrors/dropsvaluesbutreturns0; independentvaluescaughtfailure. Correctfixture2126verifiesdeclaredPUBLICmappingseparatelyandactualcanonicalSYSTEMresource,addsDTDvalidatingmodeandassertsreal975values. Productdataunchanged;originalfailurepreserved.",
-      "qualification": "Data-onlyoriginalportconstructionandindependentsealedacceptance. No originalselfsuiteexists. Originalkeywordpostinstall/deinstallcontrols/source-private-failurecustody/normalregistration/default-globalcatalogacceptance stillpending. Normalacceptedcount remains102; notcanonical/GUI/hardware/release."
+      "qualification": "NativeARM64observeddata-source/25payloads/private98/normal98/default-globalcatalogs/975entitydefinitions/7keywordcontrols pass withcompletebothhostcustody. Distribution19datafiles/no originalselfsuite, no emptybuild/checkcountedastests. CanonicalSDK/TCB/lifecycle,otherarchitectures,desktop/hardware/releaseopen.",
+      "normal_integration": {
+        "installed": true,
+        "accepted_native_development": true,
+        "original_solver_dependencies_keyword_hooks_enforced": true,
+        "payloads": 25,
+        "declared_directories": 0,
+        "exact_predicted_catalog_ports_updates": 2,
+        "both_master_catalogs_preserved": true,
+        "all102_inherited_prefixes_preserved_except_exact_two_catalog_outputs": true,
+        "actual_default_global_catalog_commands": 98,
+        "independent_entity_definitions_checked": 975,
+        "entity_resources": 19,
+        "default_global_XML_master_and_declared_SGML_master_chains_tested": true,
+        "normal_status_vector_matches_private": true,
+        "no_library_override_or_global_catalog_override_except_negative_control": true,
+        "normal_registry_before": 102,
+        "normal_registry_after": 103,
+        "frozen17_base_mounts_advisory_unchanged": true
+      },
+      "original_keyword_controls": {
+        "commands": 7,
+        "all_pass": true,
+        "unmodified_manifest_scripts": true,
+        "prediction_changes_only_two_catalog_ports": true,
+        "both_masters_and_seeded_user_entries_preserved": true,
+        "remove_reinstall_pass": true,
+        "scope": "Original PKG_ROOTDIR parameter redirects destinationcatalogs into fresh directory; logical entry targets retain /usr/local. This boundedfile-effects control doesnotreplace actualnormalhookdelivery/default-globalconsumers, whichpassed separately."
+      },
+      "complete_two_host_custody": {
+        "source_private_failure_keyword": {
+          "nodes": 1236,
+          "archive_bytes": 17004126,
+          "archive_sha256": "90d505b6d8f827e7b69c765f6e46e6ae40ff0c7c38a50817d4053084eb4f2c8a",
+          "both_hosts_all_nodes_verified": true
+        },
+        "normal": {
+          "nodes": 277,
+          "archive_bytes": 12590098,
+          "archive_sha256": "52f6b6a081f694c06641a7c0e33d71ed44c1f4cd31643c869d12754b60cac620",
+          "both_hosts_all_nodes_verified": true
+        }
+      }
+    },
+    {
+      "component": "docbook-xml",
+      "version": "5.0_3",
+      "source_revision": "d65aae9b1fb9293f1d4d26da12aaf3c334b10f99",
+      "status": "all8original-data-port-construction-targets-pass-private-and-normal-pending",
+      "NO_BUILD_NO_ARCH_data_resource": true,
+      "original_selected_options": [],
+      "original_distributions": 6,
+      "construction_targets": [
+        {
+          "target": "checksum",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "extract",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "patch",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "configure",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "build",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "stage",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "check-plist",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "package",
+          "exit": 0,
+          "uid": 65534
+        }
+      ],
+      "package": {
+        "bytes": 565011,
+        "sha256": "5e32650fdd30b12c32a0b1150c0e43cb832ae3a2496ae03288e4571ac2832740"
+      },
+      "declared_dependencies": "Installed source-built xmlcharent0.3_2 catalog andxmlcatmgr2.2_6; originalBUILD/RUN constraints preserved.",
+      "whole103_prefix_registry_base_mounts_selected_sources_unchanged": true,
+      "qualification": "Constructor/data package only. No compilation or empty-test claim. IndependentDTD/schema/canonicalcatalogacceptance,originalkeywordcontrols,custody/normalintegrationstillpending."
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -4422,6 +4553,7 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 102,
-  "current_installed_held_packages": []
+  "actual_installed_development_package_count": 103,
+  "current_installed_held_packages": [],
+  "last_updated_utc": "2026-11-25T09:21:31.883197+00:00"
 }
