@@ -1817,7 +1817,7 @@
     "GI-docgen full original Graphviz render_dot/SVG test and complete CI/tool closure remain open despite successful default runtime generation; source-built Graphviz required, original test failure retained.",
     "CMake original upstream self-suite and forced BSD-make space-path failure remain open; original source construction, sealed and normal default-finder/GNUmake consumers pass. No full upstream/backend qualification claimed.",
     "Default GLib remains pending. Follow original required flavor chain: glib20@bootstrap -> gobject-introspection@bootstrap -> glib20@default, preserving final DOCS/NLS/MANPAGES/TEST. Named intermediate bootstrap packages do not qualify default GLib or its full test closure.",
-    "Introspection required bootstrap is integrated among95developmentpackages; all64originalMesonprograms and27sealed/default commands percontext pass with both-host evidence. PR111 review,AMD64,canonical/lifecycle admission remain pending. DefaultGLib full selected DOCS/MANPAGES/NLS/TEST source construction is in progress; original full suite still needs three declared source-built tools."
+    "Introspection required bootstrap is integrated among95developmentpackages; all64originalMesonprograms and27sealed/default commands percontext pass with both-host evidence. PR111 review,AMD64,canonical/lifecycle admission remain pending. DefaultGLib full selected DOCS/MANPAGES/NLS/TEST source construction passes all8targets; sealed acceptance is in progress; original full suite still needs three declared source-built tools."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2553,6 +2553,25 @@
         "sha256": "78849ee2b70debf3fe67476823100480eb26bf44eabca7d016209f8fd255814d"
       },
       "guards": "Installed SDK94 prefix, logical registry, base/kernel/shells, mounts and selected original source bodies/modes unchanged."
+    },
+    {
+      "component": "glib20@default",
+      "source_revision": "af07b9b82fd4d0db8b7932aa41f671cb367f5dc8",
+      "original_selected_options": [
+        "DOCS",
+        "MANPAGES",
+        "NLS",
+        "TEST"
+      ],
+      "construction_targets": "All8original checksum/extract/patch/configure/build/stage/check-plist/package exit0.",
+      "package": {
+        "name": "glib-2.88.3,2.pkg",
+        "bytes": 11263561,
+        "sha256": "db3ed4eecb0cc8b9dc544bebc4f9c88d317b6e961cad8076d3e1ca2154411ed6"
+      },
+      "original_full_suite": "NOT RUN: declared source-built dbus-uuidgen,update-desktop-database,update-mime-database tools missing. The latter two depend on default GLib itself.",
+      "guards": "Installed95prefix/logicalregistry/base/kernel/mounts/selectedsource preserved.",
+      "qualification": "Source-built candidate only. Sealed API/typelib/docs/man/MO acceptance in progress. Not installed; no complete upstream/canonical/release qualification."
     }
   ],
   "installed_Python_metadata_recovery": {
