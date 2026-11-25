@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "date": "2026-11-25",
+  "planned_release": "1.6.0",
+  "problem": "GLib2.88.3 original default native FreeBSD16 suite discovered420programs, selected418 via unchanged upstream default setup, completed407OK/9SKIP/2ERROR. Failures are /pollable/unix/nulldev and /gdbus/auth/server/read-limit.",
+  "baseline_source_revision": "6defff971350efcf84889a03120ab5462ece1508",
+  "original_default_setup_exclusions": [
+    {
+      "name": "iptosmessage",
+      "suite": "failing"
+    },
+    {
+      "name": "codegen.py",
+      "suite": "failing"
+    }
+  ],
+  "original_numbered_TAP_events": 6987,
+  "baseline_guards": "CompleteSDK110rawprefix/frozen17/base/accountcache/mount guards pass. Both failed build/test attempts, original full suite and raw kqueue experiment retained.",
+  "upstream_backports": [
+    {
+      "file": "devel/glib20/files/patch-gio_tests_pollable.c",
+      "sha256": "d3580b0c7b9c9499010003747024a20972e90bf9a14cf3ebe679d90c8cea615f",
+      "upstream_commits": [
+        "c18fa6e4b0d309366d07a8932686b674448d6fd9",
+        "3983b3e22aa00344bf1862c0360d870e4a1a327f",
+        "d18fcc9a5ad3791888f06e66b8d3c41210af2c68"
+      ]
+    },
+    {
+      "file": "devel/glib20/files/patch-gio_tests_gdbus-auth.c",
+      "sha256": "fb10bb67810da0f304d112c09e7e3439ea1b80e444eed40d9a5c0a9a82f90642",
+      "upstream_commits": [
+        "cec8230607d7f0324236812b4154042da56d637c"
+      ]
+    }
+  ],
+  "change": "Use upstream runtime getosreldate-based FreeBSD14.4+ pollability assertion while preserving prior-kernel and other-platform negative assertions. Accept upstream orderly EOF read when auth conversation is rejected; preserve connection-closed error requirement for non-EOF reads and subsequent zero-byte failed write. No test exclusion, xfail, production library, option, dependency or distinfo change.",
+  "no_PORTREVISION_change": "Only upstream test sources change; installed package payload contract is unchanged. Fresh construction and full original selected test execution remain required.",
+  "independent_audit": "Every418selected native command matches generated discovery; original skips and failed TAP/bailouts retained. Successful reporting does not qualify the failed suite.",
+  "disconfirmed_hypothesis": "Native base-C probe verifies /dev/null EVFILT_READ registration succeeds with or without EV_RECEIPT; receipt-only code change would not fix the test. No such library change applied.",
+  "patch_application": "All four pinned upstream commit hunks applied sequentially to original native test files with git apply --check, without fuzz. Combined port patches generated only from that result. Fresh actual ports patch/build/test validation pending. Combined port patches also apply with zero fuzz to clean original files and produce exactly the sequential upstream-commit result. Empty context lines use portable bare-blank patch syntax.",
+  "native_candidate_result": "pending",
+  "remaining": "Original failing variants, optional skipped dependency/platform coverage, matchingAMD64, independent sealed/private consumers and both-host custody, canonical ownership/provenance/lifecycle, full desktop/physical/media/update/rollback/signing/publication remain open."
+}
