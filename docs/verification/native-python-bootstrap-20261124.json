@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 91,
+  "normal_development_package_count": 92,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -691,6 +691,45 @@
         }
       },
       "qualification": "Development runtime only. Three original wildcard-address network failures retained under unchanged kernel/network policy; AMD64/full-suite/canonical/release gates remain open."
+    },
+    {
+      "name": "CMake-core default-finder GNUmake runtime",
+      "source_revisions": [
+        "511743d7327c93e9ff0117d04f0176ebc572f444"
+      ],
+      "packages": [
+        {
+          "name": "cmake-core-3.31.12_3.pkg",
+          "bytes": 13852789,
+          "sha256": "afaece9e38edddf7c857c22ffbd9c7eae99377f083f819db92d6d551781e83f0"
+        }
+      ],
+      "sealed_payloads": 3797,
+      "normal_packages_before": 91,
+      "normal_packages_after": 92,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "actual_private_and_default_path_checks": "Twenty actual CLI commands in both sealed and normal contexts verify packaged CMake resource root, C/CXX/libuv configure/build, changed generated header and output, two own CTest cases across three runs, configuration/source rejection and recovery, installation and CPack TGZ payload execution. Space-containing paths retained; original make finder selects installed GNUmake without CMAKE_MAKE_PROGRAM/resource overrides. Normal consumer has no LD_LIBRARY_PATH override.",
+      "actual_CLI_commands_per_context": 20,
+      "own_CTest_cases_per_run": 2,
+      "own_CTest_completed_runs_per_context": 3,
+      "actual_default_make_program": "/usr/local/bin/gmake",
+      "actual_default_make_sha256": "3e232a3a9cae030ed971f4068a7b979101c5522debd5a7d7aae6aa9529b338ac",
+      "two_host_evidence": {
+        "source_private_and_failed_BSD_make_variant": {
+          "nodes": 43715,
+          "archive_bytes": 157636236,
+          "archive_sha256": "099ca2b862bf0ab5a6d35c7f75431d3211f966648523dedf18644bfbb71d49c0",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 348,
+          "archive_bytes": 9158305,
+          "archive_sha256": "c15b0baaf5f7dde07593ae3bc8e2c7539a8a034c7daffa37dc1120f5d4771da2",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "qualification": "Development runtime in the observed environment with GNUmake present. First forced BSD-make space-path failure remains unresolved and retained. Original CMake self-suite remains unrun: original port BUILD_TESTING OFF/no selected upstream test bridge preserved. AMD64/canonical/release gates remain open."
     }
   ],
   "complete_original_source_suites": {
@@ -1630,7 +1669,7 @@
     "Complete Attrs declared original self-suite tools and CFFI conditional meson-python/virtualenv/installed-CLI coverage",
     "TOML EOF fix PR109 native port/20committedregressions/sealed/default controls now pass; original NumPy/fullCI/AMD64/canonical gates remain pending",
     "GI-docgen full original Graphviz render_dot/SVG test and complete CI/tool closure remain open despite successful default runtime generation; source-built Graphviz required, original test failure retained.",
-    "CMake original upstream self-suite and forced BSD-make space-path failure remain open; original source construction and sealed default-finder/GNUmake consumers pass. Normal integration pending."
+    "CMake original upstream self-suite and forced BSD-make space-path failure remain open; original source construction, sealed and normal default-finder/GNUmake consumers pass. No full upstream/backend qualification claimed."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -1973,7 +2012,7 @@
     "CMake": {
       "upstream_suite": "Not run: original port BUILD_TESTING OFF/no selected test bridge",
       "forced_BSD_make_with_space_paths": "failed; original full failure retained",
-      "default_finder_with_installed_GNUmake": "sealed consumer passes; normal integration pending",
+      "default_finder_with_installed_GNUmake": "Sealed and normal consumers pass; all 3797 payloads and 91 inherited packages exact.",
       "qualification": "Additional successful backend does not resolve the failed backend or establish full upstream self-suite qualification."
     }
   },
@@ -2137,7 +2176,7 @@
         "archive_sha256": "099ca2b862bf0ab5a6d35c7f75431d3211f966648523dedf18644bfbb71d49c0",
         "all_nodes_verified_on_both_hosts": true
       },
-      "normal_integration": "pending",
+      "normal_integration": "Pass: all 3797 payloads and 91 inherited packages verified; same default-finder/GNUmake real consumer passes with default loader. BSD-make failure and original upstream self-suite remain open.",
       "qualification": "Development observations only; upstream self-suite, forced BSD-make space paths, AMD64, canonical and release qualification remain open."
     }
   ]
