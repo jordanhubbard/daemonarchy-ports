@@ -4115,7 +4115,7 @@
       "version": "2.9.3_2",
       "source_revision": "d65aae9b1fb9293f1d4d26da12aaf3c334b10f99",
       "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/116",
-      "status": "full-native-ports-package-and-sealed34upgrade-file-ATF-pass-custody-normal-pending",
+      "status": "full-native-package-sealed-upgrade-ATF-and-two-host-custody-pass-normal-pending",
       "fix": "Include and process installed candidate for local archive install/upgrade jobs before adding new file request; preserve original upgrade cleanup and hooks.",
       "causal_control": {
         "original_preview_reports_new_install": true,
@@ -4137,7 +4137,7 @@
       },
       "patches": "Both actual BSD patch applications at zero fuzz produce exact candidate C and complete test bodies.",
       "retained_failures": "Initial copied build config relinked library but left stale executable; separate corrected configure/make succeeds. A missing observer import and ATF PATH/argument-order failures are retained, not passing.",
-      "qualification": "Full native ARM64 default DOCS package and sealed77payloads/1dir plus34freshupgrade-fileATF cases pass. Entirepkgfrontendsuite remains pending: port exposes no selected test bridge; empty make-check is not original suite evidence. New complete source/private/failure capture and two-host custody in progress. Normal manager/XML upgrade, AMD64, canonical/GUI/hardware/release remain pending.",
+      "qualification": "Full native ARM64 default DOCS package and sealed77payloads/1dir plus34freshupgrade-fileATF cases pass. Entirepkgfrontendsuite remains pending: port exposes no selected test bridge; empty make-check is not original suite evidence. Complete10161node source/private/failure capsule verified on both hosts. Normal manager/XML upgrade, AMD64, canonical/GUI/hardware/release remain pending.",
       "full_Git_source_members_verified": 184370,
       "construction_targets": [
         {
@@ -4197,6 +4197,20 @@
       "locked_package_control": {
         "upgrade_exit": 1,
         "old_version_lock_payload_hooks_preserved": true
+      },
+      "source_private_failure_custody": {
+        "nodes": 10161,
+        "archive_bytes": 186695215,
+        "archive_sha256": "076a19845d9ae0cf6f2e8fdd33fe835ddf37be4e990b58885862d6131c44c06c",
+        "Sparky_native_VM_all_nodes_verified": true,
+        "Madmax_all_nodes_verified": true,
+        "storage_scope": "Original retained archive in allocated native VM on Sparky, direct stream to independent Madmax copy. Unchanged full body/type/mode/owner/flags/nsmtime/link/hardlink/CRC verifier on both. No extra compressed archive on Sparky Linux filesystem.",
+        "copy_budget_for_this_capsule_only": {
+          "Madmax_reserve_bytes": 17179869184,
+          "payload_limit_bytes": 536870912,
+          "actual_bytes": 188192074,
+          "Sparky_extra_archive_bytes": 0
+        }
       }
     }
   ],
