@@ -2263,7 +2263,8 @@
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
     "Normalpkg2.9.3_2/XMLcatmgr2.2_6/xmlcharent0.3_2 allpassdevelopmentintegration; actualandacceptednormal103, completebothhostsource/failure/normalcustody. DocbookXML5.0_3 all8originaldataporttargets nowpasswith6originaldistributions; nextindependentDTD/schema/privatecatalogs/originalkeywordcontrols,custody/normalintegration. ContinueSGML/sdocbook/meta/XSL\u2192defaultD-BusMANPAGES/X11\u2192fulloriginalGLib/desktopclosure; no xmlto detour.",
     "DocbookXML5.0_3 now normally integrated among104developmentpackages:195payloads/42freshdefaultglobalcatalogDTD/schema/upgradecommands,7originalkeywordcontrols, source/private/failures2282nodes andnormal137nodes verifiedbothhosts. Originalcatalogadvertises4aliasesfor2absentschemas;preservedandunqualified. ContinueSimplifiedDocbook/ISO8879/SGML/meta/XSL todefaultD-BusMANPAGES/X11,thenfullGLib/desktop; imagecapacity/canonical/fleet/physical/releasegatesremainopen.",
-    "Installed104,currentlyaccepted103:holdxmlcharent0.3_2forrealPUBLIC-onlyofflinefailure. PR117candidate0.3_3passes21portregressionsand20realSimplifiedDocbookcausalcommands; completefreshnativeoriginalconstruction+maketest,sealed/all975entityacceptance,bothhostcustody,normalupgradeanddefaultglobalconsumersbeforeresumingSimplifiedDocbookintegration. PreserveMANPAGES/X11andallbroader1.6scope."
+    "Installed104,currentlyaccepted103:holdxmlcharent0.3_2forrealPUBLIC-onlyofflinefailure. PR117candidate0.3_3passes21portregressionsand20realSimplifiedDocbookcausalcommands; completefreshnativeoriginalconstruction+maketest,sealed/all975entityacceptance,bothhostcustody,normalupgradeanddefaultglobalconsumersbeforeresumingSimplifiedDocbookintegration. PreserveMANPAGES/X11andallbroader1.6scope.",
+    "Actual104/accepted103,installedXmlcharent_3heldforoldsharedkeywordduplicatepostinstallfailureonupgrade. NewPUBLICdatafix136defaultglobal/all975definitionsand20Simplifiedcommandsalreadypassread-only. PR117now_4includesupgrade-safeKeywords/xmlcatmgr.ucl;13nativecausalcontrols pass. Rebuild_4/actualmanifest/sealed/custody/normal_3to_4beforeresumingSimplified/ISO8879/SGML/meta/XSL/defaultD-Bus/fullGLib/desktop."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -4454,7 +4455,7 @@
           "both_hosts_all_nodes_verified": true
         }
       },
-      "new_consumer_gap": "Installed version held for newly reproduced PUBLIC-only offline consumer failure; PR117 fixes19catalogmappings. Earlier scoped resource andcanonical-system-IDresults retained, not proof ofarbitraryfallbackPUBLICresolution."
+      "new_consumer_gap": "Historical_2PUBLICofflinebugfixedbyinstalled_3data;currently_3heldforseparateoriginalcatalogupgradehookfailure. Earlier_2scopedconsumerpassesretained."
     },
     {
       "component": "docbook-xml",
@@ -4669,7 +4670,7 @@
       "version": "0.3_3",
       "source_revision": "204235a1a16b913c52b98ce5533a2cf16f114dc0",
       "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/117",
-      "status": "original-construction-make-test-sealed-and-upgrade-hook-controls-pass-bothhost-custody-normal-pending",
+      "status": "installed-data-fix-consumers-pass-normal-upgrade-hook-failed-held",
       "change": "19PUBLICtargetsHTTP\u2192relativeexistingentityfiles;4system/URIrewrites,FPIs,19resourcebodiesandSGMLcatalogpreserved. Nativeportdo-testaddedwithdeclaredxmllintdependency.",
       "added_native_regression_scenarios": 21,
       "same_script_original_catalog_exit": 1,
@@ -4677,7 +4678,7 @@
       "real_Simplified_Docbook_causal_commands": 20,
       "normal104_prefix_rawdb_base_mounts_unchanged": true,
       "failed_observers_retained": "2164assumedGreekentitiesincluded;2167reproducedrealPUBLICofflinefailure;2173firstaddedregressionshellscriptlostexpectedvalueatreadEOF. Corrected2175/2177passwithoutchangingoriginalproductbytes.",
-      "qualification": "NativeARM64dataresource and21addedportregressions,notoriginalupstreamselfsuite. Normalupgrade/defaultglobalcurrentheldpackageacceptance,AMD64/canonical/desktop/physical/releaseadmissionpending.",
+      "qualification": "Installed_3datafixpassesnewdefaultglobalconsumers, butoriginalhookfailedonupgrade. Packageheld,normaltransactionunaccepted. Candidate_4sharedkeywordfixrequiresfullfreshpackage/normalqualification;canonical/desktop/physical/releasegatesopen.",
       "full_source_members_verified": 184371,
       "selected_original_port_Mk_Templates_Keywords_blobs_and_modes_verified": 271,
       "construction_targets": [
@@ -4740,16 +4741,44 @@
       "original_upgrade_keyword_controls": {
         "actual_commands": 8,
         "old_and_new_manifest_script_bodies_identical": true,
-        "exact_two_catalog_order_updates_predicted": true,
+        "exact_two_catalog_order_updates_predicted": false,
         "two_masters_Docbook_and_user_entries_preserved": true,
-        "scope": "PKG_ROOTDIRnamespaceonly,notnormalhookdelivery."
+        "scope": "Eightdeinstall/reinstallnamespacecontrolspass,butupgradeorderassumptionwrongandnormalpredictionwithdrawn;notnormalhookqualification."
       },
       "both_host_source_private_failed_causal_and_keyword_custody": {
         "nodes": 1916,
         "archive_bytes": 23084886,
         "archive_sha256": "8f689e8335d026cd477461b2186117ad1dde019abad0f381949f839ab740dfdb",
         "all_nodes_verified_on_both_hosts": true
+      },
+      "normal_upgrade_failure": {
+        "local_only_package_replacement_exit": 0,
+        "original_post_install_reports_duplicate_registration": true,
+        "transaction_accepted": false,
+        "original_keyword_controls_prediction_withdrawn": true,
+        "reason": "Eight earliercontrolsranoldpost-deinstall/newpost-install;documentedpkgupgradedoesnotrunoldpost-deinstall. Actualcatalogbodiesremainoriginalorder,mtimeonlychanges.",
+        "failed_transaction_and_failed_first_audit_preserved": true,
+        "read_only_followup": "Exact25newpayloads,3oldlicensesremoved,103otherprefixesand4catalogbodiesverify. Twoindexmtimechangesrecorded.",
+        "normal_default_global_entity_commands": 136,
+        "normal_975_independent_definitions_pass": true,
+        "real_Simplified_normal_parent_commands": 20,
+        "actual_registry_count": 104,
+        "accepted_normal_count": 103,
+        "normal_hook_failure_custody": "Not yet captured; source/private/causal1916nodecapsulealreadyverifiedbothhosts."
       }
+    },
+    {
+      "component": "xmlcharent",
+      "version": "0.3_4",
+      "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/117",
+      "status": "shared-keyword-native-causal-controls-pass-fresh-package-pending",
+      "change": "Keep_3localPUBLICrepair;sharedKeywords/xmlcatmgr.ucltypedlookupbeforeaddpreservescorrectregistrationsonpkgupgrade,makesmissingones,doesnotskipdifferent-typecollisions. Abnormallookupandfailedaddremainfailures.",
+      "native_causal_commands": 13,
+      "renderer_matches_old_actual_manifest_bodies_exactly": true,
+      "candidate_keyword_sha256": "5d5c76b5aeb36f480f8cb7bd50e94fdcbeb00437998d000936609580a1eb769a",
+      "normal104_prefix_rawdb_base_mounts_unchanged": true,
+      "qualification": "CandidatekeywordtestedviafaithfulrendererinPKG_ROOTDIRnamespaces,notyetfreshpackage-generatedscripts. Originalnew_4construction,actualkeywordmanifestandsealed/normal/custody/AMD64/canonical/desktop/physical/releaseacceptanceremainpending."
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -4798,10 +4827,10 @@
   "current_installed_held_packages": [
     {
       "name": "xmlcharent",
-      "version": "0.3_2",
+      "version": "0.3_3",
       "origin": "textproc/xmlcharent",
-      "reason": "Actual Simplified DocBook customization consumer fails offline because PUBLIC mappings yield HTTP and libxml2 does not recursively remap them. Historical98system-ID/canonicalPUBLICconsumer commands remain scoped passes, but do not prove this combined use. Replacement0.3_3 PR117 has native causal proof; fresh package/normal upgrade pending."
+      "reason": "Originalcatalogpost-installhookreportsduplicateentriesonactual_2to_3upgrade;pkgreturns0buttransactionnotaccepted. All25newpayloads/103otherprefixesand4catalogbodiesverified;136normaldataand20Simplifiedconsumerspass. Candidate_4fixessharedkeyword,13nativecausalcontrols;freshpackage/normalupgradepending."
     }
   ],
-  "last_updated_utc": "2026-11-25T09:59:15.266556+00:00"
+  "last_updated_utc": "2026-11-25T10:08:00.856749+00:00"
 }
