@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 109,
+  "normal_development_package_count": 110,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -2354,7 +2354,8 @@
     "Simplified DocBook1.1_3,2 is normally integrated among105developmentpackages. Continue ISO8879/SGML/DocBook metaport/XSL, original default D-Bus MANPAGES/X11, full original GLib tests and complete desktop closure. Source74ee verifies all184371members and all21known catalog-consumer expanded versions;20other revisions are newer. Remaining selected consumers still need fresh construction/generated-hook/normal upgrade coverage. Canonical, AMD64, physical fleet, final media, signing and release gates remain open.",
     "Current checkpoint: accepted bounded ARM development count107, no installed held package. SGML4/XML6 paired repair and normal integration pass. DocBook metaport1.5 all8 original construction targets pass, package acceptance/normal integration pending; continue original XSL defaults, D-Bus MANPAGES/X11, complete original GLib suite and desktop. All broader release gates remain open.",
     "Original default DocBook XSL (all14 feature options plus actual global defaults), D-Bus MANPAGES/X11, full original GLib suite and desktop. OpenSP original failures, missing XInclude XSDs, all canonical/AMD64/physical/installer/update/rollback/final media/signing/release gates remain open.",
-    "Original default D-Bus MANPAGES/X11 construction and selected original test inventory, sealed/runtime/custody/normal integration; then full original GLib suite and desktop closure. OpenSP six original failures, two absent XInclude XSDs, canonical lifecycle/SDK/TCB, matching AMD64, physical matrix, installer/update/rollback, final media/signing/publication remain open."
+    "Original default D-Bus MANPAGES/X11 construction and selected original test inventory, sealed/runtime/custody/normal integration; then full original GLib suite and desktop closure. OpenSP six original failures, two absent XInclude XSDs, canonical lifecycle/SDK/TCB, matching AMD64, physical matrix, installer/update/rollback, final media/signing/publication remain open.",
+    "Current checkpoint: original default D-Bus is normally integrated among110bounded ARM development packages after six real private chroot lifecycle transactions, default runtime and complete independent two-host custody. Fresh original default GLib build/test started because prior configuration lacked D-Bus discovery. Full GLib results and all broader release gates remain pending; earlier count/tool checkpoints above are historical."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2789,7 +2790,7 @@
     "GLibDefault": {
       "source_construction": "All8targets pass; full original DOCS/MANPAGES/NLS/TEST preserved.",
       "development_normal_consumers": "41commands each sealed/default pass; actual96packages.",
-      "original_full_suite": "NOT RUN: missing dbus-uuidgen/update-desktop-database/update-mime-database declared tools. Latter two require normal default GLib. Build their original closures, then run unchanged original test target; preserve original pre-test machine-id effect and privilege requirements.",
+      "original_full_suite": "Fresh original default build/test launched with all declared tools installed. Earlier387test configuration found neither dbus-1 nor dbus-daemon. Old producer retained; fresh short owned work uses unchanged defaults/original8targets and make test. Terminal result, full discovery and per-case accounting remain pending.",
       "canonical_AMD64_release_qualified": false
     },
     "D-Bus modular test variant": {
@@ -5027,8 +5028,9 @@
         "sha256": "ee2bbb9870eeba634b2c75e63ee345f8a76e969d6c930971860beaf2916ff8c8"
       },
       "version": "1.16.4_1,1",
-      "installed": false,
-      "qualification": "Original selected source/default build and six-program test target only; actual59payloads/7explicitdirectories, private runtime, users/groups/sample/ldconfig lifecycle, both-host custody and normal integration remain pending. Accepted development count stays109."
+      "installed": true,
+      "qualification": "Native ARM bounded development integration only. Original selected default six-program/43event test inventory qualified; disabled modular variant and broader upstream suite remain open. Canonical ownership/provenance/lifecycle, matching AMD64, full desktop, physical fleet, installer/update/rollback/media/signing/publication remain open.",
+      "accepted_normal_count": 110
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -5073,9 +5075,9 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 109,
+  "actual_installed_development_package_count": 110,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-25T22:29:00.324840+00:00",
+  "last_updated_utc": "2026-11-25T23:17:54.203515+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -5929,8 +5931,8 @@
     ],
     "base_prefix_logical_registry_source_guards": true,
     "independent_audit_full_SDK109_rawprefix_frozen17_base_mounts_preserved": true,
-    "installed": false,
-    "qualification": "Original selected source/default build and six-program test target only; actual59payloads/7explicitdirectories, private runtime, users/groups/sample/ldconfig lifecycle, both-host custody and normal integration remain pending. Accepted development count stays109.",
+    "installed": true,
+    "qualification": "Original source/test checkpoint retained; superseded by selected_default_DBus_qualified_20261125 for private lifecycle/runtime, custody and actual normal110 integration.",
     "observed_utc": "2026-11-25T22:35:23.990336+00:00",
     "two_host_source_build_test_capsule": {
       "nodes": 3887,
@@ -5945,5 +5947,91 @@
       "preserved_attributes": "All bodies/types/modes/numeric owners/zero flags/nanosecond mtimes/literal symlinks/hardlinks, complete gzip CRC.",
       "capacity_resolution": "Original second-host destination refused copy below64GiBreserve before any writes. Same archive streamed from original native storage to healthy independent Intel tester and verified. No lower reserve, Linux-root archive, NAS use, software installation or aggregate build on the tester."
     }
+  },
+  "selected_default_DBus_qualified_20261125": {
+    "source_revision": "6defff971350efcf84889a03120ab5462ece1508",
+    "version": "1.16.4_1,1",
+    "artifact": {
+      "bytes": 303628,
+      "sha256": "ee2bbb9870eeba634b2c75e63ee345f8a76e969d6c930971860beaf2916ff8c8"
+    },
+    "sealed_payloads": 59,
+    "explicit_directories": 7,
+    "generated_sample_targets": 2,
+    "original_private_pkg_chroot_transactions": 6,
+    "original_shell_and_Lua_hooks_enabled": true,
+    "private_dependency_delivery": "Observed SDK libraries copied and verified; pkg -c add -M bypasses dependency records only. Missing dependency-record warnings retained. Actual normal solver separately passed with dependencies and empty stderr.",
+    "private_lifecycle": [
+      "fresh add",
+      "force reinstall with modified sample targets preserved",
+      "delete preserves modified targets",
+      "readd preserves retained targets",
+      "restore original sample contents and delete removes unchanged targets",
+      "final fresh readd"
+    ],
+    "messagebus_uid_gid": 556,
+    "actual_accounts_created_once_reused_and_retained_on_delete": true,
+    "actual_private_ldconfig_hook_cache_materialized": true,
+    "private_and_normal_independent_runtime_each": {
+      "C_IPC_checks": 12,
+      "service_activation_checks": 13,
+      "unprivileged_uid_gid": 65534,
+      "dbus_send_ListNames": true,
+      "dbus_run_session_child_exit": 23,
+      "unprivileged_SUID_helper_execute_denied_exit": 126,
+      "gzip_manpages_CRC_and_content": 9,
+      "default_loader_and_configs": true,
+      "manual_LD_or_DBUS_address_override": false,
+      "original_uuidgen_ensure_repeat": true
+    },
+    "normal_user_activation_fixture": "Owned XDG_DATA_HOME outside SDK; private service uses real standard system-data directory inside chroot.",
+    "normal_solver_dependencies_original_hooks_empty_stderr": true,
+    "normal_payload_and_dependency_pkg_checks_passed": true,
+    "normal_only_new_account_records": "messagebus UID/GID556, nologin, nonexistent home",
+    "normal_all59_payloads7dirs2samples109_inherited_prefixes_exact": true,
+    "observer_failures_preserved": [
+      "Successful normal install wrapper incorrectly required soname keys unique. Actual ldconfig refresh includes existing named bootstrap libraries after preferred full GLib entries. Read-only completion verifies ordered candidates, every prior preferred mapping and byte binding of appended non-D-Bus candidates. Actual gdbus keeps full default GLib. No install/hook replay.",
+      "First completion assumed read-only pkg queries only update SHM mtime. Per-command snapshots show SQLite can unlink/recreate empty WAL and32768byte SHM, changing pkgdb directory mtime. Revised completion retains exact snapshots and permits only explicit sidecar transitions; main database bytes/metadata and every other node/hardlink are preserved. No mtime restoration or broad exclusion."
+    ],
+    "fresh_full_SDK110_rawprefix_frozen17_base_account_cache_mount_guards_passed": true,
+    "accepted_normal_count": 110,
+    "actual_registry_count": 110,
+    "system_bus_started": false,
+    "two_host_source": {
+      "nodes": 3887,
+      "archive_bytes": 26911661,
+      "archive_sha256": "a8ebc27e06fdcba68dc6694da3a2e146d5e0a547c73534cf66274f6b511351d9",
+      "inventory_sha256": "78143701b867b1bd85c4c0b3de34c62e6f6aef3f094be5b9b458d89dad8cab2a",
+      "all_nodes_independently_verified_on_both_hosts": true,
+      "evidence_host_roles": [
+        "native ARM worker",
+        "independent Intel physical tester"
+      ]
+    },
+    "two_host_private_lifecycle_runtime": {
+      "nodes": 403,
+      "archive_bytes": 4826939,
+      "archive_sha256": "e6b53d6a579114d807f59438d87973eaea1f7b28c75e34daae86cecf6fc37b76",
+      "inventory_sha256": "03ebc4bbc08f7330ca2abc9385f9b9f8964b940f618fdd97fc74cff0772737d3",
+      "all_nodes_independently_verified_on_both_hosts": true,
+      "evidence_host_roles": [
+        "native ARM worker",
+        "independent Intel physical tester"
+      ]
+    },
+    "two_host_normal_failures_diagnosis_completion_runtime": {
+      "nodes": 90,
+      "archive_bytes": 37742551,
+      "archive_sha256": "8a5bec2a3d76e701f02a02b48a271ac6fbe1f57f4f5f3a42df05cc9cbabde4b0",
+      "inventory_sha256": "1ea6f6833a937a2c57eda0d4315521b4a5c6ca2e77454d729387a2b7bd32d127",
+      "all_nodes_independently_verified_on_both_hosts": true,
+      "evidence_host_roles": [
+        "native ARM worker",
+        "independent Intel physical tester"
+      ]
+    },
+    "normal_finished_utc": "2026-11-25T23:16:30.893227+00:00",
+    "qualification": "Native ARM bounded development integration only. Original selected default six-program/43event test inventory qualified; disabled modular variant and broader upstream suite remain open. Canonical ownership/provenance/lifecycle, matching AMD64, full desktop, physical fleet, installer/update/rollback/media/signing/publication remain open.",
+    "next_GLib": "Fresh original default source build launched with all declared test tools installed. Earlier configured387tests found neither dbus-1 nor dbus-daemon; preserve sealed old producer and reconfigure fresh short owned work directory. Current build/test results remain pending."
   }
 }
