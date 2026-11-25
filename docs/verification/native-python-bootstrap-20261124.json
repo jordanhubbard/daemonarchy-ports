@@ -2188,8 +2188,7 @@
     "Fixed default libgpg-error1.61_1 is integrated among99developmentpackages, PR113. Continue original default libgcrypt(DOCS/INFO/STATIC), libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and defaultD-Bus(MANPAGES/X11) closure, then fullGLib original suite. All broad release/fleet/physical/canonical gates remain open.",
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
     "Libxslt PR114 repaired package is now integrated among101developmentpackages. Strict original DocBook results,751mainrunnercases/0errors,8harnesscontrols,30sealed and30freshnormalcommands pass. Original/repaired source/private and normal evidence verified on both hosts. Continue xmlcatmgr/DocBook/catalog/defaultD-Bus/fullGLib closure.",
-    "Xmlcatmgr original2.2_4 remains held for invalid XML serialization of valid URI ampersands. Current PR115 2.2_5 source/8addedregressions/67privatecommands/37originalscript-controls pass with complete source/private/script evidence on both hosts. Normal integration is next; deprecated internal SGML converter crash remains a separate retained observer failure.",
-    "Xmlcatmgr PR115 current2.2_5 source/private/script-control custody is complete on both hosts. Run fresh normal installation against actual101packagebaseline, enforce exact4generatedcatalogpredictions and all inherited-prefix/rawdb/base guards, then continue DocBook/defaultD-Bus closure. Original2.2_4 remains held."
+    "Xmlcatmgr2.2_5 is installed but HELD for SIGSEGV on structural group entry. Candidate2.2_6 b3e7f9b rejects structural operations/invalid arities and guards one-attribute validation. Native causal rebuild passes10strict added scenarios; full ports/package/private/script controls and normal upgrade remain pending. Then continue DocBook/defaultD-Bus/fullGLib desktop closure."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2507,6 +2506,10 @@
     {
       "component": "xmlcatmgr acceptance and SGML compatibility check",
       "correction": "FirstexternalresolverunnecessarilycalleddeprecatedinternalxmlConvertSGMLCatalog;nativecorebacktracepointsinsideit. 21actualcommands/lastSIGSEGVretainedwithone11,448,320bytecore. Correctpubliccatalogloading/resolutionAPIskeepSGMLchecksandpassall3states;thatattemptreachesrealXMLserializationfailureafter64commands. Initialfixedsourcepassesall8constructiontargetsand7XMLregressions,butlastSGMLtestassumedsinglelineoutputwhileoriginalwriterwrapsfields;testnowcomparesallowedSGMLwhitespace. Firstfixedbuild/testfailureandallobserverspreserved,notrelabeled. Newexactsourceverificationinprogress;no originalassertionsremoved."
+    },
+    {
+      "component": "xmlcatmgr independent negative-case acceptance",
+      "correction": "Historical private67command run accepted -11 as nonzero. Normal outer nonnegative-status check caught same product crash. Withdraw broad private acceptance; new shell regression rejects signals and fresh independent consumers must require ordinary positive rejection status. Retain original results/core."
     }
   ],
   "incomplete_original_source_suites": {
@@ -3885,7 +3888,8 @@
         "coverage": "Actualpubliclibxml2XML/SGMLresolution,realcatalog-backedDTD/defaultattribute/entityparsingandPythonXML/SGMLoracles. Master-childregistry/public/system/URI/rewrites,changedinputs,duplicate/unsupported/missing/malformed/createerrorsandrecovery. PreviouslycorruptingqueryampersandURIisvalidXMLandresolvescorrectlythroughlibxml2,withlookup/removalworking.",
         "normal_loader_override_present": false,
         "original_compiled_catalog_defaults_reported_unchanged": true,
-        "all_payload_bytes_modes_owners_flags_and_literal_links_exact": true
+        "all_payload_bytes_modes_owners_flags_and_literal_links_exact": true,
+        "qualification": "HELD: unsupported-group negative case exited -11; old nonzero predicate incorrectly accepted signal termination. All67 original command records retained; broad acceptance withdrawn."
       },
       "source_private_custody": {
         "nodes": 3103,
@@ -3898,9 +3902,9 @@
         "pending": "Source and all retained failures now verified on both existing hosts with unchanged archive/inventory/node/CRC checks.",
         "all_nodes_verified_on_both_hosts": true
       },
-      "guards": "Whole100prefix/rawdb/base/kernel/mounts/advisory unchanged;source/testinputidentitiesverified. No normalinstallation.",
+      "guards": "Historical source/private controls preserved100prefix/rawdb/base/kernel/mounts. Subsequent normal installation completed, but acceptance failed; separate read-only audit proves all11payloads/2dirs/4catalogs/inherited101/frozenSDK/base/mounts exact.",
       "canonical_gates": "At exactcodehead projectauthority and2selectedlocks pass;verifyexit1/nestedfalse becausecurrentcanonicalreceiptmissing.",
-      "qualification": "Native ARM64 source, sealed acceptance and bounded original-script controls pass, with their complete original/failure capsules verified on both hosts. Normal package installation/trigger delivery, AMD64, canonical SDK/TCB/lifecycle, desktop/hardware and release remain open.",
+      "qualification": "HELD for real structural-entry SIGSEGV, also observed during normal integration. Encoding regressions and original script controls retain their bounded scope. Installed102 includes this held package; accepted normal count remains101.",
       "original_package_script_controls": {
         "actual_commands": 37,
         "exit_zero": 35,
@@ -3946,7 +3950,7 @@
         },
         "coverage": "Exact four generated catalogs; phase gating; repeat installation preserves bytes/modes/owners/flags/mtime; original compiled XML/SGML defaults and real public libxml2 master-child resolution, DTD entity/default-attribute parsing; user entries survive deinstallation; detached consumers fail as expected; reinstallation recovers; empty-catalog cleanup and recreation pass.",
         "fixture_boundary": "No devfs/mount/device nodes: /dev/null inside each test directory is a regular capture sink used only by the original two write-only lookup redirects, with fd0 inherited from the real host null device. This is an explicitly limited script-file-effects control, not a normal OS/package installation; normal integration remains required.",
-        "normal_package_trigger_delivery_tested": false,
+        "normal_package_trigger_delivery_tested": true,
         "SDK100_complete_prefix_rawdb_unchanged": true,
         "base_mounts_borrowed_resources_unchanged": true,
         "retained_failed_fixture": "First control copied libxml2 to the wrong path because the ldd resource probe inherited the observer Python library path; retained as failed. Fresh corrected control uses a clean resource-probe environment and proves canonical /usr/local/lib linkage.",
@@ -3957,8 +3961,36 @@
           "Sparky_all_nodes_verified": true,
           "second_host_all_nodes_verified": true,
           "all_nodes_verified_on_both_hosts": true
-        }
+        },
+        "normal_delivery_scope": "Original normal pkg add completed and four generated catalogs exact; acceptance held by later CLI crash. No corrected revision upgrade claimed."
+      },
+      "normal_integration": {
+        "installed": true,
+        "accepted": false,
+        "actual_registry_count": 102,
+        "accepted_normal_before": 101,
+        "failure_command": "xml-unsupported-group-rejected",
+        "exit": -11,
+        "core_bytes": 11128832,
+        "core_sha256": "368f75ee298b47fb5f2e360f2d9025433c31ee03309775012625eb3301e620fc",
+        "all_install_integrity_postguards_pass": true,
+        "corrected_candidate": "b3e7f9b7235c73012d5b52ae708fb1f4df9f59a0"
       }
+    },
+    {
+      "component": "xmlcatmgr",
+      "version": "2.2_6",
+      "source_revision": "b3e7f9b7235c73012d5b52ae708fb1f4df9f59a0",
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/115",
+      "status": "native-causal-controls-pass-full-ports-pending",
+      "native_causal_control": {
+        "old_installed_binary_rejected_by_strict_regression": true,
+        "BSD_patch_zero_fuzz": true,
+        "original_clean_all_on_derived_source_exit": 0,
+        "added_named_scenarios_pass": 10,
+        "held102_prefix_rawdb_frozen17_original_sources_base_mounts_unchanged": true
+      },
+      "qualification": "Fast causal control only; full native ports construction/package, independent sealed consumers, original-script controls and normal upgrade still required. No original upstream self-suite exists."
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -4002,5 +4034,6 @@
     "Sparky_workspace_reserve_gib": 64,
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
-  }
+  },
+  "actual_installed_development_package_count": 102
 }
