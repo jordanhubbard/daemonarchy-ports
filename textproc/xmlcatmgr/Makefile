@@ -11,6 +11,8 @@ WWW=		https://xmlcatmgr.sourceforge.net/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+TEST_TARGET=	check
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	DEFAULT_CATALOG_SGML=${CATALOG_PORTS_SGML} \
@@ -38,5 +40,8 @@ CATALOG_PORTS_XML?=	${PREFIX}/share/xml/catalog.ports
 OPTIONS_DEFINE=	DOCS
 
 DOCS_CONFIGURE_OFF=	--disable-docs
+
+post-test:
+	@${SH} ${FILESDIR}/attribute-regression.sh ${WRKSRC}/xmlcatmgr ${WRKDIR}
 
 .include <bsd.port.mk>
