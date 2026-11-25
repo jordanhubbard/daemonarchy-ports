@@ -2106,16 +2106,6 @@
       "forced_BSD_make_with_space_paths": "failed; original full failure retained",
       "default_finder_with_installed_GNUmake": "Sealed and normal consumers pass; all 3797 payloads and 91 inherited packages exact.",
       "qualification": "Additional successful backend does not resolve the failed backend or establish full upstream self-suite qualification."
-    },
-    "IntrospectionBootstrap": {
-      "initial_configure_failure": "Inherited Python PC prefix corruption; restored exact original registered payloads. Fresh original configure/build/stage/check-plist/package pass.",
-      "original_make_test_failure": "GIR test-input build cannot locate bootstrap GLib metadata; no Meson test records were completed.",
-      "causal_control": "Same metadata lookup succeeds in original MAKE_ENV, fails in original TEST_ENV, and produces byte-identical successful flags when test reuses original build PKG_CONFIG_LIBDIR.",
-      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/111",
-      "code_head": "af07b9b82fd4d0db8b7932aa41f671cb367f5dc8",
-      "fix": "Bootstrap TEST_ENV reuses original MAKE_ENV PKG_CONFIG_LIBDIR and original LDFLAGS, preserving LOCALBASE library search and ARM linker workaround; original test sources/assertions/selection/dependencies/options unchanged.",
-      "qualification": "Updated exact-commit native source verification/construction/original full-test qualification pending; no passing suite claimed.",
-      "first_fixed_variant": "3d254ae passes all8construction targets and gets original GIR test-input build past missing headers; next stops at missing -lintl because original test launcher also omits build LDFLAGS. No Meson tests completed."
     }
   },
   "source_built_candidates": [
@@ -2471,6 +2461,30 @@
         "archive_sha256": "4947f7c76db09cd58a7890193934cb11dad1e63b0aba875cc78b50f61055acd0",
         "all_nodes_verified_on_both_hosts": true
       }
+    },
+    {
+      "initial_configure_failure": "Inherited Python PC prefix corruption; restored exact original registered payloads. Fresh original configure/build/stage/check-plist/package pass.",
+      "original_make_test_failure": "GIR test-input build cannot locate bootstrap GLib metadata; no Meson test records were completed.",
+      "causal_control": "Same metadata lookup succeeds in original MAKE_ENV, fails in original TEST_ENV, and produces byte-identical successful flags when test reuses original build PKG_CONFIG_LIBDIR.",
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/111",
+      "code_head": "af07b9b82fd4d0db8b7932aa41f671cb367f5dc8",
+      "fix": "Bootstrap TEST_ENV reuses original MAKE_ENV PKG_CONFIG_LIBDIR and original LDFLAGS, preserving LOCALBASE library search and ARM linker workaround; original test sources/assertions/selection/dependencies/options unchanged.",
+      "qualification": "Fresh complete native ARM64 construction and original make test pass at the exact code head. Sealed/default installed consumers and both-host source/private custody remain pending; this source-built candidate is not installed.",
+      "first_fixed_variant": "3d254ae passes all8construction targets and gets original GIR test-input build past missing headers; next stops at missing -lintl because original test launcher also omits build LDFLAGS. No Meson tests completed.",
+      "component": "gobject-introspection@bootstrap",
+      "original_Meson_programs": {
+        "OK": 64,
+        "FAIL": 0,
+        "SKIP": 0,
+        "count_scope": "64 original Meson test programs; nested cases are not summed."
+      },
+      "construction_targets": "checksum/extract/patch/configure/build/stage/check-plist/package: all exit0",
+      "package": {
+        "name": "gobject-introspection-bootstrap-1.86.0,1.pkg",
+        "bytes": 654736,
+        "sha256": "78849ee2b70debf3fe67476823100480eb26bf44eabca7d016209f8fd255814d"
+      },
+      "guards": "Installed SDK94 prefix, logical registry, base/kernel/shells, mounts and selected original source bodies/modes unchanged."
     }
   ],
   "installed_Python_metadata_recovery": {
