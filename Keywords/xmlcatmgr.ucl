@@ -8,13 +8,24 @@ post-install: <<EOD
   esac
   case "%@" in
   *.xml)
-    xmlcatmgr_cmd="xmlcatmgr -c ${PKG_ROOTDIR}%D/share/xml/catalog.ports add nextCatalog"
+    xmlcatmgr_cmd="xmlcatmgr -c ${PKG_ROOTDIR}%D/share/xml/catalog.ports"
+    xmlcatmgr_type="nextCatalog"
   ;;
   *)
-    xmlcatmgr_cmd="xmlcatmgr -sc ${PKG_ROOTDIR}%D/share/sgml/catalog.ports add CATALOG"
+    xmlcatmgr_cmd="xmlcatmgr -sc ${PKG_ROOTDIR}%D/share/sgml/catalog.ports"
+    xmlcatmgr_type="CATALOG"
   ;;
   esac
-  ${xmlcatmgr_cmd} ${cat}
+  # Upgrades run post-install without the old post-deinstall hook.
+  # Check the entry type too: a PUBLIC/URI entry may share the identifier.
+  entries=$(${xmlcatmgr_cmd} lookup "${cat}" 2>/dev/null)
+  status=$?
+  if [ "${status}" -gt 1 ]; then
+    exit "${status}"
+  fi
+  if ! printf '%s\n' "${entries}" | grep -q "^${xmlcatmgr_type} "; then
+    ${xmlcatmgr_cmd} add "${xmlcatmgr_type}" "${cat}"
+  fi
 EOD
 post-deinstall: <<EOD
   case "%@" in

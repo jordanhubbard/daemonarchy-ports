@@ -15,13 +15,13 @@
   "consumer_failure": "Retain Simplified DocBook failed customization consumer; stock flattened article profile passed before custom profile failed on three PUBLIC entity identifiers remapped to HTTP.",
   "observer_correction": "First new regression script lost final expected value at shell read EOF; preserve failed run. Fixed script caches the last expected value, all21scenarios pass.",
   "remaining": [
-    "Fresh original port construction and make test invocation",
-    "Independent sealed package consumers across all975characterdefinitions",
-    "Both-host source/private/failure custody",
-    "Normal local-only upgrade/dependencies/catalog hooks and default-global consumer regression",
-    "Canonical authority/lifecycle, AMD64, desktop, physical and release acceptance"
+    "Fresh0.3_4completeoriginalportconstructionandactualgeneratedkeywordmanifestverification",
+    "Independentsealedpackage/all975entityacceptanceandactualgeneratedkeywordcontrols",
+    "Bothhostcustodyincludingfailed2190normaltransactionand2194audit",
+    "Normal_3to_4localonlyupgradewithnohookdiagnosticsanddefaultglobalconsumers",
+    "Canonicalauthority/lifecycle,AMD64,desktop,physicalandreleaseacceptance"
   ],
-  "observed": "2026-11-25T09:48:27.834770+00:00",
+  "observed": "2026-11-25T10:07:28.571732+00:00",
   "Simplified_Docbook_consumer_causal": {
     "actual_commands": 20,
     "profiles": [
@@ -32,5 +32,32 @@
     ],
     "checks": "Both XML/SGML PUBLIC mappings; valid changed values and supported Latin entities; invalid content/excluded Greek rejection and recovery in all4profiles.",
     "scope": "Original sealed15payloads from failed private consumer remain unmodified. Explicit derived private root catalog puts corrected19entityPUBLICmappings ahead of unchanged installed default parent catalog. Original installed104package environment/prefix/rawdb/base/mounts unchanged. This proves the parent mapping cause; it is not a passing original private run or normal default-global integration."
+  },
+  "current_candidate_version": "0.3_4",
+  "original_0_3_3_fresh_package_validation": {
+    "source_revision": "204235a1a16b913c52b98ce5533a2cf16f114dc0",
+    "original_construction_targets": 8,
+    "actual_make_test_exit": 0,
+    "added_port_regression_PASS_records": 21,
+    "sealed_payloads": 25,
+    "explicit_directories": 0,
+    "sealed_actual_commands": 136,
+    "independent_entity_definitions": 975,
+    "resources": 19,
+    "both_host_source_private_failed_causal_keyword_nodes": 1916,
+    "normal_upgrade": "Actual_2to_3replacementreturned0butoldpost-installreportedduplicates. Transactionnotaccepted. Oldcatalogbodiesunchanged,mtimeschanged;all25newpayloads/3oldlicensesremoved/103inheritedprefixesverifiedinread-onlyfollowup.",
+    "normal_data_consumer_commands": 136,
+    "normal_parent_Simplified_commands": 20,
+    "normal_acceptance": "Installed_3heldbecausehookfailed. Actual104/accepted103. Earlier8deinstall/reinstallkeywordcontrols didnotmatchdocumentedupgradeorder; theirupgradepredictionwithdrawn."
+  },
+  "shared_keyword_upgrade_fix": {
+    "file": "Keywords/xmlcatmgr.ucl",
+    "reason": "Documented pkg upgrade invokes newpreinstall/oldpredeinstall/replace/newpostinstall, withoutoldpostdeinstall. Originalpostinstallblindaddthereforerejectsretainedregistration.",
+    "reference": "https://man.freebsd.org/cgi/man.cgi?query=pkg-script&sektion=5&manpath=FreeBSD+15.1-RELEASE+and+Ports",
+    "change": "Lookup registrations and check entry type before adding. Preserve correct existing entries instead of rewriting/reordering. Add genuinely missing registrations, including identifiers already used by another type. Propagate abnormal lookup exits; failed adds remain failures.",
+    "native_causal_commands": 13,
+    "checks": "Old duplicate failure; new existing registration and repetition preserve full namespace snapshot; missing registration plus repetition; same-key different-type user entries survive add/remove/reinstall; malformed catalog rejected normally.",
+    "renderer_scope": "Template renderer first matches old actual generated manifest bodies byte-for-byte. New candidate template is tested by this faithful renderer, not yet through fresh native package generation. Installed SDK prefix/rawdb/base/mounts unchanged.",
+    "candidate_keyword_sha256": "5d5c76b5aeb36f480f8cb7bd50e94fdcbeb00437998d000936609580a1eb769a"
   }
 }
