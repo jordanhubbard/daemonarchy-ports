@@ -1157,6 +1157,19 @@
     "independent_audit_full_SDK109_rawprefix_frozen17_base_mounts_preserved": true,
     "installed": false,
     "qualification": "Original selected source/default build and six-program test target only; actual59payloads/7explicitdirectories, private runtime, users/groups/sample/ldconfig lifecycle, both-host custody and normal integration remain pending. Accepted development count stays109.",
-    "observed_utc": "2026-11-25T22:35:23.990336+00:00"
+    "observed_utc": "2026-11-25T22:35:23.990336+00:00",
+    "two_host_source_build_test_capsule": {
+      "nodes": 3887,
+      "archive_bytes": 26911661,
+      "archive_sha256": "a8ebc27e06fdcba68dc6694da3a2e146d5e0a547c73534cf66274f6b511351d9",
+      "inventory_sha256": "78143701b867b1bd85c4c0b3de34c62e6f6aef3f094be5b9b458d89dad8cab2a",
+      "all_nodes_independently_verified_on_both_hosts": true,
+      "evidence_host_roles": [
+        "native ARM build worker",
+        "independent Intel physical tester"
+      ],
+      "preserved_attributes": "All bodies/types/modes/numeric owners/zero flags/nanosecond mtimes/literal symlinks/hardlinks, complete gzip CRC.",
+      "capacity_resolution": "Original second-host destination refused copy below64GiBreserve before any writes. Same archive streamed from original native storage to healthy independent Intel tester and verified. No lower reserve, Linux-root archive, NAS use, software installation or aggregate build on the tester."
+    }
   }
 }
