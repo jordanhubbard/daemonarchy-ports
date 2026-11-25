@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 104,
+  "normal_development_package_count": 103,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -2262,7 +2262,8 @@
     "Fixed default libgpg-error1.61_1 is integrated among99developmentpackages, PR113. Continue original default libgcrypt(DOCS/INFO/STATIC), libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and defaultD-Bus(MANPAGES/X11) closure, then fullGLib original suite. All broad release/fleet/physical/canonical gates remain open.",
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
     "Normalpkg2.9.3_2/XMLcatmgr2.2_6/xmlcharent0.3_2 allpassdevelopmentintegration; actualandacceptednormal103, completebothhostsource/failure/normalcustody. DocbookXML5.0_3 all8originaldataporttargets nowpasswith6originaldistributions; nextindependentDTD/schema/privatecatalogs/originalkeywordcontrols,custody/normalintegration. ContinueSGML/sdocbook/meta/XSL\u2192defaultD-BusMANPAGES/X11\u2192fulloriginalGLib/desktopclosure; no xmlto detour.",
-    "DocbookXML5.0_3 now normally integrated among104developmentpackages:195payloads/42freshdefaultglobalcatalogDTD/schema/upgradecommands,7originalkeywordcontrols, source/private/failures2282nodes andnormal137nodes verifiedbothhosts. Originalcatalogadvertises4aliasesfor2absentschemas;preservedandunqualified. ContinueSimplifiedDocbook/ISO8879/SGML/meta/XSL todefaultD-BusMANPAGES/X11,thenfullGLib/desktop; imagecapacity/canonical/fleet/physical/releasegatesremainopen."
+    "DocbookXML5.0_3 now normally integrated among104developmentpackages:195payloads/42freshdefaultglobalcatalogDTD/schema/upgradecommands,7originalkeywordcontrols, source/private/failures2282nodes andnormal137nodes verifiedbothhosts. Originalcatalogadvertises4aliasesfor2absentschemas;preservedandunqualified. ContinueSimplifiedDocbook/ISO8879/SGML/meta/XSL todefaultD-BusMANPAGES/X11,thenfullGLib/desktop; imagecapacity/canonical/fleet/physical/releasegatesremainopen.",
+    "Installed104,currentlyaccepted103:holdxmlcharent0.3_2forrealPUBLIC-onlyofflinefailure. PR117candidate0.3_3passes21portregressionsand20realSimplifiedDocbookcausalcommands; completefreshnativeoriginalconstruction+maketest,sealed/all975entityacceptance,bothhostcustody,normalupgradeanddefaultglobalconsumersbeforeresumingSimplifiedDocbookintegration. PreserveMANPAGES/X11andallbroader1.6scope."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2275,7 +2276,8 @@
     "Typogrify_Jinja_errors": "https://github.com/jordanhubbard/daemonarchy-ports/pull/110",
     "Libxslt_DocBook_test_failure_and_CDATA_goldens": "https://github.com/jordanhubbard/daemonarchy-ports/pull/114",
     "Xmlcatmgr_XML_attribute_encoding": "https://github.com/jordanhubbard/daemonarchy-ports/pull/115",
-    "Pkg_local_archive_upgrade": "https://github.com/jordanhubbard/daemonarchy-ports/pull/116"
+    "Pkg_local_archive_upgrade": "https://github.com/jordanhubbard/daemonarchy-ports/pull/116",
+    "Xmlcharent_PUBLIC_only_offline_resolution": "https://github.com/jordanhubbard/daemonarchy-ports/pull/117"
   },
   "held_packages": [
     {
@@ -4451,7 +4453,8 @@
           "archive_sha256": "52f6b6a081f694c06641a7c0e33d71ed44c1f4cd31643c869d12754b60cac620",
           "both_hosts_all_nodes_verified": true
         }
-      }
+      },
+      "new_consumer_gap": "Installed version held for newly reproduced PUBLIC-only offline consumer failure; PR117 fixes19catalogmappings. Earlier scoped resource andcanonical-system-IDresults retained, not proof ofarbitraryfallbackPUBLICresolution."
     },
     {
       "component": "docbook-xml",
@@ -4593,7 +4596,7 @@
       "component": "sdocbook-xml",
       "version": "1.1_2,2",
       "source_revision": "d65aae9b1fb9293f1d4d26da12aaf3c334b10f99",
-      "status": "all8original-data-port-construction-targets-pass-private-and-normal-pending",
+      "status": "construction-pass-original-parent-private-consumer-fails-corrected-parent-causal-pass-normal-pending",
       "NO_BUILD_NO_ARCH_data_resource": true,
       "original_selected_options": [],
       "construction_targets": [
@@ -4648,7 +4651,33 @@
       ],
       "whole104_prefix_registry_base_mounts_selected_sources_unchanged": true,
       "original_test_scope": "Original distribution contains eight DTD/module resources and CSS, no self-test program or selected port test bridge. Independent packaged DTD/refentry and catalog consumers, original keyword controls, custody and normal installation remain pending.",
-      "qualification": "Native data resource construction only; no compiler, upstream-suite, canonical, desktop, physical or release acceptance inferred."
+      "qualification": "Native data resource construction only; no compiler, upstream-suite, canonical, desktop, physical or release acceptance inferred.",
+      "failed_private_consumer": {
+        "observer_assumption_corrected": "Greeksetsintentionallyexcluded; validfixturesnowusesupportedLatinsetswith explicitexcludedGreeknegativecontrol. Firstfailedrunretained.",
+        "real_failure": "OriginalcustomizationmodulePUBLICreferences resolve toHTTPininstalledXmlcharent0.3_2,offlineparserexit3; no productbytesmodified.",
+        "normal_environment_unchanged": true
+      },
+      "candidate_parent_causal": {
+        "actual_commands": 20,
+        "DTD_profiles": 4,
+        "all4flattened_custom_article_refentry_profiles_pass": true,
+        "scope": "Explicitderivedprivatewrapper puts correctedXmlcharentcatalogbeforeunchangeddefaultparentchain. Originalfailedprivate2167remainsfailed; notnormalacceptance."
+      }
+    },
+    {
+      "component": "xmlcharent",
+      "version": "0.3_3",
+      "source_revision": "204235a1a16b",
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/117",
+      "status": "native-causal-regressions-and-real-consumer-pass-full-package-and-normal-upgrade-pending",
+      "change": "19PUBLICtargetsHTTP\u2192relativeexistingentityfiles;4system/URIrewrites,FPIs,19resourcebodiesandSGMLcatalogpreserved. Nativeportdo-testaddedwithdeclaredxmllintdependency.",
+      "added_native_regression_scenarios": 21,
+      "same_script_original_catalog_exit": 1,
+      "same_script_corrected_catalog_exit": 0,
+      "real_Simplified_Docbook_causal_commands": 20,
+      "normal104_prefix_rawdb_base_mounts_unchanged": true,
+      "failed_observers_retained": "2164assumedGreekentitiesincluded;2167reproducedrealPUBLICofflinefailure;2173firstaddedregressionshellscriptlostexpectedvalueatreadEOF. Corrected2175/2177passwithoutchangingoriginalproductbytes.",
+      "qualification": "Nativecausalonly, notfreshoriginalportconstruction/maketestbridge,sealed/all975entity/normalupgrade/defaultglobal/bothhostcustody/canonical/desktop/physical/releaseadmission."
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -4694,6 +4723,13 @@
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
   "actual_installed_development_package_count": 104,
-  "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-25T09:40:59.283168+00:00"
+  "current_installed_held_packages": [
+    {
+      "name": "xmlcharent",
+      "version": "0.3_2",
+      "origin": "textproc/xmlcharent",
+      "reason": "Actual Simplified DocBook customization consumer fails offline because PUBLIC mappings yield HTTP and libxml2 does not recursively remap them. Historical98system-ID/canonicalPUBLICconsumer commands remain scoped passes, but do not prove this combined use. Replacement0.3_3 PR117 has native causal proof; fresh package/normal upgrade pending."
+    }
+  ],
+  "last_updated_utc": "2026-11-25T09:49:27.025202+00:00"
 }
