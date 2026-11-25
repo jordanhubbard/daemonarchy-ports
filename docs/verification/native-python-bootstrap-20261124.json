@@ -2132,7 +2132,8 @@
     "Shared MIME-Info is integrated among98developmentpackages; full default GLib original test closure now needs D-Bus. Preserve original D-Bus MANPAGES/X11 defaults: libxslt/libgcrypt/libgpg-error and DocBook/catalog dependencies are next. Canonical/full release and physical platform scope remains open.",
     "Fixed default libgpg-error1.61_1 is integrated among99developmentpackages, PR113. Continue original default libgcrypt(DOCS/INFO/STATIC), libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and defaultD-Bus(MANPAGES/X11) closure, then fullGLib original suite. All broad release/fleet/physical/canonical gates remain open.",
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
-    "Libxslt PR114 fresh construction, strict original DocBook results,751mainrunnercases,8harnesscontrols and30sealedconsumercommands pass. Normal integration awaits second verified evidence copy under70GiBreserve; then resume DocBook/catalog/defaultD-Bus/fullGLib closure."
+    "Libxslt PR114 fresh construction, strict original DocBook results,751mainrunnercases,8harnesscontrols and30sealedconsumercommands pass. Normal integration awaits second verified evidence copy under70GiBreserve; then resume DocBook/catalog/defaultD-Bus/fullGLib closure.",
+    "Xmlcatmgr original2.2_4isheldforinvalidXMLserializationofvalidURIqueryampersands. PR115 addsencoding/decodingand8nativepost-testscenarios;freshcurrentheadbuild/independentacceptance/custody/normalintegrationpending. Optionaldeprecatedlibxml2internalSGMLconversioncrashretainedseparately;publicSGMLresolutionpasses."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2143,7 +2144,8 @@
     "Pycparser_FreeBSD_cpp": "https://github.com/jordanhubbard/daemonarchy-ports/pull/108",
     "TOML_array_EOF": "https://github.com/jordanhubbard/daemonarchy-ports/pull/109",
     "Typogrify_Jinja_errors": "https://github.com/jordanhubbard/daemonarchy-ports/pull/110",
-    "Libxslt_DocBook_test_failure_and_CDATA_goldens": "https://github.com/jordanhubbard/daemonarchy-ports/pull/114"
+    "Libxslt_DocBook_test_failure_and_CDATA_goldens": "https://github.com/jordanhubbard/daemonarchy-ports/pull/114",
+    "Xmlcatmgr_XML_attribute_encoding": "https://github.com/jordanhubbard/daemonarchy-ports/pull/115"
   },
   "held_packages": [
     {
@@ -2445,6 +2447,10 @@
     {
       "component": "libxslt diagnostic",
       "correction": "First read-only preflight compared mount-p output against fstab text and stopped before commands. Next observer decoded historical ISO-8859-1 goldens as UTF-8; its five successful commands retained. Completion used raw unterminated-last-line semantics rather than original grep appended newline; its two successful commands retained. Final completion performs only missing chunk transform and exact bytewise original grep comparisons. All failed roots and full outputs preserved; no product source change."
+    },
+    {
+      "component": "xmlcatmgr acceptance and SGML compatibility check",
+      "correction": "FirstexternalresolverunnecessarilycalleddeprecatedinternalxmlConvertSGMLCatalog;nativecorebacktracepointsinsideit. 21actualcommands/lastSIGSEGVretainedwithone11,448,320bytecore. Correctpubliccatalogloading/resolutionAPIskeepSGMLchecksandpassall3states;thatattemptreachesrealXMLserializationfailureafter64commands. Initialfixedsourcepassesall8constructiontargetsand7XMLregressions,butlastSGMLtestassumedsinglelineoutputwhileoriginalwriterwrapsfields;testnowcomparesallowedSGMLwhitespace. Firstfixedbuild/testfailureandallobserverspreserved,notrelabeled. Newexactsourceverificationinprogress;no originalassertionsremoved."
     }
   ],
   "incomplete_original_source_suites": {
@@ -3685,7 +3691,14 @@
       "original_tests": "Port exposes no selected test bridge. Original Makefile.am has no TESTS/check-program/script/local target; distributed check-am depends only on all-am. No empty make-check return or independent acceptance is counted as original self-suite execution.",
       "source_Makefile_am_sha256": "af0cd44c227f8f439c23d014d2fa1335474ec8171eb702dee85279e1ad306b68",
       "guards": "Whole100prefix/logicalregistry/base/kernel/mounts/selectedsources unchanged. No other package installed as side effect.",
-      "qualification": "Next originalDocBook/defaultD-Bus catalog dependency is source-built only. Independent real XML/SGML/catalog resolver/error/recovery acceptance, original generatedcatalog-script controls, custody and normal installation remain pending. No canonical/desktop/hardware/release claim."
+      "qualification": "Original2.2_4packageHELD:independentacceptancefindsvalidURIampersandserializedasbare&andcorruptingXMLdespiteCLIexit0. 63priorcommandsexerciseXML/SGMLresolution,DTDdefaults/entities,changedinputs/negativecases/recovery;64thactualcommandcreatesinvalidXML. No normal/AMD64/canonical/desktop/releasequalification.",
+      "independent_failure": {
+        "actual_commands_before_failure": 64,
+        "trigger": "Add URI identifier urn:daemonarchy:query?a=1&b=2",
+        "observed": "CLIreturns0;independentElementTreeparsingrejectsserializedcatalogbecause&isnotescaped. Newnativeportregressionalsorejectstheoriginalsealedbinary;alloriginalfailedsamplesremainretained.",
+        "default_100_prefix_rawdb_base_kernel_mounts_unchanged": true,
+        "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/115"
+      }
     }
   ],
   "installed_Python_metadata_recovery": {
