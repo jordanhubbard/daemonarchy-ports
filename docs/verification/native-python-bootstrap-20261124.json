@@ -2188,7 +2188,8 @@
     "Fixed default libgpg-error1.61_1 is integrated among99developmentpackages, PR113. Continue original default libgcrypt(DOCS/INFO/STATIC), libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and defaultD-Bus(MANPAGES/X11) closure, then fullGLib original suite. All broad release/fleet/physical/canonical gates remain open.",
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
     "Libxslt PR114 repaired package is now integrated among101developmentpackages. Strict original DocBook results,751mainrunnercases/0errors,8harnesscontrols,30sealed and30freshnormalcommands pass. Original/repaired source/private and normal evidence verified on both hosts. Continue xmlcatmgr/DocBook/catalog/defaultD-Bus/fullGLib closure.",
-    "Xmlcatmgr2.2_6 B3 full ports package/10regressions/strict67private/37originalscripts pass,1684nodes verified in Sparky nativeVM and Madmax. Installed2.2_5 stillHELD; normal upgrade pending original solver classification diagnosis and exact versioned-license path transition. Continue DocBook/defaultD-Bus/fullGLib closure afterward."
+    "Xmlcatmgr2.2_6 B3 full ports package/10regressions/strict67private/37originalscripts pass,1684nodes verified in Sparky nativeVM and Madmax. Installed2.2_5 stillHELD; normal upgrade pending original solver classification diagnosis and exact versioned-license path transition. Continue DocBook/defaultD-Bus/fullGLib closure afterward.",
+    "PR116 pkg2.9.3_2 archive-upgrade fix has causal before/after real private upgrade and all34upgrade-file ATF passes. Complete full ports/source package and sealed acceptance, retain complete original-suite gaps, integrate repaired manager before XML catalog revision update. Do not use pkg add to leave obsolete license files untracked."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2200,7 +2201,8 @@
     "TOML_array_EOF": "https://github.com/jordanhubbard/daemonarchy-ports/pull/109",
     "Typogrify_Jinja_errors": "https://github.com/jordanhubbard/daemonarchy-ports/pull/110",
     "Libxslt_DocBook_test_failure_and_CDATA_goldens": "https://github.com/jordanhubbard/daemonarchy-ports/pull/114",
-    "Xmlcatmgr_XML_attribute_encoding": "https://github.com/jordanhubbard/daemonarchy-ports/pull/115"
+    "Xmlcatmgr_XML_attribute_encoding": "https://github.com/jordanhubbard/daemonarchy-ports/pull/115",
+    "Pkg_local_archive_upgrade": "https://github.com/jordanhubbard/daemonarchy-ports/pull/116"
   },
   "held_packages": [
     {
@@ -4104,8 +4106,38 @@
       },
       "normal_upgrade_pending": {
         "local_only_solver_dry_run": "Returned1 and classified2.2_6asnewinstallation despite existing2.2_5 in same mounted database. No package installed; digest/SQLite bookkeeping changed, separate read-only audit2083 confirms payloads/catalogs/inherited101/frozen/base/mounts and reseals102held. Retain anomaly for diagnosis.",
-        "guarded_add_preflight": "Stopped before installation: revision changes three versioned license paths. No add ran. Later upgrade guards must account for exact old/new license bodies and directories through original package upgrade semantics; do not waive old paths as untracked leftovers."
+        "guarded_add_preflight": "Stopped before installation: revision changes three versioned license paths. No add ran. Later upgrade guards must account for exact old/new license bodies and directories through original package upgrade semantics; do not waive old paths as untracked leftovers.",
+        "solver_diagnosis": "Causally reproduced missing installed candidate in pkg file-request solver path. PR116 fixes it; private genuine upgrade proves normal old-license cleanup/hooks and34upgrade-fileATF cases pass. Fresh pkg package/acceptance/integration still required; no live xmlcatmgr update."
       }
+    },
+    {
+      "component": "pkg",
+      "version": "2.9.3_2",
+      "source_revision": "d65aae9b1fb9293f1d4d26da12aaf3c334b10f99",
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/116",
+      "status": "native-causal-and-upgrade-file-ATF-pass-full-ports-pending",
+      "fix": "Include and process installed candidate for local archive install/upgrade jobs before adding new file request; preserve original upgrade cleanup and hooks.",
+      "causal_control": {
+        "original_preview_reports_new_install": true,
+        "fixed_preview_reports_upgrade": true,
+        "private_real_upgrade_pass": true,
+        "old_versioned_license_file_and_directory_removed": true,
+        "old_deinstall_and_new_install_hooks_run": true,
+        "final_registry_and_payload_checks_pass": true,
+        "whole_live102_prefix_rawdb_frozen17_base_original_source_objects_unchanged": true
+      },
+      "original_upgrade_ATF_file": {
+        "cases": 34,
+        "pass": 34,
+        "original_cases": 31,
+        "previous_solver_regressions": 2,
+        "new_archive_regression": 1,
+        "new_regression_rejects_original_binary": true,
+        "count_scope": "One full original upgrade.sh file plus retained/additive cases, not entire pkg frontend suite. Original atf-sh/atf-check from base /usr/libexec; explicit static candidate symlink in isolated test tool directory."
+      },
+      "patches": "Both actual BSD patch applications at zero fuzz produce exact candidate C and complete test bodies.",
+      "retained_failures": "Initial copied build config relinked library but left stale executable; separate corrected configure/make succeeds. A missing observer import and ATF PATH/argument-order failures are retained, not passing.",
+      "qualification": "Derived native causal and original upgrade-file ATF evidence only. Fresh full ports package, sealed package acceptance, entire upstream suite, normal install/update, AMD64 and canonical/release acceptance remain pending. No live pkg or xmlcatmgr update."
     }
   ],
   "installed_Python_metadata_recovery": {
