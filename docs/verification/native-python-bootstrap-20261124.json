@@ -2131,7 +2131,8 @@
     "DesktopFileUtils fixed0.29_1 is integrated among97developmentpackages, PR112. Full default GLib original suite now still needs source-built D-Bus and shared-mime-info tools; no GUI/physical/AMD64/canonical/release qualification.",
     "Shared MIME-Info is integrated among98developmentpackages; full default GLib original test closure now needs D-Bus. Preserve original D-Bus MANPAGES/X11 defaults: libxslt/libgcrypt/libgpg-error and DocBook/catalog dependencies are next. Canonical/full release and physical platform scope remains open.",
     "Fixed default libgpg-error1.61_1 is integrated among99developmentpackages, PR113. Continue original default libgcrypt(DOCS/INFO/STATIC), libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and defaultD-Bus(MANPAGES/X11) closure, then fullGLib original suite. All broad release/fleet/physical/canonical gates remain open.",
-    "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open."
+    "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
+    "Libxslt PR114 fresh construction, strict original DocBook results,751mainrunnercases,8harnesscontrols and30sealedconsumercommands pass. Normal integration awaits second verified evidence copy under70GiBreserve; then resume DocBook/catalog/defaultD-Bus/fullGLib closure."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2141,7 +2142,8 @@
     "IDNA_Hypothesis_test_dependency": "https://github.com/jordanhubbard/daemonarchy-ports/pull/107",
     "Pycparser_FreeBSD_cpp": "https://github.com/jordanhubbard/daemonarchy-ports/pull/108",
     "TOML_array_EOF": "https://github.com/jordanhubbard/daemonarchy-ports/pull/109",
-    "Typogrify_Jinja_errors": "https://github.com/jordanhubbard/daemonarchy-ports/pull/110"
+    "Typogrify_Jinja_errors": "https://github.com/jordanhubbard/daemonarchy-ports/pull/110",
+    "Libxslt_DocBook_test_failure_and_CDATA_goldens": "https://github.com/jordanhubbard/daemonarchy-ports/pull/114"
   },
   "held_packages": [
     {
@@ -3559,7 +3561,70 @@
         "Sparky_all_nodes_verified": true,
         "second_host_all_nodes_verified": false,
         "blocked_reason": "Second evidence host has approximately47GiB available, below archive plus inventory plus70GiB reserve. Guard stopped before creating/uploading remote copy. No deletion, NAS use or normal installation."
-      }
+      },
+      "superseded_for_next_integration_by_source_revision": "c16cb8985b515b1b280d80f6d593f64a5ef9d270"
+    },
+    {
+      "component": "libxslt",
+      "variant": "DocBook-failure-propagation-and-CDATA-golden-repair",
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/114",
+      "source_revision": "c16cb8985b515b1b280d80f6d593f64a5ef9d270",
+      "full_Git_source_members_verified": 184376,
+      "construction_targets": "All eight original targets exit zero in a fresh source/object/stage/package tree; default CRYPTO/PLUGINS/STATIC preserved.",
+      "fix": "Both original Makefile.am and distributed Makefile.in propagate transformation/diff failure status through command substitution and recipes. Four expected outputs retain eleven leading spaces required by XML CDATA normalization. Original input/DTD/transforms/comparisons/discovery retained; no assertion or failure is filtered.",
+      "standards_reference": "https://www.w3.org/TR/xml/#AVNormalize",
+      "causal_before_control": "With only the standards-correct goldens, valid original outputs pass. Deliberately corrupted expected HTML then makes the old harness return0; the new regression correctly rejects that status. Original producer source/objects unchanged.",
+      "original_make_test_exit": 0,
+      "original_check_groups": 32,
+      "main_runner_reported_cases": 751,
+      "main_runner_reported_errors": 0,
+      "original_DocBook_diffs_after_fix": 0,
+      "additive_harness_controls": [
+        "docbook-check-original-results",
+        "docbook-check-single-comparison",
+        "docbook-check-single-recovery",
+        "docbook-check-chunk-comparison",
+        "docbook-check-chunk-recovery",
+        "docbook-check-single-generator",
+        "docbook-check-chunk-generator",
+        "docbook-check-final-recovery"
+      ],
+      "all8harness_controls_pass": true,
+      "count_scope": "751originalrunnercaseinvocations,24runnergroups,8othercheckgroupsand8additiveharnessscenariosarenotsummed. Oldunpatched751/0plus4maskedmismatchesretainedseparately. This is selectednativepatchedsourceverification,notcanonical/lifecycle/releaseadmission.",
+      "package": {
+        "name": "libxslt-1.1.45.pkg",
+        "bytes": 279331,
+        "sha256": "b8a53b6725bda202d587eb0654be7618274b3fd4da9e2782e00b13153738f67f"
+      },
+      "runtime_payload_identity": {
+        "payloads": 85,
+        "declared_directories": 1,
+        "all_bytes_modes_owners_and_literal_links_match_original_sealed_package": true,
+        "differing_payloads": 0,
+        "note": "Test-only fix; runtime payloads unchanged. New package container identity retained separately; no version/revision bump."
+      },
+      "independent_sealed_acceptance": {
+        "actual_commands": 30,
+        "states": [
+          73,
+          91,
+          104
+        ],
+        "coverage": "Fresh real shared/static primary libraries and packaged xsltproc match independent Python XML/math/hash oracles: namespace/include/document/key/group/sort/quoted-parameter/Unicode changes; EXSLT node-set/math/sets/strings/dynamic/date/crypto; compiled external dynamic plugin changes, missing-plugin rejection, malformed stylesheet/input and terminating-message errors, recovery.",
+        "binding": "Original metadata supplies dependencies; shared/static native clients have no loader override. Only sealed packaged CLI explicitly selects its own DSO. Primary archives static; system/crypto dependencies may be shared.",
+        "all85payloads_and_one_directory_exact": true
+      },
+      "guards": "Whole100prefix/rawdb/base/kernel/mounts/advisory and selected original inputs unchanged.",
+      "source_private_custody": {
+        "nodes": 7263,
+        "archive_bytes": 27105882,
+        "archive_sha256": "c12bbc2d4124a132f114584ef58e800bb468d904b0759cdfb3857cc87c846a84",
+        "Sparky_all_nodes_verified": true,
+        "second_host_all_nodes_verified": false,
+        "pending": "Secondhost70GiBreserve unavailable; operator alternatehost/capacity question pending. No normal installation."
+      },
+      "canonical_gates": "At exact codehead authority and2selectedlocks pass; verifyexit1/nestedfalse because current canonical receipt is missing. No marker/lock/receipt rewrite.",
+      "qualification": "NativeARM64 source/tests and sealed acceptance pass. Normalintegration/custodysecondcopy/AMD64/canonicalSDK-TCB/desktop/hardware/release remain open. Original defective tests and failed observers remain distinct and retained."
     }
   ],
   "installed_Python_metadata_recovery": {
