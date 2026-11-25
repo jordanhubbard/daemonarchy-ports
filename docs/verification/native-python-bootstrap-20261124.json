@@ -2264,7 +2264,8 @@
     "Normalpkg2.9.3_2/XMLcatmgr2.2_6/xmlcharent0.3_2 allpassdevelopmentintegration; actualandacceptednormal103, completebothhostsource/failure/normalcustody. DocbookXML5.0_3 all8originaldataporttargets nowpasswith6originaldistributions; nextindependentDTD/schema/privatecatalogs/originalkeywordcontrols,custody/normalintegration. ContinueSGML/sdocbook/meta/XSL\u2192defaultD-BusMANPAGES/X11\u2192fulloriginalGLib/desktopclosure; no xmlto detour.",
     "DocbookXML5.0_3 now normally integrated among104developmentpackages:195payloads/42freshdefaultglobalcatalogDTD/schema/upgradecommands,7originalkeywordcontrols, source/private/failures2282nodes andnormal137nodes verifiedbothhosts. Originalcatalogadvertises4aliasesfor2absentschemas;preservedandunqualified. ContinueSimplifiedDocbook/ISO8879/SGML/meta/XSL todefaultD-BusMANPAGES/X11,thenfullGLib/desktop; imagecapacity/canonical/fleet/physical/releasegatesremainopen.",
     "Installed104,currentlyaccepted103:holdxmlcharent0.3_2forrealPUBLIC-onlyofflinefailure. PR117candidate0.3_3passes21portregressionsand20realSimplifiedDocbookcausalcommands; completefreshnativeoriginalconstruction+maketest,sealed/all975entityacceptance,bothhostcustody,normalupgradeanddefaultglobalconsumersbeforeresumingSimplifiedDocbookintegration. PreserveMANPAGES/X11andallbroader1.6scope.",
-    "Actual104/accepted103,installedXmlcharent_3heldforoldsharedkeywordduplicatepostinstallfailureonupgrade. NewPUBLICdatafix136defaultglobal/all975definitionsand20Simplifiedcommandsalreadypassread-only. PR117now_4includesupgrade-safeKeywords/xmlcatmgr.ucl;13nativecausalcontrols pass. Rebuild_4/actualmanifest/sealed/custody/normal_3to_4beforeresumingSimplified/ISO8879/SGML/meta/XSL/defaultD-Bus/fullGLib/desktop."
+    "Actual104/accepted103,installedXmlcharent_3heldforoldsharedkeywordduplicatepostinstallfailureonupgrade. NewPUBLICdatafix136defaultglobal/all975definitionsand20Simplifiedcommandsalreadypassread-only. PR117now_4includesupgrade-safeKeywords/xmlcatmgr.ucl;13nativecausalcontrols pass. Rebuild_4/actualmanifest/sealed/custody/normal_3to_4beforeresumingSimplified/ISO8879/SGML/meta/XSL/defaultD-Bus/fullGLib/desktop.",
+    "SharedKeywords/xmlcatmgr.uclfixhas20fullGitpkg-plistconsumers(inventoryrecorded);auditdynamicplistconsumersandrebuild/versiontransitionsforselected1.6packagesbeforeclaimingreleaseupdatecoverage. Thisdoesnotqualifyall20origins."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -4832,5 +4833,33 @@
       "reason": "Originalcatalogpost-installhookreportsduplicateentriesonactual_2to_3upgrade;pkgreturns0buttransactionnotaccepted. All25newpayloads/103otherprefixesand4catalogbodiesverified;136normaldataand20Simplifiedconsumerspass. Candidate_4fixessharedkeyword,13nativecausalcontrols;freshpackage/normalupgradepending."
     }
   ],
-  "last_updated_utc": "2026-11-25T10:08:00.856749+00:00"
+  "last_updated_utc": "2026-11-25T10:15:52.049818+00:00",
+  "shared_xmlcatmgr_keyword_consumer_inventory": {
+    "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
+    "pkg_plist_origins": [
+      "security/vuxml",
+      "textproc/docbook-sgml",
+      "textproc/docbook-xml",
+      "textproc/docbook-xsl",
+      "textproc/docbook-xsl-ns",
+      "textproc/dsssl-docbook-modular",
+      "textproc/html",
+      "textproc/iso12083",
+      "textproc/iso8879",
+      "textproc/jade",
+      "textproc/libfo",
+      "textproc/linuxdoc",
+      "textproc/openjade",
+      "textproc/sdocbook-xml",
+      "textproc/slides",
+      "textproc/website",
+      "textproc/xhtml",
+      "textproc/xhtml-11",
+      "textproc/xhtml-modularization",
+      "textproc/xmlcharent"
+    ],
+    "origin_count": 20,
+    "scope": "Full Git HEAD pkg-plist references, not only sparse checkout. Dynamic PLIST_FILES/keyword generation may add consumers; this is a starting source inventory, not complete impact qualification.",
+    "remaining": "Auditdynamicplistconsumersandselected1.6closure;ensureaffectedexistinginstallationsreceiverebuiltfixedscriptmetadatawithappropriatepackageversiontransitions. Generic13causalcontrolsarenotqualificationofall20origins."
+  }
 }
