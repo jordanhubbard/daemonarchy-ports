@@ -1,0 +1,26 @@
+{
+  "schema": "daemonarchy/native-xmlcharent-local-public-catalog@1",
+  "date": "2026-11-25",
+  "planned_release": "1.6",
+  "problem": "PUBLIC resolution returns HTTP identifiers that libxml2 does not recursively remap through rewriteURI/rewriteSystem. Simplified DocBook custom DTDs consequently fail offline despite installed character resources. Existing system-ID rewrite checks did not cover this consumer.",
+  "change": "Map all19PUBLICidentifiers directly to existing relative entity filenames. Preserve all19FPIs,the19resourcebodies,4system/URIrewrites andSGMLcatalog. BumpPORTREVISIONto3. Addoriginalnativeportdo-testwithdeclaredxmllintdependency.",
+  "causal_native_ARM64": {
+    "original_catalog_exit": 1,
+    "fixed_catalog_exit": 0,
+    "regression_scenarios": 21,
+    "scenarios": "19 PUBLIC-only offline resolutions with concrete Unicode character-value oracles; missing-catalog ordinary rejection and recovery. Same original entity bytes and script in both runs.",
+    "whole104_installed_prefix_rawdb_preserved": true,
+    "count_scope": "21 added port regression scenarios, not an upstream self-suite or a complete package/native admission."
+  },
+  "consumer_failure": "Retain Simplified DocBook failed customization consumer; stock flattened article profile passed before custom profile failed on three PUBLIC entity identifiers remapped to HTTP.",
+  "observer_correction": "First new regression script lost final expected value at shell read EOF; preserve failed run. Fixed script caches the last expected value, all21scenarios pass.",
+  "remaining": [
+    "Fresh original port construction and make test invocation",
+    "Independent sealed package consumers across all975characterdefinitions",
+    "Real Simplified DocBook custom and flattened article/refentry consumer with candidate parent catalog",
+    "Both-host source/private/failure custody",
+    "Normal local-only upgrade/dependencies/catalog hooks and default-global consumer regression",
+    "Canonical authority/lifecycle, AMD64, desktop, physical and release acceptance"
+  ],
+  "observed": "2026-11-25T09:48:27.834770+00:00"
+}
