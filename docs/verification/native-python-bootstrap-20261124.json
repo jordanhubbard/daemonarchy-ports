@@ -3412,6 +3412,111 @@
         "archive_sha256": "1c499ed797fccc5bc6536cb30c8b63702c8fe5bb81a302b6979e2700cf3f85a7",
         "all_nodes_verified_on_both_hosts": true
       }
+    },
+    {
+      "component": "libxslt",
+      "source_revision": "486f80fdbab7188d158d8bf23634a9d0ae9c1539",
+      "construction_targets": [
+        {
+          "target": "checksum",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "extract",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "patch",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "configure",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "build",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "stage",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "check-plist",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "package",
+          "exit": 0,
+          "uid": 65534
+        }
+      ],
+      "original_selected_options": [
+        "CRYPTO",
+        "PLUGINS",
+        "STATIC"
+      ],
+      "original_make_test_exit": 0,
+      "original_runner_reported_cases": 751,
+      "original_runner_reported_errors": 0,
+      "original_runner_groups": [
+        "REC2 tests",
+        "REC tests",
+        "REC tests (standalone)",
+        "REC tests without dictionaries",
+        "REC tests without dictionaries (standalone)",
+        "general tests",
+        "general tests without dictionaries",
+        "encoding tests",
+        "documents tests",
+        "numbers tests",
+        "keys tests",
+        "namespaces tests",
+        "extensions tests",
+        "reports tests",
+        "exslt common tests",
+        "exslt crypto tests",
+        "exslt date tests",
+        "exslt dynamic tests",
+        "exslt functions tests",
+        "exslt math tests",
+        "exslt saxon tests",
+        "exslt sets tests",
+        "exslt strings tests",
+        "plugin tests"
+      ],
+      "other_original_check_groups": [
+        "testThreads",
+        "xmlspec tests",
+        "multiple tests",
+        "XInclude test",
+        "XSLTMark tests",
+        "single docbook tests",
+        "xtchunk docbook tests",
+        "fuzz target tests"
+      ],
+      "original_runner_source_sha256": "f14b3230bcfe990a21a2c59eb829297807a107da5c8f2f3c4e6eca81f5b85dd5",
+      "original_test_stdout_sha256": "b7341e83549b78682c19e58e706c4e8a9124ddf4b94d7d1688fa57e94d93a5b8",
+      "count_scope": "Original tests/runtest reports 751 case invocations across24groups. Counter increments per selected globbed input/configuration or direct case; reused inputs are not unique fixtures. Other8checkgroups are separate and not summed.",
+      "unpropagated_failures": {
+        "group": "Original DocBook single and xtchunk checks",
+        "observed_diff_blocks": 4,
+        "difference": "Whitespace before http://sourceware.cygnus.com/docbook-tools/ is retained in href, FO destination and displayed URI. Original make test exits0 despite these diffs. Preserve generated outputs and investigate original check recipes before any complete-suite claim."
+      },
+      "package": {
+        "name": "libxslt-1.1.45.pkg",
+        "bytes": 279338,
+        "sha256": "3b71a90a9b00ed5aa4accb0d4ee0606f50203711e6706e7ed2f6aca9b2a7c16e"
+      },
+      "guards": "Whole100package prefix/logical registry/base/kernel/mounts and selected original source unchanged. Original source/distfiles/objects/stage/package/logs retained.",
+      "qualification": "Source-built default CRYPTO/PLUGINS/STATIC package is held: original make test exits0 but its DocBook checks print4unpropagated diffs. Main runner751cases/0errors does not establish complete-suite success. Independent sealed acceptance, two-host custody and normal installation remain pending; no AMD64/canonical/desktop/hardware/release qualification."
     }
   ],
   "installed_Python_metadata_recovery": {
