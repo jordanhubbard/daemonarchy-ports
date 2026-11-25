@@ -1,0 +1,132 @@
+--- tests/docbook/Makefile.in.orig
++++ tests/docbook/Makefile.in
+@@ -536,16 +536,16 @@
+ 	  out=result/html/`basename $$i .xml`.tst; \
+ 	  html=result/html/`basename $$i .xml`.html; \
+ 	  log=`$(CHECKER) $(top_builddir)/xsltproc/xsltproc --nonet \
+-		$(srcdir)/html/docbook.xsl $$i > $$out ; \
++		$(srcdir)/html/docbook.xsl $$i > $$out || exit 1 ; \
+ 	    if [ -f $(srcdir)/$$html ] ; then \
+ 		grep -v id < $(srcdir)/$$html > $$html.noid ; \
+ 		grep -v id < $$out > $$out.noid ; \
+-		diff $$html.noid $$out.noid ; \
++		diff $$html.noid $$out.noid || exit 1 ; \
+ 		rm -f $$html.noid $$out.noid ; \
+ 	    else \
+ 		mv $$out $(srcdir)/$$html ; \
+ 	    fi ; \
+-	  grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0" || true` ; \
++	  grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0" || true` || { printf \'%s\n\' "$$log"; exit 1; } ; \
+ 	  if [ -n "$$log" ] ; then \
+ 		echo result ; \
+ 		echo "$$log" ; \
+@@ -555,16 +555,16 @@
+ 	  fo=result/fo/`basename $$i .xml`.fo; \
+ 	  msg=result/fo/`basename $$i .xml`.msg; \
+ 	  log=`$(CHECKER) $(top_builddir)/xsltproc/xsltproc --nonet \
+-		$(srcdir)/fo/docbook.xsl $$i > $$out 2> $$msg ; \
++		$(srcdir)/fo/docbook.xsl $$i > $$out 2> $$msg || exit 1 ; \
+ 	  if [ -f $(srcdir)/$$fo ] ; then \
+ 	      grep -v id < $(srcdir)/$$fo > $$fo.noid ; \
+ 	      grep -v id < $$out > $$out.noid ; \
+-	      diff $$fo.noid $$out.noid ; \
++	      diff $$fo.noid $$out.noid || exit 1 ; \
+ 	      rm -f $$fo.noid $$out.noid ; \
+ 	  else \
+ 		mv $$out $(srcdir)/$$fo ; \
+ 	  fi ; \
+-	  grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0" || true` ; \
++	  grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0" || true` || { printf \'%s\n\' "$$log"; exit 1; } ; \
+ 	  if [ -n "$$log" ] ; then \
+ 		echo result ; \
+ 		echo "$$log" ; \
+@@ -573,16 +573,16 @@
+ 	  out=result/xhtml/`basename $$i .xml`.tst; \
+ 	  xhtml=result/xhtml/`basename $$i .xml`.xhtml; \
+ 	  log=`$(CHECKER) $(top_builddir)/xsltproc/xsltproc --nonet \
+-		$(srcdir)/xhtml/docbook.xsl $$i > $$out ; \
++		$(srcdir)/xhtml/docbook.xsl $$i > $$out || exit 1 ; \
+ 	  if [ -f $(srcdir)/$$xhtml ] ; then \
+ 	      grep -v id < $(srcdir)/$$xhtml > $$xhtml.noid ; \
+ 	      grep -v id < $$out > $$out.noid ; \
+-	      diff $$xhtml.noid $$out.noid ; \
++	      diff $$xhtml.noid $$out.noid || exit 1 ; \
+ 	      rm -f $$xhtml.noid $$out.noid ; \
+ 	  else \
+ 		mv $$out $(srcdir)/$$xhtml ; \
+ 	  fi ; \
+-	  grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0" || true` ; \
++	  grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0" || true` || { printf \'%s\n\' "$$log"; exit 1; } ; \
+ 	  if [ -n "$$log" ] ; then \
+ 		echo result ; \
+ 		echo "$$log" ; \
+@@ -600,9 +600,9 @@
+ 	  html=result/html/$$base.html; \
+ 	  log=`$(CHECKER) $(top_builddir)/xsltproc/xsltproc \
+ 		-o result/xtchunk/html/gdp-handbook \
+-		$(srcdir)/html/xtchunk.xsl $$i 2> $$base.err ; \
++		$(srcdir)/html/xtchunk.xsl $$i 2> $$base.err || exit 1 ; \
+ 	    if [ -f $(srcdir)/result/html/$$base.err ] ; then \
+-		diff $(srcdir)/result/html/$$base.err $$base.err ; \
++		diff $(srcdir)/result/html/$$base.err $$base.err || exit 1 ; \
+ 		rm $$base.err ; \
+ 	    else \
+ 		mv $$base.err $(srcdir)/result/html/$$base.err ; \
+@@ -612,13 +612,13 @@
+ 	      if [ -f $(srcdir)/$$orig ] ; then \
+ 		  grep -v id < $$html > $$html.noid ; \
+ 		  grep -v id < $(srcdir)/$$orig > $$orig.noid ; \
+-		  diff $$orig.noid $$html.noid ; \
++		  diff $$orig.noid $$html.noid || exit 1 ; \
+ 		  rm -f $$html.noid $$orig.noid $$html; \
+ 	      else \
+ 		  mv $$html $(srcdir)/$$orig ; \
+ 		fi ; \
+ 	    done ; \
+-	    grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0" || true` ; \
++	    grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0" || true` || { printf \'%s\n\' "$$log"; exit 1; } ; \
+ 	  if [ -n "$$log" ] ; then \
+ 		echo result ; \
+ 		echo "$$log" ; \
+@@ -639,11 +639,11 @@
+ 	  echo $$i ; \
+ 	  out=result/html/`basename $$i .xml`.tst; \
+ 	  html=result/html/`basename $$i .xml`.html; \
+-	  $(CHECKER) $(top_builddir)/xsltproc/xsltproc --nonet $(srcdir)/html/docbook.xsl $$i > $$out ; \
++	  $(CHECKER) $(top_builddir)/xsltproc/xsltproc --nonet $(srcdir)/html/docbook.xsl $$i > $$out || exit 1 ; \
+ 	  if [ -f $(srcdir)/$$html ] ; then \
+ 	      grep -v id < $(srcdir)/$$html > $$html.noid ; \
+ 	      grep -v id < $$out > $$out.noid ; \
+-	      diff $$html.noid $$out.noid ; \
++	      diff $$html.noid $$out.noid || exit 1 ; \
+ 	      rm -f $$html.noid $$out.noid ; \
+ 	  else mv $$out $(srcdir)/$$html ; fi ; \
+ 	  grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0" || true;\
+@@ -660,11 +660,11 @@
+ 	  out=result/fo/`basename $$i .xml`.tst; \
+ 	  fo=result/fo/`basename $$i .xml`.fo; \
+ 	  msg=result/fo/`basename $$i .xml`.msg; \
+-	  $(CHECKER) $(top_builddir)/xsltproc/xsltproc --nonet $(srcdir)/fo/docbook.xsl $$i > $$out  2> $$msg ; \
++	  $(CHECKER) $(top_builddir)/xsltproc/xsltproc --nonet $(srcdir)/fo/docbook.xsl $$i > $$out  2> $$msg || exit 1 ; \
+ 	  if [ -f $(srcdir)/$$fo ] ; then \
+ 	      grep -v id < $(srcdir)/$$fo > $$fo.noid ; \
+ 	      grep -v id < $$out > $$out.noid ; \
+-	      diff $$fo.noid $$out.noid ; \
++	      diff $$fo.noid $$out.noid || exit 1 ; \
+ 	      rm -f $$fo.noid $$out.noid ; \
+ 	  else mv $$out $(srcdir)/$$fo ; fi ; \
+ 	  grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0" || true;\
+@@ -681,11 +681,11 @@
+ 	  echo $$i ; \
+ 	  out=result/xhtml/`basename $$i .xml`.tst; \
+ 	  xhtml=result/xhtml/`basename $$i .xml`.xhtml; \
+-	  $(CHECKER) $(top_builddir)/xsltproc/xsltproc --nonet $(srcdir)/xhtml/docbook.xsl $$i > $$out ; \
++	  $(CHECKER) $(top_builddir)/xsltproc/xsltproc --nonet $(srcdir)/xhtml/docbook.xsl $$i > $$out || exit 1 ; \
+ 	  if [ -f $(srcdir)/$$xhtml ] ; then \
+ 	      grep -v id < $(srcdir)/$$xhtml > $$xhtml.noid ; \
+ 	      grep -v id < $$out > $$out.noid ; \
+-	      diff $$xhtml.noid $$out.noid ; \
++	      diff $$xhtml.noid $$out.noid || exit 1 ; \
+ 	      rm -f $$xhtml.noid $$out.noid ; \
+ 	  else mv $$out $(srcdir)/$$xhtml ; fi ; \
+ 	  grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0" || true;\

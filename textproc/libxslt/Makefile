@@ -40,4 +40,7 @@ PLUGINS_CONFIGURE_WITH=	plugins
 
 STATIC_CONFIGURE_ENABLE=	static
 
+post-test:
+	@${SH} ${FILESDIR}/docbook-check-regression.sh ${WRKSRC} ${GMAKE} ${WRKDIR}
+
 .include <bsd.port.mk>
