@@ -2762,6 +2762,23 @@
         }
       },
       "actual_CLI_commands_per_context": 20
+    },
+    {
+      "component": "shared-mime-info",
+      "source_revision": "0c46d1810ffcbb14aebff4f3a4cf5f215c11b72c",
+      "construction_targets": "All eight original targets exit zero with original defaults and dependencies. No dependency installation.",
+      "original_make_test_exit": 0,
+      "original_Meson_result_counts": {
+        "OK": 8
+      },
+      "count_scope": "Eight original Meson programs, not a sum of nested MIME fixtures. No failures or skips.",
+      "package": {
+        "name": "shared-mime-info-2.4_2.pkg",
+        "bytes": 631503,
+        "sha256": "50b58216698e025d5372b77c57035c7a87cb007105392ab11abd18d94bafec33"
+      },
+      "guards": "Complete97packageprefix/logicalregistry/base/kernel/mounts/selectedsource unchanged. Original full source and object evidence retained.",
+      "qualification": "Source-built development candidate only. Sealed package acceptance, both-host source/test/private custody and normal installation pending. Not AMD64/GUI/physical/canonical/lifecycle/release acceptance."
     }
   ],
   "installed_Python_metadata_recovery": {
