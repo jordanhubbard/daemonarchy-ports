@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 96,
+  "normal_development_package_count": 97,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -922,6 +922,48 @@
       },
       "original_upstream_suite": "NOT RUN: declared source-built dbus-uuidgen,update-desktop-database,update-mime-database tools missing. The latter two depend on default GLib itself.",
       "qualification": "ARM64 development integration passes:8130files/two declared directories,95inheritedpackages,actual96;41actualcommands each sealed/default context, normal loader without LD_LIBRARY_PATH. Both-host source/private/failure and normal evidence verified. Original full suite pending three declared source-built tools; no AMD64/canonical/lifecycle/release qualification."
+    },
+    {
+      "name": "DesktopFileUtils optional Implements terminator fix",
+      "source_revisions": [
+        "0c46d1810ffcbb14aebff4f3a4cf5f215c11b72c"
+      ],
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/112",
+      "packages": [
+        {
+          "name": "desktop-file-utils-0.29_1.pkg",
+          "bytes": 51825,
+          "sha256": "1f449b59ab8648e8e78053d95311f36f066a4a8f0913de28537b7a90fd3cdd65"
+        }
+      ],
+      "sealed_payloads": 14,
+      "declared_directories": 1,
+      "generated_original_postinstall_cache_files": 2,
+      "normal_packages_before": 96,
+      "normal_packages_after": 97,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "actual_private_and_default_path_checks": "Twenty actual commands per context: actual full GLib binding, validation/installation/editing, Unicode/custom fields/categories/MIME edits, MIME+intent cache creation/twoapps/staleassociationremoval, missingName rejection, invalidMIMEdiagnosticandcontinue, recovery. Isolated fixtures; applications never launched; defaultnormal loader has no override. Global original postinstall generates only exact empty intent.cache/mimeinfo.cache, rootwheel0644.",
+      "original_make_test_exit": 0,
+      "original_Meson_programs": {
+        "OK": 2
+      },
+      "count_scope": "One unchanged original intent-cache program plus additive eight-scenario validator/installer regression; no nested assertion sum. Original binaries fail same valid-terminator causal control.",
+      "two_host_evidence": {
+        "source_private_and_failures": {
+          "nodes": 2660,
+          "archive_bytes": 19165341,
+          "archive_sha256": "8dec39558a43f6cfe3433d9228111ee0a59bd64d15c14eab03c7d2f4003e7f6b",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 77,
+          "archive_bytes": 12281113,
+          "archive_sha256": "11095570a5f86f1805decf95ccce2d4ce8b38d208e4938622fb211df24262951",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "qualification": "Development runtime only; AMD64/GUI/physical/canonical/lifecycle/release remain open."
     }
   ],
   "complete_original_source_suites": {
@@ -1862,6 +1904,26 @@
         "all_nodes_verified_on_both_hosts": true
       },
       "AMD64_canonical_lifecycle_release_qualified": false
+    },
+    "DesktopFileUtils_fixed": {
+      "source_revision": "0c46d1810ffcbb14aebff4f3a4cf5f215c11b72c",
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/112",
+      "original_make_test_exit": 0,
+      "original_Meson_programs": {
+        "OK": 2
+      },
+      "original_intent_cache_unchanged": true,
+      "additive_regression_scenarios": 8,
+      "skips": 0,
+      "failures": 0,
+      "count_scope": "Programs and nested scenarios are distinct, not summed. Original binaries fail valid terminated lists in both validator and installer; plain/empty and all invalid controls behave correctly.",
+      "two_host_evidence": {
+        "nodes": 2660,
+        "archive_bytes": 19165341,
+        "archive_sha256": "8dec39558a43f6cfe3433d9228111ee0a59bd64d15c14eab03c7d2f4003e7f6b",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "AMD64_canonical_lifecycle_release_qualified": false
     }
   },
   "pending": [
@@ -1880,7 +1942,8 @@
     "GI-docgen full original Graphviz render_dot/SVG test and complete CI/tool closure remain open despite successful default runtime generation; source-built Graphviz required, original test failure retained.",
     "CMake original upstream self-suite and forced BSD-make space-path failure remain open; original source construction, sealed and normal default-finder/GNUmake consumers pass. No full upstream/backend qualification claimed.",
     "Full default GLib is integrated among96developmentpackages with DOCS/MANPAGES/NLS/TEST preserved; all8construction targets and41sealed/default commands pass. Original full suite still needs three declared source-built test tools. Required named bootstrap intermediates remain distinct.",
-    "Introspection required bootstrap is integrated among95developmentpackages; all64originalMesonprograms and27sealed/default commands percontext pass with both-host evidence. PR111 review,AMD64,canonical/lifecycle admission remain pending. Full default GLib is now integrated among96developmentpackages with all options preserved; original full suite still needs three declared source-built tools."
+    "Introspection required bootstrap is integrated among95developmentpackages; all64originalMesonprograms and27sealed/default commands percontext pass with both-host evidence. PR111 review,AMD64,canonical/lifecycle admission remain pending. Full default GLib is now integrated among96developmentpackages with all options preserved; original full suite still needs three declared source-built tools.",
+    "DesktopFileUtils fixed0.29_1 is integrated among97developmentpackages, PR112. Full default GLib original suite now still needs source-built D-Bus and shared-mime-info tools; no GUI/physical/AMD64/canonical/release qualification."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2666,7 +2729,7 @@
           "https://specifications.freedesktop.org/desktop-entry/latest/recognized-keys.html"
         ],
         "contract": "Implements is string(s); multiple-value keys may optionally terminate with a semicolon.",
-        "repair": "Pending reviewed source fix and additive regression preserving invalid interior interface rejection. Original package/failed fixtures retained."
+        "repair": "Implemented in PR112; fixed0.29_1 separately source-built, original+additivetests passed, sealed/default acceptance passed and normally installed. Original0.29and failures remain held/preserved."
       }
     },
     {
@@ -2683,7 +2746,22 @@
         "sha256": "1f449b59ab8648e8e78053d95311f36f066a4a8f0913de28537b7a90fd3cdd65"
       },
       "preserved_failure": "First native fixed-source patch target rejected malformed Meson patch EOF framing; corrected using original no-final-newline marker. No original test/assertion/selection weakening.",
-      "qualification": "Source-built development candidate only, not installed. Packaged public-CLI/cache acceptance and both-host custody pending. Original0.29remains held. AMD64/canonical/lifecycle/release open."
+      "qualification": "Normally installed ARM64 development package among97. All14payloads/one declared directory and exactly2original-postinstallgeneratedemptycaches verified;96inheritedpackages/frozen17/base/kernel/mount/advisory preserved. Twenty actual CLI commands each sealed/default context pass without LD_LIBRARY_PATH. Both-host full source/private/failures and normal evidence verified. Original0.29remains held. AMD64/GUI/physical/canonical/lifecycle/release remain unqualified.",
+      "two_host_evidence": {
+        "source_private_and_failures": {
+          "nodes": 2660,
+          "archive_bytes": 19165341,
+          "archive_sha256": "8dec39558a43f6cfe3433d9228111ee0a59bd64d15c14eab03c7d2f4003e7f6b",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 77,
+          "archive_bytes": 12281113,
+          "archive_sha256": "11095570a5f86f1805decf95ccce2d4ce8b38d208e4938622fb211df24262951",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "actual_CLI_commands_per_context": 20
     }
   ],
   "installed_Python_metadata_recovery": {
