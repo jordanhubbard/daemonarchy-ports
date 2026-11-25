@@ -15,10 +15,10 @@
   "consumer_failure": "Retain Simplified DocBook failed customization consumer; stock flattened article profile passed before custom profile failed on three PUBLIC entity identifiers remapped to HTTP.",
   "observer_correction": "First new regression script lost final expected value at shell read EOF; preserve failed run. Fixed script caches the last expected value, all21scenarios pass.",
   "remaining": [
-    "Other selected catalog consumers still need fresh construction, actual generated-hook and normal catalog/upgrade checks. All21known native version comparisons and fresh SimplifiedDocBook1.1_3,2 construction/private/generated-hook/normal integration pass.",
+    "Other selected catalog consumers still require fresh construction, pkg-decoded hook controls and normal global-catalog/upgrade checks. Xmlcharent0.3_4, SimplifiedDocBook1.1_3,2 and ISO8879_4 have bounded native normal integration; all21known version comparisons pass, not all21package qualifications.",
     "Complete canonical authority/lifecycle, AMD64, desktop, physical and release acceptance."
   ],
-  "observed": "2026-11-25T19:58:01.052332+00:00",
+  "observed": "2026-11-25T20:01:30.612670+00:00",
   "Simplified_Docbook_consumer_causal": {
     "actual_commands": 20,
     "profiles": [
@@ -426,5 +426,33 @@
       "qualified": false
     },
     "two_host_evidence_archive_sha256": "f142f4eafb4ec3eafede192015103dd5b1bffb6d6ea20be3ea238784f9a1868d"
+  },
+  "selected_ISO8879_normal_consumer_20261125": {
+    "source_revision": "74ee006accba1fd1b9da68ac6e0579cf88527b6d",
+    "version": "1986_4",
+    "package_sha256": "b5287bac8795a9eede78ee8c9fe6257841a67918c86394aaab7fd4d03506a73e",
+    "normal_local_only_original_dependency_solver_and_actual_pkg_hooks": true,
+    "normal_stderr_empty": true,
+    "all24_payloads_and_four_catalog_files_exact": true,
+    "only_one_SGML_catalog_index_changed": true,
+    "all105_inherited_package_prefixes_preserved": true,
+    "default_global_resource_commands": 114,
+    "PUBLIC_mappings": 38,
+    "entity_definitions": 978,
+    "outputs_match_private_controls": true,
+    "catalog_environment_overrides": false,
+    "test_tool_caveat": "Resource commands use the uninstalled original OpenSP executable and its explicitly bound private ELF library directory. This is default-global catalog/resource integration, not a normally installed parser or passing original OpenSP full suite; its six failures remain open.",
+    "normal_parser_library_binding_without_override": false,
+    "normal_packages_before": 105,
+    "normal_packages_after": 106,
+    "frozen17_base_mounts_advisory_preserved": true,
+    "two_host_normal_evidence": {
+      "nodes": 246,
+      "archive_bytes": 12608698,
+      "archive_sha256": "ab69a186df6a3910edbf7ff6827a622e8962e216f6e7422e6e18b262b56e5689",
+      "inventory_sha256": "2d4cc752b9fde8f831d44c4d5dd8ffaa76a987ca6cbebf8f84431c2890ef70c0",
+      "all_nodes_verified_on_both_hosts": true
+    },
+    "scope": "Bounded native ARM64 data/catalog development integration. No original ISO selected upstream test bridge, canonical/lifecycle, AMD64, desktop, physical or release acceptance."
   }
 }
