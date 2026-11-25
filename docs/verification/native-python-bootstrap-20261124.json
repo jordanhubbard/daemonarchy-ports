@@ -2342,7 +2342,7 @@
       }
     },
     {
-      "name": "GLib required named bootstrap flavor: preliminary construction",
+      "name": "GLib required named bootstrap flavor: sealed acceptance",
       "origin": "devel/glib20@bootstrap",
       "source_revision": "511743d7327c93e9ff0117d04f0176ebc572f444",
       "purpose": "Original dependency graph requires this separately named intermediate for gobject-introspection@bootstrap; that scanner is required by default GLib. It does not qualify or replace default GLib.",
@@ -2402,9 +2402,25 @@
         "update-mime-database:misc/shared-mime-info"
       ],
       "normal93_prefix_registry_base_mounts_preserved": true,
-      "independent_sealed_default_consumers_and_two_host_custody": "pending; source/build/package bytes retained on existing native worker",
+      "independent_sealed_default_consumers_and_two_host_custody": "Sealed consumers and source/private/failures custody pass; normal installation pending.",
       "normal_integration": "pending; not included in current93packages",
-      "qualification": "Original native construction observation for mandatory intermediate only. Default GLib, original full test closure, AMD64, canonical and release qualification remain pending."
+      "qualification": "Original native construction observation for mandatory intermediate only. Default GLib, original full test closure, AMD64, canonical and release qualification remain pending.",
+      "sealed_files": 412,
+      "sealed_explicit_directories": 4,
+      "actual_sealed_commands": 33,
+      "actual_sealed_checks": "Shared/static Unicode/hash/variant/keyfile/regex APIs; GObject signal/refcount/weak finalization; mainloop idle; GFile changedcontents/missingfileerror; UTC weekday/date; compiled resource list/extract/change/badXML/recovery; schema/gsettings memory-backend defaults/change/badXML/recovery; actual DBus codegen and generated C compilation. No session/IPC/defaultGLib qualification.",
+      "directory_verification": "Four explicit package directories checked against manifest owner/group/mode, including root ownership despite numeric builder IDs in archive headers. Every file and declared directory verified before/after consumers.",
+      "observer_corrections": [
+        "Initial observer rejected explicit directory entries before install.",
+        "Restricted pkgconf path omitted base zlib.pc; preserve standard search paths and add the sealed metadata directory.",
+        "Consumer omitted original LOCALBASE link flag for libintl; use the original -L/usr/local/lib context. All original product/test/option bodies remain unchanged."
+      ],
+      "source_private_and_failed_observer_evidence": {
+        "nodes": 7057,
+        "archive_bytes": 61404799,
+        "archive_sha256": "4947f7c76db09cd58a7890193934cb11dad1e63b0aba875cc78b50f61055acd0",
+        "all_nodes_verified_on_both_hosts": true
+      }
     }
   ]
 }
