@@ -3625,6 +3625,67 @@
       },
       "canonical_gates": "At exact codehead authority and2selectedlocks pass; verifyexit1/nestedfalse because current canonical receipt is missing. No marker/lock/receipt rewrite.",
       "qualification": "NativeARM64 source/tests and sealed acceptance pass. Normalintegration/custodysecondcopy/AMD64/canonicalSDK-TCB/desktop/hardware/release remain open. Original defective tests and failed observers remain distinct and retained."
+    },
+    {
+      "component": "xmlcatmgr",
+      "source_revision": "c16cb8985b515b1b280d80f6d593f64a5ef9d270",
+      "version": "2.2_4",
+      "original_selected_options": [
+        "DOCS"
+      ],
+      "construction_targets": [
+        {
+          "target": "checksum",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "extract",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "patch",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "configure",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "build",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "stage",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "check-plist",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "package",
+          "exit": 0,
+          "uid": 65534
+        }
+      ],
+      "package": {
+        "name": "xmlcatmgr-2.2_4.pkg",
+        "bytes": 23185,
+        "sha256": "cc860356c7f2572c172e5082ff8d7c05932df077454c3f56477b9035ff31a1ae"
+      },
+      "payloads": 11,
+      "declared_directories": 2,
+      "original_tests": "Port exposes no selected test bridge. Original Makefile.am has no TESTS/check-program/script/local target; distributed check-am depends only on all-am. No empty make-check return or independent acceptance is counted as original self-suite execution.",
+      "source_Makefile_am_sha256": "af0cd44c227f8f439c23d014d2fa1335474ec8171eb702dee85279e1ad306b68",
+      "guards": "Whole100prefix/logicalregistry/base/kernel/mounts/selectedsources unchanged. No other package installed as side effect.",
+      "qualification": "Next originalDocBook/defaultD-Bus catalog dependency is source-built only. Independent real XML/SGML/catalog resolver/error/recovery acceptance, original generatedcatalog-script controls, custody and normal installation remain pending. No canonical/desktop/hardware/release claim."
     }
   ],
   "installed_Python_metadata_recovery": {
