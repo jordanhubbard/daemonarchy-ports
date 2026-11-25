@@ -1981,6 +1981,34 @@
         "all_nodes_verified_on_both_hosts": true
       },
       "AMD64_canonical_lifecycle_release_qualified": false
+    },
+    "LibgpgError_fixed_TEST": {
+      "source_revision": "486f80fdbab7188d158d8bf23634a9d0ae9c1539",
+      "separate_variants": {
+        "DOCS_NLS_TEST": {
+          "original_programs": 15,
+          "passed": 15,
+          "skips": 0,
+          "failures": 0,
+          "additive_static_pkgconfig_regression_pass": true
+        },
+        "DOCS_TEST_noNLS": {
+          "original_programs": 15,
+          "passed": 15,
+          "skips": 0,
+          "failures": 0,
+          "additive_static_pkgconfig_regression_pass": true,
+          "no_gettext_link_or_runtime_dependency": true
+        }
+      },
+      "count_scope": "Per-variant program counts; not a sum of unique nested assertions. Default DOCS/NLS independently runs its one original config program plus additive regression. Artifacts kept separate.",
+      "two_host_evidence": {
+        "nodes": 7008,
+        "archive_bytes": 45983658,
+        "archive_sha256": "e6ba04478af3fe1619f7a4224060b281b62fceb11d1fcb1210d84eb33f0f43ec",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "AMD64_canonical_lifecycle_release_qualified": false
     }
   },
   "pending": [
@@ -2992,7 +3020,194 @@
       "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/113",
       "change": "Publish -lintl in original static metadata only with NLS, preserve other private flags; PORTREVISION1. Add real static C consumer after unchanged original tests, with explicit archive selection; declare pkgconf TEST_DEPENDS.",
       "causal_regression_before": "Fails on original metadata with libintl symbols unresolved; adding only gettext link resolves original full client.",
-      "qualification": "Patch applies to exact original pc.in with zero fuzz. Fresh complete native source preparation and fixed construction/tests/package acceptance pending. No installed package/AMD64/canonical/release qualification."
+      "qualification": "Native source/variants/sealed acceptance and both-host custody pass. Normal installation in progress, not yet qualified in this report. Original1.61remains held. AMD64/canonical/lifecycle/fullrelease open.",
+      "construction": "Fresh exact full184371Gitmember source at486f80fdbab7; all8constructiontargets exit0 independently for defaultDOCS/NLS, separateDOCS/NLS/TEST and separateDOCS/TEST(NLSoff).",
+      "variant_results": {
+        "default": {
+          "selected_options": [
+            "DOCS",
+            "NLS"
+          ],
+          "original_make_test_exit": 0,
+          "original_program_results": [
+            {
+              "result": "PASS",
+              "name": "gpg-error-config-test.sh"
+            }
+          ],
+          "additive_static_pkgconfig_C_regression_pass": true,
+          "package": {
+            "name": "libgpg-error-1.61_1.pkg",
+            "bytes": 390019,
+            "sha256": "733d10e7261393080bacd7f0998a6cd1f673e2d0552136680730221c58ffaed8"
+          }
+        },
+        "TEST_NLS": {
+          "selected_options": [
+            "DOCS",
+            "NLS",
+            "TEST"
+          ],
+          "original_make_test_exit": 0,
+          "original_program_results": [
+            {
+              "result": "PASS",
+              "name": "gpg-error-config-test.sh"
+            },
+            {
+              "result": "PASS",
+              "name": "t-version"
+            },
+            {
+              "result": "PASS",
+              "name": "t-strerror"
+            },
+            {
+              "result": "PASS",
+              "name": "t-syserror"
+            },
+            {
+              "result": "PASS",
+              "name": "t-lock"
+            },
+            {
+              "result": "PASS",
+              "name": "t-printf"
+            },
+            {
+              "result": "PASS",
+              "name": "t-poll"
+            },
+            {
+              "result": "PASS",
+              "name": "t-b64"
+            },
+            {
+              "result": "PASS",
+              "name": "t-argparse"
+            },
+            {
+              "result": "PASS",
+              "name": "t-logging"
+            },
+            {
+              "result": "PASS",
+              "name": "t-stringutils"
+            },
+            {
+              "result": "PASS",
+              "name": "t-malloc"
+            },
+            {
+              "result": "PASS",
+              "name": "t-spawn"
+            },
+            {
+              "result": "PASS",
+              "name": "t-strlist"
+            },
+            {
+              "result": "PASS",
+              "name": "t-name-value"
+            }
+          ],
+          "additive_static_pkgconfig_C_regression_pass": true,
+          "package": {
+            "name": "libgpg-error-1.61_1.pkg",
+            "bytes": 390031,
+            "sha256": "5c2c44655c414fe14393abb1c44acd6f70156aa2d0f9d37db24937d44b94fc0e"
+          }
+        },
+        "TEST_noNLS": {
+          "selected_options": [
+            "DOCS",
+            "TEST"
+          ],
+          "original_make_test_exit": 0,
+          "original_program_results": [
+            {
+              "result": "PASS",
+              "name": "gpg-error-config-test.sh"
+            },
+            {
+              "result": "PASS",
+              "name": "t-version"
+            },
+            {
+              "result": "PASS",
+              "name": "t-strerror"
+            },
+            {
+              "result": "PASS",
+              "name": "t-syserror"
+            },
+            {
+              "result": "PASS",
+              "name": "t-lock"
+            },
+            {
+              "result": "PASS",
+              "name": "t-printf"
+            },
+            {
+              "result": "PASS",
+              "name": "t-poll"
+            },
+            {
+              "result": "PASS",
+              "name": "t-b64"
+            },
+            {
+              "result": "PASS",
+              "name": "t-argparse"
+            },
+            {
+              "result": "PASS",
+              "name": "t-logging"
+            },
+            {
+              "result": "PASS",
+              "name": "t-stringutils"
+            },
+            {
+              "result": "PASS",
+              "name": "t-malloc"
+            },
+            {
+              "result": "PASS",
+              "name": "t-spawn"
+            },
+            {
+              "result": "PASS",
+              "name": "t-strlist"
+            },
+            {
+              "result": "PASS",
+              "name": "t-name-value"
+            }
+          ],
+          "additive_static_pkgconfig_C_regression_pass": true,
+          "package": {
+            "name": "libgpg-error-1.61_1.pkg",
+            "bytes": 277095,
+            "sha256": "e33039b95365571e721eeae6b66763dbfe6e92c289ef5df73bed92a0f3566cf4"
+          }
+        }
+      },
+      "NLS_off_no_gettext_link_or_runtime_dependency": true,
+      "independent_sealed_acceptance": {
+        "payloads": 51,
+        "declared_directories": 0,
+        "actual_commands": 24,
+        "checks": "Original static metadata drives archive linkage without manual gettext flags; real shared/static error/errno/source/version/Unicode format/allocation/memory streams/two-thread lock/change/error/recovery, packaged gpg-error and config/yat2m commands. Sealed CLI own-DSO binding is explicit; actual native shared/static consumers have no loader override. Whole98prefix/rawdb unchanged."
+      },
+      "two_host_evidence": {
+        "nodes": 7008,
+        "archive_bytes": 45983658,
+        "archive_sha256": "e6ba04478af3fe1619f7a4224060b281b62fceb11d1fcb1210d84eb33f0f43ec",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "normal_Info_index_control": "Original indexinfo exactly reproduces existing index and independently predicts the updated index after adding packaged gpgrt.info; all old entries preserved. Only that exact inherited aggregate update may change. Loader hints before state retained; original package scripts stay enabled."
     }
   ],
   "installed_Python_metadata_recovery": {
