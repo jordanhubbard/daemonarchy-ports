@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 106,
+  "normal_development_package_count": 107,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -1272,6 +1272,27 @@
           "all_nodes_verified_on_both_hosts": true
         }
       }
+    },
+    {
+      "label": "Paired legacy DocBook SGML mode repair",
+      "packages": [
+        {
+          "name": "docbook-sgml-4.5_4.pkg",
+          "bytes": 144699,
+          "sha256": "ef144a868c625279a2074bc2a4e033fa4b70018919f2864c9f66f08cac6be8e4"
+        },
+        {
+          "name": "docbook-xml-5.0_6.pkg",
+          "bytes": 565300,
+          "sha256": "e22952c7ae93156b3400ea5818ec5cd7b9ad9001ca7391e9bef252b0499c58ff"
+        }
+      ],
+      "source_revisions": [
+        "6defff971350efcf84889a03120ab5462ece1508"
+      ],
+      "normal_packages_before": 106,
+      "normal_packages_after": 107,
+      "qualification": "See paired_legacy_DocBook_SGML_mode_20261125 for exact actual-package, normal, reused hook-binding and two-host evidence scopes."
     }
   ],
   "complete_original_source_suites": {
@@ -2301,7 +2322,8 @@
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
     "Normalpkg2.9.3_2/XMLcatmgr2.2_6/xmlcharent0.3_2 allpassdevelopmentintegration; actualandacceptednormal103, completebothhostsource/failure/normalcustody. DocbookXML5.0_3 all8originaldataporttargets nowpasswith6originaldistributions; nextindependentDTD/schema/privatecatalogs/originalkeywordcontrols,custody/normalintegration. ContinueSGML/sdocbook/meta/XSL\u2192defaultD-BusMANPAGES/X11\u2192fulloriginalGLib/desktopclosure; no xmlto detour.",
     "DocbookXML5.0_3 now normally integrated among104developmentpackages:195payloads/42freshdefaultglobalcatalogDTD/schema/upgradecommands,7originalkeywordcontrols, source/private/failures2282nodes andnormal137nodes verifiedbothhosts. Originalcatalogadvertises4aliasesfor2absentschemas;preservedandunqualified. ContinueSimplifiedDocbook/ISO8879/SGML/meta/XSL todefaultD-BusMANPAGES/X11,thenfullGLib/desktop; imagecapacity/canonical/fleet/physical/releasegatesremainopen.",
-    "Simplified DocBook1.1_3,2 is normally integrated among105developmentpackages. Continue ISO8879/SGML/DocBook metaport/XSL, original default D-Bus MANPAGES/X11, full original GLib tests and complete desktop closure. Source74ee verifies all184371members and all21known catalog-consumer expanded versions;20other revisions are newer. Remaining selected consumers still need fresh construction/generated-hook/normal upgrade coverage. Canonical, AMD64, physical fleet, final media, signing and release gates remain open."
+    "Simplified DocBook1.1_3,2 is normally integrated among105developmentpackages. Continue ISO8879/SGML/DocBook metaport/XSL, original default D-Bus MANPAGES/X11, full original GLib tests and complete desktop closure. Source74ee verifies all184371members and all21known catalog-consumer expanded versions;20other revisions are newer. Remaining selected consumers still need fresh construction/generated-hook/normal upgrade coverage. Canonical, AMD64, physical fleet, final media, signing and release gates remain open.",
+    "Current checkpoint: accepted bounded ARM development count107, no installed held package. SGML4/XML6 paired repair and normal integration pass. DocBook metaport1.5 all8 original construction targets pass, package acceptance/normal integration pending; continue original XSL defaults, D-Bus MANPAGES/X11, complete original GLib suite and desktop. All broader release gates remain open."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -5006,9 +5028,9 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 106,
+  "actual_installed_development_package_count": 107,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-25T21:03:33.014859+00:00",
+  "last_updated_utc": "2026-11-25T22:00:11.073285+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -5558,5 +5580,99 @@
     "absent_original_schema_targets": 2,
     "remaining": "DocBookSGML4.5_3 construction passes but private/generated-hook/normal acceptance is pending. Continue selected SGML/meta/XSL/defaultD-Bus/fullGLib/desktop. Complete canonical lifecycle,AMD64,physical and release acceptance remains open.",
     "observed_utc": "2026-11-25T21:03:33.014859+00:00"
+  },
+  "paired_legacy_DocBook_SGML_mode_20261125": {
+    "source_revision": "6defff971350efcf84889a03120ab5462ece1508",
+    "problem": "Actual legacy SGML 4.3 fails on XML-only xml:base/xml:lang declarations and SGML-incompatible HTML table declarations; all nine DTD versions must remain usable with either provider catalog first. Original failure follows six passing DTD versions and is retained.",
+    "repair": "Both original providers patch shared 4.3/4.4 modules. SGML-only attribute guards, existing tag-minimization parameter, and SGML-only CDATA table rules preserve original XML 4.3 rules enumeration. All original distributions/options/dependencies retained.",
+    "original_patch_targets_zero_fuzz_offset": true,
+    "exact_patched_modules_verified": 6,
+    "complete_native_source_members_verified": 184377,
+    "original_construction_targets_per_package": 8,
+    "artifacts": [
+      {
+        "name": "docbook-sgml-4.5_4.pkg",
+        "bytes": 144699,
+        "sha256": "ef144a868c625279a2074bc2a4e033fa4b70018919f2864c9f66f08cac6be8e4"
+      },
+      {
+        "name": "docbook-xml-5.0_6.pkg",
+        "bytes": 565300,
+        "sha256": "e22952c7ae93156b3400ea5818ec5cd7b9ad9001ca7391e9bef252b0499c58ff"
+      }
+    ],
+    "private_payloads": {
+      "SGML": 141,
+      "XML": 195,
+      "explicit_directories": 0
+    },
+    "actual_package_private_SGML_commands": 63,
+    "SGML_DTD_versions": 9,
+    "actual_package_private_XML_commands": 42,
+    "XML_DTD_versions": 6,
+    "actually_shipped_XML_schema_profiles": 3,
+    "fresh_actual_pair_followup_commands": 23,
+    "followup_scope": "Reverse catalog order, HTML and CALS tables, XML unknown-attribute and strict 4.3 rules rejection, original-unpatched failures and patched recovery.",
+    "generated_hooks": "Decoded actual SGML4 and XML6 phase bodies are byte-identical to earlier qualified SGML3 17-control and XML5 24-control sets. All four phase bindings carry body and reference receipt digests. Those controls were not replayed; actual normal transactions are separately tested.",
+    "normal_XML_upgrade": {
+      "from": "5.0_5",
+      "to": "5.0_6",
+      "payloads": 195,
+      "fresh_DTD_schema_catalog_conversion_commands": 42,
+      "fresh_Xmlcharent_dependency_commands": 136,
+      "fresh_XML_table_strictness_commands": 7,
+      "other_105_prefixes_preserved": true,
+      "four_catalog_bodies_and_mtimes_preserved": true,
+      "original_local_only_solver_dependencies_hooks_pass": true,
+      "empty_stderr_no_hook_errors": true,
+      "accepted_bounded_development_count": 106
+    },
+    "normal_SGML_install": {
+      "version": "4.5_4",
+      "payloads": 141,
+      "fresh_default_global_DTD_commands": 36,
+      "fresh_HTML_CALS_table_commands": 3,
+      "inherited_106_prefixes_preserved_except_one_predicted_catalog_index": true,
+      "only_catalog_index_changed": "share/sgml/catalog.ports",
+      "three_other_catalog_files_preserved": true,
+      "original_local_only_solver_dependencies_hooks_pass": true,
+      "empty_stderr_no_hook_errors": true,
+      "accepted_bounded_development_count": 107
+    },
+    "normal_resource_environment": "No positive catalog override. XML commands use clean default loader. SGML uses uninstalled original OpenSP executable with explicit private ELF library binding; this does not qualify a normally installed parser. Its six original suite failures remain open.",
+    "frozen_SDK17_base_and_mount_guards_pass": true,
+    "failed_observers_and_derived_prototypes_retained": "Invalid historical 2.4.1 fixture, padded SDATA and actual entity-resource oracles, XML validation exit contract correction, real unpatched 4.3 failure and all intermediate derived prototypes. Derived prototypes are not package acceptance.",
+    "two_host_evidence": {
+      "failures_and_prototypes": {
+        "nodes": 5362,
+        "archive_bytes": 49598658,
+        "archive_sha256": "d89598e0bc1d6078cc9995b666fed97f15d96c251518928811493dfd7dc42413",
+        "inventory_sha256": "aa2d9f46a27b103b5b7d03a9755a19918b46340e9abb696fe95abd5d970d81d3",
+        "all_nodes_independently_verified_on_both_hosts": true
+      },
+      "actual_source_private_pair": {
+        "nodes": 3450,
+        "archive_bytes": 29709955,
+        "archive_sha256": "b3ce039396124736bc163d0469e02361ed0bd7cffa1c30361f312e99f66b6840",
+        "inventory_sha256": "df3d42aa8e1e08c0618951c69c12b33478d16f23ecfa9122f500ffb8280ee2b5",
+        "all_nodes_independently_verified_on_both_hosts": true
+      },
+      "normal_XML": {
+        "nodes": 532,
+        "archive_bytes": 12681182,
+        "archive_sha256": "b2516cf1d4ec909645df99b9535b2dd8ee48530774f8c3b22ba384b5b294832d",
+        "inventory_sha256": "6f68429f1d3e276cd464cbaba78e2f9af83825f95c88bfd488ee0a4c2e062ac8",
+        "all_nodes_independently_verified_on_both_hosts": true
+      },
+      "normal_SGML": {
+        "nodes": 96,
+        "archive_bytes": 12615377,
+        "archive_sha256": "89f58f78da3fd46c036e116d7855af94c99adaddaa80b5471dbb61612a1ecbc3",
+        "inventory_sha256": "a1d9ba52c7e416fac9d82d5593632949e084deb684cda72040bf2e5597e09e12",
+        "all_nodes_independently_verified_on_both_hosts": true
+      }
+    },
+    "unqualified": "Four original XML catalog aliases advertise two absent XInclude XSD files (docbookxi.xsd, xi.xsd); neither file is fabricated or replaced by ordinary XSD. Original upstream suites, remaining selected catalog consumers, canonical lifecycle, AMD64, desktop, physical fleet, media and release acceptance remain open.",
+    "observed_utc": "2026-11-25T22:00:11.073285+00:00"
   }
 }
