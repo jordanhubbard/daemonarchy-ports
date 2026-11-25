@@ -2189,7 +2189,7 @@
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
     "Libxslt PR114 repaired package is now integrated among101developmentpackages. Strict original DocBook results,751mainrunnercases/0errors,8harnesscontrols,30sealed and30freshnormalcommands pass. Original/repaired source/private and normal evidence verified on both hosts. Continue xmlcatmgr/DocBook/catalog/defaultD-Bus/fullGLib closure.",
     "Xmlcatmgr2.2_6 B3 full ports package/10regressions/strict67private/37originalscripts pass,1684nodes verified in Sparky nativeVM and Madmax. Installed2.2_5 stillHELD; normal upgrade pending original solver classification diagnosis and exact versioned-license path transition. Continue DocBook/defaultD-Bus/fullGLib closure afterward.",
-    "PR116 pkg2.9.3_2 archive-upgrade fix has causal before/after real private upgrade and all34upgrade-file ATF passes. Complete full ports/source package and sealed acceptance, retain complete original-suite gaps, integrate repaired manager before XML catalog revision update. Do not use pkg add to leave obsolete license files untracked."
+    "PR116 pkg2.9.3_2 now normally integrated, originaldeps/hooks active,77payloads/1dir/34freshnormalATF pass; source/private/failure andnormalcapsules verifiedbothhosts. Fullpkgfrontendsuite/AMD64/canonical/release gaps remain. XML_5-to_6 genuine local-only upgrade is next/in progress; acceptednormalcount remains101 until strictXMLnormalacceptance."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -4115,7 +4115,7 @@
       "version": "2.9.3_2",
       "source_revision": "d65aae9b1fb9293f1d4d26da12aaf3c334b10f99",
       "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/116",
-      "status": "full-native-package-sealed-upgrade-ATF-and-two-host-custody-pass-normal-pending",
+      "status": "normal-native-development-pkg-upgrade-34ATF-and-complete-two-host-custody-pass",
       "fix": "Include and process installed candidate for local archive install/upgrade jobs before adding new file request; preserve original upgrade cleanup and hooks.",
       "causal_control": {
         "original_preview_reports_new_install": true,
@@ -4137,7 +4137,7 @@
       },
       "patches": "Both actual BSD patch applications at zero fuzz produce exact candidate C and complete test bodies.",
       "retained_failures": "Initial copied build config relinked library but left stale executable; separate corrected configure/make succeeds. A missing observer import and ATF PATH/argument-order failures are retained, not passing.",
-      "qualification": "Full native ARM64 default DOCS package and sealed77payloads/1dir plus34freshupgrade-fileATF cases pass. Entirepkgfrontendsuite remains pending: port exposes no selected test bridge; empty make-check is not original suite evidence. Complete10161node source/private/failure capsule verified on both hosts. Normal manager/XML upgrade, AMD64, canonical/GUI/hardware/release remain pending.",
+      "qualification": "Native default ports package, sealed and fresh normal77payloads/1dir/34upgrade-fileATF pass; complete source/private/failure10161nodes and normal935nodes verified in allocated SparkyVM and Madmax. Fullpkgfrontendsuite remains open, port exposes no selected test bridge. AMD64/canonical SDK/TCB/lifecycle/GUI/hardware/release acceptance remain open.",
       "full_Git_source_members_verified": 184370,
       "construction_targets": [
         {
@@ -4210,6 +4210,30 @@
           "payload_limit_bytes": 536870912,
           "actual_bytes": 188192074,
           "Sparky_extra_archive_bytes": 0
+        }
+      },
+      "normal_integration": {
+        "installed": true,
+        "accepted_native_development": true,
+        "original_local_only_solver_dependencies_hooks_enforced": true,
+        "all77payloads_one_declared_dir_exact": true,
+        "three_old_license_files_removed_new_three_exact": true,
+        "other101_package_prefixes_preserved": true,
+        "fresh_installed_defaultCLI_upgrade_ATF_cases": 34,
+        "all34_pass": true,
+        "default_loader_without_override": true,
+        "final_postATF_registry_verified": true,
+        "actual_registry_count": 102,
+        "accepted_normal_count": 101,
+        "XML_2_2_5_still_held_at_this_checkpoint": true,
+        "raw_postquery_bookkeeping_changes": [
+          "pkgdb/local.sqlite-shm"
+        ],
+        "custody": {
+          "nodes": 935,
+          "archive_bytes": 15161650,
+          "archive_sha256": "4acccd7fcc1899f9203fa6810c77d980f03bd15c19b10ae9bfd3df6b50b071f7",
+          "both_hosts_all_nodes_verified": true
         }
       }
     }
