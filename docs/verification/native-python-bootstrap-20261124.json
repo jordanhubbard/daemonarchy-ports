@@ -2866,6 +2866,108 @@
       "actual_CLI_commands_per_context": 20,
       "packaged_generated_MIME_types_verified": 908,
       "normal_original_trigger_generated_files": 920
+    },
+    {
+      "component": "libgpg-error",
+      "source_revision": "0c46d1810ffcbb14aebff4f3a4cf5f215c11b72c",
+      "construction_targets": "All eight original targets exit zero for both independent variants. No source/test/assertion changes or dependency auto-installation.",
+      "default_variant": {
+        "selected_options": [
+          "DOCS",
+          "NLS"
+        ],
+        "original_make_test_exit": 0,
+        "original_enabled_programs_passed": [
+          "gpg-error-config-test.sh"
+        ],
+        "package": {
+          "path": "libgpg-error-1.61.pkg",
+          "bytes": 389974,
+          "sha256": "02b643916e510456a0e191a7017f96a183a78300892ca385dca6cce46e07c904"
+        }
+      },
+      "separate_TEST_enabled_variant": {
+        "selected_options": [
+          "DOCS",
+          "NLS",
+          "TEST"
+        ],
+        "original_make_test_exit": 0,
+        "original_program_results": [
+          {
+            "result": "PASS",
+            "name": "gpg-error-config-test.sh"
+          },
+          {
+            "result": "PASS",
+            "name": "t-version"
+          },
+          {
+            "result": "PASS",
+            "name": "t-strerror"
+          },
+          {
+            "result": "PASS",
+            "name": "t-syserror"
+          },
+          {
+            "result": "PASS",
+            "name": "t-lock"
+          },
+          {
+            "result": "PASS",
+            "name": "t-printf"
+          },
+          {
+            "result": "PASS",
+            "name": "t-poll"
+          },
+          {
+            "result": "PASS",
+            "name": "t-b64"
+          },
+          {
+            "result": "PASS",
+            "name": "t-argparse"
+          },
+          {
+            "result": "PASS",
+            "name": "t-logging"
+          },
+          {
+            "result": "PASS",
+            "name": "t-stringutils"
+          },
+          {
+            "result": "PASS",
+            "name": "t-malloc"
+          },
+          {
+            "result": "PASS",
+            "name": "t-spawn"
+          },
+          {
+            "result": "PASS",
+            "name": "t-strlist"
+          },
+          {
+            "result": "PASS",
+            "name": "t-name-value"
+          }
+        ],
+        "original_expanded_TESTS_matches_reported_programs": true,
+        "original_programs_passed": 15,
+        "skips": 0,
+        "failures": 0,
+        "count_scope": "One src config test and 14 tests-directory programs; nested assertions not summed. Original default package is distinct.",
+        "package": {
+          "path": "libgpg-error-1.61.pkg",
+          "bytes": 390021,
+          "sha256": "a9d87a22995d3ab639ca1c1e138239b5f7f142f5e5893ed461f6178a08af1a21"
+        }
+      },
+      "guards": "Complete98packageprefix/logicalregistry/base/kernel/mounts/selectedsource unchanged for both runs; full original source/distfiles/objects/output retained.",
+      "qualification": "Source-built development candidates only. Sealed/default API and command acceptance, both-host source/test/private custody and normal installation pending. No AMD64/canonical/lifecycle/release admission."
     }
   ],
   "installed_Python_metadata_recovery": {
