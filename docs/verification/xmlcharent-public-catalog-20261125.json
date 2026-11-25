@@ -3,7 +3,7 @@
   "date": "2026-11-25",
   "planned_release": "1.6",
   "problem": "PUBLIC resolution returns HTTP identifiers that libxml2 does not recursively remap through rewriteURI/rewriteSystem. Simplified DocBook custom DTDs consequently fail offline despite installed character resources. Existing system-ID rewrite checks did not cover this consumer.",
-  "change": "Map all19PUBLICidentifiers directly to existing relative entity filenames. Preserve all19FPIs,the19resourcebodies,4system/URIrewrites andSGMLcatalog. BumpPORTREVISIONto3. Addoriginalnativeportdo-testwithdeclaredxmllintdependency.",
+  "change": "Map all19PUBLICidentifiers directly to existing relative entity filenames, preserving identifiers, entity bodies, system/URI rewrites and SGML catalog. Xmlcharent0.3_4 includes21native port regressions and the shared typed/idempotent catalog registration fix. Bump the other20known keyword consumers so ordinary upgrades receive regenerated scripts.",
   "causal_native_ARM64": {
     "original_catalog_exit": 1,
     "fixed_catalog_exit": 0,
@@ -15,10 +15,10 @@
   "consumer_failure": "Retain Simplified DocBook failed customization consumer; stock flattened article profile passed before custom profile failed on three PUBLIC entity identifiers remapped to HTTP.",
   "observer_correction": "First new regression script lost final expected value at shell read EOF; preserve failed run. Fixed script caches the last expected value, all21scenarios pass.",
   "remaining": [
-    "Fresh selected-consumer package construction, actual generated-hook and normal catalog/upgrade checks. All21known consumer package-version comparisons now pass.",
+    "Other selected catalog consumers still need fresh construction, actual generated-hook and normal catalog/upgrade checks. All21known native version comparisons and fresh SimplifiedDocBook1.1_3,2 construction/private/generated-hook/normal integration pass.",
     "Complete canonical authority/lifecycle, AMD64, desktop, physical and release acceptance."
   ],
-  "observed": "2026-11-25T18:34:10.293480+00:00",
+  "observed": "2026-11-25T18:49:20.170669+00:00",
   "Simplified_Docbook_consumer_causal": {
     "actual_commands": 20,
     "profiles": [
@@ -183,7 +183,7 @@
         "new_revision": 2
       }
     ],
-    "native_expanded_version_and_selected_package_checks": "All21nativeexpandedversioncomparisons pass; fresh selected-consumer construction and generated-hook/normal checks remain in progress.",
+    "native_expanded_version_and_selected_package_checks": "All21native expanded-version comparisons and fresh SimplifiedDocBook1.1_3,2 integration pass; remaining selected consumer construction/generated-hook/normal-upgrade checks remain open.",
     "native_expanded_version_comparison": {
       "source_revision": "74ee006accba1fd1b9da68ac6e0579cf88527b6d",
       "native_queries": 42,
@@ -297,9 +297,50 @@
           "after": "xmlcharent-0.3_4"
         }
       ],
-      "kernel_fstab_and_raw_package_registry_unchanged": true,
       "finished": "2026-11-25T18:33:30.682701+00:00",
-      "scope": "Metadata comparison only; generated hooks, construction and upgrade acceptance of selected consumers remain separate."
+      "scope": "Metadata comparison only; generated hooks, construction and upgrade acceptance of selected consumers remain separate.",
+      "kernel_fstab_and_main_pkg_database_bytes_unchanged": true
     }
+  },
+  "selected_Simplified_DocBook_consumer": {
+    "version": "1.1_3,2",
+    "source_revision": "74ee006accba1fd1b9da68ac6e0579cf88527b6d",
+    "package_sha256": "6e17799570c4a8ca52967f63807aaf1bd6bf33978f4c197eaecd2117a5182e82",
+    "original_construction_targets_passed": 8,
+    "sealed_payloads": 15,
+    "explicit_directories": 0,
+    "independent_DTD_commands": 20,
+    "DTD_profiles": 4,
+    "actual_generated_hook_commands": 18,
+    "normal_integration": {
+      "status": "pass",
+      "accepted_development_packages": 105,
+      "default_global_commands": 20,
+      "zero_stderr_no_hook_failures": true,
+      "inherited104prefixes_preserved": true,
+      "catalog_indexes_changed": 2,
+      "catalog_masters_preserved": 2,
+      "both_host_evidence": {
+        "nodes": 80,
+        "archive_bytes": 12596103,
+        "archive_sha256": "356a44c2afaba46b2b99e9f44ed91c05aa366a183d7edc43bc95a9e852ad1fc8",
+        "all_nodes_verified_on_both_hosts": true
+      }
+    },
+    "source_private_failures_observer_and_version_capsule": {
+      "nodes": 625,
+      "archive_bytes": 18861917,
+      "sha256": "3134cff767c9af94f9b8dbf30a9cf8e68ba1cdda04b2b4e84fad9f9755b7416f",
+      "all_nodes_verified_on_both_hosts": true
+    },
+    "scope": "Data resource port with no selected original test bridge. Independent consumers and generated-hook controls do not establish original upstream self-suite, AMD64, canonical or release acceptance."
+  },
+  "SQLite_query_observer_correction": {
+    "initial_private_and_hook_attempts_stopped_before_installation": true,
+    "exact_delta": "Only local.sqlite-shm mtime changed; its32KiBbody and every other SDK node and hardlink group match the closed normal104inventory.",
+    "causal_control": "A real pkg query against an isolated database copy returns the same104entries and reproduces only SHMmtime change; all database body hashes and the actual installed SDK remain unchanged.",
+    "retry_policy": "Retain failed attempts and both inventories. Bind fresh attempts to the complete observed inventory and causal receipt. No timestamp restoration, metadata mask or weaker before/after comparison.",
+    "fresh_strict_private_and_actual_generated_hook_controls": "pass",
+    "both_host_evidence": "Included in625node source/private capsule."
   }
 }
