@@ -4588,6 +4588,67 @@
           "all_nodes_verified_on_both_hosts": true
         }
       }
+    },
+    {
+      "component": "sdocbook-xml",
+      "version": "1.1_2,2",
+      "source_revision": "d65aae9b1fb9293f1d4d26da12aaf3c334b10f99",
+      "status": "all8original-data-port-construction-targets-pass-private-and-normal-pending",
+      "NO_BUILD_NO_ARCH_data_resource": true,
+      "original_selected_options": [],
+      "construction_targets": [
+        {
+          "target": "checksum",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "extract",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "patch",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "configure",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "build",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "stage",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "check-plist",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "package",
+          "exit": 0,
+          "uid": 65534
+        }
+      ],
+      "package": {
+        "bytes": 16854,
+        "sha256": "162d2d3a1648300f28ee64684b11b77085c7e18a4d7b495e2d41bb40cac5596c"
+      },
+      "selected_original_port_Mk_Templates_Keywords_blobs_and_modes_verified": 270,
+      "dependencies": [
+        "xmlcatmgr:textproc/xmlcatmgr"
+      ],
+      "whole104_prefix_registry_base_mounts_selected_sources_unchanged": true,
+      "original_test_scope": "Original distribution contains eight DTD/module resources and CSS, no self-test program or selected port test bridge. Independent packaged DTD/refentry and catalog consumers, original keyword controls, custody and normal installation remain pending.",
+      "qualification": "Native data resource construction only; no compiler, upstream-suite, canonical, desktop, physical or release acceptance inferred."
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -4634,5 +4695,5 @@
   },
   "actual_installed_development_package_count": 104,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-25T09:40:10.457810+00:00"
+  "last_updated_utc": "2026-11-25T09:40:59.283168+00:00"
 }
