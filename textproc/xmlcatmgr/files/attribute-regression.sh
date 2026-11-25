@@ -94,6 +94,8 @@ sgml=$trial/sgml.catalog
 "$cli" -s -c "$sgml" create
 "$cli" -s -c "$sgml" add SYSTEM 'urn:native:sgml?a=1&b=2' 'file:///tmp/sgml?a=3&b=4'
 "$cli" -s -c "$sgml" lookup 'urn:native:sgml?a=1&b=2' >"$trial/sgml-lookup.log"
-grep -Fq 'SYSTEM "urn:native:sgml?a=1&b=2" "file:///tmp/sgml?a=3&b=4"' "$sgml" || fail SGML-changed
+# These fixture identifiers contain no whitespace; SGML permits wrapped fields.
+tr '\n\t' '  ' <"$sgml" | tr -s ' ' >"$trial/sgml-compact.txt"
+grep -Fq 'SYSTEM "urn:native:sgml?a=1&b=2" "file:///tmp/sgml?a=3&b=4"' "$trial/sgml-compact.txt" || fail SGML-changed
 "$cli" -s -c "$sgml" remove SYSTEM 'urn:native:sgml?a=1&b=2'
 pass SGML-unchanged
