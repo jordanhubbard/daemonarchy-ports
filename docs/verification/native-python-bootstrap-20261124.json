@@ -4773,13 +4773,64 @@
       "version": "0.3_4",
       "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
       "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/117",
-      "status": "shared-keyword-native-causal-controls-pass-fresh-package-pending",
+      "status": "fresh-original-data-construction-and21actual-port-tests-pass-generated-hook-and-sealed-controls-pending",
       "change": "Keep_3localPUBLICrepair;sharedKeywords/xmlcatmgr.ucltypedlookupbeforeaddpreservescorrectregistrationsonpkgupgrade,makesmissingones,doesnotskipdifferent-typecollisions. Abnormallookupandfailedaddremainfailures.",
       "native_causal_commands": 13,
       "renderer_matches_old_actual_manifest_bodies_exactly": true,
       "candidate_keyword_sha256": "5d5c76b5aeb36f480f8cb7bd50e94fdcbeb00437998d000936609580a1eb769a",
       "normal104_prefix_rawdb_base_mounts_unchanged": true,
-      "qualification": "CandidatekeywordtestedviafaithfulrendererinPKG_ROOTDIRnamespaces,notyetfreshpackage-generatedscripts. Originalnew_4construction,actualkeywordmanifestandsealed/normal/custody/AMD64/canonical/desktop/physical/releaseacceptanceremainpending."
+      "qualification": "CandidatekeywordtestedviafaithfulrendererinPKG_ROOTDIRnamespaces,notyetfreshpackage-generatedscripts. Originalnew_4construction,actualkeywordmanifestandsealed/normal/custody/AMD64/canonical/desktop/physical/releaseacceptanceremainpending.",
+      "construction_targets": [
+        {
+          "target": "checksum",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "extract",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "patch",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "configure",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "build",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "stage",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "check-plist",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "package",
+          "exit": 0,
+          "uid": 65534
+        }
+      ],
+      "package": {
+        "bytes": 14796,
+        "sha256": "b143eb3a588ee1fa29bbe5bc1bca883af1847e28a7519b62b3ed68448b205f03"
+      },
+      "actual_make_test_exit": 0,
+      "actual_make_test_PASS_records": 21,
+      "full_source_members_verified": 184371,
+      "selected_original_port_Mk_Templates_Keywords_blobs_and_modes_verified": 271,
+      "whole104_prefix_registry_base_mounts_selected_sources_unchanged": true
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -4833,7 +4884,7 @@
       "reason": "Originalcatalogpost-installhookreportsduplicateentriesonactual_2to_3upgrade;pkgreturns0buttransactionnotaccepted. All25newpayloads/103otherprefixesand4catalogbodiesverified;136normaldataand20Simplifiedconsumerspass. Candidate_4fixessharedkeyword,13nativecausalcontrols;freshpackage/normalupgradepending."
     }
   ],
-  "last_updated_utc": "2026-11-25T10:15:52.049818+00:00",
+  "last_updated_utc": "2026-11-25T10:18:33.991942+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -4860,6 +4911,34 @@
     ],
     "origin_count": 20,
     "scope": "Full Git HEAD pkg-plist references, not only sparse checkout. Dynamic PLIST_FILES/keyword generation may add consumers; this is a starting source inventory, not complete impact qualification.",
-    "remaining": "Auditdynamicplistconsumersandselected1.6closure;ensureaffectedexistinginstallationsreceiverebuiltfixedscriptmetadatawithappropriatepackageversiontransitions. Generic13causalcontrolsarenotqualificationofall20origins."
+    "remaining": "Auditdynamicplistconsumersandselected1.6closure;ensureaffectedexistinginstallationsreceiverebuiltfixedscriptmetadatawithappropriatepackageversiontransitions. Generic13causalcontrolsarenotqualificationofall20origins.",
+    "dynamic_Makefile_origins": [
+      "textproc/xhtml-basic"
+    ],
+    "known_unique_origins": [
+      "security/vuxml",
+      "textproc/docbook-sgml",
+      "textproc/docbook-xml",
+      "textproc/docbook-xsl",
+      "textproc/docbook-xsl-ns",
+      "textproc/dsssl-docbook-modular",
+      "textproc/html",
+      "textproc/iso12083",
+      "textproc/iso8879",
+      "textproc/jade",
+      "textproc/libfo",
+      "textproc/linuxdoc",
+      "textproc/openjade",
+      "textproc/sdocbook-xml",
+      "textproc/slides",
+      "textproc/website",
+      "textproc/xhtml",
+      "textproc/xhtml-11",
+      "textproc/xhtml-basic",
+      "textproc/xhtml-modularization",
+      "textproc/xmlcharent"
+    ],
+    "known_unique_origin_count": 21,
+    "other_literal_Git_references": "OnlyCHANGEShistoryandMk/Scripts/functions.shsyntaxrecognitionremainoutsidepkg-plistsandxhtml-basicMakefile. Generatedindirectconsumersstillrequireselected-closureaudit."
   }
 }
