@@ -15,13 +15,10 @@
   "consumer_failure": "Retain Simplified DocBook failed customization consumer; stock flattened article profile passed before custom profile failed on three PUBLIC entity identifiers remapped to HTTP.",
   "observer_correction": "First new regression script lost final expected value at shell read EOF; preserve failed run. Fixed script caches the last expected value, all21scenarios pass.",
   "remaining": [
-    "Fresh0.3_4completeoriginalportconstructionandactualgeneratedkeywordmanifestverification",
-    "Independentsealedpackage/all975entityacceptanceandactualgeneratedkeywordcontrols",
-    "Bothhostcustodyincludingfailed2190normaltransactionand2194audit",
-    "Normal_3to_4localonlyupgradewithnohookdiagnosticsanddefaultglobalconsumers",
-    "Canonicalauthority/lifecycle,AMD64,desktop,physicalandreleaseacceptance"
+    "Native expanded package-version comparison for all21known keyword consumers and fresh selected-consumer package/hook/upgrade checks.",
+    "Complete canonical authority/lifecycle, AMD64, desktop, physical and release acceptance."
   ],
-  "observed": "2026-11-25T10:07:28.571732+00:00",
+  "observed": "2026-11-25T18:29:16.692782+00:00",
   "Simplified_Docbook_consumer_causal": {
     "actual_commands": 20,
     "profiles": [
@@ -57,7 +54,135 @@
     "change": "Lookup registrations and check entry type before adding. Preserve correct existing entries instead of rewriting/reordering. Add genuinely missing registrations, including identifiers already used by another type. Propagate abnormal lookup exits; failed adds remain failures.",
     "native_causal_commands": 13,
     "checks": "Old duplicate failure; new existing registration and repetition preserve full namespace snapshot; missing registration plus repetition; same-key different-type user entries survive add/remove/reinstall; malformed catalog rejected normally.",
-    "renderer_scope": "Template renderer first matches old actual generated manifest bodies byte-for-byte. New candidate template is tested by this faithful renderer, not yet through fresh native package generation. Installed SDK prefix/rawdb/base/mounts unchanged.",
+    "renderer_scope": "Initial renderer matches the old actual generated manifest bodies byte-for-byte. Subsequent fresh0.3_4native package generation and all13controls of its actual generated hooks pass; source/private/failed-upgrade and normal evidence verified independently on both hosts.",
     "candidate_keyword_sha256": "5d5c76b5aeb36f480f8cb7bd50e94fdcbeb00437998d000936609580a1eb769a"
+  },
+  "validated_0_3_4": {
+    "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
+    "package_sha256": "b143eb3a588ee1fa29bbe5bc1bca883af1847e28a7519b62b3ed68448b205f03",
+    "original_construction_targets_passed": 8,
+    "actual_make_test_PASS_records": 21,
+    "sealed_payloads": 25,
+    "sealed_consumer_commands": 136,
+    "independent_entity_definitions": 975,
+    "actual_generated_keyword_controls": 13,
+    "normal_upgrade_from": "0.3_3",
+    "normal_upgrade_to": "0.3_4",
+    "normal_hook_stderr_empty": true,
+    "normal_entity_commands": 136,
+    "normal_Simplified_DocBook_commands": 20,
+    "all_four_catalog_files_and_mtimes_preserved": true,
+    "other103package_prefixes_preserved": true,
+    "accepted_development_package_count": 104,
+    "normal_evidence_nodes_verified_on_both_hosts": 538,
+    "normal_archive_sha256": "6a3f2eed16e04ffbb24c9520e387dfb6a011636a5f1d3dce376ef63bafa912a5",
+    "scope": "Bounded native ARM64 integration. Earlier failed upgrades retained; no canonical/full-upstream-suite/AMD64/desktop/physical/release qualification."
+  },
+  "other_catalog_consumers": {
+    "source_revision": "74ee006accba1fd1b9da68ac6e0579cf88527b6d",
+    "reason": "20otherPORTREVISIONbumps ensure ordinary upgrades can receive regenerated fixed shared keyword scripts. Xmlcharent already0.3_4.",
+    "changes": [
+      {
+        "origin": "security/vuxml",
+        "old_revision": 6,
+        "new_revision": 7
+      },
+      {
+        "origin": "textproc/docbook-sgml",
+        "old_revision": 1,
+        "new_revision": 2
+      },
+      {
+        "origin": "textproc/docbook-xml",
+        "old_revision": 3,
+        "new_revision": 4
+      },
+      {
+        "origin": "textproc/docbook-xsl",
+        "old_revision": 1,
+        "new_revision": 2
+      },
+      {
+        "origin": "textproc/docbook-xsl-ns",
+        "old_revision": 0,
+        "new_revision": 1
+      },
+      {
+        "origin": "textproc/dsssl-docbook-modular",
+        "old_revision": 1,
+        "new_revision": 2
+      },
+      {
+        "origin": "textproc/html",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/iso12083",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/iso8879",
+        "old_revision": 3,
+        "new_revision": 4
+      },
+      {
+        "origin": "textproc/jade",
+        "old_revision": 11,
+        "new_revision": 12
+      },
+      {
+        "origin": "textproc/libfo",
+        "old_revision": 5,
+        "new_revision": 6
+      },
+      {
+        "origin": "textproc/linuxdoc",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/openjade",
+        "old_revision": 5,
+        "new_revision": 6
+      },
+      {
+        "origin": "textproc/sdocbook-xml",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/slides",
+        "old_revision": 1,
+        "new_revision": 2
+      },
+      {
+        "origin": "textproc/website",
+        "old_revision": 0,
+        "new_revision": 1
+      },
+      {
+        "origin": "textproc/xhtml",
+        "old_revision": 5,
+        "new_revision": 6
+      },
+      {
+        "origin": "textproc/xhtml-11",
+        "old_revision": 1,
+        "new_revision": 2
+      },
+      {
+        "origin": "textproc/xhtml-basic",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/xhtml-modularization",
+        "old_revision": 1,
+        "new_revision": 2
+      }
+    ],
+    "native_expanded_version_and_selected_package_checks": "in progress"
   }
 }
