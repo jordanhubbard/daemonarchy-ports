@@ -4667,9 +4667,9 @@
     {
       "component": "xmlcharent",
       "version": "0.3_3",
-      "source_revision": "204235a1a16b",
+      "source_revision": "204235a1a16b913c52b98ce5533a2cf16f114dc0",
       "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/117",
-      "status": "native-causal-regressions-and-real-consumer-pass-full-package-and-normal-upgrade-pending",
+      "status": "fresh-original-data-port-constructors-and21native-port-tests-pass-sealed-normal-pending",
       "change": "19PUBLICtargetsHTTP\u2192relativeexistingentityfiles;4system/URIrewrites,FPIs,19resourcebodiesandSGMLcatalogpreserved. Nativeportdo-testaddedwithdeclaredxmllintdependency.",
       "added_native_regression_scenarios": 21,
       "same_script_original_catalog_exit": 1,
@@ -4677,7 +4677,58 @@
       "real_Simplified_Docbook_causal_commands": 20,
       "normal104_prefix_rawdb_base_mounts_unchanged": true,
       "failed_observers_retained": "2164assumedGreekentitiesincluded;2167reproducedrealPUBLICofflinefailure;2173firstaddedregressionshellscriptlostexpectedvalueatreadEOF. Corrected2175/2177passwithoutchangingoriginalproductbytes.",
-      "qualification": "Nativecausalonly, notfreshoriginalportconstruction/maketestbridge,sealed/all975entity/normalupgrade/defaultglobal/bothhostcustody/canonical/desktop/physical/releaseadmission."
+      "qualification": "Fresh original native port construction and added21regressiondo-testbridge pass; this data distribution has no original upstream self-suite. Sealed/all975entityacceptance, normalupgrade/defaultglobal/bothhostcustody/canonical/desktop/physical/releaseadmission remain pending.",
+      "full_source_members_verified": 184371,
+      "selected_original_port_Mk_Templates_Keywords_blobs_and_modes_verified": 271,
+      "construction_targets": [
+        {
+          "target": "checksum",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "extract",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "patch",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "configure",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "build",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "stage",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "check-plist",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "package",
+          "exit": 0,
+          "uid": 65534
+        }
+      ],
+      "package": {
+        "bytes": 14584,
+        "sha256": "31ccc16ce43cb69dcfcdd66af57c3ff4e7746e5a490297428d7c7cc4c3c58b35"
+      },
+      "actual_make_test_exit": 0,
+      "actual_make_test_PASS_records": 21,
+      "whole104_prefix_registry_base_mounts_selected_sources_unchanged": true
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -4731,5 +4782,5 @@
       "reason": "Actual Simplified DocBook customization consumer fails offline because PUBLIC mappings yield HTTP and libxml2 does not recursively remap them. Historical98system-ID/canonicalPUBLICconsumer commands remain scoped passes, but do not prove this combined use. Replacement0.3_3 PR117 has native causal proof; fresh package/normal upgrade pending."
     }
   ],
-  "last_updated_utc": "2026-11-25T09:49:27.025202+00:00"
+  "last_updated_utc": "2026-11-25T09:55:37.285756+00:00"
 }
