@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 104,
+  "normal_development_package_count": 105,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -2263,8 +2263,7 @@
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
     "Normalpkg2.9.3_2/XMLcatmgr2.2_6/xmlcharent0.3_2 allpassdevelopmentintegration; actualandacceptednormal103, completebothhostsource/failure/normalcustody. DocbookXML5.0_3 all8originaldataporttargets nowpasswith6originaldistributions; nextindependentDTD/schema/privatecatalogs/originalkeywordcontrols,custody/normalintegration. ContinueSGML/sdocbook/meta/XSL\u2192defaultD-BusMANPAGES/X11\u2192fulloriginalGLib/desktopclosure; no xmlto detour.",
     "DocbookXML5.0_3 now normally integrated among104developmentpackages:195payloads/42freshdefaultglobalcatalogDTD/schema/upgradecommands,7originalkeywordcontrols, source/private/failures2282nodes andnormal137nodes verifiedbothhosts. Originalcatalogadvertises4aliasesfor2absentschemas;preservedandunqualified. ContinueSimplifiedDocbook/ISO8879/SGML/meta/XSL todefaultD-BusMANPAGES/X11,thenfullGLib/desktop; imagecapacity/canonical/fleet/physical/releasegatesremainopen.",
-    "SharedKeywords/xmlcatmgr.uclfixhas20fullGitpkg-plistconsumers(inventoryrecorded);auditdynamicplistconsumersandrebuild/versiontransitionsforselected1.6packagesbeforeclaimingreleaseupdatecoverage. Thisdoesnotqualifyall20origins.",
-    "Xmlcharent 0.3_4 clean normal upgrade now passes; all 104 development packages accepted. Continue Simplified DocBook/ISO8879/SGML/meta/XSL, original default D-Bus MANPAGES/X11, full GLib original suite and desktop closure. Shared catalog keyword affects 21 known origins; selected-package rebuild/version coverage remains open. Full builds and image assembly remain subject to their original capacity gates."
+    "Simplified DocBook1.1_3,2 is normally integrated among105developmentpackages. Continue ISO8879/SGML/DocBook metaport/XSL, original default D-Bus MANPAGES/X11, full original GLib tests and complete desktop closure. Source74ee verifies all184371members and all21known catalog-consumer expanded versions;20other revisions are newer. Remaining selected consumers still need fresh construction/generated-hook/normal upgrade coverage. Canonical, AMD64, physical fleet, final media, signing and release gates remain open."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2588,6 +2587,19 @@
     {
       "component": "xmlcatmgr independent negative-case acceptance",
       "correction": "Historical private67command run accepted -11 as nonzero. Normal outer nonnegative-status check caught same product crash. Withdraw broad private acceptance; new shell regression rejects signals and fresh independent consumers must require ordinary positive rejection status. Retain original results/core."
+    },
+    {
+      "date": "2026-11-25",
+      "case": "Two fresh SimplifiedDocBook sealed/hook attempts stopped before mutation on a full metadata mismatch.",
+      "difference": "Only32KiBlocal.sqlite-shm mtime differed; its body and every other node/hardlink group matched the previous closed104inventory.",
+      "control": "Real pkg query against an isolated database copy reproduces SHMmtime-only change, returns exact104entries and preserves all database body hashes and actualSDK.",
+      "resolution": "Retain both failures and old/new full inventories; bind fresh attempts to exact observed inventory and causal receipt. Full metadata guards remain exact, without ignored fields or restored timestamps. Fresh private20commands/generatedhook18commands and normal20commands pass.",
+      "source_private_custody": {
+        "nodes": 625,
+        "archive_bytes": 18861917,
+        "archive_sha256": "3134cff767c9af94f9b8dbf30a9cf8e68ba1cdda04b2b4e84fad9f9755b7416f",
+        "all_nodes_verified_on_both_hosts": true
+      }
     }
   ],
   "incomplete_original_source_suites": {
@@ -4874,6 +4886,44 @@
           "all_nodes_verified_on_both_hosts": true
         }
       }
+    },
+    {
+      "component": "sdocbook-xml",
+      "version": "1.1_3,2",
+      "source_revision": "74ee006accba1fd1b9da68ac6e0579cf88527b6d",
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/117",
+      "status": "normal-development-integration-pass-with-both-host-evidence",
+      "original_construction_targets": 8,
+      "original_construction_all_passed": true,
+      "builder_uid": 65534,
+      "package_sha256": "6e17799570c4a8ca52967f63807aaf1bd6bf33978f4c197eaecd2117a5182e82",
+      "sealed_payloads": 15,
+      "explicit_directories": 0,
+      "sealed_actual_commands": 20,
+      "DTD_profiles": 4,
+      "actual_generated_keyword_commands": 18,
+      "normal_default_global_commands": 20,
+      "normal_exit_vector_matches_private": true,
+      "normal_zero_stderr_no_hook_failures": true,
+      "normal_catalog_indexes_changed": 2,
+      "normal_catalog_masters_preserved": 2,
+      "other_inherited_package_prefixes_preserved": 104,
+      "normal_registry_count": 105,
+      "accepted_normal_count": 105,
+      "two_host_source_private_generated_hooks_versions_failures_observer": {
+        "nodes": 625,
+        "archive_bytes": 18861917,
+        "archive_sha256": "3134cff767c9af94f9b8dbf30a9cf8e68ba1cdda04b2b4e84fad9f9755b7416f",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "two_host_normal": {
+        "nodes": 80,
+        "archive_bytes": 12596103,
+        "archive_sha256": "356a44c2afaba46b2b99e9f44ed91c05aa366a183d7edc43bc95a9e852ad1fc8",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "original_upstream_tests": "Original port exposes no selected test bridge; independent DTD consumers are not an original upstream self-suite. Source distribution retained.",
+      "qualification": "Native ARM64 data-resource development integration only. AMD64, canonical lifecycle/provenance, complete default desktop closure, physical fleet and release qualification remain open."
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -4918,9 +4968,9 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 104,
+  "actual_installed_development_package_count": 105,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-25T15:42:49.098824+00:00",
+  "last_updated_utc": "2026-11-25T18:49:20.168085+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -4947,7 +4997,7 @@
     ],
     "origin_count": 20,
     "scope": "Full Git HEAD pkg-plist references, not only sparse checkout. Dynamic PLIST_FILES/keyword generation may add consumers; this is a starting source inventory, not complete impact qualification.",
-    "remaining": "Auditdynamicplistconsumersandselected1.6closure;ensureaffectedexistinginstallationsreceiverebuiltfixedscriptmetadatawithappropriatepackageversiontransitions. Generic13causalcontrolsarenotqualificationofall20origins.",
+    "remaining": "All21known origins pass42nativeoriginal-makequeries and21versioncomparisons at74ee;20otherrevisionsstrictlyincrease andXmlcharent_4staysunchanged. Further generated-indirect inventory and selectedconsumerrebuild/upgradecoverage remain open; metadata checks do not qualify all21packages.",
     "dynamic_Makefile_origins": [
       "textproc/xhtml-basic"
     ],
