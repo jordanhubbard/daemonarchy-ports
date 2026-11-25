@@ -19,6 +19,9 @@ must_fail()
     shift
     if "$@" >"$trial/$label.log" 2>&1; then
         fail "$label-unexpected-success"
+    else
+        status=$?
+        [ "$status" -lt 128 ] || fail "$label-terminated-by-signal"
     fi
 }
 "$cli" -c "$catfile" create
@@ -89,6 +92,43 @@ cmp -s "$catfile" "$trial/before-control.xml" || fail rejected-control-mutated-c
 "$cli" -c "$catfile" add uri urn:native:recovery file:///tmp/recovery
 "$cli" -c "$catfile" lookup urn:native:recovery >"$trial/recovery.log"
 pass rejection-and-recovery
+
+# Structural XML containers have no entry attributes and are not CLI entries.
+entryfile=$trial/entry-types.xml
+"$cli" -c "$entryfile" create
+"$cli" -c "$entryfile" add uri urn:native:preserved file:///tmp/preserved
+cp -p "$entryfile" "$entryfile.before"
+for type in catalog group; do
+    must_fail add-$type "$cli" -c "$entryfile" add "$type" urn:native:bad file:///tmp/bad
+    must_fail remove-$type "$cli" -c "$entryfile" remove "$type" urn:native:bad
+    cmp -s "$entryfile" "$entryfile.before" || fail structural-entry-mutated-catalog
+done
+must_fail next-extra "$cli" -c "$entryfile" add nextCatalog file:///tmp/child file:///tmp/extra
+for type in public system uri delegatePublic delegateSystem delegateURI rewriteSystem rewriteURI; do
+    must_fail missing-$type-target "$cli" -c "$entryfile" add "$type" urn:native:bad
+    cmp -s "$entryfile" "$entryfile.before" || fail incomplete-entry-mutated-catalog
+done
+"$cli" -c "$entryfile" add nextCatalog file:///tmp/child
+"$cli" -c "$entryfile" lookup file:///tmp/child >"$trial/next-lookup.log"
+"$cli" -c "$entryfile" remove nextCatalog file:///tmp/child
+cmp -s "$entryfile" "$entryfile.before" || fail next-entry-recovery
+# Groups already in a catalog remain readable and survive ordinary updates.
+cat >"$entryfile" <<'EOF'
+<?xml version="1.0"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"><group><uri name="urn:native:group-child" uri="file:///tmp/group-child" /></group></catalog>
+EOF
+"$cli" -c "$entryfile" lookup urn:native:group-child >"$trial/group-before.log"
+"$cli" -c "$entryfile" add uri urn:native:outside file:///tmp/outside
+"$cli" -c "$entryfile" lookup urn:native:group-child >"$trial/group-after.log"
+"$cli" -c "$entryfile" remove uri urn:native:outside
+pass entry-types
+
+bad=$trial/single-attribute.xml
+printf '%s\n' '<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"><nextCatalog unexpected="file:///tmp/child" /></catalog>' >"$bad"
+cp -p "$bad" "$bad.before"
+must_fail single-attribute "$cli" -c "$bad" lookup urn:native:absent
+cmp -s "$bad" "$bad.before" || fail single-attribute-mutated-input
+pass single-attribute-validation
 
 sgml=$trial/sgml.catalog
 "$cli" -s -c "$sgml" create
