@@ -5008,7 +5008,7 @@
   },
   "actual_installed_development_package_count": 106,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-25T20:01:30.614941+00:00",
+  "last_updated_utc": "2026-11-25T20:36:09.542843+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -5185,5 +5185,209 @@
       "all_nodes_verified_on_both_hosts": true
     },
     "scope": "Bounded native ARM64 data/catalog development integration. No original ISO selected upstream test bridge, canonical/lifecycle, AMD64, desktop, physical or release acceptance."
+  },
+  "multi_block_error_propagation_followup_20261125": {
+    "problem": "With an actual first SGML catalog I/O error and healthy later XML block, both decoded post-install and post-deinstall scripts return0 although the first add/remove returns1. Pinned pkg2.9.3 launches the concatenated body without set-e. The isolated probes preserve the installed106package SDK. Earlier single/last-block negative controls did not cover this path.",
+    "pinned_pkg_shell_runtime_source_sha256": "89d82ff0750449d504eaaa001417461c66da520ed3834fa6b4d464c5ad3a13fa",
+    "causal_add": {
+      "first_operation_exit": 1,
+      "whole_script_exit": 0,
+      "product_pass": false
+    },
+    "causal_remove": {
+      "first_operation_exit": 1,
+      "whole_script_exit": 0,
+      "product_pass": false
+    },
+    "prototype": "Six actual native commands on copies of real decoded scripts pass: healthy install/repetition/removal and first-add/first-remove failures; later XML changes are prevented after a failed first operation. This is a narrow repair prototype, not generated candidate package qualification.",
+    "candidate_keyword_sha256": "989bf174a13ed3466591db32eae0b2ff2c78c8c568635afb2eb75294ef26e7a8",
+    "candidate_revision_bumps": [
+      {
+        "origin": "security/vuxml",
+        "old_revision": 7,
+        "new_revision": 8
+      },
+      {
+        "origin": "textproc/docbook-sgml",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/docbook-xml",
+        "old_revision": 4,
+        "new_revision": 5
+      },
+      {
+        "origin": "textproc/docbook-xsl",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/docbook-xsl-ns",
+        "old_revision": 1,
+        "new_revision": 2
+      },
+      {
+        "origin": "textproc/dsssl-docbook-modular",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/html",
+        "old_revision": 3,
+        "new_revision": 4
+      },
+      {
+        "origin": "textproc/iso12083",
+        "old_revision": 3,
+        "new_revision": 4
+      },
+      {
+        "origin": "textproc/iso8879",
+        "old_revision": 4,
+        "new_revision": 5
+      },
+      {
+        "origin": "textproc/jade",
+        "old_revision": 12,
+        "new_revision": 13
+      },
+      {
+        "origin": "textproc/libfo",
+        "old_revision": 6,
+        "new_revision": 7
+      },
+      {
+        "origin": "textproc/linuxdoc",
+        "old_revision": 3,
+        "new_revision": 4
+      },
+      {
+        "origin": "textproc/openjade",
+        "old_revision": 6,
+        "new_revision": 7
+      },
+      {
+        "origin": "textproc/sdocbook-xml",
+        "old_revision": 3,
+        "new_revision": 4
+      },
+      {
+        "origin": "textproc/slides",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/website",
+        "old_revision": 1,
+        "new_revision": 2
+      },
+      {
+        "origin": "textproc/xhtml",
+        "old_revision": 6,
+        "new_revision": 7
+      },
+      {
+        "origin": "textproc/xhtml-11",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/xhtml-basic",
+        "old_revision": 3,
+        "new_revision": 4
+      },
+      {
+        "origin": "textproc/xhtml-modularization",
+        "old_revision": 2,
+        "new_revision": 3
+      },
+      {
+        "origin": "textproc/xmlcharent",
+        "old_revision": 4,
+        "new_revision": 5
+      }
+    ],
+    "fresh_native_candidate_qualification": {
+      "source_revision": "1d0dc88cb0d7e2087bd7acaefb2f030e1036b3de",
+      "source_members_verified": 184371,
+      "changed_bodies": 24,
+      "original_construction_targets": 8,
+      "all_original_construction_targets_pass": true,
+      "artifact": {
+        "bytes": 14806,
+        "sha256": "478eeddc10c125c4ccb51f19c19f3c171fd30b8568ab3fefe80fed56340a5809"
+      },
+      "actual_custom_make_test_PASS": 21,
+      "test_scope": "Added port regression cases; no original upstream self-suite claim. Companion native result corrects metadata-only discovery that missed do-test. Original construction result retained.",
+      "pkg_decoded_generated_hook_commands": 19,
+      "first_error_controls": [
+        {
+          "phase": "post-install",
+          "body": "parent4",
+          "first_catalog_IO_error_present": true,
+          "whole_script_exit": 0,
+          "later_XML_catalog_preserved": false
+        },
+        {
+          "phase": "post-install",
+          "body": "new",
+          "first_catalog_IO_error_present": true,
+          "whole_script_exit": 1,
+          "later_XML_catalog_preserved": true
+        },
+        {
+          "phase": "post-deinstall",
+          "body": "parent4",
+          "first_catalog_IO_error_present": true,
+          "whole_script_exit": 0,
+          "later_XML_catalog_preserved": false
+        },
+        {
+          "phase": "post-deinstall",
+          "body": "new",
+          "first_catalog_IO_error_present": true,
+          "whole_script_exit": 1,
+          "later_XML_catalog_preserved": true
+        }
+      ],
+      "private_payloads": 25,
+      "private_commands": 136,
+      "independent_entity_values": 975,
+      "version_make_queries": 42,
+      "strict_native_newer_comparisons": 21,
+      "normal_SDK106_full_prefix_and_rawdb_unchanged": true,
+      "two_host_archive": {
+        "nodes": 1482,
+        "archive_sha256": "ae1ac3805284821562ef6180725bfdbd827e85305f4c7c89072deb4643ef8fdd",
+        "inventory_sha256": "6bc13a0520a868204e477ea4c1320a2324b1b14c443274c2c4bfe845b8de9344",
+        "all_nodes_independently_verified_on_both_hosts": true
+      },
+      "scope": "Fresh candidate source/build/added port regressions/generated decoded scripts/private consumer qualification. Normal SDK upgrade separately qualified."
+    },
+    "normal_development_SDK": {
+      "old_version": "0.3_4",
+      "new_version": "0.3_5",
+      "normal_local_only_original_pkg_dependencies_hooks": true,
+      "empty_stderr_and_no_hook_failures": true,
+      "payloads_exact": 25,
+      "explicit_directories": 0,
+      "four_global_catalogs_body_and_mtime_unchanged": true,
+      "other_package_prefixes_preserved": 105,
+      "default_global_commands": 136,
+      "independent_entity_values": 975,
+      "Simplified_DTD_commands": 20,
+      "added_port_regressions": 21,
+      "accepted_bounded_development_count": 106,
+      "first_preflight_observer_failure_preserved": "Retired controls result-field KeyError, before package mutation. Fresh corrected observer uses actual decoded control namespace fields.",
+      "two_host_archive": {
+        "nodes": 542,
+        "archive_sha256": "324ecf3da5120b53df21d9e9cfe92b0b4de41ea24f2d691f582f0d6e4626e83d",
+        "inventory_sha256": "ac0cee9bcabb9302c265c74a1d2ff4b970d4edd93fad0fb8aff067991b47adf1",
+        "all_nodes_independently_verified_on_both_hosts": true
+      },
+      "scope": "Native bounded normal data/catalog integration. Not original upstream self-suite,canonical,AMD64,desktop,physical or release admission."
+    },
+    "observed_utc": "2026-11-25T20:36:09.541118+00:00"
   }
 }
