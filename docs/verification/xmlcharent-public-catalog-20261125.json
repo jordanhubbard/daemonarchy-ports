@@ -16,10 +16,10 @@
   "observer_correction": "First new regression script lost final expected value at shell read EOF; preserve failed run. Fixed script caches the last expected value, all21scenarios pass.",
   "remaining": [
     "Rebuild and qualify the other selected consumers with fail-fast keyword hooks and current normal dependencies. All21strict native version comparisons pass; Xmlcharent0.3_5 actualgenerated19controls and normal upgrade pass. This does not qualify all21packages.",
-    "Xmlcharent0.3_5,SimplifiedDocBook1.1_4,2,ISO8879_5 and DocBookXML5.0_5 now have bounded normal qualification; DocBookXML uses an honest read-only completion after its successful transaction/42consumers and a missing-reportflag observer failure. DocBookSGML4.5_3 construction passes; private/generated-hook/normal qualification and remaining selected consumers stay open.",
+    "Xmlcharent0.3_5, SimplifiedDocBook1.1_4,2, ISO8879_5, DocBookXML5.0_6 and DocBookSGML4.5_4 have bounded normal qualification. Remaining selected metaport/XSL/default-D-Bus consumers and full original GLib/desktop qualification stay open.",
     "Complete canonical authority/lifecycle,AMD64,desktop,physical and release acceptance."
   ],
-  "observed": "2026-11-25T20:12:09.482419+00:00",
+  "observed": "2026-11-25T22:00:11.073285+00:00",
   "Simplified_Docbook_consumer_causal": {
     "actual_commands": 20,
     "profiles": [
@@ -851,5 +851,99 @@
     "absent_original_schema_targets": 2,
     "remaining": "DocBookSGML4.5_3 construction passes but private/generated-hook/normal acceptance is pending. Continue selected SGML/meta/XSL/defaultD-Bus/fullGLib/desktop. Complete canonical lifecycle,AMD64,physical and release acceptance remains open.",
     "observed_utc": "2026-11-25T21:03:33.014859+00:00"
+  },
+  "paired_legacy_DocBook_SGML_mode_20261125": {
+    "source_revision": "6defff971350efcf84889a03120ab5462ece1508",
+    "problem": "Actual legacy SGML 4.3 fails on XML-only xml:base/xml:lang declarations and SGML-incompatible HTML table declarations; all nine DTD versions must remain usable with either provider catalog first. Original failure follows six passing DTD versions and is retained.",
+    "repair": "Both original providers patch shared 4.3/4.4 modules. SGML-only attribute guards, existing tag-minimization parameter, and SGML-only CDATA table rules preserve original XML 4.3 rules enumeration. All original distributions/options/dependencies retained.",
+    "original_patch_targets_zero_fuzz_offset": true,
+    "exact_patched_modules_verified": 6,
+    "complete_native_source_members_verified": 184377,
+    "original_construction_targets_per_package": 8,
+    "artifacts": [
+      {
+        "name": "docbook-sgml-4.5_4.pkg",
+        "bytes": 144699,
+        "sha256": "ef144a868c625279a2074bc2a4e033fa4b70018919f2864c9f66f08cac6be8e4"
+      },
+      {
+        "name": "docbook-xml-5.0_6.pkg",
+        "bytes": 565300,
+        "sha256": "e22952c7ae93156b3400ea5818ec5cd7b9ad9001ca7391e9bef252b0499c58ff"
+      }
+    ],
+    "private_payloads": {
+      "SGML": 141,
+      "XML": 195,
+      "explicit_directories": 0
+    },
+    "actual_package_private_SGML_commands": 63,
+    "SGML_DTD_versions": 9,
+    "actual_package_private_XML_commands": 42,
+    "XML_DTD_versions": 6,
+    "actually_shipped_XML_schema_profiles": 3,
+    "fresh_actual_pair_followup_commands": 23,
+    "followup_scope": "Reverse catalog order, HTML and CALS tables, XML unknown-attribute and strict 4.3 rules rejection, original-unpatched failures and patched recovery.",
+    "generated_hooks": "Decoded actual SGML4 and XML6 phase bodies are byte-identical to earlier qualified SGML3 17-control and XML5 24-control sets. All four phase bindings carry body and reference receipt digests. Those controls were not replayed; actual normal transactions are separately tested.",
+    "normal_XML_upgrade": {
+      "from": "5.0_5",
+      "to": "5.0_6",
+      "payloads": 195,
+      "fresh_DTD_schema_catalog_conversion_commands": 42,
+      "fresh_Xmlcharent_dependency_commands": 136,
+      "fresh_XML_table_strictness_commands": 7,
+      "other_105_prefixes_preserved": true,
+      "four_catalog_bodies_and_mtimes_preserved": true,
+      "original_local_only_solver_dependencies_hooks_pass": true,
+      "empty_stderr_no_hook_errors": true,
+      "accepted_bounded_development_count": 106
+    },
+    "normal_SGML_install": {
+      "version": "4.5_4",
+      "payloads": 141,
+      "fresh_default_global_DTD_commands": 36,
+      "fresh_HTML_CALS_table_commands": 3,
+      "inherited_106_prefixes_preserved_except_one_predicted_catalog_index": true,
+      "only_catalog_index_changed": "share/sgml/catalog.ports",
+      "three_other_catalog_files_preserved": true,
+      "original_local_only_solver_dependencies_hooks_pass": true,
+      "empty_stderr_no_hook_errors": true,
+      "accepted_bounded_development_count": 107
+    },
+    "normal_resource_environment": "No positive catalog override. XML commands use clean default loader. SGML uses uninstalled original OpenSP executable with explicit private ELF library binding; this does not qualify a normally installed parser. Its six original suite failures remain open.",
+    "frozen_SDK17_base_and_mount_guards_pass": true,
+    "failed_observers_and_derived_prototypes_retained": "Invalid historical 2.4.1 fixture, padded SDATA and actual entity-resource oracles, XML validation exit contract correction, real unpatched 4.3 failure and all intermediate derived prototypes. Derived prototypes are not package acceptance.",
+    "two_host_evidence": {
+      "failures_and_prototypes": {
+        "nodes": 5362,
+        "archive_bytes": 49598658,
+        "archive_sha256": "d89598e0bc1d6078cc9995b666fed97f15d96c251518928811493dfd7dc42413",
+        "inventory_sha256": "aa2d9f46a27b103b5b7d03a9755a19918b46340e9abb696fe95abd5d970d81d3",
+        "all_nodes_independently_verified_on_both_hosts": true
+      },
+      "actual_source_private_pair": {
+        "nodes": 3450,
+        "archive_bytes": 29709955,
+        "archive_sha256": "b3ce039396124736bc163d0469e02361ed0bd7cffa1c30361f312e99f66b6840",
+        "inventory_sha256": "df3d42aa8e1e08c0618951c69c12b33478d16f23ecfa9122f500ffb8280ee2b5",
+        "all_nodes_independently_verified_on_both_hosts": true
+      },
+      "normal_XML": {
+        "nodes": 532,
+        "archive_bytes": 12681182,
+        "archive_sha256": "b2516cf1d4ec909645df99b9535b2dd8ee48530774f8c3b22ba384b5b294832d",
+        "inventory_sha256": "6f68429f1d3e276cd464cbaba78e2f9af83825f95c88bfd488ee0a4c2e062ac8",
+        "all_nodes_independently_verified_on_both_hosts": true
+      },
+      "normal_SGML": {
+        "nodes": 96,
+        "archive_bytes": 12615377,
+        "archive_sha256": "89f58f78da3fd46c036e116d7855af94c99adaddaa80b5471dbb61612a1ecbc3",
+        "inventory_sha256": "a1d9ba52c7e416fac9d82d5593632949e084deb684cda72040bf2e5597e09e12",
+        "all_nodes_independently_verified_on_both_hosts": true
+      }
+    },
+    "unqualified": "Four original XML catalog aliases advertise two absent XInclude XSD files (docbookxi.xsd, xi.xsd); neither file is fabricated or replaced by ordinary XSD. Original upstream suites, remaining selected catalog consumers, canonical lifecycle, AMD64, desktop, physical fleet, media and release acceptance remain open.",
+    "observed_utc": "2026-11-25T22:00:11.073285+00:00"
   }
 }
