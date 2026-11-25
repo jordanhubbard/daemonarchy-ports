@@ -2276,6 +2276,12 @@
         "archive_sha256": "1e879512d652a948c768de886aef270590e2c544d9af09eb8d910d741eb71f2e",
         "all_nodes_verified_on_both_hosts": true
       }
+    },
+    {
+      "package": "LibgpgError",
+      "cause": "First own C client decoded newline escapes into source string literals; second static command lacked canonical dependency library search.",
+      "correction": "Preserve literal C escapes; independently replay original pkgconfig static metadata with canonical /usr/local library search intact. That replay confirms a product metadata defect rather than qualifying a package through a manual flag. All failed inputs/outputs and unchanged-prefix guards retained.",
+      "product_status": "Original package held; PR113 repairs missing NLS private dependency and adds regression."
     }
   ],
   "incomplete_original_source_suites": {
@@ -2967,7 +2973,26 @@
         }
       },
       "guards": "Complete98packageprefix/logicalregistry/base/kernel/mounts/selectedsource unchanged for both runs; full original source/distfiles/objects/output retained.",
-      "qualification": "Source-built development candidates only. Sealed/default API and command acceptance, both-host source/test/private custody and normal installation pending. No AMD64/canonical/lifecycle/release admission."
+      "qualification": "HELD: original default static NLS metadata omits gettext link dependency. All construction/original test observations retained, but actual static client using advertised metadata fails on libintl symbols. No normal installation; development count remains98. Separate fixed candidate PR113 is under native validation.",
+      "static_metadata_counterexample": {
+        "original_flags": [
+          "-L/usr/local/lib",
+          "-lgpg-error"
+        ],
+        "actual_failure": "Undefined libintl symbols when linking a real client against the original archive with canonical library search intact.",
+        "causal_control": "Adding only -lintl links and executes the same real error/errno/memory-stream/two-thread client. Original archive and complete98prefix/rawdb unchanged.",
+        "committed_regression_before": "The same new static-pkgconfig C regression fails against the original archive/metadata before repair.",
+        "regression_sha256": "97ef576e880ddbcad5ab53c28f4a26f72e79c594a796c6ef6bfdd80be210fd8b",
+        "repair_review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/113"
+      }
+    },
+    {
+      "component": "libgpg-error-fixed",
+      "source_revision": "486f80fdbab7188d158d8bf23634a9d0ae9c1539",
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/113",
+      "change": "Publish -lintl in original static metadata only with NLS, preserve other private flags; PORTREVISION1. Add real static C consumer after unchanged original tests, with explicit archive selection; declare pkgconf TEST_DEPENDS.",
+      "causal_regression_before": "Fails on original metadata with libintl symbols unresolved; adding only gettext link resolves original full client.",
+      "qualification": "Patch applies to exact original pc.in with zero fuzz. Fresh complete native source preparation and fixed construction/tests/package acceptance pending. No installed package/AMD64/canonical/release qualification."
     }
   ],
   "installed_Python_metadata_recovery": {
