@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 89,
+  "normal_development_package_count": 90,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -609,6 +609,43 @@
         }
       },
       "test_scope": "Typogrify original41task-selected cases plus1additive Jinja doctest42pass0skip; original port has no test bridge and provisioning/coverage/lint remain unqualified. JsonCpp all3original Meson suites pass (127/69/96reported counts overlap). AMD64/canonical/release remain pending."
+    },
+    {
+      "name": "GI-docgen runtime with original Graphviz test gap",
+      "packages": [
+        {
+          "name": "py312-gi-docgen-2026.1.pkg",
+          "bytes": 1263228,
+          "sha256": "d6ab27281eb8b46633d91f9a0fc3a78c724d97af2451d67f5a3bb6a5bc8f90ed"
+        }
+      ],
+      "source_revisions": [
+        "511743d7327c93e9ff0117d04f0176ebc572f444"
+      ],
+      "sealed_payloads": 122,
+      "normal_packages_before": 89,
+      "normal_packages_after": 90,
+      "original_normal_dependencies_and_scripts_enforced": true,
+      "inherited_packages_and_base_kernel_mounts_preserved": true,
+      "actual_private_and_default_path_checks": "Eleven real CLI commands: version, standalone function/enum/record HTML using default packaged templates/assets, search indexes, changed input, all default sections of the full original GObject GIR producing634HTMLpages, malformed TOML/XML rejection with useful diagnostics, and generation/index recovery. Local script/style/font resources verified; no template/resource/section overrides.",
+      "actual_GObject_HTML_pages": 634,
+      "actual_CLI_commands": 11,
+      "packaged_local_assets_verified": 37,
+      "two_host_evidence": {
+        "source_tests_private_and_first_observer_failures": {
+          "nodes": 3417,
+          "archive_bytes": 37407613,
+          "archive_sha256": "341b02d7c4eda09351fc98b9c19c3cea785443fdc37dda81c2188bdc31719f4f",
+          "all_nodes_verified_on_both_hosts": true
+        },
+        "normal_transaction": {
+          "nodes": 820,
+          "archive_bytes": 13759678,
+          "archive_sha256": "23c14420840eca503b008a4cfad390b8145cb393a7e6092fe253f47f28b2b53a",
+          "all_nodes_verified_on_both_hosts": true
+        }
+      },
+      "test_scope": "Development runtime observation only. Original unfiltered CIpytest10cases:9passed1failed due absent Graphvizdot, zero skips; no filters/synthesized skips. Optional hierarchySVG/full original CI/AMD64/canonical/release qualification remains open."
     }
   ],
   "complete_original_source_suites": {
@@ -1546,7 +1583,8 @@
     "Pycparser FreeBSD original cpp suite candidate passes451withzero skips; draft PR108 review, AMD64 and canonical receipt remain pending",
     "Complete AsyncGenerator/Pycparser peers Sniffio/SortedContainers/Hatch plugins/Cython original self-suites and declared test-tool closure",
     "Complete Attrs declared original self-suite tools and CFFI conditional meson-python/virtualenv/installed-CLI coverage",
-    "TOML EOF fix PR109 native port/20committedregressions/sealed/default controls now pass; original NumPy/fullCI/AMD64/canonical gates remain pending"
+    "TOML EOF fix PR109 native port/20committedregressions/sealed/default controls now pass; original NumPy/fullCI/AMD64/canonical gates remain pending",
+    "GI-docgen full original Graphviz render_dot/SVG test and complete CI/tool closure remain open despite successful default runtime generation; source-built Graphviz required, original test failure retained."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -1761,6 +1799,42 @@
         "archive_sha256": "20d78102dc20081bbb72eb93dc3662b67b203b6d71408021006a8eb3672c95da",
         "all_nodes_verified_on_both_hosts": true
       }
+    },
+    {
+      "package": "GI-docgen",
+      "cause": "Own first handwritten GIR omitted mandatory doc filename/line attributes.",
+      "correction": "Added required source-location metadata according to official GIR1.2schema Gitblob ba3611aa28aba72429550faee9109a2888b46b34; product code/tests unchanged.",
+      "first_failed_case": "1594",
+      "two_host_evidence": {
+        "nodes": 3417,
+        "archive_bytes": 37407613,
+        "archive_sha256": "341b02d7c4eda09351fc98b9c19c3cea785443fdc37dda81c2188bdc31719f4f",
+        "all_nodes_verified_on_both_hosts": true
+      }
+    },
+    {
+      "package": "GI-docgen",
+      "cause": "Own local-resource audit compared an absolute resolved target to a relative root when recording its relative name.",
+      "correction": "Normalize the audit root with resolve; resource existence/containment assertions remain intact.",
+      "first_failed_case": "1596",
+      "two_host_evidence": {
+        "nodes": 3417,
+        "archive_bytes": 37407613,
+        "archive_sha256": "341b02d7c4eda09351fc98b9c19c3cea785443fdc37dda81c2188bdc31719f4f",
+        "all_nodes_verified_on_both_hosts": true
+      }
+    },
+    {
+      "package": "GI-docgen",
+      "cause": "Own negative CLI audit incorrectly required an internal TOMLDecodeError class name despite the correct nonzero exit and useful public diagnostic.",
+      "correction": "Verify Invalid configuration file, exact bad filename and expected closing-bracket diagnostic; same malformed input/nonzero-exit/recovery checks remain.",
+      "first_failed_case": "1599",
+      "two_host_evidence": {
+        "nodes": 3417,
+        "archive_bytes": 37407613,
+        "archive_sha256": "341b02d7c4eda09351fc98b9c19c3cea785443fdc37dda81c2188bdc31719f4f",
+        "all_nodes_verified_on_both_hosts": true
+      }
     }
   ],
   "incomplete_original_source_suites": {
@@ -1810,6 +1884,30 @@
         "pylint-py312>=0:devel/pylint@py312"
       ],
       "runtime_private_and_default_checks": "pass"
+    },
+    "GIDocgen": {
+      "original_CI_command": "pytest --verbose, unfiltered selection on unchanged full source/tests/fixtures",
+      "reported": 10,
+      "passed": 9,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "failure_names": [
+        "test_render_dot"
+      ],
+      "missing_tool": "Graphviz dot (the original upstream CI installs it)",
+      "raw_stdout_sha256": "862fd8b43be8eaea26d76edf189513110afec4dd0b0d910b7ab187747362e289",
+      "raw_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "JUnit_sha256": "bb2e1531cddbc50dfa35cae67d97e9323d5070170dfa05457e4678d2997ff744",
+      "original_product_behavior": "render_dot intentionally returns None when dot is absent; default full GObject HTML generation succeeds while optional hierarchy SVG remains unqualified.",
+      "sealed_and_default_runtime": "All11realCLIcontrols pass;634GObjectHTMLpages plus default assets/indexes/changedinput/errors/recovery.",
+      "two_host_evidence": {
+        "nodes": 3417,
+        "archive_bytes": 37407613,
+        "archive_sha256": "341b02d7c4eda09351fc98b9c19c3cea785443fdc37dda81c2188bdc31719f4f",
+        "all_nodes_verified_on_both_hosts": true
+      },
+      "scope": "Full original unit suite remains failed until the source-built Graphviz dependency and SVG coverage are qualified. No filtered/synthetic pass or canonical receipt."
     }
   }
 }
