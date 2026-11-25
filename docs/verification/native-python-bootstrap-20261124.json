@@ -6033,5 +6033,28 @@
     "normal_finished_utc": "2026-11-25T23:16:30.893227+00:00",
     "qualification": "Native ARM bounded development integration only. Original selected default six-program/43event test inventory qualified; disabled modular variant and broader upstream suite remain open. Canonical ownership/provenance/lifecycle, matching AMD64, full desktop, physical fleet, installer/update/rollback/media/signing/publication remain open.",
     "next_GLib": "Fresh original default source build launched with all declared test tools installed. Earlier configured387tests found neither dbus-1 nor dbus-daemon; preserve sealed old producer and reconfigure fresh short owned work directory. Current build/test results remain pending."
+  },
+  "full_GLib_original_test_bridge_checkpoint_20261125": {
+    "source_revision": "6defff971350efcf84889a03120ab5462ece1508",
+    "fresh_configured_programs": 420,
+    "prior_configured_programs": 387,
+    "additional_DBus_dependent_programs": 33,
+    "prior_programs_omitted": 0,
+    "configured_dbus1_and_daemon_found": true,
+    "original_default_options": [
+      "DOCS",
+      "MANPAGES",
+      "NLS",
+      "TEST"
+    ],
+    "first_fresh_build_all8targets_passed": true,
+    "first_fresh_uninstalled_package": {
+      "bytes": 11262841,
+      "sha256": "5980490a0eac5f85b9fe2baee2b54a3dd27af2dec5f1c43c4a03dae395de0f9b"
+    },
+    "original_make_test_exit": 1,
+    "original_failure_before_upstream_execution": "Original pre-test redirects dbus-uuidgen to root-owned /var/lib/dbus/machine-id; UID65534 receives Permission denied. Full original failure and all products/work retained; SDK110 rawprefix, logical registry, base and mounts preserved.",
+    "fresh_followup": "Fresh second build underway with short separately owned parent and exact original selected260sourceinputs. Original make test will run original pre-test as root; supported DO_MAKE_TEST hook wraps the exact expanded original backend/environment/target to drop only its execution identity to UID/GID65534. No source/test/options/filter changes. Expected UUID generated-state transition and account/cache guards will be recorded.",
+    "qualification": "Build/test outcome pending; no new GLib package installed or suite acceptance claimed."
   }
 }
