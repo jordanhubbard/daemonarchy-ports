@@ -2229,8 +2229,8 @@
     "Shared MIME-Info is integrated among98developmentpackages; full default GLib original test closure now needs D-Bus. Preserve original D-Bus MANPAGES/X11 defaults: libxslt/libgcrypt/libgpg-error and DocBook/catalog dependencies are next. Canonical/full release and physical platform scope remains open.",
     "Fixed default libgpg-error1.61_1 is integrated among99developmentpackages, PR113. Continue original default libgcrypt(DOCS/INFO/STATIC), libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and defaultD-Bus(MANPAGES/X11) closure, then fullGLib original suite. All broad release/fleet/physical/canonical gates remain open.",
     "Original default libgcrypt1.12.4 is integrated among100developmentpackages. Continue libxslt(CRYPTO/PLUGINS/STATIC), DocBook/catalog and originaldefaultD-Bus(MANPAGES/X11), then fullGLiboriginalsuite. Optionallarge-data coverage, AMD64 and all broad release/fleet/physical/canonical gates remain open.",
-    "PR116 pkg2.9.3_2 now normally integrated, originaldeps/hooks active,77payloads/1dir/34freshnormalATF pass; source/private/failure andnormalcapsules verifiedbothhosts. Fullpkgfrontendsuite/AMD64/canonical/release gaps remain. XML_5-to_6 genuine local-only upgrade is next/in progress; acceptednormalcount remains101 until strictXMLnormalacceptance.",
-    "Normalpkg2.9.3_2 andXMLcatmgr2.2_6 updates nowpass, acceptednormal102/actual102. Theircomplete source/private/failure/normalcapsules areverifiedbothhosts; no heldXML_5remainsinstalled. Continuexmlcharent andDocBookcatalog data/meta closure requiredbydefaultD-Bus MANPAGES/X11, then fulloriginalGLibsuite/desktoppackages. Preserve all defaults and earlierfailures; no unrelatedxmlto chainneededbyactualD-Bus metadata."
+    "Normalpkg2.9.3_2 andXMLcatmgr2.2_6 updates nowpass, acceptednormal102/actual102. Theircomplete source/private/failure/normalcapsules areverifiedbothhosts; no heldXML_5remainsinstalled. Continuexmlcharent andDocBookcatalog data/meta closure requiredbydefaultD-Bus MANPAGES/X11, then fulloriginalGLibsuite/desktoppackages. Preserve all defaults and earlierfailures; no unrelatedxmlto chainneededbyactualD-Bus metadata.",
+    "Xmlcharent0.3_2 originaldataonlyport andsealed25payloads/98commands/19resources/975independententitydefinitions pass. Nextoriginal@xmlcatmgr keywordscriptcontrols mustpredictexact2globalcatalog.ports changesandpreserve2masters, thencompletecustody/normalregistration/defaultglobalcatalogacceptance beforeDocBook XML/SGML/meta/XSL. Do notclaimnormal103untilactualaddandacceptance."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -4300,6 +4300,84 @@
           "both_hosts_all_nodes_verified": true
         }
       }
+    },
+    {
+      "component": "xmlcharent",
+      "version": "0.3_2",
+      "source_revision": "d65aae9b1fb9293f1d4d26da12aaf3c334b10f99",
+      "status": "native-data-port-and-sealed-real-catalog-entity-consumers-pass-normal-keyword-hooks-pending",
+      "NO_BUILD_NO_ARCH_data_resource": true,
+      "original_selected_options": [],
+      "declared_runtime_dependency": {
+        "name": "xmlcatmgr",
+        "version": "2.2_6",
+        "origin": "textproc/xmlcatmgr"
+      },
+      "selected_source_port_Mk_Templates_Keywords_verified": 270,
+      "construction_targets": [
+        {
+          "target": "checksum",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "extract",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "patch",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "configure",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "build",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "stage",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "check-plist",
+          "exit": 0,
+          "uid": 65534
+        },
+        {
+          "target": "package",
+          "exit": 0,
+          "uid": 65534
+        }
+      ],
+      "package": {
+        "bytes": 14587,
+        "sha256": "3d5afe302af347e7854154d08814506b8269bec794c4678f4ae38dea3cd532e0"
+      },
+      "distribution": {
+        "name": "xmlcharent-0.3.zip",
+        "bytes": 29705,
+        "sha256": "d73b6bee025a031fd641679652b852c8add72d834e4085f5c9351c2c5d4b51be",
+        "members": "Exactly19.entfiles, nooriginalselftestprogram orMakefile; noempty-build/check countedastests."
+      },
+      "sealed_acceptance": {
+        "payloads": 25,
+        "declared_directories": 0,
+        "all_exact": true,
+        "actual_consumer_commands": 98,
+        "entity_resources": 19,
+        "independent_entity_definitions_checked": 975,
+        "coverage": "All19XMLPUBLIClookupsreturnexactdeclaredURI;57actualvalidating/nonnetworkxmllintdocumentsPUBLIC+canonicalSYSTEMandcurrent/0.3SYSTEMaliasesexpandactualcharacterentitiesmatchingindependentExpatvalues;19SGMLPUBLIClookupsresolveprivateoriginalfiles;missingcatalogordinarypositiveerrorandrecovery. Defaultlibraryloader,explicitprivatecatalogpaths. Countsareseparate,not summed.",
+        "whole102_prefix_rawdb_base_mounts_unchanged": true
+      },
+      "retained_observer_correction": "Firstprivate2125fixtureassumedautomaticsecondURIrewriteafterPUBLICmapwitharbitraryurnSYSTEM, beyonddeclaredcataloglookup. ActualpublicmappingreturnsdeclaredHTTPURI. Nonvalidatingxmllintprintsparsererrors/dropsvaluesbutreturns0; independentvaluescaughtfailure. Correctfixture2126verifiesdeclaredPUBLICmappingseparatelyandactualcanonicalSYSTEMresource,addsDTDvalidatingmodeandassertsreal975values. Productdataunchanged;originalfailurepreserved.",
+      "qualification": "Data-onlyoriginalportconstructionandindependentsealedacceptance. No originalselfsuiteexists. Originalkeywordpostinstall/deinstallcontrols/source-private-failurecustody/normalregistration/default-globalcatalogacceptance stillpending. Normalacceptedcount remains102; notcanonical/GUI/hardware/release."
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -4344,5 +4422,6 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 102
+  "actual_installed_development_package_count": 102,
+  "current_installed_held_packages": []
 }
