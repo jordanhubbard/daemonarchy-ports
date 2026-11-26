@@ -1,6 +1,6 @@
 {
-  "observed_utc": "2026-11-26T12:16:34.524156+00:00",
-  "status": "original-source-build-selftests-default-package-pass-private-PC-header-defect-confirmed-repair-source-verification-running",
+  "observed_utc": "2026-11-26T12:52:32.554204+00:00",
+  "status": "pass-repaired-source-original-check-test-private-lifecycle-two-host-custody-and-actual-normal126",
   "origin": "archivers/lzo2",
   "original_version": "2.10_2",
   "original_source_revision": "0b9e18618e18ca63ac16c82edcb90bbc670c0b50",
@@ -8,7 +8,7 @@
     "bytes": 111017,
     "sha256": "5f08dab401a98b4e277e45a44a81fdc1201d36165922d968ee689ed4331bd96a"
   },
-  "scope": "Bounded native FreeBSD ARM development observation; no Lzo2 normal installation, independent runtime, package lifecycle, canonical Component/provenance/SDK/TCB or full release acceptance.",
+  "scope": "Bounded native FreeBSD ARM development qualification of corrected lzo2 2.10_3, including independent private/normal consumers, original package lifecycle and both-host custody. Canonical Component/provenance/lifecycle/SDK/TCB, full API/ABI, AMD64, desktop and full release acceptance remain separate.",
   "original_construction": {
     "all_eight_original_targets_pass": true,
     "original_post_build_check_and_exhaustive_test_targets_pass": true,
@@ -60,7 +60,7 @@
     "changed_or_added_relative_original_source": 2,
     "removed": 0,
     "fresh_full_native_source_verification": "pass all184390Gitmembers,0removed,2changed-or-added,allSDK125/frozen/base/accounts/cache/mount/oldsourceguards",
-    "fresh_native_build_selftests_default_package_private_runtime_lifecycle_custody_and_normal_qualification": "fresh build/check/test/default package, four private432case modes and six real package lifecycle transactions PASS; repaired capsule custody and actual normal admission pending",
+    "fresh_native_build_selftests_default_package_private_runtime_lifecycle_custody_and_normal_qualification": "PASS original fresh check/test/default, four private modes, six real package lifecycle transactions, repaired source/private custody, actual normal126 and normal custody",
     "all251_selected_review_native_input_bodies_modes_equal": true,
     "fresh_default_package": {
       "bytes": 110985,
@@ -93,12 +93,47 @@
       "fresh_no_RPATH_C_client432cases_after_each_add_reinstall_and_expected_missing_library_before_add_after_deletes": true,
       "all_payloads_exact": 40,
       "all_original_mounts_restored": true
-    }
+    },
+    "review_PR": 121,
+    "source_private_custody": {
+      "nodes": 1945,
+      "archive_bytes": 27704129,
+      "archive_sha256": "a60621ab7350d57f40088afb915ac8dc901266797370f2da6cbf6310a8996828",
+      "inventory_sha256": "fa82a6c974ab30bdf649eb48c31c623f9e4b109a94843e363095a5eeb09311e2",
+      "all_nodes_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_gzip_CRC_verified_ARM_and_Intel": true,
+      "extra_compressed_archive_bytes_on_Linux_controller": 0
+    },
+    "normal": {
+      "actual_original_offline_dependency_and_ldconfig_add_PASS": true,
+      "actual_integrity_dependency_check_PASS": true,
+      "exact_new_payloads": 40,
+      "inherited_providers_preserved": 125,
+      "exact_registry_package_count": 126,
+      "actual_new_loader_provider": "-llzo2.2",
+      "all_preexisting_loader_paths_and_priorities_preserved": true,
+      "C_CXX_shared_static_modes": 4,
+      "cases_each": 432,
+      "checks_each": 11179,
+      "actual_consumer_commands": 22,
+      "both_header_styles_actual_candidate_headers_library_archive_binding": true,
+      "no_RPATH_loader_or_pkgconf_override": true,
+      "semantics_and_library_archive_bodies_equal_private": true,
+      "whole_SDK126_raw_database_frozen17_base_accounts_fontcache_loader_mount251source_guards_PASS": true,
+      "custody": {
+        "nodes": 84,
+        "archive_bytes": 18249272,
+        "archive_sha256": "ee1ecef06d4b96e15f2a4cebcfcac7214558abdd602aa28e6a7acff86dc11444",
+        "inventory_sha256": "531e56e2db87aac226c4c4b5ac6bb94ba7e3abb60493f82f27a330c28b6a69d4",
+        "all_nodes_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_gzip_CRC_verified_ARM_and_Intel": true,
+        "extra_compressed_archive_bytes_on_Linux_controller": 0
+      }
+    },
+    "capture_observer_correction": "Initial capture required SDK125 anchor equality after package metadata queries added only checked SQLite WAL/SHM sidecars. Original failure preserved. New capture uses established narrow sidecar comparison; registry main database, installed payloads and hardlinks remain exact. No producer/test/consumer rerun."
   },
   "remaining": [
-    "Fresh exact-source original check/test/default construction and all306 source-body comparisons for repaired version.",
-    "Actual independent C/CXX shared/static consumers, header-style controls, package lifecycle and independent capsule custody.",
-    "Actual normal offline dependency/integrity/ldconfig admission and unchanged other125 providers; no normal Lzo2 acceptance claimed.",
-    "All canonical and broader full1.6release gates remain separate."
+    "Complete public API/ABI and matching AMD64 qualification.",
+    "Canonical per-unit source/tool provenance, ownership, lifecycle and installed SDK/TCB admission.",
+    "Complete desktop and original dependency/test closures, physical platform acceptance, installer/update/rollback/media/freeze/signing/publication for full 1.6 release.",
+    "Human documentation authority review and canonical receipts remain open; no attestation changed."
   ]
 }
