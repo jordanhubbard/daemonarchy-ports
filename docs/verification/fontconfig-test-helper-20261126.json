@@ -1,8 +1,8 @@
 {
-  "observed_utc": "2026-11-26T05:13:09.956179+00:00",
+  "observed_utc": "2026-11-26T05:16:03.017390+00:00",
   "status": "helper-native-regression-pass-15-C-programs-pass-Python-TAP-dependencies-pending",
-  "current_code_commit": "5e0ef648541cba923cf48dae52acc26414bd4480",
-  "current_native_source_composition": "3f9d8a0447226e2240056ac7d6058c3bd8dc1c0f",
+  "current_code_commit": "ace6dcf126f5e402c74fa932616d58bac6a88f82",
+  "current_native_source_composition": "e11626aac235788195349cbb0fdc88dc40069421",
   "baseline_native_source": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
   "scope": "Direct native FreeBSD aarch64 source/configuration/test observations only; package/normal/canonical/AMD64/fullrelease qualification remains pending.",
   "problems": [
@@ -12,7 +12,8 @@
   "changes": [
     "Use supported TEST_MESON_ON for the existing tests-external-fonts=disabled argument.",
     "Declare the TAP plugin as a TEST build dependency so Meson discovers the complete test runner before configuration.",
-    "Add checksum-bound source ports for pytest-tap and its tap.py dependency. Preserve upstream implementation/tests and Python/runtime constraints; expose tap.py optional YAML dependencies separately and include its original full test prerequisites."
+    "Add checksum-bound source ports for pytest-tap and its tap.py dependency. Preserve upstream implementation/tests and Python/runtime constraints; expose tap.py optional YAML dependencies separately and include its original full test prerequisites.",
+    "Add staged Python site-packages to PyYAML TEST_ENV so original test collection finds the built LibYAML extension; retain original LIBYAML default, all test cases and upstream assertions."
   ],
   "new_upstream_ports": {
     "devel/py-tap.py": {
@@ -138,7 +139,8 @@
     "native_complete_source_preparation": "pass; all 184387 members verified by body, mode and literal link against exact Git tree; 184379 unchanged immutable input files shared, all 8 changed or added inputs separate; no shared build objects or cookies",
     "original_implementation_tests_and_failed_evidence_retained": true,
     "native_preparation_receipt_sha256": "2eec868280b9ec712d90d8789c43e93e58a641e68db15351ac182a57305e0b4a",
-    "whole_SDK116_frozen17_base_accounts_cache_mounts_and_original_source_postguards_pass": true
+    "whole_SDK116_frozen17_base_accounts_cache_mounts_and_original_source_postguards_pass": true,
+    "scope": "Earlier complete3f9d8a native source has184387verifiedmembers. Latest e11626 source additionally changes PyYAML TEST_ENV; it requires a fresh source composition and native corrected-source qualification. Earlier source evidence is not repinned."
   },
   "remaining": [
     "Native metadata and source build/test/package qualification of new TAP ports and their complete test prerequisites.",
@@ -284,7 +286,19 @@
       "normal_lifecycle_custody_pending": true,
       "retained_audit_parser_failure": "Parent class doctest and method doctest collided in initial header parser; corrected exact method ID composition, preserving original test case identities/order/completions and all failed audit evidence."
     },
-    "PyYAML": "Original eight construction targets pass; original pytest target exits1 after collection error: PYYAML_FORCE_LIBYAML=1 but extension unavailable on test import path. The actual compiled extension is present in the staged package. Original failure and all guards retained; no source-suite or normal acceptance.",
+    "PyYAML": {
+      "original_construction_targets_pass": 8,
+      "original_test_collection_error_retained": true,
+      "actual_staged_compiled_extension_present": true,
+      "explicit_staged_import_path_probe_exit": 0,
+      "reported_cases_passed": 2608,
+      "reported_warnings": 1,
+      "all_original_suite_inputs_and_assertions_unchanged": true,
+      "whole_SDK117_raw_database_frozen_base_accounts_cache_mounts_and248_source_inputs_preserved": true,
+      "probe_native_result_sha256": "bf560d4a8c00111772c49cb6b4129e0ab5ab9a84297789d2f494437e77f41b7b",
+      "source_fix": "TEST_ENV+= PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}",
+      "native_corrected_source_and_per_case_discovery_audit_pending": true
+    },
     "tap_py_and_pytest_tap": "source ports only, native qualification pending"
   }
 }
