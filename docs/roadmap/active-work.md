@@ -139,9 +139,36 @@ All 25,179 selected source/object/stage/package/test/XML/API/control records
 verify on ARM and Intel in 13 bounded archives, streamed directly without an
 extra Linux-root archive. All protected SDK/base/accounts/cache/mount guards pass.
 
-Real package-hook and dependency-checked install/upgrade/rollback/delete/reinstall,
-normal delivery and full canonical provenance/SDK/release gates remain open.
-The installed 128-package SDK retains its original Python feature hold; Nose is
-uninstalled. Current locks pass; stale human review and lifecycle receipt gates
-remain unsatisfied. Audit inherited child signal state before reusing older
-background-launched qualifications; their original outcomes remain retained.
+Eight real isolated package transactions now pass, with original hooks and six
+adds retaining direct dependency checks. Two forced fixture deletions explicitly
+override reverse-dependency protection; no full solver closure is claimed.
+All five installed-candidate states pass the unprivileged default APIs. Rollback
+matches every original-package payload field, including archive timestamps;
+8,029 initial SDK fractional timestamps are absent from that archive, so exact
+initial namespace metadata restoration remains unqualified. Both failed observer
+attempts and all three fixtures verify in 69 archives / 151,956 records on ARM
+and Intel. No successful upgrade, reinstall or rollback command was replayed.
+
+The working SDK19 is now upgraded once to Python 3.12.16_5. All 8,031 default
+payloads, 127 inherited providers and old license metadata are preserved. New
+versioned license records are added. Grammar16, weekly3, embedding36 and all75
+native-extension / stable-ABI164 checks pass as uid65534 without loader overrides.
+The original hook adds seven lower-priority legacy bootstrap fallback entries;
+14 fresh native loader controls and seven post-upgrade default controls prove
+the same existing GLib/GI libraries and bytes are selected. The full loader
+profile and old/new cache bytes are retained. All 8,121 installed-payload/control
+records verify on both hosts in seven archives. The Python conversion feature
+hold is cleared; the installed count128 still grants no full SDK admission.
+
+All nine original stdtime cases also pass on the matching f4eb runtime, using
+unchanged original programs/selection/default deadlines. Source, SDKs, host
+accounts, timezone file, loader/cache and mounts remain preserved; failed setup
+and reused extraction are retained with the complete tests archive on both hosts.
+
+Nose remains uninstalled. Next run its revision3 original construction, complete
+selftest, runtime/CLI and lifecycle against the now working normal Python.
+Canonical ownership/provenance, full per-unit TCB/BOM/SDK and all wider 1.6 release
+requirements remain open. Current locks pass; stale human authority review and
+lifecycle receipt gates remain unsatisfied. The original 252 XML/aggregate skip
+difference remains explicitly unreconciled. Audit child signal state before
+reusing older background-launched qualifications; retain their original outcomes.
