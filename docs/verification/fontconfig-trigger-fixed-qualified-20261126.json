@@ -214,7 +214,7 @@
     }
   },
   "remaining": [
-    "Three original cache compatibility cases require an actual older-version baseline; another build of the same version is insufficient.",
+    "Genuine2.17.1 baseline now executes the three original supplemental cases:2PASS1upstreamXFAIL; see linked report. Original49case historical results are unchanged; backward discovery remains open.",
     "Retain two original runtime network-disabled skips, two network marker deselections and five Linux bwrap skips with their original scope.",
     "Complete product font packages and actual desktop/application font rendering, together with all wider 1.6 release gates.",
     "Canonical ownership/provenance/lifecycle/SDK/TCB, matching source/kernel/AMD64, all 47 platform profiles and physical acceptance, installer/update/rollback/media/freeze/signing/publication remain open."
@@ -235,5 +235,6 @@
       "sysutils/xxd",
       "editors/vim"
     ]
-  }
+  },
+  "subsequent_supplemental_older_cache_report": "fontconfig-older-cache-baseline-20261126.json"
 }
