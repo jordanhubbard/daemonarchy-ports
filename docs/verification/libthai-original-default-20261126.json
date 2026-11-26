@@ -1,0 +1,131 @@
+{
+  "schema": "daemonarchy-native-libthai-candidate-observation@1",
+  "observed_utc": "2026-11-26T02:27:38.949682+00:00",
+  "planned_release": "1.6",
+  "status": "held-uninstalled-original-installed-header-API-gaps-unresolved",
+  "accepted_bounded_development_count_unchanged": 112,
+  "installed_held_packages": [],
+  "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+  "original_port": "devel/libthai",
+  "version": "0.1.30",
+  "package": {
+    "bytes": 187178,
+    "sha256": "652654b56c066669ba92a4c9b5c6448740a96679a703d9703a64dff0a68f72c8"
+  },
+  "original_source_options_dependencies_and_configure_choices_preserved": true,
+  "original_configure_choices": [
+    "--disable-static",
+    "--disable-doxygen-doc"
+  ],
+  "selected_original_port_Mk_Template_members": 247,
+  "full_original_Git_composition_members": 184381,
+  "original_construction": {
+    "targets_passed": 8,
+    "actor_uid": 65534
+  },
+  "original_default_suite": {
+    "runner": "Unchanged original make test with TEST_TARGET=check",
+    "passed": 9,
+    "failed": 0,
+    "skipped": 0,
+    "dictionary_dependent_cases_enabled": true,
+    "actual_original_TESTS_match_native_TRS_outcomes_and_logs": true,
+    "original_test_input_bytes_match_verified_distfile": true,
+    "original_tests_not_replayed_by_independent_audit": true,
+    "production_library_and_package_unchanged": true
+  },
+  "private_implemented_API_checks": {
+    "actual_commands": 7,
+    "sealed_payloads": 26,
+    "explicit_directories": 0,
+    "independent_Python_TIS620_conversion_points": 215,
+    "passthrough_input_pairs": 65536,
+    "collation_and_transform_pairs": 49,
+    "controlled_dictionary_expected_break_positions": [
+      4,
+      7
+    ],
+    "coverage": [
+      "Shared native C client with real qualified datrie dependency",
+      "Narrow/wide conversion and normalization, fixed reordered-mark vector, truncation and idempotence",
+      "Cell forward/backward traversal and clustering, TIS glyph output and ASCII TIS/Win/Mac rendering",
+      "Input passthrough and strict ASCII validation",
+      "Implemented narrow collation known-order vectors, transform correspondence and symmetry",
+      "Controlled dictionary built with actual datrie APIs and independently prescribed two-word vocabulary",
+      "Actual packaged dictionary, narrow/wide word-break correspondence, delimiters and independent reconstruction",
+      "Missing dictionary error then recovery with valid dictionary"
+    ],
+    "scope": "Implemented exported interfaces only. Original wide-collation linker failure and full installed-header audit remain unresolved; this is not full API acceptance. Original static-disabled configuration preserved."
+  },
+  "original_private_lifecycle": {
+    "actual_original_hook_pkg_chroot_transactions": 6,
+    "install_force_reinstall_delete_readd_and_actual_ldconfig_cache_checks": true,
+    "observed_qualified_dependency_libraries_copied_and_sealed": true,
+    "private_dependency_delivery_skipped_only": true,
+    "synthetic_locked_accounts_preserved": true,
+    "readonly_native_base_mounts_and_isolated_devfs": true,
+    "temporary_mounts_removed": true,
+    "normal_solver_or_installed_acceptance": false
+  },
+  "installed_header_and_ABI_audit": {
+    "actual_private_native_link_failure": "Undefined th_wcstrcoll and th_wcstrxfrm using installed thwcoll.h and actual candidate libthai.so.",
+    "all17_installed_headers_byte_exact_to_original_verified_distfile": true,
+    "all_original_versioned_export_definitions_present_in_ELF": true,
+    "declarations_without_ELF_exports": {
+      "th_wcstrcoll": [
+        "thwcoll.h"
+      ],
+      "th_wcstrxfrm": [
+        "thwcoll.h"
+      ],
+      "th_wcisaccept": [
+        "thwinp.h"
+      ],
+      "th_wcvalidate": [
+        "thwinp.h"
+      ],
+      "th_wcnext_cell": [
+        "thwrend.h"
+      ],
+      "th_wcmake_cells": [
+        "thwrend.h"
+      ],
+      "th_wcrender_cell_tis": [
+        "thwrend.h"
+      ],
+      "th_wcrender_cell_win": [
+        "thwrend.h"
+      ],
+      "th_wcrender_cell_mac": [
+        "thwrend.h"
+      ],
+      "th_wcrender_text_tis": [
+        "thwrend.h"
+      ],
+      "th_wcrender_text_win": [
+        "thwrend.h"
+      ],
+      "th_wcrender_text_mac": [
+        "thwrend.h"
+      ]
+    },
+    "all_missing_functions_also_absent_from_original_export_definitions": true,
+    "standalone_native_header_compile_failures": [
+      "thwrend.h"
+    ],
+    "standalone_compile_failure_cause": "thwrend.h uses incomplete struct thcell in array parameters; the installed implementation exposes struct thcell_t.",
+    "standalone_header_compile_passes": 16,
+    "resolution": "Unresolved original upstream declaration/implementation contract. Candidate remains normally uninstalled; do not remove declarations or synthesize passing ABI acceptance. Repair/authority reconciliation and actual regression qualification remain pending."
+  },
+  "preservation": "Whole SDK112 prefix/raw database, frozen17, native base, host accounts, actual loader cache, mount table and all247selected original source inputs preserved through positive and negative checks; all26private payload bodies/metadata exact.",
+  "custody": {
+    "nodes": 1550,
+    "archive_bytes": 26092621,
+    "archive_sha256": "539dbf119eddda15310c9dc50d3074c0bc8bae579d0f3333a5e499adf0beb638",
+    "inventory_sha256": "0babe76f1056afc6bf796d641a6b2310a6ac62730913397d7ae5d1f2c0a1ca20",
+    "complete_source_build_tests_private_failure_positive_lifecycle_header_audit_inputs_outputs_and_helpers": true,
+    "independently_verified_native_ARM_and_physical_Intel": true,
+    "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_verified": true
+  },
+  "remaining": "Full Daemonarchy1.6 release remains incomplete: matching source/SDK/kernel and AMD64; complete desktop/apps; canonical ownership/provenance/lifecycle/SDK/TCB; physical matrix; installer/update/rollback/media; freeze/signing/publication."
+}
