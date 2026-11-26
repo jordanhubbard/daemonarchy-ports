@@ -1,6 +1,6 @@
 PORTNAME=	pixman
 DISTVERSION=	0.46.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	https://cairographics.org/releases/
 
