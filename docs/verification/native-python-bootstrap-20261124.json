@@ -5298,7 +5298,7 @@
   },
   "actual_installed_development_package_count": 124,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-26T09:53:26.411803+00:00",
+  "last_updated_utc": "2026-11-26T10:18:23.142252+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -9033,6 +9033,131 @@
       "Original 49-case run retains its historical39PASS10SKIP and two network deselections. The separate three-case supplemental run is2PASS1XFAIL, not a new full-suite receipt.",
       "Original optional network/Linux-bwrap scope, full API/ABI, product fonts and desktop/application rendering remain open.",
       "Canonical Component/provenance/lifecycle/SDK/TCB, matched source/kernel/AMD64, all47platform profiles and physical acceptance, installer/update/rollback/media/freeze/signing/publication remain open."
+    ]
+  },
+  "Pixman_original_native_TEST_runtime_and_delivery_findings_20261126": {
+    "observed_utc": "2026-11-26T10:18:23.142252+00:00",
+    "status": "partial-original-TEST35PASS-default-built-runtime-and-delivery-findings-block-normal-admission",
+    "scope": "Original native ARM construction and original test execution, bounded positive pixel consumers and retained fill/delivery findings. No normal Pixman admission, complete API/ABI, desktop rendering, canonical Component/SDK/TCB or full release acceptance. The installed bounded development count stays124.",
+    "origin": "x11/pixman",
+    "version": "0.46.4",
+    "source_revision": "d76dd1dd03c3186f635fef2722252327d19b750c",
+    "default_package": {
+      "bytes": 205169,
+      "sha256": "4604379b61bd66a4288da20d05c66ba5189cb9ecc74a0910ca3efacb66db1f2d"
+    },
+    "original_source": {
+      "complete_native_source_Git_members": 184388,
+      "selected_recipe_framework_template_Git_bodies_modes_verified": 249,
+      "all207_distfile_source_bodies_verified_with_exact_original_native_port_patch_effects": true,
+      "unchanged_original_port_patches": [
+        "PowerPC compiler flag compatibility in meson.build",
+        "Native test timeout600s and serialization while OPENMP is enabled in test/meson.build"
+      ],
+      "upstream_assertions_golden_data_and_program_selection_unchanged": true
+    },
+    "original_TEST_variant": {
+      "all_eight_original_construction_targets_pass": true,
+      "programs_discovered_and_completed": 35,
+      "PASS": 35,
+      "FAIL": 0,
+      "SKIP": 0,
+      "original_native_deadline_seconds_each": 600,
+      "original_native_enabled_OPENMP_serial_program_schedule_preserved": true,
+      "OMP_worker_limit": 4,
+      "all_original_names_argv_environment_and_outcomes_verified": true,
+      "original_make_test_exit": 0
+    },
+    "original_default_variant": {
+      "all_eight_original_construction_targets_pass": true,
+      "actual_original_options": {
+        "openmp": "enabled",
+        "a64-neon": "enabled",
+        "tests": "disabled",
+        "libpng": "disabled",
+        "default_library": "shared"
+      },
+      "default_test_program_count": 0,
+      "original_zero_case_test_bridge_exit": 0,
+      "zero_case_bridge_is_upstream_suite_acceptance": false,
+      "payloads_including_original_framework_license_and_SBOM": 10,
+      "all_payload_types_owners_modes_flags_nsmtime_bodies_and_literal_links_exact": true
+    },
+    "bounded_positive_private_consumers": {
+      "languages": [
+        "C",
+        "C++"
+      ],
+      "positive_modes_each": [
+        "normal dispatch",
+        "arm-neon implementation disabled"
+      ],
+      "positive_runs": 4,
+      "checks_per_positive_run": 24826,
+      "independent_scalar_reference_OVER_pixels_per_run": 8192,
+      "independent_SRC_and_CLEAR_pixels_each_per_run": 8192,
+      "additional_checks": [
+        "Alpha and component-alpha masks",
+        "RGB565 conversion endpoints",
+        "Explicit image clip and canaries",
+        "Negative stride",
+        "Fixed-point transforms and nearest-neighbor repeat",
+        "Region union/subtraction and point membership",
+        "Image reference/destroy callback lifetime"
+      ],
+      "actual_candidate_library_and_real_pkgconf_binding_verified": true,
+      "only_private_candidate_PC_copy_prefix_relocated_no_global_dependency_rewrite": true,
+      "normal_and_no_NEON_C_and_CXX_results_equal": true,
+      "full_API_ABI_or_instruction_level_coverage_claimed": false
+    },
+    "remaining_findings": [
+      {
+        "finding": "Fill extends outside logical image without an explicit clip",
+        "observation": "Padded backing storage keeps all addresses valid. Original SRC fill returns true and changes two logical image pixels plus six pixels outside the logical image. Explicit image bounds clip changes only the two logical pixels.",
+        "classification": "Original behavior confirmed; contract review and source repair or justified contract resolution remain required. Adding the clip in a separate authored control does not resolve the original finding."
+      },
+      {
+        "finding": "Forced-general fill reports success without painting",
+        "observation": "With fast and arm-neon implementations disabled, explicit clipped SRC fill returns true but changes zero pixels. Original C and C++ controls retain their fill assertions and both fail.",
+        "retained_failed_controls": 2,
+        "classification": "Developer implementation-disable control finding remains explicit; positive default and no-NEON runs do not qualify this path."
+      },
+      {
+        "finding": "Fresh package cannot satisfy a client without RPATH or loader overrides",
+        "observation": "Original fresh add and pkg payload integrity pass. A newly launched client still cannot locate libpixman-1.so.0. ELF has no RPATH/RUNPATH and the runtime uses no loader override. Original package and recipe declare no ldconfig hook.",
+        "classification": "Real package delivery remains failed; compare a copied fixture after the original shared ldconfig action, then repair and freshly qualify the source."
+      }
+    ],
+    "retained_checker_failures": [
+      "Initial checker compared raw upstream source without accounting for two existing native port patches.",
+      "Discovery checker initially assumed an empty environment; original Meson-generated private library environment is retained.",
+      "Private payload count checker initially omitted four framework license/SBOM files; exact full ten-file set is now verified.",
+      "Lifecycle checker initially assumed hooks from another library package; original Pixman hook absence and actual fresh execution are now tested."
+    ],
+    "preservation": {
+      "whole_SDK124_and_raw_database": true,
+      "frozen17": true,
+      "native_base_accounts_loader_cache_and_system_font_cache": true,
+      "all_selected_original_source_inputs": true,
+      "all_original_failed_roots_packages_outputs_and_helpers_retained": true,
+      "temporary_native_base_and_devfs_mounts_fully_removed": true,
+      "normal_Pixman_installed": false,
+      "accepted_bounded_development_count": 124
+    },
+    "complete_two_host_custody": {
+      "nodes": 4411,
+      "archive_bytes": 39615838,
+      "archive_sha256": "94b16cc05e4c2b0b2d90c954507227eb0f27cd92e6cb5ccd28fdc73e1d07996c",
+      "inventory_sha256": "590dd6f3a7816309ee6789432523715c6db78f509ddc90113d5bda0855ea2d11",
+      "all_selected_original_source_objects_TEST_default_private_failure_probe_lifecycle_and_helper_nodes": true,
+      "all_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_on_ARM_and_Intel": true,
+      "additional_controller_archive_or_NAS_use": false
+    },
+    "next": [
+      "Resolve the actual fresh package delivery failure with a copied-fixture ldconfig causal control and a source repair, preserving original failure evidence.",
+      "Repair or resolve the image-fill bounds and forced-general fallback findings; rerun the original failing authored assertions without substituting clipped-only success.",
+      "Fresh complete-source verification, unchanged35-program native suite, default package, independent original consumers, full lifecycle/custody and normal dependency/loader acceptance are mandatory before any count125 claim.",
+      "Full desktop/apps/fonts, canonical Component/provenance/lifecycle/SDK/TCB, matched source/kernel/AMD64, all47platform profiles and physical acceptance, Pi4 beforePi5, installer/update/rollback/media/freeze/signing/publication remain open."
     ]
   }
 }
