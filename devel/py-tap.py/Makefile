@@ -27,4 +27,8 @@ YAML_DESC=	TAP version 13 YAML diagnostics
 YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}more-itertools>=0:devel/py-more-itertools@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyyaml>=5.1:devel/py-pyyaml@${PY_FLAVOR}
 
+# Keep the patch backup outside the module tree packaged by Hatch.
+post-patch:
+	${MV} ${WRKSRC}/tap/parser.py.orig ${WRKDIR}/tap-parser.py.orig
+
 .include <bsd.port.mk>
