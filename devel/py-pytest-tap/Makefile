@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=3.0,1:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tap.py>=3.2<4.0:devel/py-tap.py@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tap-py>=3.2<4.0:devel/py-tap.py@${PY_FLAVOR}
 
 USES=		python:3.11+
 USE_PYTHON=	autoplist concurrent pep517 pytest

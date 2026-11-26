@@ -1,4 +1,4 @@
-PORTNAME=	tap.py
+PORTNAME=	tap-py
 DISTVERSION=	3.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
