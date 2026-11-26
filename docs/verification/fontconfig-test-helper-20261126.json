@@ -1,8 +1,8 @@
 {
-  "observed_utc": "2026-11-26T05:39:18.731414+00:00",
+  "observed_utc": "2026-11-26T05:49:17.190255+00:00",
   "status": "helper-native-regression-pass-15-C-programs-pass-Python-TAP-dependencies-pending",
-  "current_code_commit": "2d77cf7f2acd46994a29e732cbee367ea6c09eba",
-  "current_native_source_composition": "27dd3d763c011d8a4a5c7b2e40d47947bfb918de",
+  "current_code_commit": "89b846055d7687b398f332c050d559d7c0acb39e",
+  "current_native_source_composition": "d8825ff08eb18991ff7a1809fb4b00ed49908d1a",
   "baseline_native_source": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
   "scope": "Direct native FreeBSD aarch64 source/configuration/test observations only; package/normal/canonical/AMD64/fullrelease qualification remains pending.",
   "problems": [
@@ -13,7 +13,8 @@
     "Use supported TEST_MESON_ON for the existing tests-external-fonts=disabled argument.",
     "Declare the TAP plugin as a TEST build dependency so Meson discovers the complete test runner before configuration.",
     "Add checksum-bound source ports for pytest-tap and its tap.py dependency. Preserve upstream implementation/tests and Python/runtime constraints; expose tap.py optional YAML dependencies separately and include its original full test prerequisites.",
-    "Add staged Python site-packages to PyYAML TEST_ENV so original test collection finds the built LibYAML extension; retain original LIBYAML default, all test cases and upstream assertions."
+    "Add staged Python site-packages to PyYAML TEST_ENV so original test collection finds the built LibYAML extension; retain original LIBYAML default, all test cases and upstream assertions.",
+    "Expose pytest-tap staged distribution/entry-point metadata to original pytester subprocesses through TEST_ENV=${MAKE_ENV} plus staged PYTHONPATH, preserving original tests and fixture behavior."
   ],
   "new_upstream_ports": {
     "devel/py-tap.py": {
@@ -36,7 +37,8 @@
       "runtime_requirements": [
         "pytest>=3.0",
         "tap-py<4.0,>=3.2"
-      ]
+      ],
+      "staged_test_entry_point_visibility": "Original source dev group depends on the package itself; pytester subprocesses need its pytest11 distribution entry point. Preserve original MAKE_ENV and add staged site-packages. Native qualification pending."
     }
   },
   "initial_helper_only_regression": {
@@ -140,7 +142,9 @@
     "current_27dd3d_complete_native_source_preparation": "pass; all184387bodies/modes/links, exactGit tree, unchangedoriginalsource andwholeSDK117/rawDB/frozen/base/accounts/cache/mount guards",
     "current_native_source_member_manifest_reconstructs_exact_Git_tree": true,
     "current_source_tree": "20d8296ce9634f34099890eb8fcd7d553a5e215b",
-    "current_native_preparation_receipt_sha256": "4f7f7264540468c6a882f1fa06e0d18b2cf17ccdf4c85f6ef0562cf88b224e6c"
+    "current_native_preparation_receipt_sha256": "4f7f7264540468c6a882f1fa06e0d18b2cf17ccdf4c85f6ef0562cf88b224e6c",
+    "scope": "The27dd source is fully verified and qualifies the recordedPyYAML package. New d8825f source additionally exposes the staged pytest-tap entry point to originalpytester child processes; complete184387member verification running. Older package and source receipts remain pinned to their actual revisions.",
+    "latest_source_tree": "84c0414522d56a1d3b414919b3c211f3a67983c2"
   },
   "remaining": [
     "Finish source/failure/private/lifecycle custody and actual normal acceptance of qualified Python prerequisites, then native metadata/construction/original suite/private/lifecycle/custody/normal qualification of both new TAP ports.",
@@ -283,8 +287,18 @@
       "FAIL": 0,
       "ERROR": 0,
       "independent_private_checks": 245,
-      "normal_lifecycle_custody_pending": true,
-      "retained_audit_parser_failure": "Parent class doctest and method doctest collided in initial header parser; corrected exact method ID composition, preserving original test case identities/order/completions and all failed audit evidence."
+      "normal_lifecycle_custody_pending": false,
+      "retained_audit_parser_failure": "Parent class doctest and method doctest collided in initial header parser; corrected exact method ID composition, preserving original test case identities/order/completions and all failed audit evidence.",
+      "original_package_lifecycle_transactions": 6,
+      "source_failure_private_lifecycle_two_host_custody": {
+        "nodes": 1062,
+        "source_revision": "3f9d8a0447226e2240056ac7d6058c3bd8dc1c0f",
+        "archive_bytes": 15071463,
+        "archive_sha256": "5b4fbf84f7d15cd32dd4766fce65da48a5a309cd46cbb460ff364f8da2063edd",
+        "inventory_sha256": "107f77dc143f3c849737c2ef4aa1757fd843f1dcafa1c3e2a425eefe54aa1d78",
+        "all_native_bodies_metadata_links_hardlinks_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
+      },
+      "normal_acceptance_pending": true
     },
     "PyYAML": {
       "original_construction_targets_pass": 8,
@@ -431,7 +445,17 @@
         "original_mounts_restored_finally": true,
         "whole_SDK117_frozen_base_accounts_cache_mounts_and248_source_guards_pass": true,
         "complete_source_failure_private_lifecycle_custody_and_normal_acceptance_pending": true
-      }
+      },
+      "original_package_lifecycle_transactions": 6,
+      "source_failure_private_lifecycle_two_host_custody": {
+        "nodes": 3283,
+        "source_revision": "27dd3d763c011d8a4a5c7b2e40d47947bfb918de",
+        "archive_bytes": 32819591,
+        "archive_sha256": "506f60c42e19fdf51b1d3a91964bef005d7cf37a752bb261534c6a88372dd963",
+        "inventory_sha256": "aa63e557fec1898e0a6c01ced7fad77e3dc9e83fd90662df84a40ee4896cbdc7",
+        "all_native_bodies_metadata_links_hardlinks_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
+      },
+      "normal_acceptance_pending": true
     },
     "tap_py_and_pytest_tap": "source ports only, native qualification pending"
   }
