@@ -1,8 +1,8 @@
 {
-  "observed_utc": "2026-11-26T05:16:03.017390+00:00",
+  "observed_utc": "2026-11-26T05:29:00.518007+00:00",
   "status": "helper-native-regression-pass-15-C-programs-pass-Python-TAP-dependencies-pending",
-  "current_code_commit": "ace6dcf126f5e402c74fa932616d58bac6a88f82",
-  "current_native_source_composition": "e11626aac235788195349cbb0fdc88dc40069421",
+  "current_code_commit": "2d77cf7f2acd46994a29e732cbee367ea6c09eba",
+  "current_native_source_composition": "27dd3d763c011d8a4a5c7b2e40d47947bfb918de",
   "baseline_native_source": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
   "scope": "Direct native FreeBSD aarch64 source/configuration/test observations only; package/normal/canonical/AMD64/fullrelease qualification remains pending.",
   "problems": [
@@ -133,14 +133,13 @@
   },
   "current_source_preparation": {
     "full_Git_members": 184387,
-    "changed_or_added_paths": 8,
+    "changed_or_added_paths_from_retained_fadd": 9,
     "removed_paths": 0,
-    "complete_old_and_new_member_lists_reconstruct_exact_Git_tree_ids": true,
-    "native_complete_source_preparation": "pass; all 184387 members verified by body, mode and literal link against exact Git tree; 184379 unchanged immutable input files shared, all 8 changed or added inputs separate; no shared build objects or cookies",
-    "original_implementation_tests_and_failed_evidence_retained": true,
-    "native_preparation_receipt_sha256": "2eec868280b9ec712d90d8789c43e93e58a641e68db15351ac182a57305e0b4a",
-    "whole_SDK116_frozen17_base_accounts_cache_mounts_and_original_source_postguards_pass": true,
-    "scope": "Earlier complete3f9d8a native source has184387verifiedmembers. Latest e11626 source additionally changes PyYAML TEST_ENV; it requires a fresh source composition and native corrected-source qualification. Earlier source evidence is not repinned."
+    "prior_e11626_complete_native_source_preparation": "pass-all184387bodies/modes/links-and-allSDK117/system/sourceguards; original source retained",
+    "prior_preparation_receipt_sha256": "35fc72cbfa15974d13a6e5f3b4dffdcbd4fa0d7546ca41f1ca12e93e77880c5c",
+    "current_27dd3d_complete_native_source_preparation": "running; preserve prior source, nine exact changed/added paths from fadd, all unchanged source inputs immutable to builder; no shared build objects/cookies",
+    "current_native_source_member_manifest_reconstructs_exact_Git_tree": true,
+    "current_source_tree": "20d8296ce9634f34099890eb8fcd7d553a5e215b"
   },
   "remaining": [
     "Native metadata and source build/test/package qualification of new TAP ports and their complete test prerequisites.",
@@ -296,8 +295,27 @@
       "all_original_suite_inputs_and_assertions_unchanged": true,
       "whole_SDK117_raw_database_frozen_base_accounts_cache_mounts_and248_source_inputs_preserved": true,
       "probe_native_result_sha256": "bf560d4a8c00111772c49cb6b4129e0ab5ab9a84297789d2f494437e77f41b7b",
-      "source_fix": "TEST_ENV+= PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}",
-      "native_corrected_source_and_per_case_discovery_audit_pending": true
+      "source_fix": "TEST_ENV= ${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}",
+      "native_corrected_source_and_per_case_discovery_audit_pending": true,
+      "retained_corrected_source_metadata_failure": {
+        "source_revision": "e11626aac235788195349cbb0fdc88dc40069421",
+        "build_targets_executed": 0,
+        "finding": "TEST_ENV+= suppresses framework TEST_ENV?=${MAKE_ENV}, losing original environment including PYYAML_FORCE_LIBYAML=1. Native metadata guard stops before any construction. TEST_ARGS contains framework DESTDIR, which the pytest bridge removes; observer accepts only that original argument while requiring no skipped-test expressions.",
+        "remedy": "Explicitly preserve deferred MAKE_ENV and add staged PYTHONPATH; require the effective TEST_ENV token sequence to equal original MAKE_ENV plus exactly the staged path.",
+        "failure_result_sha256": "cb0f89f8dc2b9e4aad330a02b4bd11eca01a547cdea43b32924f1caeb90c9b33",
+        "source_frozen_base_accounts_cache_mount_guards_pass": true,
+        "normal_accepted_count_unchanged": 117
+      },
+      "corrected_source_case_audit_plan": "Original make test with built-in JUnit file/line output only; independently collect original function and fixture identities. All2608 completions must match unique nodeid/file/line signatures, including three cases sharing one display ID. Original assertions/corpus/selection stay unchanged.",
+      "independent_client_preflight": {
+        "retained_original3f_stage_only": true,
+        "checks": 62,
+        "encoding_backend_matrices": 6,
+        "token_semantics_and_event_semantics_pure_compiled_identical": true,
+        "safe_constructor_malformed_input_negatives_and_fresh_recovery": true,
+        "actual_new_candidate_must_repeat_acceptance": true,
+        "client_sha256": "f86f17d764cf74b0d1c2af24bde2def764db2a47770d67ac9ba60181813f25f6"
+      }
     },
     "tap_py_and_pytest_tap": "source ports only, native qualification pending"
   }
