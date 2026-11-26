@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 115,
+  "normal_development_package_count": 116,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -2397,7 +2397,8 @@
     "Current libdatrie checkpoint: original8construction/10upstreamtests,33private+33defaultconsumers and6realoriginalhooktransactions pass. Complete source/private andnormal capsules independently verified nativeARM+Intel. Accepted bounded normal112; previousPNG111 andGLib110 remain historical qualification contexts. Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, complete desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, full physical matrix, installer/update/rollback/media, freeze/signing/publication remain open.",
     "Current gperf checkpoint: original8construction/9defaulttestgroups/24goldens/3SMTP,21private+21normalcommands and31992nativequeries percontext,6actualInfo-hook lifecycletransactions, independentA/B/A globalInfo prediction andexactnormalmenu pass. WholeSDK113/rawdb/frozen/base/Cppruntime/accounts/cache/mount/source guards andcompleteboth-host custody pass. Accepted113; libthai staysnormallyuninstalled; originaloptionalextracheck andfullreleasegates remainopen.",
     "Current libthai checkpoint: exactoriginalPango1.58.2source uses4availableoriginalexportedfunctions andnoneof12missingdeclarations. OriginalsupportedABI/defaultdictionary7commands normallypass withoriginalsolver/hooks,26payloads/113inheritedprefixes/114registry andfullSDK114guards. Readonlycorrection bindsactualcorrect6transactionlifecycleinside1550nodecapsule withoutreplay;71node normal/contract/bindingcapsule both-hostverified. FullheaderAPI/Pangobuild-runtime andbroaderreleasegates remainopen.",
-    "Brotli admitted at115 for original default native ARM standard-stream surface:28original CTest,88private/88normal commands,54Linux AArch64 cross-binary decodes and54physical Intel existing-decoder cross-ISA decodes. No new AMD64 build/deployment qualification. Extension APIs and broader release gates remain open."
+    "Brotli admitted at115 for original default native ARM standard-stream surface:28original CTest,88private/88normal commands,54Linux AArch64 cross-binary decodes and54physical Intel existing-decoder cross-ISA decodes. No new AMD64 build/deployment qualification. Extension APIs and broader release gates remain open.",
+    "FreeType admitted at116: original8construction targets and options,33private/33normal actualfont commands across10inputs/13faces, knownbitmap andWOFF2, unchanged112characterupstreamregression,6originalhooktransactions andfullboth-hostsource/failure/normalcustody. OriginalportnoTEST_TARGET; nofullMesonsuite/fullAPI/desktop/AMD64/canonicalrelease claim. Fontconfig/HarfBuzz/Pango andbroaderreleaseacceptance remainopen."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -5225,6 +5226,14 @@
       "status": "pass-bounded-native-ARM-original-default-Brotli-normal115",
       "accepted_normal_count": 115,
       "qualification": "Custom dictionary, comment, concatenated and large-window extension surfaces unqualified by this standard-stream matrix. Matching complete source/SDK/kernel and AMD64, canonical ownership/provenance/lifecycle/SDK/TCB, desktop/apps, physical platform matrix, installer/update/rollback/media/freeze/signing/publication remain open."
+    },
+    {
+      "name": "Original default FreeType",
+      "version": "2.14.3",
+      "installed": true,
+      "status": "pass-bounded-native-ARM-original-default-FreeType-normal116",
+      "accepted_normal_count": 116,
+      "qualification": "Variable/color/SVG/SDF/stroker/cache and full API surfaces are unqualified by this matrix. Fontconfig/HarfBuzz/Pango and complete desktop applications still need their own build/runtime results. Matching complete source/SDK/kernel and AMD64, canonical ownership/provenance/lifecycle/SDK/TCB, physical matrix, installer/update/rollback/media/freeze/signing/publication remain open."
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -5269,9 +5278,9 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 115,
+  "actual_installed_development_package_count": 116,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-26T03:28:12.603984+00:00",
+  "last_updated_utc": "2026-11-26T03:48:07.078543+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -6829,5 +6838,147 @@
       }
     },
     "remaining": "Custom dictionary, comment, concatenated and large-window extension surfaces unqualified by this standard-stream matrix. Matching complete source/SDK/kernel and AMD64, canonical ownership/provenance/lifecycle/SDK/TCB, desktop/apps, physical platform matrix, installer/update/rollback/media/freeze/signing/publication remain open."
+  },
+  "selected_original_default_FreeType_qualified_20261126": {
+    "observed_utc": "2026-11-26T03:48:07.078543+00:00",
+    "status": "pass-bounded-native-ARM-original-default-FreeType-normal116",
+    "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+    "version": "2.14.3",
+    "package": {
+      "bytes": 1228040,
+      "sha256": "6bc29016cb4c07265fde334790c63361c4c30846193b31e0ddb742575d411604"
+    },
+    "accepted_bounded_development_count": 116,
+    "installed_held_packages": [],
+    "original_construction": {
+      "eight_original_port_targets_pass": true,
+      "original_default_options": [
+        "BROTLI",
+        "DOCS",
+        "LONG_PCF_NAMES",
+        "PNG"
+      ],
+      "original_HarfBuzz_disabled_bootstrap_preserved": true,
+      "actual_required_CMake_values": {
+        "BUILD_SHARED_LIBS": "ON",
+        "FT_REQUIRE_BZIP2": "ON",
+        "FT_REQUIRE_ZLIB": "ON",
+        "FT_DISABLE_HARFBUZZ": "ON",
+        "FT_REQUIRE_BROTLI": "true",
+        "FT_REQUIRE_PNG": "true"
+      },
+      "original_port_TEST_TARGET": "",
+      "complete_original_Meson_suite_claim": false
+    },
+    "original_regression": {
+      "program": "issue-1063",
+      "original_source_body_sha256": "85966de9d15061a51932a9218a07a1d47ee142e3dcf94503834224abd1655c27",
+      "original_source_body_and_Meson_registration_verified_against_original_distfile": true,
+      "font_original_download_URL_member_and_64bit_SHA256_prefix_verified_full_SHA256_retained": true,
+      "original_loop_characters": 112,
+      "stdout_and_stderr_empty": true,
+      "source_body_unchanged": true,
+      "compiler_forced_include": "stdlib.h supplies getenv declaration; no source or assertion rewrite",
+      "direct_program_execution_not_full_Meson_suite_claim": true
+    },
+    "actual_native_font_matrix": {
+      "private_commands": 33,
+      "normal_commands": 33,
+      "font_inputs": 10,
+      "faces": 13,
+      "render_operations_per_file_or_memory_matrix": 372,
+      "file_and_memory_metadata_metrics_and_bitmaps_byte_identical": true,
+      "formats": [
+        "TrueType",
+        "CFF OpenType",
+        "four-face TrueType collection",
+        "lossless WOFF1",
+        "Unicode BDF",
+        "PCF",
+        "gzip PCF",
+        "bzip2 PCF",
+        "pinned upstream WOFF2"
+      ],
+      "WOFF2_fixture": {
+        "repository": "fonttools/fonttools",
+        "tree": "b1a98153832a235b3828dbf65e0efc18578503ca",
+        "path": "Tests/ttx/data/TestWOFF2.woff2",
+        "git_blob": "a345573f7f4431265b3079d84394a8a0416239d2",
+        "bytes": 808,
+        "actual_native_decode_render_uses_accepted_Brotli_provider": true
+      },
+      "Unicode_charmap_enumeration_outline_checks_sizes_grayscale_monochrome_kerning_and_advances": true,
+      "known8x8_A_bitmap_byte_exact_in_BDF_PCF_and_compressed_PCF": true,
+      "WOFF1_metrics_and_bitmaps_equal_original_TTF": true,
+      "gzip_bzip2_PCF_metrics_and_bitmaps_equal_original_PCF": true,
+      "truncated_malformed_unsupported_compressed_SFNT_rejections_and_fresh_valid_recovery": true,
+      "all10_normal_font_results_equal_private_results": true,
+      "controller_font_fixtures_are_runtime_inputs_not_product_font_package_qualification": true
+    },
+    "observer_failures_and_corrections": [
+      {
+        "failure": "Final construction observer required literal ON; original CMake Brotli/PNG features report true.",
+        "correction": "Read-only completion accepts actual enabled CMake boolean spellings and rechecks package/source/whole-SDK/system guards. All eight original target results and failed observer retained; no rebuild."
+      },
+      {
+        "failure": "Initial private pkg-config path omitted FreeBSD base /usr/libdata/pkgconfig.",
+        "correction": "Restore actual base metadata lookup. Reuse exact sealed extraction; no package/build/hook replay."
+      },
+      {
+        "failure": "Second private observer incorrectly expected automatic gzip/bzip2 opening of generic TrueType files.",
+        "correction": "Original PCF driver source confirms compression belongs to PCF. Add explicit Unicode BDF/PCF and lossless compressed-PCF inputs, retain generic compressed-SFNT rejection controls and all prior failures. Product source/options/artifact unchanged."
+      }
+    ],
+    "lifecycle": {
+      "original_ldconfig_hook_transactions": 6,
+      "fresh_add_force_reinstall_two_delete_readd_cycles": true,
+      "exact_payloads": 184,
+      "actual_shared_provider_cache_appearance_removal_readdition": true,
+      "locked_fixture_accounts_readonly_native_base_restricted_devfs_all_mounts_removed_host_preserved": true,
+      "accepted_SDK_dependencies_only_copied_to_private_fixture_no_private_solver_acceptance_claim": true
+    },
+    "normal": {
+      "original_offline_solver_dependencies_shlibs_and_ldconfig_hooks_enabled": true,
+      "no_force_dependency_or_hook_bypass": true,
+      "exact_payloads": 184,
+      "inherited_package_prefixes_preserved_except_shared_parent_directory_mtimes": 115,
+      "registry_exact_old115_plus_FreeType": 116,
+      "new_shared_loader_providers": 1,
+      "all_prior_candidates_order_and_search_directories_preserved": true,
+      "actual_pkg_integrity_and_dependency_checks_pass": true,
+      "no_private_LD_or_pkgconfig_path_or_prefix_override": true,
+      "producer_feature_completion_private_lifecycle_and_normal_package_identity_asserted": true,
+      "fresh_whole_SDK116_raw_database_frozen17_base_accounts_actual_cache_mounts_and248_FreeType_source_guards": true
+    },
+    "custody": {
+      "source_private_failures": {
+        "nodes": 2956,
+        "archive_bytes": 60187186,
+        "archive_sha256": "52f4f22ca911b2add73c24c873882e8f0ce4b5c4ff7ea790ea3f62917d7c7d52",
+        "inventory_sha256": "56da69877846ab74531dfb709b03b5613aab78c0735f546b99e62fde3677c909",
+        "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_independently_verified_native_ARM_and_physical_Intel": true
+      },
+      "normal": {
+        "nodes": 102,
+        "archive_bytes": 18007514,
+        "archive_sha256": "72a47bf08b57353791ffc1a71646879246ddc09d61505819d4db6c29ee0606bb",
+        "inventory_sha256": "7cd554585a8f0b709171225633221282c71ef1bcdf8de4050d731ffb5ac9b559",
+        "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_independently_verified_native_ARM_and_physical_Intel": true
+      }
+    },
+    "remaining": "Variable/color/SVG/SDF/stroker/cache and full API surfaces are unqualified by this matrix. Fontconfig/HarfBuzz/Pango and complete desktop applications still need their own build/runtime results. Matching complete source/SDK/kernel and AMD64, canonical ownership/provenance/lifecycle/SDK/TCB, physical matrix, installer/update/rollback/media/freeze/signing/publication remain open."
+  },
+  "original_regression_programs": {
+    "FreeTypeIssue1063": {
+      "program": "issue-1063",
+      "original_source_body_sha256": "85966de9d15061a51932a9218a07a1d47ee142e3dcf94503834224abd1655c27",
+      "original_source_body_and_Meson_registration_verified_against_original_distfile": true,
+      "font_original_download_URL_member_and_64bit_SHA256_prefix_verified_full_SHA256_retained": true,
+      "original_loop_characters": 112,
+      "stdout_and_stderr_empty": true,
+      "source_body_unchanged": true,
+      "compiler_forced_include": "stdlib.h supplies getenv declaration; no source or assertion rewrite",
+      "direct_program_execution_not_full_Meson_suite_claim": true
+    }
   }
 }
