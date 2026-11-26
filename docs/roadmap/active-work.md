@@ -54,3 +54,15 @@ This selected-port workflow uses ordinary binary dependency bootstrap and a
 source-built libdvdcss dependency on FreeBSD 15.1 amd64. It does not establish
 the full matching-CURRENT source-built closure, graphical session, physical
 hardware, canonical per-unit SDK or retained lifecycle/release acceptance.
+
+### [ ] PORT-PY312-GRAMMAR-001 — Deliver readable Python 3.12 grammar caches
+
+- **Priority:** P1
+- **Owner:** lang/python312 native qualification
+- **Direction:** Preserve original Python implementation and selected defaults; deliver both generated standard-library grammar pickles with shared-data permissions for unprivileged clients.
+- **Conclusion:** Original registered artifact ships both pickles root-owned mode 0600 and fails actual unprivileged lib2to3 import. Native isolated source-command control passed eight conversion cases and 16 checks under both unprivileged umasks; only the two modes changed. Fresh original construction stopped at the unchanged vulnerability gate before extraction. Qualification now composes the retained PR84 mail-validation repair with revision 3; fresh package, original suite, lifecycle and normal custody remain pending. See [the bounded report](../verification/python312-grammar-native-control-20261126.json). No live chmod or canonical admission is claimed.
+- **Depends on:** PORT-UNIT-001; mail-validation repair PR84 (package revision 2).
+- **Implementation:**
+  - [x] Normalize the two manifest-listed generated grammar files during original package staging and bump the package revision. Preserve all options, dependencies, source patches and upstream tests.
+- **Evidence:**
+  - [ ] Retain original failures and artifact identity; verify native unprivileged import/conversion, original targets/tests, sealed payloads and lifecycle/normal custody separately.

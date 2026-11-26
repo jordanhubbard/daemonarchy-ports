@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "work_id": "PORT-PY312-GRAMMAR-001",
+  "product_release": "1.6",
+  "status": "native-isolated-causal-control-pass-fresh-original-build-blocked-before-extraction",
+  "recipe_change": {
+    "package": "python312-3.12.16_3",
+    "mode": "0644",
+    "only_staged_paths": [
+      "lib/python3.12/lib2to3/Grammar3.12.16.final.0.pickle",
+      "lib/python3.12/lib2to3/PatternGrammar3.12.16.final.0.pickle"
+    ],
+    "precondition": "Compose PR84 security backport and its scoped advisory ranges; original selected options/dependencies/patches/tests unchanged."
+  },
+  "original_registered_package": {
+    "version": "3.12.16",
+    "bytes": 40533820,
+    "sha256": "3436996127141576dc3f282cb15fe0696f5f0930ce1f5c611f89f12008687be7",
+    "grammar_modes": "0600 root:wheel",
+    "actual_unprivileged_import": "PermissionError",
+    "source_build_provenance": "unproven"
+  },
+  "isolated_native_control": {
+    "source_revision": "0abf4f871460685fdd82c7966b57cba6389b292f",
+    "original_lib2to3_payloads": 296,
+    "before_exit": 1,
+    "after_exits": [
+      0,
+      0
+    ],
+    "uid": 65534,
+    "umasks": [
+      "022",
+      "077"
+    ],
+    "conversion_cases": 8,
+    "semantic_checks_per_run": 16,
+    "source_emitted_staging_command_only": true,
+    "only_two_modes_changed": true,
+    "all_bytes_owners_flags_nsmtime_and_other_nodes_unchanged": true,
+    "live_SDK128_frozen17_accounts_base_loader_fontcache_mounts_preserved": true
+  },
+  "fresh_original_construction_attempt": {
+    "source_revision": "0abf4f871460685fdd82c7966b57cba6389b292f",
+    "version": "3.12.16_1",
+    "original_checksum_exit": 1,
+    "reason": "Original vulnerability gate reports CVE-2025-15366 and CVE-2025-15367; unpatched mail validation. No bypass used.",
+    "phases_after_checksum_executed": false,
+    "original_upstream_cases_executed": 0
+  },
+  "combined_qualification_source": {
+    "revision": "904ae48e8a59dfed1ed11b2910378b2cd288ac53",
+    "tree": "897d79414842a289a90933d71e3f8816b0a55f92",
+    "retained_security_source_commit": "9836f7748c87d4f4c46ae59aa0633425496ba17b",
+    "Git_members": 184394,
+    "changed_since_grammar_control": 6,
+    "state": "fresh native complete-source verification pending; no build result claimed"
+  },
+  "custody": {
+    "nodes": 621,
+    "archive": {
+      "bytes": 30382305,
+      "sha256": "6ee8ee22636f78a08e64be98b030d213e1e48f4252fa0b8cec6c9b2e4fdf1d90"
+    },
+    "inventory_sha256": "b307a4759a529d34e3ee8d465162d5b63d2b005ca471e6cf11c783cbef98fe26",
+    "all_nodes_bodies_types_modes_numeric_owners_flags_nsmtime_links_and_gzip_CRC_verified_on": [
+      "native ARM worker",
+      "Intel tester"
+    ],
+    "additional_Linux_root_archive": false
+  },
+  "acceptance_boundaries": {
+    "repaired_source_built_package": false,
+    "original_full_suite": false,
+    "independent_fresh_package_runtime": false,
+    "retained_lifecycle": false,
+    "normal_upgrade_or_grammar_repair": false,
+    "normal_installed_count": 128,
+    "normal_python_feature_hold": true,
+    "Nose_installed": false,
+    "canonical_Component_SDK_or_release": false
+  }
+}
