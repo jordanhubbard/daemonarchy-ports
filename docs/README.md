@@ -14,3 +14,5 @@ integration branch is `main`, matching the product's release checkout catalog
 and HACKING.md. Track FreeBSD upstream `main` separately from the owned branch.
 GitHub issues are disabled in this fork;
 the product repository's DEV-001 and COMP-001 queues retain the parent work.
+
+- [Pixman image-fill and loader-hook repair, native qualification](verification/pixman-fill-qualified-20261126.json)
