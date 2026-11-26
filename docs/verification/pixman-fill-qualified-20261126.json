@@ -1,6 +1,6 @@
 {
   "observed_utc": "2026-11-26T10:50:42.714119+00:00",
-  "status": "pass-bounded-native-ARM-repaired-Pixman-normal125",
+  "status": "historical-bounded-revision1-pass-additional-wide-Box32-fallback-failure-confirmed",
   "scope": "Original native construction/tests, independent exact pixel consumers, package lifecycle and actual normal development acceptance. Full API/ABI, canonical Component/provenance/lifecycle/SDK/TCB, matched source/kernel/AMD64, desktop/apps/hardware and full release remain open.",
   "origin": "x11/pixman",
   "version": "0.46.4_1",
@@ -179,5 +179,27 @@
     "Canonical Component ownership/provenance/lifecycle/SDK/TCB and matching complete source/kernel/AMD64 qualification remain open.",
     "All47platform profiles and physical acceptance, Pi4 beforePi5, installer/update/rollback/media/freeze/signing/publication remain required.",
     "Product framework authority and receipt gates remain separate; no human documentation attestation or lifecycle receipt is synthesized."
-  ]
+  ],
+  "follow_up": {
+    "observed_utc": "2026-11-26T11:02:40.773976+00:00",
+    "candidate_version": "0.46.4_3",
+    "candidate_review_code_commit": "91d12cb5175754358dd3a3c244ecefeb22e3eeb6",
+    "candidate_native_source_revision": "0b9e18618e18ca63ac16c82edcb90bbc670c0b50",
+    "finding": "Revision1 Box32 spanning INT32_MIN to INT32_MAX reports success but paints zero of16 image pixels when fast and ARM-NEON fills are disabled; same probe paints16 in normal dispatch. Padded backing allocation remains valid. SDK125 and host state preserved.",
+    "finding_result_sha256": "805eff3e347f5eb88f377840eeea283d5ac550abddfdf2cc1fc23db61b1118a4",
+    "repair": "Retain the bounded region through raw-fill fallback; clip each original general-composite box before signed subtraction and keep overlapping non-SRC boxes separate. Regression adds signed-range boxes, ADD and exact overlapping ADD pixel expectations.",
+    "qualification": "Revision2 source3ce65083 passed37tests, original default metadata, six24824check consumers, small and SRC signed-range probes, and six real ldconfig/no-RPATH lifecycle transactions. It remains uninstalled because the separate general ADD path reports success and paints zero pixels in all3modes. Revision3 source verification is running; no revision3 build/runtime/lifecycle/custody/normal acceptance yet. Installed normal125 remains revision1 source6032dbfb. All facts below retain that exact revision1 identity.",
+    "additional_non_SRC_finding": {
+      "operator": "ADD",
+      "on_revision": "0.46.4_2",
+      "all_three_modes": {
+        "fill_returns_true": true,
+        "painted_inside": 0,
+        "painted_outside": 0
+      },
+      "expected_painted_inside": 16,
+      "padded_allocation_valid": true,
+      "normal_revision2_installation_performed": false
+    }
+  }
 }
