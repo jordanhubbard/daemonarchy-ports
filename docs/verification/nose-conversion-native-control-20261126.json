@@ -2,7 +2,7 @@
   "schema_version": 1,
   "work_id": "PORT-NOSE-PY312-001",
   "planned_product_release": "1.6",
-  "status": "candidate8-native-boundary17-pass-all535nodes-two-host-full-source23-verification-running-original8-pending",
+  "status": "candidate8-original387-pass15-recorded-skips-sealed-consumers-pass-private-lifecycle-normal-pending",
   "origin": "devel/py-nose",
   "candidate_package": "py312-nose-1.3.7_8",
   "retained_original_failure": {
@@ -92,18 +92,21 @@
     "fresh_original_Nose_build": true,
     "complete_original_suite": false,
     "repaired_Python_package_qualification": true,
-    "sealed_Nose_runtime_CLI": false,
+    "sealed_Nose_runtime_CLI": true,
     "retained_package_lifecycle": false,
     "normal_Nose_installation": false,
-    "canonical_Component_SDK_or_release_acceptance": false
+    "canonical_Component_SDK_or_release_acceptance": false,
+    "selected_original_suite_passed_with_actual_skips": true,
+    "complete_original_suite_scope": "Selected original runner passes all387 emitted entries,15actual skips retained; optional dependency/plugin configurations and historical6skipgap remain unqualified.",
+    "generated_egg_metadata_semantics": true
   },
   "dependencies": [
     "Python grammar repair PR122 and mail validation PR84",
     "Complete original test runner and dependency closure"
   ],
-  "next": "Verify all184400 source members for a837688, then fresh original8 checksum/extract/sevenpatches/configure/build/stage/plist/package/build_tests/selftest with upstream XML reporting only. Audit every actual original case and skip. Historical original6 unprinted11 skip reasons remain unreconciled. Sealed product/CLI, generated metadata, lifecycle, normal delivery and canonical1.6 release gates remain open.",
+  "next": "Perform disposable private package installation/checksum/runtime/removal and applicable update/rollback acceptance with exact dependencies and all SDK/base guards before normal delivery. Original selected runner passes387 entries with15actualskips; optional dependency/plugin profiles and historical original6unprinted11 skip reasons remain unqualified. Canonical per-unit provenance/lifecycle/TCB/SDK and full1.6 release admission remain open.",
   "new_patch_zero_fuzz_applies_to_exact_original_setup3lib_and_equals_native_tested_prototype": true,
-  "observed_utc": "2026-11-26T20:32:54.568519+00:00",
+  "observed_utc": "2026-11-26T20:46:03.282219+00:00",
   "normal_Python_prerequisite_now_qualified": {
     "package": "python312-3.12.16_5",
     "package_sha256": "2502aa401ca32d299524750984a538143e6ce48dfc6b55fd4adc283ed72db7a9",
@@ -1058,5 +1061,365 @@
       "extra_Linux_root_archive_bytes": 0
     },
     "complete_original8_cases_package_runtime_CLI_lifecycle_normal_admission": false
+  },
+  "actual_original_Nose8_construction_and_selected_selftest": {
+    "source_revision": "a837688a3b7a3aa31f2b71203d9fff70bfa7c58e",
+    "original_target_exit": 0,
+    "original_runner_entries": 387,
+    "original_runner_seconds": 23.564,
+    "actual_upstream_XML_counts": {
+      "passed": 372,
+      "skipped": 15
+    },
+    "runner_XML_root_and_all_occurrences_reconcile": true,
+    "original_synthetic_Failure_error_occurrences": 0,
+    "all_skips_have_actual_emitted_identity_type_and_message_fields": true,
+    "skip_cases": [
+      {
+        "occurrence": 47,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_coverage_plugin.TestCoverageMinPercentagePlugin",
+          "name": "runTest"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "coverage not available; skipping"
+        }
+      },
+      {
+        "occurrence": 48,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_coverage_plugin.TestCoverageMinPercentageSinglePackagePlugin",
+          "name": "runTest"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "coverage not available; skipping"
+        }
+      },
+      {
+        "occurrence": 49,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_coverage_plugin.TestCoverageMinPercentageSinglePackageWithBranchesPlugin",
+          "name": "runTest"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "coverage not available; skipping"
+        }
+      },
+      {
+        "occurrence": 50,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_coverage_plugin.TestCoverageMinPercentageTOTALPlugin",
+          "name": "runTest"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "coverage not available; skipping"
+        }
+      },
+      {
+        "occurrence": 51,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_coverage_plugin.TestCoverageMinPercentageWithBranchesTOTALPlugin",
+          "name": "runTest"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "coverage not available; skipping"
+        }
+      },
+      {
+        "occurrence": 52,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_coverage_plugin.TestCoveragePlugin",
+          "name": "runTest"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "coverage not available; skipping"
+        }
+      },
+      {
+        "occurrence": 139,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_program.TestTestProgram",
+          "name": "test_run_support_twist"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "twisted not available; skipping"
+        }
+      },
+      {
+        "occurrence": 143,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_string_exception.TestStringException",
+          "name": "test_string_exception_works"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "String exceptions are not supported in this version of Python"
+        }
+      },
+      {
+        "occurrence": 231,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_issue_101.TestErrorClassWithStringException",
+          "name": "test_string_exception_not_masked"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "Python 3.x does not support string exceptions"
+        }
+      },
+      {
+        "occurrence": 310,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_plugins.TestProfPlugin",
+          "name": "test_begin"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "profile plugin not available; skipping"
+        }
+      },
+      {
+        "occurrence": 311,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_plugins.TestProfPlugin",
+          "name": "test_finalize"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "profile plugin not available; skipping"
+        }
+      },
+      {
+        "occurrence": 312,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_plugins.TestProfPlugin",
+          "name": "test_options"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "profile plugin not available; skipping"
+        }
+      },
+      {
+        "occurrence": 313,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_plugins.TestProfPlugin",
+          "name": "test_prepare_test"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "profile plugin not available; skipping"
+        }
+      },
+      {
+        "occurrence": 364,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "nose.failure.Failure",
+          "name": "runTest"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "twisted not available; skipping"
+        }
+      },
+      {
+        "occurrence": 365,
+        "identity_occurrence": 2,
+        "reported_identity": {
+          "classname": "nose.failure.Failure",
+          "name": "runTest"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "twisted not available; skipping"
+        }
+      }
+    ],
+    "actual_skip_reason_counts": {
+      "coverage not available; skipping": 6,
+      "twisted not available; skipping": 3,
+      "String exceptions are not supported in this version of Python": 1,
+      "Python 3.x does not support string exceptions": 1,
+      "profile plugin not available; skipping": 4
+    },
+    "duplicate_identities_preserved": [
+      {
+        "classname": "nose.failure.Failure",
+        "name": "runTest",
+        "occurrences": 2
+      },
+      {
+        "classname": "test_suite.TestContextSuiteFactory",
+        "name": "test_ancestry",
+        "occurrences": 2
+      }
+    ],
+    "revision7_case_identity_occurrence_delta": {
+      "missing": [],
+      "added": []
+    },
+    "case_inventory_sha256": "cfaaf897cbba9fd24559518131169b949153e613a434972fab00713e63167de0",
+    "raw_XML_sha256": "c3a1985e7a4c69059c885ae701c89b8fcbdf845582c320bbde63085cb6cca4ea",
+    "raw_XML_bytes": 176140,
+    "raw_stderr_sha256": "0471c89aa04246c54ed0804f870b80555f9b36f14b01fc90911143121ae289a7",
+    "historical_source6_unprinted11_skip_reasons_remain_unreconciled": true,
+    "no_skip_reason_inferred_from_source_or_another_run": true,
+    "raw_original_test_input_assertion_bodies_and_selection_dependencies_deadlines_retained": true,
+    "normal_Nose_installed": false,
+    "selected_original_runner_passed_with_actual_skips": true,
+    "complete_dependency_optional_plugin_or_release_acceptance": false,
+    "complete_native_source_members_verified": 184400,
+    "all8_original_construction_targets_exit": 0,
+    "selected_original_port_patch_count": 7,
+    "package": {
+      "bytes": 289284,
+      "sha256": "8e32cb6dcaff3656db86c1224405fc495ed92ee5441f618795708b7af3b5b2ec"
+    },
+    "all_normal_SDK128_old18_frozen_base_accounts_loader_fontcache_mounts_source_guards_pass": true,
+    "complete_two_host_custody": {
+      "nodes": 2145,
+      "parts": 1,
+      "inventory_sha256": "884b28a39de5a4756886bf6c8e4113e8490ee98e0564713e71b9888ad3223647",
+      "all_nodes_actual_ARM_and_Intel_verified": true,
+      "extra_Linux_root_archive_bytes": 0
+    },
+    "original_run_with_only_upstream_XML_reporting_flags": true
+  },
+  "candidate8_independent_sealed_package_consumers": {
+    "manifest_payload_count": 154,
+    "all_payload_bodies_equal_identity_bound_archive": true,
+    "all_manifest_modes_root_owners_mtimes_symlink_targets_verified": true,
+    "ELF_payloads": [],
+    "scripts_present": false,
+    "package_manifest_checksums_validation_pending_private_lifecycle": true,
+    "authored_consumers": [
+      {
+        "label": "intentional_outcome_run",
+        "expected_exit": 1,
+        "actual_XML_root": {
+          "name": "nosetests",
+          "tests": "5",
+          "errors": "1",
+          "failures": "1",
+          "skip": "1"
+        },
+        "actual_case_attributes": [
+          {
+            "classname": "test_sealed_consumer.TestSealedConsumer",
+            "name": "test_error",
+            "time": "0.000"
+          },
+          {
+            "classname": "test_sealed_consumer.TestSealedConsumer",
+            "name": "test_failure",
+            "time": "0.000"
+          },
+          {
+            "classname": "test_sealed_consumer.TestSealedConsumer",
+            "name": "test_pass",
+            "time": "0.000"
+          },
+          {
+            "classname": "test_sealed_consumer.TestSealedConsumer",
+            "name": "test_skip",
+            "time": "0.000"
+          },
+          {
+            "classname": "consumer_doctest",
+            "name": "consumer_doctest",
+            "time": "0.003"
+          }
+        ],
+        "report_sha256": "64b455dc8733d252532ef7305f654051b088380f5816621af104ca759fa04b73"
+      },
+      {
+        "label": "all_pass_run",
+        "expected_exit": 0,
+        "actual_XML_root": {
+          "name": "nosetests",
+          "tests": "1",
+          "errors": "0",
+          "failures": "0",
+          "skip": "0"
+        },
+        "actual_case_attributes": [
+          {
+            "classname": "test_sealed_pass",
+            "name": "test_consumer_pass",
+            "time": "0.000"
+          }
+        ],
+        "report_sha256": "54c34de80acb3e2796723595f5ce1d17804167fffce0f2dc4b5b629d7edcae74"
+      }
+    ],
+    "generated_egg_metadata_independent_acceptance_complete": true,
+    "unchanged_sealed_payload_verification_reused_without_reextraction": true,
+    "complete_prior_failed_authored_attempt_preserved": true,
+    "complete_original8_job_worktree_and_product_preserved": true,
+    "all_sealed_payload_nodes_preserved": true,
+    "actual_package_origin_checks": {
+      "uid": 65534,
+      "version": "1.3.7",
+      "packaged_console_entry_point": true,
+      "exact_packaged_usage_data_bytes": 4425,
+      "exact_packaged_usage_data_sha256": "5985ebadc1e32235cf6f8417ce1bc76c3eab0c8b0a8dcd4fe2e033007b78729d",
+      "global_imp_shim_absent": true,
+      "six_generated_metadata_files_independently_checked": true,
+      "source_manifest_entries": 432,
+      "all_packaged_Python_sources_declared": 47
+    },
+    "retained_R1_authored_metadata_failure": "Expected empty not-zip-safe, while exact original input and packaged marker are both a single newline. Require that exact original newline in corrected R2 client. Product and original tests unchanged.",
+    "R2_command_exits": [
+      {
+        "label": "sealed-origin-and-distribution-metadata",
+        "exit": 0,
+        "uid": 65534
+      },
+      {
+        "label": "sealed-console-script-version",
+        "exit": 0,
+        "uid": 65534
+      },
+      {
+        "label": "sealed-intentional_outcome_run",
+        "exit": 1,
+        "uid": 65534
+      },
+      {
+        "label": "sealed-all_pass_run",
+        "exit": 0,
+        "uid": 65534
+      }
+    ],
+    "all_normal_SDK128_old18_frozen_base_accounts_loader_fontcache_mounts_guards_pass": true,
+    "complete_two_host_custody": {
+      "nodes": 218,
+      "parts": 1,
+      "inventory_sha256": "643a525e07899a4e40f7a0b3a4c976e76bbecb93d145740a080a17fbb2401e0d",
+      "all_nodes_actual_ARM_and_Intel_verified": true,
+      "extra_Linux_root_archive_bytes": 0
+    },
+    "normal_Nose_installed": false
   }
 }

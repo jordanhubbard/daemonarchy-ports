@@ -195,3 +195,28 @@ All 535 control records verify on ARM and Intel. Full source verification now
 checks 184,400 members and seven port patches before the fresh original run.
 Original revision-8 acceptance, sealed product/CLI, metadata, lifecycle, normal
 delivery and canonical release admission remain open. Nose stays uninstalled.
+
+
+Revision 8 now verifies all 184,400 source members, passes all eight original
+construction phases and completes the original runner in 23.564 seconds:
+387 entries, 372 passed, 15 actual skips, no errors or failures. XML and runner
+counts reconcile; case identities and occurrences match revision 7 exactly.
+Both duplicate identity groups and every emitted skip identity/type/message
+remain retained. Complete source/object/stage/package/log/XML/audit custody
+covers 2,145 records verified on ARM and Intel. Historical revision-6 unprinted
+skip reasons and optional plugin/dependency configurations remain unqualified.
+
+Independent sealed-package consumption verifies all 154 payloads against the
+archive, including modes, owners, mtimes and symlink targets. No ELF or scripts
+are present. Package-only imports, distribution origins, both entry points,
+all six generated metadata files and exact 4,425-byte usage data pass. Actual
+CLI consumers record the required five intentional pass/failure/error/skip/
+doctest outcomes and a separate passing case. An initial authored assertion
+incorrectly required an empty not-zip-safe marker; both original input and
+package contain a single newline. The corrected client requires that exact
+newline and reuses the unchanged sealed payload; the failure remains retained.
+Normal SDK128, old/frozen SDKs, matching base, accounts, loader/cache, mounts,
+original run and both consumer attempts pass their preservation guards.
+All 218 consumer records verify on ARM and Intel. Private package lifecycle checks,
+checksum validation through its registered database and normal delivery remain
+open. Nose is uninstalled; canonical per-unit and full release gates remain open.
