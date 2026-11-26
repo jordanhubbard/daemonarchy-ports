@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-11-26T08:28:32.172410+00:00",
+  "observed_utc": "2026-11-26T09:36:35.882984+00:00",
   "status": "all16programs-OK-nested21PASS28SKIP-18configuration-cases-await-json-c-and-xxd",
   "current_code_commit": "1c38241b2e4a06c2df013f736c0a2e7fbe56fdfc",
   "current_native_source_composition": "82752667e9214aa089bc88be560a9201989a0a5e",
@@ -165,11 +165,8 @@
     "current_native_preparation_receipt_sha256": "84fa86d32926b3a3ea496f7c1442b46dc7aeeafeba54f4ce982ea0f40b64b66a"
   },
   "remaining": [
-    "The 18 missing configuration cases now pass; retain the actual older-version baseline/network/Linux bwrap requirements.",
-    "Rerun the complete original Fontconfig TEST selection, audit nested TAP cases, and retain every failure/skip reason.",
-    "Fresh default artifact, independent font/cache/XML/CLI/shared/static tests and original Lua-sample/font-cache-trigger lifecycle.",
-    "Complete Fontconfig source/private/normal custody and actual normal dependencies/hooks; bounded accepted development set is 123.",
-    "Matching source/SDK/kernel and AMD64, canonical Component/provenance/lifecycle/SDK/TCB, desktop, physical, installer/update/rollback/media/freeze/signing/publication."
+    "The repaired Fontconfig revision1 now qualifies at bounded development count124; retain actual older-cache baseline and original network/Linux-bwrap skip scope.",
+    "Complete canonical Component/SDK/TCB, matched source/kernel/AMD64, desktop/application/hardware and all wider 1.6 gates."
   ],
   "operational_metadata_reconciliation": {
     "scope": "Between controlled native jobs, official vulnerability feed refreshed; original failing preflight retained. Independent official FreeBSD HTTPS download and Last-Modified match exact new body/mtime. Preserve both feeds, fresh complete SDK seal and raw package database. No service/timer changes or timestamp restoration.",
@@ -920,5 +917,6 @@
   },
   "subsequent_fresh_TEST_report": "fontconfig-json-c-TEST-20261126.json",
   "subsequent_fresh_default_report": "fontconfig-fresh-default-20261126.json",
-  "subsequent_nested_font_trigger_repair_report": "fontconfig-nested-trigger-repair-20261126.json"
+  "subsequent_nested_font_trigger_repair_report": "fontconfig-nested-trigger-repair-20261126.json",
+  "subsequent_qualified_repaired_report": "fontconfig-trigger-fixed-qualified-20261126.json"
 }
