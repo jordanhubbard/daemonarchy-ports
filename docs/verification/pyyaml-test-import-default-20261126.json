@@ -1,0 +1,166 @@
+{
+  "observed_utc": "2026-11-26T06:08:44.866293+00:00",
+  "status": "pass-bounded-native-ARM-PyYAML-normal119",
+  "scope": "Original upstream implementation/tests retained; native bounded development acceptance only, canonical/SDK/TCB/matchingAMD64/source/kernel/desktop/physical/fullrelease open.",
+  "source_revision": "27dd3d763c011d8a4a5c7b2e40d47947bfb918de",
+  "package": {
+    "bytes": 178892,
+    "sha256": "bfb79e767fbe38dec6fbf1e0d4decd8869e50a1ec674529ac753ea893420f243"
+  },
+  "original_selfsuite": {
+    "discovered": 2608,
+    "completed": 2608,
+    "PASS": 2608,
+    "SKIP": 0,
+    "FAIL": 0,
+    "ERROR": 0,
+    "duplicate_display_ids": 2,
+    "all_case_file_line_id_signatures_unique_and_ordered_completions_match": true,
+    "discovery_includes_function_and_all_fixture_arguments": true,
+    "native_junit_xml_sha256": "2f4cfcda34b0607d97d7ec9563b152ad247405f2b082c9d934937a2c2fb2a640",
+    "native_discovery_sha256": "d9eac95a7b5eb30676f5baca17b90c3961de1623535ccf952b1b7a0589ad637f"
+  },
+  "independent_private_consumer": {
+    "authored_scalar_types_aliases_cycles_streams_custom_types_and_recovery": true,
+    "encoding_backend_matrices": [
+      [
+        "pure",
+        "utf-8",
+        true
+      ],
+      [
+        "pure",
+        "utf-16-le",
+        true
+      ],
+      [
+        "pure",
+        "utf-16-be",
+        true
+      ],
+      [
+        "compiled",
+        "utf-8",
+        true
+      ],
+      [
+        "compiled",
+        "utf-16-le",
+        true
+      ],
+      [
+        "compiled",
+        "utf-16-be",
+        true
+      ]
+    ],
+    "event_count": 33,
+    "event_semantics_sha256": "52516817fd055a098e76639343ec3b7816fcba26056d82623428ec8714d290ef",
+    "independent_checks": 62,
+    "libyaml_version": "0.2.5",
+    "negative_error_results": [
+      [
+        "pure",
+        "ParserError"
+      ],
+      [
+        "pure",
+        "ScannerError"
+      ],
+      [
+        "pure",
+        "ComposerError"
+      ],
+      [
+        "pure",
+        "ConstructorError"
+      ],
+      [
+        "pure",
+        "ReaderError"
+      ],
+      [
+        "compiled",
+        "ParserError"
+      ],
+      [
+        "compiled",
+        "ScannerError"
+      ],
+      [
+        "compiled",
+        "ComposerError"
+      ],
+      [
+        "compiled",
+        "ConstructorError"
+      ],
+      [
+        "compiled",
+        "ReaderError"
+      ]
+    ],
+    "token_count": 57,
+    "token_semantics_sha256": "95ea704e224811713dbee17a5ef42047dd9aec304e64c78fae235169e07b998e",
+    "version": "6.0.3"
+  },
+  "actual_default_consumer_identical_to_private": true,
+  "actual_default_no_private_LD_or_PYTHONPATH_override": true,
+  "original_lifecycle": {
+    "real_package_transactions": 6,
+    "no_original_scripts_Lua_or_shared_providers": true,
+    "no_declared_hooks_suppressed_or_invented": true,
+    "private_dependency_package_delivery_or_solver_claimed": false,
+    "readonly_base_devfs_locked_accounts_and_final_unmount_verified": true
+  },
+  "normal": {
+    "accepted_bounded_development_count": 119,
+    "exact_payload_count": 68,
+    "inherited_package_prefixes_preserved": 118,
+    "original_dependencies_resolved_offline_and_pkg_integrity_pass": true,
+    "actual_normal_module_metadata_binding": {
+      "module": "/usr/local/lib/python3.12/site-packages/yaml/__init__.py",
+      "metadata_version": "6.0.3",
+      "extension": "/usr/local/lib/python3.12/site-packages/yaml/_yaml.cpython-312.so",
+      "libyaml_version": "0.2.5"
+    },
+    "all_preexisting_loader_candidate_priorities_preserved": true,
+    "loader_cache_bytes_and_metadata_exactly_unchanged": true,
+    "new_shared_providers": 0,
+    "whole_SDK_raw_database_frozen17_base_accounts_cache_mounts_and_selected_source_guards_pass": true
+  },
+  "source_failure_private_lifecycle_custody": {
+    "nodes": 3283,
+    "archive_bytes": 32819591,
+    "archive_sha256": "506f60c42e19fdf51b1d3a91964bef005d7cf37a752bb261534c6a88372dd963",
+    "inventory_sha256": "aa63e557fec1898e0a6c01ced7fad77e3dc9e83fd90662df84a40ee4896cbdc7",
+    "all_bodies_metadata_links_hardlinks_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
+  },
+  "normal_custody": {
+    "nodes": 34,
+    "archive_bytes": 18013496,
+    "archive_sha256": "65442c6568bd636e173d9775ab242fe4d053ddaef081314b1533ec234fa7c34a",
+    "inventory_sha256": "87ab47566f94694ee5b2f6a7a3578c348d5d955bd1c63fade314fb966cb6b351",
+    "all_bodies_metadata_links_hardlinks_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
+  },
+  "remaining": "TAP source ports, complete original Fontconfig suite and actual font/cache/XML/CLI/shared/static/Lua/sample/trigger/lifecycle/normal delivery; matching source/SDK/kernel and AMD64, canonical per-unit ownership/provenance/lifecycle/SDK/TCB, complete desktop/apps/physical/installer/update/rollback/media/freeze/signing/publication.",
+  "original_test_and_data_files_equal_verified_distfile": 598,
+  "original_options": [
+    "EXAMPLES",
+    "LIBYAML"
+  ],
+  "source_fix": "TEST_ENV=${MAKE_ENV} plus staged PYTHONPATH; retain original PYYAML_FORCE_LIBYAML and all original environment variables.",
+  "retained_failures_and_probes": [
+    "Original3f construction passes, test collection cannot import compiled extension; actual staged extension present.",
+    "One-off staged-path probe reports2608passes; no source qualification inferred.",
+    "First e116 port TEST_ENV+= suppresses framework MAKE_ENV default; native metadata guard stops before all construction. Original metadata failure retained.",
+    "Corrected27dd source preserves MAKE_ENV, all8constructiontargets and original2608case/function/fixture/file/line audit pass; two duplicate display IDs disambiguated by actual source locations."
+  ],
+  "default_missing_Loader_negative_and_valid_recovery": {
+    "missing_Loader_requires_TypeError": true,
+    "message": "load() missing 1 required positional argument: 'Loader'",
+    "fresh_valid_safe_load": true
+  },
+  "original_test_warning": "Inherited always-true assert tuple retained. Default actual yaml.load missing-Loader TypeError and safe-load recovery independently checked.",
+  "source117_to_prior_normal118_chain_explicitly_verified": true
+}

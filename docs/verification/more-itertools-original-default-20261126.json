@@ -1,0 +1,66 @@
+{
+  "observed_utc": "2026-11-26T06:08:44.866293+00:00",
+  "status": "pass-bounded-native-ARM-MoreItertools-normal118",
+  "scope": "Original upstream implementation/tests retained; native bounded development acceptance only, canonical/SDK/TCB/matchingAMD64/source/kernel/desktop/physical/fullrelease open.",
+  "source_revision": "3f9d8a0447226e2240056ac7d6058c3bd8dc1c0f",
+  "package": {
+    "bytes": 123370,
+    "sha256": "47f82119a0f4ef6e4a20cda608604afd39e4db962a928561075d567df35baf7f"
+  },
+  "original_selfsuite": {
+    "discovered": 929,
+    "completed": 929,
+    "OK": 929,
+    "SKIP": 0,
+    "FAIL": 0,
+    "ERROR": 0,
+    "all_original_ids_and_order_match": true,
+    "original_stderr_sha256": "fde21de0d4920fe396346fa2cfe0273a1c8b0d91b1795ddfc3095c562ba91d00",
+    "discovery_sha256": "7adfe01d841413a2ecae262c409f123782cdbdc2d134d7e558742ad279dd61e5"
+  },
+  "independent_private_consumer": {
+    "independent_checks": 245,
+    "seed": 626116,
+    "strict_negative_and_fresh_valid_recovery": true,
+    "version": "11.2.1"
+  },
+  "actual_default_consumer_identical_to_private": true,
+  "actual_default_no_private_LD_or_PYTHONPATH_override": true,
+  "original_lifecycle": {
+    "real_package_transactions": 6,
+    "no_original_scripts_Lua_or_shared_providers": true,
+    "no_declared_hooks_suppressed_or_invented": true,
+    "private_dependency_package_delivery_or_solver_claimed": false,
+    "readonly_base_devfs_locked_accounts_and_final_unmount_verified": true
+  },
+  "normal": {
+    "accepted_bounded_development_count": 118,
+    "exact_payload_count": 21,
+    "inherited_package_prefixes_preserved": 117,
+    "original_dependencies_resolved_offline_and_pkg_integrity_pass": true,
+    "actual_normal_module_metadata_binding": {
+      "module": "/usr/local/lib/python3.12/site-packages/more_itertools/__init__.py",
+      "metadata_version": "11.2.1"
+    },
+    "all_preexisting_loader_candidate_priorities_preserved": true,
+    "loader_cache_bytes_and_metadata_exactly_unchanged": true,
+    "new_shared_providers": 0,
+    "whole_SDK_raw_database_frozen17_base_accounts_cache_mounts_and_selected_source_guards_pass": true
+  },
+  "source_failure_private_lifecycle_custody": {
+    "nodes": 1062,
+    "archive_bytes": 15071463,
+    "archive_sha256": "5b4fbf84f7d15cd32dd4766fce65da48a5a309cd46cbb460ff364f8da2063edd",
+    "inventory_sha256": "107f77dc143f3c849737c2ef4aa1757fd843f1dcafa1c3e2a425eefe54aa1d78",
+    "all_bodies_metadata_links_hardlinks_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
+  },
+  "normal_custody": {
+    "nodes": 30,
+    "archive_bytes": 17996210,
+    "archive_sha256": "7bfdbf5f70bc0554002476e9785987cf6f5efea038e6287ca3999a70671c98a3",
+    "inventory_sha256": "baf4955607bd94ef5b3153fc8a4875b2ed6ac6d6804e996f382ace00e10d937f",
+    "all_bodies_metadata_links_hardlinks_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
+  },
+  "remaining": "TAP source ports, complete original Fontconfig suite and actual font/cache/XML/CLI/shared/static/Lua/sample/trigger/lifecycle/normal delivery; matching source/SDK/kernel and AMD64, canonical per-unit ownership/provenance/lifecycle/SDK/TCB, complete desktop/apps/physical/installer/update/rollback/media/freeze/signing/publication.",
+  "retained_observer_correction": "Initial doctest method header collided with its parent class doctest ID. Failed observation/readonly diagnostic retained; exact corrected929case identities/order/completions verified, no test/assertion/source changes."
+}
