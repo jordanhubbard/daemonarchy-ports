@@ -1,8 +1,8 @@
 {
-  "observed_utc": "2026-11-26T06:57:38.210200+00:00",
-  "status": "helper-native-regression-pass-15-C-programs-pass-Python-TAP-dependencies-pending",
-  "current_code_commit": "b0d9bf84a48238f56923b03ae1289e89d33c2ae4",
-  "current_native_source_composition": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
+  "observed_utc": "2026-11-26T08:14:51.086314+00:00",
+  "status": "all16programs-OK-nested21PASS28SKIP-18configuration-cases-await-json-c-and-xxd",
+  "current_code_commit": "1c38241b2e4a06c2df013f736c0a2e7fbe56fdfc",
+  "current_native_source_composition": "82752667e9214aa089bc88be560a9201989a0a5e",
   "baseline_native_source": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
   "scope": "Direct native FreeBSD aarch64 source/configuration/test observations only; package/normal/canonical/AMD64/fullrelease qualification remains pending.",
   "problems": [
@@ -14,7 +14,9 @@
     "Declare the TAP plugin as a TEST build dependency so Meson discovers the complete test runner before configuration.",
     "Add checksum-bound source ports for pytest-tap and tap.py, retain all original tests/runtime constraints, and patch confirmed tap.py malformed-plan/result-prefix false passes; retain generated patch backup outside the Hatch wheel source.",
     "Add staged Python site-packages to PyYAML TEST_ENV so original test collection finds the built LibYAML extension; retain original LIBYAML default, all test cases and upstream assertions.",
-    "Expose pytest-tap staged distribution/entry-point metadata to original pytester subprocesses through TEST_ENV=${MAKE_ENV} plus staged PYTHONPATH, preserving original tests and fixture behavior."
+    "Expose pytest-tap staged distribution/entry-point metadata to original pytester subprocesses through TEST_ENV=${MAKE_ENV} plus staged PYTHONPATH, preserving original tests and fixture behavior.",
+    "Declare json-c before Fontconfig TEST configuration so all18 original JSON configuration cases get their executable.",
+    "Declare xxd for json-c original CLI regression fixture generation; preserve all original scripts/assertions/goldens/invalid-UTF8 input."
   ],
   "new_upstream_ports": {
     "devel/py-tap.py": {
@@ -144,29 +146,29 @@
   },
   "current_source_preparation": {
     "full_Git_members": 184388,
-    "changed_or_added_paths_from_retained_fadd": 10,
+    "changed_or_added_paths_from_retained_fadd": 11,
     "removed_paths": 0,
     "prior_e11626_complete_native_source_preparation": "pass-all184387bodies/modes/links-and-allSDK117/system/sourceguards; original source retained",
     "prior_preparation_receipt_sha256": "35fc72cbfa15974d13a6e5f3b4dffdcbd4fa0d7546ca41f1ca12e93e77880c5c",
     "current_27dd3d_complete_native_source_preparation": "pass; all184387bodies/modes/links, exactGit tree, unchangedoriginalsource andwholeSDK117/rawDB/frozen/base/accounts/cache/mount guards",
     "current_native_source_member_manifest_reconstructs_exact_Git_tree": true,
-    "scope": "Current993a2a10 source includes canonical newtap-py identity, confirmed TAP parser-boundary fix and exactbackup retention outside wheel. Full184388bodies/modes/links verify. QualifiedolderPyYAML27dd/MoreItertools3f artifacts keep actual sourcepins; no receipt repinning.",
-    "latest_source_tree": "f4b4fc4c6d26e9558b5f62efc53a035b58456097",
+    "scope": "Current82752667 source adds Fontconfig configure-time json-c test dependency and json-c originalCLI xxd test dependency. Older qualifiedTappy/Pytest/source artifacts keepactualsourcepins993a2a10 andearlier; no repinning.",
+    "latest_source_tree": "a91b5e451d80d28237470a26389894fb56c75322",
     "qualified_PyYAML_source_tree": "20d8296ce9634f34099890eb8fcd7d553a5e215b",
     "qualified_PyYAML_native_preparation_receipt_sha256": "4f7f7264540468c6a882f1fa06e0d18b2cf17ccdf4c85f6ef0562cf88b224e6c",
-    "latest_native_source_preparation": "pass-complete184388-Git-bodies-modes-links-SDK119-frozen-base-accounts-cache-mount-guards",
-    "last_verified_source_tree": "f4b4fc4c6d26e9558b5f62efc53a035b58456097",
-    "last_verified_native_preparation_receipt_sha256": "5284ec215e3e1c45092c9b33d90246da5e522126dae63e5598cbc6fa077d347d",
-    "last_verified_source_revision": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
-    "current_source_tree": "f4b4fc4c6d26e9558b5f62efc53a035b58456097",
-    "current_native_source_preparation": "pass-complete184388-Git-bodies-modes-links-SDK119-frozen-base-accounts-cache-mount-guards",
-    "current_native_preparation_receipt_sha256": "5284ec215e3e1c45092c9b33d90246da5e522126dae63e5598cbc6fa077d347d"
+    "latest_native_source_preparation": "pass-all184388Gitbodies-modes-links-SDK121-frozen-base-accounts-cache-mount-oldsource-guards",
+    "last_verified_source_tree": "a91b5e451d80d28237470a26389894fb56c75322",
+    "last_verified_native_preparation_receipt_sha256": "84fa86d32926b3a3ea496f7c1442b46dc7aeeafeba54f4ce982ea0f40b64b66a",
+    "last_verified_source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+    "current_source_tree": "a91b5e451d80d28237470a26389894fb56c75322",
+    "current_native_source_preparation": "pass-all184388Gitbodies-modes-links-SDK121-frozen-base-accounts-cache-mount-oldsource-guards",
+    "current_native_preparation_receipt_sha256": "84fa86d32926b3a3ea496f7c1442b46dc7aeeafeba54f4ce982ea0f40b64b66a"
   },
   "remaining": [
-    "Tappy clean source qualifiesnormal120; pytest-tap original17case suite/5unalteredtestinputs pass, sealed independent plugin/CLI/lifecycle/custody/normal acceptance remains pending.",
+    "xxd qualifies at normal count 122; json-c passes all 28 original cases. Complete independent json-c acceptance, then execute the 18 missing Fontconfig configuration cases.",
     "Rerun the complete original Fontconfig TEST selection, audit nested TAP cases, and retain every failure/skip reason.",
     "Fresh default artifact, independent font/cache/XML/CLI/shared/static tests and original Lua-sample/font-cache-trigger lifecycle.",
-    "Complete Fontconfig source/failure/private/normal custody and actual normal dependency/hooks; accepted bounded development set is120 after Tappy.",
+    "Complete Fontconfig source/private/normal custody and actual normal dependency/hooks; accepted bounded development set is122.",
     "Matching source/SDK/kernel and AMD64, canonical Component/provenance/lifecycle/SDK/TCB, desktop, physical, installer/update/rollback/media/freeze/signing/publication."
   ],
   "operational_metadata_reconciliation": {
@@ -704,7 +706,7 @@
         "source117_to_prior_normal118_chain_explicitly_verified": true
       }
     },
-    "tap_py_and_pytest_tap": "Tappy clean parser-boundary/backup source993a2a10 qualified normal120; pytest-tap native original suite and full independent qualification remain pending.",
+    "tap_py_and_pytest_tap": "Both new source ports qualified through actualnormal120/121 with fulloriginalsuites, sealed/defaultindependentchecks, pkgtransactions andbothhostcustody; Fontconfig fullTEST/default/lifecycle/normal remains pending.",
     "tap_py": {
       "native_metadata_observer_failure_retained": "First source-count assumption247 waswrong: newport3files+Mk211+Templates32=246. No targetran; verifier-definition failurealso retained. Correctedobserverdeclaresverifierbeforepreflight andchecks246actualinputs.",
       "native_construction_stage_failure_retained": {
@@ -864,6 +866,55 @@
         "Complete Fontconfig original16program suite/nestedTAP, freshdefaultfont/cache/XML/CLI/shared/static and original Lua/sample/cache-trigger lifecycle.",
         "Canonical/SDK/TCB/matching source/kernel/AMD64/desktop/physical/fullrelease gates."
       ]
-    }
+    },
+    "pytest_tap_normal_qualification": {
+      "report": "pytest-tap-qualified-20261126.json",
+      "source_revision": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
+      "original_PASS": 17,
+      "private_and_default_checks_each": 172,
+      "actual_child_commands_each": 25,
+      "TAP_documents_each": 22,
+      "TAP_points_each": 48,
+      "real_Meson_status_gate": [
+        {
+          "name": "authored-pytest-tap-status:pass",
+          "result": "OK",
+          "returncode": 0
+        },
+        {
+          "name": "authored-pytest-tap-status:teardown-error",
+          "result": "ERROR",
+          "returncode": 1
+        },
+        {
+          "name": "authored-pytest-tap-status:failure",
+          "result": "FAIL",
+          "returncode": 1
+        }
+      ],
+      "lifecycle_transactions": 6,
+      "accepted_normal_count": 121
+    },
+    "xxd_normal_qualification": {
+      "report": "xxd-original-default-20261126.json",
+      "source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+      "private_and_default_checks_each": 211,
+      "CLI_commands_each": 69,
+      "actual_pkg_transactions": 6,
+      "normal_count": 122,
+      "original_Vim_selfsuite_claimed": false
+    },
+    "json_c_original_suite_report": "json-c-original-suite-20261126.json"
+  },
+  "current_original_TEST_selection_case_audit": {
+    "report": "fontconfig-json-c-test-coverage-20261126.json",
+    "original_Meson_programs_OK": 16,
+    "original_Pytest_selected_completed": 49,
+    "PASS": 21,
+    "SKIP": 28,
+    "original_network_marker_deselections": 2,
+    "all_unique_case_identities_order_and_numbers_match": true,
+    "missing_json_c_configuration_cases": 18,
+    "full_TEST_qualification": false
   }
 }
