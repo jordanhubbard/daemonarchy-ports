@@ -9534,7 +9534,7 @@
       "retained_security_source_commit": "9836f7748c87d4f4c46ae59aa0633425496ba17b",
       "Git_members": 184394,
       "changed_since_grammar_control": 6,
-      "state": "complete native source verification PASS; first checksum/extract/patch PASS; configure in progress, fresh package and suite pending",
+      "state": "Historical package3 source: original full suite terminalFAIL test_logging/libcweekday and test_tools/LIBPCprefix; package and complete negative custody retained.",
       "all_native_Git_members_verified": 184394,
       "all4581_original_regular_source_bodies_after_seven_original_port_patches_verified": true
     },
@@ -9550,7 +9550,7 @@
     "normal_upgrade_performed": false,
     "Nose_installed": false,
     "release_scope_unchanged": true,
-    "status": "source-built-package3-grammar-pass-original-full-suite-fails-base-calendar-and-LIBPC-prefix-candidate4-control-pass",
+    "status": "candidate4-matching-runtime-pass-first-configure-isolation-failure-retained-corrected-preflight-active",
     "source_built_package": {
       "bytes": 40541290,
       "sha256": "9e43d82a1585dd4507583fce48023bdd79fa5cdd3eb23d6ee13c610a89d64e23",
@@ -9623,19 +9623,82 @@
       "existing_image_current_full_sha256_verified": true,
       "same_allocated_worker_transition_profile_prepared": true,
       "new_VM_created_or_started": false,
-      "worker_stopped_or_restarted": false,
+      "worker_stopped_or_restarted": true,
       "normal_data_volume_frozen_SDK_and_original_root_preserved": true,
-      "matching_kernel_world_current_boot_acceptance": false
+      "matching_kernel_world_current_boot_acceptance": false,
+      "exact_boot_profile_and_core_sysroot_observed": true,
+      "original_allocation_cleanly_stopped_and_reused": true,
+      "core_base_members_verified": 6159,
+      "core_base_inventory_sha256": "f1e1b5fcdeefefd13b169f8f30495b4b62e5d5007d6440682f9486d0692b31c9",
+      "native_POSIX_TZ_weekday": "2012-03-04 23:59:59 weekday=0 Sun\n",
+      "SDK18_original_SDK19_clone_frozen17_complete_preserved_across_boot": true,
+      "SDK19_clone_nodes": 50521,
+      "SDK19_clone_original_regular_inodes_disjoint": true,
+      "clone_initial_mode_omission_retained_and_corrected": "266 symlink modes omitted by private clone helper; full failed preimage retained, only copy symlink modes corrected; originals unchanged.",
+      "runtime_and_loader_control_files_verified_on_ARM_and_Intel": 8,
+      "runtime_result_sha256": "cdaa948478bb13d479371b4b48b7c4108578fc67e8e72530e62fb3011109cd95",
+      "runtime_scope": "Scoped actual matching-f4eb boot/core-sysroot and causal weekday observation. Canonical kernel/world lifecycle/release admission remains pending. SDK19 independent clone retains installed128 and original Python feature hold; no package upgrade or normal acceptance. New overlay loader cache only registered; new base fontconfig hooks and all desktop consumers require requalification.",
+      "original_root_overlay_after_clean_shutdown_sha256": "821de169d11f2ae7e6730a18f4c48d55b9dc3d13d9b853678242ba37eeda6c9f"
+    },
+    "candidate4_complete_native_source": {
+      "revision": "81c00f97fbabd7cc7157feabd9967f9800a1b2be",
+      "tree": "cf4012a031d33828a5e070b20dba173acdf1bc1c",
+      "Git_members_verified": 184395,
+      "changed_since_package3_source": 3,
+      "removed": 0,
+      "source_changes": "Python LIBPC configured prefix and Nose conversion repair; all other Git bodies retained.",
+      "all_original_SDK128_frozen17_base_accounts_loader_fontcache_mount_postguards_pass": true
+    },
+    "fresh_candidate4_matching_runtime_construction": {
+      "state": "first-configure-failure-retained-corrected-database-and-per-origin-isolation-attempt-preflight-active",
+      "candidate_version": "3.12.16_4",
+      "matching_source_base_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
+      "source_revision": "81c00f97fbabd7cc7157feabd9967f9800a1b2be",
+      "independent_original_source_references": 4581,
+      "independent_reference_sha256": "1964a9f939e1451e5435ae729f16a131fbf9df17edb6a51fe8fa7fe04ac5ee6c",
+      "short_TMPDIR_bytes": 15,
+      "original_options_jobs_resources_builtin_W_assertions_and_1200second_test_deadline_preserved": true,
+      "reporting_only_addition": "Original buildbottest retains TESTOPTS=-j4 plus upstream --junit-xml output. Actual per-case discovery/outcomes/skip reasons require audit after terminal completion.",
+      "fresh_package_full_suite_sealed_runtime_lifecycle_normal_upgrade_pending": true,
+      "original_SDK18_and_frozen17_protected": true,
+      "installed_clone128_not_healthy_or_release_admitted": true,
+      "first_attempt": {
+        "stage": "original configure",
+        "original_command_exits": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "fullsuite_started": false,
+        "build_started": false,
+        "cause": "PKG_DBDIR pointed through SDK19 root0700, inaccessible to uid65534; original dependency check misdetected installed pkgconf, recursively built it and inherited shared explicit WRKDIR. Dependency clean displaced temporary extracted Python tree.",
+        "all4581_original_patch_effect_bodies_had_matched_before_configure": true,
+        "temporary_extracted_Python_source_preservation_postguard": "FAIL; displaced files are not claimed retained",
+        "canonical_Git_and_original_source_archives_and_independent4581references_intact": true,
+        "SDK19_SDK18_frozen17_base_accounts_loader_fontcache_mount_guards_pass": true,
+        "remaining_failed_workspace_custody": {
+          "nodes": 1669,
+          "parts": 1,
+          "archive_bytes": 28203441,
+          "archive_sha256": "16f7b922b25d36280bf457ec41bb9b89c5a296eca6113d4409cb92c11cedc90e",
+          "all_bodies_types_modes_owners_flags_nsmtime_symlinks_hardlinks_gzipCRC_verified_ARM_and_Intel": true
+        },
+        "repair": "Fresh root-owned private registry copy beneath a traversable job directory, supported build-user pkg-static registry/config and declared dependency checks before construction. Use per-origin WRKDIRPREFIX alone so unexpected nested dependencies cannot share a unit work directory. Preserve all original constraints/tests and failed outputs."
+      },
+      "unprivileged_advisory_control": "Exact retained source-bound two-range private overlay; require original vulnerable revision1 rejection and repaired revision4 acceptance before original construction; preserve global feed."
     }
   },
   "current_base_runtime_hold_20261126": {
     "provider": "libc POSIX-TZ weekday behavior",
     "actual_native_date_and_old_and_fresh_Python_failure_confirmed": true,
     "existing_source_fix_PR130": "https://github.com/jordanhubbard/daemonarchy-src/pull/130",
-    "live_libc_sha256": "31460c17de46058d0c19e83d49b68780ccf76911e7ca6e331d42a23619bbfc62",
     "retained_fixed_source_f4eb_libc_sha256": "bf2784e99b1042274d7f5938d24b9db226e790e49d1bad074dcd73ec1d253db9",
     "current_native_package_count_is_not_healthy_or_release_admitted_SDK": true,
-    "global_base_or_boot_state_changed": false
+    "scope": "Original preserved SDK18/root profile observation. Existing allocated worker now uses separately verified matching f4eb kernel/world and independent SDK19 clone; prior source-built package3 failures remain retained. No canonical base/SDK acceptance or Python upgrade.",
+    "original_preserved_root_libc_sha256": "31460c17de46058d0c19e83d49b68780ccf76911e7ca6e331d42a23619bbfc62",
+    "existing_allocated_VM_boot_profile_changed": true,
+    "physical_operator_hosts_or_Pi_boot_changed": false
   },
   "Nose_conversion_command_repair_20261126": {
     "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/123",
@@ -9643,5 +9706,30 @@
     "native_authored_control": "Actual setuptools63.1.0 registers originalbuild_tests andcandidatebuild_py; source/doctestconversionfixturePASS, allsourceunchanged.8031freshPythonruntimeandfullNosesuiteareseparate.",
     "normal_Nose_installed": false,
     "full_original_Nose_suite_or_normal_acceptance": false
+  },
+  "matching_f4eb_boot_and_independent_SDK19_profile_20261126": {
+    "existing_source_fix": "https://github.com/jordanhubbard/daemonarchy-src/pull/130",
+    "source_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
+    "retained_matching_base_kernel_tests_set_hashes_verified": true,
+    "existing_immutable_private_image_sha256": "fe678ce019e4ee5677602c3a4a976cf1da5c9c424ba4f9a592e8150f2ec020c2",
+    "existing_image_current_full_sha256_verified": true,
+    "same_allocated_worker_transition_profile_prepared": true,
+    "new_VM_created_or_started": false,
+    "worker_stopped_or_restarted": true,
+    "normal_data_volume_frozen_SDK_and_original_root_preserved": true,
+    "matching_kernel_world_current_boot_acceptance": false,
+    "exact_boot_profile_and_core_sysroot_observed": true,
+    "original_allocation_cleanly_stopped_and_reused": true,
+    "core_base_members_verified": 6159,
+    "core_base_inventory_sha256": "f1e1b5fcdeefefd13b169f8f30495b4b62e5d5007d6440682f9486d0692b31c9",
+    "native_POSIX_TZ_weekday": "2012-03-04 23:59:59 weekday=0 Sun\n",
+    "SDK18_original_SDK19_clone_frozen17_complete_preserved_across_boot": true,
+    "SDK19_clone_nodes": 50521,
+    "SDK19_clone_original_regular_inodes_disjoint": true,
+    "clone_initial_mode_omission_retained_and_corrected": "266 symlink modes omitted by private clone helper; full failed preimage retained, only copy symlink modes corrected; originals unchanged.",
+    "runtime_and_loader_control_files_verified_on_ARM_and_Intel": 8,
+    "runtime_result_sha256": "cdaa948478bb13d479371b4b48b7c4108578fc67e8e72530e62fb3011109cd95",
+    "runtime_scope": "Scoped actual matching-f4eb boot/core-sysroot and causal weekday observation. Canonical kernel/world lifecycle/release admission remains pending. SDK19 independent clone retains installed128 and original Python feature hold; no package upgrade or normal acceptance. New overlay loader cache only registered; new base fontconfig hooks and all desktop consumers require requalification.",
+    "original_root_overlay_after_clean_shutdown_sha256": "821de169d11f2ae7e6730a18f4c48d55b9dc3d13d9b853678242ba37eeda6c9f"
   }
 }
