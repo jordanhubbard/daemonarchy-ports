@@ -74,3 +74,13 @@ plus the exact registered Python artifact, verified independently on both hosts.
 
 These holds are additional to complete ownership/provenance/lifecycle/SDK/TCB,
 matched AMD64, graphical/physical and full release acceptance requirements.
+
+The [grammar repair control](../verification/python312-grammar-native-control-20261126.json)
+now passes eight isolated native conversion cases under both tested unprivileged
+umasks, with independently verified ARM and Intel custody. PR122 preserves the
+two-file staging fix and follows PR84 mail-validation revision 2. A fresh combined
+revision-3 build has passed original checksum/extract/patch and independent source
+checks; configure and later package/tests remain pending. The installed Python
+is unchanged and its version remains in the original mail-advisory affected
+ranges. Both the conversion and advisory holds remain; private range controls
+are not package, lifecycle, normal-upgrade or release acceptance.

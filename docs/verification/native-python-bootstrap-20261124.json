@@ -9518,5 +9518,37 @@
       "entire_original_registered_Python_package_included": true,
       "extra_compressed_archive_bytes_on_Linux_controller": 0
     }
+  },
+  "Python_grammar_and_mail_repair_progress_20261126": {
+    "report": "docs/verification/python312-grammar-native-control-20261126.json",
+    "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/122",
+    "normal_installed_count": 128,
+    "normal_Python_still_held": true,
+    "normal_Python_version": "3.12.16",
+    "version_fits_original_IMAP_and_POP_advisory_affected_ranges": true,
+    "isolated_grammar_control": "Eight conversion cases and16checks pass under022/077 as nobody; only2privatepayloadmodes change0600to0644; liveSDKunchanged.621nodes ARM/Intelcustody.",
+    "original_fresh_build": "Grammar-only3.12.16_1 checksumgateexit1 beforeextraction; allretained/no bypass.",
+    "combined_source": {
+      "revision": "904ae48e8a59dfed1ed11b2910378b2cd288ac53",
+      "tree": "897d79414842a289a90933d71e3f8816b0a55f92",
+      "retained_security_source_commit": "9836f7748c87d4f4c46ae59aa0633425496ba17b",
+      "Git_members": 184394,
+      "changed_since_grammar_control": 6,
+      "state": "complete native source verification PASS; first checksum/extract/patch PASS; configure in progress, fresh package and suite pending",
+      "all_native_Git_members_verified": 184394,
+      "all4581_original_regular_source_bodies_after_seven_original_port_patches_verified": true
+    },
+    "private_advisory_controls": {
+      "only_two_source_bound_python312_affected_ranges_changed": true,
+      "all_other_global_feed_bytes_preserved": true,
+      "negative_original_vulnerable_version_exit": 1,
+      "positive_retained_backport_version_exit": 0,
+      "global_feed_and_installed_registry_preserved": true,
+      "not_package_or_security_acceptance": true,
+      "configuration_failure_retained": "Initial private DB used build-user ownership and pkg rejected it. Fresh private root-owned DB passed supported configuration and logical128-package registry equality. No original make phase had executed in the failed private configuration."
+    },
+    "normal_upgrade_performed": false,
+    "Nose_installed": false,
+    "release_scope_unchanged": true
   }
 }
