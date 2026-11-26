@@ -1,6 +1,6 @@
 {
   "schema": "daemonarchy/gdbm-cloexec-native-observation@1",
-  "observed": "2026-11-26T23:26:53.656945+00:00",
+  "observed": "2026-11-26T23:32:42.594732+00:00",
   "canonical_receipt": false,
   "origin": "databases/gdbm",
   "original_version": "1.26",
@@ -84,7 +84,22 @@
     "original_construction_records": 1452,
     "failed_sealed_records": 473,
     "original_negative_control_records": 367,
-    "fixed_construction_and_controls": "native capture in progress"
+    "fixed_construction_and_controls": {
+      "records": 1495,
+      "parts": 2,
+      "all_nodes_verified_on_ARM_and_Intel": true
+    },
+    "fixed_first_sealed_attempt": {
+      "records": 485,
+      "parts": 1,
+      "all_nodes_verified_on_ARM_and_Intel": true,
+      "result": "Shared C/API passes, then authored static client link lacks librt. All work, logs and package preserved before corrected consumer execution."
+    },
+    "fixed_successful_sealed": {
+      "records": 566,
+      "parts": 1,
+      "all_nodes_verified_on_ARM_and_Intel": true
+    }
   },
   "candidate_qualification": {
     "full_native_source_verification": {
@@ -157,13 +172,62 @@
       "passed": 4,
       "failed": 0
     },
-    "fixed_sealed_API_ELF_C_CXX_shared_static_CLI": "pending",
+    "fixed_sealed_API_ELF_C_CXX_shared_static_CLI": {
+      "passed": true,
+      "exact_payloads": 34,
+      "ELF_products": 4,
+      "static_native_objects": 29,
+      "all_original_failed_C_API_source_and_assertions_unchanged": true,
+      "C_API_source_sha256": "27296061327a2413343ea0a2634d25a04fd503c3df16ef7a6ac87100d8e5b5c2",
+      "driver_sha256": "9193a03cdbbb06ebb10d7a84afc15c933b59ecb54abf4b70abbb8a5233222ed3",
+      "API_clients": [
+        {
+          "language": "C",
+          "linkage": "shared",
+          "dataset_records": 63,
+          "create_assertions": 987,
+          "fresh_process_assertions": 458
+        },
+        {
+          "language": "C",
+          "linkage": "static",
+          "dataset_records": 63,
+          "create_assertions": 987,
+          "fresh_process_assertions": 458
+        },
+        {
+          "language": "CXX",
+          "linkage": "shared",
+          "dataset_records": 63,
+          "create_assertions": 987,
+          "fresh_process_assertions": 458
+        },
+        {
+          "language": "CXX",
+          "linkage": "static",
+          "dataset_records": 63,
+          "create_assertions": 987,
+          "fresh_process_assertions": 458
+        }
+      ],
+      "CLI_roundtrips": [
+        "ascii",
+        "binary"
+      ],
+      "gdbmtool_count": 63,
+      "static_dependencies_from_packaged_ELF": [
+        "libintl.so.8",
+        "librt.so.1",
+        "libc.so.7"
+      ],
+      "authored_driver_corrections": "Correct strict count sentence from original gdbmshell.c before first repaired run; then include static dependency flags from actual packaged ELF DT_NEEDED. Original C/API assertions and timeouts unchanged. Failed authored-link attempt retained in full on both hosts.",
+      "all_SDK131_base_source_accounts_loader_fontcache_mount_and_prior_work_guards_pass": true
+    },
     "private_real_package_lifecycle": "pending",
     "normal_delivery": "not installed"
   },
   "remaining_release_gates": [
-    "Original COMPAT-enabled profile is unqualified.",
-    "Independent fixed sealed consumers and actual package scripts/lifecycle must pass before normal delivery.",
+    "Actual package scripts/lifecycle must pass before normal delivery.",
     "Previous released upgrade/rollback baseline has not been qualified.",
     "Canonical Component, ownership, provenance, TCB, SDK and full release admission remain open."
   ],
@@ -179,5 +243,8 @@
     "databases/gdbm/Makefile": "a4fe4641fc3336ce21a2a07f0b8879d9f64421ea",
     "databases/gdbm/files/patch-src_gdbmopen.c": "ac399c6d4a914dffa63179cd5dd6805eaead789f",
     "Tools/daemonarchy/verification/check_gdbm_cloexec.c": "47e8c62da57cc0b49d02a1b4616070e2ea6c3899"
+  },
+  "coverage_boundaries": {
+    "COMPAT_enabled": "Not selected by the original default profile; no qualification claimed for that optional variant."
   }
 }
