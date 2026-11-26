@@ -66,3 +66,23 @@ hardware, canonical per-unit SDK or retained lifecycle/release acceptance.
   - [x] Normalize the two manifest-listed generated grammar files during original package staging and bump the package revision. Preserve all options, dependencies, source patches and upstream tests.
 - **Evidence:**
   - [ ] Retain original failures and artifact identity; verify native unprivileged import/conversion, original targets/tests, sealed payloads and lifecycle/normal custody separately.
+
+### [ ] PORT-PY312-PREFIX-001 — Preserve configured Python pkg-config installation prefix
+
+- **Priority:** P1
+- **Owner:** lang/python312 native qualification
+- **Direction:** Keep original full freeze/install tests and make pkg-config installation follow the configured lowercase Python prefix after shared pathfix.
+- **Conclusion:** The original full test_tools freeze installation fails with permission denied at /usr/local/libdata/pkgconfig: generic pathfix rewrites LIBPC to uppercase PREFIX, while Python and the private freeze build configure lowercase prefix. Localize the port repair; preserve all original assertions, cases and deadlines.
+- **Depends on:** PORT-UNIT-001; PORT-PY312-GRAMMAR-001
+- **Implementation:**
+  - [x] Normalize only the LIBPC assignment during original post-patch to use lowercase prefix; retain all original source patches/options/dependencies/tests and bump the package revision.
+- **Evidence:**
+  - [ ] Retain full original suite outcomes, failed objects and independent sealed-package findings; verify source-emitted native prefix behavior and then fresh construction/full tests/runtime/lifecycle/custody/normal delivery.
+
+The complete original Python suite on package revision 3 now terminates with
+logging and freeze-tool failures (the full report retains all initial and
+built-in rerun outcomes). Sealed grammar conversion passes. The current libc
+reproduces the known POSIX-TZ weekday defect addressed by source PR130; no test
+assertion is changed. The revision-4 LIBPC repair passes an actual source-command
+control at the default and two private configured prefixes. Fresh revision-4
+construction and complete tests on a matching runtime remain open.

@@ -2,15 +2,16 @@
   "schema_version": 1,
   "work_id": "PORT-PY312-GRAMMAR-001",
   "product_release": "1.6",
-  "status": "native-isolated-causal-control-pass-fresh-original-build-blocked-before-extraction",
+  "status": "source-built-package3-grammar-pass-original-full-suite-fails-base-calendar-and-LIBPC-prefix-candidate4-control-pass",
   "recipe_change": {
-    "package": "python312-3.12.16_3",
+    "package": "python312-3.12.16_4",
     "mode": "0644",
     "only_staged_paths": [
       "lib/python3.12/lib2to3/Grammar3.12.16.final.0.pickle",
       "lib/python3.12/lib2to3/PatternGrammar3.12.16.final.0.pickle"
     ],
-    "precondition": "Compose PR84 security backport and its scoped advisory ranges; original selected options/dependencies/patches/tests unchanged."
+    "precondition": "Compose PR84 security backport and its scoped advisory ranges; original selected options/dependencies/patches/tests unchanged.",
+    "additional_repair": "After generic pathfix, keep LIBPC relative to the configured lowercase Python prefix, preserving default /usr/local behavior and original tests."
   },
   "original_registered_package": {
     "version": "3.12.16",
@@ -54,7 +55,7 @@
     "retained_security_source_commit": "9836f7748c87d4f4c46ae59aa0633425496ba17b",
     "Git_members": 184394,
     "changed_since_grammar_control": 6,
-    "state": "complete native source verification PASS; first checksum/extract/patch PASS; configure in progress, fresh package and suite pending",
+    "state": "Source3 completed original build/package and full default suite; suiteFAIL retained. Candidate4 corrects LIBPC, native source-command controlPASS; fresh source4 construction/full suite remains pending.",
     "all_native_Git_members_verified": 184394,
     "all4581_original_regular_source_bodies_after_seven_original_port_patches_verified": true
   },
@@ -80,7 +81,10 @@
     "normal_installed_count": 128,
     "normal_python_feature_hold": true,
     "Nose_installed": false,
-    "canonical_Component_SDK_or_release": false
+    "canonical_Component_SDK_or_release": false,
+    "repaired_source_built_package3": true,
+    "proposed_recipe4_source_built_package": false,
+    "bounded_package3_grammar_and_actual_interpreter_binding_pass": true
   },
   "private_advisory_controls": {
     "only_two_source_bound_python312_affected_ranges_changed": true,
@@ -91,6 +95,115 @@
     "not_package_or_security_acceptance": true,
     "configuration_failure_retained": "Initial private DB used build-user ownership and pkg rejected it. Fresh private root-owned DB passed supported configuration and logical128-package registry equality. No original make phase had executed in the failed private configuration."
   },
-  "observed_utc": "2026-11-26T14:20:44.762973+00:00",
-  "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/122"
+  "observed_utc": "2026-11-26T15:30:54.006409+00:00",
+  "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/122",
+  "staging_recovery": {
+    "original_stage_exit": 0,
+    "actual_ignored_compileall_errors": 2,
+    "cause": "Native multiprocessing AF_UNIX path limit exceeded with 81-byte harness TMPDIR.",
+    "initial_check_plist_missing_bytecodes": 5252,
+    "exact_original_failed_compileall_commands_recovered_once": [
+      0,
+      0
+    ],
+    "original_options_source_filters_optimization_levels_jobs_or_assertions_changed": false,
+    "passed_original_compilation_or_install_copy_work_replayed": false,
+    "new_bytecode_files": 5255,
+    "next_check_plist_result": "Only3 orphanpython-config bytecodes; source helper was installed after originalcompileall commands.",
+    "orphan_handling": "After17nodeARM/Intelcustody, atomically retained newcacheandthreefiles inownedevidence. Originalsource untouched. Files preserveallbody/mode/owner/flags/nsmtime; observedUFSdirectoryreparentmtime is separatelyrecorded. No timestamp rewrite or rename replay.",
+    "original_upstream_suite_cases_run": false,
+    "package_or_normal_upgrade_claimed": false
+  },
+  "complete_staging_failure_and_Nose_control_custody": {
+    "nodes": 9403,
+    "parts": 9,
+    "complete_inventory_sha256": "2268bb2e19cc67aa084b501b9d44ab38f2970ea47c2e71cf639c05ac1d5f7588",
+    "all_source_objects_stage_logs_failed_controls_and_original_body_refs_retained": true,
+    "all_nodes_once_no_cross_partition_hardlinks": true,
+    "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_and_gzip_CRC_verified_on_ARM_and_Intel": true,
+    "each_source_capsule_limit_bytes": 134217728,
+    "total_archive_bytes": 241791332,
+    "Linux_root_extra_archive_bytes": 0
+  },
+  "Nose_followup_review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/123",
+  "fresh_source_built_package3": {
+    "bytes": 40541290,
+    "sha256": "9e43d82a1585dd4507583fce48023bdd79fa5cdd3eb23d6ee13c610a89d64e23",
+    "version": "3.12.16_3"
+  },
+  "sealed_package3_runtime": {
+    "payloads": 8031,
+    "native_aarch64_ELF_payloads": 77,
+    "all_payload_bodies_modes_resolved_account_owners_flags_nsmtime_and_private_prefix_unchanged": true,
+    "archive_numeric_header_ids": {
+      "65534:65534": 8031
+    },
+    "declared_archive_names_and_actual_private_extraction_owner_mapping": "root:wheel names, actual pkg extraction root0:wheel0; numeric archive header IDs retained separately.",
+    "fresh_unprivileged_interpreter_stdlib_native_extensions_actual_Py_GetVersion_libpython_symbol_binding": true,
+    "grammar_conversion_cases": 8,
+    "grammar_semantic_checks": 16,
+    "weekly_logging_authored_probe_exit": 1,
+    "normal_install_performed": false
+  },
+  "original_full_suite_package3": {
+    "source_revision": "904ae48e8a59dfed1ed11b2910378b2cd288ac53",
+    "original_make_target": "buildbottest",
+    "original_options": "-j1 -u all -W --slowest --fail-env-changed --timeout=1200 TESTOPTS=-j4",
+    "actual_make_test_exit": 1,
+    "declared_programs": 492,
+    "reported_total_tests": 42377,
+    "reported_failures": 4,
+    "reported_skipped": 1651,
+    "reported_test_files_run": "493/492",
+    "passed_programs": 459,
+    "failed_programs": [
+      "test_logging",
+      "test_tools"
+    ],
+    "skipped_programs": 30,
+    "resource_denied_programs": 1,
+    "original_builtin_rerun_programs": 2,
+    "duration": "16 min 50 sec",
+    "all_initial_and_builtin_rerun_outcomes_retained": true,
+    "external_suite_retry": false,
+    "all4581_original_source_bodies_and_test_assertions_preserved": true,
+    "per_case_complete_skip_reason_observability": "Not admitted; original raw reasons retained where emitted. Aggregate totals do not establish complete per-case receipts."
+  },
+  "known_failure_causes": {
+    "logging": "Current native date and installed/sealed Python all report Friday for known Sunday under POSIX TZ rules. Named timezone data is correct. Existing source fix PR130 is not present in the current libc bytes. No logging test/assertion change.",
+    "freeze_install": "Generic pathfix makes LIBPC use uppercase PREFIX while Python configures lowercase prefix. Original freeze helper changes configured prefix; pkg-config install still targets /usr/local/libdata/pkgconfig and receives Permission denied."
+  },
+  "candidate4_prefix_source_control": {
+    "source_code_commit": "0111e5b509f93c50e6cdb6894085ba53da2d2c0f",
+    "candidate_recipe_sha256": "766345b56b0d294497ace2006ab39ae85f002de29d754b43ea4eaaf2d078c930",
+    "actual_source_emitted_native_post_patch_command": true,
+    "only_LIBPC_assignment_changes_in_independent_original_source_copy": true,
+    "default_prefix_preserved": true,
+    "configured_private_prefixes_installed_unprivileged": 2,
+    "original_python_pc_body_exact_at_both_destinations": true,
+    "whole_live_SDK128_frozen_base_accounts_loader_fontcache_mounts_preserved": true,
+    "fresh_candidate4_package_or_full_suite_acceptance": false
+  },
+  "complete_package3_suite_and_prefix_evidence_custody": {
+    "nodes": 25249,
+    "parts": 14,
+    "complete_inventory_sha256": "989eefbfedb627a385ca0b42c58ce38703b6ef50ebdc28a34876743a3724d4ff",
+    "all_nodes_once_no_cross_partition_hardlinks": true,
+    "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_and_gzip_CRC_verified_ARM_and_Intel": true,
+    "each_source_capsule_limit_bytes": 134217728,
+    "total_archive_bytes": 412767823,
+    "extra_Linux_root_archive_bytes": 0
+  },
+  "matching_runtime_followup": {
+    "existing_source_fix": "https://github.com/jordanhubbard/daemonarchy-src/pull/130",
+    "source_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
+    "retained_matching_base_kernel_tests_set_hashes_verified": true,
+    "existing_immutable_private_image_sha256": "fe678ce019e4ee5677602c3a4a976cf1da5c9c424ba4f9a592e8150f2ec020c2",
+    "existing_image_current_full_sha256_verified": true,
+    "same_allocated_worker_transition_profile_prepared": true,
+    "new_VM_created_or_started": false,
+    "worker_stopped_or_restarted": false,
+    "normal_data_volume_frozen_SDK_and_original_root_preserved": true,
+    "matching_kernel_world_current_boot_acceptance": false
+  }
 }
