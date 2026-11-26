@@ -86,3 +86,18 @@ reproduces the known POSIX-TZ weekday defect addressed by source PR130; no test
 assertion is changed. The revision-4 LIBPC repair passes an actual source-command
 control at the default and two private configured prefixes. Fresh revision-4
 construction and complete tests on a matching runtime remain open.
+
+The allocated ARM worker has now cleanly booted the retained matching f4eb
+kernel/world. All 6,159 selected core sysroot files/links and the original SDKs
+verify; the causal POSIX-TZ timestamp now reports Sunday correctly. An independent
+50,521-node SDK19 copy preserves the original 128-package state and Python hold.
+Candidate4 source verifies all 184,395 Git members. The first configure attempt
+failed because the build user could not traverse its database path; recursive
+dependency work displaced the shared temporary Python work tree. All 1,669
+remaining nodes and controls are verified on ARM and Intel; canonical Git and
+original source archives remain intact. Corrected database-access/dependency
+preflight and per-origin work isolation are now running. Upstream JUnit reporting
+is added solely for outcome retention when the complete original suite runs.
+Package4/full-suite/runtime/lifecycle/normal and canonical release gates remain
+pending; all package3 failures and the clone helper mode omission are retained
+in the [Python terminal report](../verification/python312-grammar-native-control-20261126.json).
