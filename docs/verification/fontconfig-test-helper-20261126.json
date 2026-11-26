@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-11-26T04:40:52.503866+00:00",
+  "observed_utc": "2026-11-26T05:02:57.735125+00:00",
   "status": "helper-native-regression-pass-15-C-programs-pass-Python-TAP-dependencies-pending",
   "current_code_commit": "5e0ef648541cba923cf48dae52acc26414bd4480",
   "current_native_source_composition": "3f9d8a0447226e2240056ac7d6058c3bd8dc1c0f",
@@ -135,8 +135,10 @@
     "changed_or_added_paths": 8,
     "removed_paths": 0,
     "complete_old_and_new_member_lists_reconstruct_exact_Git_tree_ids": true,
-    "native_complete_source_preparation": "running; separate complete tree, share only unchanged root-owned builder-readonly inputs, with all changed files separate and no shared objects/cookies",
-    "original_implementation_tests_and_failed_evidence_retained": true
+    "native_complete_source_preparation": "pass; all 184387 members verified by body, mode and literal link against exact Git tree; 184379 unchanged immutable input files shared, all 8 changed or added inputs separate; no shared build objects or cookies",
+    "original_implementation_tests_and_failed_evidence_retained": true,
+    "native_preparation_receipt_sha256": "2eec868280b9ec712d90d8789c43e93e58a641e68db15351ac182a57305e0b4a",
+    "whole_SDK116_frozen17_base_accounts_cache_mounts_and_original_source_postguards_pass": true
   },
   "remaining": [
     "Native metadata and source build/test/package qualification of new TAP ports and their complete test prerequisites.",
@@ -144,5 +146,19 @@
     "Fresh default artifact, independent font/cache/XML/CLI/shared/static tests and original Lua-sample/font-cache-trigger lifecycle.",
     "Complete source/failure/private/normal custody and actual normal dependency/hook integration; accepted bounded development set remains116.",
     "Matching source/SDK/kernel and AMD64, canonical Component/provenance/lifecycle/SDK/TCB, desktop, physical, installer/update/rollback/media/freeze/signing/publication."
-  ]
+  ],
+  "operational_metadata_reconciliation": {
+    "scope": "Between controlled native jobs, official vulnerability feed refreshed; original failing preflight retained. Independent official FreeBSD HTTPS download and Last-Modified match exact new body/mtime. Preserve both feeds, fresh complete SDK seal and raw package database. No service/timer changes or timestamp restoration.",
+    "software_packages_added": 0,
+    "all_software_and_main_package_database_unchanged": true,
+    "prior_feed_sha256": "bccd2aa7e09f865e1718708445eded736462a25c18559440353d8bd7b2b2db62",
+    "current_feed_sha256": "83f707368cbe497f6c09f6aceddb54145a04b19ebce96b7e78e6512ee86773d5",
+    "source": "https://vuxml.freebsd.org/freebsd/vuln.xml.xz",
+    "records_before": 6876,
+    "records_after": 6888,
+    "responsible_background_operation": "not established",
+    "native_ARM_and_physical_Intel_all_archived_nodes_verified": 26,
+    "archive_sha256": "69c27ad78820e7cfa49e71f7876964223fd8d11b222bcb059bc70916579fe31a",
+    "normal_accepted_count_unchanged": 116
+  }
 }
