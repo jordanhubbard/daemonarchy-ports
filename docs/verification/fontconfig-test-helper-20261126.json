@@ -1,0 +1,83 @@
+{
+  "observed_utc": "2026-11-26T04:18:01.293002+00:00",
+  "status": "native-option-regression-pass-original-TEST-suite-runtime-and-custody-pending",
+  "owned_review_commit": "30975c70f332aceb6aff02a15365d7d11a41b279",
+  "native_qualification_composition": "2b5ac9a77db3956379a833c7bf25eebc2e6906a6",
+  "baseline_source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+  "native_target": "FreeBSD 16.0-CURRENT aarch64, allocated original diagnostic cohort; not matched new release or AMD64 qualification",
+  "problem": "With TEST selected, TEST_MESON_ARGS names the intended -Dtests-external-fonts=disabled argument, but the framework does not append that helper to MESON_ARGS. Original eight construction targets pass; actual Meson features show tests=enabled and tests-external-fonts=enabled. The observer stops before running the original TEST target.",
+  "fix": "Use supported TEST_MESON_ON to forward the already-declared argument. No test body/assertion/default option/dependency/runtime implementation is changed.",
+  "original_default_evidence": {
+    "eight_original_construction_targets_pass": true,
+    "original_bitmap_combo_yes_observer_and_wrong_two_choice_schema_failures_retained": true,
+    "corrected_readonly_features_then_original_default_make_test_exit": 0,
+    "actual_default_discovered_test_programs": 0,
+    "zero_program_bridge_not_a_selfsuite_pass": true,
+    "candidate_normally_installed": false
+  },
+  "native_regression": {
+    "full_virtual_source_members_verified": 184381,
+    "full_tree_delta_paths": [
+      "x11-fonts/fontconfig/Makefile"
+    ],
+    "source_layout": "Separate seven-file Git-bound port override plus retained original full source/Mk/Templates; exact MASTERDIR/PATCHDIR/distinfo/plist paths verified by native make. Original source remains unchanged.",
+    "queries_run_as_uid": 65534,
+    "metadata": {
+      "original_default": {
+        "PKGNAME": "fontconfig-2.18.3,1",
+        "SELECTED_OPTIONS": "BITMAPS DOCS HINTING_SLIGHT NLS",
+        "MESON_ARGS": "-Dadditional-fonts-dirs=/usr/local/lib/X11/fonts  -Dcache-build=disabled  -Dcache-dir=/var/db/fontconfig  -Ddefault_library=both  -Ddefault-fonts-dirs=/usr/local/share/fonts  -Ddoc=disabled  -Dtemplate-dir=/usr/local/etc/fonts/conf.avail  -Dxml-dir=/usr/local/etc/fonts -Dbitmap-conf=yes -Ddefault-hinting=slight -Dnls=enabled -Dtests=disabled",
+        "BUILD_DEPENDS": "/usr/local/bin/gperf:devel/gperf meson:devel/meson ninja:devel/ninja pkgconf>=1.3.0_1:devel/pkgconf /usr/local/bin/python3.12:lang/python312 gettext-runtime>=0.26:devel/gettext-runtime gettext-tools>=0.26:devel/gettext-tools ",
+        "LIB_DEPENDS": "libfreetype.so:print/freetype2  libexpat.so:textproc/expat2 libintl.so:devel/gettext-runtime",
+        "RUN_DEPENDS": "",
+        "TEST_DEPENDS": "",
+        "TEST_TARGET": "test"
+      },
+      "fixed_default": {
+        "PKGNAME": "fontconfig-2.18.3,1",
+        "SELECTED_OPTIONS": "BITMAPS DOCS HINTING_SLIGHT NLS",
+        "MESON_ARGS": "-Dadditional-fonts-dirs=/usr/local/lib/X11/fonts  -Dcache-build=disabled  -Dcache-dir=/var/db/fontconfig  -Ddefault_library=both  -Ddefault-fonts-dirs=/usr/local/share/fonts  -Ddoc=disabled  -Dtemplate-dir=/usr/local/etc/fonts/conf.avail  -Dxml-dir=/usr/local/etc/fonts -Dbitmap-conf=yes -Ddefault-hinting=slight -Dnls=enabled -Dtests=disabled",
+        "BUILD_DEPENDS": "/usr/local/bin/gperf:devel/gperf meson:devel/meson ninja:devel/ninja pkgconf>=1.3.0_1:devel/pkgconf /usr/local/bin/python3.12:lang/python312 gettext-runtime>=0.26:devel/gettext-runtime gettext-tools>=0.26:devel/gettext-tools ",
+        "LIB_DEPENDS": "libfreetype.so:print/freetype2  libexpat.so:textproc/expat2 libintl.so:devel/gettext-runtime",
+        "RUN_DEPENDS": "",
+        "TEST_DEPENDS": "",
+        "TEST_TARGET": "test"
+      },
+      "original_TEST": {
+        "PKGNAME": "fontconfig-2.18.3,1",
+        "SELECTED_OPTIONS": "BITMAPS DOCS HINTING_SLIGHT NLS TEST",
+        "MESON_ARGS": "-Dadditional-fonts-dirs=/usr/local/lib/X11/fonts  -Dcache-build=disabled  -Dcache-dir=/var/db/fontconfig  -Ddefault_library=both  -Ddefault-fonts-dirs=/usr/local/share/fonts  -Ddoc=disabled  -Dtemplate-dir=/usr/local/etc/fonts/conf.avail  -Dxml-dir=/usr/local/etc/fonts -Dbitmap-conf=yes -Ddefault-hinting=slight -Dnls=enabled -Dtests=enabled",
+        "BUILD_DEPENDS": "/usr/local/bin/gperf:devel/gperf meson:devel/meson ninja:devel/ninja pkgconf>=1.3.0_1:devel/pkgconf /usr/local/bin/python3.12:lang/python312 gettext-runtime>=0.26:devel/gettext-runtime gettext-tools>=0.26:devel/gettext-tools ",
+        "LIB_DEPENDS": "libfreetype.so:print/freetype2  libexpat.so:textproc/expat2 libintl.so:devel/gettext-runtime",
+        "RUN_DEPENDS": "",
+        "TEST_DEPENDS": "bash:shells/bash",
+        "TEST_TARGET": "test"
+      },
+      "fixed_TEST": {
+        "PKGNAME": "fontconfig-2.18.3,1",
+        "SELECTED_OPTIONS": "BITMAPS DOCS HINTING_SLIGHT NLS TEST",
+        "MESON_ARGS": "-Dadditional-fonts-dirs=/usr/local/lib/X11/fonts  -Dcache-build=disabled  -Dcache-dir=/var/db/fontconfig  -Ddefault_library=both  -Ddefault-fonts-dirs=/usr/local/share/fonts  -Ddoc=disabled  -Dtemplate-dir=/usr/local/etc/fonts/conf.avail  -Dxml-dir=/usr/local/etc/fonts -Dbitmap-conf=yes -Ddefault-hinting=slight -Dnls=enabled -Dtests=enabled -Dtests-external-fonts=disabled",
+        "BUILD_DEPENDS": "/usr/local/bin/gperf:devel/gperf meson:devel/meson ninja:devel/ninja pkgconf>=1.3.0_1:devel/pkgconf /usr/local/bin/python3.12:lang/python312 gettext-runtime>=0.26:devel/gettext-runtime gettext-tools>=0.26:devel/gettext-tools ",
+        "LIB_DEPENDS": "libfreetype.so:print/freetype2  libexpat.so:textproc/expat2 libintl.so:devel/gettext-runtime",
+        "RUN_DEPENDS": "",
+        "TEST_DEPENDS": "bash:shells/bash",
+        "TEST_TARGET": "test"
+      }
+    },
+    "default_effective_arguments_options_and_all_dependencies_exactly_unchanged": true,
+    "TEST_effective_arguments_gain_exactly_original_declared_external_font_disable": true,
+    "TEST_selected_options_and_dependencies_unchanged": true,
+    "fresh_whole_SDK116_raw_database_frozen17_base_accounts_loader_cache_mounts_and250_selected_inputs_preserved": true
+  },
+  "retained_preflight_diagnostics": {
+    "original_strict_preflight_mismatch_retained": true,
+    "actual_difference": "Only idle-period SQLite SHM mtime changed; bodies, type, size, mode, numeric IDs, flags, hardlinks and all other nodes equal. Exact responsible operation not established.",
+    "completion": "Existing typed metadata-query preflight transition records that delta, then holds a fresh complete SDK snapshot exactly through native execution. No timestamp restoration, data exclusion or in-flight guard relaxation."
+  },
+  "remaining": [
+    "Fresh fixed TEST construction, original make test and independent discovery/program/TAP completion audit.",
+    "Sealed shared/static native font matching, cache, XML, CLI, original Lua sample and pkg font-cache trigger lifecycle acceptance.",
+    "Complete original source/failure/private/normal evidence custody and actual normal solver/hook integration.",
+    "Matching source/SDK/kernel and AMD64, canonical Component/provenance/lifecycle/SDK/TCB, desktop, physical, installer/update/rollback/media/freeze/signing/publication."
+  ]
+}
