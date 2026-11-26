@@ -104,3 +104,22 @@ cache reuse, firstPackageWins, relative/dotted/circular imports, failure cleanup
 bytecode, native extensions and source preservation. GNU and BSD zero-fuzz patch
 outputs are identical. Full changed-source verification and the unchanged
 original build/selftest are next; this control grants no original case acceptance.
+
+Revision5 verifies all184397 source members and passes the eight original
+construction/package phases. Original selftest then stops importing the removed
+private unittest `_TextTestResult`; zero original cases execute. All2104 native
+source/object/stage/package/failure records verify on ARM and Intel. The raw
+capture retains a previous three-patch scope label; the exact original input
+reference and actual construction bind four patches, as explicitly corrected.
+
+Revision6 uses public TextTestResult under Nose's original internal name. A
+native isolated reporter control passes12 checks, including four reporter cases
+with intentional assertion/error/skip outcomes and exact reasons/summaries. A
+full actual-runtime prototype completes one authored passing case. Five further
+module-fixture and legacy/modern-plugin cases then all fail removed getargspec;
+the same five assertions pass with a shared four-field inspection adapter that
+retains bound-method self and an older-Python fallback. Native BSD zero-fuzz
+combined patch equals GNU output. All earlier failures are retained; the full
+original revision6 suite, packaged runtime/CLI, lifecycle, normal delivery and
+canonical release admission remain open. No original test/assertion/selection,
+dependency or default deadline changes accompany these API repairs.

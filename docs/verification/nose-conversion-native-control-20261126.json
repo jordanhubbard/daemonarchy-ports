@@ -2,9 +2,9 @@
   "schema_version": 1,
   "work_id": "PORT-NOSE-PY312-001",
   "planned_product_release": "1.6",
-  "status": "original-Nose4-construction-pass-selftest-import-failed-Nose5-isolated-importer-native-control-pass-original-qualification-pending",
+  "status": "original5-construction-pass-selftest-private-result-import-failure-retained-source6-public-result-and-fixture-plugin-controls-pass-full-original6-pending",
   "origin": "devel/py-nose",
-  "candidate_package": "py312-nose-1.3.7_5",
+  "candidate_package": "py312-nose-1.3.7_6",
   "retained_original_failure": {
     "setup3lib_import": "Mixin2to3 absent in setuptools63.1.0",
     "effect": "Original setup.py ImportError fallback loses conversion and custom build_tests command registration.",
@@ -20,7 +20,8 @@
     "original_make_test_commands_unchanged": true,
     "original_assertions_discovery_deadlines_or_runner_selection_changed": false,
     "package_data_repair": "The fallback build_py byte_compile receives all get_outputs paths, including nose/usage.txt. Convert only .py output paths, preserve the full output list passed to original base byte_compile, and retain the existing explicit doctest conversion path.",
-    "importer_repair": "Retain legacy imp path where available; Python3.12 fallback uses path-local PathFinder and module specs, preserving global import lock, explicit fullname registration, package-relative imports and failed-module cleanup. No fake imp module or test assertion modifications."
+    "importer_repair": "Retain legacy imp path where available; Python3.12 fallback uses path-local PathFinder and module specs, preserving global import lock, explicit fullname registration, package-relative imports and failed-module cleanup. No fake imp module or test assertion modifications.",
+    "supported_Python_APIs": "Use public unittest.runner.TextTestResult under original internal name. Route all three original module-fixture/plugin reflection sites through a shared nose.pyversion helper, selecting getfullargspec first four fields while retaining self and the older-Python getargspec fallback. No test assertions, selections, dependencies or default deadlines changed."
   },
   "native_authored_control": {
     "architecture": "arm64",
@@ -99,9 +100,9 @@
     "Python grammar repair PR122 and mail validation PR84",
     "Complete original test runner and dependency closure"
   ],
-  "next": "Complete two-host control custody and full184397-member source verification; then fresh revision5 unchanged original checksum/extract/4patch/configure/build/stage/plist/package/custom build_tests+selftest. Audit every actual failure, case and skip. Metadata acceptance, sealed runtime/CLI, lifecycle, normal delivery, canonical provenance SDK and full1.6 release remain open.",
+  "next": "Retain all source6 control attempts on ARM/Intel, verify full184398-member source6, then fresh original checksum/extract/5patch/configure/build/stage/plist/package/build_tests/selftest. Keep every real result and skip. Complete original cases, independent packaged runtime/CLI, metadata/lifecycle/normal delivery and canonical provenance SDK release gates remain open.",
   "new_patch_zero_fuzz_applies_to_exact_original_setup3lib_and_equals_native_tested_prototype": true,
-  "observed_utc": "2026-11-26T19:00:18.346352+00:00",
+  "observed_utc": "2026-11-26T19:15:03.101951+00:00",
   "normal_Python_prerequisite_now_qualified": {
     "package": "python312-3.12.16_5",
     "package_sha256": "2502aa401ca32d299524750984a538143e6ce48dfc6b55fd4adc283ed72db7a9",
@@ -325,6 +326,168 @@
       "parts": 1,
       "inventory_sha256": "a1c60f0f1ae34c20f4b90c38f8ec6468882d86b6f356e8f7dafb78b82664a386",
       "archive_bytes": 2240397,
+      "all_nodes_verified_ARM_and_Intel": true,
+      "extra_Linux_root_archive_bytes": 0
+    }
+  },
+  "actual_original_Nose5_construction": {
+    "source_revision": "c896943f8eec19d45ecb6300ab73f2f4fb091b0f",
+    "all_complete_native_source_members_verified": 184397,
+    "original_target_exits": [
+      [
+        "original-native-metadata",
+        0
+      ],
+      [
+        "original-custom-test-emitted-without-execution",
+        0
+      ],
+      [
+        "original-checksum",
+        0
+      ],
+      [
+        "original-extract",
+        0
+      ],
+      [
+        "original-patch",
+        0
+      ],
+      [
+        "original-configure",
+        0
+      ],
+      [
+        "original-build",
+        0
+      ],
+      [
+        "original-stage",
+        0
+      ],
+      [
+        "original-check-plist",
+        0
+      ],
+      [
+        "original-package",
+        0
+      ],
+      [
+        "original-complete-custom-build-tests-and-selftest",
+        1
+      ]
+    ],
+    "original_cases_executed": 0,
+    "actual_selftest_failure": "Both imports of private unittest _TextTestResult fail in nose/result.py; no original cases execute. Importer fix passes this import boundary.",
+    "package": {
+      "bytes": 287052,
+      "sha256": "478a935c29d84e3e020a1e72499ecf85ef42a4deb70f312416dd6c0d7f24bc70"
+    },
+    "normal_Nose_installed": false,
+    "all427_patched_original_code_and_test_bodies_preserved": true,
+    "all_normal_SDK128_old18_frozen_base_accounts_loader_fontcache_mount_guards_pass": true,
+    "complete_two_host_custody": {
+      "nodes": 2104,
+      "parts": 1,
+      "all_nodes_verified_ARM_and_Intel": true,
+      "inventory_sha256": "518684fc2b25c3f482c407d476ac4eb28b3b830f615f6f59a124d80c5b3aa8e1"
+    },
+    "raw_capture_scope_key_correction": "Raw metadata key after_3portpatches retains a prior template count. Actual selected source, independent reference and original patch phase bind4 exact port patches. Original scope and all archived bytes are retained unchanged; no source/test outcome changes."
+  },
+  "candidate6_python_API_native_controls": {
+    "identity": {
+      "implementation_commit": "211decc3986a6da76df2d7379089c3cc36ecac0d",
+      "source_revision": "b80d2be53d60980be32b70439083a1d66b554285",
+      "source_tree": "54119be028a16eda8f47e515bd414bf9cf0c0911",
+      "files": {
+        "devel/py-nose/Makefile": {
+          "sha256": "837a942f372db1d31234dbb00f0bb0fa9f0612feb96dc38ae1113be535bd9ebe",
+          "blob": "de49b8bf00f1d0560cdb2b8be795ff57231071fa"
+        },
+        "devel/py-nose/files/patch-python312-compat": {
+          "sha256": "d47a7379c8a734072654137849eb58b6232df5b8ca96d21a95c4cc96b387a18c",
+          "blob": "7f353c045d78b96743d507b4910e1e99c3dd090e"
+        }
+      }
+    },
+    "public_result_base_reporter": {
+      "uid": 65534,
+      "checks": [
+        "public-base-identity",
+        "all-four-cases-complete",
+        "assertion-preserved",
+        "exception-preserved",
+        "skip-reason-preserved",
+        "failures-not-success",
+        "traceback-reported",
+        "summary-counts-reported",
+        "plugin-report-called",
+        "pass-is-success",
+        "pass-summary",
+        "input-source-unchanged"
+      ],
+      "count": 12,
+      "original_result_source_sha256": "bc6db9f52d8867ed28395bde62472a90fe0f80cb953cbefdb82b1439356d534b",
+      "converted_result_source_sha256": "2e7d347e667327e52464ffc9bf199f184cb224cfbfc4e2ac7702a0c968634637",
+      "reporter_cases_executed": 4,
+      "intentional_assertion_failures": 1,
+      "intentional_errors": 1,
+      "intentional_skips": 1,
+      "original_Nose_fullsuite_acceptance": false,
+      "isolated_config_util_skip_imports": true
+    },
+    "negative_source5_private_base_import_exit": 1,
+    "full_actual_runtime_public_base_only_one_authored_case": {
+      "uid": 65534,
+      "full_real_Nose_import": true,
+      "authored_single_passing_case_completed": true,
+      "original_suite_acceptance": false
+    },
+    "broader_five_fixture_plugin_before_argspec_repair": {
+      "exit": 1,
+      "total": 5,
+      "passed": 0,
+      "all_failures": "Actual removed inspect.getargspec in module fixture and plugin APIs; all individual tracebacks retained."
+    },
+    "same_five_assertions_after_shared_four_field_repair": {
+      "uid": 65534,
+      "cases": [
+        {
+          "label": "no-argument-module-fixture",
+          "pass": true
+        },
+        {
+          "label": "module-argument-fixture",
+          "pass": true
+        },
+        {
+          "label": "callable-module-fixture",
+          "pass": true
+        },
+        {
+          "label": "legacy-module-plugin",
+          "pass": true
+        },
+        {
+          "label": "modern-module-plugin",
+          "pass": true
+        }
+      ],
+      "total": 5,
+      "passed": 5,
+      "original_Nose_fullsuite_acceptance": false
+    },
+    "BSD_zero_fuzz_combined_patch_matches_GNU": true,
+    "all_normal_SDK128_old18_frozen_base_accounts_loader_fontcache_mounts_preserved": true,
+    "all_original5_worktrees_preserved": true,
+    "complete_original_Nose6_suite_acceptance": false,
+    "complete_two_host_custody": {
+      "nodes": 278,
+      "parts": 1,
+      "archive_bytes": 2797129,
+      "inventory_sha256": "9103b3be3abe64a40f8597a0edb49941a3ce5a0a5e2c04d69a336f78a578667e",
       "all_nodes_verified_ARM_and_Intel": true,
       "extra_Linux_root_archive_bytes": 0
     }
