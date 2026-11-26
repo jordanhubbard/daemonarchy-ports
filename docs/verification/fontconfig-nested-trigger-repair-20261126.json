@@ -1,0 +1,75 @@
+{
+  "observed_utc": "2026-11-26T08:52:18.393701+00:00",
+  "status": "native-runtime-pass-original-lifecycle-fails-nested-trigger-causal-fix-awaits-fresh-package-qualification",
+  "scope": "Original revision 0 runtime checks and failed lifecycle plus isolated installed-trigger control. The source fix and revision 1 require fresh original TEST/default builds, independent runtime and actual lifecycle/custody/normal qualification. No normal Fontconfig admission or release claim.",
+  "origin": "x11-fonts/fontconfig",
+  "original_package_version": "2.18.3,1",
+  "original_source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+  "original_package": {
+    "bytes": 489017,
+    "sha256": "ce3dbabf663b4fcbcce1828f2ff64e2c82377e356b579530a9d054980530d8ba"
+  },
+  "private_runtime": {
+    "actual_commands": 54,
+    "font_files": 10,
+    "font_faces": 13,
+    "shared_and_static_positive_assertions_each": 180,
+    "shared_and_static_XML_negative_recovery_assertions_each": 46,
+    "all344_payloads_and_outside_prefix_cache_directory_exact": true,
+    "default_sample_bytes_used_with_explicit_private_configuration_paths": true,
+    "owned_XDG_home_user_fonts_and_cache": true,
+    "normal_host_font_cache_remains_absent": true,
+    "candidate_PC_only_relocation_dependency_metadata_unchanged": true,
+    "coverage": [
+      "Exact per-file face counts and font formats across TTF, CFF, TTC, WOFF/WOFF2, BDF and compressed/uncompressed PCF.",
+      "Default sample configuration, user-font listing, expected families, match/sort/query/scan and native cache contents.",
+      "Actual shared candidate binding and static fontconfig without dynamic fontconfig; actual qualified/base dependency bodies pinned.",
+      "Pattern/charset/language/matrix values, XML app-font alias and ownership, malformed XML recovery and invalid-font CLI statuses."
+    ],
+    "whole_SDK123_frozen_base_accounts_cache_mounts_and_250_source_guards_pass": true
+  },
+  "original_lifecycle_failure": {
+    "fresh_original_Fontconfig_add_and_ldconfig_Lua_sample_hooks_exit": 0,
+    "fresh_Fontconfig_configuration_directory_files_run_trigger": true,
+    "same_root_nested_font_fixture_add_exit": 0,
+    "nested_font_fixture_trigger_executed": false,
+    "cache_contains_no_font_records_before_control": true,
+    "cause": "pkg matches path entries exactly against a file immediate parent directory; share/fonts/child does not match share/fonts.",
+    "actual_pkg_version": "2.9.3",
+    "all_host_SDK_and_unmount_guards_pass": true
+  },
+  "isolated_causal_control": {
+    "original_failed_root_copied_and_preserved": true,
+    "only_installed_trigger_path_matching_changed": true,
+    "same_nested_font_fixture_force_reinstall_runs_original_fc_cache_script": true,
+    "actual_cache_contains_both_exact_font_files": true,
+    "existing_configuration_directory_trigger_and_actual_XML_alias_work": true,
+    "source_or_package_qualification_claimed": false,
+    "all_host_SDK_and_unmount_guards_pass": true
+  },
+  "source_fix": {
+    "review_commit": "024f52be629ad7cc22f8f474ba889d028a4b6192",
+    "native_composition": "d76dd1dd03c3186f635fef2722252327d19b750c",
+    "new_package_version": "2.18.3_1,1",
+    "PORTREVISION": 1,
+    "exact_paths": [
+      "PREFIX/share/fonts",
+      "LOCALBASE/lib/X11/fonts",
+      "LOCALBASE/etc/fonts/conf.d"
+    ],
+    "descendant_globs": [
+      "PREFIX/share/fonts/*",
+      "LOCALBASE/lib/X11/fonts/*"
+    ],
+    "Lua_trigger_script_body_and_sandbox_setting_unchanged": true,
+    "full_native_source_preparation_and_fresh_qualification_pending": true
+  },
+  "accepted_bounded_development_package_count": 123,
+  "normal_Fontconfig_installation": false,
+  "remaining": [
+    "Fresh complete source verification, original TEST variant and independent discovery/TAP/JUnit audit with all 18 JSON configuration cases.",
+    "Fresh revision-1 default artifact and the same shared/static/font/cache/CLI/XML consumers.",
+    "Real canonical and legacy nested-font directory add/delete triggers, configuration add/delete triggers, Lua sample and loader-cache lifecycle, full custody and normal admission.",
+    "Actual older cache baseline and original network/Linux bwrap gaps; all canonical Component/SDK/TCB, matched source/kernel/AMD64, desktop, physical and full release gates."
+  ]
+}
