@@ -1,0 +1,197 @@
+{
+  "schema": "daemonarchy-native-gperf-observation@1",
+  "observed_utc": "2026-11-26T02:39:57.606590+00:00",
+  "planned_release": "1.6",
+  "status": "normal-bounded-native-ARM-development-integration-pass",
+  "scope": "Bounded native ARM development only. Matching source/SDK/kernel and AMD64, complete desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, physical matrix, installer/update/rollback/media, freeze/signing/publication remain open.",
+  "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+  "original_port": "devel/gperf",
+  "version": "3.3",
+  "package": {
+    "bytes": 88319,
+    "sha256": "5e5fa3933fe097cf3cf70ed235997dc012aa6bd3d4d5f70c0e4c31fc4248aae6"
+  },
+  "selected_original_source_members": 247,
+  "full_original_Git_composition_members": 184381,
+  "original_options_dependencies_and_sources_unchanged": true,
+  "original_construction": {
+    "targets_passed": 8,
+    "actor_uid": 65534,
+    "serial_original_MAKE_JOBS_UNSAFE_preserved": true
+  },
+  "original_default_make_test": {
+    "runner": "Original TEST_TARGET=check",
+    "default_prerequisite_groups": [
+      "check-c",
+      "check-ada",
+      "check-modula3",
+      "check-pascal",
+      "check-lang-utf8",
+      "check-lang-ucs2",
+      "check-smtp",
+      "check-test",
+      "check-large"
+    ],
+    "expected_output_comparisons_passed": 24,
+    "actual_native_SMTP_generated_code_runs_passed": 3,
+    "all_original_test_input_bytes_exact_to_verified_distfile": true,
+    "all24_actual_outputs_match_expected_files_and_original_native_diff_commands": true,
+    "production_gperf_binary_and_package_unchanged": true,
+    "optional_extracheck_language_syntax_matrix": "Separate original target; not run or qualified.",
+    "audit_observer_failure": "First read-only multiline SOURCE_FILES parser failed; retained complete result/input/output and guards. Corrected read-only audit preserves original completed tests and does not replay them."
+  },
+  "independent_private_and_normal_consumers_each": {
+    "actual_commands": 21,
+    "generated_C_Cpp_matrices": [
+      {
+        "name": "ansi-default",
+        "language": "ANSI-C",
+        "options": [],
+        "keywords": 262,
+        "queries": 5144,
+        "nonmembers": 4880,
+        "generated_sha256": "e9c757716088fbd39284d9c95c692188623611aecf71b1b61c128756d146428d"
+      },
+      {
+        "name": "ansi-readonly",
+        "language": "ANSI-C",
+        "options": [
+          "--readonly-tables",
+          "--enum",
+          "--global-table",
+          "--compare-strncmp"
+        ],
+        "keywords": 266,
+        "queries": 5160,
+        "nonmembers": 4892,
+        "generated_sha256": "7e122a587b6c95422e464075e91d90c76afd6d3f83448c588ed990fab61492c3"
+      },
+      {
+        "name": "ansi-binary-switch",
+        "language": "ANSI-C",
+        "options": [
+          "--readonly-tables",
+          "--compare-lengths",
+          "--switch=3"
+        ],
+        "keywords": 270,
+        "queries": 5176,
+        "nonmembers": 4904,
+        "generated_sha256": "96439f5be843dad303cbe0a5ec97990bc844ff274d165f9b6bc7996834f6187e"
+      },
+      {
+        "name": "cpp-binary",
+        "language": "C++",
+        "options": [
+          "--readonly-tables",
+          "--compare-lengths"
+        ],
+        "keywords": 270,
+        "queries": 5176,
+        "nonmembers": 4904,
+        "generated_sha256": "9814a5a8b5a9ea55519aec2743c87f9f0bb1fb692f8783b1eed06fd55e96f6e9"
+      },
+      {
+        "name": "ansi-casefold",
+        "language": "ANSI-C",
+        "options": [
+          "--ignore-case",
+          "--compare-lengths"
+        ],
+        "keywords": 262,
+        "queries": 5668,
+        "nonmembers": 4880,
+        "generated_sha256": "ee535ea33e3fbbf46bc74a2c096dfcefb2689035461a628431b41ad8b7b6c560"
+      },
+      {
+        "name": "cpp-casefold-switch",
+        "language": "C++",
+        "options": [
+          "--ignore-case",
+          "--compare-strncmp",
+          "--switch=2"
+        ],
+        "keywords": 262,
+        "queries": 5668,
+        "nonmembers": 4880,
+        "generated_sha256": "d825c8a4a9161aab5b1ff04611176d915e96b26c8131c317df52c2c24b1ad038"
+      }
+    ],
+    "actual_native_queries": 31992,
+    "independent_oracle": "Python creates canonical keyword/payload and nonmember sets, then native generated lookup executables verify every query.",
+    "coverage": [
+      "ANSI C and C++ generation, native compile and execution",
+      "Read-only/global/enum tables, string and length comparisons, switch tables",
+      "Unicode and embedded NUL keyword bytes",
+      "ASCII case folding, canonical payload identity, at least4096nonmembers per matrix",
+      "Real version/help/invalid-option error and subsequent successful generation",
+      "Actual gzip manpage and Info/HTML documentation"
+    ]
+  },
+  "private": {
+    "sealed_payloads": 8,
+    "explicit_directories": 0,
+    "payload_bodies_and_metadata_exact": true,
+    "extraction": "pkg -r add -IM for isolated extraction only; scripts and dependency delivery skipped. Original lifecycle and normal admission separately executed.",
+    "actual_native_base_Cpp_runtime_libraries_bound_and_preserved": true,
+    "original_hook_pkg_chroot_transactions_passed": 6,
+    "actual_Info_index_menu_presence": [
+      true,
+      true,
+      false,
+      true,
+      false,
+      true
+    ],
+    "actual_indexinfo_executable_from_qualified_SDK_copied_and_sealed": true,
+    "dependency_scope": "Exact accepted SDK indexinfo executable/transitive ELF bindings only; no private dependency-package/solver admission claimed.",
+    "locked_fixture_accounts_preserved_and_all_temporary_base_devfs_mounts_removed": true
+  },
+  "normal_Info_prediction": {
+    "actual_indexinfo_on_private_copy_of_complete_normal_Info_tree": true,
+    "A1_rebuild_matches_original_global_menu_bytes": true,
+    "B_adds_only_expected_gperf_entry_preserving_all_old_entries": true,
+    "A2_removal_restores_original_menu_bytes": true,
+    "only_new_entry": [
+      "* Gperf: (gperf).                Perfect Hash Function Generator."
+    ],
+    "predicted_body": {
+      "bytes": 5486,
+      "sha256": "37917c1d12835a74d20bfe2b9bba04bcc0595fe0b69e80e22218b558983e9bfa"
+    },
+    "whole_SDK112_raw_database_and_host_preserved": true
+  },
+  "normal": {
+    "original_offline_solver_dependency_checks_and_Info_hooks_enabled": true,
+    "no_force_dependency_or_hook_bypass": true,
+    "payloads_verified": 8,
+    "inherited_package_prefixes_preserved_except_exact_predicted_Info_index_and_shared_parent_directory_mtimes": 112,
+    "actual_Info_menu_matches_private_prediction_byte_for_byte": true,
+    "registry_exact_old112_plus_gperf": 113,
+    "accepted_bounded_development_count": 113,
+    "installed_held_packages": [],
+    "actual_pkg_integrity_and_dependency_checks_pass": true,
+    "actual_loader_cache_body_metadata_and_ordered_candidates_unchanged": true,
+    "actual_default_native_queries": 31992,
+    "normal_LD_LIBRARY_PATH_or_prefix_override": false,
+    "fresh_whole_SDK113_prefix_raw_database_preserved_through_default_consumers": true,
+    "frozen17_base_Cpp_runtime_accounts_cache_mounts_all247selected_source_inputs_preserved": true
+  },
+  "custody": {
+    "source_private": {
+      "nodes": 1518,
+      "archive_bytes": 25285982,
+      "archive_sha256": "dea08147bb9aad7ad8234fa0710252eb84a3848b7d4d815e5216555bd536b620",
+      "inventory_sha256": "f3d9d2f1268677e31fd54882cc8751096ee5040cdca31f42cf3940f295402c4b",
+      "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_independently_verified_native_ARM_and_physical_Intel": true
+    },
+    "normal_and_Info_prediction": {
+      "nodes": 152,
+      "archive_bytes": 22765668,
+      "archive_sha256": "7abfafb807a893a029ce77fa93e75427c6a114b2f3727a93a4514ad6091b4660",
+      "inventory_sha256": "7ebf60858112e24491de26321d3c1e6a0942aed5cf9bb59b3f23bae3b0fb8a3e",
+      "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_independently_verified_native_ARM_and_physical_Intel": true
+    }
+  },
+  "remaining_specific": "Original optional gperf extracheck syntax matrix remains unqualified. Libthai is normally uninstalled pending assessment of original installed-header API gaps; Graphviz/default desktop and font dependency closure remain incomplete. Earlier OpenSP/GLib/CMake/Python gaps remain explicit."
+}

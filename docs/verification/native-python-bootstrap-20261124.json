@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 112,
+  "normal_development_package_count": 113,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -2347,6 +2347,14 @@
       "failed": 0,
       "skipped": 0,
       "scope": "Original default source suite only.12unimplemented installed declarations/thwrend.h compile failure remain open; candidate normally uninstalled."
+    },
+    "gperfDefault": {
+      "runner": "Original make test TEST_TARGET=check",
+      "original_groups": 9,
+      "actual_expected_output_comparisons_passed": 24,
+      "actual_SMTP_runs_passed": 3,
+      "original_inputs_exact_to_verified_distfile": true,
+      "scope": "Original default check target only; optional extracheck syntax matrix unqualified."
     }
   },
   "pending": [
@@ -2380,7 +2388,8 @@
     "Current GLib checkpoint: selected409OK/9originalSKIP/0ERROR;6989TAP;41private and41default consumers;6actualoriginal-hooktransactions;68906source/private/failure/lifecycle nodes and233normal/completion nodes independently verified on nativeARM+Intel. Actual selected artifact normally integrated; accepted bounded development count110 unchanged. Original skipped/optional/failing variants and default-kernel-capacity coverage; remaining original suite gaps including six OpenSP failures and absent XInclude schemas; matching amd64/aarch64 source/SDK/kernel; full desktop/apps; canonical ownership/provenance/lifecycle/SDK/TCB; physical fleet, installer/update/rollback/media, freeze/signing/publication remain open.",
     "Current PNG checkpoint: original37CTest,31private codec+15tools,6real lifecycle transactions, actual normal install/hooks plus31codecs and30metadata/tools,3CMake clients pass. Accepted bounded normal111. Graphviz original-default metadata plan has59unbuilt nodes/32ready; construction pending. Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, full desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, complete physical matrix, installer/update/rollback/media, freeze/signing/publication remain open.",
     "Current libdatrie checkpoint: original8construction/10upstreamtests,33private+33defaultconsumers and6realoriginalhooktransactions pass. Complete source/private andnormal capsules independently verified nativeARM+Intel. Accepted bounded normal112; previousPNG111 andGLib110 remain historical qualification contexts. Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, complete desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, full physical matrix, installer/update/rollback/media, freeze/signing/publication remain open.",
-    "Libthai original8construction/9defaulttests,7positive implementedAPIcommands and6real lifecycletransactions pass, with full both-host custody. Installed-header audit exposes12unimplementeddeclarations andthwrend.hcompilefailure. Package remains UNINSTALLED; accepted112 unchanged. Resolveoriginal declaration/implementation contract before claiming fullAPI/normalacceptance. Full Daemonarchy1.6 release remains incomplete: matching source/SDK/kernel and AMD64; complete desktop/apps; canonical ownership/provenance/lifecycle/SDK/TCB; physical matrix; installer/update/rollback/media; freeze/signing/publication."
+    "Libthai original8construction/9defaulttests,7positive implementedAPIcommands and6real lifecycletransactions pass, with full both-host custody. Installed-header audit exposes12unimplementeddeclarations andthwrend.hcompilefailure. Package remains UNINSTALLED; accepted112 unchanged. Resolveoriginal declaration/implementation contract before claiming fullAPI/normalacceptance. Full Daemonarchy1.6 release remains incomplete: matching source/SDK/kernel and AMD64; complete desktop/apps; canonical ownership/provenance/lifecycle/SDK/TCB; physical matrix; installer/update/rollback/media; freeze/signing/publication.",
+    "Current gperf checkpoint: original8construction/9defaulttestgroups/24goldens/3SMTP,21private+21normalcommands and31992nativequeries percontext,6actualInfo-hook lifecycletransactions, independentA/B/A globalInfo prediction andexactnormalmenu pass. WholeSDK113/rawdb/frozen/base/Cppruntime/accounts/cache/mount/source guards andcompleteboth-host custody pass. Accepted113; libthai staysnormallyuninstalled; originaloptionalextracheck andfullreleasegates remainopen."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -5197,6 +5206,17 @@
       },
       "installed": false,
       "status": "held-uninstalled-original-installed-header-API-gaps-unresolved"
+    },
+    {
+      "name": "Original default gperf",
+      "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+      "package": {
+        "bytes": 88319,
+        "sha256": "5e5fa3933fe097cf3cf70ed235997dc012aa6bd3d4d5f70c0e4c31fc4248aae6"
+      },
+      "installed": true,
+      "accepted_normal_count": 113,
+      "qualification": "Bounded native ARM development only. Matching source/SDK/kernel and AMD64, complete desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, physical matrix, installer/update/rollback/media, freeze/signing/publication remain open."
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -5241,9 +5261,9 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 112,
+  "actual_installed_development_package_count": 113,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-26T02:27:38.949682+00:00",
+  "last_updated_utc": "2026-11-26T02:39:57.606590+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -6574,5 +6594,40 @@
     },
     "detail": "https://github.com/jordanhubbard/daemonarchy-ports/blob/work/native-python-bootstrap-20261124/docs/verification/libthai-original-default-20261126.json",
     "remaining": "Full Daemonarchy1.6 release remains incomplete: matching source/SDK/kernel and AMD64; complete desktop/apps; canonical ownership/provenance/lifecycle/SDK/TCB; physical matrix; installer/update/rollback/media; freeze/signing/publication."
+  },
+  "selected_original_default_gperf_qualified_20261126": {
+    "observed_utc": "2026-11-26T02:39:57.606590+00:00",
+    "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+    "version": "3.3",
+    "package": {
+      "bytes": 88319,
+      "sha256": "5e5fa3933fe097cf3cf70ed235997dc012aa6bd3d4d5f70c0e4c31fc4248aae6"
+    },
+    "original_default_test_groups": 9,
+    "original_expected_output_comparisons": 24,
+    "original_native_SMTP_runs": 3,
+    "private_and_normal_consumer_commands_each": 21,
+    "private_and_normal_native_queries_each": 31992,
+    "original_private_Info_hook_transactions": 6,
+    "actual_normal_Info_menu_matches_independent_ABA_prediction": true,
+    "accepted_bounded_development_count": 113,
+    "custody": {
+      "source_private": {
+        "nodes": 1518,
+        "archive_bytes": 25285982,
+        "archive_sha256": "dea08147bb9aad7ad8234fa0710252eb84a3848b7d4d815e5216555bd536b620",
+        "inventory_sha256": "f3d9d2f1268677e31fd54882cc8751096ee5040cdca31f42cf3940f295402c4b",
+        "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_independently_verified_native_ARM_and_physical_Intel": true
+      },
+      "normal_and_Info_prediction": {
+        "nodes": 152,
+        "archive_bytes": 22765668,
+        "archive_sha256": "7abfafb807a893a029ce77fa93e75427c6a114b2f3727a93a4514ad6091b4660",
+        "inventory_sha256": "7ebf60858112e24491de26321d3c1e6a0942aed5cf9bb59b3f23bae3b0fb8a3e",
+        "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_independently_verified_native_ARM_and_physical_Intel": true
+      }
+    },
+    "detail": "https://github.com/jordanhubbard/daemonarchy-ports/blob/work/native-python-bootstrap-20261124/docs/verification/gperf-original-default-20261126.json",
+    "remaining": "Bounded native ARM development only. Matching source/SDK/kernel and AMD64, complete desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, physical matrix, installer/update/rollback/media, freeze/signing/publication remain open."
   }
 }
