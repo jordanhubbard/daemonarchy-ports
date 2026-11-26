@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 116,
+  "normal_development_package_count": 117,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -2398,7 +2398,8 @@
     "Current gperf checkpoint: original8construction/9defaulttestgroups/24goldens/3SMTP,21private+21normalcommands and31992nativequeries percontext,6actualInfo-hook lifecycletransactions, independentA/B/A globalInfo prediction andexactnormalmenu pass. WholeSDK113/rawdb/frozen/base/Cppruntime/accounts/cache/mount/source guards andcompleteboth-host custody pass. Accepted113; libthai staysnormallyuninstalled; originaloptionalextracheck andfullreleasegates remainopen.",
     "Current libthai checkpoint: exactoriginalPango1.58.2source uses4availableoriginalexportedfunctions andnoneof12missingdeclarations. OriginalsupportedABI/defaultdictionary7commands normallypass withoriginalsolver/hooks,26payloads/113inheritedprefixes/114registry andfullSDK114guards. Readonlycorrection bindsactualcorrect6transactionlifecycleinside1550nodecapsule withoutreplay;71node normal/contract/bindingcapsule both-hostverified. FullheaderAPI/Pangobuild-runtime andbroaderreleasegates remainopen.",
     "Brotli admitted at115 for original default native ARM standard-stream surface:28original CTest,88private/88normal commands,54Linux AArch64 cross-binary decodes and54physical Intel existing-decoder cross-ISA decodes. No new AMD64 build/deployment qualification. Extension APIs and broader release gates remain open.",
-    "FreeType admitted at116: original8construction targets and options,33private/33normal actualfont commands across10inputs/13faces, knownbitmap andWOFF2, unchanged112characterupstreamregression,6originalhooktransactions andfullboth-hostsource/failure/normalcustody. OriginalportnoTEST_TARGET; nofullMesonsuite/fullAPI/desktop/AMD64/canonicalrelease claim. Fontconfig/HarfBuzz/Pango andbroaderreleaseacceptance remainopen."
+    "FreeType admitted at116: original8construction targets and options,33private/33normal actualfont commands across10inputs/13faces, knownbitmap andWOFF2, unchanged112characterupstreamregression,6originalhooktransactions andfullboth-hostsource/failure/normalcustody. OriginalportnoTEST_TARGET; nofullMesonsuite/fullAPI/desktop/AMD64/canonicalrelease claim. Fontconfig/HarfBuzz/Pango andbroaderreleaseacceptance remainopen.",
+    "LibYAML admitted at117 with original2programsuite, independent shared/static encoding/parser/emitter matrix,6originalhooktransactions andcompletebothhostcustody. More-itertools original929cases and245privatechecks pass; normal/custody pending. PyYAML originalLIBYAML build/package pass, originalpytest collection fails because yaml/_yaml is unavailable on its import path; staged compiledextension exists. Retain originalerror, originalassertions and fulltestselection; diagnose build-to-test path integration. NewTAPtools andcompleteFontconfig suite remainpending."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2412,7 +2413,8 @@
     "Libxslt_DocBook_test_failure_and_CDATA_goldens": "https://github.com/jordanhubbard/daemonarchy-ports/pull/114",
     "Xmlcatmgr_XML_attribute_encoding": "https://github.com/jordanhubbard/daemonarchy-ports/pull/115",
     "Pkg_local_archive_upgrade": "https://github.com/jordanhubbard/daemonarchy-ports/pull/116",
-    "Xmlcharent_PUBLIC_only_offline_resolution": "https://github.com/jordanhubbard/daemonarchy-ports/pull/117"
+    "Xmlcharent_PUBLIC_only_offline_resolution": "https://github.com/jordanhubbard/daemonarchy-ports/pull/117",
+    "Fontconfig_TEST_options_and_TAP_dependencies": "https://github.com/jordanhubbard/daemonarchy-ports/pull/119"
   },
   "held_packages": [
     {
@@ -5278,9 +5280,9 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 116,
+  "actual_installed_development_package_count": 117,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-26T03:48:07.078543+00:00",
+  "last_updated_utc": "2026-11-26T05:13:09.956179+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -6980,5 +6982,114 @@
       "compiler_forced_include": "stdlib.h supplies getenv declaration; no source or assertion rewrite",
       "direct_program_execution_not_full_Meson_suite_claim": true
     }
+  },
+  "selected_original_default_LibYAML_qualified_20261126": {
+    "observed_utc": "2026-11-26T05:13:09.956179+00:00",
+    "status": "pass-bounded-native-ARM-original-default-LibYAML-normal117",
+    "scope": "Bounded native development admission only; full release and canonical qualification remain open.",
+    "original_origin": "textproc/libyaml",
+    "version": "0.2.5",
+    "source_revision": "3f9d8a0447226e2240056ac7d6058c3bd8dc1c0f",
+    "package": {
+      "bytes": 67302,
+      "sha256": "ece921a02ca8c8476fce3eebf3097fbdb2d139b475d329092911fbc6f30c9f7f"
+    },
+    "original_construction_targets": [
+      [
+        "checksum",
+        0
+      ],
+      [
+        "extract",
+        0
+      ],
+      [
+        "patch",
+        0
+      ],
+      [
+        "configure",
+        0
+      ],
+      [
+        "build",
+        0
+      ],
+      [
+        "stage",
+        0
+      ],
+      [
+        "check-plist",
+        0
+      ],
+      [
+        "package",
+        0
+      ],
+      [
+        "test",
+        0
+      ]
+    ],
+    "original_selfsuite": {
+      "discovered": 2,
+      "completed": 2,
+      "PASS": 2,
+      "SKIP": 0,
+      "ERROR": 0,
+      "FAIL": 0,
+      "names": [
+        "test-version",
+        "test-reader"
+      ],
+      "suite_log_sha256": "b04a863f01b55e247fd9b2ccd6b8f2add645651a1519ecfb72904ea4996c6a52"
+    },
+    "independent_parser_emitter_matrix": {
+      "UTF8_UTF16LE_UTF16BE_times_plain_and_canonical": 6,
+      "documents_each": 2,
+      "negative_error_categories": [
+        "reader",
+        "scanner",
+        "parser",
+        "composer"
+      ],
+      "negative_cases": 5,
+      "fresh_valid_recovery": true,
+      "semantic_comparison": "All composed node types/tags/scalar lengths and bytes/sequence item IDs/mapping key-value IDs including shared alias identity; styles intentionally vary during re-emission."
+    },
+    "shared_static_outputs_identical": true,
+    "private_client_sha256": "4a80485e3d0aff0ef7da88ef1ef7c6ab70723521081aa68193d449013e9b970e",
+    "lifecycle": {
+      "original_package_transactions": 6,
+      "real_ldconfig_install_delete_reinstall_hooks_verified": true,
+      "readonly_base_devfs_locked_accounts_and_final_unmount_verified": true
+    },
+    "normal": {
+      "accepted_normal_count": 117,
+      "exact_new_payloads": 10,
+      "inherited_package_prefixes_preserved": 116,
+      "exact_registry_old116_plus_LibYAML": true,
+      "default_pkgconf_and_shared_loader_static_link_no_private_overrides": true,
+      "shared_static_outputs_equal_private": true,
+      "all_preexisting_loader_candidate_priorities_preserved": true,
+      "new_shared_providers": 1,
+      "full_SDK117_raw_database_frozen17_base_accounts_cache_mounts_and247_source_guards_pass": true
+    },
+    "source_private_lifecycle_custody": {
+      "nodes": 1237,
+      "archive_bytes": 15522358,
+      "archive_sha256": "44da2df11eee83558b765906c50705c0337da29c59c6164de9296764463f9457",
+      "inventory_sha256": "60aa38899cf52291865c948b578c324a4d24dcb3356d3e470928f05e79fe3fa0",
+      "all_bodies_metadata_links_hardlinks_and_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
+    },
+    "normal_custody": {
+      "nodes": 44,
+      "archive_bytes": 18044080,
+      "archive_sha256": "b4c24d83b3d11d07334b24061364e8ef8f5f1968890ed556fe1d652ba9f0caa2",
+      "inventory_sha256": "16846764b794c361f903cf319ded21e816149021168edda909380f3b04300bd7",
+      "all_bodies_metadata_links_hardlinks_and_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
+    },
+    "remaining": "More-itertools normal/lifecycle/custody, PyYAML and new TAP tools, complete original Fontconfig suite and private/default integration; matching source/SDK/kernel and AMD64, canonical Component/ownership/provenance/lifecycle/SDK/TCB, desktop, physical matrix, installer/update/rollback/media/freeze/signing/publication."
   }
 }
