@@ -21,4 +21,8 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
+# Make the staged pytest entry point available to pytester subprocesses.
+TEST_ENV=	${MAKE_ENV} \
+		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
 .include <bsd.port.mk>
