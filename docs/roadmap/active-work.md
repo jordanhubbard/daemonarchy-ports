@@ -126,13 +126,32 @@ names the sealed library. Original artifacts and failed probes remain intact.
 Candidate5 keeps the GNU man directory relative and preserves literal dollars
 through configure and sysconfig metadata. Five actual native configure/parser
 cases and two unprivileged private-prefix man installs pass; all 10,156 control
-nodes verify in two capsules on both hosts. A fresh source5 build and complete
-suite must use restored child signal defaults and retain all original assertions,
-resources, jobs, builtin reruns and deadlines. Native API, lifecycle, normal and
+nodes verify in two capsules on both hosts. The fresh source5 build below uses
+restored child signal defaults and retains all original assertions, resources,
+jobs, builtin reruns and deadlines. Real package lifecycle, normal delivery and
 canonical release gates remain open; see the [Python terminal report](../verification/python312-grammar-native-control-20261126.json).
 
-All 184,396 candidate5 Git bodies now verify natively. Original checksum, extract,
-eight-patch application and configure pass; compilation is active. The actual
-uid65534 child probe confirms default HUP/QUIT and a self-SIGINT raising
-KeyboardInterrupt. Audit inherited child signal state before reusing older
+All 184,396 candidate5 Git bodies verify natively. The original nine phases,
+including the complete unchanged buildbottest suite, finished successfully.
+All 492 programs have outcomes: 461 passed, 30 skipped and one was resource-denied;
+the original runner reports 42,374 tests and 1,656 skips in 9 min 56 sec.
+The XML retains 42,374 case occurrences: 40,963 passed, 1,404 explicit skips with
+reasons and seven expected failures. The additional 252 aggregate skips remain
+unreconciled; no missing case identities or reasons are invented. All 56 duplicate
+case identities remain separate occurrences. The first audit's seven expected-
+failure classification errors are corrected while preserving its original output.
+
+Independent sealed verification passes all 8,031 payloads and 77 native ELF files,
+eight grammar cases / 16 checks, three weekly-logging cases, 36 embedding checks
+and 164 stable-ABI / all-75-native-extension checks. Packaged sysconfig retains
+the literal man-directory expression and four private installation schemes.
+All 25,179 selected source/object/stage/package/test/XML/API/control records
+verify on ARM and Intel in 13 bounded archives, streamed directly without an
+extra Linux-root archive. All protected SDK/base/accounts/cache/mount guards pass.
+
+Real package-hook and dependency-checked install/upgrade/rollback/delete/reinstall,
+normal delivery and full canonical provenance/SDK/release gates remain open.
+The installed 128-package SDK retains its original Python feature hold; Nose is
+uninstalled. Current locks pass; stale human review and lifecycle receipt gates
+remain unsatisfied. Audit inherited child signal state before reusing older
 background-launched qualifications; their original outcomes remain retained.

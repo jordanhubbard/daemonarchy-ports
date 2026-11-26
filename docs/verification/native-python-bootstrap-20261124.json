@@ -9865,7 +9865,7 @@
         "port_patches": 8,
         "sha256": "ebd5f026cbdd3d9a24414189860e8863dd053286111a7066c74f8e4c8c29bc05"
       },
-      "fresh_build_full_suite_sealed_API_lifecycle_normal_and_canonical_release_pending": true
+      "remaining": "Real package hooks and dependency checks through install/upgrade/rollback/delete/reinstall, normal namespace delivery, complete per-unit TCB/provenance/canonical SDK/release admission remain pending."
     },
     "package4_complete_custody": {
       "nodes": 25177,
@@ -9877,8 +9877,9 @@
       "no_Linux_root_extra_archives": true
     },
     "candidate5_original_construction_progress": {
-      "state": "original-build",
+      "state": "terminal-original-nine-phases-pass-including-complete-original-suite",
       "source_revision": "ee5dbbc99b46c70ed9333a0f17551048460645b2",
+      "finished_utc": "2026-11-26T17:15:25.927406+00:00",
       "original_command_exits": [
         [
           "original-checksum",
@@ -9895,17 +9896,140 @@
         [
           "original-configure",
           0
+        ],
+        [
+          "original-build",
+          0
+        ],
+        [
+          "original-stage",
+          0
+        ],
+        [
+          "original-check-plist",
+          0
+        ],
+        [
+          "original-package",
+          0
+        ],
+        [
+          "original-make-test-buildbottest-with-upstream-junit-report",
+          0
         ]
       ],
-      "all4581_original_patched_and_configured_source_bodies_match_independent_eight_patch_reference": true,
+      "all4581_original_sources_preserved": true,
+      "all_SDK19_old18_frozen17_base_accounts_loader_fontcache_mount_source_and_private_advisory_guards_pass": true,
+      "original_options_dependencies_assertions_resources_jobs_builtin_W_and_1200second_deadline_preserved": true,
+      "reporting_only_addition": "Upstream --junit-xml; no test/assertion/selection change or external retry of unchanged valid profile.",
       "actual_child_signal_guard": {
         "uid": 65534,
         "SIGINT_handler": "default_int_handler",
         "SIGHUP": 0,
         "SIGQUIT": 0,
         "self_SIGINT_raised_KeyboardInterrupt": true
+      }
+    },
+    "source_built_package5": {
+      "version": "3.12.16_5",
+      "bytes": 40537630,
+      "sha256": "2502aa401ca32d299524750984a538143e6ce48dfc6b55fd4adc283ed72db7a9",
+      "fresh_short_TMPDIR_used_from_start": true,
+      "stage_recovery_needed": false
+    },
+    "original_full_suite_package5": {
+      "original_make_test_exit": 0,
+      "actual_all492_unique_program_outcomes": true,
+      "passed_programs": 461,
+      "skipped_programs": 30,
+      "resource_denied_programs": 1,
+      "resource_denied_program": "test_zipfile64",
+      "original_reported_total_tests_run": 42374,
+      "original_reported_total_tests_skipped": 1656,
+      "original_reported_test_files_run": "491/492",
+      "original_reported_duration": "9 min 56 sec",
+      "XML_skips_match_original_aggregate": false,
+      "XML_case_nodes_match_original_tests_run": true,
+      "every_actual_XML_skip_has_explicit_reason": true,
+      "skip_count_discrepancy": {
+        "original_aggregate": 1656,
+        "explicit_XML_skipped_case_nodes": 1404,
+        "difference": 252,
+        "fully_reconciled": false,
+        "source_observation": "Original RegressionTestResult emits XML only after startTest and only for first _add_result of that testcase. Class/module skip and subtest callbacks can enter unittest skipped list without independent XML nodes. This is an explanation of reporter limits, not attribution of the 252 unrepresented aggregate skips. No missing identities or reasons invented."
       },
-      "fresh_package_original_suite_sealed_API_lifecycle_normal_and_canonical_release_pending": true
+      "original_result": "SUCCESS",
+      "XML": {
+        "bytes": 5682337,
+        "sha256": "a8b82495d8a44f59d77f7ea9f405a8e94bf61734f51f01d328aac0371e435bc1",
+        "root_tag": "testsuites",
+        "root_attributes": {
+          "tests": "42374",
+          "errors": "0",
+          "failures": "0"
+        },
+        "suite_count": 461,
+        "testcase_nodes": 42374,
+        "result_counts": {
+          "skipped": 1404,
+          "passed": 40963,
+          "expected_failure": 7
+        },
+        "skipped_cases_missing_explicit_reason": 0,
+        "duplicate_case_identity_occurrences": 56
+      },
+      "case_inventory": {
+        "bytes": 788885,
+        "sha256": "2d1f5244799517d71ff618ceee5ad5df3fa456e5cedaf71ae17af4f5e601a156"
+      },
+      "audit_observer_correction": "R1 classified seven expected failures as passed; R2 retains every original XML attribute/child and classifies 40,963 passed, 1,404 explicit skipped, seven expected-failure case occurrences. R1 and all original bytes preserved; no suite replay. All 56 duplicate identity occurrences retained."
+    },
+    "sealed_package5_runtime": {
+      "payloads": 8031,
+      "AArch64_ELF": 77,
+      "explicit_directories": 0,
+      "pkg_registered_payload_checksums_exit": 0,
+      "actual_uid65534_own_interpreter_stdlib_native_extensions_and_dynamic_libpython_definition_binding_pass": true,
+      "grammar_cases": 8,
+      "grammar_checks": 16,
+      "weekly_logging_cases": 3,
+      "embedding_checks": 36,
+      "stable_ABI_and_all_native_extensions_checks": 164,
+      "native_extension_imports": 75,
+      "limited_API_hex": "0x030c0000",
+      "capsule_destructors_each_native_client": 1,
+      "packaged_sysconfig_literal_mandir_and_four_private_installation_schemes_pass": true,
+      "all_payload_bodies_metadata_and_private_prefix_frozen_across_probes": true,
+      "all_SDK19_old18_frozen17_base_accounts_loader_fontcache_mount_source_package_guards_pass": true,
+      "fixture_scope": "pkg -r -IM scripts/dependency-solver-disabled sealed fixture only. No real lifecycle, normal installation or full C API contract/canonical/release acceptance claimed."
+    },
+    "complete_package5_original_suite_and_native_API_custody": {
+      "nodes": 25179,
+      "parts": 13,
+      "all_nodes_verified_ARM_and_Intel": 25179,
+      "complete_inventory_sha256": "8cf756e0ff76aa85f0c2d751a18aa35a7b47a04dd5f6c73067f55a1492d6abf3",
+      "archive_total_bytes": 404756025,
+      "largest_archive_bytes": 48971872,
+      "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_hardlinks_gzip_CRC_verified": true,
+      "every_node_once_no_cross_partition_hardlinks": true,
+      "extra_Linux_root_archive_bytes": 0,
+      "prior_failed_and_invalid_runs_preserved_separately": true
+    },
+    "current_status": "candidate5-original-fullsuite-and-sealed-native-API-pass-complete-two-host-custody-lifecycle-and-normal-delivery-pending",
+    "acceptance_boundaries": {
+      "repaired_source_built_package": true,
+      "original_full_suite": true,
+      "independent_fresh_package_runtime": true,
+      "retained_lifecycle": false,
+      "normal_upgrade_or_grammar_repair": false,
+      "normal_installed_count": 128,
+      "normal_python_feature_hold": true,
+      "Nose_installed": false,
+      "canonical_Component_SDK_or_release": false,
+      "repaired_source_built_package3": true,
+      "proposed_recipe4_source_built_package": false,
+      "bounded_package3_grammar_and_actual_interpreter_binding_pass": true,
+      "complete_per_case_aggregate_skip_reason_receipt": false
     }
   },
   "current_base_runtime_hold_20261126": {
@@ -9955,5 +10079,6 @@
     "background_signal_inheritance_defect_confirmed": true,
     "new_producer_restores_and_measures_original_command_child_dispositions": true,
     "prior_background_qualification_reuse": "Audit child signal dispositions before reusing previous background-launched results. Original assertions and outcomes remain retained; no aggregate SDK health/native Component admission is inferred."
-  }
+  },
+  "observed_utc": "2026-11-26T17:29:05.543866+00:00"
 }
