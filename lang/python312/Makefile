@@ -1,6 +1,6 @@
 PORTNAME=	python
 DISTVERSION=	${PYTHON_DISTVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION:C/[a-z].*//}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
@@ -123,6 +123,9 @@ CONFIGURE_ARGS:=	${CONFIGURE_ARGS:N${LTO_CONFIGURE_ON}}
 .endif
 
 post-patch:
+# Python configures lowercase prefix; retain it after generic pathfix.
+	@${REINPLACE_CMD} -e 's|^LIBPC=.*|LIBPC= $$(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.pre.in
+
 # disable the detection of includes and library from libuuid,
 # which introduces hidden dependency and breaks build
 	@${REINPLACE_CMD} -e 's|uuid/uuid.h|ignore_&|' ${WRKSRC}/configure
