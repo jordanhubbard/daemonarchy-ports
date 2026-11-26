@@ -2355,7 +2355,8 @@
     "Current checkpoint: accepted bounded ARM development count107, no installed held package. SGML4/XML6 paired repair and normal integration pass. DocBook metaport1.5 all8 original construction targets pass, package acceptance/normal integration pending; continue original XSL defaults, D-Bus MANPAGES/X11, complete original GLib suite and desktop. All broader release gates remain open.",
     "Original default DocBook XSL (all14 feature options plus actual global defaults), D-Bus MANPAGES/X11, full original GLib suite and desktop. OpenSP original failures, missing XInclude XSDs, all canonical/AMD64/physical/installer/update/rollback/final media/signing/release gates remain open.",
     "Original default D-Bus MANPAGES/X11 construction and selected original test inventory, sealed/runtime/custody/normal integration; then full original GLib suite and desktop closure. OpenSP six original failures, two absent XInclude XSDs, canonical lifecycle/SDK/TCB, matching AMD64, physical matrix, installer/update/rollback, final media/signing/publication remain open.",
-    "Current checkpoint: original default D-Bus is normally integrated among110bounded ARM development packages after six real private chroot lifecycle transactions, default runtime and complete independent two-host custody. Fresh original default GLib build/test started because prior configuration lacked D-Bus discovery. Full GLib results and all broader release gates remain pending; earlier count/tool checkpoints above are historical."
+    "Current checkpoint: original default D-Bus is normally integrated among110bounded ARM development packages after six real private chroot lifecycle transactions, default runtime and complete independent two-host custody. Fresh original default GLib build/test started because prior configuration lacked D-Bus discovery. Full GLib results and all broader release gates remain pending; earlier count/tool checkpoints above are historical.",
+    "Current GLib checkpoint: Complete native Git source verification passed:184381members, original retained source unchanged, strict SDK110/frozen17/base/mount guards passed. Fresh original construction/test now running under the recorded temporary capacity profile with independent restoration watchdog; actual patched test bodies checked against pinned upstream. Terminal build/test outcome pending. Latest native selected suite and actual package consumer/custody/normal acceptance; original skipped/optional/failing variants, six OpenSP suite failures, absent XInclude schemas, complete desktop, matching AMD64/source/SDK/kernel, canonical ownership/provenance/lifecycle/SDK/TCB, physical fleet, installer/update/rollback/final media/freeze/signing/publication."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2789,9 +2790,10 @@
     },
     "GLibDefault": {
       "source_construction": "All8targets pass; full original DOCS/MANPAGES/NLS/TEST preserved.",
-      "development_normal_consumers": "41commands each sealed/default pass; actual96packages.",
-      "original_full_suite": "Fresh original default build/test launched with all declared tools installed. Earlier387test configuration found neither dbus-1 nor dbus-daemon. Old producer retained; fresh short owned work uses unchanged defaults/original8targets and make test. Terminal result, full discovery and per-case accounting remain pending.",
-      "canonical_AMD64_release_qualified": false
+      "development_normal_consumers": "Historical installed default GLib passes41sealed/default commands; installed artifact is unchanged within110bounded development packages. New upstream-backported candidates remain uninstalled.",
+      "original_full_suite": "Original 420-discovered/418-selected full target audited: baseline407OK/9SKIP/2ERROR; first two upstream corrections404/9/5 at saturated worker cache; adequate-capacity rerun408/9/1 isolates filename-order assumption. Third upstream test correction included; complete184381member native source and preservation guards verified. Fresh original construction/test running; new full selected outcome pending. All original results retained. No filtered success.",
+      "canonical_AMD64_release_qualified": false,
+      "latest_review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/118"
     },
     "D-Bus modular test variant": {
       "state": "Original port disables modular_tests; six selected default programs pass but do not qualify that variant.",
@@ -5031,6 +5033,14 @@
       "installed": true,
       "qualification": "Native ARM bounded development integration only. Original selected default six-program/43event test inventory qualified; disabled modular variant and broader upstream suite remain open. Canonical ownership/provenance/lifecycle, matching AMD64, full desktop, physical fleet, installer/update/rollback/media/signing/publication remain open.",
       "accepted_normal_count": 110
+    },
+    {
+      "component": "glib20@default upstream portable test backports",
+      "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+      "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/118",
+      "status": "complete-native-source-verified-fresh-original-construction-and-suite-running",
+      "installed": false,
+      "qualification": "Latest native selected suite and actual package consumer/custody/normal acceptance; original skipped/optional/failing variants, six OpenSP suite failures, absent XInclude schemas, complete desktop, matching AMD64/source/SDK/kernel, canonical ownership/provenance/lifecycle/SDK/TCB, physical fleet, installer/update/rollback/final media/freeze/signing/publication."
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -5077,7 +5087,7 @@
   },
   "actual_installed_development_package_count": 110,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-25T23:17:54.203515+00:00",
+  "last_updated_utc": "2026-11-26T00:34:47.049364+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -6056,5 +6066,99 @@
     "original_failure_before_upstream_execution": "Original pre-test redirects dbus-uuidgen to root-owned /var/lib/dbus/machine-id; UID65534 receives Permission denied. Full original failure and all products/work retained; SDK110 rawprefix, logical registry, base and mounts preserved.",
     "fresh_followup": "Fresh second build underway with short separately owned parent and exact original selected260sourceinputs. Original make test will run original pre-test as root; supported DO_MAKE_TEST hook wraps the exact expanded original backend/environment/target to drop only its execution identity to UID/GID65534. No source/test/options/filter changes. Expected UUID generated-state transition and account/cache guards will be recorded.",
     "qualification": "Build/test outcome pending; no new GLib package installed or suite acceptance claimed."
+  },
+  "full_GLib_original_default_portability_checkpoint_20261125": {
+    "observed_utc": "2026-11-26T00:34:47.049364+00:00",
+    "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/118",
+    "installed_accepted_bounded_development_count": 110,
+    "new_candidates_normally_installed": false,
+    "original_discovered_programs": 420,
+    "original_default_selected_programs": 418,
+    "original_excluded_unqualified": [
+      "iptosmessage",
+      "codegen.py"
+    ],
+    "default_options_preserved": [
+      "DOCS",
+      "MANPAGES",
+      "NLS",
+      "TEST"
+    ],
+    "baseline_actual_selected_suite": {
+      "OK": 407,
+      "SKIP": 9,
+      "ERROR": 2,
+      "failures": [
+        "pollable",
+        "gdbus-auth"
+      ],
+      "numbered_TAP_events": 6987
+    },
+    "first_two_upstream_backports": {
+      "qualification_source_revision": "76ea8e22a12d73da9255afc2b021ff022f11ad95",
+      "all8construction_targets_passed": true,
+      "selected_suite": {
+        "OK": 404,
+        "SKIP": 9,
+        "ERROR": 5
+      },
+      "failure_names": [
+        "testfilemonitor",
+        "file",
+        "documentportal",
+        "dbus-appinfo",
+        "desktop-app-info"
+      ],
+      "numbered_TAP_events": 6900,
+      "package_sha256": "83cb87d35c5eb90da802bbcd17b4566103d9f88ae2590616c32f27e74a79293d"
+    },
+    "causal_worker_capacity": {
+      "independent_base_C_F_KINFO_reproduces_empty_descriptor_paths": true,
+      "fresh_A_B_A": "Empty paths at original capacity, correct paths at increased capacity, empty paths again after restoration. No GLib source needed.",
+      "disconfirmed_hypothesis": "A separate null-device kqueue registration probe disproves the proposed ignored-error hypothesis; no library change was made.",
+      "original_ABA_observer_failure_retained": "Original writable limits and capacity restored, but rebuilt read-only hash geometry differs from boot. Explicit read-only completion verifies current geometry and preserves original failure. No claim of original boot internal geometry restoration."
+    },
+    "adequate_capacity_full_selected_rerun": {
+      "all8construction_targets_passed": true,
+      "selected_suite": {
+        "OK": 408,
+        "SKIP": 9,
+        "ERROR": 1
+      },
+      "failure_names": [
+        "filenamecompleter"
+      ],
+      "numbered_TAP_events": 6988,
+      "all5_prior_capacity_related_failures_passed": true,
+      "minimum_measured_cache_headroom": 1275601,
+      "original_worker_settings_capacity_and_current_runtime_hash_restored": true,
+      "independent_process_exit_watchdog_verified_restoration": true,
+      "package_bytes": 11263642,
+      "package_sha256": "732c10ac4b45c6286d2210a6861311f5205534caa241d6f60be7191f751aa230",
+      "suite_passed": false
+    },
+    "complete_original_failed_source_resource_custody": {
+      "nodes": 65018,
+      "archive_bytes": 285816034,
+      "archive_sha256": "281982442c0b4c2d6c1ea0fe8b950a35815c358db5b1e8c090293f8416856174",
+      "inventory_sha256": "9f670742eccf8c0ca0b7597e74ac64c63302500bc48b1a32cdaacbea17b9a360",
+      "all_nodes_independently_verified_native_ARM_and_Intel": true,
+      "includes": "First three complete source/build/failure trees, full Git composition, probes, original A/B/A observer failure and read-only completion. Later capacity reruns are separately retained and not claimed inside this capsule."
+    },
+    "filename_order_correction": {
+      "upstream_commit": "70355ac696600d7cd99dcb7e1cf110b52bd158b9",
+      "test_only": true,
+      "original_expected_membership_multiplicity_suffix_and_directory_assertions_preserved": true,
+      "original_inputs_options_dependencies_distinfo_exclusions_preserved": true,
+      "package_revision_bump": false,
+      "combined_zero_fuzz_patch_equals_pinned_upstream_test_body": true
+    },
+    "latest_source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+    "latest_source_members": 184381,
+    "latest_native_result": "Complete native Git source verification passed:184381members, original retained source unchanged, strict SDK110/frozen17/base/mount guards passed. Fresh original construction/test now running under the recorded temporary capacity profile with independent restoration watchdog; actual patched test bodies checked against pinned upstream. Terminal build/test outcome pending.",
+    "strict_guards": "Each terminal audited run preserves entire SDK110 prefix/raw database, frozen SDK17, base/kernel/shells, accounts/loader cache, mounts and original selected source inputs. Expected original root UUID pre-test runs before exact unchanged test backend drops to UID/GID65534. Read-only pkg-query sidecar transitions are explicit; no timestamp restoration or blanket exclusion.",
+    "remaining": "Latest native selected suite and actual package consumer/custody/normal acceptance; original skipped/optional/failing variants, six OpenSP suite failures, absent XInclude schemas, complete desktop, matching AMD64/source/SDK/kernel, canonical ownership/provenance/lifecycle/SDK/TCB, physical fleet, installer/update/rollback/final media/freeze/signing/publication.",
+    "latest_source_verification_finished_utc": "2026-11-26T00:34:14.997568+00:00",
+    "latest_source_all_members_and_guards_verified": true
   }
 }
