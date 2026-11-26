@@ -14,3 +14,5 @@ integration branch is `main`, matching the product's release checkout catalog
 and HACKING.md. Track FreeBSD upstream `main` separately from the owned branch.
 GitHub issues are disabled in this fork;
 the product repository's DEV-001 and COMP-001 queues retain the parent work.
+
+- [LZO2 original self-tests and pkg-config header failure](verification/lzo2-pkgconf-native-findings-20261126.json)
