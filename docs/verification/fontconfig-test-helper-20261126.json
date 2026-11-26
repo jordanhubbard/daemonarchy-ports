@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-11-26T06:16:34.763686+00:00",
+  "observed_utc": "2026-11-26T06:23:20.956579+00:00",
   "status": "helper-native-regression-pass-15-C-programs-pass-Python-TAP-dependencies-pending",
   "current_code_commit": "d8fc0ce2248b8c4e13a0d1d001d35045db74eb9e",
   "current_native_source_composition": "622cca27dcc8bde9288288a2945da8d8ed6fcf29",
@@ -159,7 +159,8 @@
     "last_verified_native_preparation_receipt_sha256": "7b753e203575d03ca14cc2eef81cfc1bc34a8b3d7a6cb6b909de75a026af6748",
     "last_verified_source_revision": "d8825ff08eb18991ff7a1809fb4b00ed49908d1a",
     "current_source_tree": "1c8884c6766322a59ae17efb208cfde916a00a8e",
-    "current_native_source_preparation": "running;622cca normalizednewportidentity,184387members/9changed-or-addedfaddpaths/0removed, freshSDK119/rawDB/frozen/systemguards"
+    "current_native_source_preparation": "pass;622cca/1c8884c Gitcommit/tree, all184387nativebodies/modes/links, exactoriginalsource retention andwholeSDK119/rawDB/frozen/base/accounts/cache/mount guards",
+    "current_native_preparation_receipt_sha256": "09d85c981f38d8309e4ad4f6916b1692cd31b97fadb8c7cc7b613b273e7b8247"
   },
   "remaining": [
     "Native metadata/construction/original full suite/private/lifecycle/custody/normal qualification of both new TAP ports; MoreItertools118 andPyYAML119 prerequisites qualified.",
@@ -746,8 +747,68 @@
         },
         "finding": "Framework PEP517 staging derives wheel/dist-info paths from PORTNAME, normalizinghyphens/underscores butnotdots; proposedtap.pyidentity incorrectlyseekstap.pyfilename whileactualupstreamwheelusescanonicaltap_py.",
         "source_fix": "Choosecanonicaltap-pyidentity fornewFreeBSDportanddependentdeclaration, retainingupstreamsource/import/CLIs/constraints/selectedtests.",
-        "native_source_fix_and_full_qualification_pending": true,
-        "allSDK119_frozen_base_accounts_cache_mounts_and246source_guards_pass_after_stage_failure": true
+        "native_source_fix_and_full_qualification_pending": false,
+        "allSDK119_frozen_base_accounts_cache_mounts_and246source_guards_pass_after_stage_failure": true,
+        "source_fix_native_construction_and116cases_pass_full_private_lifecycle_custody_normal_pending": true
+      },
+      "canonical_identity_native_construction_and_upstream_suite": {
+        "source_revision": "622cca27dcc8bde9288288a2945da8d8ed6fcf29",
+        "package": {
+          "bytes": 38197,
+          "sha256": "8df6505d38ebb560ffec6b06e7dc1a6130ef255ece897fed49cfa487e45df0f9"
+        },
+        "construction_targets": [
+          {
+            "target": "checksum",
+            "exit": 0
+          },
+          {
+            "target": "extract",
+            "exit": 0
+          },
+          {
+            "target": "patch",
+            "exit": 0
+          },
+          {
+            "target": "configure",
+            "exit": 0
+          },
+          {
+            "target": "build",
+            "exit": 0
+          },
+          {
+            "target": "stage",
+            "exit": 0
+          },
+          {
+            "target": "check-plist",
+            "exit": 0
+          },
+          {
+            "target": "package",
+            "exit": 0
+          }
+        ],
+        "native_original_checksum_matches_untouched_official_sdist": true,
+        "original_suite": {
+          "discovered": 116,
+          "completed": 116,
+          "PASS": 116,
+          "SKIP": 0,
+          "FAIL": 0,
+          "ERROR": 0,
+          "duplicate_display_ids": 0,
+          "all_case_file_line_id_signatures_unique_and_ordered_completions_match": true,
+          "discovery_includes_function_source_locations_and_item_types": true,
+          "native_junit_xml_sha256": "ece493914aff2f8395e3adb0eef4c29b2a4750384b531195371f26f67216e652",
+          "native_discovery_sha256": "4dee6c10ebc07ef6ee53f4de9e621c663cd9a77bfc9d91cb53439c22f5047dfb"
+        },
+        "all_original_test_and_data_files_match_verified_distfile": 16,
+        "actual_wheel_and_dist_info_staging_succeeds": true,
+        "whole_SDK119_raw_database_frozen_base_accounts_cache_mounts_and246_source_guards_pass": true,
+        "independent_TAP_library_CLI_optional_dependency_absence_lifecycle_custody_normal_pending": true
       }
     }
   }
