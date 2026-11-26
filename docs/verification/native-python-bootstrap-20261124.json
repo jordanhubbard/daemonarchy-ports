@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 110,
+  "normal_development_package_count": 111,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -2326,6 +2326,14 @@
         "all_nodes_verified_on_both_hosts": true
       },
       "AMD64_canonical_lifecycle_release_qualified": false
+    },
+    "PNG": {
+      "runner": "original make test via cmake:testing/Ninja/CTest",
+      "passed": 37,
+      "failed": 0,
+      "skipped": 0,
+      "independent_discovery_command_completion_audit": true,
+      "scope": "Native ARM original selected APNG/SIMD suite. Physical Intel existing package baseline is separate."
     }
   },
   "pending": [
@@ -2356,7 +2364,8 @@
     "Original default DocBook XSL (all14 feature options plus actual global defaults), D-Bus MANPAGES/X11, full original GLib suite and desktop. OpenSP original failures, missing XInclude XSDs, all canonical/AMD64/physical/installer/update/rollback/final media/signing/release gates remain open.",
     "Original default D-Bus MANPAGES/X11 construction and selected original test inventory, sealed/runtime/custody/normal integration; then full original GLib suite and desktop closure. OpenSP six original failures, two absent XInclude XSDs, canonical lifecycle/SDK/TCB, matching AMD64, physical matrix, installer/update/rollback, final media/signing/publication remain open.",
     "Current checkpoint: original default D-Bus is normally integrated among110bounded ARM development packages after six real private chroot lifecycle transactions, default runtime and complete independent two-host custody. Fresh original default GLib build/test started because prior configuration lacked D-Bus discovery. Full GLib results and all broader release gates remain pending; earlier count/tool checkpoints above are historical.",
-    "Current GLib checkpoint: selected409OK/9originalSKIP/0ERROR;6989TAP;41private and41default consumers;6actualoriginal-hooktransactions;68906source/private/failure/lifecycle nodes and233normal/completion nodes independently verified on nativeARM+Intel. Actual selected artifact normally integrated; accepted bounded development count110 unchanged. Original skipped/optional/failing variants and default-kernel-capacity coverage; remaining original suite gaps including six OpenSP failures and absent XInclude schemas; matching amd64/aarch64 source/SDK/kernel; full desktop/apps; canonical ownership/provenance/lifecycle/SDK/TCB; physical fleet, installer/update/rollback/media, freeze/signing/publication remain open."
+    "Current GLib checkpoint: selected409OK/9originalSKIP/0ERROR;6989TAP;41private and41default consumers;6actualoriginal-hooktransactions;68906source/private/failure/lifecycle nodes and233normal/completion nodes independently verified on nativeARM+Intel. Actual selected artifact normally integrated; accepted bounded development count110 unchanged. Original skipped/optional/failing variants and default-kernel-capacity coverage; remaining original suite gaps including six OpenSP failures and absent XInclude schemas; matching amd64/aarch64 source/SDK/kernel; full desktop/apps; canonical ownership/provenance/lifecycle/SDK/TCB; physical fleet, installer/update/rollback/media, freeze/signing/publication remain open.",
+    "Current PNG checkpoint: original37CTest,31private codec+15tools,6real lifecycle transactions, actual normal install/hooks plus31codecs and30metadata/tools,3CMake clients pass. Accepted bounded normal111. Graphviz original-default metadata plan has59unbuilt nodes/32ready; construction pending. Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, full desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, complete physical matrix, installer/update/rollback/media, freeze/signing/publication remain open."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -5123,6 +5132,17 @@
         "sha256": "dc3256e613e4c6c957d0dbd404a66f45393edfa64cabb643fb9f40ae8b121925"
       },
       "accepted_normal_count": 110
+    },
+    {
+      "name": "PNG original APNG SIMD",
+      "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+      "package": {
+        "bytes": 293396,
+        "sha256": "58f084e06e8b41148dc63a49b3df507bfd90f994657b524a30de784efd05a3b3"
+      },
+      "installed": true,
+      "accepted_normal_count": 111,
+      "qualification": "Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, full desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, complete physical matrix, installer/update/rollback/media, freeze/signing/publication remain open."
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -5167,9 +5187,9 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 110,
+  "actual_installed_development_package_count": 111,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-26T00:56:42.445858+00:00",
+  "last_updated_utc": "2026-11-26T02:07:56.842265+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -6340,5 +6360,92 @@
       "Intel_ZFS_healthy": true,
       "NAS": "Degraded pool, one faulted device, another degraded device, two reported data errors. Migration/cutover held."
     }
+  },
+  "selected_original_default_PNG_qualified_20261126": {
+    "observed_utc": "2026-11-26T02:07:56.842265+00:00",
+    "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+    "version": "1.6.59_1",
+    "package": {
+      "bytes": 293396,
+      "sha256": "58f084e06e8b41148dc63a49b3df507bfd90f994657b524a30de784efd05a3b3"
+    },
+    "original_CTest": {
+      "passed": 37,
+      "failed": 0,
+      "skipped": 0
+    },
+    "accepted_bounded_development_count": 111,
+    "private_codec_commands": 31,
+    "private_tool_commands": 15,
+    "actual_private_original_hook_transactions": 6,
+    "normal_codec_commands": 31,
+    "normal_metadata_tool_commands": 30,
+    "actual_default_CMake_clients": 3,
+    "normal_install_and_hooks_not_replayed_by_readonly_completion": true,
+    "custody": {
+      "source_private": {
+        "nodes": 3552,
+        "archive_bytes": 33020836,
+        "archive_sha256": "a30b4cc989e0e203974dfa610e10b8ff9dbabfc271a0f05f0c7c82ab2080e17c",
+        "inventory_sha256": "95cb4a9ee13307aeb69838f0d6c61b3c4adeeee98e23522e05242d5398de1295",
+        "independently_verified_hosts": [
+          "native ARM FreeBSD",
+          "physical Intel FreeBSD"
+        ],
+        "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_verified": true
+      },
+      "normal": {
+        "nodes": 298,
+        "archive_bytes": 18303533,
+        "archive_sha256": "d9029b13476b9449d8c91b2753217311927b10a1cf5bf000da3a41086971c300",
+        "inventory_sha256": "c2bc8493e1c8c4a536d0188ea1f4eb261ba8d38a56470f80cf50c929c86da1bb",
+        "independently_verified_hosts": [
+          "native ARM FreeBSD",
+          "physical Intel FreeBSD"
+        ],
+        "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_verified": true
+      },
+      "physical_existing_baseline": {
+        "nodes": 228,
+        "archive_bytes": 1190404,
+        "archive_sha256": "cc8aed0da0a26264a3b3bebb8df73dc0f89e9c005fda1dc285350c9fadef54ab",
+        "inventory_sha256": "c0ce394d3ed80d94ab8fa02fed6631ccfff154a8cffc1c2b7dbcc28027cfea27",
+        "independently_verified_hosts": [
+          "physical Intel FreeBSD",
+          "Sparky Linux scratch"
+        ],
+        "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_verified": true,
+        "file_flags_format": "pax-DAEMONARCHY.bsd.flags-v1",
+        "preserved_flag_values": [
+          2048
+        ],
+        "negative_controls": [
+          {
+            "name": "mismatched-recorded-flag",
+            "exit": 1,
+            "rejected": true
+          },
+          {
+            "name": "missing-format-declaration",
+            "exit": 1,
+            "rejected": true
+          }
+        ],
+        "scope": "Metadata capture and independent verification; no restore execution claimed."
+      }
+    },
+    "physical_Intel_existing_baseline": {
+      "status": "pass-existing-installed-component-only",
+      "existing_version": "1.6.59_1",
+      "installed_registry_rows_preserved": 1195,
+      "existing_payloads_preserved": 30,
+      "actual_native_codec_commands": 31,
+      "same_portable_fixture_as_ARM": true,
+      "actual_codec_coverage": "Shared/static/classic/simplified/all5filters/APNG timing/sequence/CRC/errors/recovery;32independently decoded planes.",
+      "kernel_loader_compiler_base_accounts_cache_mounts_preserved": true,
+      "qualification_limits": "Existing Daemonarchy1.5.1 kernel cb38d6498a24 baseline. No new source build, package, matching AMD64SDK/kernel, new1.6deployment/upgrade/rendered-desktop or rollback acceptance. CMake absent; original37case suite not run on this host."
+    },
+    "remaining": "Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, full desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, complete physical matrix, installer/update/rollback/media, freeze/signing/publication remain open.",
+    "detail": "https://github.com/jordanhubbard/daemonarchy-ports/blob/work/native-python-bootstrap-20261124/docs/verification/png-original-default-20261126.json"
   }
 }
