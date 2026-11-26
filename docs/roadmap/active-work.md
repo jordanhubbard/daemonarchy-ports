@@ -54,3 +54,22 @@ This selected-port workflow uses ordinary binary dependency bootstrap and a
 source-built libdvdcss dependency on FreeBSD 15.1 amd64. It does not establish
 the full matching-CURRENT source-built closure, graphical session, physical
 hardware, canonical per-unit SDK or retained lifecycle/release acceptance.
+
+### [ ] PORT-NOSE-PY312-001 — Restore Nose conversion and original command registration
+
+- **Priority:** P1
+- **Owner:** devel/py-nose native qualification
+- **Direction:** Preserve original Nose implementation, assertions, suite discovery and selected runner closure; restore legacy conversion with the current setuptools toolchain.
+- **Conclusion:** Original Mixin2to3 import failure drops conversion and build_tests registration. An isolated native authored fixture passes with the compatibility command prototype; full original Nose construction, suite, runtime, lifecycle and normal delivery remain pending.
+- **Depends on:** PORT-UNIT-001; PORT-PY312-GRAMMAR-001
+- **Implementation:**
+  - [x] Restore source and doctest conversion within the original setup3lib commands; retain both existing patches, all original tests and constraints, and bump the package revision.
+- **Evidence:**
+  - [ ] Retain original failures and all control attempts; qualify fresh original targets, complete discovery/completion, sealed clients, lifecycle, two-host custody and actual normal delivery separately.
+
+The [bounded native conversion control](../verification/nose-conversion-native-control-20261126.json)
+passes actual command registration, source conversion and a doctest with the
+current setuptools toolchain. It uses an explicitly bound private grammar
+control; it does not qualify a repaired Python package or the original Nose
+suite. Complete shared source/object/failure custody verifies all 9,403 nodes
+on ARM and Intel. Original test execution and normal Nose delivery remain open.

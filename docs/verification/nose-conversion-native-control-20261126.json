@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "work_id": "PORT-NOSE-PY312-001",
+  "planned_product_release": "1.6",
+  "status": "native-authored-registration-and-conversion-fixture-pass-original-Nose-suite-pending",
+  "origin": "devel/py-nose",
+  "candidate_package": "py312-nose-1.3.7_3",
+  "retained_original_failure": {
+    "setup3lib_import": "Mixin2to3 absent in setuptools63.1.0",
+    "effect": "Original setup.py ImportError fallback loses conversion and custom build_tests command registration.",
+    "actual_original_test_exit": 1,
+    "actual_original_selftest_cases_executed": 0,
+    "sealed_original_import_and_CLI_error": "No module named ConfigParser"
+  },
+  "source_change": {
+    "file": "setup3lib.py",
+    "reason": "Retain original build_tests/TestCommand and restore source/doctest conversion when setuptools no longer supplies its mixin; keep conversion keywords out of setuptools unsupported-keyword validation.",
+    "original_runtime_and_test_source_edits": false,
+    "both_existing_port_patches_preserved": true,
+    "original_make_test_commands_unchanged": true,
+    "original_assertions_discovery_deadlines_or_runner_selection_changed": false
+  },
+  "native_authored_control": {
+    "architecture": "arm64",
+    "Python": "3.12.16",
+    "setuptools": "63.1.0",
+    "uid": 65534,
+    "uses_private_verified_lib2to3_with_two_grammar_modes_fixed": true,
+    "registration_checks": 3,
+    "converted_module_semantics_checks": 1,
+    "converted_test_source_checks": 1,
+    "converted_doctest_cases": 1,
+    "all_fixture_original_source_bodies_unchanged": true,
+    "whole_SDK128_raw_database_frozen17_base_accounts_loader_fontcache_mounts_preserved": true,
+    "all_attempts_retained": "Initial harness omitted stat import and stopped before fixture execution; corrected harness passed.",
+    "independent_two_host_custody": true,
+    "complete_shared_custody": {
+      "nodes": 9403,
+      "parts": 9,
+      "source_capsule_limit_bytes": 134217728,
+      "all_nodes_once_and_no_cross_partition_hardlinks": true,
+      "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_gzip_CRC_verified_ARM_and_Intel": true,
+      "complete_inventory_sha256": "2268bb2e19cc67aa084b501b9d44ab38f2970ea47c2e71cf639c05ac1d5f7588",
+      "scope": "Complete Python original source, objects and stage failure, all native controls and their original failures; includes both Nose registration-control attempts and exact candidate/client bodies.",
+      "archives": [
+        {
+          "bytes": 28447594,
+          "sha256": "c6fa449cb1fb8f449e9d9888678a9f599b42de9e042ccde935e09aad282aea6a"
+        },
+        {
+          "bytes": 26567118,
+          "sha256": "bd79a23aa329ee87dfda6dfcfedef1c2d6cbc138deb36bc64deec8ca39c9cf36"
+        },
+        {
+          "bytes": 33521437,
+          "sha256": "7baa4788e012654cf74a81d9db1c693bb1e515dfea899026b6a72d9e1c2f8aed"
+        },
+        {
+          "bytes": 23561281,
+          "sha256": "5134501098c09715ee06e15a7ce0db363d123419da9c276c1b76f216ea6c6b07"
+        },
+        {
+          "bytes": 21276209,
+          "sha256": "c4814191474c377f1b0e2309700249efc19cc7d3ae149038a99cd6600d9abf4a"
+        },
+        {
+          "bytes": 27742004,
+          "sha256": "9e4f6cb436cfc71f244fc56f8c0f55f5dd44a9172c1e5bf174714ee6a0760459"
+        },
+        {
+          "bytes": 34022962,
+          "sha256": "b359e554e8a713ee279880ea42fba34fa7abfd2e2ed5e92f069e6d511dce7655"
+        },
+        {
+          "bytes": 40495245,
+          "sha256": "468369bdd79fc8beeccc78e20ed88cd8ce5845c47ff3378e876d257081a35273"
+        },
+        {
+          "bytes": 6157482,
+          "sha256": "261eefa1739b23219c37008e0a083a2b0156ae70a6c8b5fe5ee7ce24f07182ec"
+        }
+      ],
+      "additional_Linux_root_archive_bytes": 0
+    }
+  },
+  "boundaries": {
+    "fresh_original_Nose_build": false,
+    "complete_original_suite": false,
+    "repaired_Python_package_qualification": false,
+    "sealed_Nose_runtime_CLI": false,
+    "retained_package_lifecycle": false,
+    "normal_Nose_installation": false,
+    "canonical_Component_SDK_or_release_acceptance": false
+  },
+  "dependencies": [
+    "Python grammar repair PR122 and mail validation PR84",
+    "Complete original test runner and dependency closure"
+  ],
+  "next": "Qualify fresh exact original Nose sources and test discovery/completion against repaired Python, then independent packaged runtime/CLI, lifecycle, custody and normal delivery. No original tests or five parameterized runners may be dropped.",
+  "new_patch_zero_fuzz_applies_to_exact_original_setup3lib_and_equals_native_tested_prototype": true
+}
