@@ -50,3 +50,5 @@ the product repository's DEV-001 and COMP-001 queues retain the parent work.
 - [Mock original native suite and normal qualification](verification/mock-original-native-20261126.json)
 
 - [Nose compatibility and Python grammar permission findings](verification/nose-python312-native-findings-20261126.json)
+
+- [Nose conversion repair control](verification/nose-conversion-native-control-20261126.json)
