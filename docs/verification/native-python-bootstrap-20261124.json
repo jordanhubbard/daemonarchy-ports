@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 114,
+  "normal_development_package_count": 115,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -2355,6 +2355,13 @@
       "actual_SMTP_runs_passed": 3,
       "original_inputs_exact_to_verified_distfile": true,
       "scope": "Original default check target only; optional extracheck syntax matrix unqualified."
+    },
+    "Brotli": {
+      "runner": "Unmodified original make test through CMake/Ninja/CTest",
+      "passed": 28,
+      "failed": 0,
+      "skipped": 0,
+      "independent_discovery_command_completion_audit": true
     }
   },
   "pending": [
@@ -2389,7 +2396,8 @@
     "Current PNG checkpoint: original37CTest,31private codec+15tools,6real lifecycle transactions, actual normal install/hooks plus31codecs and30metadata/tools,3CMake clients pass. Accepted bounded normal111. Graphviz original-default metadata plan has59unbuilt nodes/32ready; construction pending. Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, full desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, complete physical matrix, installer/update/rollback/media, freeze/signing/publication remain open.",
     "Current libdatrie checkpoint: original8construction/10upstreamtests,33private+33defaultconsumers and6realoriginalhooktransactions pass. Complete source/private andnormal capsules independently verified nativeARM+Intel. Accepted bounded normal112; previousPNG111 andGLib110 remain historical qualification contexts. Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, complete desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, full physical matrix, installer/update/rollback/media, freeze/signing/publication remain open.",
     "Current gperf checkpoint: original8construction/9defaulttestgroups/24goldens/3SMTP,21private+21normalcommands and31992nativequeries percontext,6actualInfo-hook lifecycletransactions, independentA/B/A globalInfo prediction andexactnormalmenu pass. WholeSDK113/rawdb/frozen/base/Cppruntime/accounts/cache/mount/source guards andcompleteboth-host custody pass. Accepted113; libthai staysnormallyuninstalled; originaloptionalextracheck andfullreleasegates remainopen.",
-    "Current libthai checkpoint: exactoriginalPango1.58.2source uses4availableoriginalexportedfunctions andnoneof12missingdeclarations. OriginalsupportedABI/defaultdictionary7commands normallypass withoriginalsolver/hooks,26payloads/113inheritedprefixes/114registry andfullSDK114guards. Readonlycorrection bindsactualcorrect6transactionlifecycleinside1550nodecapsule withoutreplay;71node normal/contract/bindingcapsule both-hostverified. FullheaderAPI/Pangobuild-runtime andbroaderreleasegates remainopen."
+    "Current libthai checkpoint: exactoriginalPango1.58.2source uses4availableoriginalexportedfunctions andnoneof12missingdeclarations. OriginalsupportedABI/defaultdictionary7commands normallypass withoriginalsolver/hooks,26payloads/113inheritedprefixes/114registry andfullSDK114guards. Readonlycorrection bindsactualcorrect6transactionlifecycleinside1550nodecapsule withoutreplay;71node normal/contract/bindingcapsule both-hostverified. FullheaderAPI/Pangobuild-runtime andbroaderreleasegates remainopen.",
+    "Brotli admitted at115 for original default native ARM standard-stream surface:28original CTest,88private/88normal commands,54Linux AArch64 cross-binary decodes and54physical Intel existing-decoder cross-ISA decodes. No new AMD64 build/deployment qualification. Extension APIs and broader release gates remain open."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -5209,6 +5217,14 @@
       "installed": true,
       "accepted_normal_count": 113,
       "qualification": "Bounded native ARM development only. Matching source/SDK/kernel and AMD64, complete desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, physical matrix, installer/update/rollback/media, freeze/signing/publication remain open."
+    },
+    {
+      "name": "Original default Brotli",
+      "version": "1.2.1_1,1",
+      "installed": true,
+      "status": "pass-bounded-native-ARM-original-default-Brotli-normal115",
+      "accepted_normal_count": 115,
+      "qualification": "Custom dictionary, comment, concatenated and large-window extension surfaces unqualified by this standard-stream matrix. Matching complete source/SDK/kernel and AMD64, canonical ownership/provenance/lifecycle/SDK/TCB, desktop/apps, physical platform matrix, installer/update/rollback/media/freeze/signing/publication remain open."
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -5253,9 +5269,9 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 114,
+  "actual_installed_development_package_count": 115,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-26T02:50:48.222306+00:00",
+  "last_updated_utc": "2026-11-26T03:28:12.603984+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -6705,5 +6721,113 @@
       "superseded_by": "selected_original_default_libthai_qualified_20261126",
       "remaining_header_gaps_still_unqualified": true
     }
-  ]
+  ],
+  "selected_original_default_Brotli_qualified_20261126": {
+    "observed_utc": "2026-11-26T03:28:12.603984+00:00",
+    "status": "pass-bounded-native-ARM-original-default-Brotli-normal115",
+    "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+    "version": "1.2.1_1,1",
+    "package": {
+      "bytes": 374079,
+      "sha256": "f530b9ff63526baed6bbec175e4dbd1d485830e5b91099796a75e3b6bff9483c"
+    },
+    "accepted_bounded_development_count": 115,
+    "installed_held_packages": [],
+    "original_construction": {
+      "eight_original_port_targets_pass": true,
+      "original_STATIC_option_off_preserved": true,
+      "original_make_test": "28 original CTest programs passed, zero failures or skips",
+      "independent_discovery_argv_workdir_and_completion_audit": true,
+      "original_LastTest_preserved_before_discovery": true,
+      "selected_original_source_inputs": 248
+    },
+    "private_consumers": {
+      "actual_native_commands": 88,
+      "cases": 18,
+      "corpora": 6,
+      "quality_levels": [
+        0,
+        4,
+        11
+      ],
+      "modes": [
+        0,
+        1,
+        2
+      ],
+      "streaming_input_output_chunk_boundaries_exercised": true,
+      "coverage": "Shared C one-shot/streaming encode/decode, CLI, three pkg-config clients and loader bindings, malformed/truncated/error recovery, output canary, overwrite controls, five shipped manual pages."
+    },
+    "controller_interoperability": {
+      "streams": 54,
+      "all_native_one_shot_streaming_and_CLI_streams_decode_byte_exact": true,
+      "controller": "Linux AArch64 existing Brotli 1.2.1 libraries",
+      "native_target": "FreeBSD ARM64",
+      "same_ISA_different_OS_and_binary": true,
+      "independent_algorithm_claim": false,
+      "controller_encoded_vectors_consumed_natively": 18
+    },
+    "lifecycle": {
+      "original_ldconfig_hook_transactions": 6,
+      "fresh_add_force_reinstall_delete_readd_cycles": true,
+      "all_three_shared_provider_cache_transitions_verified": true,
+      "sealed_payloads": 27,
+      "all_fixture_mounts_removed_and_host_restored": true
+    },
+    "normal": {
+      "original_offline_solver_dependencies_shlibs_and_ldconfig_hooks_enabled": true,
+      "no_force_dependency_or_hook_bypass": true,
+      "sealed_payloads_verified": 27,
+      "inherited_prefixes_preserved_except_shared_parent_directory_mtimes": 114,
+      "registry_exact_old114_plus_Brotli": 115,
+      "new_shared_loader_providers": 3,
+      "all_previous_candidates_per_soname_order_and_search_directories_preserved": true,
+      "actual_pkg_integrity_and_dependency_checks_pass": true,
+      "actual_default_native_commands": 88,
+      "all54_streams_identical_to_controller_verified_private_outputs": true,
+      "producer_private_lifecycle_and_normal_package_identity_asserted": true,
+      "whole_SDK115_raw_database_frozen17_base_accounts_cache_mounts_and248source_guards_pass": true
+    },
+    "physical_Intel_existing_decoder": {
+      "status": "pass-existing-installed-baseline-only",
+      "system": "existing FreeBSD amd64 Daemonarchy 1.5.1",
+      "kernel_revision": "cb38d6498a24",
+      "existing_Brotli_version": "1.2.1,1",
+      "existing_package_source_provenance": "unrecorded",
+      "all54_FreeBSD_ARM_streams_decoded_byte_exact": true,
+      "actual_cross_ISA_interoperability": true,
+      "normally_installed_ARM_outputs_covered_by_verified_byte_identity": true,
+      "existing_payloads_preserved": 26,
+      "existing_logical_registry_preserved": 1195,
+      "selected_kernel_EFI_compiler_base_accounts_cache_mounts_preserved": true,
+      "new_AMD64_package_build_install_upgrade_or_1_6_deployment": false
+    },
+    "custody": {
+      "source_private": {
+        "nodes": 1719,
+        "archive_bytes": 35561515,
+        "archive_sha256": "4ca6462c97dc2ff8c19828792ea91da334d58bf09db12a0fa65c3b28ae2620d6",
+        "inventory_sha256": "797d9b2e93836c8683d2e0281a2a646bd82ca2c8918ae3b75775b0a029efba71",
+        "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlinks_and_gzip_CRC_verified_on_two_hosts": true,
+        "verification_hosts": "native FreeBSD ARM and physical Intel"
+      },
+      "normal": {
+        "nodes": 266,
+        "archive_bytes": 18965530,
+        "archive_sha256": "f2d62db292a5327d90ad55edd2e653bccaf97fe04678c53214cb62f721500ab1",
+        "inventory_sha256": "33589b2fb4edc010322a01f30c80870ececb9e56886d5954a6336a089b55a524",
+        "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlinks_and_gzip_CRC_verified_on_two_hosts": true,
+        "verification_hosts": "native FreeBSD ARM and physical Intel"
+      },
+      "physical_Intel_existing": {
+        "nodes": 178,
+        "archive_bytes": 1841913,
+        "archive_sha256": "08e93773b50d6efbc00afa0f348a599cf2869c7411720dc53bf7bceb649a671b",
+        "inventory_sha256": "366e0351da584c19e087720f728d1f98cb92cd9b5f3d9d32d59e3b941ad0069c",
+        "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlinks_and_gzip_CRC_verified_on_two_hosts": true,
+        "verification_hosts": "physical Intel and Sparky Linux scratch"
+      }
+    },
+    "remaining": "Custom dictionary, comment, concatenated and large-window extension surfaces unqualified by this standard-stream matrix. Matching complete source/SDK/kernel and AMD64, canonical ownership/provenance/lifecycle/SDK/TCB, desktop/apps, physical platform matrix, installer/update/rollback/media/freeze/signing/publication remain open."
+  }
 }
