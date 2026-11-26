@@ -1,7 +1,7 @@
 {
   "observed_utc": "2026-11-26T10:18:23.142252+00:00",
-  "status": "partial-original-TEST35PASS-default-built-runtime-and-delivery-findings-block-normal-admission",
-  "scope": "Original native ARM construction and original test execution, bounded positive pixel consumers and retained fill/delivery findings. No normal Pixman admission, complete API/ABI, desktop rendering, canonical Component/SDK/TCB or full release acceptance. The installed bounded development count stays124.",
+  "status": "historical-original-findings-retained-resolved-by-qualified-revision1",
+  "scope": "Historical pre-fix run; original failures remain actual failures on their pinned artifact. Repaired revision1 now has bounded normal125 acceptance in the linked report. Original native ARM construction and original test execution, bounded positive pixel consumers and retained fill/delivery findings. No normal Pixman admission, complete API/ABI, desktop rendering, canonical Component/SDK/TCB or full release acceptance. The installed bounded development count stays124.",
   "origin": "x11/pixman",
   "version": "0.46.4",
   "source_revision": "d76dd1dd03c3186f635fef2722252327d19b750c",
@@ -121,5 +121,6 @@
     "Repair or resolve the image-fill bounds and forced-general fallback findings; rerun the original failing authored assertions without substituting clipped-only success.",
     "Fresh complete-source verification, unchanged35-program native suite, default package, independent original consumers, full lifecycle/custody and normal dependency/loader acceptance are mandatory before any count125 claim.",
     "Full desktop/apps/fonts, canonical Component/provenance/lifecycle/SDK/TCB, matched source/kernel/AMD64, all47platform profiles and physical acceptance, Pi4 beforePi5, installer/update/rollback/media/freeze/signing/publication remain open."
-  ]
+  ],
+  "subsequent_repaired_qualification": "pixman-fill-qualified-20261126.json"
 }

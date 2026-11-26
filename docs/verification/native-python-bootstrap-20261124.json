@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 124,
+  "normal_development_package_count": 125,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -5296,9 +5296,9 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 124,
+  "actual_installed_development_package_count": 125,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-26T10:18:23.142252+00:00",
+  "last_updated_utc": "2026-11-26T10:50:42.714119+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -9037,8 +9037,8 @@
   },
   "Pixman_original_native_TEST_runtime_and_delivery_findings_20261126": {
     "observed_utc": "2026-11-26T10:18:23.142252+00:00",
-    "status": "partial-original-TEST35PASS-default-built-runtime-and-delivery-findings-block-normal-admission",
-    "scope": "Original native ARM construction and original test execution, bounded positive pixel consumers and retained fill/delivery findings. No normal Pixman admission, complete API/ABI, desktop rendering, canonical Component/SDK/TCB or full release acceptance. The installed bounded development count stays124.",
+    "status": "historical-original-findings-retained-resolved-by-qualified-revision1",
+    "scope": "Historical pre-fix run; original failures remain actual failures on their pinned artifact. Repaired revision1 now has bounded normal125 acceptance in the linked report. Original native ARM construction and original test execution, bounded positive pixel consumers and retained fill/delivery findings. No normal Pixman admission, complete API/ABI, desktop rendering, canonical Component/SDK/TCB or full release acceptance. The installed bounded development count stays124.",
     "origin": "x11/pixman",
     "version": "0.46.4",
     "source_revision": "d76dd1dd03c3186f635fef2722252327d19b750c",
@@ -9158,6 +9158,190 @@
       "Repair or resolve the image-fill bounds and forced-general fallback findings; rerun the original failing authored assertions without substituting clipped-only success.",
       "Fresh complete-source verification, unchanged35-program native suite, default package, independent original consumers, full lifecycle/custody and normal dependency/loader acceptance are mandatory before any count125 claim.",
       "Full desktop/apps/fonts, canonical Component/provenance/lifecycle/SDK/TCB, matched source/kernel/AMD64, all47platform profiles and physical acceptance, Pi4 beforePi5, installer/update/rollback/media/freeze/signing/publication remain open."
+    ],
+    "subsequent_repaired_qualification": "pixman-fill-qualified-20261126.json"
+  },
+  "Pixman_repaired_native_qualified_normal125_20261126": {
+    "observed_utc": "2026-11-26T10:50:42.714119+00:00",
+    "status": "pass-bounded-native-ARM-repaired-Pixman-normal125",
+    "scope": "Original native construction/tests, independent exact pixel consumers, package lifecycle and actual normal development acceptance. Full API/ABI, canonical Component/provenance/lifecycle/SDK/TCB, matched source/kernel/AMD64, desktop/apps/hardware and full release remain open.",
+    "origin": "x11/pixman",
+    "version": "0.46.4_1",
+    "upstream_runtime_and_header_version": "0.46.4",
+    "source_revision": "6032dbfb816fb8e6ed16a13a211235956bbd6a5c",
+    "source_tree": "ef41000c8e917dd98e77441e3e82079948b6e377",
+    "review_code_commit": "30770cfb54cb99342d7fb1cf5186b656a9d95fb4",
+    "package": {
+      "bytes": 205206,
+      "sha256": "38c1a9717e44447e5d1c01deb50741cab767013f7d0f10499820760d59665402"
+    },
+    "repairs": [
+      "Bound fast fill regions to destination image dimensions before invoking the raw fill primitive, preserving explicit clipping.",
+      "Use the existing idempotent SRC composite fallback when a raw fill is unsupported instead of reporting success without painting.",
+      "Set USE_LDCONFIG and PORTREVISION1 to run original shared loader-cache hooks on package installation/removal."
+    ],
+    "source_verification": {
+      "complete_Git_members": 184389,
+      "changed_or_added_relative_fadd": 14,
+      "removed": 0,
+      "selected_recipe_Mk_Templates_and_shared_ldconfig_keyword_Git_bodies_modes_verified": 251,
+      "all207_distfile_source_bodies_with_exact_original_and_repair_patch_effects_verified": true,
+      "new_authored_regression_source_bodies": 1,
+      "all_original_patches_apply_without_fuzz": true,
+      "review_native_all251_selected_inputs_equal": true
+    },
+    "native_TEST": {
+      "original_programs_discovered_and_completed_PASS": 35,
+      "added_authored_regression_invocations_PASS": 2,
+      "total_PASS": 37,
+      "FAIL": 0,
+      "SKIP": 0,
+      "original_names_argv_env_protocol_selection_and_deadlines_preserved": true,
+      "original_native_deadline_seconds": 600,
+      "original_OPENMP_serial_program_schedule_preserved": true,
+      "OMP_workers_bounded_to": 4,
+      "new_regression_coverage": [
+        "Both rectangle and box fill APIs",
+        "SRC, opaque OVER and CLEAR",
+        "No explicit clip, whole-image clip and smaller clip",
+        "ARGB32, RGB565 and A8",
+        "All image pixels and padded backing storage in normal and forced-general dispatch"
+      ]
+    },
+    "native_default": {
+      "all_eight_original_construction_targets_pass": true,
+      "original_default_options_arguments_and_dependencies_preserved_except_intentional_revision_and_loader_hook": true,
+      "unchanged_selected_metadata_fields": 12,
+      "actual_features": {
+        "openmp": "enabled",
+        "a64-neon": "enabled",
+        "tests": "disabled",
+        "libpng": "disabled",
+        "default_library": "shared"
+      },
+      "zero_discovered_programs": true,
+      "original_zero_case_bridge_exit": 0,
+      "zero_case_bridge_is_upstream_suite_acceptance": false
+    },
+    "independent_private_and_actual_default_consumers_each": {
+      "original_unclipped_C_client_assertions_preserved": true,
+      "languages": [
+        "C",
+        "C++"
+      ],
+      "modes_each": [
+        "default",
+        "arm-neon disabled",
+        "fast and arm-neon disabled"
+      ],
+      "positive_runs": 6,
+      "checks_each": 24824,
+      "independent_scalar_reference_OVER_pixels_each": 8192,
+      "independent_SRC_and_CLEAR_pixels_each": 8192,
+      "coverage": [
+        "Masks and component alpha",
+        "RGB565 conversion endpoints",
+        "Clipping, image bounds and canaries",
+        "Negative stride",
+        "Fixed-point transforms, nearest repeat and regions",
+        "Reference and destroy callback lifetime"
+      ],
+      "all_six_modes_and_C_and_CXX_semantics_equal": true,
+      "actual_candidate_library_and_public_header_pkgconf_binding_verified": true,
+      "private_candidate_PC_copy_prefix_relocation_only_no_dependency_metadata_rewrite": true,
+      "normal_private_loader_or_pkgconf_override_present": false,
+      "complete_public_API_or_instruction_coverage_claimed": false
+    },
+    "three_original_padded_controls": {
+      "before": [
+        {
+          "mode": "unclipped default",
+          "fill_returns_true": true,
+          "painted_inside": 2,
+          "painted_outside_logical_image": 6
+        },
+        {
+          "mode": "explicit clip default",
+          "fill_returns_true": true,
+          "painted_inside": 2,
+          "painted_outside_logical_image": 0
+        },
+        {
+          "mode": "explicit clip forced general",
+          "fill_returns_true": true,
+          "painted_inside": 0,
+          "painted_outside_logical_image": 0
+        }
+      ],
+      "after_all_three_modes": {
+        "fill_returns_true": true,
+        "painted_inside": 2,
+        "painted_outside_logical_image": 0
+      },
+      "padded_allocation_keeps_all_accessed_addresses_valid": true,
+      "original_failed_artifacts_and_assertions_retained": true
+    },
+    "original_package_lifecycle": {
+      "copied_original_failure_reproduced_then_same_client_passes_after_only_shared_ldconfig_action": true,
+      "original_failed_root_unchanged": true,
+      "actual_original_shared_hook_install_force_delete_and_readd_transactions": 6,
+      "fresh_no_RPATH_no_loader_override_client_passes_after_all_four_adds_and_fails_before_add_and_after_both_deletes": true,
+      "actual_loader_cache_provider_add_remove_reinstall_verified": true,
+      "exact_payloads_accounts_readonly_base_restricted_devfs_and_full_unmount_verified": true,
+      "dependency_package_admission_inside_fixture_claimed": false
+    },
+    "retained_observer_repairs": {
+      "successful_six_clients_retained_without_replay_after_result_counter_observer_fix": true,
+      "original_predicted_counter": 24823,
+      "actual_unchanged_client_counter": 24824,
+      "source_assertions_or_original_test_deadlines_weakened": false,
+      "lifecycle_preflight_readonly_completion_field_mismatch_retained_before_any_package_transaction": true
+    },
+    "normal_acceptance": {
+      "before_count": 124,
+      "accepted_bounded_development_count": 125,
+      "actual_offline_original_dependencies_integrity_and_shared_ldconfig_hooks": true,
+      "all10_payloads_exact": true,
+      "all124_inherited_prefixes_preserved": true,
+      "raw_registry_exact125": true,
+      "new_loader_provider": "libpixman-1.so.0",
+      "all_previous_loader_paths_candidates_and_priorities_preserved": true,
+      "same_six_normal_consumers_equal_private": true,
+      "additional_actual_fresh_no_RPATH_no_loader_override_client_checks": 24824,
+      "normal_consumer_commands_total": 16,
+      "whole_SDK125_raw_database_frozen_base_accounts_loader_system_font_cache_mounts_and251_source_guards_pass": true
+    },
+    "complete_two_host_custody": {
+      "original": {
+        "source_revision": "d76dd1dd03c3186f635fef2722252327d19b750c",
+        "nodes": 4411,
+        "archive_bytes": 39615838,
+        "archive_sha256": "94b16cc05e4c2b0b2d90c954507227eb0f27cd92e6cb5ccd28fdc73e1d07996c",
+        "inventory_sha256": "590dd6f3a7816309ee6789432523715c6db78f509ddc90113d5bda0855ea2d11",
+        "all_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_on_ARM_and_Intel": true
+      },
+      "repaired": {
+        "source_revision": "6032dbfb816fb8e6ed16a13a211235956bbd6a5c",
+        "nodes": 2496,
+        "archive_bytes": 30374916,
+        "archive_sha256": "30dcb5026f2beb5dafabaab4e3ff0263aaa95defcb6428d0f6b5422974293af1",
+        "inventory_sha256": "bc40cc7536e6fbc795dea21b1af3b4748e8993279a4415c824ee44095505cab0",
+        "all_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_on_ARM_and_Intel": true
+      },
+      "normal": {
+        "source_revision": "6032dbfb816fb8e6ed16a13a211235956bbd6a5c",
+        "nodes": 39,
+        "archive_bytes": 18202532,
+        "archive_sha256": "2a695b7dd24be9590510670042efcb35a9db599ae0e1c0eb97e9c991ed370775",
+        "inventory_sha256": "57f3620ddaaa30bad9c9528855e70a407214fe0ff9855cb29619c67294a212be",
+        "all_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_on_ARM_and_Intel": true
+      }
+    },
+    "remaining": [
+      "Full public API/ABI, OOM/concurrency breadth and actual desktop/application rendering remain open.",
+      "Canonical Component ownership/provenance/lifecycle/SDK/TCB and matching complete source/kernel/AMD64 qualification remain open.",
+      "All47platform profiles and physical acceptance, Pi4 beforePi5, installer/update/rollback/media/freeze/signing/publication remain required.",
+      "Product framework authority and receipt gates remain separate; no human documentation attestation or lifecycle receipt is synthesized."
     ]
   }
 }
