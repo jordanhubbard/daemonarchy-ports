@@ -66,6 +66,15 @@ eight original construction phases. Its 207 sealed payloads, version/API/CLI
 checks, the original freeze assertion, nine unchanged package regressions and
 actual PEP517 metadata/wheel/sdist/fresh-child consumers pass. Construction
 and all 617 sealed evidence records verify on ARM and Intel.
-Private pkg lifecycle and normal delivery remain pending. The
+Eight private pkg actions pass, including upgrade/reinstall/comparison rollback,
+re-upgrade, delete/fresh install/delete; four default-namespace repaired phases
+pass all nine authored regressions and real PEP517 consumers. Complete private
+evidence verifies on ARM and Intel. Final private state has 129 inherited
+providers and no PBR runtime or registration, retaining three exact comparison
+license records; full database/directory metadata rollback is not claimed. One
+normal pkg add also passes: registry 129 to 130, 207 exact new payloads, 26 new
+directories and all inherited provider payloads preserved. Normal unprivileged
+default-namespace consumers pass; all 637 normal evidence records verify on
+ARM and Intel. Normal PBR development delivery is qualified. The
 original port has no `do-test` target; no upstream-suite pass or canonical
 Component, provenance, SDK or release admission is claimed.
