@@ -2,7 +2,7 @@
   "schema": 1,
   "date": "2026-11-25",
   "planned_release": "1.6.0",
-  "problem": "GLib2.88.3 original default native FreeBSD16 suite discovered420programs, selected418 via unchanged upstream default setup, completed407OK/9SKIP/2ERROR. Failures are /pollable/unix/nulldev and /gdbus/auth/server/read-limit.",
+  "problem": "The original GLib2.88.3 default FreeBSD16 suite aborts on outdated null-device pollability and rejected-authentication assumptions. A fresh adequate-capacity rerun also exposes a fixed-order filename completion assumption. Preserve every baseline/failure and original selection while backporting upstream test-only corrections.",
   "baseline_source_revision": "6defff971350efcf84889a03120ab5462ece1508",
   "original_default_setup_exclusions": [
     {
@@ -32,10 +32,18 @@
       "upstream_commits": [
         "cec8230607d7f0324236812b4154042da56d637c"
       ]
+    },
+    {
+      "file": "devel/glib20/files/patch-gio_tests_filenamecompleter.c",
+      "sha256": "860ca1b071948ff3c55c3d9fd63b05f875d57c051a65dbf55a04174409006be4",
+      "upstream_commits": [
+        "70355ac696600d7cd99dcb7e1cf110b52bd158b9"
+      ],
+      "upstream_portion": "Test-only hunk; shipping source/API documentation unchanged."
     }
   ],
-  "change": "Use upstream runtime getosreldate-based FreeBSD14.4+ pollability assertion while preserving prior-kernel and other-platform negative assertions. Accept upstream orderly EOF read when auth conversation is rejected; preserve connection-closed error requirement for non-EOF reads and subsequent zero-byte failed write. No test exclusion, xfail, production library, option, dependency or distinfo change.",
-  "no_PORTREVISION_change": "Only upstream test sources change; installed package payload contract is unchanged. Fresh construction and full original selected test execution remain required.",
+  "change": "Use upstream runtime getosreldate-based FreeBSD14.4+ positive pollability assertion while preserving prior-kernel and other-platform negatives. Accept upstream orderly EOF on rejected authentication while preserving non-EOF connection-closed and subsequent failed-write assertions. Compare filename completion arrays after upstream sorting, preserving exact membership/multiplicity, directory-only behavior and suffix assertions. No new exclusion, xfail, production library, options, dependencies or distinfo change.",
+  "no_PORTREVISION_change": "Only upstream test sources change; shipping implementation and installed payload contract stay unchanged. Fresh actual construction, full original selected target, private/normal consumers and original hooks are documented below. No cosmetic revision bump.",
   "independent_audit": "Every418selected native command matches generated discovery; original skips and failed TAP/bailouts retained. Successful reporting does not qualify the failed suite.",
   "disconfirmed_hypothesis": "Native base-C probe verifies /dev/null EVFILT_READ registration succeeds with or without EV_RECEIPT; receipt-only code change would not fix the test. No such library change applied.",
   "patch_application": "All four pinned upstream commit hunks applied sequentially to original native test files with git apply --check, without fuzz. Combined port patches generated only from that result. Fresh actual ports patch/build/test validation pending. Combined port patches also apply with zero fuzz to clean original files and produce exactly the sequential upstream-commit result. Empty context lines use portable bare-blank patch syntax. Actual native BSD-patched test source files also match the sequential pinned upstream result byte for byte.",
@@ -86,9 +94,10 @@
     ],
     "numbered_TAP_events_retained": 6900,
     "full_SDK110_rawprefix_frozen17_base_accounts_cache_mounts_preserved": true,
-    "qualification": "Full selected suite remains FAILED. Do not combine successful subsets across runs or claim normal replacement. New package uninstalled."
+    "qualification": "Full selected suite remains FAILED. Do not combine successful subsets across runs or claim normal replacement. New package uninstalled.",
+    "historical_scope": "First two-correction candidate at saturated worker capacity, retained unchanged; current third-correction selected target passes as recorded in final_original_selected_default_suite."
   },
-  "remaining": "Original failing variants, optional skipped dependency/platform coverage, matchingAMD64, independent sealed/private consumers and both-host custody, canonical ownership/provenance/lifecycle, full desktop/physical/media/update/rollback/signing/publication remain open.",
+  "remaining": "Original skipped/optional/failing variants and default-kernel-capacity coverage; remaining original suite gaps including six OpenSP failures and absent XInclude schemas; matching amd64/aarch64 source/SDK/kernel; full desktop/apps; canonical ownership/provenance/lifecycle/SDK/TCB; physical fleet, installer/update/rollback/media, freeze/signing/publication remain open.",
   "native_source_custody": "Original baseline and corrected full runs plus source/SDK guards retained on native worker; new complete independent two-host capsule pending.",
   "installed_payload_comparison": {
     "payloads": 8130,
@@ -171,7 +180,7 @@
       "zero_fuzz_and_upstream_exact": true
     },
     "fresh_source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
-    "native_result": "Fresh original build/test pending; do not claim the failed earlier run passed."
+    "native_result": "Terminal pass on complete184381member source fadd8b8: original8targets,409OK/9originalSKIP/0ERROR, independent420discovery/418commands/6989TAP audit. All3actual patched files equal upstream. Every earlier failed run retained separately."
   },
   "complete_failed_source_custody": {
     "nodes": 65018,
@@ -188,6 +197,91 @@
     "verified_members": 184381,
     "source_and_SDK110_frozen17_base_mount_preservation_guards": true,
     "finished_utc": "2026-11-26T00:34:14.997568+00:00",
-    "fresh_original_build_and_test": "Now running; terminal outcome pending. New package remains uninstalled."
+    "fresh_original_build_and_test": "Terminal pass: all8targets;409OK/9originalSKIP/0ERROR. Independent complete audit, private41 consumers,6actualoriginal-hooktransactions,68906node source/private custody, actual normal solver/hooks/default41commands and strict whole SDK110/rawdatabase/default41guard pass. Normal233node custody verified native+Intel. Bounded native ARM development acceptance only."
+  },
+  "final_original_selected_default_suite": {
+    "finished_utc": "2026-11-26T00:40:17.333685+00:00",
+    "independent_audit_finished_utc": "2026-11-26T00:41:16.751938+00:00",
+    "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+    "original_construction_targets": 8,
+    "all_original_targets_passed": true,
+    "discovered_programs": 420,
+    "original_default_selected_programs": 418,
+    "result_counts": {
+      "OK": 409,
+      "SKIP": 9
+    },
+    "numbered_TAP_events": 6989,
+    "original_TAP_skip_directives": 109,
+    "all_selected_native_commands_match_discovery": true,
+    "all3_actual_patched_test_bodies_equal_pinned_upstream": true,
+    "minimum_measured_cache_headroom": 1640459,
+    "original_settings_capacity_and_current_runtime_hash_restored_and_independently_verified": true,
+    "strict_full_SDK110_rawprefix_frozen17_base_accounts_cache_mount_source_guards": true,
+    "package": {
+      "bytes": 11262812,
+      "sha256": "dc3256e613e4c6c957d0dbd404a66f45393edfa64cabb643fb9f40ae8b121925"
+    },
+    "package_normally_installed": true,
+    "private_consumer_lifecycle_custody_normal_acceptance": "All41private consumers, six original-hook transactions,68906node native+Intel custody, actual normal original-solver/hooks/default41commands and separate strict full SDK110/rawdatabase/default41consumers pass.",
+    "scope": "Native ARM original selected default target with existing2failing exclusions and9original program skips. Optional/skipped/excluded variants, default-kernel-capacity qualification, AMD64, canonical and full release gates remain open.",
+    "private_API_and_original_package_lifecycle": {
+      "payloads": 8130,
+      "explicit_directories": 2,
+      "private_actual_API_tool_typelib_doc_man_MO_commands": 41,
+      "private_consumers_uid_gid": 65534,
+      "actual_pkg_chroot_original_hook_transactions": 6,
+      "real_ldconfig_install_remove_reinstall_cache_bindings_verified": true,
+      "sealed_payload_modes_numeric_owners_flags_mtimes_verified": true,
+      "private_locked_accounts_preserved": true,
+      "temporary_mounts_removed_original_mounts_restored": true,
+      "whole_SDK110_frozen17_base_accounts_cache_and_selected_source_preserved": true,
+      "private_finished_utc": "2026-11-26T00:42:18.992301+00:00",
+      "lifecycle_finished_utc": "2026-11-26T00:44:45.491701+00:00",
+      "scope": "Private pkg-r scripts-disabled extraction supports payload/API checks only; separate actual pkg-c transactions run original shell install/deinstall hooks. Private -M dependency delivery remains distinct from pending normal solver. No canonical lifecycle admission."
+    },
+    "source_private_lifecycle_two_host_custody": {
+      "nodes": 68906,
+      "archive_bytes": 279110721,
+      "archive_sha256": "a2912beb7bc836fca117a8faee2178e38c435703a533493a8ebb26f7dc075b07",
+      "inventory_sha256": "ba7193a7181dd073112223877753c866dbef53b8b8487df18e856ac295ef714f",
+      "all_nodes_independently_verified_native_ARM_and_Intel": true,
+      "scope": "Complete fourth failed capacity run and fifth passing corrected source/build/test trees; both full discovery/command/TAP audits; exact new package/private41API checks and six original-hook chroot transactions;263selectedsource inputs/full184380+184381Git composition; previous65018node custody bound. Earlier source/failures remain retained."
+    },
+    "normal_integration": {
+      "finished_utc": "2026-11-26T00:50:42.258200+00:00",
+      "strict_readonly_completion_finished_utc": "2026-11-26T00:51:58.974996+00:00",
+      "same_version_force_replacement_original_local_only_dependencies_and_hooks": true,
+      "installed_package_version": "2.88.3,2",
+      "installed_package_sha256": "dc3256e613e4c6c957d0dbd404a66f45393edfa64cabb643fb9f40ae8b121925",
+      "installed_payloads": 8130,
+      "explicit_directories": 2,
+      "other_package_prefixes_preserved": 109,
+      "registry_rows_unchanged": 110,
+      "accepted_normal_count": 110,
+      "all_existing_loader_candidates_and_per_soname_priority_preserved": true,
+      "normal_default_consumer_commands": 41,
+      "strict_posttransaction_whole_SDK_prefix_raw_database_consumer_commands": 41,
+      "no_normal_LD_LIBRARY_PATH_override": true,
+      "whole_posttransaction_SDK110_prefix_raw_database_frozen17_base_accounts_cache_mounts_all263sources_preserved": true,
+      "readonly_package_query_sidecar_preflight_explicit": true,
+      "final_normal_evidence_custody": {
+        "nodes": 233,
+        "archive_bytes": 22704634,
+        "archive_sha256": "1144fa1ddd37cf13db5740f1eb1f4f082d9ace5881be492b0cb9fd961805b93e",
+        "inventory_sha256": "d5167dd884d913f731d252309140f17601c549caa2e3388444427e993a68474b",
+        "all_nodes_independently_verified_native_ARM_and_Intel": true,
+        "transport_retry": "Original SSH banner-timeout failure retained; resumed after byte-verifying existing staged metadata and create-or-verify native links. Original archive unchanged; all233nodes independently verified. No native package/hook/runtime replay."
+      },
+      "qualification": "Bounded native ARM development acceptance of this actual artifact. Original selected default target409OK/9originalSKIP passes; optional/skipped/excluded variants, default kernel capacity, matchingAMD64/source/SDK/kernel, canonical ownership/provenance/lifecycle, full desktop/apps/physical/installer/update/rollback/media/freeze/signing/publication remain open."
+    }
+  },
+  "final_normal_completion_two_host_custody": {
+    "nodes": 233,
+    "archive_bytes": 22704634,
+    "archive_sha256": "1144fa1ddd37cf13db5740f1eb1f4f082d9ace5881be492b0cb9fd961805b93e",
+    "inventory_sha256": "d5167dd884d913f731d252309140f17601c549caa2e3388444427e993a68474b",
+    "all_nodes_independently_verified_native_ARM_and_Intel": true,
+    "transport_retry": "Original SSH banner-timeout failure retained; resumed after byte-verifying existing staged metadata and create-or-verify native links. Original archive unchanged; all233nodes independently verified. No native package/hook/runtime replay."
   }
 }
