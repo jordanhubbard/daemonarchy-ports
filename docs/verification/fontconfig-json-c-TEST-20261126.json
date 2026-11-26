@@ -1,0 +1,136 @@
+{
+  "observed_utc": "2026-11-26T08:28:32.172410+00:00",
+  "status": "pass-original-selected-TEST-programs-and-18-restored-JSON-cases-remaining-skips-explicit",
+  "scope": "Original TEST variant only. Real older cache-version baseline and platform/network skips remain; fresh default runtime, actual package hooks/custody/normal and wider release acceptance remain open.",
+  "origin": "x11-fonts/fontconfig",
+  "version": "2.18.3,1",
+  "source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+  "package": {
+    "bytes": 489013,
+    "sha256": "3a2698fba84b712be8d33d44a709998b88dbe53743a8ed9f3b6628021a6e6e3c"
+  },
+  "all_eight_original_construction_targets_pass": true,
+  "normal_dependency_anchor_count": 123,
+  "json_c_configure_time_dependency_and_test_executable_present": true,
+  "original_Meson_programs": {
+    "discovered": 16,
+    "completed": 16,
+    "OK": 16,
+    "all_names_argv_match": true,
+    "all_actual_exit_codes_zero": true,
+    "testlog_json_sha256": "74a980950a83cd6acaf509b731afc49ee1eee5aa64264c0d18c21561d725a8b1",
+    "testlog_txt_sha256": "7bb953a05d599b89be3abc5122e1f1cf01548e3ab92a0de35d4bf81647822ad6"
+  },
+  "nested_original_Pytest_TAP": {
+    "selected_and_completed_unique_identity_order_match": 49,
+    "PASS": 39,
+    "SKIP": 10,
+    "FAIL": 0,
+    "ERROR": 0,
+    "original_network_marker_deselections": 2,
+    "all_skips_retained": [
+      {
+        "number": 16,
+        "ok": true,
+        "description": "test_cache_cross_version.py::test_binary_format_forward_compat",
+        "directive": "SKIP FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set"
+      },
+      {
+        "number": 17,
+        "ok": true,
+        "description": "test_cache_cross_version.py::test_discovery_backward_compat",
+        "directive": "SKIP FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set"
+      },
+      {
+        "number": 18,
+        "ok": true,
+        "description": "test_cache_cross_version.py::test_discovery_forward_compat",
+        "directive": "SKIP FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set"
+      },
+      {
+        "number": 38,
+        "ok": true,
+        "description": "test_fontations_ft_query.py::test_fontations_freetype_fcquery_equal[None]",
+        "directive": "SKIP Skipped: Network access diabled"
+      },
+      {
+        "number": 42,
+        "ok": true,
+        "description": "test_genconf.py::test_genconf[None]",
+        "directive": "SKIP Skipped: Network access diabled"
+      },
+      {
+        "number": 44,
+        "ok": true,
+        "description": "test_sandbox.py::test_bz106618",
+        "directive": "SKIP No bwrap installed or not executable"
+      },
+      {
+        "number": 45,
+        "ok": true,
+        "description": "test_sandbox.py::test_different_content",
+        "directive": "SKIP No bwrap installed or not executable"
+      },
+      {
+        "number": 46,
+        "ok": true,
+        "description": "test_sandbox.py::test_md5_consistency",
+        "directive": "SKIP No bwrap installed or not executable"
+      },
+      {
+        "number": 47,
+        "ok": true,
+        "description": "test_sandbox.py::test_gen_testcache",
+        "directive": "SKIP No bwrap installed or not executable"
+      },
+      {
+        "number": 48,
+        "ok": true,
+        "description": "test_sandbox.py::test_gen_testcache_no_check",
+        "directive": "SKIP No bwrap installed or not executable"
+      }
+    ],
+    "skip_reasons": {
+      "FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set": 3,
+      "Skipped: Network access diabled": 2,
+      "No bwrap installed or not executable": 5
+    },
+    "discovery_sha256": "e908aac0ec5b1654df19bb0be80ca8d45a5260ce90be3515725eebc202edd3f6",
+    "actual_TAP_sha256": "9b14d391f7c75cfa2fb98346202fea332d472e6982564f3cdfa5be18ea7dcfb2"
+  },
+  "all_18_previously_missing_JSON_configuration_cases_execute_and_pass": true,
+  "all_49_unique_case_identities_order_and_outcomes_match_independent_discovery_TAP_and_JUnit": true,
+  "JUnit_sha256": "35f6320b32b1e668c92b60dc831efa77be6a11db633afcdb0f98340fd6828f6b",
+  "original_TEST_ENV_preserved_report_only_PYTEST_ADDOPTS_explicitly_forwarded": true,
+  "all_original_selected_options_arguments_markers_protocols_preserved": true,
+  "original_test_and_data_bodies_bound": 71,
+  "declared_shebang_only_changes": {
+    "test/test_fontations_ft_query.py": {
+      "original_sha256": "0a7b6ff7992aebda5b6e44544bdb9ae1073b2c30b689b865848b6ac0bfb10238",
+      "actual_sha256": "5947da66c667dd17627157147572e4e2e401999cc7417973eccb885b61f14b45",
+      "only_declared_shebang_rewritten": true
+    },
+    "test/test_issue431.py": {
+      "original_sha256": "c9932827f083089916901b1eb47a01219c2015a3db44dd6f12d215feee71deaf",
+      "actual_sha256": "9fc331074524258130883f485631b86f5eca3024cd699c909787268c976343bc",
+      "only_declared_shebang_rewritten": true
+    },
+    "test/test_issue547.py": {
+      "original_sha256": "bf11f284cd5bf1e6cc78908c2e540e4bafab5121534a104684f58690ea47896b",
+      "actual_sha256": "8d2a159a0f2e8c313ec79e82c43b0d1738a8509ee6e7cf34dcfd1d6703afa42a",
+      "only_declared_shebang_rewritten": true
+    }
+  },
+  "all_test_assertions_and_golden_data_unchanged": true,
+  "whole_SDK123_raw_database_frozen_base_accounts_cache_mounts_and_250_source_inputs_preserved": true,
+  "full_cross_version_and_platform_TEST_acceptance": false,
+  "normal_Fontconfig_installation": false,
+  "remaining": [
+    "Three original cache compatibility cases require an actual older-version Fontconfig baseline; another build of the same version is insufficient.",
+    "Two original runtime network-disabled skips and two network marker deselections remain; five Linux bwrap cases skip on FreeBSD.",
+    "Fresh default construction now passes; complete independent font/cache/XML/CLI/shared/static consumers.",
+    "Actual original Lua/sample/font-cache-trigger package lifecycle, outside-prefix cache directory ownership, full custody and normal delivery.",
+    "All wider canonical Component/SDK/TCB, matched source/kernel/AMD64, desktop, physical, installer/update/rollback/media/freeze/signing/publication gates."
+  ],
+  "subsequent_fresh_default_artifact_report": "fontconfig-fresh-default-20261126.json"
+}

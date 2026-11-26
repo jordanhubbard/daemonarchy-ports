@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 122,
+  "normal_development_package_count": 123,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -5296,9 +5296,9 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 122,
+  "actual_installed_development_package_count": 123,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-26T08:14:51.086314+00:00",
+  "last_updated_utc": "2026-11-26T08:30:30.271244+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -8303,6 +8303,325 @@
       "Actual original loader-cache package lifecycle, full source/failure/private/lifecycle custody on both hosts, then normal dependency/integrity/API acceptance.",
       "Fresh Fontconfig TEST must execute its 18 missing JSON configuration cases; fresh default runtime and Lua/sample/font-cache-trigger acceptance remain separate.",
       "All canonical Component, SDK, TCB, matched source/kernel/AMD64, desktop, physical hardware, installer, update/rollback and full release gates."
+    ]
+  },
+  "selected_original_default_JsonC_qualified_20261126": {
+    "observed_utc": "2026-11-26T08:25:10.877057+00:00",
+    "status": "pass-bounded-native-ARM-JsonC-normal123",
+    "scope": "Selected public API and package development acceptance only; full public/internal API, canonical Component/provenance/lifecycle/SDK/TCB, matched source/kernel/AMD64 and full release remain open.",
+    "origin": "devel/json-c",
+    "FreeBSD_package_version": "0.19_1",
+    "upstream_pinned_commit": "81092b3",
+    "upstream_header_runtime_CMake_and_pkgconf_version": "0.19.99",
+    "version_note": "The retained development commit identifies itself as 0.19.99 in all four upstream interfaces; the original FreeBSD port package identity remains 0.19_1.",
+    "source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+    "package": {
+      "bytes": 77781,
+      "sha256": "86e79f71985e45e3ad5059ab60fcf6457fb84d6305f1ca82af9631272eee658f"
+    },
+    "original_28_case_suite_report": "json-c-original-suite-20261126.json",
+    "private_and_normal_consumers_each": {
+      "selected_API_checks_per_consumer": 88,
+      "actual_commands": 16,
+      "consumers": [
+        "pkgconf shared",
+        "pkgconf static",
+        "installed CMake shared export",
+        "installed CMake static export"
+      ],
+      "all_check_labels_and_outcomes_equal_private": true,
+      "coverage": [
+        "All JSON types, absent key versus present null, embedded NUL and Unicode bytes, exact serialization and integer limits.",
+        "Deep copy and independent mutation, iteration, sparse arrays/deletion/sorting/search.",
+        "Userdata replacement/destruction and held-reference ownership.",
+        "Escaped JSON pointers, excessive index rejection without growth, patch test/add/copy/move/replace/remove and a real failed patch.",
+        "Incremental parsing, strict invalid inputs and UTF-8, null success versus parse error, depth limits and recovery.",
+        "Exact expected file bytes and native file I/O."
+      ],
+      "actual_shared_candidate_and_static_without_dynamic_json_provider_verified": true,
+      "actual_base_providers": [
+        "libc.so.7",
+        "libm.so.5",
+        "libsys.so.7"
+      ],
+      "full_public_API_or_OOM_threading_fuzz_acceptance_claimed": false
+    },
+    "actual_original_pkg_chroot_transactions": 6,
+    "original_ldconfig_postinstall_postdelete_reinstall_hooks_verified": true,
+    "private_locked_accounts_readonly_base_devfs_full_unmount": true,
+    "normal_acceptance": {
+      "before_count": 122,
+      "accepted_bounded_development_count": 123,
+      "offline_original_dependency_integrity_and_hooks": true,
+      "all28_payloads_exact": true,
+      "all122_inherited_prefixes_preserved": true,
+      "new_loader_provider": "libjson-c.so.5",
+      "all_prior_loader_candidates_paths_and_priorities_preserved": true,
+      "four_consumers_repeat_all88_checks_without_private_LD_or_import_override": true,
+      "whole_SDK123_prefix_raw_database_frozen_base_accounts_cache_mounts_and_248_source_guards_pass": true
+    },
+    "two_host_custody": {
+      "source_failure_private_lifecycle": {
+        "nodes": 2897,
+        "archive_bytes": 20924455,
+        "archive_sha256": "f0002489d60a43fb98550042ec3601c604396e0d92a948433dfd0a9d0dcbf397",
+        "inventory_sha256": "b5974c803c44e33703850c93fb617728483f12e619886a1b5d72bbeafebdf727",
+        "all_archived_nodes_verified_on_native_ARM_and_physical_Intel": true
+      },
+      "normal": {
+        "nodes": 106,
+        "archive_bytes": 18201898,
+        "archive_sha256": "ddf8f6a423eb7bf2509df0a335c6e5b9d0a4549275eaf6f200763f59946acbc3",
+        "inventory_sha256": "f9c437561ad4510ff88191e71b3ca7d5cd7f6447bcd5002c72aaba26e5f9d984",
+        "all_archived_nodes_verified_on_native_ARM_and_physical_Intel": true
+      }
+    },
+    "normal_capture_observer_failure_retained": {
+      "expected_convenience_boolean_absent_from_producer": true,
+      "corrected_capture_independently_checks_actual_producer_private_lifecycle_normal_package_and_source_identities_and_receipt_hashes": true,
+      "no_install_or_consumer_rerun": true
+    },
+    "remaining": [
+      "Fresh Fontconfig TEST executes and passes all 18 restored JSON configuration cases; retain 10 reasoned skips and complete default runtime/hooks.",
+      "Real older cache-version baseline, original network-disabled and Linux bwrap skips remain distinct.",
+      "Fresh default Fontconfig runtime/fonts/cache/XML/CLI/shared/static, Lua/sample/font-cache-trigger lifecycle/custody/normal.",
+      "All wider 1.6 release requirements."
+    ],
+    "subsequent_Fontconfig_TEST_report": "fontconfig-json-c-TEST-20261126.json"
+  },
+  "selected_Fontconfig_JSONC_TEST_20261126": {
+    "observed_utc": "2026-11-26T08:28:32.172410+00:00",
+    "status": "pass-original-selected-TEST-programs-and-18-restored-JSON-cases-remaining-skips-explicit",
+    "scope": "Original TEST variant only. Real older cache-version baseline and platform/network skips remain; fresh default runtime, actual package hooks/custody/normal and wider release acceptance remain open.",
+    "origin": "x11-fonts/fontconfig",
+    "version": "2.18.3,1",
+    "source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+    "package": {
+      "bytes": 489013,
+      "sha256": "3a2698fba84b712be8d33d44a709998b88dbe53743a8ed9f3b6628021a6e6e3c"
+    },
+    "all_eight_original_construction_targets_pass": true,
+    "normal_dependency_anchor_count": 123,
+    "json_c_configure_time_dependency_and_test_executable_present": true,
+    "original_Meson_programs": {
+      "discovered": 16,
+      "completed": 16,
+      "OK": 16,
+      "all_names_argv_match": true,
+      "all_actual_exit_codes_zero": true,
+      "testlog_json_sha256": "74a980950a83cd6acaf509b731afc49ee1eee5aa64264c0d18c21561d725a8b1",
+      "testlog_txt_sha256": "7bb953a05d599b89be3abc5122e1f1cf01548e3ab92a0de35d4bf81647822ad6"
+    },
+    "nested_original_Pytest_TAP": {
+      "selected_and_completed_unique_identity_order_match": 49,
+      "PASS": 39,
+      "SKIP": 10,
+      "FAIL": 0,
+      "ERROR": 0,
+      "original_network_marker_deselections": 2,
+      "all_skips_retained": [
+        {
+          "number": 16,
+          "ok": true,
+          "description": "test_cache_cross_version.py::test_binary_format_forward_compat",
+          "directive": "SKIP FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set"
+        },
+        {
+          "number": 17,
+          "ok": true,
+          "description": "test_cache_cross_version.py::test_discovery_backward_compat",
+          "directive": "SKIP FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set"
+        },
+        {
+          "number": 18,
+          "ok": true,
+          "description": "test_cache_cross_version.py::test_discovery_forward_compat",
+          "directive": "SKIP FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set"
+        },
+        {
+          "number": 38,
+          "ok": true,
+          "description": "test_fontations_ft_query.py::test_fontations_freetype_fcquery_equal[None]",
+          "directive": "SKIP Skipped: Network access diabled"
+        },
+        {
+          "number": 42,
+          "ok": true,
+          "description": "test_genconf.py::test_genconf[None]",
+          "directive": "SKIP Skipped: Network access diabled"
+        },
+        {
+          "number": 44,
+          "ok": true,
+          "description": "test_sandbox.py::test_bz106618",
+          "directive": "SKIP No bwrap installed or not executable"
+        },
+        {
+          "number": 45,
+          "ok": true,
+          "description": "test_sandbox.py::test_different_content",
+          "directive": "SKIP No bwrap installed or not executable"
+        },
+        {
+          "number": 46,
+          "ok": true,
+          "description": "test_sandbox.py::test_md5_consistency",
+          "directive": "SKIP No bwrap installed or not executable"
+        },
+        {
+          "number": 47,
+          "ok": true,
+          "description": "test_sandbox.py::test_gen_testcache",
+          "directive": "SKIP No bwrap installed or not executable"
+        },
+        {
+          "number": 48,
+          "ok": true,
+          "description": "test_sandbox.py::test_gen_testcache_no_check",
+          "directive": "SKIP No bwrap installed or not executable"
+        }
+      ],
+      "skip_reasons": {
+        "FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set": 3,
+        "Skipped: Network access diabled": 2,
+        "No bwrap installed or not executable": 5
+      },
+      "discovery_sha256": "e908aac0ec5b1654df19bb0be80ca8d45a5260ce90be3515725eebc202edd3f6",
+      "actual_TAP_sha256": "9b14d391f7c75cfa2fb98346202fea332d472e6982564f3cdfa5be18ea7dcfb2"
+    },
+    "all_18_previously_missing_JSON_configuration_cases_execute_and_pass": true,
+    "all_49_unique_case_identities_order_and_outcomes_match_independent_discovery_TAP_and_JUnit": true,
+    "JUnit_sha256": "35f6320b32b1e668c92b60dc831efa77be6a11db633afcdb0f98340fd6828f6b",
+    "original_TEST_ENV_preserved_report_only_PYTEST_ADDOPTS_explicitly_forwarded": true,
+    "all_original_selected_options_arguments_markers_protocols_preserved": true,
+    "original_test_and_data_bodies_bound": 71,
+    "declared_shebang_only_changes": {
+      "test/test_fontations_ft_query.py": {
+        "original_sha256": "0a7b6ff7992aebda5b6e44544bdb9ae1073b2c30b689b865848b6ac0bfb10238",
+        "actual_sha256": "5947da66c667dd17627157147572e4e2e401999cc7417973eccb885b61f14b45",
+        "only_declared_shebang_rewritten": true
+      },
+      "test/test_issue431.py": {
+        "original_sha256": "c9932827f083089916901b1eb47a01219c2015a3db44dd6f12d215feee71deaf",
+        "actual_sha256": "9fc331074524258130883f485631b86f5eca3024cd699c909787268c976343bc",
+        "only_declared_shebang_rewritten": true
+      },
+      "test/test_issue547.py": {
+        "original_sha256": "bf11f284cd5bf1e6cc78908c2e540e4bafab5121534a104684f58690ea47896b",
+        "actual_sha256": "8d2a159a0f2e8c313ec79e82c43b0d1738a8509ee6e7cf34dcfd1d6703afa42a",
+        "only_declared_shebang_rewritten": true
+      }
+    },
+    "all_test_assertions_and_golden_data_unchanged": true,
+    "whole_SDK123_raw_database_frozen_base_accounts_cache_mounts_and_250_source_inputs_preserved": true,
+    "full_cross_version_and_platform_TEST_acceptance": false,
+    "normal_Fontconfig_installation": false,
+    "remaining": [
+      "Three original cache compatibility cases require an actual older-version Fontconfig baseline; another build of the same version is insufficient.",
+      "Two original runtime network-disabled skips and two network marker deselections remain; five Linux bwrap cases skip on FreeBSD.",
+      "Fresh default construction now passes; complete independent font/cache/XML/CLI/shared/static consumers.",
+      "Actual original Lua/sample/font-cache-trigger package lifecycle, outside-prefix cache directory ownership, full custody and normal delivery.",
+      "All wider canonical Component/SDK/TCB, matched source/kernel/AMD64, desktop, physical, installer/update/rollback/media/freeze/signing/publication gates."
+    ],
+    "subsequent_fresh_default_artifact_report": "fontconfig-fresh-default-20261126.json"
+  },
+  "selected_Fontconfig_fresh_default_20261126": {
+    "observed_utc": "2026-11-26T08:30:30.271244+00:00",
+    "status": "pass-fresh-original-default-construction-runtime-hooks-custody-normal-pending",
+    "scope": "Fresh original default artifact construction only; zero-case default test bridge is not an original upstream suite pass. Separate TEST variant has its own full case report.",
+    "origin": "x11-fonts/fontconfig",
+    "version": "2.18.3,1",
+    "source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+    "package": {
+      "bytes": 489017,
+      "sha256": "ce3dbabf663b4fcbcce1828f2ff64e2c82377e356b579530a9d054980530d8ba"
+    },
+    "normal_dependency_anchor_count": 123,
+    "all_eight_original_construction_targets_pass": true,
+    "default_options": [
+      "BITMAPS",
+      "DOCS",
+      "HINTING_SLIGHT",
+      "NLS"
+    ],
+    "effective_original_Meson_features": {
+      "default_library": "both",
+      "default-hinting": "slight",
+      "bitmap-conf": "yes",
+      "tests": "disabled",
+      "doc": "disabled",
+      "cache-build": "disabled",
+      "nls": "enabled"
+    },
+    "default_arguments_options_and_dependencies_equal_retained_original_metadata": {
+      "original_fixed_metadata": [
+        "PKGNAME",
+        "BUILD_DEPENDS",
+        "LIB_DEPENDS",
+        "RUN_DEPENDS",
+        "TEST_DEPENDS",
+        "SELECTED_OPTIONS",
+        "MESON_ARGS"
+      ],
+      "original_default_producer_metadata": [
+        "EXTRACT_DEPENDS",
+        "USES"
+      ]
+    },
+    "zero_case_original_default_bridge": {
+      "exit": 0,
+      "upstream_cases": 0,
+      "suite_pass_claimed": false
+    },
+    "manifest": {
+      "payloads": 344,
+      "directories": {
+        "/var/db/fontconfig": {
+          "uname": "root",
+          "gname": "wheel",
+          "perm": "0755"
+        }
+      },
+      "scripts": [
+        "post-install",
+        "post-deinstall"
+      ],
+      "lua_scripts": [
+        "post-install",
+        "pre-deinstall"
+      ],
+      "shlibs_provided": [
+        "libfontconfig.so.1"
+      ],
+      "deps": {
+        "expat": {
+          "origin": "textproc/expat2",
+          "version": "2.10.0"
+        },
+        "freetype2": {
+          "origin": "print/freetype2",
+          "version": "2.14.3"
+        },
+        "gettext-runtime": {
+          "origin": "devel/gettext-runtime",
+          "version": "1.0_2"
+        }
+      }
+    },
+    "separate_original_TEST_report": "fontconfig-json-c-TEST-20261126.json",
+    "whole_SDK123_raw_database_frozen_base_accounts_cache_mounts_and_250_source_inputs_preserved": true,
+    "preconstruction_observer_failure_retained": {
+      "expected_EXTRACT_DEPENDS_in_narrow_option_probe": true,
+      "actual_construction_commands_run": 0,
+      "corrected_guard_binds_probe_fields_and_original_producer_EXTRACT_DEPENDS_USES_separately": true,
+      "original_failed_result_sha256": "72b425ec742ef8a69facf9180ae024e26ca46d566055edad97710092cab431a7"
+    },
+    "normal_installation": false,
+    "remaining": [
+      "Independent sealed font/cache/XML/CLI/shared/static consumers and real font fixtures.",
+      "Original Lua sample behavior, preserve modified fonts.conf, actual font-directory/config trigger execution and real ldconfig lifecycle.",
+      "Exact outside-prefix /var/db/fontconfig ownership/mode and cache behavior, full source/failure/private/lifecycle custody, actual normal delivery and same default-path consumers.",
+      "Real older cache baseline, original network/Linux bwrap scope and all wider 1.6 release gates."
     ]
   }
 }
