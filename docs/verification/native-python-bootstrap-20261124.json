@@ -2346,7 +2346,7 @@
       "passed": 9,
       "failed": 0,
       "skipped": 0,
-      "scope": "Original default source suite only.12unimplemented installed declarations/thwrend.h compile failure remain open; candidate normally uninstalled."
+      "scope": "Original default source suite only.12unimplemented installed declarations/thwrend.h compile failure remain open. Initial hold was reassessed against original exported ABI and actual selected Pango-required surface; bounded normal admission now114, with no full-header API or Pango runtime acceptance."
     },
     "gperfDefault": {
       "runner": "Original make test TEST_TARGET=check",
