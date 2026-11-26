@@ -1560,7 +1560,7 @@
     "remaining": "Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, full desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, complete physical matrix, installer/update/rollback/media, freeze/signing/publication remain open.",
     "detail": "https://github.com/jordanhubbard/daemonarchy-ports/blob/work/native-python-bootstrap-20261124/docs/verification/png-original-default-20261126.json"
   },
-  "last_updated_utc": "2026-11-26T02:27:38.949682+00:00",
+  "last_updated_utc": "2026-11-26T02:39:57.606590+00:00",
   "selected_original_default_libdatrie_qualified_20261126": {
     "observed_utc": "2026-11-26T02:18:09.617558+00:00",
     "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
@@ -1633,5 +1633,40 @@
     },
     "detail": "https://github.com/jordanhubbard/daemonarchy-ports/blob/work/native-python-bootstrap-20261124/docs/verification/libthai-original-default-20261126.json",
     "remaining": "Full Daemonarchy1.6 release remains incomplete: matching source/SDK/kernel and AMD64; complete desktop/apps; canonical ownership/provenance/lifecycle/SDK/TCB; physical matrix; installer/update/rollback/media; freeze/signing/publication."
+  },
+  "selected_original_default_gperf_qualified_20261126": {
+    "observed_utc": "2026-11-26T02:39:57.606590+00:00",
+    "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+    "version": "3.3",
+    "package": {
+      "bytes": 88319,
+      "sha256": "5e5fa3933fe097cf3cf70ed235997dc012aa6bd3d4d5f70c0e4c31fc4248aae6"
+    },
+    "original_default_test_groups": 9,
+    "original_expected_output_comparisons": 24,
+    "original_native_SMTP_runs": 3,
+    "private_and_normal_consumer_commands_each": 21,
+    "private_and_normal_native_queries_each": 31992,
+    "original_private_Info_hook_transactions": 6,
+    "actual_normal_Info_menu_matches_independent_ABA_prediction": true,
+    "accepted_bounded_development_count": 113,
+    "custody": {
+      "source_private": {
+        "nodes": 1518,
+        "archive_bytes": 25285982,
+        "archive_sha256": "dea08147bb9aad7ad8234fa0710252eb84a3848b7d4d815e5216555bd536b620",
+        "inventory_sha256": "f3d9d2f1268677e31fd54882cc8751096ee5040cdca31f42cf3940f295402c4b",
+        "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_independently_verified_native_ARM_and_physical_Intel": true
+      },
+      "normal_and_Info_prediction": {
+        "nodes": 152,
+        "archive_bytes": 22765668,
+        "archive_sha256": "7abfafb807a893a029ce77fa93e75427c6a114b2f3727a93a4514ad6091b4660",
+        "inventory_sha256": "7ebf60858112e24491de26321d3c1e6a0942aed5cf9bb59b3f23bae3b0fb8a3e",
+        "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_independently_verified_native_ARM_and_physical_Intel": true
+      }
+    },
+    "detail": "https://github.com/jordanhubbard/daemonarchy-ports/blob/work/native-python-bootstrap-20261124/docs/verification/gperf-original-default-20261126.json",
+    "remaining": "Bounded native ARM development only. Matching source/SDK/kernel and AMD64, complete desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, physical matrix, installer/update/rollback/media, freeze/signing/publication remain open."
   }
 }
