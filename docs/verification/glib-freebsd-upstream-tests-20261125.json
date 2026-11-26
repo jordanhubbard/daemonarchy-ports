@@ -138,5 +138,48 @@
     "selected_kernel_loader_compiler_shell_accounts_cache_mounts_preserved": true,
     "scope": "Existing Intel physical tester kernel primitives only; no new1.6SDK/package/software installation or qualification."
   },
-  "adequate_capacity_full_rerun": "Pending complete independent custody of every original failed source/build/report/resource tree. Preserve old outputs before rerunning unchanged selected test target with an explicit temporary worker resource profile."
+  "adequate_capacity_full_rerun": {
+    "original_construction_targets_passed": 8,
+    "discovered": 420,
+    "selected": 418,
+    "results": {
+      "OK": 408,
+      "SKIP": 9,
+      "ERROR": 1
+    },
+    "remaining_failure": "filenamecompleter assumed fixed order; original full failure retained.",
+    "all_five_prior_cache_related_failed_programs_passed": true,
+    "minimum_measured_cache_entry_headroom": 1275601,
+    "all_original_limits_capacity_runtime_hash_restored": true,
+    "independent_process_exit_watchdog_verified_restore": true,
+    "full_selected_suite_qualified": false
+  },
+  "filename_completion_order_followup": {
+    "upstream_commit": "70355ac696600d7cd99dcb7e1cf110b52bd158b9",
+    "upstream_portion": "gio/tests/filenamecompleter.c only; shipping implementation/documentation unchanged",
+    "port_patch": "devel/glib20/files/patch-gio_tests_filenamecompleter.c",
+    "patch_sha256": "860ca1b071948ff3c55c3d9fd63b05f875d57c051a65dbf55a04174409006be4",
+    "why": "The API returns completions in unspecified enumeration order. Preserve exact array membership/multiplicity and directory-only/suffix checks, comparing arrays after upstream sorting. Fixture paths and expected arrays are unchanged.",
+    "validation": {
+      "upstream_commit": "70355ac696600d7cd99dcb7e1cf110b52bd158b9",
+      "upstream_portion": "gio/tests/filenamecompleter.c only; shipping implementation/documentation unchanged",
+      "original_sha256": "c25f03d04f09797009fdc582c810746cb32163e600b6bbbc55d680592bb0d31a",
+      "upstream_patched_sha256": "84a8322893f5519764272d1bb3c8e1af9ac693644d83b63f64d3cb790f2c445d",
+      "combined_port_patch_sha256": "860ca1b071948ff3c55c3d9fd63b05f875d57c051a65dbf55a04174409006be4",
+      "all_fixture_inputs_and_expected_arrays_identical": true,
+      "all_suffix_assertions_identical": true,
+      "zero_fuzz_and_upstream_exact": true
+    },
+    "fresh_source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+    "native_result": "Fresh original build/test pending; do not claim the failed earlier run passed."
+  },
+  "complete_failed_source_custody": {
+    "nodes": 65018,
+    "logical_native_bytes": 1500750502,
+    "archive_bytes": 285816034,
+    "archive_sha256": "281982442c0b4c2d6c1ea0fe8b950a35815c358db5b1e8c090293f8416856174",
+    "inventory_sha256": "9f670742eccf8c0ca0b7597e74ac64c63302500bc48b1a32cdaacbea17b9a360",
+    "all_nodes_fully_verified_native_ARM_and_independent_Intel": true,
+    "scope": "All three initial source/build trees, baseline2errors/fixed5errors, original audits/exclusions/skips, full selected source/Git compositions, raw probes/failed hypotheses, failed restoration observer and read-only completion. This is failed evidence custody, not suite acceptance."
+  }
 }
