@@ -18,6 +18,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 USES=		cpe localbase python
 USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
+# Include the built libyaml extension when collecting the original tests.
+TEST_ENV+=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
 OPTIONS_DEFINE=	LIBYAML EXAMPLES
 OPTIONS_DEFAULT=LIBYAML
 LIBYAML_DESC=	Use textproc/libyaml for faster parsing
