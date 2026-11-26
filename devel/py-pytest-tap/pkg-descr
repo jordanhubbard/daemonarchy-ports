@@ -1,0 +1,2 @@
+Pytest plugin that emits test results in Test Anything Protocol format,
+allowing pytest suites to run under TAP consumers such as Meson.

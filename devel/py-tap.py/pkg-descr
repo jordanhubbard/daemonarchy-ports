@@ -1,0 +1,3 @@
+Library and command-line tools for reading, writing and running tests using
+the Test Anything Protocol. Optional YAML diagnostics support is available
+through the YAML option.
