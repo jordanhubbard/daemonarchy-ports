@@ -9549,6 +9549,99 @@
     },
     "normal_upgrade_performed": false,
     "Nose_installed": false,
-    "release_scope_unchanged": true
+    "release_scope_unchanged": true,
+    "status": "source-built-package3-grammar-pass-original-full-suite-fails-base-calendar-and-LIBPC-prefix-candidate4-control-pass",
+    "source_built_package": {
+      "bytes": 40541290,
+      "sha256": "9e43d82a1585dd4507583fce48023bdd79fa5cdd3eb23d6ee13c610a89d64e23",
+      "version": "3.12.16_3"
+    },
+    "sealed_runtime": {
+      "payloads": 8031,
+      "native_aarch64_ELF_payloads": 77,
+      "all_payload_bodies_modes_resolved_account_owners_flags_nsmtime_and_private_prefix_unchanged": true,
+      "archive_numeric_header_ids": {
+        "65534:65534": 8031
+      },
+      "declared_archive_names_and_actual_private_extraction_owner_mapping": "root:wheel names, actual pkg extraction root0:wheel0; numeric archive header IDs retained separately.",
+      "fresh_unprivileged_interpreter_stdlib_native_extensions_actual_Py_GetVersion_libpython_symbol_binding": true,
+      "grammar_conversion_cases": 8,
+      "grammar_semantic_checks": 16,
+      "weekly_logging_authored_probe_exit": 1,
+      "normal_install_performed": false
+    },
+    "original_full_suite": {
+      "source_revision": "904ae48e8a59dfed1ed11b2910378b2cd288ac53",
+      "original_make_target": "buildbottest",
+      "original_options": "-j1 -u all -W --slowest --fail-env-changed --timeout=1200 TESTOPTS=-j4",
+      "actual_make_test_exit": 1,
+      "declared_programs": 492,
+      "reported_total_tests": 42377,
+      "reported_failures": 4,
+      "reported_skipped": 1651,
+      "reported_test_files_run": "493/492",
+      "passed_programs": 459,
+      "failed_programs": [
+        "test_logging",
+        "test_tools"
+      ],
+      "skipped_programs": 30,
+      "resource_denied_programs": 1,
+      "original_builtin_rerun_programs": 2,
+      "duration": "16 min 50 sec",
+      "all_initial_and_builtin_rerun_outcomes_retained": true,
+      "external_suite_retry": false,
+      "all4581_original_source_bodies_and_test_assertions_preserved": true,
+      "per_case_complete_skip_reason_observability": "Not admitted; original raw reasons retained where emitted. Aggregate totals do not establish complete per-case receipts."
+    },
+    "candidate4_prefix_control": {
+      "source_code_commit": "0111e5b509f93c50e6cdb6894085ba53da2d2c0f",
+      "candidate_recipe_sha256": "766345b56b0d294497ace2006ab39ae85f002de29d754b43ea4eaaf2d078c930",
+      "actual_source_emitted_native_post_patch_command": true,
+      "only_LIBPC_assignment_changes_in_independent_original_source_copy": true,
+      "default_prefix_preserved": true,
+      "configured_private_prefixes_installed_unprivileged": 2,
+      "original_python_pc_body_exact_at_both_destinations": true,
+      "whole_live_SDK128_frozen_base_accounts_loader_fontcache_mounts_preserved": true,
+      "fresh_candidate4_package_or_full_suite_acceptance": false
+    },
+    "complete_custody": {
+      "nodes": 25249,
+      "parts": 14,
+      "complete_inventory_sha256": "989eefbfedb627a385ca0b42c58ce38703b6ef50ebdc28a34876743a3724d4ff",
+      "all_nodes_once_no_cross_partition_hardlinks": true,
+      "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_and_gzip_CRC_verified_ARM_and_Intel": true,
+      "each_source_capsule_limit_bytes": 134217728,
+      "total_archive_bytes": 412767823,
+      "extra_Linux_root_archive_bytes": 0
+    },
+    "matching_runtime_followup": {
+      "existing_source_fix": "https://github.com/jordanhubbard/daemonarchy-src/pull/130",
+      "source_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
+      "retained_matching_base_kernel_tests_set_hashes_verified": true,
+      "existing_immutable_private_image_sha256": "fe678ce019e4ee5677602c3a4a976cf1da5c9c424ba4f9a592e8150f2ec020c2",
+      "existing_image_current_full_sha256_verified": true,
+      "same_allocated_worker_transition_profile_prepared": true,
+      "new_VM_created_or_started": false,
+      "worker_stopped_or_restarted": false,
+      "normal_data_volume_frozen_SDK_and_original_root_preserved": true,
+      "matching_kernel_world_current_boot_acceptance": false
+    }
+  },
+  "current_base_runtime_hold_20261126": {
+    "provider": "libc POSIX-TZ weekday behavior",
+    "actual_native_date_and_old_and_fresh_Python_failure_confirmed": true,
+    "existing_source_fix_PR130": "https://github.com/jordanhubbard/daemonarchy-src/pull/130",
+    "live_libc_sha256": "31460c17de46058d0c19e83d49b68780ccf76911e7ca6e331d42a23619bbfc62",
+    "retained_fixed_source_f4eb_libc_sha256": "bf2784e99b1042274d7f5938d24b9db226e790e49d1bad074dcd73ec1d253db9",
+    "current_native_package_count_is_not_healthy_or_release_admitted_SDK": true,
+    "global_base_or_boot_state_changed": false
+  },
+  "Nose_conversion_command_repair_20261126": {
+    "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/123",
+    "report": "docs/verification/nose-conversion-native-control-20261126.json",
+    "native_authored_control": "Actual setuptools63.1.0 registers originalbuild_tests andcandidatebuild_py; source/doctestconversionfixturePASS, allsourceunchanged.8031freshPythonruntimeandfullNosesuiteareseparate.",
+    "normal_Nose_installed": false,
+    "full_original_Nose_suite_or_normal_acceptance": false
   }
 }

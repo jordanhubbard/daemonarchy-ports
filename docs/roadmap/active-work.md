@@ -84,3 +84,15 @@ checks; configure and later package/tests remain pending. The installed Python
 is unchanged and its version remains in the original mail-advisory affected
 ranges. Both the conversion and advisory holds remain; private range controls
 are not package, lifecycle, normal-upgrade or release acceptance.
+
+The [Python terminal report](../verification/python312-grammar-native-control-20261126.json)
+now retains a source-built revision-3 package, all 8,031 sealed payload checks,
+unprivileged grammar conversion and the original full-suite failure in logging
+and the freeze tool. All 25,249 source/object/runtime/control nodes verify on
+ARM and Intel across 14 bounded capsules. The source prefix repair for revision 4
+passes its independent native control. Existing source PR130 fixes the separately
+confirmed libc POSIX-TZ defect; matching-world requalification remains required.
+[Nose PR123](https://github.com/jordanhubbard/daemonarchy-ports/pull/123) restores
+conversion command registration with an authored native control; its original
+suite and normal delivery remain pending. Package count remains128 with explicit
+Python and base-runtime holds; no normal upgrade or release admission occurred.
