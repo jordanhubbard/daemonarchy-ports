@@ -61,7 +61,11 @@ The [native observations](../verification/pbr-importlib-metadata-native-20261126
 retain the original packaged `pbr freeze` failure and nine authored metadata/CLI
 regressions: original 3 pass, 3 fail and 3 error; repaired 9 pass on matching
 FreeBSD CURRENT arm64 with Python 3.12.16_5. The patch preserves upstream test
-bodies. Full native source verification, a fresh repaired package, sealed
-consumption, private pkg lifecycle and normal delivery remain pending. The
+bodies. All 184,402 native Git members verify; the fresh repaired package passes all
+eight original construction phases. Its 207 sealed payloads, version/API/CLI
+checks, the original freeze assertion, nine unchanged package regressions and
+actual PEP517 metadata/wheel/sdist/fresh-child consumers pass. Construction
+and all 617 sealed evidence records verify on ARM and Intel.
+Private pkg lifecycle and normal delivery remain pending. The
 original port has no `do-test` target; no upstream-suite pass or canonical
 Component, provenance, SDK or release admission is claimed.

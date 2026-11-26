@@ -1,6 +1,6 @@
 {
   "schema": "daemonarchy.native-verification-observation@1",
-  "status": "native-authored-regressions-pass-repaired-package-qualification-pending",
+  "status": "native-repaired-construction-sealed-consumers-and-complete-ARM-Intel-custody-pass-private-lifecycle-pending",
   "component": "devel/py-pbr",
   "version": "7.1.3_1",
   "native_source_commit": "2ca68fcb66d940c57d6a9b1a4bce53f2f5fa0d4e",
@@ -82,14 +82,60 @@
     }
   },
   "qualification": {
-    "full_native_git_source_verification": "running",
-    "repaired_original_build": "pending",
-    "repaired_sealed_runtime": "pending",
+    "full_native_git_source_verification": {
+      "pass": true,
+      "members": 184402,
+      "unchanged_regular_files_shared_root_owned_readonly": 184399,
+      "changed_Git_paths": 3
+    },
+    "repaired_original_build": {
+      "pass": true,
+      "all_eight_original_phases_pass": true,
+      "package": {
+        "bytes": 187864,
+        "sha256": "6153c7f4a113a5f5b9b2a6d441e17ee224eceba64e63cab902ec9e6c3e850479"
+      },
+      "complete_custody": {
+        "records": 1368,
+        "parts": 1,
+        "inventory_sha256": "ef544c4691c17b0945c7862a094fa014582a7dc84b27676d37faf23e74215330",
+        "receipt_sha256": "7f8295aa82965193d7b0508b45d230664608b96270d3bb0865038a0e0f4ff1b8",
+        "verified_on_ARM_and_Intel": true
+      }
+    },
+    "repaired_sealed_runtime": {
+      "pass": true,
+      "exact_payloads": 207,
+      "no_ELF_or_package_scripts": true,
+      "all_payload_bodies_modes_owners_mtimes_links_exact": true,
+      "same_freeze_assertion_passed": true,
+      "same_nine_authored_regressions_against_actual_package_passed": true,
+      "missing_package_CLI_exit": 1,
+      "missing_package_CLI_error_on_stderr": true,
+      "actual_UID": 65534,
+      "actual_Python": "3.12.16_5",
+      "PEP517_prepared_metadata_wheel_sdist_and_fresh_child_wheel_import_pass": true,
+      "all_normal_SDK129_raw_database_old18_frozen_base_accounts_loader_cache_mounts_and_selected_source_guards_pass": true,
+      "sealed_full_custody": {
+        "records": 617,
+        "parts": 1,
+        "inventory_sha256": "cc73146eaa0434befecd93c914b0bd9d03f211be64babb38b1ef56d559bb14fd",
+        "receipt_sha256": "8687310c3a74b2a4b9e4400b8cb558cca87eb088cd6d7e1d44f398627a0d829a",
+        "verified_on_ARM_and_Intel": true
+      }
+    },
     "private_package_lifecycle": "pending",
     "normal_development_delivery": "pending",
     "original_upstream_suite": "not earned: original port has no do-test target",
     "canonical_component_admitted": false,
     "per_unit_provenance_or_TCB_admitted": false,
     "SDK_or_full_release_admitted": false
+  },
+  "authority_validation": {
+    "actual_litai_verify_exit": 1,
+    "committed_locks_passed": 2,
+    "documentation_authority_review": "stale",
+    "current_canonical_receipt": "not earned",
+    "no_human_review_marker_or_receipt_synthesized": true
   }
 }
