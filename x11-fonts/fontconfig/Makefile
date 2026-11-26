@@ -72,8 +72,9 @@ BITMAPS_MESON_YES=	bitmap-conf
 NLS_USES=		gettext-runtime gettext-tools
 NLS_MESON_ENABLED=	nls
 
-# Meson discovers pytest during configure, before test-depends runs.
-TEST_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-tap>=0:devel/py-pytest-tap@${PY_FLAVOR}
+# Meson discovers pytest and json-c during configure, before test-depends.
+TEST_BUILD_DEPENDS=	json-c>=0:devel/json-c \
+			${PYTHON_PKGNAMEPREFIX}pytest-tap>=0:devel/py-pytest-tap@${PY_FLAVOR}
 TEST_TEST_DEPENDS=	bash:shells/bash
 TEST_MESON_ENABLED=	tests
 TEST_MESON_ON=	-Dtests-external-fonts=disabled
