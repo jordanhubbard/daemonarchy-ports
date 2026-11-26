@@ -7091,5 +7091,14 @@
       "all_bodies_metadata_links_hardlinks_and_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
     },
     "remaining": "More-itertools normal/lifecycle/custody, PyYAML and new TAP tools, complete original Fontconfig suite and private/default integration; matching source/SDK/kernel and AMD64, canonical Component/ownership/provenance/lifecycle/SDK/TCB, desktop, physical matrix, installer/update/rollback/media/freeze/signing/publication."
+  },
+  "PyYAML_staged_import_path_probe_20261126": {
+    "original_default_construction_targets_pass": 8,
+    "original_pytest_collection_error_retained": true,
+    "explicit_staged_import_path_probe_reported_passed": 2608,
+    "reported_warnings": 1,
+    "whole_SDK117_and_source_system_guards_pass": true,
+    "code_fix_review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/119",
+    "native_corrected_source_case_audit_private_lifecycle_custody_normal_pending": true
   }
 }
