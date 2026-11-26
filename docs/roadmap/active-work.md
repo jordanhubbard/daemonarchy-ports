@@ -142,3 +142,26 @@ are excluded only from the derived outer-failure count. All normal SDK, old and
 frozen SDK, base, accounts, loader/cache, mount and source guards pass; Nose stays
 uninstalled. Next repairs must retain original input and assertion bodies,
 restore discovery and preserve actual skip evidence without inferring reasons.
+
+Revision 7 restores stream-config reading and legacy unittest display/IDs within
+Nose while preserving custom overrides and class/stdlib globals. Requested
+missing-module failures keep the legacy ImportError category and original
+cause/name/path/traceback; internal dependency and specific exception types are
+preserved. A build-only conversion fixer translates imp.new_module to the
+standard types.ModuleType constructor, leaving unsupported uses and alias
+collisions untouched. All 433 original input files remain retained. The exact
+patched reference now includes a 434th file, the converter; all source observers
+must bind it. The two original fixture files retain all 50 assertion AST nodes
+and 13 test definitions through conversion. Earlier registration, source,
+test, doctest and 4,425-byte data checks remain in the authored control.
+
+Native negative revision 6 passes 3 of 12 authored checks; repaired revision 7
+passes all 12. BSD source/setup patches apply with zero fuzz and match GNU.
+The upstream xUnit reporting control records three outer cases with an actual
+Unicode skip identity/reason, while a nested case completes without inheriting
+reporting. Two earlier authored setup/capture failures remain preserved. All
+516 control records verify on ARM and Intel. Optional TEST_ARGS support permits
+reporting flags for the next original run without selection or deadline flags.
+Full 184,399-file source verification precedes original revision-7 construction
+and complete case/skip auditing. The historical revision-6 unprinted skips remain
+unreconciled. Nose remains uninstalled and full release admission remains open.
