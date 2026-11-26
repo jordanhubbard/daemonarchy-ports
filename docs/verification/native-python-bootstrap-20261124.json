@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 125,
+  "normal_development_package_count": 126,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -2415,7 +2415,8 @@
     "Current libthai checkpoint: exactoriginalPango1.58.2source uses4availableoriginalexportedfunctions andnoneof12missingdeclarations. OriginalsupportedABI/defaultdictionary7commands normallypass withoriginalsolver/hooks,26payloads/113inheritedprefixes/114registry andfullSDK114guards. Readonlycorrection bindsactualcorrect6transactionlifecycleinside1550nodecapsule withoutreplay;71node normal/contract/bindingcapsule both-hostverified. FullheaderAPI/Pangobuild-runtime andbroaderreleasegates remainopen.",
     "Brotli admitted at115 for original default native ARM standard-stream surface:28original CTest,88private/88normal commands,54Linux AArch64 cross-binary decodes and54physical Intel existing-decoder cross-ISA decodes. No new AMD64 build/deployment qualification. Extension APIs and broader release gates remain open.",
     "FreeType admitted at116: original8construction targets and options,33private/33normal actualfont commands across10inputs/13faces, knownbitmap andWOFF2, unchanged112characterupstreamregression,6originalhooktransactions andfullboth-hostsource/failure/normalcustody. OriginalportnoTEST_TARGET; nofullMesonsuite/fullAPI/desktop/AMD64/canonicalrelease claim. Fontconfig/HarfBuzz/Pango andbroaderreleaseacceptance remainopen.",
-    "Current accepted119 after MoreItertools118 andPyYAML119. Original929/2608case audits,245/62private anddefaultchecks,sixrealpackage transactions each andcompletebothhostsource/failure/normalcustody pass. NewTAP source ports andFontconfig completeoriginalsuite/default-runtime acceptance remainpending."
+    "Current accepted119 after MoreItertools118 andPyYAML119. Original929/2608case audits,245/62private anddefaultchecks,sixrealpackage transactions each andcompletebothhostsource/failure/normalcustody pass. NewTAP source ports andFontconfig completeoriginalsuite/default-runtime acceptance remainpending.",
+    "Current checkpoint: lzo2 2.10_3 is normally integrated among126 bounded ARM development packages. Four private/normal432case C/CXX shared/static consumers, original exhaustive check/test, six real loader lifecycle transactions and all original/fixed/normal independent custody PASS. Refresh original default desktop/Graphviz dependency graph on source0164; all canonical, matching AMD64, physical, media and full1.6release gates remain open."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -5296,9 +5297,9 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 125,
+  "actual_installed_development_package_count": 126,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-26T12:18:07.462024+00:00",
+  "last_updated_utc": "2026-11-26T12:52:32.554204+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -9382,7 +9383,37 @@
     "candidate_version": "2.10_3",
     "candidate_review_code": "e3b88d6b1d7223b2dd1fabd4d8de65fe8988d130",
     "candidate_native_source_revision": "0164aca0067d77df984de621c8871f8d6eccce1f",
-    "candidate_source_verification": "PASS complete184390Gitmembers; freshbuild/runtime/lifecycle/normal pending",
+    "candidate_source_verification": "Historical pre-repair observation; corrected source, private/runtime/lifecycle and normal126 qualification now recorded in selected_original_default_Lzo2_pkgconf_fixed_qualified_20261126.",
     "report": "docs/verification/lzo2-pkgconf-native-findings-20261126.json"
+  },
+  "selected_original_default_Lzo2_pkgconf_fixed_qualified_20261126": {
+    "origin": "archivers/lzo2",
+    "version": "2.10_3",
+    "source_revision": "0164aca0067d77df984de621c8871f8d6eccce1f",
+    "review_PR": 121,
+    "original_check_and_exhaustive_test_targets_PASS": true,
+    "private_and_normal_four_modes_cases_each": 432,
+    "checks_each": 11179,
+    "six_original_package_lifecycle_transactions_PASS": true,
+    "normal_registry_count": 126,
+    "all125_prior_providers_preserved": true,
+    "source_private_custody": {
+      "nodes": 1945,
+      "archive_bytes": 27704129,
+      "archive_sha256": "a60621ab7350d57f40088afb915ac8dc901266797370f2da6cbf6310a8996828",
+      "inventory_sha256": "fa82a6c974ab30bdf649eb48c31c623f9e4b109a94843e363095a5eeb09311e2",
+      "all_nodes_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_gzip_CRC_verified_ARM_and_Intel": true,
+      "extra_compressed_archive_bytes_on_Linux_controller": 0
+    },
+    "normal_custody": {
+      "nodes": 84,
+      "archive_bytes": 18249272,
+      "archive_sha256": "ee1ecef06d4b96e15f2a4cebcfcac7214558abdd602aa28e6a7acff86dc11444",
+      "inventory_sha256": "531e56e2db87aac226c4c4b5ac6bb94ba7e3abb60493f82f27a330c28b6a69d4",
+      "all_nodes_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_gzip_CRC_verified_ARM_and_Intel": true,
+      "extra_compressed_archive_bytes_on_Linux_controller": 0
+    },
+    "report": "docs/verification/lzo2-pkgconf-native-findings-20261126.json",
+    "scope": "Bounded native FreeBSD ARM development qualification of corrected lzo2 2.10_3, including independent private/normal consumers, original package lifecycle and both-host custody. Canonical Component/provenance/lifecycle/SDK/TCB, full API/ABI, AMD64, desktop and full release acceptance remain separate."
   }
 }
