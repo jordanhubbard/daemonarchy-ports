@@ -54,3 +54,19 @@ This selected-port workflow uses ordinary binary dependency bootstrap and a
 source-built libdvdcss dependency on FreeBSD 15.1 amd64. It does not establish
 the full matching-CURRENT source-built closure, graphical session, physical
 hardware, canonical per-unit SDK or retained lifecycle/release acceptance.
+
+### GDBM supplied-descriptor close-on-exec repair
+
+The original GDBM 1.26 default NLS profile built and packaged on matching
+CURRENT aarch64, with 27 original checks passing and 11 original compatibility
+skips. Independent packaged-library acceptance found that reorganization clears
+a requested close-on-exec flag. Four additional native controls inspect both
+file descriptor flags and actual exec inheritance: the original library passes
+the two flag-off cases and fails both flag-on cases.
+
+The port revision applies the requested flag to supplied descriptors while
+preserving existing flags and error ownership. Original upstream tests remain
+unchanged. Full repaired construction, sealed consumers, actual package
+lifecycle and normal delivery remain pending; this repair grants no canonical
+Component, SDK or release admission. The [native observation](../verification/gdbm-cloexec-native-20261126.json)
+keeps the exact original failure, controls and qualification boundary.

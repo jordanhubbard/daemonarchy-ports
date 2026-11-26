@@ -1,0 +1,120 @@
+{
+  "schema": "daemonarchy/gdbm-cloexec-native-observation@1",
+  "observed": "2026-11-26T23:24:56.977168+00:00",
+  "canonical_receipt": false,
+  "origin": "databases/gdbm",
+  "original_version": "1.26",
+  "repair_version": "1.26_1",
+  "implementation_review_commit": "148696be11f40a5f5fc190eeab76b77edada1dd9",
+  "native_candidate_source": "a11415e8a4e92fa6c88b82368abf9cbbc2ea3ae2",
+  "upstream_distfile": {
+    "name": "gdbm-1.26.tar.gz",
+    "bytes": 1226591,
+    "sha256": "6a24504a14de4a744103dcb936be976df6fbe88ccff26065e54c1c47946f4a5e"
+  },
+  "original_profile": {
+    "options": {
+      "COMPAT": "off",
+      "NLS": "on"
+    },
+    "target": "FreeBSD16 aarch64 matching CURRENT base",
+    "normal_SDK_packages": 131,
+    "native_make_jobs": 4,
+    "test_target": "check",
+    "original_upstream_test_sources_unchanged": true,
+    "test_cases": 38,
+    "passed": 27,
+    "skipped": 11,
+    "failed": 0,
+    "skip_reason": "All eleven original AT_COMPAT_PREREQ guards require COMPAT=1. The original default profile has COMPAT=0; that profile remains unqualified."
+  },
+  "independent_sealed_failure": {
+    "original_package_sha256": "92eca35d16bbab0033d261716bc4578ac19bd860010b6ec56302472dc9d3fd99",
+    "exact_payloads": 34,
+    "ELF_products": 4,
+    "static_native_objects": 29,
+    "failure": "The independent packaged-library C client requests GDBM_CLOEXEC, reorganizes a database, then observes FD_CLOEXEC cleared. Overall sealed acceptance failed."
+  },
+  "original_native_regression_controls": {
+    "uid": 65534,
+    "cases": [
+      {
+        "supplied_fd": 0,
+        "requested_cloexec": 0,
+        "initial_cloexec": 0,
+        "initial_exec_closed": 0,
+        "reorganized_cloexec": 0,
+        "reorganized_exec_closed": 0,
+        "passed": true
+      },
+      {
+        "supplied_fd": 0,
+        "requested_cloexec": 1,
+        "initial_cloexec": 1,
+        "initial_exec_closed": 1,
+        "reorganized_cloexec": 0,
+        "reorganized_exec_closed": 0,
+        "passed": false
+      },
+      {
+        "supplied_fd": 1,
+        "requested_cloexec": 0,
+        "initial_cloexec": 0,
+        "initial_exec_closed": 0,
+        "reorganized_cloexec": 0,
+        "reorganized_exec_closed": 0,
+        "passed": true
+      },
+      {
+        "supplied_fd": 1,
+        "requested_cloexec": 1,
+        "initial_cloexec": 0,
+        "initial_exec_closed": 0,
+        "reorganized_cloexec": 0,
+        "reorganized_exec_closed": 0,
+        "passed": false
+      }
+    ],
+    "passed": 2,
+    "failed": 2
+  },
+  "cause": "gdbm_open_ext assigns an existing descriptor without applying the requested close-on-exec flag. Recovery passes its temporary descriptor through this path. The original fdop helper compares the target descriptor number with dup(0), which can miss a leaked higher descriptor. The additional control uses fcntl plus actual fork/exec descriptor inspection.",
+  "repair": "Apply F_GETFD/F_SETFD when GDBM_CLOEXEC is requested for a supplied descriptor. Preserve existing flags and the existing GDBM_CLOERROR ownership/error rules. Add a port revision and an authored four-case native regression control; retain all original upstream tests and defaults.",
+  "complete_two_host_custody": {
+    "original_construction_records": 1452,
+    "failed_sealed_records": 473,
+    "original_negative_control_records": 367
+  },
+  "candidate_qualification": {
+    "full_native_source_verification": {
+      "members": 184404,
+      "all_git_bodies_modes_links_verified": true,
+      "tree": "ef0da801aa56705b7c43bf0649753e72e182b280",
+      "all_host_SDK_base_accounts_loader_cache_mount_guards_pass": true
+    },
+    "original_make_build_test_package": "in progress",
+    "fixed_same_four_controls": "pending",
+    "fixed_sealed_API_ELF_C_CXX_shared_static_CLI": "pending",
+    "private_real_package_lifecycle": "pending",
+    "normal_delivery": "not installed"
+  },
+  "remaining_release_gates": [
+    "Original COMPAT-enabled profile is unqualified.",
+    "Independent fixed sealed consumers and actual package scripts/lifecycle must pass before normal delivery.",
+    "Previous released upgrade/rollback baseline has not been qualified.",
+    "Canonical Component, ownership, provenance, TCB, SDK and full release admission remain open."
+  ],
+  "qualification_boundary": "Observed development evidence only. No canonical receipt, SDK admission or release completion is inferred.",
+  "verification": {
+    "litai_verify_exit": 1,
+    "committed_locks_current": 2,
+    "authority_gate": "stale documentation authority review; no human review marker fabricated",
+    "canonical_receipt": "unearned; authority gate fails before admission",
+    "initial_sparse_layout_failure": "Restored all Tools/daemonarchy authority directories and reran verification. Both committed locks now pass."
+  },
+  "review_and_native_implementation_blobs_identical": {
+    "databases/gdbm/Makefile": "a4fe4641fc3336ce21a2a07f0b8879d9f64421ea",
+    "databases/gdbm/files/patch-src_gdbmopen.c": "ac399c6d4a914dffa63179cd5dd6805eaead789f",
+    "Tools/daemonarchy/verification/check_gdbm_cloexec.c": "47e8c62da57cc0b49d02a1b4616070e2ea6c3899"
+  }
+}
