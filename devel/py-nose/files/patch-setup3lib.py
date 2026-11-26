@@ -53,7 +53,7 @@
 +            # Set these after setuptools validates its own setup keywords.
 +            for key, value in conversion.items():
 +                setattr(self, key, value)
- 
+
      class BuildTestsCommand (Command, Mixin2to3):
          # Create mirror copy of tests, convert all .py files using 2to3
 @@ -135,6 +174,8 @@
