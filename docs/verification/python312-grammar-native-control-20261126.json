@@ -2,7 +2,7 @@
   "schema_version": 1,
   "work_id": "PORT-PY312-GRAMMAR-001",
   "product_release": "1.6",
-  "status": "candidate5-original-fullsuite-and-sealed-native-API-pass-complete-two-host-custody-lifecycle-and-normal-delivery-pending",
+  "status": "normal-development-Python5-grammar-native-API-package-lifecycle-and-custody-pass-canonical-SDK-and-release-gates-open",
   "recipe_change": {
     "package": "python312-3.12.16_5",
     "mode": "0644",
@@ -78,15 +78,17 @@
     "original_full_suite": true,
     "independent_fresh_package_runtime": true,
     "retained_lifecycle": false,
-    "normal_upgrade_or_grammar_repair": false,
+    "normal_upgrade_or_grammar_repair": true,
     "normal_installed_count": 128,
-    "normal_python_feature_hold": true,
+    "normal_python_feature_hold": false,
     "Nose_installed": false,
     "canonical_Component_SDK_or_release": false,
     "repaired_source_built_package3": true,
-    "proposed_recipe4_source_built_package": false,
+    "proposed_recipe4_source_built_package": true,
     "bounded_package3_grammar_and_actual_interpreter_binding_pass": true,
-    "complete_per_case_aggregate_skip_reason_receipt": false
+    "complete_per_case_aggregate_skip_reason_receipt": false,
+    "real_original_package_hooks_and_artifact_lifecycle": true,
+    "exact_initial_SDK_fractional_timestamp_rollback": false
   },
   "private_advisory_controls": {
     "only_two_source_bound_python312_affected_ranges_changed": true,
@@ -97,7 +99,7 @@
     "not_package_or_security_acceptance": true,
     "configuration_failure_retained": "Initial private DB used build-user ownership and pkg rejected it. Fresh private root-owned DB passed supported configuration and logical128-package registry equality. No original make phase had executed in the failed private configuration."
   },
-  "observed_utc": "2026-11-26T17:29:05.543866+00:00",
+  "observed_utc": "2026-11-26T18:24:25.581061+00:00",
   "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/122",
   "staging_recovery": {
     "original_stage_exit": 0,
@@ -220,7 +222,38 @@
     "runtime_and_loader_control_files_verified_on_ARM_and_Intel": 8,
     "runtime_result_sha256": "cdaa948478bb13d479371b4b48b7c4108578fc67e8e72530e62fb3011109cd95",
     "runtime_scope": "Scoped actual matching-f4eb boot/core-sysroot and causal weekday observation. Canonical kernel/world lifecycle/release admission remains pending. SDK19 independent clone retains installed128 and original Python feature hold; no package upgrade or normal acceptance. New overlay loader cache only registered; new base fontconfig hooks and all desktop consumers require requalification.",
-    "original_root_overlay_after_clean_shutdown_sha256": "821de169d11f2ae7e6730a18f4c48d55b9dc3d13d9b853678242ba37eeda6c9f"
+    "original_root_overlay_after_clean_shutdown_sha256": "821de169d11f2ae7e6730a18f4c48d55b9dc3d13d9b853678242ba37eeda6c9f",
+    "fresh_original_stdtime": {
+      "source_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
+      "tests_archive_sha256": "1dca58afaebfe12eaec91b1b863c038e2ad2f43ee6891942b4de532fa9076a4c",
+      "actual_original_cases_passed": 9,
+      "original_assertions_selection_and_default_deadlines_preserved": true,
+      "original_case_execution_replayed": false,
+      "actual_cases": [
+        "detect_tz_changes_test:setugid",
+        "detect_tz_changes_test:thin_jail",
+        "detect_tz_changes_test:tz_default",
+        "detect_tz_changes_test:tz_env",
+        "detect_tz_changes_test:tz_env_setugid",
+        "detect_tz_changes_test:tz_invalid_env",
+        "detect_tz_changes_test:tz_invalid_file",
+        "localtime_test:posix_rule_weekday",
+        "strptime_test:dayofweek"
+      ],
+      "first_setup_failure": "SDK-only snapshot helper on extracted test tree; only extraction ran, zero discovery/cases. Corrected generic snapshot reuses exact original extraction. Failed setup retained.",
+      "all_source_SDK_base_accounts_loader_timezone_fontcache_mount_guards_pass": true,
+      "custody": {
+        "nodes": 42,
+        "parts": 1,
+        "all_nodes_verified_ARM_and_Intel": 42,
+        "complete_inventory_sha256": "577bfc878a45148c68779abd6ca336c51e71639087e0104b70537398c7e5b716",
+        "archive_total_bytes": 21561585,
+        "largest_archive_bytes": 21561585,
+        "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_hardlinks_gzip_CRC_verified": true,
+        "extra_Linux_root_archive_bytes": 0
+      },
+      "scope": "Current matching-f4eb allocated ARM profile only; not complete source/libc/kernel/hardware/canonical acceptance."
+    }
   },
   "candidate4_complete_native_source": {
     "revision": "81c00f97fbabd7cc7157feabd9967f9800a1b2be",
@@ -311,7 +344,7 @@
       "port_patches": 8,
       "sha256": "ebd5f026cbdd3d9a24414189860e8863dd053286111a7066c74f8e4c8c29bc05"
     },
-    "remaining": "Real package hooks and dependency checks through install/upgrade/rollback/delete/reinstall, normal namespace delivery, complete per-unit TCB/provenance/canonical SDK/release admission remain pending."
+    "remaining": "Canonical per-unit execution/ownership, both BOMs and complete TCB/provenance/SDK/release admission; AMD64 and wider physical matrix. Actual original fullsuite, sealed APIs, artifact lifecycle and working normal upgrade now pass. Exact initial SDK fractional timestamp rollback and252 aggregate skip attribution remain unqualified."
   },
   "source_built_package4": {
     "source_revision": "81c00f97fbabd7cc7157feabd9967f9800a1b2be",
@@ -601,5 +634,104 @@
     "every_node_once_no_cross_partition_hardlinks": true,
     "extra_Linux_root_archive_bytes": 0,
     "prior_failed_and_invalid_runs_preserved_separately": true
+  },
+  "real_original_package_hook_lifecycle_package5": {
+    "real_transactions": 8,
+    "all_original_command_exits": 0,
+    "add_operations": 6,
+    "all_add_direct_dependency_checks_and_original_scripts_enabled": true,
+    "forced_private_delete_operations": 2,
+    "forced_delete_scope": "Intentional isolated reverse-dependency-protection overrides while removing Python, followed by fresh reinstall; no complete dependency solver closure claimed. Raw helper blanket no-bypass boolean is overbroad and qualified by these actual flags.",
+    "actual_candidate_default_namespace_API_states": 5,
+    "all_states_grammar16_weekly3_embedding36_native75_and_ABI3_164_pass": true,
+    "delete_removes_all_candidate_payloads_and_causes_actual_noRPATH_loader_failure": true,
+    "rollback_actual8031_original_archive_payload_bodies_types_modes_accounts_flags_nsmtime_links_exact": true,
+    "exact_initial_SDK_metadata_rollback_qualified": false,
+    "initial_SDK_fractional_timestamps_absent_from_original_archive": 8029,
+    "initial_SDK_original_metadata_preserved": true,
+    "retained_failed_observations": [
+      "R1 expected inventory kind link versus observer symlink; every actual payload field and native type matched. Successful original upgrade retained without replay.",
+      "R2 compared rollback archive timestamps to initial SDK fractions; original artifact is whole-second at8029paths. Exact archive metadata remains asserted, no rounding or timestamp rewrite. Successful reinstall and rollback retained without replay."
+    ],
+    "whole_failed_fixtures_and_closed_custody_preserved": true,
+    "normal_host_install_in_private_fixture": false,
+    "canonical_literate_lifecycle_receipt_earned": false
+  },
+  "complete_package5_real_lifecycle_custody": {
+    "nodes": 151956,
+    "parts": 69,
+    "all_nodes_verified_ARM_and_Intel": 151956,
+    "complete_inventory_sha256": "f612b68845854993f2fdebdc7ac40b65c350f26ea68918bd25e1a734440fccb7",
+    "archive_total_bytes": 1063852166,
+    "largest_archive_bytes": 42800917,
+    "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_hardlinks_gzip_CRC_verified": true,
+    "extra_Linux_root_archive_bytes": 0
+  },
+  "normal_loader_profile_followup": {
+    "normal_initial_unique_provider_keys": 257,
+    "same_provider_keys_after_original_hook": 257,
+    "all_original_candidate_paths_and_priorities_retained": true,
+    "additional_lower_priority_legacy_bootstrap_candidate_entries": 7,
+    "native_causal_control_fresh_unprivileged_processes": 14,
+    "all7_actual_selected_default_libraries_and_body_hashes_equal_before_and_under_real_hook_hints": true,
+    "actual_noRPATH_dlinfo_LINKMAP_ORIGIN_and_issetugid0_honored_hint_override_proven": true,
+    "actual_after_normal_upgrade_default_no_override_binding_checks": 7,
+    "all_actual_after_normal_GLib_GI_libraries_and_bytes_equal_prior_defaults": true,
+    "no_global_loader_or_configuration_changes_during_diagnostic": true,
+    "legacy_bootstrap_full_source_provenance_and_global_SDK_hold_remain": true,
+    "custody": {
+      "nodes": 49,
+      "parts": 1,
+      "all_nodes_verified_ARM_and_Intel": 49,
+      "complete_inventory_sha256": "512b95c877b0108651a5982489b486299cd55837cd4efd8994175ad461e7eaaa",
+      "archive_total_bytes": 2275415,
+      "largest_archive_bytes": 2275415,
+      "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_hardlinks_gzip_CRC_verified": true,
+      "extra_Linux_root_archive_bytes": 0
+    }
+  },
+  "normal_package5_delivery": {
+    "state": "terminal-pass-bounded-development-normal-upgrade",
+    "finished_utc": "2026-11-26T18:17:13.732415+00:00",
+    "package": {
+      "bytes": 40537630,
+      "sha256": "2502aa401ca32d299524750984a538143e6ce48dfc6b55fd4adc283ed72db7a9"
+    },
+    "from_version": "3.12.16",
+    "to_version": "3.12.16_5",
+    "actual_normal_package_add_executions": 1,
+    "original_pkg_hooks_and_direct_dependency_checks_enabled": true,
+    "no_pkg_script_dependency_or_force_flags_used": true,
+    "exact_actual_default_namespace_payloads": 8031,
+    "other_inherited_providers_preserved": 127,
+    "installed_registry_count_observed": 128,
+    "old_license_records_preserved": 3,
+    "new_versioned_license_records_added": 3,
+    "old_and_new_versioned_license_directories_retained": true,
+    "same_actual_unprivileged_interpreter_stdlib_libpython_definition_binding_pass": true,
+    "grammar_cases": 8,
+    "grammar_checks": 16,
+    "weekly_logging_cases": 3,
+    "embedding_checks": 36,
+    "all_native_extensions": 75,
+    "native_extensions_and_ABI3_checks": 164,
+    "actual_seven_default_GLib_GI_bindings_unchanged": true,
+    "all16_normal_commands_exit0": true,
+    "all8031_payloads_and_whole_postupgrade_SDK_raw_database_loader_frozen_across_consumers": true,
+    "old_SDK18_frozen17_base_accounts_fontcache_mounts_and_selected_original_source_preserved": true,
+    "normal_python_conversion_feature_hold": false,
+    "Nose_installed": false,
+    "canonical_Component_SDK_release_admitted": false,
+    "preflight_corrections_retained": "R1 identical path assumption rejected correct versioned-license addition; no commands. R2 missing re import in borrowed loader parser; three successful read-only commands retained. R3 reuses those observations and performs one actual normal upgrade. Old license metadata preserved, not deleted.",
+    "custody": {
+      "nodes": 8121,
+      "parts": 7,
+      "all_nodes_verified_ARM_and_Intel": 8121,
+      "complete_inventory_sha256": "d16dc6812962c9dc0f3537bc533155cc382db4d6d3461127062cd5421adee24a",
+      "archive_total_bytes": 97887232,
+      "largest_archive_bytes": 22275613,
+      "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_hardlinks_gzip_CRC_verified": true,
+      "extra_Linux_root_archive_bytes": 0
+    }
   }
 }
