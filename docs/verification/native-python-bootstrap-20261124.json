@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 113,
+  "normal_development_package_count": 114,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -2388,8 +2388,8 @@
     "Current GLib checkpoint: selected409OK/9originalSKIP/0ERROR;6989TAP;41private and41default consumers;6actualoriginal-hooktransactions;68906source/private/failure/lifecycle nodes and233normal/completion nodes independently verified on nativeARM+Intel. Actual selected artifact normally integrated; accepted bounded development count110 unchanged. Original skipped/optional/failing variants and default-kernel-capacity coverage; remaining original suite gaps including six OpenSP failures and absent XInclude schemas; matching amd64/aarch64 source/SDK/kernel; full desktop/apps; canonical ownership/provenance/lifecycle/SDK/TCB; physical fleet, installer/update/rollback/media, freeze/signing/publication remain open.",
     "Current PNG checkpoint: original37CTest,31private codec+15tools,6real lifecycle transactions, actual normal install/hooks plus31codecs and30metadata/tools,3CMake clients pass. Accepted bounded normal111. Graphviz original-default metadata plan has59unbuilt nodes/32ready; construction pending. Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, full desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, complete physical matrix, installer/update/rollback/media, freeze/signing/publication remain open.",
     "Current libdatrie checkpoint: original8construction/10upstreamtests,33private+33defaultconsumers and6realoriginalhooktransactions pass. Complete source/private andnormal capsules independently verified nativeARM+Intel. Accepted bounded normal112; previousPNG111 andGLib110 remain historical qualification contexts. Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, complete desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, full physical matrix, installer/update/rollback/media, freeze/signing/publication remain open.",
-    "Libthai original8construction/9defaulttests,7positive implementedAPIcommands and6real lifecycletransactions pass, with full both-host custody. Installed-header audit exposes12unimplementeddeclarations andthwrend.hcompilefailure. Package remains UNINSTALLED; accepted112 unchanged. Resolveoriginal declaration/implementation contract before claiming fullAPI/normalacceptance. Full Daemonarchy1.6 release remains incomplete: matching source/SDK/kernel and AMD64; complete desktop/apps; canonical ownership/provenance/lifecycle/SDK/TCB; physical matrix; installer/update/rollback/media; freeze/signing/publication.",
-    "Current gperf checkpoint: original8construction/9defaulttestgroups/24goldens/3SMTP,21private+21normalcommands and31992nativequeries percontext,6actualInfo-hook lifecycletransactions, independentA/B/A globalInfo prediction andexactnormalmenu pass. WholeSDK113/rawdb/frozen/base/Cppruntime/accounts/cache/mount/source guards andcompleteboth-host custody pass. Accepted113; libthai staysnormallyuninstalled; originaloptionalextracheck andfullreleasegates remainopen."
+    "Current gperf checkpoint: original8construction/9defaulttestgroups/24goldens/3SMTP,21private+21normalcommands and31992nativequeries percontext,6actualInfo-hook lifecycletransactions, independentA/B/A globalInfo prediction andexactnormalmenu pass. WholeSDK113/rawdb/frozen/base/Cppruntime/accounts/cache/mount/source guards andcompleteboth-host custody pass. Accepted113; libthai staysnormallyuninstalled; originaloptionalextracheck andfullreleasegates remainopen.",
+    "Current libthai checkpoint: exactoriginalPango1.58.2source uses4availableoriginalexportedfunctions andnoneof12missingdeclarations. OriginalsupportedABI/defaultdictionary7commands normallypass withoriginalsolver/hooks,26payloads/113inheritedprefixes/114registry andfullSDK114guards. Readonlycorrection bindsactualcorrect6transactionlifecycleinside1550nodecapsule withoutreplay;71node normal/contract/bindingcapsule both-hostverified. FullheaderAPI/Pangobuild-runtime andbroaderreleasegates remainopen."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -2536,17 +2536,6 @@
         },
         "remaining": "Provisioning/coverage/lint/AMD64/canonical/release acceptance pending."
       }
-    },
-    {
-      "name": "libthai-0.1.30.pkg",
-      "bytes": 187178,
-      "sha256": "652654b56c066669ba92a4c9b5c6448740a96679a703d9703a64dff0a68f72c8",
-      "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
-      "status": "held-uninstalled-original-installed-header-API-gaps-unresolved",
-      "actual_missing_declarations": 12,
-      "standalone_header_compile_failures": [
-        "thwrend.h"
-      ]
     }
   ],
   "original_native_port_test_targets": {
@@ -2924,7 +2913,7 @@
       "gap": "Original package declares12unimplemented functions in thwcoll.h/thwinp.h/thwrend.h; thwrend.h alsofails standalone nativecompilation. Allheadersbyteexacttodistfile andalloriginalexportdefinitionspresent.",
       "actual_first_link_failure_retained": true,
       "source_default_suite_passed": 9,
-      "normal_installation": "held; accepted112 unchanged",
+      "normal_installation": "Bounded originalexportedABI/actualselectedPango surface anddefaultdictionary admitted at114;12missingdeclarations/thwrend.h remain unsupported/unqualified.",
       "detail": "https://github.com/jordanhubbard/daemonarchy-ports/blob/work/native-python-bootstrap-20261124/docs/verification/libthai-original-default-20261126.json"
     }
   },
@@ -5204,8 +5193,11 @@
         "bytes": 187178,
         "sha256": "652654b56c066669ba92a4c9b5c6448740a96679a703d9703a64dff0a68f72c8"
       },
-      "installed": false,
-      "status": "held-uninstalled-original-installed-header-API-gaps-unresolved"
+      "installed": true,
+      "status": "normal-bounded-original-exported-ABI-pass-upstream-header-gap-remains",
+      "previous_status": "held-uninstalled-original-installed-header-API-gaps-unresolved",
+      "accepted_normal_count": 114,
+      "qualification": "Bounded native ARM original exported ABI and selected consumer surface only. Twelve original unimplemented header declarations and thwrend.h compile failure remain unsupported/unqualified. Actual Pango build/runtime, complete desktop/apps, matching source/SDK/kernel and AMD64, canonical ownership/provenance/lifecycle/SDK/TCB, physical matrix, installer/update/rollback/media/freeze/signing/publication remain open."
     },
     {
       "name": "Original default gperf",
@@ -5261,9 +5253,9 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 113,
+  "actual_installed_development_package_count": 114,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-26T02:39:57.606590+00:00",
+  "last_updated_utc": "2026-11-26T02:50:48.222306+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -6629,5 +6621,89 @@
     },
     "detail": "https://github.com/jordanhubbard/daemonarchy-ports/blob/work/native-python-bootstrap-20261124/docs/verification/gperf-original-default-20261126.json",
     "remaining": "Bounded native ARM development only. Matching source/SDK/kernel and AMD64, complete desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, physical matrix, installer/update/rollback/media, freeze/signing/publication remain open."
-  }
+  },
+  "selected_original_default_libthai_qualified_20261126": {
+    "observed_utc": "2026-11-26T02:50:48.222306+00:00",
+    "status": "normal-bounded-original-exported-ABI-pass-upstream-header-gap-remains",
+    "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+    "version": "0.1.30",
+    "package": {
+      "bytes": 187178,
+      "sha256": "652654b56c066669ba92a4c9b5c6448740a96679a703d9703a64dff0a68f72c8"
+    },
+    "accepted_bounded_development_count": 114,
+    "installed_held_packages": [],
+    "scope_basis": "Current PROJECT/SKILL retain existing implementation authority and scoped acceptance. Exact selected original Pango consumer calls only implemented original exported interfaces. The previous broad declaration-based hold was reassessed from actual release/consumer requirements; no source, interface or platform requirement was removed or newly implemented.",
+    "original_Pango_consumer_source": {
+      "version": "1.58.2",
+      "original_distfile": {
+        "bytes": 1918112,
+        "sha256": "342385b6ca3b7c73455d7c80a13b7dbe4489e00bc3bd4c5bd6ed4dce421e374a"
+      },
+      "default_LANG_TH_preserved": true,
+      "actual_calls": [
+        "th_brk",
+        "th_brk_find_breaks",
+        "th_brk_new",
+        "th_uni2tis"
+      ],
+      "all_calls_present_in_actual_candidate_ELF": true,
+      "uses_none_of12_missing_header_functions": true,
+      "source_analysis_only_no_actual_Pango_build_runtime_acceptance": true
+    },
+    "normal": {
+      "original_offline_solver_dependencies_shlibs_and_ldconfig_hooks_enabled": true,
+      "no_force_dependency_or_hook_bypass": true,
+      "sealed_payloads_verified": 26,
+      "inherited_package_prefixes_preserved_except_shared_parent_directory_mtimes": 113,
+      "registry_exact_old113_plus_libthai": 114,
+      "actual_pkg_integrity_and_dependency_checks_pass": true,
+      "new_libthai_loader_binding_all_prior_per_soname_priorities_preserved": true,
+      "actual_default_native_consumer_commands": 7,
+      "actual_default_dictionary_without_LIBTHAI_DICTDIR_or_LD_override": true,
+      "coverage": "215 independent Python TIS620 points;65536inputpairs;normalization/cells/rendering;49implemented narrow collation-transform pairs;controlled dictionary boundaries4+7;actual shipped and default dictionary narrow/wide word-break correspondence.",
+      "fresh_whole_SDK114_prefix_raw_database_frozen17_base_accounts_actual_cache_mounts_and247sources_preserved": true
+    },
+    "normal_observer_binding_correction": {
+      "original_normal_result_retained": true,
+      "error": "Copied normal observer referenced libdatrie lifecycle result; actual correct libthai six-transaction result was already inside verified1550node both-host source/private capsule.",
+      "readonly_correction": "Producer/private/correctlifecycle/normal package identities equal; actual correct lifecycle body hash verified against original capsule inventory. Exact fresh SDK114 seal and current host/source guards pass.",
+      "installation_hooks_and7default_consumer_commands_not_replayed": true,
+      "original_header_API_gap_not_fixed_or_reclassified_as_pass": true
+    },
+    "normal_contract_binding_custody": {
+      "nodes": 71,
+      "archive_bytes": 24290121,
+      "archive_sha256": "4c00d6ba8574d2815b8848d42eb1248ead01027404a3d2a4bb14eb49aca9731d",
+      "inventory_sha256": "f7d36046e53a6d4d12e9936990f0223571e386486e8a18cca80830faebf54e88",
+      "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_independently_verified_native_ARM_and_physical_Intel": true,
+      "scope": "Complete normal installation/work/rawbeforeDB, original/corrected observer records, wrong/correct lifecycle records, exact original selected Pango distfile/source inspection and all controller inputs/output. Prior1550node source/private capsule remains independently retained."
+    },
+    "remaining": "Bounded native ARM original exported ABI and selected consumer surface only. Twelve original unimplemented header declarations and thwrend.h compile failure remain unsupported/unqualified. Actual Pango build/runtime, complete desktop/apps, matching source/SDK/kernel and AMD64, canonical ownership/provenance/lifecycle/SDK/TCB, physical matrix, installer/update/rollback/media/freeze/signing/publication remain open.",
+    "detail": "https://github.com/jordanhubbard/daemonarchy-ports/blob/work/native-python-bootstrap-20261124/docs/verification/libthai-original-default-20261126.json"
+  },
+  "past_package_hold_assessments": [
+    {
+      "original_hold": {
+        "name": "libthai-0.1.30.pkg",
+        "bytes": 187178,
+        "sha256": "652654b56c066669ba92a4c9b5c6448740a96679a703d9703a64dff0a68f72c8",
+        "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+        "status": "held-uninstalled-original-installed-header-API-gaps-unresolved",
+        "actual_missing_declarations": 12,
+        "standalone_header_compile_failures": [
+          "thwrend.h"
+        ]
+      },
+      "normal_admission": "2026-11-26T02:50:48.222306+00:00",
+      "scope_basis": "Current PROJECT/SKILL retain existing implementation authority and scoped acceptance. Exact selected original Pango consumer calls only implemented original exported interfaces. The previous broad declaration-based hold was reassessed from actual release/consumer requirements; no source, interface or platform requirement was removed or newly implemented."
+    }
+  ],
+  "superseded_qualification_assessments": [
+    {
+      "original_text": "Libthai original8construction/9defaulttests,7positive implementedAPIcommands and6real lifecycletransactions pass, with full both-host custody. Installed-header audit exposes12unimplementeddeclarations andthwrend.hcompilefailure. Package remains UNINSTALLED; accepted112 unchanged. Resolveoriginal declaration/implementation contract before claiming fullAPI/normalacceptance. Full Daemonarchy1.6 release remains incomplete: matching source/SDK/kernel and AMD64; complete desktop/apps; canonical ownership/provenance/lifecycle/SDK/TCB; physical matrix; installer/update/rollback/media; freeze/signing/publication.",
+      "superseded_by": "selected_original_default_libthai_qualified_20261126",
+      "remaining_header_gaps_still_unqualified": true
+    }
+  ]
 }
