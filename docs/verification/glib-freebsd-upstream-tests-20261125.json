@@ -38,7 +38,105 @@
   "no_PORTREVISION_change": "Only upstream test sources change; installed package payload contract is unchanged. Fresh construction and full original selected test execution remain required.",
   "independent_audit": "Every418selected native command matches generated discovery; original skips and failed TAP/bailouts retained. Successful reporting does not qualify the failed suite.",
   "disconfirmed_hypothesis": "Native base-C probe verifies /dev/null EVFILT_READ registration succeeds with or without EV_RECEIPT; receipt-only code change would not fix the test. No such library change applied.",
-  "patch_application": "All four pinned upstream commit hunks applied sequentially to original native test files with git apply --check, without fuzz. Combined port patches generated only from that result. Fresh actual ports patch/build/test validation pending. Combined port patches also apply with zero fuzz to clean original files and produce exactly the sequential upstream-commit result. Empty context lines use portable bare-blank patch syntax.",
-  "native_candidate_result": "pending",
-  "remaining": "Original failing variants, optional skipped dependency/platform coverage, matchingAMD64, independent sealed/private consumers and both-host custody, canonical ownership/provenance/lifecycle, full desktop/physical/media/update/rollback/signing/publication remain open."
+  "patch_application": "All four pinned upstream commit hunks applied sequentially to original native test files with git apply --check, without fuzz. Combined port patches generated only from that result. Fresh actual ports patch/build/test validation pending. Combined port patches also apply with zero fuzz to clean original files and produce exactly the sequential upstream-commit result. Empty context lines use portable bare-blank patch syntax. Actual native BSD-patched test source files also match the sequential pinned upstream result byte for byte.",
+  "native_candidate_result": {
+    "source_revision": "76ea8e22a12d73da9255afc2b021ff022f11ad95",
+    "complete_native_Git_members_verified": 184380,
+    "selected_original_port_Mk_Template_members_verified": 262,
+    "all_eight_original_construction_targets_passed": true,
+    "package": {
+      "bytes": 11262721,
+      "sha256": "83cb87d35c5eb90da802bbcd17b4566103d9f88ae2590616c32f27e74a79293d"
+    },
+    "original_make_test_exit": 1,
+    "original_default_discovered": 420,
+    "original_default_selected": 418,
+    "results": {
+      "OK": 404,
+      "SKIP": 9,
+      "ERROR": 5
+    },
+    "both_corrected_tests_passed": true,
+    "other_failed_programs": [
+      {
+        "name": "testfilemonitor",
+        "result": "ERROR",
+        "returncode": -6
+      },
+      {
+        "name": "file",
+        "result": "ERROR",
+        "returncode": -5
+      },
+      {
+        "name": "documentportal",
+        "result": "ERROR",
+        "returncode": -6
+      },
+      {
+        "name": "dbus-appinfo",
+        "result": "ERROR",
+        "returncode": -6
+      },
+      {
+        "name": "desktop-app-info",
+        "result": "ERROR",
+        "returncode": -6
+      }
+    ],
+    "numbered_TAP_events_retained": 6900,
+    "full_SDK110_rawprefix_frozen17_base_accounts_cache_mounts_preserved": true,
+    "qualification": "Full selected suite remains FAILED. Do not combine successful subsets across runs or claim normal replacement. New package uninstalled."
+  },
+  "remaining": "Original failing variants, optional skipped dependency/platform coverage, matchingAMD64, independent sealed/private consumers and both-host custody, canonical ownership/provenance/lifecycle, full desktop/physical/media/update/rollback/signing/publication remain open.",
+  "native_source_custody": "Original baseline and corrected full runs plus source/SDK guards retained on native worker; new complete independent two-host capsule pending.",
+  "installed_payload_comparison": {
+    "payloads": 8130,
+    "same_type_content_mode_owner_flags": 8128,
+    "different_paths": [
+      "usr/local/share/glib-2.0/codegen/__pycache__/config.cpython-312.opt-1.pyc",
+      "usr/local/share/glib-2.0/codegen/__pycache__/config.cpython-312.pyc"
+    ],
+    "new_package_installed": false,
+    "two_differences_are_only_four_byte_timestamp_headers": true,
+    "all_marshaled_code_identical": true,
+    "all_other_manifest_fields_including_dependency_script_hook_contracts_identical": true
+  },
+  "new_failure_diagnosis": {
+    "portal_fixture": "g_unix_fd_query_path returns empty for received file descriptors; subsequent fixture create targets its already existing directory. Standalone base-C F_KINFO returns successful but empty paths for fresh RDONLY/O_PATH/RDWR descriptors both directly and after SCM_RIGHTS. Not a GLib-only reproduction.",
+    "file_monitor": "Atomic replacement event ordering and async-create/delete notification completeness failed; original output/assertions retained.",
+    "worker_namecache": {
+      "observed_entries": 1165993,
+      "capacity": 1165994,
+      "entry_drops": 7522540
+    },
+    "capacity_experiment": {
+      "standalone_F_KINFO_cause": "Confirmed by identical UID65534 base-C binary: fresh file paths empty at original capacity, exact paths at expanded capacity, empty again after original capacity restored.",
+      "scope": "Confirms descriptor-path failure cause. Full selected suite at adequate capacity has not yet run; all five original candidate failures remain failed.",
+      "restored_user_settable_limits": {
+        "kern.maxvnodes": 582997,
+        "vfs.wantfreevnodes": 145749,
+        "vfs.cache.param.sizefactor": 2
+      },
+      "restored_cache_capacity": 1165994,
+      "retained_restoration_observer_failure": "First experiment required the read-only internal hash table to match its startup geometry and failed that check. Writable limits/capacity were already restored. A read-only completion records this generated-state difference and verifies fresh SDK/rawdb/frozen/base/mount guards.",
+      "explicit_internal_hash_buckets": {
+        "before": 1048576,
+        "after": 2097152
+      },
+      "original_failed_experiment_result_sha256": "845c7cf6063cebf84cbc017787e80c079f0a42b1e481b57cdac443df69b6036c",
+      "full_SDK110_rawprefix_frozen17_base_mounts_preserved": true,
+      "status": "All configurable limits and cache capacity restored; generated internal hash geometry differs as recorded."
+    }
+  },
+  "independent_Intel_kernel_primitives": {
+    "kernel_source": "cb38d6498a24",
+    "running_kernel_osreldate": 1600029,
+    "probe_source_sha256": "56883d866b4b6e9278134a969a29605d4ce033ec65657eb45c95a6829c1d9d18",
+    "compile_and_execute_uid": 65534,
+    "null_pipe_socket_accepted_invalid_fd_rejected": true,
+    "selected_kernel_loader_compiler_shell_accounts_cache_mounts_preserved": true,
+    "scope": "Existing Intel physical tester kernel primitives only; no new1.6SDK/package/software installation or qualification."
+  },
+  "adequate_capacity_full_rerun": "Pending complete independent custody of every original failed source/build/report/resource tree. Preserve old outputs before rerunning unchanged selected test target with an explicit temporary worker resource profile."
 }
