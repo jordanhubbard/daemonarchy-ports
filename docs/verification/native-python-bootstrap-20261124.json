@@ -5298,7 +5298,7 @@
   },
   "actual_installed_development_package_count": 124,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-26T09:36:35.882984+00:00",
+  "last_updated_utc": "2026-11-26T09:53:26.411803+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -8918,7 +8918,7 @@
       }
     },
     "remaining": [
-      "Three original cache compatibility cases require an actual older-version baseline; another build of the same version is insufficient.",
+      "Genuine2.17.1 baseline now executes the three original supplemental cases:2PASS1upstreamXFAIL; see linked report. Original49case historical results are unchanged; backward discovery remains open.",
       "Retain two original runtime network-disabled skips, two network marker deselections and five Linux bwrap skips with their original scope.",
       "Complete product font packages and actual desktop/application font rendering, together with all wider 1.6 release gates.",
       "Canonical ownership/provenance/lifecycle/SDK/TCB, matching source/kernel/AMD64, all 47 platform profiles and physical acceptance, installer/update/rollback/media/freeze/signing/publication remain open."
@@ -8939,6 +8939,100 @@
         "sysutils/xxd",
         "editors/vim"
       ]
-    }
+    },
+    "subsequent_supplemental_older_cache_report": "fontconfig-older-cache-baseline-20261126.json"
+  },
+  "Fontconfig_genuine_older_cache_baseline_20261126": {
+    "observed_utc": "2026-11-26T09:53:26.411803+00:00",
+    "status": "supplemental-original-older-cache-tests-2PASS-1-original-XFAIL",
+    "scope": "Three original cache compatibility cases executed on native ARM with genuine older source, in addition to the retained original 49-case suite. The original suite is not replayed or relabeled. Normal development count stays124. Backward cache discovery remains the original upstream expected failure; complete compatibility and full release acceptance are not claimed.",
+    "current_source_revision": "d76dd1dd03c3186f635fef2722252327d19b750c",
+    "current_version": "2.18.3_1,1",
+    "older_baseline": {
+      "version": "2.17.1",
+      "original_port_commit": "b70a21167e5f671471597a8671c56a531bdade0a",
+      "archive_bytes": 1326312,
+      "archive_sha256": "9f5cae93f4fffc1fbc05ae99cdfc708cd60dfd6612ffc0512827025c026fa541",
+      "url": "https://gitlab.freedesktop.org/api/v4/projects/890/packages/generic/fontconfig/2.17.1/fontconfig-2.17.1.tar.xz",
+      "original_source_bodies_verified": 956,
+      "original_source_modes_verified": 987,
+      "same_version_substitute": false,
+      "private_build_only_no_product_package_or_older_upstream_suite_acceptance": true,
+      "private_PATH_python3_spelling_uses_observed_python3_12_no_source_edit_or_host_symlink": true,
+      "original_source_nodes_preserved": true
+    },
+    "actual_runtime_bindings": {
+      "baseline_library_sha256": "624ce7e1dd49b063a0572c3328d76eed515fa2e617dc6af8c935810be708814b",
+      "current_library_sha256": "aac634234fc50e3201efcf75101e9862531ab333c023e97fe0ebe7098c3aea58",
+      "both_fc_cache_versions_and_fc_list_private_library_paths_verified": true,
+      "cache_versions": {
+        "baseline": 9,
+        "current": 12
+      }
+    },
+    "original_tests": {
+      "original_source_function_order_equals_TAP_and_JUnit": true,
+      "selected_original_cases": 3,
+      "PASS": 2,
+      "XFAIL": 1,
+      "FAIL": 0,
+      "ERROR": 0,
+      "SKIP": 0,
+      "XFAIL_reason": "Discovery mismatch: baseline .cache-9 vs current .cache-12",
+      "source_sha256": "0cbd35acf78cc5f1aea04f0b60632aa95522e601e84e0b7dec5fbd785532ee57",
+      "TAP_sha256": "d62dfa1f5a2cefca89cde39b1910d3419597a1af77a2770df55271223b9207f6",
+      "JUnit_sha256": "cbe19cdc1587249eb9d1053ef7bd11817e75b91ef013e71d053c1a6ab0834e46",
+      "normal_count": 124,
+      "not_a_replacement_for_original49case_suite": true
+    },
+    "original_assertions_markers_and600s_deadline_unchanged": true,
+    "explicit_supplemental_file_selection": "test_cache_cross_version.py",
+    "outcomes": [
+      {
+        "name": "test_binary_format_forward_compat",
+        "outcome": "PASS",
+        "meaning": "Original property comparisons and cache inode/mtime checks pass when the older reader reads the current cache."
+      },
+      {
+        "name": "test_discovery_backward_compat",
+        "outcome": "XFAIL",
+        "reason": "Discovery mismatch: baseline .cache-9 vs current .cache-12",
+        "meaning": "Original conditional expected-failure branch; old-cache discovery without regeneration is not proven."
+      },
+      {
+        "name": "test_discovery_forward_compat",
+        "outcome": "PASS",
+        "meaning": "Actual compatibility symlinks and original unchanged-cache inode/mtime checks pass."
+      }
+    ],
+    "guards": {
+      "whole_SDK124_and_raw_database_preserved": true,
+      "frozen17_preserved": true,
+      "host_accounts_loader_and_system_cache_preserved": true,
+      "base_and_mounts_preserved": true,
+      "all1339_original_current_TEST_nodes_preserved": true,
+      "all250_selected_source_inputs_preserved": true,
+      "four_jobs_100GiB_floor_4GiB_growth_bound": true
+    },
+    "retained_preflight_and_build_failures": [
+      "SDK-specific snapshot used on a source tree; no build commands ran. Corrected observer uses a general tree snapshot.",
+      "Normal tar umask stripped original group-write bits. Fresh extraction with tar -p verifies all original modes and bytes.",
+      "Original env-python3 shebang had no native python3 spelling. Fresh private build uses an owned PATH link to the observed python3.12, preserving source bodies."
+    ],
+    "two_host_custody": {
+      "nodes": 3338,
+      "archive_bytes": 17523916,
+      "archive_sha256": "3eab9179271e9f412bbe3d1c6d5b9362374426c6d4244590fa027180ed821579",
+      "inventory_sha256": "fa39f8bed35620a7a223ae08f70107dbb3a7feaaea92c36440ff21cb924a1dc5",
+      "complete_baseline_source_build_tests_failures_and_helpers_verified_on_ARM_and_Intel": true,
+      "all_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified": true,
+      "no_additional_controller_archive_or_NAS_use": true
+    },
+    "remaining": [
+      "Original backward discovery XFAIL remains explicit; this is not full cross-version compatibility.",
+      "Original 49-case run retains its historical39PASS10SKIP and two network deselections. The separate three-case supplemental run is2PASS1XFAIL, not a new full-suite receipt.",
+      "Original optional network/Linux-bwrap scope, full API/ABI, product fonts and desktop/application rendering remain open.",
+      "Canonical Component/provenance/lifecycle/SDK/TCB, matched source/kernel/AMD64, all47platform profiles and physical acceptance, installer/update/rollback/media/freeze/signing/publication remain open."
+    ]
   }
 }
