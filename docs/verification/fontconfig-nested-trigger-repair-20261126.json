@@ -1,7 +1,7 @@
 {
-  "observed_utc": "2026-11-26T08:52:18.393701+00:00",
-  "status": "native-runtime-pass-original-lifecycle-fails-nested-trigger-causal-fix-awaits-fresh-package-qualification",
-  "scope": "Original revision 0 runtime checks and failed lifecycle plus isolated installed-trigger control. The source fix and revision 1 require fresh original TEST/default builds, independent runtime and actual lifecycle/custody/normal qualification. No normal Fontconfig admission or release claim.",
+  "observed_utc": "2026-11-26T09:36:35.882984+00:00",
+  "status": "retained-original-failure-control-followed-by-qualified-repaired-normal124",
+  "scope": "Original revision-0 failure/control and authored-fixture observer errors are retained. The repaired revision-1 package now has bounded native acceptance; see fontconfig-trigger-fixed-qualified-20261126.json. Wider release gates remain open.",
   "origin": "x11-fonts/fontconfig",
   "original_package_version": "2.18.3,1",
   "original_source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
@@ -62,14 +62,15 @@
       "LOCALBASE/lib/X11/fonts/*"
     ],
     "Lua_trigger_script_body_and_sandbox_setting_unchanged": true,
-    "full_native_source_preparation_and_fresh_qualification_pending": true
+    "full_native_source_preparation_and_fresh_qualification_pending": false
   },
-  "accepted_bounded_development_package_count": 123,
-  "normal_Fontconfig_installation": false,
+  "accepted_bounded_development_package_count": 124,
+  "normal_Fontconfig_installation": true,
   "remaining": [
-    "Fresh complete source verification, original TEST variant and independent discovery/TAP/JUnit audit with all 18 JSON configuration cases.",
-    "Fresh revision-1 default artifact and the same shared/static/font/cache/CLI/XML consumers.",
-    "Real canonical and legacy nested-font directory add/delete triggers, configuration add/delete triggers, Lua sample and loader-cache lifecycle, full custody and normal admission.",
-    "Actual older cache baseline and original network/Linux bwrap gaps; all canonical Component/SDK/TCB, matched source/kernel/AMD64, desktop, physical and full release gates."
-  ]
+    "Repaired source/default/TEST/runtime/lifecycle/custody/normal acceptance is recorded in the linked qualified report; historical artifacts retain their original source identities.",
+    "Real older-cache baseline, original network/bwrap scope and all wider 1.6 release gates remain open."
+  ],
+  "subsequent_qualified_report": "fontconfig-trigger-fixed-qualified-20261126.json",
+  "normally_installed_version": "2.18.3_1,1",
+  "original_revision_normally_installed": false
 }

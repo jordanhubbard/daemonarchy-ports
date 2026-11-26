@@ -1,6 +1,6 @@
 {
   "observed_utc": "2026-11-26T08:30:30.271244+00:00",
-  "status": "pass-fresh-original-default-construction-runtime-hooks-custody-normal-pending",
+  "status": "historical-revision0-default-construction-runtime-pass-lifecycle-rejected-superseded",
   "scope": "Fresh original default artifact construction only; zero-case default test bridge is not an original upstream suite pass. Separate TEST variant has its own full case report.",
   "origin": "x11-fonts/fontconfig",
   "version": "2.18.3,1",
@@ -91,10 +91,11 @@
   },
   "normal_installation": false,
   "remaining": [
-    "Independent runtime now passes on this artifact; nested-font trigger lifecycle fails and requires the revision-1 source fix and fresh qualification.",
+    "Revision 0 was rejected by its nested-font trigger lifecycle. Repaired revision 1 now has bounded normal acceptance in the linked report.",
     "Original Lua sample behavior, preserve modified fonts.conf, actual font-directory/config trigger execution and real ldconfig lifecycle.",
     "Exact outside-prefix /var/db/fontconfig ownership/mode and cache behavior, full source/failure/private/lifecycle custody, actual normal delivery and same default-path consumers.",
     "Real older cache baseline, original network/Linux bwrap scope and all wider 1.6 release gates."
   ],
-  "subsequent_runtime_and_failed_lifecycle_report": "fontconfig-nested-trigger-repair-20261126.json"
+  "subsequent_runtime_and_failed_lifecycle_report": "fontconfig-nested-trigger-repair-20261126.json",
+  "subsequent_repaired_normal_report": "fontconfig-trigger-fixed-qualified-20261126.json"
 }

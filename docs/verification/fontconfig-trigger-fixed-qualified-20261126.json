@@ -1,0 +1,239 @@
+{
+  "observed_utc": "2026-11-26T09:36:35.882984+00:00",
+  "status": "pass-bounded-native-ARM-Fontconfig-trigger-fixed-normal124",
+  "scope": "Native default-package development acceptance. Full public API/ABI, real older-cache baseline, canonical Component/provenance/lifecycle/SDK/TCB, matched source/kernel/AMD64, complete desktop/apps/hardware and full release remain open.",
+  "origin": "x11-fonts/fontconfig",
+  "version": "2.18.3_1,1",
+  "source_revision": "d76dd1dd03c3186f635fef2722252327d19b750c",
+  "review_code_commit": "024f52be629ad7cc22f8f474ba889d028a4b6192",
+  "package": {
+    "bytes": 489185,
+    "sha256": "296da74f1ee2b884d7ecbe9ab86e73dc257047376b092f987332c93a28d70e82"
+  },
+  "complete_native_source": {
+    "Git_members_verified": 184388,
+    "changed_or_added_relative_fadd": 12,
+    "removed": 0,
+    "all_original_bodies_modes_literal_links_and_Git_tree_ids_verified": true
+  },
+  "fix": {
+    "original_root_only_trigger_misses_nested_font_package": true,
+    "exact_paths": [
+      "PREFIX/share/fonts",
+      "LOCALBASE/lib/X11/fonts",
+      "LOCALBASE/etc/fonts/conf.d"
+    ],
+    "descendant_globs": [
+      "PREFIX/share/fonts/*",
+      "LOCALBASE/lib/X11/fonts/*"
+    ],
+    "PORTREVISION": 1,
+    "original_Lua_script_body_and_sandbox_setting_preserved": true
+  },
+  "original_TEST_variant": {
+    "actual_original_Meson_programs": {
+      "discovered": 16,
+      "completed": 16,
+      "OK": 16,
+      "all_names_argv_match": true,
+      "all_actual_exit_codes_zero": true,
+      "testlog_json_sha256": "68bb820769c0b7fab699b698d939edc66a357fec59909c8251181cf507e59edc",
+      "testlog_txt_sha256": "5f2f84825faef95a6aad1b42da0bd563b7de302fa566b6e954a5941611439446"
+    },
+    "nested_original_Pytest_TAP": {
+      "selected_and_completed_unique_identity_order_match": 49,
+      "PASS": 39,
+      "SKIP": 10,
+      "FAIL": 0,
+      "ERROR": 0,
+      "original_network_marker_deselections": 2,
+      "all_skips_retained": [
+        {
+          "number": 16,
+          "ok": true,
+          "description": "test_cache_cross_version.py::test_binary_format_forward_compat",
+          "directive": "SKIP FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set"
+        },
+        {
+          "number": 17,
+          "ok": true,
+          "description": "test_cache_cross_version.py::test_discovery_backward_compat",
+          "directive": "SKIP FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set"
+        },
+        {
+          "number": 18,
+          "ok": true,
+          "description": "test_cache_cross_version.py::test_discovery_forward_compat",
+          "directive": "SKIP FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set"
+        },
+        {
+          "number": 38,
+          "ok": true,
+          "description": "test_fontations_ft_query.py::test_fontations_freetype_fcquery_equal[None]",
+          "directive": "SKIP Skipped: Network access diabled"
+        },
+        {
+          "number": 42,
+          "ok": true,
+          "description": "test_genconf.py::test_genconf[None]",
+          "directive": "SKIP Skipped: Network access diabled"
+        },
+        {
+          "number": 44,
+          "ok": true,
+          "description": "test_sandbox.py::test_bz106618",
+          "directive": "SKIP No bwrap installed or not executable"
+        },
+        {
+          "number": 45,
+          "ok": true,
+          "description": "test_sandbox.py::test_different_content",
+          "directive": "SKIP No bwrap installed or not executable"
+        },
+        {
+          "number": 46,
+          "ok": true,
+          "description": "test_sandbox.py::test_md5_consistency",
+          "directive": "SKIP No bwrap installed or not executable"
+        },
+        {
+          "number": 47,
+          "ok": true,
+          "description": "test_sandbox.py::test_gen_testcache",
+          "directive": "SKIP No bwrap installed or not executable"
+        },
+        {
+          "number": 48,
+          "ok": true,
+          "description": "test_sandbox.py::test_gen_testcache_no_check",
+          "directive": "SKIP No bwrap installed or not executable"
+        }
+      ],
+      "skip_reasons": {
+        "FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set": 3,
+        "Skipped: Network access diabled": 2,
+        "No bwrap installed or not executable": 5
+      },
+      "discovery_sha256": "95fb2df2529968e04e4a681fd8b8fb56692dd7ed3a0b7f1eb11c3973181acc18",
+      "actual_TAP_sha256": "9b14d391f7c75cfa2fb98346202fea332d472e6982564f3cdfa5be18ea7dcfb2"
+    },
+    "all18_original_JSON_configuration_cases_execute_and_pass": true,
+    "all49_unique_identities_order_outcomes_match_independent_discovery_TAP_and_JUnit": true,
+    "JUnit_sha256": "b229ef9e28f617cda8252adb45fac1b611a378896e46b51e4969f9f4617d6e3a",
+    "all_original_test_and_data_bodies_bound": 71,
+    "only_declared_Python_shebang_substitutions": 3,
+    "test_assertions_golden_selection_and_deadlines_unchanged": true,
+    "full_cross_version_and_platform_TEST_acceptance": false
+  },
+  "default_construction": {
+    "all_eight_original_targets_pass": true,
+    "original_default_options_arguments_dependencies_preserved_except_intentional_package_revision": true,
+    "shared_and_static_original_choices_preserved": true,
+    "original_zero_case_default_test_bridge_exit": 0,
+    "zero_case_bridge_is_upstream_suite_pass": false
+  },
+  "independent_private_and_actual_default_consumers_each": {
+    "commands": 54,
+    "font_files": 10,
+    "font_faces": 13,
+    "shared_positive_assertions": 180,
+    "static_positive_assertions": 180,
+    "shared_XML_negative_recovery_assertions": 46,
+    "static_XML_negative_recovery_assertions": 46,
+    "all_default_expected_font_API_cache_and_CLI_semantics_equal_private": true,
+    "default_no_private_loader_FONTCONFIG_or_pkgconf_override": true,
+    "private_candidate_PC_copy_relocation_only_dependency_metadata_unchanged": true,
+    "actual_candidate_shared_binding_and_static_without_dynamic_fontconfig_verified": true,
+    "coverage": [
+      "TTF, CFF, four-face TTC, WOFF/WOFF2, Unicode BDF and compressed/uncompressed PCF expected counts/formats and selected known families.",
+      "Original sample configuration, real HOME/.local/share/fonts and owned XDG cache, listing/matching/sorting/query/scan/validate and actual cache API/records.",
+      "Pattern fields, charset set operations, language and matrix values, XML app-font alias/ownership, malformed XML rejection/recovery, invalid-font CLI statuses."
+    ],
+    "full_public_API_OOM_concurrency_variations_color_SVG_or_desktop_rendering_claimed": false
+  },
+  "original_package_lifecycle": {
+    "accepted_Fontconfig_transactions": 6,
+    "retained_R2_original_fresh_add": 1,
+    "remaining_R3_original_transactions": 5,
+    "R2_passed_events_not_replayed_to_repair_status_observer": true,
+    "actual_authored_font_and_config_fixture_package_transactions": 6,
+    "actual_canonical_and_legacy_deep_font_directory_add_delete_triggers": 4,
+    "actual_config_directory_add_delete_triggers": 2,
+    "cache_records_read_before_any_discovery_command": true,
+    "actual_strong_XML_alias_substitution_match_and_removal": true,
+    "Lua_initial_sample_copy_modified_config_preservation_clean_delete_and_readd": true,
+    "modified_config_body_UID_GID_mode0600_flags_nsmtime_preserved": true,
+    "actual_ldconfig_add_delete_force_reinstall_readd_hooks_verified": true,
+    "isolated_root_locked_accounts_readonly_base_devfs_no_disk_ZFS_full_unmount": true,
+    "dependency_packages_and_solver_admission_inside_fixture_claimed": false,
+    "fixtures_are_authored_test_packages_not_product_font_packages": true
+  },
+  "retained_failures_and_controls": {
+    "original_revision0_nested_trigger_delivery_failure": true,
+    "copied_installed_trigger_only_causal_control": true,
+    "earlier_weak_alias_fixture_failed_exact_match_under_documented_language_fallback": true,
+    "authored_fixture_requests_explicit_strong_binding_without_removing_exact_match_assertion": true,
+    "original_R2_no_font_exit_status_oracle_failure_retained": true,
+    "actual_default_fc_match_no_fonts_returns0_empty_and_sorted_mode_returns1_diagnostic_verified": true,
+    "full_original_failed_roots_outputs_and_source_revisions_retained": true
+  },
+  "normal_acceptance": {
+    "before_count": 123,
+    "accepted_bounded_development_count": 124,
+    "original_offline_dependencies_integrity_and_Lua_cache_trigger_ldconfig_hooks": true,
+    "all344_payloads_exact": true,
+    "derived_default_fonts_conf_matches_original_sample": true,
+    "outside_prefix_cache_directory": "/var/db/fontconfig root:wheel0755",
+    "actual_outside_prefix_cache_nodes_preserved_through_consumers": 2,
+    "all123_inherited_prefixes_preserved": true,
+    "new_loader_provider": "libfontconfig.so.1",
+    "all_prior_loader_paths_candidates_and_priorities_preserved": true,
+    "whole_SDK124_raw_database_frozen_base_accounts_mounts_250_source_and_actual_outside_prefix_cache_guards_pass": true
+  },
+  "two_host_custody": {
+    "complete_history": {
+      "nodes": 18019,
+      "archive_bytes": 120339629,
+      "archive_sha256": "1fc91a5ad46819c2db378d1571ea009e1f52cff0f58fbdbb8a8375430cc2b3cf",
+      "inventory_sha256": "676e16a5cc8f6932a90fb84a5e8bb799df27e5464ad1c9fa8b0492938ea41c86",
+      "all_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_on_ARM_and_Intel": true
+    },
+    "corrected_source_private_and_lifecycle": {
+      "nodes": 5723,
+      "archive_bytes": 56554999,
+      "archive_sha256": "4132c4c79e74863b90adb8bb3c677444ed0f1b950e56f0cff78b0df0a62b8666",
+      "inventory_sha256": "d6c7c72bb97696c4e1bfa8e6085f5809b0cd2b4df1bd3bef1a9a6b631df5e495",
+      "all_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_on_ARM_and_Intel": true
+    },
+    "normal": {
+      "nodes": 165,
+      "archive_bytes": 29471643,
+      "archive_sha256": "5286a1d422291e647dbe245a6ab90b4d1dcc88255bf2b69bb75888e79de6f9fa",
+      "inventory_sha256": "88aaa3bd5657e2016cfac3bdfb3e7e7aefdc79e4ce446e98ad8ab6457d8a30a1",
+      "all_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_on_ARM_and_Intel": true
+    }
+  },
+  "remaining": [
+    "Three original cache compatibility cases require an actual older-version baseline; another build of the same version is insufficient.",
+    "Retain two original runtime network-disabled skips, two network marker deselections and five Linux bwrap skips with their original scope.",
+    "Complete product font packages and actual desktop/application font rendering, together with all wider 1.6 release gates.",
+    "Canonical ownership/provenance/lifecycle/SDK/TCB, matching source/kernel/AMD64, all 47 platform profiles and physical acceptance, installer/update/rollback/media/freeze/signing/publication remain open."
+  ],
+  "review_native_selected_input_parity": {
+    "review_code_commit": "024f52be629ad7cc22f8f474ba889d028a4b6192",
+    "native_source_revision": "d76dd1dd03c3186f635fef2722252327d19b750c",
+    "all_selected_review_and_native_composition_Git_bodies_modes_equal": 285,
+    "prefixes": [
+      "x11-fonts/fontconfig",
+      "Mk",
+      "Templates",
+      "devel/py-more-itertools",
+      "devel/py-pyyaml",
+      "devel/py-tap.py",
+      "devel/py-pytest-tap",
+      "devel/json-c",
+      "sysutils/xxd",
+      "editors/vim"
+    ]
+  }
+}
