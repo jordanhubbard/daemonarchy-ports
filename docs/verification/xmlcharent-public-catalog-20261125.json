@@ -1282,10 +1282,9 @@
     "qualification": "Build/test outcome pending; no new GLib package installed or suite acceptance claimed."
   },
   "full_GLib_original_default_portability_checkpoint_20261125": {
-    "observed_utc": "2026-11-26T00:34:47.046201+00:00",
+    "observed_utc": "2026-11-26T00:56:42.442344+00:00",
     "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/118",
     "installed_accepted_bounded_development_count": 110,
-    "new_candidates_normally_installed": false,
     "original_discovered_programs": 420,
     "original_default_selected_programs": 418,
     "original_excluded_unqualified": [
@@ -1369,10 +1368,109 @@
     },
     "latest_source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
     "latest_source_members": 184381,
-    "latest_native_result": "Complete native Git source verification passed:184381members, original retained source unchanged, strict SDK110/frozen17/base/mount guards passed. Fresh original construction/test now running under the recorded temporary capacity profile with independent restoration watchdog; actual patched test bodies checked against pinned upstream. Terminal build/test outcome pending.",
+    "latest_native_result": "Original selected default409OK/9originalSKIP/0ERROR; full6989TAP audit; private41API and6realoriginalhooktransactions; complete68906node native+Intel custody; actual normal replacement/default41commands and separate strict full SDK110/rawdatabase/default41consumers allPASS. Accepted bounded normal110 unchanged.",
     "strict_guards": "Each terminal audited run preserves entire SDK110 prefix/raw database, frozen SDK17, base/kernel/shells, accounts/loader cache, mounts and original selected source inputs. Expected original root UUID pre-test runs before exact unchanged test backend drops to UID/GID65534. Read-only pkg-query sidecar transitions are explicit; no timestamp restoration or blanket exclusion.",
-    "remaining": "Latest native selected suite and actual package consumer/custody/normal acceptance; original skipped/optional/failing variants, six OpenSP suite failures, absent XInclude schemas, complete desktop, matching AMD64/source/SDK/kernel, canonical ownership/provenance/lifecycle/SDK/TCB, physical fleet, installer/update/rollback/final media/freeze/signing/publication.",
+    "remaining": "Original skipped/optional/failing variants and default-kernel-capacity coverage; remaining original suite gaps including six OpenSP failures and absent XInclude schemas; matching amd64/aarch64 source/SDK/kernel; full desktop/apps; canonical ownership/provenance/lifecycle/SDK/TCB; physical fleet, installer/update/rollback/media, freeze/signing/publication remain open.",
     "latest_source_verification_finished_utc": "2026-11-26T00:34:14.997568+00:00",
-    "latest_source_all_members_and_guards_verified": true
+    "latest_source_all_members_and_guards_verified": true,
+    "latest_original_selected_suite_pass": {
+      "finished_utc": "2026-11-26T00:40:17.333685+00:00",
+      "independent_audit_finished_utc": "2026-11-26T00:41:16.751938+00:00",
+      "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+      "original_construction_targets": 8,
+      "all_original_targets_passed": true,
+      "discovered_programs": 420,
+      "original_default_selected_programs": 418,
+      "result_counts": {
+        "OK": 409,
+        "SKIP": 9
+      },
+      "numbered_TAP_events": 6989,
+      "original_TAP_skip_directives": 109,
+      "all_selected_native_commands_match_discovery": true,
+      "all3_actual_patched_test_bodies_equal_pinned_upstream": true,
+      "minimum_measured_cache_headroom": 1640459,
+      "original_settings_capacity_and_current_runtime_hash_restored_and_independently_verified": true,
+      "strict_full_SDK110_rawprefix_frozen17_base_accounts_cache_mount_source_guards": true,
+      "package": {
+        "bytes": 11262812,
+        "sha256": "dc3256e613e4c6c957d0dbd404a66f45393edfa64cabb643fb9f40ae8b121925"
+      },
+      "package_normally_installed": true,
+      "private_consumer_lifecycle_custody_normal_acceptance": "All41private API consumers, six original-hook chroot transactions, complete68906node independent both-host custody and actual normal original-solver/hooks/default41consumers plus strict posttransaction full SDK110/rawdatabase guard pass.",
+      "scope": "Native ARM original selected default target with existing2failing exclusions and9original program skips. Optional/skipped/excluded variants, default-kernel-capacity qualification, AMD64, canonical and full release gates remain open.",
+      "private_API_and_original_package_lifecycle": {
+        "payloads": 8130,
+        "explicit_directories": 2,
+        "private_actual_API_tool_typelib_doc_man_MO_commands": 41,
+        "private_consumers_uid_gid": 65534,
+        "actual_pkg_chroot_original_hook_transactions": 6,
+        "real_ldconfig_install_remove_reinstall_cache_bindings_verified": true,
+        "sealed_payload_modes_numeric_owners_flags_mtimes_verified": true,
+        "private_locked_accounts_preserved": true,
+        "temporary_mounts_removed_original_mounts_restored": true,
+        "whole_SDK110_frozen17_base_accounts_cache_and_selected_source_preserved": true,
+        "private_finished_utc": "2026-11-26T00:42:18.992301+00:00",
+        "lifecycle_finished_utc": "2026-11-26T00:44:45.491701+00:00",
+        "scope": "Private pkg-r scripts-disabled extraction supports payload/API checks only; separate actual pkg-c transactions run original shell install/deinstall hooks. Private -M dependency delivery remains distinct from pending normal solver. No canonical lifecycle admission."
+      },
+      "source_private_lifecycle_two_host_custody": {
+        "nodes": 68906,
+        "archive_bytes": 279110721,
+        "archive_sha256": "a2912beb7bc836fca117a8faee2178e38c435703a533493a8ebb26f7dc075b07",
+        "inventory_sha256": "ba7193a7181dd073112223877753c866dbef53b8b8487df18e856ac295ef714f",
+        "all_nodes_independently_verified_native_ARM_and_Intel": true,
+        "scope": "Complete fourth failed capacity run and fifth passing corrected source/build/test trees; both full discovery/command/TAP audits; exact new package/private41API checks and six original-hook chroot transactions;263selectedsource inputs/full184380+184381Git composition; previous65018node custody bound. Earlier source/failures remain retained."
+      },
+      "normal_integration": {
+        "finished_utc": "2026-11-26T00:50:42.258200+00:00",
+        "strict_readonly_completion_finished_utc": "2026-11-26T00:51:58.974996+00:00",
+        "same_version_force_replacement_original_local_only_dependencies_and_hooks": true,
+        "installed_package_version": "2.88.3,2",
+        "installed_package_sha256": "dc3256e613e4c6c957d0dbd404a66f45393edfa64cabb643fb9f40ae8b121925",
+        "installed_payloads": 8130,
+        "explicit_directories": 2,
+        "other_package_prefixes_preserved": 109,
+        "registry_rows_unchanged": 110,
+        "accepted_normal_count": 110,
+        "all_existing_loader_candidates_and_per_soname_priority_preserved": true,
+        "normal_default_consumer_commands": 41,
+        "strict_posttransaction_whole_SDK_prefix_raw_database_consumer_commands": 41,
+        "no_normal_LD_LIBRARY_PATH_override": true,
+        "whole_posttransaction_SDK110_prefix_raw_database_frozen17_base_accounts_cache_mounts_all263sources_preserved": true,
+        "readonly_package_query_sidecar_preflight_explicit": true,
+        "final_normal_evidence_custody": {
+          "nodes": 233,
+          "archive_bytes": 22704634,
+          "archive_sha256": "1144fa1ddd37cf13db5740f1eb1f4f082d9ace5881be492b0cb9fd961805b93e",
+          "inventory_sha256": "d5167dd884d913f731d252309140f17601c549caa2e3388444427e993a68474b",
+          "all_nodes_independently_verified_native_ARM_and_Intel": true,
+          "transport_retry": "Original SSH banner-timeout failure retained; resumed after byte-verifying existing staged metadata and create-or-verify native links. Original archive unchanged; all233nodes independently verified. No native package/hook/runtime replay."
+        },
+        "qualification": "Bounded native ARM development acceptance of this actual artifact. Original selected default target409OK/9originalSKIP passes; optional/skipped/excluded variants, default kernel capacity, matchingAMD64/source/SDK/kernel, canonical ownership/provenance/lifecycle, full desktop/apps/physical/installer/update/rollback/media/freeze/signing/publication remain open."
+      }
+    },
+    "latest_candidate_normally_installed": true,
+    "final_normal_completion_two_host_custody": {
+      "nodes": 233,
+      "archive_bytes": 22704634,
+      "archive_sha256": "1144fa1ddd37cf13db5740f1eb1f4f082d9ace5881be492b0cb9fd961805b93e",
+      "inventory_sha256": "d5167dd884d913f731d252309140f17601c549caa2e3388444427e993a68474b",
+      "all_nodes_independently_verified_native_ARM_and_Intel": true,
+      "transport_retry": "Original SSH banner-timeout failure retained; resumed after byte-verifying existing staged metadata and create-or-verify native links. Original archive unchanged; all233nodes independently verified. No native package/hook/runtime replay."
+    },
+    "storage_recheck_latest": {
+      "observed_utc": "2026-11-26T00:55:40.700939+00:00",
+      "Linux_root_free_GiB": 48.16,
+      "scratch_free_GiB": 180.79,
+      "native_ARM_build_free_GiB": 126.33,
+      "second_evidence_host_free_GiB": 148.85,
+      "Intel_evidence_host_free_GiB": 869.88,
+      "Linux_root_below64GiB_reserve": true,
+      "second_evidence_host_clears64GiB_reserve": true,
+      "native_above100GiB_floor": true,
+      "Intel_ZFS_healthy": true,
+      "NAS": "Degraded pool, one faulted device, another degraded device, two reported data errors. Migration/cutover held."
+    }
   }
 }
