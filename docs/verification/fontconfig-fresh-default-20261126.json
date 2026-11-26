@@ -91,9 +91,10 @@
   },
   "normal_installation": false,
   "remaining": [
-    "Independent sealed font/cache/XML/CLI/shared/static consumers and real font fixtures.",
+    "Independent runtime now passes on this artifact; nested-font trigger lifecycle fails and requires the revision-1 source fix and fresh qualification.",
     "Original Lua sample behavior, preserve modified fonts.conf, actual font-directory/config trigger execution and real ldconfig lifecycle.",
     "Exact outside-prefix /var/db/fontconfig ownership/mode and cache behavior, full source/failure/private/lifecycle custody, actual normal delivery and same default-path consumers.",
     "Real older cache baseline, original network/Linux bwrap scope and all wider 1.6 release gates."
-  ]
+  ],
+  "subsequent_runtime_and_failed_lifecycle_report": "fontconfig-nested-trigger-repair-20261126.json"
 }
