@@ -66,7 +66,8 @@ the two flag-off cases and fails both flag-on cases.
 
 The port revision applies the requested flag to supplied descriptors while
 preserving existing flags and error ownership. Original upstream tests remain
-unchanged. Full repaired construction, sealed consumers, actual package
-lifecycle and normal delivery remain pending; this repair grants no canonical
+unchanged. Repaired native construction and the original checks pass; the same four
+regression controls now all pass, including actual exec inheritance. Fixed
+sealed consumers, actual package lifecycle and normal delivery remain pending; this repair grants no canonical
 Component, SDK or release admission. The [native observation](../verification/gdbm-cloexec-native-20261126.json)
 keeps the exact original failure, controls and qualification boundary.

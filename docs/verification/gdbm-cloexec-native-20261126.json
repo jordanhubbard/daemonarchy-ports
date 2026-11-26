@@ -1,6 +1,6 @@
 {
   "schema": "daemonarchy/gdbm-cloexec-native-observation@1",
-  "observed": "2026-11-26T23:24:56.977168+00:00",
+  "observed": "2026-11-26T23:26:53.656945+00:00",
   "canonical_receipt": false,
   "origin": "databases/gdbm",
   "original_version": "1.26",
@@ -83,7 +83,8 @@
   "complete_two_host_custody": {
     "original_construction_records": 1452,
     "failed_sealed_records": 473,
-    "original_negative_control_records": 367
+    "original_negative_control_records": 367,
+    "fixed_construction_and_controls": "native capture in progress"
   },
   "candidate_qualification": {
     "full_native_source_verification": {
@@ -92,8 +93,70 @@
       "tree": "ef0da801aa56705b7c43bf0649753e72e182b280",
       "all_host_SDK_base_accounts_loader_cache_mount_guards_pass": true
     },
-    "original_make_build_test_package": "in progress",
-    "fixed_same_four_controls": "pending",
+    "original_make_build_test_package": {
+      "passed": 27,
+      "phases": [
+        "checksum",
+        "extract",
+        "patch",
+        "configure",
+        "build",
+        "test",
+        "stage",
+        "check-plist",
+        "package"
+      ],
+      "package_bytes": 253750,
+      "package_sha256": "1e4de5c7c5d979f2489e1da0eed8b820bd32616ebfdfb0a262fff31d231e47d4",
+      "independent_BSD_zero_fuzz_C_body_sha256": "a39a7b6a65300be9fb86049206206b77cad095845c8946f0c9056bc5def8bdba",
+      "original_upstream_test_cases": 38,
+      "skipped": 11,
+      "failed": 0,
+      "all_original_upstream_tests_unchanged": true
+    },
+    "fixed_same_four_controls": {
+      "uid": 65534,
+      "cases": [
+        {
+          "supplied_fd": 0,
+          "requested_cloexec": 0,
+          "initial_cloexec": 0,
+          "initial_exec_closed": 0,
+          "reorganized_cloexec": 0,
+          "reorganized_exec_closed": 0,
+          "passed": true
+        },
+        {
+          "supplied_fd": 0,
+          "requested_cloexec": 1,
+          "initial_cloexec": 1,
+          "initial_exec_closed": 1,
+          "reorganized_cloexec": 1,
+          "reorganized_exec_closed": 1,
+          "passed": true
+        },
+        {
+          "supplied_fd": 1,
+          "requested_cloexec": 0,
+          "initial_cloexec": 0,
+          "initial_exec_closed": 0,
+          "reorganized_cloexec": 0,
+          "reorganized_exec_closed": 0,
+          "passed": true
+        },
+        {
+          "supplied_fd": 1,
+          "requested_cloexec": 1,
+          "initial_cloexec": 1,
+          "initial_exec_closed": 1,
+          "reorganized_cloexec": 1,
+          "reorganized_exec_closed": 1,
+          "passed": true
+        }
+      ],
+      "passed": 4,
+      "failed": 0
+    },
     "fixed_sealed_API_ELF_C_CXX_shared_static_CLI": "pending",
     "private_real_package_lifecycle": "pending",
     "normal_delivery": "not installed"
