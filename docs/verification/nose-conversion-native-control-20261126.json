@@ -2,7 +2,7 @@
   "schema_version": 1,
   "work_id": "PORT-NOSE-PY312-001",
   "planned_product_release": "1.6",
-  "status": "candidate8-original387-pass15-recorded-skips-sealed-consumers-pass-private-lifecycle-normal-pending",
+  "status": "candidate8-original-sealed-and-eight-private-pkg-transactions-pass-complete-two-host-custody-normal-pending",
   "origin": "devel/py-nose",
   "candidate_package": "py312-nose-1.3.7_8",
   "retained_original_failure": {
@@ -98,15 +98,17 @@
     "canonical_Component_SDK_or_release_acceptance": false,
     "selected_original_suite_passed_with_actual_skips": true,
     "complete_original_suite_scope": "Selected original runner passes all387 emitted entries,15actual skips retained; optional dependency/plugin configurations and historical6skipgap remain unqualified.",
-    "generated_egg_metadata_semantics": true
+    "generated_egg_metadata_semantics": true,
+    "private_native_package_lifecycle": true,
+    "retained_package_lifecycle_scope": "Bounded native pkg checks and complete reconstructible final-state ARM/Intel custody pass. Canonical admitted Component lifecycle receipt remains open."
   },
   "dependencies": [
     "Python grammar repair PR122 and mail validation PR84",
     "Complete original test runner and dependency closure"
   ],
-  "next": "Perform disposable private package installation/checksum/runtime/removal and applicable update/rollback acceptance with exact dependencies and all SDK/base guards before normal delivery. Original selected runner passes387 entries with15actualskips; optional dependency/plugin profiles and historical original6unprinted11 skip reasons remain unqualified. Canonical per-unit provenance/lifecycle/TCB/SDK and full1.6 release admission remain open.",
+  "next": "Perform bounded normal development Nose8 install with original dependency checks, registered checksums, 128 inherited providers/payloads preserved and actual unprivileged default namespace runtime/CLI/data/metadata consumers. Normal installation and canonical per-unit provenance/lifecycle/TCB/SDK/full1.6 release admission remain open; optional dependency/plugin profiles, historical original6 unprinted11 skip reasons and full previous-release update/rollback remain unqualified.",
   "new_patch_zero_fuzz_applies_to_exact_original_setup3lib_and_equals_native_tested_prototype": true,
-  "observed_utc": "2026-11-26T20:46:03.282219+00:00",
+  "observed_utc": "2026-11-26T21:20:57.139567+00:00",
   "normal_Python_prerequisite_now_qualified": {
     "package": "python312-3.12.16_5",
     "package_sha256": "2502aa401ca32d299524750984a538143e6ce48dfc6b55fd4adc283ed72db7a9",
@@ -1312,7 +1314,7 @@
     "all_manifest_modes_root_owners_mtimes_symlink_targets_verified": true,
     "ELF_payloads": [],
     "scripts_present": false,
-    "package_manifest_checksums_validation_pending_private_lifecycle": true,
+    "package_manifest_checksums_validation_pending_private_lifecycle": false,
     "authored_consumers": [
       {
         "label": "intentional_outcome_run",
@@ -1421,5 +1423,594 @@
       "extra_Linux_root_archive_bytes": 0
     },
     "normal_Nose_installed": false
+  },
+  "candidate8_private_native_package_lifecycle": {
+    "scope": "Bounded native pkg mechanics in disposable SDK copy with real dependencies and actual default namespace consumers. Comparison7 is unqualified, not a previously released or admitted baseline. Canonical Component/lifecycle/provenance admission remains open.",
+    "source_revision": "a837688a3b7a3aa31f2b71203d9fff70bfa7c58e",
+    "actual_pkg_transactions": [
+      {
+        "label": "fresh-install-unqualified-comparison7",
+        "args": [
+          "add",
+          "/bootstrap/comparison7.pkg"
+        ],
+        "exit": 0
+      },
+      {
+        "label": "real-upgrade-comparison7-to8",
+        "args": [
+          "add",
+          "/bootstrap/new.pkg"
+        ],
+        "exit": 0
+      },
+      {
+        "label": "real-explicit-same-version-reinstall8",
+        "args": [
+          "add",
+          "-f",
+          "/bootstrap/new.pkg"
+        ],
+        "exit": 0
+      },
+      {
+        "label": "real-explicit-rollback-to-comparison7",
+        "args": [
+          "add",
+          "-f",
+          "/bootstrap/comparison7.pkg"
+        ],
+        "exit": 0
+      },
+      {
+        "label": "real-upgrade-after-rollback-to8",
+        "args": [
+          "add",
+          "/bootstrap/new.pkg"
+        ],
+        "exit": 0
+      },
+      {
+        "label": "real-private-delete8-first",
+        "args": [
+          "delete",
+          "-y",
+          "py312-nose"
+        ],
+        "exit": 0
+      },
+      {
+        "label": "real-fresh-install8",
+        "args": [
+          "add",
+          "/bootstrap/new.pkg"
+        ],
+        "exit": 0
+      },
+      {
+        "label": "real-private-delete8-final",
+        "args": [
+          "delete",
+          "-y",
+          "py312-nose"
+        ],
+        "exit": 0
+      }
+    ],
+    "completed_two_transactions_not_replayed": true,
+    "actual_new_continuation_transactions": 6,
+    "actual_total_transactions": 8,
+    "registered_checksum_commands_passed": [
+      "comparison7-before-upgrade-registered-package-checksums",
+      "after-R2-completed-upgrade8-no-replay-registered-package-checksums",
+      "after-reinstall8-registered-package-checksums",
+      "comparison7-after-rollback-registered-package-checksums",
+      "after-rollback-upgrade8-registered-package-checksums",
+      "after-fresh-install8-registered-package-checksums"
+    ],
+    "registered_dependency_commands_passed": [
+      "comparison7-before-upgrade-registered-package-dependencies",
+      "after-R2-completed-upgrade8-no-replay-registered-package-dependencies",
+      "after-reinstall8-registered-package-dependencies",
+      "comparison7-after-rollback-registered-package-dependencies",
+      "after-rollback-upgrade8-registered-package-dependencies",
+      "after-fresh-install8-registered-package-dependencies"
+    ],
+    "no_pkg_script_or_direct_dependency_suppression": true,
+    "pkg_scripts_declared": false,
+    "no_forced_delete": true,
+    "explicit_force_only_same_version_reinstall_and_comparison_downgrade": true,
+    "actual_default_namespace_product_phases": [
+      {
+        "label": "after-R2-completed-upgrade8-no-replay",
+        "origin": {
+          "uid": 65534,
+          "actual_nose_origin": "/usr/local/lib/python3.12/site-packages/nose/__init__.py",
+          "distribution_origin": "/usr/local/lib/python3.12/site-packages/nose-1.3.7-py3.12.egg-info",
+          "version": "1.3.7",
+          "packaged_console_entry_point": true,
+          "exact_packaged_usage_data_bytes": 4425,
+          "exact_packaged_usage_data_sha256": "5985ebadc1e32235cf6f8417ce1bc76c3eab0c8b0a8dcd4fe2e033007b78729d",
+          "global_imp_shim_absent": true,
+          "six_generated_metadata_files_independently_checked": true,
+          "source_manifest_entries": 432,
+          "all_packaged_Python_sources_declared": 47
+        },
+        "consumers": [
+          {
+            "label": "intentional_outcome_run",
+            "actual_XML_root": {
+              "name": "nosetests",
+              "tests": "5",
+              "errors": "1",
+              "failures": "1",
+              "skip": "1"
+            },
+            "actual_cases": [
+              {
+                "classname": "test_sealed_consumer.TestSealedConsumer",
+                "name": "test_error",
+                "time": "0.000"
+              },
+              {
+                "classname": "test_sealed_consumer.TestSealedConsumer",
+                "name": "test_failure",
+                "time": "0.000"
+              },
+              {
+                "classname": "test_sealed_consumer.TestSealedConsumer",
+                "name": "test_pass",
+                "time": "0.000"
+              },
+              {
+                "classname": "test_sealed_consumer.TestSealedConsumer",
+                "name": "test_skip",
+                "time": "0.000"
+              },
+              {
+                "classname": "consumer_doctest",
+                "name": "consumer_doctest",
+                "time": "0.001"
+              }
+            ],
+            "sha256": "82f9e09b6000b2e636927d513a3984848a89dd5ed019f353f305f5fc9351a949"
+          },
+          {
+            "label": "all_pass_run",
+            "actual_XML_root": {
+              "name": "nosetests",
+              "tests": "1",
+              "errors": "0",
+              "failures": "0",
+              "skip": "0"
+            },
+            "actual_cases": [
+              {
+                "classname": "test_sealed_pass",
+                "name": "test_consumer_pass",
+                "time": "0.000"
+              }
+            ],
+            "sha256": "54c34de80acb3e2796723595f5ce1d17804167fffce0f2dc4b5b629d7edcae74"
+          }
+        ]
+      },
+      {
+        "label": "after-reinstall8",
+        "origin": {
+          "uid": 65534,
+          "actual_nose_origin": "/usr/local/lib/python3.12/site-packages/nose/__init__.py",
+          "distribution_origin": "/usr/local/lib/python3.12/site-packages/nose-1.3.7-py3.12.egg-info",
+          "version": "1.3.7",
+          "packaged_console_entry_point": true,
+          "exact_packaged_usage_data_bytes": 4425,
+          "exact_packaged_usage_data_sha256": "5985ebadc1e32235cf6f8417ce1bc76c3eab0c8b0a8dcd4fe2e033007b78729d",
+          "global_imp_shim_absent": true,
+          "six_generated_metadata_files_independently_checked": true,
+          "source_manifest_entries": 432,
+          "all_packaged_Python_sources_declared": 47
+        },
+        "consumers": [
+          {
+            "label": "intentional_outcome_run",
+            "actual_XML_root": {
+              "name": "nosetests",
+              "tests": "5",
+              "errors": "1",
+              "failures": "1",
+              "skip": "1"
+            },
+            "actual_cases": [
+              {
+                "classname": "test_sealed_consumer.TestSealedConsumer",
+                "name": "test_error",
+                "time": "0.000"
+              },
+              {
+                "classname": "test_sealed_consumer.TestSealedConsumer",
+                "name": "test_failure",
+                "time": "0.000"
+              },
+              {
+                "classname": "test_sealed_consumer.TestSealedConsumer",
+                "name": "test_pass",
+                "time": "0.000"
+              },
+              {
+                "classname": "test_sealed_consumer.TestSealedConsumer",
+                "name": "test_skip",
+                "time": "0.000"
+              },
+              {
+                "classname": "consumer_doctest",
+                "name": "consumer_doctest",
+                "time": "0.001"
+              }
+            ],
+            "sha256": "495fda9f249321d73e33c5213d7c94eb4c979c9f8a67b21dcc017c1e3b8aeaf0"
+          },
+          {
+            "label": "all_pass_run",
+            "actual_XML_root": {
+              "name": "nosetests",
+              "tests": "1",
+              "errors": "0",
+              "failures": "0",
+              "skip": "0"
+            },
+            "actual_cases": [
+              {
+                "classname": "test_sealed_pass",
+                "name": "test_consumer_pass",
+                "time": "0.000"
+              }
+            ],
+            "sha256": "54c34de80acb3e2796723595f5ce1d17804167fffce0f2dc4b5b629d7edcae74"
+          }
+        ]
+      },
+      {
+        "label": "after-rollback-upgrade8",
+        "origin": {
+          "uid": 65534,
+          "actual_nose_origin": "/usr/local/lib/python3.12/site-packages/nose/__init__.py",
+          "distribution_origin": "/usr/local/lib/python3.12/site-packages/nose-1.3.7-py3.12.egg-info",
+          "version": "1.3.7",
+          "packaged_console_entry_point": true,
+          "exact_packaged_usage_data_bytes": 4425,
+          "exact_packaged_usage_data_sha256": "5985ebadc1e32235cf6f8417ce1bc76c3eab0c8b0a8dcd4fe2e033007b78729d",
+          "global_imp_shim_absent": true,
+          "six_generated_metadata_files_independently_checked": true,
+          "source_manifest_entries": 432,
+          "all_packaged_Python_sources_declared": 47
+        },
+        "consumers": [
+          {
+            "label": "intentional_outcome_run",
+            "actual_XML_root": {
+              "name": "nosetests",
+              "tests": "5",
+              "errors": "1",
+              "failures": "1",
+              "skip": "1"
+            },
+            "actual_cases": [
+              {
+                "classname": "test_sealed_consumer.TestSealedConsumer",
+                "name": "test_error",
+                "time": "0.000"
+              },
+              {
+                "classname": "test_sealed_consumer.TestSealedConsumer",
+                "name": "test_failure",
+                "time": "0.000"
+              },
+              {
+                "classname": "test_sealed_consumer.TestSealedConsumer",
+                "name": "test_pass",
+                "time": "0.000"
+              },
+              {
+                "classname": "test_sealed_consumer.TestSealedConsumer",
+                "name": "test_skip",
+                "time": "0.000"
+              },
+              {
+                "classname": "consumer_doctest",
+                "name": "consumer_doctest",
+                "time": "0.001"
+              }
+            ],
+            "sha256": "282edeb94a449f8c8a63f34101607e14864780f03f661fbceed7a569d4fd2c18"
+          },
+          {
+            "label": "all_pass_run",
+            "actual_XML_root": {
+              "name": "nosetests",
+              "tests": "1",
+              "errors": "0",
+              "failures": "0",
+              "skip": "0"
+            },
+            "actual_cases": [
+              {
+                "classname": "test_sealed_pass",
+                "name": "test_consumer_pass",
+                "time": "0.000"
+              }
+            ],
+            "sha256": "54c34de80acb3e2796723595f5ce1d17804167fffce0f2dc4b5b629d7edcae74"
+          }
+        ]
+      },
+      {
+        "label": "after-fresh-install8",
+        "origin": {
+          "uid": 65534,
+          "actual_nose_origin": "/usr/local/lib/python3.12/site-packages/nose/__init__.py",
+          "distribution_origin": "/usr/local/lib/python3.12/site-packages/nose-1.3.7-py3.12.egg-info",
+          "version": "1.3.7",
+          "packaged_console_entry_point": true,
+          "exact_packaged_usage_data_bytes": 4425,
+          "exact_packaged_usage_data_sha256": "5985ebadc1e32235cf6f8417ce1bc76c3eab0c8b0a8dcd4fe2e033007b78729d",
+          "global_imp_shim_absent": true,
+          "six_generated_metadata_files_independently_checked": true,
+          "source_manifest_entries": 432,
+          "all_packaged_Python_sources_declared": 47
+        },
+        "consumers": [
+          {
+            "label": "intentional_outcome_run",
+            "actual_XML_root": {
+              "name": "nosetests",
+              "tests": "5",
+              "errors": "1",
+              "failures": "1",
+              "skip": "1"
+            },
+            "actual_cases": [
+              {
+                "classname": "test_sealed_consumer.TestSealedConsumer",
+                "name": "test_error",
+                "time": "0.000"
+              },
+              {
+                "classname": "test_sealed_consumer.TestSealedConsumer",
+                "name": "test_failure",
+                "time": "0.000"
+              },
+              {
+                "classname": "test_sealed_consumer.TestSealedConsumer",
+                "name": "test_pass",
+                "time": "0.000"
+              },
+              {
+                "classname": "test_sealed_consumer.TestSealedConsumer",
+                "name": "test_skip",
+                "time": "0.000"
+              },
+              {
+                "classname": "consumer_doctest",
+                "name": "consumer_doctest",
+                "time": "0.001"
+              }
+            ],
+            "sha256": "a4458733a8f6b573c2176ace687bf9a1524c752d9e91897bd333efa8cf1edff1"
+          },
+          {
+            "label": "all_pass_run",
+            "actual_XML_root": {
+              "name": "nosetests",
+              "tests": "1",
+              "errors": "0",
+              "failures": "0",
+              "skip": "0"
+            },
+            "actual_cases": [
+              {
+                "classname": "test_sealed_pass",
+                "name": "test_consumer_pass",
+                "time": "0.000"
+              }
+            ],
+            "sha256": "54c34de80acb3e2796723595f5ce1d17804167fffce0f2dc4b5b629d7edcae74"
+          }
+        ]
+      }
+    ],
+    "actual_direct_xunit_controls": [
+      {
+        "phase": "comparison7-before-upgrade",
+        "revision": "7",
+        "total": 4,
+        "passed": 1,
+        "cases": [
+          {
+            "label": "error",
+            "pass": false
+          },
+          {
+            "label": "failure",
+            "pass": false
+          },
+          {
+            "label": "success",
+            "pass": false
+          },
+          {
+            "label": "custom-id",
+            "pass": true
+          }
+        ]
+      },
+      {
+        "phase": "after-R2-completed-upgrade8-no-replay",
+        "revision": "8",
+        "total": 4,
+        "passed": 4,
+        "cases": [
+          {
+            "label": "error",
+            "pass": true
+          },
+          {
+            "label": "failure",
+            "pass": true
+          },
+          {
+            "label": "success",
+            "pass": true
+          },
+          {
+            "label": "custom-id",
+            "pass": true
+          }
+        ]
+      },
+      {
+        "phase": "after-reinstall8",
+        "revision": "8",
+        "total": 4,
+        "passed": 4,
+        "cases": [
+          {
+            "label": "error",
+            "pass": true
+          },
+          {
+            "label": "failure",
+            "pass": true
+          },
+          {
+            "label": "success",
+            "pass": true
+          },
+          {
+            "label": "custom-id",
+            "pass": true
+          }
+        ]
+      },
+      {
+        "phase": "comparison7-after-rollback",
+        "revision": "7",
+        "total": 4,
+        "passed": 1,
+        "cases": [
+          {
+            "label": "error",
+            "pass": false
+          },
+          {
+            "label": "failure",
+            "pass": false
+          },
+          {
+            "label": "success",
+            "pass": false
+          },
+          {
+            "label": "custom-id",
+            "pass": true
+          }
+        ]
+      },
+      {
+        "phase": "after-rollback-upgrade8",
+        "revision": "8",
+        "total": 4,
+        "passed": 4,
+        "cases": [
+          {
+            "label": "error",
+            "pass": true
+          },
+          {
+            "label": "failure",
+            "pass": true
+          },
+          {
+            "label": "success",
+            "pass": true
+          },
+          {
+            "label": "custom-id",
+            "pass": true
+          }
+        ]
+      },
+      {
+        "phase": "after-fresh-install8",
+        "revision": "8",
+        "total": 4,
+        "passed": 4,
+        "cases": [
+          {
+            "label": "error",
+            "pass": true
+          },
+          {
+            "label": "failure",
+            "pass": true
+          },
+          {
+            "label": "success",
+            "pass": true
+          },
+          {
+            "label": "custom-id",
+            "pass": true
+          }
+        ]
+      }
+    ],
+    "original_suite_reexecuted_or_retried": false,
+    "final_private_provider_count": 128,
+    "Nose_runtime_import_distribution_console_and_registry_absent_after_delete": true,
+    "final_exact_retained_old_license_records": [
+      "usr/local/share/licenses/py312-nose-1.3.7_7/LGPL21",
+      "usr/local/share/licenses/py312-nose-1.3.7_7/LICENSE",
+      "usr/local/share/licenses/py312-nose-1.3.7_7/catalog.mk"
+    ],
+    "final_added_nodes_vs_initial_normal_SDK": [
+      "local/share/licenses/py312-nose-1.3.7_7",
+      "local/share/licenses/py312-nose-1.3.7_7/LGPL21",
+      "local/share/licenses/py312-nose-1.3.7_7/LICENSE",
+      "local/share/licenses/py312-nose-1.3.7_7/catalog.mk"
+    ],
+    "full_initial_private_database_and_directory_metadata_rollback_claimed": false,
+    "comparison7_previous_release_upgrade_qualified": false,
+    "all128_inherited_provider_payloads_exact_throughout": true,
+    "all_original_normal_SDK128_old18_frozen_base_accounts_loader_fontcache_mounts_source_original_run_and_sealed_guards_pass": true,
+    "retained_observer_failures": {
+      "R1": "No clone, mounts or commands. Exact normal baseline comparison stopped on previously absent readonly SQLite query sidecars; independent full snapshot proves only 32768-byte shm, empty wal and parent mtime; main DB and every SDK payload unchanged.",
+      "R2": "Comparison7 fresh install and upgrade8 both exit0; all154 new8 payloads exact. Observer incorrectly required old7 versioned license records absent. Independent copied-registry query proves only8 registered129 providers; all3 old license records match their exact original preimages.",
+      "R3": "No commands or transactions. Complete disjoint working copy matches R2 private state; inode observer incorrectly expected a normal SQLite sidecar absent from the private state.",
+      "R4": "Complete failed R3 state verified on ARM and Intel before resuming only its owned mutable SDK copy. Immutable original failure results/logs/source and full archive bytes preserved. Six remaining transactions completed without replaying the first two; no further large clone or cleanup."
+    },
+    "complete_failed_precontinuation_two_host_custody": {
+      "nodes": 101892,
+      "parts": 43,
+      "archive_bytes": 562360384,
+      "inventory_sha256": "cae0456bc3226632617513188e3ae18ebad2160a7009d9aefee33ba17325125d",
+      "all_nodes_actual_ARM_and_Intel_verified": true,
+      "extra_Linux_root_archive_bytes": 0
+    },
+    "complete_final_state_custody": {
+      "exact_delta_and_complete_R4_evidence_nodes": 245,
+      "parts": 1,
+      "archive_bytes": 18975062,
+      "inventory_sha256": "fb315b02aea1a262e712b3fa2de9695f7e6828786c562d40225247c1aff28dfe",
+      "all_nodes_actual_ARM_and_Intel_verified": true,
+      "bound_immutable_prestate_nodes": 101892,
+      "bound_immutable_prestate_parts": 43,
+      "full_final_owned_SDK_nodes": 50529,
+      "selected_exact_delta_nodes_including_parents": 14,
+      "removed_nodes_with_retained_preimages": 166,
+      "all_final_nodes_either_exact_custodied_foundation_or_exact_captured_delta": true,
+      "inherited_provider_hardlink_families_match_original_normal_SDK": true,
+      "extra_Linux_root_archive_bytes": 0
+    },
+    "normal_host_Nose_installed": false
   }
 }

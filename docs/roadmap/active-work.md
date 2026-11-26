@@ -220,3 +220,35 @@ original run and both consumer attempts pass their preservation guards.
 All 218 consumer records verify on ARM and Intel. Private package lifecycle checks,
 checksum validation through its registered database and normal delivery remain
 open. Nose is uninstalled; canonical per-unit and full release gates remain open.
+
+
+Revision 8 passes eight real private package transactions: comparison7 install,
+upgrade8, same-version reinstall8, explicit comparison7 rollback, re-upgrade8,
+delete8, fresh install8 and final delete8. The first two completed actions are
+retained without replay; the continuation runs the remaining six. Both package
+checksums and direct dependencies pass in all six observed installed states.
+Four revision-8 phases pass actual uid65534 default-/usr/local origin, metadata,
+data, console, direct callbacks and five intentional outcomes plus one passing
+consumer. Comparison7 reproduces its known three direct-callback regressions
+before and after rollback; all four callbacks pass on revision8. It is an
+unqualified comparison package, not previous-release upgrade acceptance.
+
+Three observer failures remain preserved: readonly query SQLite sidecars versus
+the saved normal baseline; exact old versioned license records retained after
+upgrade; and a normal SQLite sidecar missing from the private copied state.
+The complete failed state, two SDK copies, logs, registry and diagnostics are
+retained as 101,892 records in 43 parts verified on ARM and Intel. Only then does
+the continuation resume its existing owned working copy, preserving original
+failure results/logs/source and archive bytes, without another large copy.
+
+The final private registry has 128 providers and no Nose runtime, distribution
+or console. Three exact comparison7 license records and their directory remain;
+all inherited provider payloads stay exact. Private DB/directory metadata do not
+claim full initial restoration. Original normal/old/frozen SDKs, matching base,
+accounts, loader/cache, mounts, original run and sealed evidence pass guards.
+Final custody binds the immutable full prestate, every changed or added body,
+removed-node preimages and complete final inventories. All 245 final-delta and
+continuation records verify on ARM and Intel, bound to the 101,892-record
+immutable prestate. All 50,529 final private SDK nodes are covered; 14 exact
+delta nodes and 166 retained removal preimages make the final state recoverable.
+Normal delivery and canonical per-unit/full release admission remain open.
