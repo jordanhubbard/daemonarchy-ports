@@ -123,3 +123,22 @@ combined patch equals GNU output. All earlier failures are retained; the full
 original revision6 suite, packaged runtime/CLI, lifecycle, normal delivery and
 canonical release admission remain open. No original test/assertion/selection,
 dependency or default deadline changes accompany these API repairs.
+
+Revision 6 verifies all 184,398 source files and passes all eight original
+construction targets through packaging. The unchanged original runner reports
+301 entries in 31.534 seconds: 262 pass, 15 errors, 13 failures and 11 skips.
+Every progress marker reconciles to that summary. Fourteen errors block module
+discovery through the original shared imp.new_module fixture; another fixture
+use causes the fifteenth error. Failures comprise ten legacy unittest display
+or xUnit identity differences, two requested-import category differences and
+one removed config readfp call. This does not complete original discovery or
+per-case acceptance. The default reporter emits no individual identities or
+reasons for the 11 skips; all remain explicitly unreconciled.
+
+The complete source, objects, staging, package, private database, raw logs,
+28 outer failure details and independent text audit are retained in 2,150 records
+verified on ARM and Intel. Nested expected failures remain in the raw logs and
+are excluded only from the derived outer-failure count. All normal SDK, old and
+frozen SDK, base, accounts, loader/cache, mount and source guards pass; Nose stays
+uninstalled. Next repairs must retain original input and assertion bodies,
+restore discovery and preserve actual skip evidence without inferring reasons.
