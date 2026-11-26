@@ -1,6 +1,6 @@
 --- setup3lib.py.orig
 +++ setup3lib.py
-@@ -18,7 +18,38 @@
+@@ -18,7 +18,39 @@
      import logging
      from setuptools import Distribution as _Distribution
      from distutils.core import Command
@@ -23,6 +23,7 @@
 +                        raise DistutilsError(message % args)
 +
 +                fixers = get_fixers_from_package('lib2to3.fixes')
++                fixers.append('fix_imp_new_module')
 +                for package in getattr(self.distribution, 'use_2to3_fixers', []):
 +                    fixers.extend(get_fixers_from_package(package))
 +                tool = CheckedRefactoringTool(fixers)
@@ -40,7 +41,7 @@
      from distutils import dir_util, file_util, log
      import setuptools.command.test
      from pkg_resources import normalize_path
-@@ -66,7 +97,17 @@
+@@ -66,7 +98,17 @@
              self.test_build_dir = None
              self.doctest_exts = ['.py', '.rst']
              self.pyversion_patching = False
@@ -58,7 +59,7 @@
 
      class BuildTestsCommand (Command, Mixin2to3):
          # Create mirror copy of tests, convert all .py files using 2to3
-@@ -135,6 +176,8 @@
+@@ -135,6 +177,8 @@
      def setup(*args, **kwargs):
          kwargs.setdefault('distclass', Distribution)
          cmdclass = kwargs.setdefault('cmdclass', {})
