@@ -1,8 +1,8 @@
 {
-  "observed_utc": "2026-11-26T06:23:20.956579+00:00",
+  "observed_utc": "2026-11-26T06:57:38.210200+00:00",
   "status": "helper-native-regression-pass-15-C-programs-pass-Python-TAP-dependencies-pending",
-  "current_code_commit": "d8fc0ce2248b8c4e13a0d1d001d35045db74eb9e",
-  "current_native_source_composition": "622cca27dcc8bde9288288a2945da8d8ed6fcf29",
+  "current_code_commit": "b0d9bf84a48238f56923b03ae1289e89d33c2ae4",
+  "current_native_source_composition": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
   "baseline_native_source": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
   "scope": "Direct native FreeBSD aarch64 source/configuration/test observations only; package/normal/canonical/AMD64/fullrelease qualification remains pending.",
   "problems": [
@@ -12,7 +12,7 @@
   "changes": [
     "Use supported TEST_MESON_ON for the existing tests-external-fonts=disabled argument.",
     "Declare the TAP plugin as a TEST build dependency so Meson discovers the complete test runner before configuration.",
-    "Add checksum-bound source ports for pytest-tap and its tap.py dependency. Preserve upstream implementation/tests and Python/runtime constraints; expose tap.py optional YAML dependencies separately and include its original full test prerequisites.",
+    "Add checksum-bound source ports for pytest-tap and tap.py, retain all original tests/runtime constraints, and patch confirmed tap.py malformed-plan/result-prefix false passes; retain generated patch backup outside the Hatch wheel source.",
     "Add staged Python site-packages to PyYAML TEST_ENV so original test collection finds the built LibYAML extension; retain original LIBYAML default, all test cases and upstream assertions.",
     "Expose pytest-tap staged distribution/entry-point metadata to original pytester subprocesses through TEST_ENV=${MAKE_ENV} plus staged PYTHONPATH, preserving original tests and fixture behavior."
   ],
@@ -143,30 +143,30 @@
     "completion": "Existing typed metadata-query preflight transition records that delta, then holds a fresh complete SDK snapshot exactly through native execution. No timestamp restoration, data exclusion or in-flight guard relaxation."
   },
   "current_source_preparation": {
-    "full_Git_members": 184387,
-    "changed_or_added_paths_from_retained_fadd": 9,
+    "full_Git_members": 184388,
+    "changed_or_added_paths_from_retained_fadd": 10,
     "removed_paths": 0,
     "prior_e11626_complete_native_source_preparation": "pass-all184387bodies/modes/links-and-allSDK117/system/sourceguards; original source retained",
     "prior_preparation_receipt_sha256": "35fc72cbfa15974d13a6e5f3b4dffdcbd4fa0d7546ca41f1ca12e93e77880c5c",
     "current_27dd3d_complete_native_source_preparation": "pass; all184387bodies/modes/links, exactGit tree, unchangedoriginalsource andwholeSDK117/rawDB/frozen/base/accounts/cache/mount guards",
     "current_native_source_member_manifest_reconstructs_exact_Git_tree": true,
-    "scope": "Prior d8825f source verified; latest622cca source has normalizednewtap-pyFreeBSDpackage identity. PyYAML qualified artifact remains27dd andMoreItertools3f, no receipt repinning.",
-    "latest_source_tree": "84c0414522d56a1d3b414919b3c211f3a67983c2",
+    "scope": "Current993a2a10 source includes canonical newtap-py identity, confirmed TAP parser-boundary fix and exactbackup retention outside wheel. Full184388bodies/modes/links verify. QualifiedolderPyYAML27dd/MoreItertools3f artifacts keep actual sourcepins; no receipt repinning.",
+    "latest_source_tree": "f4b4fc4c6d26e9558b5f62efc53a035b58456097",
     "qualified_PyYAML_source_tree": "20d8296ce9634f34099890eb8fcd7d553a5e215b",
     "qualified_PyYAML_native_preparation_receipt_sha256": "4f7f7264540468c6a882f1fa06e0d18b2cf17ccdf4c85f6ef0562cf88b224e6c",
-    "latest_native_source_preparation": "pass-full184387bodies/modes/links-exactd8825fGit-tree-andallSDK117/system/sourcepostguards; previous3f/e116/27ddsource/artifactreceiptsretained",
-    "last_verified_source_tree": "84c0414522d56a1d3b414919b3c211f3a67983c2",
-    "last_verified_native_preparation_receipt_sha256": "7b753e203575d03ca14cc2eef81cfc1bc34a8b3d7a6cb6b909de75a026af6748",
-    "last_verified_source_revision": "d8825ff08eb18991ff7a1809fb4b00ed49908d1a",
-    "current_source_tree": "1c8884c6766322a59ae17efb208cfde916a00a8e",
-    "current_native_source_preparation": "pass;622cca/1c8884c Gitcommit/tree, all184387nativebodies/modes/links, exactoriginalsource retention andwholeSDK119/rawDB/frozen/base/accounts/cache/mount guards",
-    "current_native_preparation_receipt_sha256": "09d85c981f38d8309e4ad4f6916b1692cd31b97fadb8c7cc7b613b273e7b8247"
+    "latest_native_source_preparation": "pass-complete184388-Git-bodies-modes-links-SDK119-frozen-base-accounts-cache-mount-guards",
+    "last_verified_source_tree": "f4b4fc4c6d26e9558b5f62efc53a035b58456097",
+    "last_verified_native_preparation_receipt_sha256": "5284ec215e3e1c45092c9b33d90246da5e522126dae63e5598cbc6fa077d347d",
+    "last_verified_source_revision": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
+    "current_source_tree": "f4b4fc4c6d26e9558b5f62efc53a035b58456097",
+    "current_native_source_preparation": "pass-complete184388-Git-bodies-modes-links-SDK119-frozen-base-accounts-cache-mount-guards",
+    "current_native_preparation_receipt_sha256": "5284ec215e3e1c45092c9b33d90246da5e522126dae63e5598cbc6fa077d347d"
   },
   "remaining": [
-    "Native metadata/construction/original full suite/private/lifecycle/custody/normal qualification of both new TAP ports; MoreItertools118 andPyYAML119 prerequisites qualified.",
+    "Tappy parser-boundary and backup fixes qualify normal120; complete pytest-tap original/nested suite/private/lifecycle/custody/normal acceptance.",
     "Rerun the complete original Fontconfig TEST selection, audit nested TAP cases, and retain every failure/skip reason.",
     "Fresh default artifact, independent font/cache/XML/CLI/shared/static tests and original Lua-sample/font-cache-trigger lifecycle.",
-    "Complete source/failure/private/normal custody and actual normal dependency/hook integration; accepted bounded development set is119 after independently qualified MoreItertools/PyYAML.",
+    "Complete Fontconfig source/failure/private/normal custody and actual normal dependency/hooks; accepted bounded development set is120 after Tappy.",
     "Matching source/SDK/kernel and AMD64, canonical Component/provenance/lifecycle/SDK/TCB, desktop, physical, installer/update/rollback/media/freeze/signing/publication."
   ],
   "operational_metadata_reconciliation": {
@@ -704,7 +704,7 @@
         "source117_to_prior_normal118_chain_explicitly_verified": true
       }
     },
-    "tap_py_and_pytest_tap": "source ports only, native qualification pending",
+    "tap_py_and_pytest_tap": "Tappy clean parser-boundary/backup source993a2a10 qualified normal120; pytest-tap native original suite and full independent qualification remain pending.",
     "tap_py": {
       "native_metadata_observer_failure_retained": "First source-count assumption247 waswrong: newport3files+Mk211+Templates32=246. No targetran; verifier-definition failurealso retained. Correctedobserverdeclaresverifierbeforepreflight andchecks246actualinputs.",
       "native_construction_stage_failure_retained": {
@@ -749,7 +749,8 @@
         "source_fix": "Choosecanonicaltap-pyidentity fornewFreeBSDportanddependentdeclaration, retainingupstreamsource/import/CLIs/constraints/selectedtests.",
         "native_source_fix_and_full_qualification_pending": false,
         "allSDK119_frozen_base_accounts_cache_mounts_and246source_guards_pass_after_stage_failure": true,
-        "source_fix_native_construction_and116cases_pass_full_private_lifecycle_custody_normal_pending": true
+        "historical_source_fix_native_construction_and116cases_pass_full_private_lifecycle_custody_normal_pending_at_original_checkpoint": true,
+        "current_disposition": "Original candidate/failure retained; superseded by qualified clean parser-boundary source in tap-py-parser-boundaries-20261126.json."
       },
       "canonical_identity_native_construction_and_upstream_suite": {
         "source_revision": "622cca27dcc8bde9288288a2945da8d8ed6fcf29",
@@ -808,8 +809,21 @@
         "all_original_test_and_data_files_match_verified_distfile": 16,
         "actual_wheel_and_dist_info_staging_succeeds": true,
         "whole_SDK119_raw_database_frozen_base_accounts_cache_mounts_and246_source_guards_pass": true,
-        "independent_TAP_library_CLI_optional_dependency_absence_lifecycle_custody_normal_pending": true
-      }
+        "historical_independent_TAP_library_CLI_optional_dependency_absence_lifecycle_custody_normal_pending_at_original_checkpoint": true,
+        "current_disposition": "Original candidate/failure retained; superseded by qualified clean parser-boundary source in tap-py-parser-boundaries-20261126.json."
+      },
+      "qualification_status": "retained-unpatched-source-suite-pass-candidate-rejected-six-malformed-input-false-passes"
+    },
+    "tap_py_clean_parser_boundaries": {
+      "report": "tap-py-parser-boundaries-20261126.json",
+      "source_revision": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
+      "original_PASS": 116,
+      "private_library_checks": 177,
+      "private_CLI_checks": 48,
+      "lifecycle_transactions": 6,
+      "default_library_checks": 90,
+      "default_CLI_checks": 48,
+      "accepted_normal_count": 120
     }
   }
 }
