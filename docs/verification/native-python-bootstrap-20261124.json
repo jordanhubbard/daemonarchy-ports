@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 120,
+  "normal_development_package_count": 122,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -2370,6 +2370,14 @@
       "failed": 0,
       "original_test_data_files_unchanged": 16,
       "scope": "Parser-boundary implementation patch and generated-backup relocation; original tests unchanged. Bounded development only."
+    },
+    "PytestTAP": {
+      "runner": "Original complete make test and independent discovery/JUnit ID-file-line ordered audit",
+      "passed": 17,
+      "skipped": 0,
+      "failed": 0,
+      "original_test_conftest_inputs_unchanged": 5,
+      "scope": "Includes three mock xdist contract cases; actual distributed transport unqualified."
     }
   },
   "pending": [
@@ -5288,9 +5296,9 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 120,
+  "actual_installed_development_package_count": 122,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-26T06:59:25.590375+00:00",
+  "last_updated_utc": "2026-11-26T08:14:51.086314+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -7580,6 +7588,721 @@
       "Original actual package lifecycle, both-host source/private/failure custody and normal delivery/custody.",
       "Complete Fontconfig original16program suite/nestedTAP, freshdefaultfont/cache/XML/CLI/shared/static and original Lua/sample/cache-trigger lifecycle.",
       "Canonical/SDK/TCB/matching source/kernel/AMD64/desktop/physical/fullrelease gates."
+    ]
+  },
+  "selected_original_default_PytestTAP_qualified_20261126": {
+    "observed_utc": "2026-11-26T07:19:53.960423+00:00",
+    "status": "pass-bounded-native-ARM-PytestTAP-normal121",
+    "scope": "Native bounded development acceptance only. Canonical ownership/provenance/lifecycle/SDK/TCB, matching source/kernel/AMD64, desktop/apps/all47platform/physical/installer/update/rollback/media/signing/fullrelease remain open.",
+    "origin": "devel/py-pytest-tap",
+    "version": "3.6",
+    "source_revision": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
+    "package": {
+      "bytes": 11421,
+      "sha256": "c79fa3fbc2cdd52e197524ec3b8ca65788a3d40b9e25220cfaa20cfa7c67e246"
+    },
+    "eight_original_construction_targets_pass": true,
+    "original_selfsuite": {
+      "discovered": 17,
+      "completed": 17,
+      "PASS": 17,
+      "SKIP": 0,
+      "FAIL": 0,
+      "ERROR": 0,
+      "duplicate_display_ids": 0,
+      "all_case_file_line_id_signatures_unique_and_ordered_completions_match": true,
+      "discovery_includes_function_source_locations_and_item_types": true,
+      "native_junit_xml_sha256": "976a40aaa75ed35b7b93f2d2a3535255c34b72ed6ce0a936de2c79768a96151e",
+      "native_discovery_sha256": "efbc40f118b8d924097a3ea0219151613ddd5b7030a9fa5868c92e13c18fb2fc"
+    },
+    "original_test_conftest_files_byte_equal_verified_sdist": 5,
+    "all_original_Python_source_and_test_bodies_equal_verified_sdist": 7,
+    "all_original_nested_pytester_output_retained_sha256": "b869b9384c1e5fdff6b1240f23a04a70723424f3580065b293093029cc66b8e5",
+    "selected_port_Mk_Templates_Git_inputs": 246,
+    "private_acceptance": {
+      "independent_checks": 172,
+      "actual_child_commands": 25,
+      "TAP_documents": 22,
+      "TAP_points": 48,
+      "actual_distribution_entry_point_autoload_and_disable_control": true,
+      "stream_alias_files_combined_outdir_help_logs_and_error_paths": true,
+      "pass_failure_call_error_setup_skip_TODO_nonstrict_strict_XPASS_and_unittest": true,
+      "independent_stdlib_TAP_count_number_identity_status_directive_oracle": true,
+      "actual_normal_Meson_TAP_consumer": [
+        {
+          "name": "authored-pytest-tap-status:pass",
+          "result": "OK",
+          "returncode": 0
+        },
+        {
+          "name": "authored-pytest-tap-status:teardown-error",
+          "result": "ERROR",
+          "returncode": 1
+        },
+        {
+          "name": "authored-pytest-tap-status:failure",
+          "result": "FAIL",
+          "returncode": 1
+        }
+      ],
+      "receipt_sha256": "d02ec0706d233af54c38a21388f4b6dafc41aae4602af3a1138e4f592b36f410"
+    },
+    "upstream_teardown_TAP_scope": {
+      "call_phase_ok_point_can_precede_teardown_error": true,
+      "nonzero_pytest_process_status_retained_and_required": true,
+      "actual_Meson_rejects_this_case_as_ERROR": true,
+      "TAP_stream_alone_is_not_the_complete_result": true
+    },
+    "runtime_providers": {
+      "py312-pytest": "9.1.1,1",
+      "py312-tap-py": "3.2.1",
+      "python312": "3.12.16"
+    },
+    "xdist_scope": "Three original mock hook-contract cases only; actual distributed transport unqualified.",
+    "original_lifecycle": {
+      "actual_pkg_add_force_delete_readd_transactions": 6,
+      "exact_payloads": 16,
+      "scripts_Lua_shared_providers_declared": false,
+      "no_declared_hooks_suppressed_or_invented": true,
+      "locked_accounts_readonly_base_private_devfs_full_unmount": true,
+      "private_runtime_dependency_delivery_or_solver_claimed": false,
+      "receipt_sha256": "b8d38a73f5bcd85c7eb68441ceb1cadf3eb393ea062aedeb42966fa8983cfad6"
+    },
+    "normal_acceptance": {
+      "actual_offline_dependency_solver_and_integrity": true,
+      "packages_before": 120,
+      "accepted_bounded_development_count": 121,
+      "all16_payloads_exact": true,
+      "all120_inherited_prefixes_preserved": true,
+      "actual_default_checks": 172,
+      "actual_default_commands": 25,
+      "actual_default_TAP_docs_and_points": [
+        22,
+        48
+      ],
+      "default_completed_checks_and_typed_TAP_semantics_and_Meson_statuses_equal_private": true,
+      "private_LD_or_PYTHONPATH_overrides": false,
+      "loader_cache_bytes_metadata_paths_and_candidate_priorities_preserved": true,
+      "whole_SDK121_prefix_raw_database_preserved_through_default_consumers": true,
+      "receipt_sha256": "ab5437fbe43bd7078cf16ee856e4f9391784b5472646182b6ebe2d2cb0452111"
+    },
+    "two_host_custody": {
+      "source_private_lifecycle": {
+        "nodes": 1531,
+        "archive_bytes": 13284645,
+        "archive_sha256": "bd4ddcfd244035316b75dbfd3a88e6b50d54a0316daa387abb96da16751358ff",
+        "inventory_sha256": "817701795313e42bae3203ff89e2a30c39ba1c9b8bb4d9f768ea0121953e7187",
+        "every_archived_node_verified_on_native_ARM_and_physical_Intel": true
+      },
+      "normal": {
+        "nodes": 291,
+        "archive_bytes": 18087348,
+        "archive_sha256": "abf878d0a0ffedc0959bc2099a6eff1d96365c840607e1047b750e95967a4219",
+        "inventory_sha256": "d96ab93d2855b11043ae7cf3858bd9aad6dca6bbd0f5c88ddcec0832499aa8b7",
+        "every_archived_node_verified_on_native_ARM_and_physical_Intel": true
+      }
+    },
+    "remaining": [
+      "Fontconfig full16program originalTEST/nestedPytestTAP case audit after this normal prerequisite.",
+      "Fresh default Fontconfig independent font/cache/XML/CLI/shared/static acceptance and actual Lua/sample/font-cache-trigger lifecycle, custody and normal delivery.",
+      "Full1.6 release gates remain open."
+    ]
+  },
+  "next_Fontconfig_JSONC_xxd_original_coverage_20261126": {
+    "observed_utc": "2026-11-26T07:53:07.512125+00:00",
+    "status": "all16originalprograms-OK-full-case-audit-identifies18missing-json-c-configuration-cases",
+    "scope": "Actual original TEST option observations; not full selected-test qualification, default-artifact acceptance, normal Fontconfig installation, canonical/SDK/TCB/AMD64 or release acceptance.",
+    "source_revision": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
+    "package": {
+      "bytes": 489047,
+      "sha256": "6c57d5aa70b6697ede092bdea78228824c16ce192ea3e69ec364b9e630302eed"
+    },
+    "all8_original_construction_targets_pass": true,
+    "original_Meson_programs": {
+      "discovered": 16,
+      "completed": 16,
+      "OK": 16,
+      "all_names_argv_match": true,
+      "all_actual_exit_codes_zero": true,
+      "testlog_json_sha256": "8b027df6b4d9289597bba117f04da48e469f4d23a46a9d005053836ce5b159e6",
+      "testlog_txt_sha256": "5daac78cc3f648aaf12af334fe9bf0aef46bb131a53c0620d091dca4e4241459"
+    },
+    "nested_original_Pytest_TAP": {
+      "selected_and_completed_unique_identity_order_match": 49,
+      "PASS": 21,
+      "SKIP": 28,
+      "FAIL": 0,
+      "ERROR": 0,
+      "original_network_marker_deselections": 2,
+      "all_skips_retained": [
+        {
+          "number": 16,
+          "ok": true,
+          "description": "test_cache_cross_version.py::test_binary_format_forward_compat",
+          "directive": "SKIP FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set"
+        },
+        {
+          "number": 17,
+          "ok": true,
+          "description": "test_cache_cross_version.py::test_discovery_backward_compat",
+          "directive": "SKIP FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set"
+        },
+        {
+          "number": 18,
+          "ok": true,
+          "description": "test_cache_cross_version.py::test_discovery_forward_compat",
+          "directive": "SKIP FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set"
+        },
+        {
+          "number": 20,
+          "ok": true,
+          "description": "test_conf.py::test_pair_of_conf_and_json[45-generic.conf-test-45-generic.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 21,
+          "ok": true,
+          "description": "test_conf.py::test_pair_of_conf_and_json[48-guessfamily.conf-test-48-guessfamily.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 22,
+          "ok": true,
+          "description": "test_conf.py::test_pair_of_conf_and_json[49-sansserif.conf-test-49-sansserif.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 23,
+          "ok": true,
+          "description": "test_conf.py::test_pair_of_conf_and_json[60-generic.conf-test-60-generic.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 24,
+          "ok": true,
+          "description": "test_conf.py::test_pair_of_conf_and_json[60-latin.conf-test-60-latin.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 25,
+          "ok": true,
+          "description": "test_conf.py::test_pair_of_conf_and_json[70-no-bitmaps-and-emoji.conf-test-70-no-bitmaps-and-emoji.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 26,
+          "ok": true,
+          "description": "test_conf.py::test_pair_of_conf_and_json[70-no-bitmaps-except-emoji.conf-test-70-no-bitmaps-except-emoji.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 27,
+          "ok": true,
+          "description": "test_conf.py::test_pair_of_conf_and_json[90-synthetic.conf-test-90-synthetic.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 28,
+          "ok": true,
+          "description": "test_conf.py::test_json[test-appfont.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 29,
+          "ok": true,
+          "description": "test_conf.py::test_json[test-filter.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 30,
+          "ok": true,
+          "description": "test_conf.py::test_json[test-genericfamily.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 31,
+          "ok": true,
+          "description": "test_conf.py::test_json[test-issue-286.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 32,
+          "ok": true,
+          "description": "test_conf.py::test_json[test-issue-525-2.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 33,
+          "ok": true,
+          "description": "test_conf.py::test_json[test-issue-525.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 34,
+          "ok": true,
+          "description": "test_conf.py::test_json[test-issue-539.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 35,
+          "ok": true,
+          "description": "test_conf.py::test_json[test-locale.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 36,
+          "ok": true,
+          "description": "test_conf.py::test_json[test-namedinstance.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 37,
+          "ok": true,
+          "description": "test_conf.py::test_json[test-style-match.json]",
+          "directive": "SKIP No test executable. maybe missing json-c dependency?"
+        },
+        {
+          "number": 38,
+          "ok": true,
+          "description": "test_fontations_ft_query.py::test_fontations_freetype_fcquery_equal[None]",
+          "directive": "SKIP Skipped: Network access diabled"
+        },
+        {
+          "number": 42,
+          "ok": true,
+          "description": "test_genconf.py::test_genconf[None]",
+          "directive": "SKIP Skipped: Network access diabled"
+        },
+        {
+          "number": 44,
+          "ok": true,
+          "description": "test_sandbox.py::test_bz106618",
+          "directive": "SKIP No bwrap installed or not executable"
+        },
+        {
+          "number": 45,
+          "ok": true,
+          "description": "test_sandbox.py::test_different_content",
+          "directive": "SKIP No bwrap installed or not executable"
+        },
+        {
+          "number": 46,
+          "ok": true,
+          "description": "test_sandbox.py::test_md5_consistency",
+          "directive": "SKIP No bwrap installed or not executable"
+        },
+        {
+          "number": 47,
+          "ok": true,
+          "description": "test_sandbox.py::test_gen_testcache",
+          "directive": "SKIP No bwrap installed or not executable"
+        },
+        {
+          "number": 48,
+          "ok": true,
+          "description": "test_sandbox.py::test_gen_testcache_no_check",
+          "directive": "SKIP No bwrap installed or not executable"
+        }
+      ],
+      "skip_reasons": {
+        "FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set": 3,
+        "No test executable. maybe missing json-c dependency?": 18,
+        "Skipped: Network access diabled": 2,
+        "No bwrap installed or not executable": 5
+      },
+      "discovery_sha256": "56a00038b5856e654369ad7a4be58d30a1d128374aa6b5cba1931ec26d9dc9e4",
+      "actual_TAP_sha256": "b82f16df01bb79e9717151a9c781a76a24309b865e7a646eaebf6e2c8800f532"
+    },
+    "all_original_test_data_inputs_bound": 71,
+    "declared_framework_shebang_only_changes": {
+      "test/test_fontations_ft_query.py": {
+        "original_sha256": "0a7b6ff7992aebda5b6e44544bdb9ae1073b2c30b689b865848b6ac0bfb10238",
+        "actual_sha256": "5947da66c667dd17627157147572e4e2e401999cc7417973eccb885b61f14b45",
+        "only_declared_shebang_rewritten": true
+      },
+      "test/test_issue431.py": {
+        "original_sha256": "c9932827f083089916901b1eb47a01219c2015a3db44dd6f12d215feee71deaf",
+        "actual_sha256": "9fc331074524258130883f485631b86f5eca3024cd699c909787268c976343bc",
+        "only_declared_shebang_rewritten": true
+      },
+      "test/test_issue547.py": {
+        "original_sha256": "bf11f284cd5bf1e6cc78908c2e540e4bafab5121534a104684f58690ea47896b",
+        "actual_sha256": "8d2a159a0f2e8c313ec79e82c43b0d1738a8509ee6e7cf34dcfd1d6703afa42a",
+        "only_declared_shebang_rewritten": true
+      }
+    },
+    "assertions_and_test_data_bodies_preserved": true,
+    "original_producer_JUnit_observer_failure": {
+      "original_result_retained_sha256": "8f01a5f8832d7f45e069101006998a91dfea957e32c6537e066e55552e9ec03c",
+      "all_original_commands_exit_zero": true,
+      "requested_XML_not_produced": true,
+      "cause": "Ambient PYTEST_ADDOPTS not passed through the ports SETENVI(-i) environment boundary. Future observation must explicitly preserve TEST_ENV and append the report-only variable.",
+      "read_only_completion_uses_actual_TAP_and_independent_discovery": true,
+      "original_tests_not_rerun_to_repair_observer": true
+    },
+    "full_TEST_qualification": false,
+    "normal_Fontconfig_installation": false,
+    "missing_dependency_fix": {
+      "current_review_code_commit": "1c38241b2e4a06c2df013f736c0a2e7fbe56fdfc",
+      "current_native_composition": "82752667e9214aa089bc88be560a9201989a0a5e",
+      "Fontconfig_TEST_BUILD_DEPENDS": "json-c>=0:devel/json-c",
+      "reason": "Original test/meson.build creates test-conf only when jsonc_dep is found;18 original configuration cases otherwise skip.",
+      "default_options_and_arguments_unchanged": true,
+      "no_test_assertion_or_golden_changed": true
+    },
+    "json_c_prerequisite": {
+      "origin": "devel/json-c",
+      "version": "0.19_1",
+      "source_revision": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
+      "package": {
+        "bytes": 77750,
+        "sha256": "c7d2455a00b607234b79553107ebfb659f1147f5acec1577c5483f035686410b"
+      },
+      "all8original_construction_targets_pass": true,
+      "original_CTest_selected_completed": 28,
+      "PASS": 27,
+      "FAIL": 1,
+      "failed_case": "test_json_parse_cli",
+      "observed_missing_tool": "xxd: not found",
+      "fixed_TEST_DEPENDS": "xxd:sysutils/xxd",
+      "all_original_scripts_assertions_golden_canary_UTF8_tail_inputs_retained": true,
+      "normal_installation": false,
+      "remaining": "Qualify native xxd, then fresh json-c original28case run and independent API/lifecycle/custody/normal acceptance."
+    },
+    "current_full_native_source": {
+      "revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+      "tree": "a91b5e451d80d28237470a26389894fb56c75322",
+      "Git_members_verified": 184388,
+      "changed_or_added_from_fadd": 11,
+      "removed": 0,
+      "whole_SDK121_frozen_base_accounts_cache_mount_old_source_guards_pass": true,
+      "older_qualified_package_receipts_retain_actual_source_revisions": true
+    },
+    "remaining": [
+      "Native xxd qualification and normal delivery, then fresh json-c original suite and sealed/default C API/lifecycle/custody/normal.",
+      "Fresh source-bound Fontconfig TEST run must execute the18 JSON configuration cases; retain baseline/network/Linux bwrap skip reasons.",
+      "Actual older cache-version baseline remains a distinct release gate; do not substitute another build of the same version.",
+      "Fresh default font/cache/XML/CLI/shared/static and actual Lua/sample/font-cache-trigger lifecycle/custody/normal; all wider1.6 gates."
+    ]
+  },
+  "selected_original_default_XXD_qualified_20261126": {
+    "observed_utc": "2026-11-26T08:06:59.724759+00:00",
+    "status": "pass-bounded-native-ARM-XXD-normal122",
+    "scope": "Standalone xxd native development acceptance; no upstream Vim integration-suite, canonical ownership/provenance/lifecycle/SDK/TCB, matching AMD64/source/kernel or fullrelease claim.",
+    "origin": "sysutils/xxd",
+    "version": "9.2.1302",
+    "source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+    "package": {
+      "bytes": 20985,
+      "sha256": "4d68544c8a9dc04a62e3c95ce8c9397bb7b649b377a4d37ecfae4d3d1e9b66f2"
+    },
+    "original_eight_construction_targets_pass": true,
+    "version_and_distinfo_imported_from_actual_editors_vim": true,
+    "selected_Git_input_count": 257,
+    "selected_input_closure": {
+      "sysutils/xxd": 2,
+      "editors/vim": 12,
+      "Mk": 211,
+      "Templates": 32
+    },
+    "official_Vim_source_archive": {
+      "bytes": 20393375,
+      "sha256": "a9d2a2f57d5d3149cff8342b8a0b063d410df5d5a4b46d898610059648b6a17e"
+    },
+    "original_xxd_C_Makefile_license_manual_bytes_equal_archive": 4,
+    "original_port_test_bridge": {
+      "exit": 0,
+      "registered_upstream_cases": 0,
+      "upstream_Vim_selfsuite_pass_claimed": false,
+      "scope": "Original standalone xxd Makefile has only build/clean; full Vim integration tests are not the selected port bridge. Independent sealed/default CLI acceptance is mandatory."
+    },
+    "independent_private_and_default_checks_each": 211,
+    "actual_CLI_commands_each": 69,
+    "independent_stream_file_and_format_semantics_compared_each": 68,
+    "coverage": [
+      "Independent plain hex columns1/7/16/30/31/256 and uppercase expected bytes over empty, binary, all-byte, zero and boundary/large inputs.",
+      "Independent reverse-hex and formatted byte oracles; grouping, offsets, seek/limit, existing-file patching without truncation.",
+      "C include byte/length oracle and actual base-compiler C consumer.",
+      "Help/error/missing-file status checks, valid recovery, actual version and base-libc-only ELF binding.",
+      "Exact original json-c regression operation: e2 hex decodes to byte0xe2."
+    ],
+    "actual_original_jsonc_E2_fixture_proven": true,
+    "generated_C_include_compiles_and_runs": true,
+    "base_only_ELF_provider": "/lib/libc.so.7",
+    "private_LD_or_PYTHONPATH_override": false,
+    "original_scripts_Lua_shared_providers_declared": false,
+    "actual_pkg_chroot_add_force_delete_readd_transactions": 6,
+    "fixture_locked_accounts_readonly_base_devfs_unmounted": true,
+    "runtime_invocation_inside_pkg_fixture_claimed": false,
+    "normal_acceptance": {
+      "actual_offline_admission_and_integrity": true,
+      "before_count": 121,
+      "accepted_bounded_development_count": 122,
+      "all6_payloads_exact": true,
+      "all121_inherited_prefixes_preserved": true,
+      "default_check_labels_and_byte_format_file_semantics_equal_private": true,
+      "cache_bytes_metadata_paths_provider_priorities_preserved": true,
+      "whole_SDK122_prefix_raw_database_preserved_through_default_consumers": true
+    },
+    "extra_read_only_installed_manual_check": {
+      "actual_default_installed_gzip_manual_equals_original_verified_Vim_manual": true,
+      "uncompressed_bytes": 11814,
+      "uncompressed_sha256": "ab329ce79d69f86007ace6040d5915fc3453368ba0568bed8a944f9e5bd02ae5"
+    },
+    "first_observer_failure_retained": {
+      "wrong_previous_SDK120_snapshot_filename": true,
+      "actual_CLI_cases_run_before_failure": 0,
+      "corrected_current_SDK121_guard_not_weakened": true,
+      "failed_result_sha256": "f799851823005483fa4e25a1582ba755b94919790768e95590ca0bfb53bc0248"
+    },
+    "two_host_custody": {
+      "source_failure_private_lifecycle": {
+        "nodes": 1159,
+        "archive_bytes": 33642051,
+        "archive_sha256": "d9e2a0229e42461d5337ba68de33a8612acca892fbb80690748cf3f9fe98ce88",
+        "inventory_sha256": "29ae4c77ebd8fb74c83473bd76e5bd9d27d2b9d98f2be785e7a5d07d1340d191",
+        "every_archived_node_verified_on_native_ARM_and_physical_Intel": true
+      },
+      "normal": {
+        "nodes": 246,
+        "archive_bytes": 18101872,
+        "archive_sha256": "a022121ab7757ee428d9ebc270dc9aa26b98d2d9710350888176db0083465855",
+        "inventory_sha256": "56522e93b3f483ec40d377b12370faf3214371837c06a733516e9324985144ed",
+        "every_archived_node_verified_on_native_ARM_and_physical_Intel": true
+      }
+    },
+    "remaining": [
+      "Fresh source-declared json-c28case original suite, independent C API/shared/static/CMake/pkgconf, actual ldconfig lifecycle/custody/normal.",
+      "Fresh Fontconfig TEST must execute18 missing JSON configuration cases; retain original reasoned baseline/network/Linux bwrap skips.",
+      "Default Fontconfig font/cache/XML/CLI/shared/static and Lua/sample/trigger lifecycle/custody/normal; all broader1.6 gates."
+    ]
+  },
+  "selected_original_JsonC_suite_20261126": {
+    "observed_utc": "2026-11-26T08:14:51.086314+00:00",
+    "status": "pass-original-native-suite-independent-package-qualification-pending",
+    "scope": "Native ARM default artifact and complete original suite only. Independent API/shared/static/pkgconf/CMake, loader-cache lifecycle, custody and normal installation remain open, together with canonical and full release gates.",
+    "origin": "devel/json-c",
+    "version": "0.19_1",
+    "source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+    "official_source": {
+      "GitHub_commit": "81092b3",
+      "bytes": 226672,
+      "sha256": "8c32ce99327465c73b5f81d0b719b6604ddc8e57ca56add5b43c2f6873b2a211"
+    },
+    "package": {
+      "bytes": 77781,
+      "sha256": "86e79f71985e45e3ad5059ab60fcf6457fb84d6305f1ca82af9631272eee658f"
+    },
+    "selected_original_Git_inputs": 248,
+    "all_eight_original_construction_targets_pass": true,
+    "default_BUILD_TESTING_off_original_testing_bridge_on_after_packaging": true,
+    "original_make_test_exit": 0,
+    "original_CTest": {
+      "selected": 28,
+      "completed": 28,
+      "PASS": 28,
+      "FAIL": 0,
+      "SKIP": 0,
+      "all_unique_names_native_argv_workdirs_and_completion_match_original_discovery": true,
+      "runtime_log_sha256": "e2de0b90340c3b12ce633b850a7158931213709e4c7af23369f6f2bf9be4e4ef",
+      "cases": [
+        {
+          "number": 1,
+          "name": "test_json_parse_cli",
+          "result": "PASS",
+          "complete_original_output_sha256": "107fcfc64e121ee5cd0bc783e5dddc9d73fa69a97b488555a2930fc06e5bd94f"
+        },
+        {
+          "number": 2,
+          "name": "test1",
+          "result": "PASS",
+          "complete_original_output_sha256": "cbb25c09850da33f4031ae622ebfc7d2fb89e7e24f5faaf45316fdcf2812c8db"
+        },
+        {
+          "number": 3,
+          "name": "test2",
+          "result": "PASS",
+          "complete_original_output_sha256": "3a29a6b1ca923ef334cf56ff457f4c7a0e855bbfdcd1da9f21dba4416cfdf240"
+        },
+        {
+          "number": 4,
+          "name": "test4",
+          "result": "PASS",
+          "complete_original_output_sha256": "fb88f32d2b28043b40a19bd938ccade45ae3776ccaf6f6db10b275fbcc05fb9c"
+        },
+        {
+          "number": 5,
+          "name": "testReplaceExisting",
+          "result": "PASS",
+          "complete_original_output_sha256": "b3d25b68bbbf37e5a35ce382e041679b96660875eeb276c7cda45b332f05e3ed"
+        },
+        {
+          "number": 6,
+          "name": "test_cast",
+          "result": "PASS",
+          "complete_original_output_sha256": "436bc2fe3172715b7988f412dd5cb1720a16567595c61ace25e6f708d96a6b22"
+        },
+        {
+          "number": 7,
+          "name": "test_charcase",
+          "result": "PASS",
+          "complete_original_output_sha256": "0c1baa4dae1c5f328886b0fad31326cb95c041bb17a6f9f4e25dd27bb63f35f0"
+        },
+        {
+          "number": 8,
+          "name": "test_compare",
+          "result": "PASS",
+          "complete_original_output_sha256": "bfcde78b653579ca84b06a92000bd66cd2397c72791d710a41a42825f0d6b9da"
+        },
+        {
+          "number": 9,
+          "name": "test_deep_copy",
+          "result": "PASS",
+          "complete_original_output_sha256": "709e82597e728b505fcbf79d8a28548df3df09876f3e705833572c8b77d31d60"
+        },
+        {
+          "number": 10,
+          "name": "test_deep_nesting",
+          "result": "PASS",
+          "complete_original_output_sha256": "6d1051d06b30e97aaa825a0ec5b0b462127f140c71b60cddc06ede78094b87ab"
+        },
+        {
+          "number": 11,
+          "name": "test_double_serializer",
+          "result": "PASS",
+          "complete_original_output_sha256": "43f88311fb5f4d207db63d2adc5aa02f4921b1754bd2d640d11a4b9a80c5470d"
+        },
+        {
+          "number": 12,
+          "name": "test_float",
+          "result": "PASS",
+          "complete_original_output_sha256": "973f4b6a37b23d03058061c7b44d9427f24341087c806f5c8ea1fcfc04e363f8"
+        },
+        {
+          "number": 13,
+          "name": "test_int_add",
+          "result": "PASS",
+          "complete_original_output_sha256": "fcebd29d47fc82692f48aab06e5cc7b7574aca8ebde82847b03b93d3dc7bc5ac"
+        },
+        {
+          "number": 14,
+          "name": "test_int_get",
+          "result": "PASS",
+          "complete_original_output_sha256": "1c04ab53c6a3f73735f9ca434f9afb8abd0cb1a7acbc8ed1505e7430cb2eaa8e"
+        },
+        {
+          "number": 15,
+          "name": "test_locale",
+          "result": "PASS",
+          "complete_original_output_sha256": "4637eafeab5ac45a98ff10d916140ee35337f7c7300f1bcc33ebfaf3a834a85f"
+        },
+        {
+          "number": 16,
+          "name": "test_null",
+          "result": "PASS",
+          "complete_original_output_sha256": "dfcd61bb368c524e74d3dc196c6aaf14cf0752b6273c3f9f419493981141d171"
+        },
+        {
+          "number": 17,
+          "name": "test_parse",
+          "result": "PASS",
+          "complete_original_output_sha256": "d39ccd3c5d11eab4dbae62164a706a405b3626357b56e20f6585bbf9eff8cee5"
+        },
+        {
+          "number": 18,
+          "name": "test_parse_int64",
+          "result": "PASS",
+          "complete_original_output_sha256": "f92e7237fd0c97ea9dbf2bac32b1e494269054bdace789e9747b52aaa80a1f8e"
+        },
+        {
+          "number": 19,
+          "name": "test_printbuf",
+          "result": "PASS",
+          "complete_original_output_sha256": "c9b007f224fa92db375ef6445cc82b96fc55a4cc751f2ece2e4df3a484e38f6e"
+        },
+        {
+          "number": 20,
+          "name": "test_set_serializer",
+          "result": "PASS",
+          "complete_original_output_sha256": "a4f3307df5329a535bb962cb1675841be968e4317038019ec74d7b5ad136fb8c"
+        },
+        {
+          "number": 21,
+          "name": "test_set_value",
+          "result": "PASS",
+          "complete_original_output_sha256": "18d17d423187b0b8701fe24b7939daf09edc308a4703d6b943249b8df4862bbd"
+        },
+        {
+          "number": 22,
+          "name": "test_strerror",
+          "result": "PASS",
+          "complete_original_output_sha256": "d0927eebdfb9d055aa6f185b110a48ea34ede31064eee95e6a0aeff1c3fe562c"
+        },
+        {
+          "number": 23,
+          "name": "test_util_file",
+          "result": "PASS",
+          "complete_original_output_sha256": "aa94e97235b6a7187ce39a40949a502a43382daac167760304da93af71f8570a"
+        },
+        {
+          "number": 24,
+          "name": "test_visit",
+          "result": "PASS",
+          "complete_original_output_sha256": "fc70518b322a8de1dff19c1299af98d155980c05232f878f516d920ae0f01802"
+        },
+        {
+          "number": 25,
+          "name": "test_object_iterator",
+          "result": "PASS",
+          "complete_original_output_sha256": "690c03e2c61335b3bcd49787d670fdcdca80bbc8830a7ab044f7fa975c1a37df"
+        },
+        {
+          "number": 26,
+          "name": "test_json_pointer",
+          "result": "PASS",
+          "complete_original_output_sha256": "f8ffae5b549c6588b873fc9052c36ac8875eb4f1fb5db92e89f9db5db06c1987"
+        },
+        {
+          "number": 27,
+          "name": "test_safe_json_pointer_set",
+          "result": "PASS",
+          "complete_original_output_sha256": "eaed8e2ebb025e5777e439f38534077baaca196270f29f0ad92980129552bc19"
+        },
+        {
+          "number": 28,
+          "name": "test_json_patch",
+          "result": "PASS",
+          "complete_original_output_sha256": "cb420225433aed67a9e3d6670ae6057b34d7515408add4f416080f39a9f5bae1"
+        }
+      ]
+    },
+    "all_original_test_C_scripts_fixtures_and_golden_bodies_equal_official_archive": 79,
+    "source_test_body_audit_sha256": "3fd74dc17973731ea3674adc7a709fe7d3b076c45178e1da89729e2c72abb7df",
+    "production_libraries_app_and_package_unchanged_through_original_tests": true,
+    "actual_xxd_prerequisite": "Qualified normal xxd 9.2.1302; declared TEST_DEPENDS=xxd:sysutils/xxd before the original suite.",
+    "earlier_original_missing_xxd_failure_retained": {
+      "PASS": 27,
+      "FAIL": 1,
+      "failed_case": "test_json_parse_cli",
+      "assertions_golden_canary_and_invalid_UTF8_input_unchanged": true
+    },
+    "observer_trace_recovery": {
+      "original_error": "CTest discovery truncated LastTest.log to 121 bytes before the producer saved it.",
+      "first_healthy_run_stdout_all_28_pass": true,
+      "first_healthy_complete_build_and_test_outputs_preserved_before_replay": true,
+      "original_full_28_case_make_test_replayed_once_to_capture_trace": true,
+      "compiled_production_and_test_binaries_unchanged": 100,
+      "no_selection_assertion_or_golden_change": true,
+      "first_healthy_stdout_sha256": "f00ee55ad47e96d03aecfbf0a7fbe644326986ae14fedbca41a5b371075d6b6a",
+      "trace_recovery_result_sha256": "4d5365c180fba1c9e54584e4e663dd0f8ef407959738f453c78f1533a7b773e8"
+    },
+    "whole_SDK122_raw_database_frozen_SDK_base_accounts_loader_cache_mounts_and_selected_source_guards_pass": true,
+    "normal_installation": false,
+    "remaining": [
+      "Independent sealed C API, actual shared/static bindings, pkgconf and CMake consumers.",
+      "Actual original loader-cache package lifecycle, full source/failure/private/lifecycle custody on both hosts, then normal dependency/integrity/API acceptance.",
+      "Fresh Fontconfig TEST must execute its 18 missing JSON configuration cases; fresh default runtime and Lua/sample/font-cache-trigger acceptance remain separate.",
+      "All canonical Component, SDK, TCB, matched source/kernel/AMD64, desktop, physical hardware, installer, update/rollback and full release gates."
     ]
   }
 }

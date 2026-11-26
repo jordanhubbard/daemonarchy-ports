@@ -1,0 +1,118 @@
+{
+  "observed_utc": "2026-11-26T07:19:53.960423+00:00",
+  "status": "pass-bounded-native-ARM-PytestTAP-normal121",
+  "scope": "Native bounded development acceptance only. Canonical ownership/provenance/lifecycle/SDK/TCB, matching source/kernel/AMD64, desktop/apps/all47platform/physical/installer/update/rollback/media/signing/fullrelease remain open.",
+  "origin": "devel/py-pytest-tap",
+  "version": "3.6",
+  "source_revision": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
+  "package": {
+    "bytes": 11421,
+    "sha256": "c79fa3fbc2cdd52e197524ec3b8ca65788a3d40b9e25220cfaa20cfa7c67e246"
+  },
+  "eight_original_construction_targets_pass": true,
+  "original_selfsuite": {
+    "discovered": 17,
+    "completed": 17,
+    "PASS": 17,
+    "SKIP": 0,
+    "FAIL": 0,
+    "ERROR": 0,
+    "duplicate_display_ids": 0,
+    "all_case_file_line_id_signatures_unique_and_ordered_completions_match": true,
+    "discovery_includes_function_source_locations_and_item_types": true,
+    "native_junit_xml_sha256": "976a40aaa75ed35b7b93f2d2a3535255c34b72ed6ce0a936de2c79768a96151e",
+    "native_discovery_sha256": "efbc40f118b8d924097a3ea0219151613ddd5b7030a9fa5868c92e13c18fb2fc"
+  },
+  "original_test_conftest_files_byte_equal_verified_sdist": 5,
+  "all_original_Python_source_and_test_bodies_equal_verified_sdist": 7,
+  "all_original_nested_pytester_output_retained_sha256": "b869b9384c1e5fdff6b1240f23a04a70723424f3580065b293093029cc66b8e5",
+  "selected_port_Mk_Templates_Git_inputs": 246,
+  "private_acceptance": {
+    "independent_checks": 172,
+    "actual_child_commands": 25,
+    "TAP_documents": 22,
+    "TAP_points": 48,
+    "actual_distribution_entry_point_autoload_and_disable_control": true,
+    "stream_alias_files_combined_outdir_help_logs_and_error_paths": true,
+    "pass_failure_call_error_setup_skip_TODO_nonstrict_strict_XPASS_and_unittest": true,
+    "independent_stdlib_TAP_count_number_identity_status_directive_oracle": true,
+    "actual_normal_Meson_TAP_consumer": [
+      {
+        "name": "authored-pytest-tap-status:pass",
+        "result": "OK",
+        "returncode": 0
+      },
+      {
+        "name": "authored-pytest-tap-status:teardown-error",
+        "result": "ERROR",
+        "returncode": 1
+      },
+      {
+        "name": "authored-pytest-tap-status:failure",
+        "result": "FAIL",
+        "returncode": 1
+      }
+    ],
+    "receipt_sha256": "d02ec0706d233af54c38a21388f4b6dafc41aae4602af3a1138e4f592b36f410"
+  },
+  "upstream_teardown_TAP_scope": {
+    "call_phase_ok_point_can_precede_teardown_error": true,
+    "nonzero_pytest_process_status_retained_and_required": true,
+    "actual_Meson_rejects_this_case_as_ERROR": true,
+    "TAP_stream_alone_is_not_the_complete_result": true
+  },
+  "runtime_providers": {
+    "py312-pytest": "9.1.1,1",
+    "py312-tap-py": "3.2.1",
+    "python312": "3.12.16"
+  },
+  "xdist_scope": "Three original mock hook-contract cases only; actual distributed transport unqualified.",
+  "original_lifecycle": {
+    "actual_pkg_add_force_delete_readd_transactions": 6,
+    "exact_payloads": 16,
+    "scripts_Lua_shared_providers_declared": false,
+    "no_declared_hooks_suppressed_or_invented": true,
+    "locked_accounts_readonly_base_private_devfs_full_unmount": true,
+    "private_runtime_dependency_delivery_or_solver_claimed": false,
+    "receipt_sha256": "b8d38a73f5bcd85c7eb68441ceb1cadf3eb393ea062aedeb42966fa8983cfad6"
+  },
+  "normal_acceptance": {
+    "actual_offline_dependency_solver_and_integrity": true,
+    "packages_before": 120,
+    "accepted_bounded_development_count": 121,
+    "all16_payloads_exact": true,
+    "all120_inherited_prefixes_preserved": true,
+    "actual_default_checks": 172,
+    "actual_default_commands": 25,
+    "actual_default_TAP_docs_and_points": [
+      22,
+      48
+    ],
+    "default_completed_checks_and_typed_TAP_semantics_and_Meson_statuses_equal_private": true,
+    "private_LD_or_PYTHONPATH_overrides": false,
+    "loader_cache_bytes_metadata_paths_and_candidate_priorities_preserved": true,
+    "whole_SDK121_prefix_raw_database_preserved_through_default_consumers": true,
+    "receipt_sha256": "ab5437fbe43bd7078cf16ee856e4f9391784b5472646182b6ebe2d2cb0452111"
+  },
+  "two_host_custody": {
+    "source_private_lifecycle": {
+      "nodes": 1531,
+      "archive_bytes": 13284645,
+      "archive_sha256": "bd4ddcfd244035316b75dbfd3a88e6b50d54a0316daa387abb96da16751358ff",
+      "inventory_sha256": "817701795313e42bae3203ff89e2a30c39ba1c9b8bb4d9f768ea0121953e7187",
+      "every_archived_node_verified_on_native_ARM_and_physical_Intel": true
+    },
+    "normal": {
+      "nodes": 291,
+      "archive_bytes": 18087348,
+      "archive_sha256": "abf878d0a0ffedc0959bc2099a6eff1d96365c840607e1047b750e95967a4219",
+      "inventory_sha256": "d96ab93d2855b11043ae7cf3858bd9aad6dca6bbd0f5c88ddcec0832499aa8b7",
+      "every_archived_node_verified_on_native_ARM_and_physical_Intel": true
+    }
+  },
+  "remaining": [
+    "Fontconfig full16program originalTEST/nestedPytestTAP case audit after this normal prerequisite.",
+    "Fresh default Fontconfig independent font/cache/XML/CLI/shared/static acceptance and actual Lua/sample/font-cache-trigger lifecycle, custody and normal delivery.",
+    "Full1.6 release gates remain open."
+  ]
+}

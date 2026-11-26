@@ -1,0 +1,92 @@
+{
+  "observed_utc": "2026-11-26T08:06:59.724759+00:00",
+  "status": "pass-bounded-native-ARM-XXD-normal122",
+  "scope": "Standalone xxd native development acceptance; no upstream Vim integration-suite, canonical ownership/provenance/lifecycle/SDK/TCB, matching AMD64/source/kernel or fullrelease claim.",
+  "origin": "sysutils/xxd",
+  "version": "9.2.1302",
+  "source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+  "package": {
+    "bytes": 20985,
+    "sha256": "4d68544c8a9dc04a62e3c95ce8c9397bb7b649b377a4d37ecfae4d3d1e9b66f2"
+  },
+  "original_eight_construction_targets_pass": true,
+  "version_and_distinfo_imported_from_actual_editors_vim": true,
+  "selected_Git_input_count": 257,
+  "selected_input_closure": {
+    "sysutils/xxd": 2,
+    "editors/vim": 12,
+    "Mk": 211,
+    "Templates": 32
+  },
+  "official_Vim_source_archive": {
+    "bytes": 20393375,
+    "sha256": "a9d2a2f57d5d3149cff8342b8a0b063d410df5d5a4b46d898610059648b6a17e"
+  },
+  "original_xxd_C_Makefile_license_manual_bytes_equal_archive": 4,
+  "original_port_test_bridge": {
+    "exit": 0,
+    "registered_upstream_cases": 0,
+    "upstream_Vim_selfsuite_pass_claimed": false,
+    "scope": "Original standalone xxd Makefile has only build/clean; full Vim integration tests are not the selected port bridge. Independent sealed/default CLI acceptance is mandatory."
+  },
+  "independent_private_and_default_checks_each": 211,
+  "actual_CLI_commands_each": 69,
+  "independent_stream_file_and_format_semantics_compared_each": 68,
+  "coverage": [
+    "Independent plain hex columns1/7/16/30/31/256 and uppercase expected bytes over empty, binary, all-byte, zero and boundary/large inputs.",
+    "Independent reverse-hex and formatted byte oracles; grouping, offsets, seek/limit, existing-file patching without truncation.",
+    "C include byte/length oracle and actual base-compiler C consumer.",
+    "Help/error/missing-file status checks, valid recovery, actual version and base-libc-only ELF binding.",
+    "Exact original json-c regression operation: e2 hex decodes to byte0xe2."
+  ],
+  "actual_original_jsonc_E2_fixture_proven": true,
+  "generated_C_include_compiles_and_runs": true,
+  "base_only_ELF_provider": "/lib/libc.so.7",
+  "private_LD_or_PYTHONPATH_override": false,
+  "original_scripts_Lua_shared_providers_declared": false,
+  "actual_pkg_chroot_add_force_delete_readd_transactions": 6,
+  "fixture_locked_accounts_readonly_base_devfs_unmounted": true,
+  "runtime_invocation_inside_pkg_fixture_claimed": false,
+  "normal_acceptance": {
+    "actual_offline_admission_and_integrity": true,
+    "before_count": 121,
+    "accepted_bounded_development_count": 122,
+    "all6_payloads_exact": true,
+    "all121_inherited_prefixes_preserved": true,
+    "default_check_labels_and_byte_format_file_semantics_equal_private": true,
+    "cache_bytes_metadata_paths_provider_priorities_preserved": true,
+    "whole_SDK122_prefix_raw_database_preserved_through_default_consumers": true
+  },
+  "extra_read_only_installed_manual_check": {
+    "actual_default_installed_gzip_manual_equals_original_verified_Vim_manual": true,
+    "uncompressed_bytes": 11814,
+    "uncompressed_sha256": "ab329ce79d69f86007ace6040d5915fc3453368ba0568bed8a944f9e5bd02ae5"
+  },
+  "first_observer_failure_retained": {
+    "wrong_previous_SDK120_snapshot_filename": true,
+    "actual_CLI_cases_run_before_failure": 0,
+    "corrected_current_SDK121_guard_not_weakened": true,
+    "failed_result_sha256": "f799851823005483fa4e25a1582ba755b94919790768e95590ca0bfb53bc0248"
+  },
+  "two_host_custody": {
+    "source_failure_private_lifecycle": {
+      "nodes": 1159,
+      "archive_bytes": 33642051,
+      "archive_sha256": "d9e2a0229e42461d5337ba68de33a8612acca892fbb80690748cf3f9fe98ce88",
+      "inventory_sha256": "29ae4c77ebd8fb74c83473bd76e5bd9d27d2b9d98f2be785e7a5d07d1340d191",
+      "every_archived_node_verified_on_native_ARM_and_physical_Intel": true
+    },
+    "normal": {
+      "nodes": 246,
+      "archive_bytes": 18101872,
+      "archive_sha256": "a022121ab7757ee428d9ebc270dc9aa26b98d2d9710350888176db0083465855",
+      "inventory_sha256": "56522e93b3f483ec40d377b12370faf3214371837c06a733516e9324985144ed",
+      "every_archived_node_verified_on_native_ARM_and_physical_Intel": true
+    }
+  },
+  "remaining": [
+    "Fresh source-declared json-c28case original suite, independent C API/shared/static/CMake/pkgconf, actual ldconfig lifecycle/custody/normal.",
+    "Fresh Fontconfig TEST must execute18 missing JSON configuration cases; retain original reasoned baseline/network/Linux bwrap skips.",
+    "Default Fontconfig font/cache/XML/CLI/shared/static and Lua/sample/trigger lifecycle/custody/normal; all broader1.6 gates."
+  ]
+}
