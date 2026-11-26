@@ -1,6 +1,6 @@
 --- setup3lib.py.orig
 +++ setup3lib.py
-@@ -18,7 +18,36 @@
+@@ -18,7 +18,38 @@
      import logging
      from setuptools import Distribution as _Distribution
      from distutils.core import Command
@@ -31,14 +31,16 @@
 +        class _BuildPyCommand(_BuildPy, Mixin2to3):
 +            def byte_compile(self, files):
 +                files = list(files)
++                python_files = [path for path in files
++                                if path.endswith('.py')]
 +                if self.distribution.use_2to3:
-+                    self.run_2to3(files)
++                    self.run_2to3(python_files)
 +                    self.run_2to3(self.distribution.convert_2to3_doctests, True)
 +                return _BuildPy.byte_compile(self, files)
      from distutils import dir_util, file_util, log
      import setuptools.command.test
      from pkg_resources import normalize_path
-@@ -66,7 +95,17 @@
+@@ -66,7 +97,17 @@
              self.test_build_dir = None
              self.doctest_exts = ['.py', '.rst']
              self.pyversion_patching = False
@@ -56,7 +58,7 @@
 
      class BuildTestsCommand (Command, Mixin2to3):
          # Create mirror copy of tests, convert all .py files using 2to3
-@@ -135,6 +174,8 @@
+@@ -135,6 +176,8 @@
      def setup(*args, **kwargs):
          kwargs.setdefault('distclass', Distribution)
          cmdclass = kwargs.setdefault('cmdclass', {})
