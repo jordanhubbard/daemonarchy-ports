@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 111,
+  "normal_development_package_count": 112,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -2334,6 +2334,12 @@
       "skipped": 0,
       "independent_discovery_command_completion_audit": true,
       "scope": "Native ARM original selected APNG/SIMD suite. Physical Intel existing package baseline is separate."
+    },
+    "libdatrie": {
+      "runner": "Unmodified original make check, with10actualTRS outcomes matched to original TESTS; no declared port test bridge.",
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0
     }
   },
   "pending": [
@@ -2365,7 +2371,8 @@
     "Original default D-Bus MANPAGES/X11 construction and selected original test inventory, sealed/runtime/custody/normal integration; then full original GLib suite and desktop closure. OpenSP six original failures, two absent XInclude XSDs, canonical lifecycle/SDK/TCB, matching AMD64, physical matrix, installer/update/rollback, final media/signing/publication remain open.",
     "Current checkpoint: original default D-Bus is normally integrated among110bounded ARM development packages after six real private chroot lifecycle transactions, default runtime and complete independent two-host custody. Fresh original default GLib build/test started because prior configuration lacked D-Bus discovery. Full GLib results and all broader release gates remain pending; earlier count/tool checkpoints above are historical.",
     "Current GLib checkpoint: selected409OK/9originalSKIP/0ERROR;6989TAP;41private and41default consumers;6actualoriginal-hooktransactions;68906source/private/failure/lifecycle nodes and233normal/completion nodes independently verified on nativeARM+Intel. Actual selected artifact normally integrated; accepted bounded development count110 unchanged. Original skipped/optional/failing variants and default-kernel-capacity coverage; remaining original suite gaps including six OpenSP failures and absent XInclude schemas; matching amd64/aarch64 source/SDK/kernel; full desktop/apps; canonical ownership/provenance/lifecycle/SDK/TCB; physical fleet, installer/update/rollback/media, freeze/signing/publication remain open.",
-    "Current PNG checkpoint: original37CTest,31private codec+15tools,6real lifecycle transactions, actual normal install/hooks plus31codecs and30metadata/tools,3CMake clients pass. Accepted bounded normal111. Graphviz original-default metadata plan has59unbuilt nodes/32ready; construction pending. Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, full desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, complete physical matrix, installer/update/rollback/media, freeze/signing/publication remain open."
+    "Current PNG checkpoint: original37CTest,31private codec+15tools,6real lifecycle transactions, actual normal install/hooks plus31codecs and30metadata/tools,3CMake clients pass. Accepted bounded normal111. Graphviz original-default metadata plan has59unbuilt nodes/32ready; construction pending. Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, full desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, complete physical matrix, installer/update/rollback/media, freeze/signing/publication remain open.",
+    "Current libdatrie checkpoint: original8construction/10upstreamtests,33private+33defaultconsumers and6realoriginalhooktransactions pass. Complete source/private andnormal capsules independently verified nativeARM+Intel. Accepted bounded normal112; previousPNG111 andGLib110 remain historical qualification contexts. Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, complete desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, full physical matrix, installer/update/rollback/media, freeze/signing/publication remain open."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -5143,6 +5150,17 @@
       "installed": true,
       "accepted_normal_count": 111,
       "qualification": "Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, full desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, complete physical matrix, installer/update/rollback/media, freeze/signing/publication remain open."
+    },
+    {
+      "name": "Original default libdatrie",
+      "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+      "package": {
+        "bytes": 41075,
+        "sha256": "44a9cfe14d503368ec101be17bdcd0c78489913889e39c3e170b58c45a109330"
+      },
+      "installed": true,
+      "accepted_normal_count": 112,
+      "qualification": "Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, complete desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, full physical matrix, installer/update/rollback/media, freeze/signing/publication remain open."
     }
   ],
   "installed_Python_metadata_recovery": {
@@ -5187,9 +5205,9 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 111,
+  "actual_installed_development_package_count": 112,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-26T02:07:56.842265+00:00",
+  "last_updated_utc": "2026-11-26T02:18:09.617558+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -6447,5 +6465,44 @@
     },
     "remaining": "Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, full desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, complete physical matrix, installer/update/rollback/media, freeze/signing/publication remain open.",
     "detail": "https://github.com/jordanhubbard/daemonarchy-ports/blob/work/native-python-bootstrap-20261124/docs/verification/png-original-default-20261126.json"
+  },
+  "selected_original_default_libdatrie_qualified_20261126": {
+    "observed_utc": "2026-11-26T02:18:09.617558+00:00",
+    "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+    "version": "0.2.14_1",
+    "package": {
+      "bytes": 41075,
+      "sha256": "44a9cfe14d503368ec101be17bdcd0c78489913889e39c3e170b58c45a109330"
+    },
+    "original_construction_targets": 8,
+    "original_upstream_tests": {
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0
+    },
+    "private_and_normal_consumer_commands_each": 33,
+    "original_hook_private_lifecycle_transactions": 6,
+    "sealed_payloads": 17,
+    "accepted_bounded_development_count": 112,
+    "custody": {
+      "source_private": {
+        "nodes": 1406,
+        "archive_bytes": 22309584,
+        "archive_sha256": "4e6ff5d066fe831f597907529afd58c81ed1890a886f1c70e8a058143a77c61d",
+        "inventory_sha256": "062bfece4a6e1634071f13dcf925c3895582c0381d0ccd1820e88ccdb73f3996",
+        "independently_verified_native_ARM_and_physical_Intel": true,
+        "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_verified": true
+      },
+      "normal": {
+        "nodes": 113,
+        "archive_bytes": 17988814,
+        "archive_sha256": "912016732a2a731695dbf08f9cdc3e2e8d128fca271d26ec90394f3b242e6991",
+        "inventory_sha256": "1b3323b286b05476896133c01f0a48e5428050419f469ceb5726fbcb075ffb9a",
+        "independently_verified_native_ARM_and_physical_Intel": true,
+        "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_verified": true
+      }
+    },
+    "remaining": "Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, complete desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, full physical matrix, installer/update/rollback/media, freeze/signing/publication remain open.",
+    "detail": "https://github.com/jordanhubbard/daemonarchy-ports/blob/work/native-python-bootstrap-20261124/docs/verification/libdatrie-original-default-20261126.json"
   }
 }
