@@ -111,3 +111,28 @@ is added solely for outcome retention when the complete original suite runs.
 Package4/full-suite/runtime/lifecycle/normal and canonical release gates remain
 pending; all package3 failures and the clone helper mode omission are retained
 in the [Python terminal report](../verification/python312-grammar-native-control-20261126.json).
+
+Candidate4 original construction completed all eight phases, yielding the sealed
+3.12.16_4 package. Its grammar and three weekly-logging probes pass. The original
+suite reached 491/492 program outcomes but is unqualified: the passive background
+launcher leaked ignored SIGINT into test children. The confirmed invalid run was
+intentionally stopped; all outcomes, the separate OOM observation and the real
+test_tools man-directory failure remain retained. All 25,177 selected package4
+source/object/stage/product/runtime/control nodes verify in 13 capsules on ARM
+and Intel. The native embedding failure was a symbol-origin observer error:
+direct function pointers name the executable trampoline; the dynamic definition
+names the sealed library. Original artifacts and failed probes remain intact.
+
+Candidate5 keeps the GNU man directory relative and preserves literal dollars
+through configure and sysconfig metadata. Five actual native configure/parser
+cases and two unprivileged private-prefix man installs pass; all 10,156 control
+nodes verify in two capsules on both hosts. A fresh source5 build and complete
+suite must use restored child signal defaults and retain all original assertions,
+resources, jobs, builtin reruns and deadlines. Native API, lifecycle, normal and
+canonical release gates remain open; see the [Python terminal report](../verification/python312-grammar-native-control-20261126.json).
+
+All 184,396 candidate5 Git bodies now verify natively. Original checksum, extract,
+eight-patch application and configure pass; compilation is active. The actual
+uid65534 child probe confirms default HUP/QUIT and a self-SIGINT raising
+KeyboardInterrupt. Audit inherited child signal state before reusing older
+background-launched qualifications; their original outcomes remain retained.

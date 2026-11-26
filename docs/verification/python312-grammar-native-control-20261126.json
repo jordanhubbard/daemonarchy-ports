@@ -2,16 +2,16 @@
   "schema_version": 1,
   "work_id": "PORT-PY312-GRAMMAR-001",
   "product_release": "1.6",
-  "status": "candidate4-matching-runtime-pass-first-configure-isolation-failure-retained-corrected-preflight-active",
+  "status": "package4-construction-and-bounded-runtime-pass-invalid-signal-suite-aborted-mandir-defect-candidate5-native-configure-replay-controls-pass",
   "recipe_change": {
-    "package": "python312-3.12.16_4",
+    "package": "python312-3.12.16_5",
     "mode": "0644",
     "only_staged_paths": [
       "lib/python3.12/lib2to3/Grammar3.12.16.final.0.pickle",
       "lib/python3.12/lib2to3/PatternGrammar3.12.16.final.0.pickle"
     ],
-    "precondition": "Compose PR84 security backport and its scoped advisory ranges; original selected options/dependencies/patches/tests unchanged.",
-    "additional_repair": "After generic pathfix, keep LIBPC relative to the configured lowercase Python prefix, preserving default /usr/local behavior and original tests."
+    "precondition": "Retain PR84 security backports and scoped advisory ranges, original selected options/dependencies/seven prior patches and unmodified tests. Add the configure/configure.ac literal-dollar replay repair.",
+    "additional_repair": "Keep LIBPC relative to lowercase prefix after pathfix; preserve GNU man prefix and literal directory expressions through configure/Makefile/sysconfig replay. Default /usr/local destinations remain unchanged."
   },
   "original_registered_package": {
     "version": "3.12.16",
@@ -57,7 +57,8 @@
     "changed_since_grammar_control": 6,
     "state": "Source3 completed original build/package and full default suite; suiteFAIL retained. Candidate4 corrects LIBPC, native source-command controlPASS; fresh source4 construction/full suite remains pending.",
     "all_native_Git_members_verified": 184394,
-    "all4581_original_regular_source_bodies_after_seven_original_port_patches_verified": true
+    "all4581_original_regular_source_bodies_after_seven_original_port_patches_verified": true,
+    "scope": "Historical package3 source/advisory composition, retained. Candidate5 has a separate exact source revision and pending complete native verification."
   },
   "custody": {
     "nodes": 621,
@@ -95,7 +96,7 @@
     "not_package_or_security_acceptance": true,
     "configuration_failure_retained": "Initial private DB used build-user ownership and pkg rejected it. Fresh private root-owned DB passed supported configuration and logical128-package registry equality. No original make phase had executed in the failed private configuration."
   },
-  "observed_utc": "2026-11-26T16:02:12.789568+00:00",
+  "observed_utc": "2026-11-26T17:02:15.921931+00:00",
   "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/122",
   "staging_recovery": {
     "original_stage_exit": 0,
@@ -182,7 +183,8 @@
     "configured_private_prefixes_installed_unprivileged": 2,
     "original_python_pc_body_exact_at_both_destinations": true,
     "whole_live_SDK128_frozen_base_accounts_loader_fontcache_mounts_preserved": true,
-    "fresh_candidate4_package_or_full_suite_acceptance": false
+    "subsequent_candidate4_package_constructed": true,
+    "valid_complete_candidate4_suite_or_canonical_acceptance": false
   },
   "complete_package3_suite_and_prefix_evidence_custody": {
     "nodes": 25249,
@@ -229,7 +231,7 @@
     "all_original_SDK128_frozen17_base_accounts_loader_fontcache_mount_postguards_pass": true
   },
   "fresh_candidate4_matching_runtime_construction": {
-    "state": "first-configure-failure-retained-corrected-database-and-per-origin-isolation-attempt-preflight-active",
+    "state": "terminal-original-eight-construction-commands-pass-suite-intentionally-aborted-invalid-launcher-genuine-mandir-replay-defect-retained",
     "candidate_version": "3.12.16_4",
     "matching_source_base_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
     "source_revision": "81c00f97fbabd7cc7157feabd9967f9800a1b2be",
@@ -265,6 +267,230 @@
       },
       "repair": "Fresh root-owned private registry copy beneath a traversable job directory, supported build-user pkg-static registry/config and declared dependency checks before construction. Use per-origin WRKDIRPREFIX alone so unexpected nested dependencies cannot share a unit work directory. Preserve all original constraints/tests and failed outputs."
     },
-    "unprivileged_advisory_control": "Exact retained source-bound two-range private overlay; require original vulnerable revision1 rejection and repaired revision4 acceptance before original construction; preserve global feed."
+    "unprivileged_advisory_control": "Exact retained source-bound two-range private overlay; require original vulnerable revision1 rejection and repaired revision4 acceptance before original construction; preserve global feed.",
+    "full_suite_qualified": false
+  },
+  "candidate5_configure_replay_repair": {
+    "implementation_commit": "af521f4b79e491dcf0c73ca0821132745cfab8e1",
+    "qualification_source": "ee5dbbc99b46c70ed9333a0f17551048460645b2",
+    "qualification_tree": "d880d7a259358f5d4e4bf4136703b2bfa7f87d06",
+    "candidate_version": "3.12.16_5",
+    "source_changes": [
+      "Keep GNU man prefix relative to lowercase configure prefix.",
+      "Escape literal dollar signs in generated configure and authored configure.ac CONFIG_ARGS before Makefile/sysconfig parsing."
+    ],
+    "original_tests_modified": false,
+    "original_options_dependencies_and_seven_prior_patches_retained": true,
+    "additional_configure_patch_files": [
+      "configure",
+      "configure.ac"
+    ],
+    "native_original_framework_command_control": "Original4 --mandir=/usr/local/share/man; candidate5 --mandir=${prefix}/share/man; all other emitted arguments equal. Initial fixture failed because original env -i intentionally stripped a private capture variable; outcome retained, fixture corrected without product command changes.",
+    "native_actual_configure_and_sysconfig_control": {
+      "original_source_regular_files_verified": 4581,
+      "commands": 15,
+      "all_commands_exit0": true,
+      "actual_configure_runs": 5,
+      "default_MANDIR_unchanged": "/usr/local/share/man",
+      "naive_relative_mandir_alone_loses_literal_prefix_in_CONFIG_ARGS": true,
+      "fixed_CONFIG_ARGS_preserves_literal_prefix_across_two_replays": true,
+      "real_original_man_installs_under_two_private_prefixes_as_uid65534": true,
+      "all_original_and_candidate_source_inputs_preserved": true
+    },
+    "complete_control_custody": {
+      "nodes": 10156,
+      "parts": 2,
+      "both_hosts_all_nodes_verified": 10156,
+      "complete_inventory_sha256": "75db614ccad1f427c05b1705ab455481f89275b560d5ae052cc32281790d7ee4"
+    },
+    "full_source_export_Git_members": 184396,
+    "full_native_Git_member_verification": "PASS all184396 original Git members, bytes/modes and reconstructed tree; protected SDK19,old18,frozen17,matchingbase/accounts/loader/cache/mount postguards pass.",
+    "native_reference": {
+      "regular_original_sources": 4581,
+      "port_patches": 8,
+      "sha256": "ebd5f026cbdd3d9a24414189860e8863dd053286111a7066c74f8e4c8c29bc05"
+    },
+    "fresh_build_full_suite_sealed_API_lifecycle_normal_and_canonical_release_pending": true
+  },
+  "source_built_package4": {
+    "source_revision": "81c00f97fbabd7cc7157feabd9967f9800a1b2be",
+    "version": "3.12.16_4",
+    "bytes": 40538166,
+    "sha256": "b370c12226d6cccf0c90585031a3921e28e01727cb6fb7cda4168faa1c6e83ae",
+    "original_checksum_extract_patch_configure_build_stage_check_plist_package_exits": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "all4581_original_patch_and_configure_source_bodies_verified_and_preserved": true,
+    "stage_bytecode_recovery_needed": false,
+    "original_IPv6_LIBMPDEC_LTO_NLS_PYMALLOC_all_preserved": true
+  },
+  "package4_partial_sealed_runtime": {
+    "payloads": 8031,
+    "AArch64_ELF": 77,
+    "explicit_directories": 0,
+    "pkg_registered_payload_checksums_exit": 0,
+    "actual_unprivileged_interpreter_stdlib_extensions_and_libpython_binding_pass": true,
+    "grammar_cases": 8,
+    "grammar_checks": 16,
+    "weekly_logging_cases": 3,
+    "weekly_logging_cases_all_pass": true,
+    "native_embedding_compile_exit": 0,
+    "native_embedding_first_observer_exit": 1,
+    "observer_diagnosis": "Direct function address in non-PIC executable names linker trampoline; independently observed dynamic-symbol definition names the exact sealed libpython. Initial diagnostic lacked stat import before execution; retained. Corrected diagnostic proves both addresses; old failing binary/source/results preserved. New observer resolves definition with dlsym, retaining origin and all semantic assertions.",
+    "all_shipped_native_extension_and_stable_ABI_consumer_execution": "Not reached in this package4 attempt; required for final candidate.",
+    "all_private_payload_bytes_metadata_and_SDK19_old18_frozen17_base_accounts_cache_mounts_preserved": true,
+    "normal_install_performed": false,
+    "full_API_contract_or_canonical_acceptance": false
+  },
+  "package4_original_suite_invalid_launcher": {
+    "declared_programs": 492,
+    "highest_completed_counter": 491,
+    "failed_program_outcomes": [
+      {
+        "completed": 110,
+        "declared": 492,
+        "program": "test_generators",
+        "reported": "failed (1 failure) -- running (1): test.test_multiprocessing_fork.test_processes (56.0 sec)"
+      },
+      {
+        "completed": 121,
+        "declared": 492,
+        "program": "test_regrtest",
+        "reported": "failed (3 failures) -- running (1): test.test_multiprocessing_fork.test_processes (1 min)"
+      },
+      {
+        "completed": 167,
+        "declared": 492,
+        "program": "test.test_multiprocessing_fork.test_processes",
+        "reported": "failed (2 failures) (1 min 28 sec)"
+      },
+      {
+        "completed": 307,
+        "declared": 492,
+        "program": "test.test_multiprocessing_forkserver.test_processes",
+        "reported": "failed (2 failures) (1 min 38 sec) -- running (1): test_tools (1 min 3 sec)"
+      },
+      {
+        "completed": 363,
+        "declared": 492,
+        "program": "test_signal",
+        "reported": "failed (2 failures) (1 min 18 sec) -- running (2): test_tools (2 min 31 sec), test.test_multiprocessing_spawn.test_processes (1 min 22 sec)"
+      },
+      {
+        "completed": 391,
+        "declared": 492,
+        "program": "test.test_multiprocessing_spawn.test_processes",
+        "reported": "failed (2 failures) (1 min 44 sec) -- running (1): test_tools (2 min 53 sec)"
+      },
+      {
+        "completed": 405,
+        "declared": 492,
+        "program": "test_pdb",
+        "reported": "failed (1 failure) -- running (2): test_threading (31.1 sec), test_tools (3 min 2 sec)"
+      },
+      {
+        "completed": 490,
+        "declared": 492,
+        "program": "test.test_asyncio.test_runners",
+        "reported": "worker non-zero exit code (Exit code -9 (SIGKILL)) -- running (2): test_threading (3 min 25 sec), test_tools (5 min 56 sec)"
+      },
+      {
+        "completed": 491,
+        "declared": 492,
+        "program": "test_tools",
+        "reported": "failed (1 error) (7 min 28 sec) -- running (1): test_threading (4 min 56 sec)"
+      }
+    ],
+    "original_logging_program": [
+      {
+        "completed": 284,
+        "declared": 492,
+        "program": "test_logging",
+        "reported": "passed -- running (1): test.test_multiprocessing_forkserver.test_processes (50.5 sec)"
+      }
+    ],
+    "original_tools_program": [
+      {
+        "completed": 491,
+        "declared": 492,
+        "program": "test_tools",
+        "reported": "failed (1 error) (7 min 28 sec) -- running (1): test_threading (4 min 56 sec)"
+      }
+    ],
+    "full_suite_completed": false,
+    "XML_file_exists": false,
+    "scope": "Partial observed progress only; aborted invalid SIGINT profile; no completed suite/per-case receipt.",
+    "child_make_test_exit": -15,
+    "intentional_controlled_abort": true,
+    "capacity_guard_triggered": false,
+    "original_deadline_not_shortened_as_an_acceptance_rule": true,
+    "no_completed_suite_or_per_case_XML_receipt_claimed": true,
+    "launcher_defect": "nohup/background supervisor inherited ignored SIGINT and SIGQUIT into original child commands. Actual procstat audit confirms ignored INT; signal-based programs fail or hang.",
+    "same_sealed_product_causal_control": {
+      "ignored_SIGINT_self_interrupt_raised_KeyboardInterrupt": false,
+      "restored_default_self_interrupt_raised_KeyboardInterrupt": true
+    },
+    "separate_kernel_observation": "PID30389 Python killed: failed to reclaim memory; retained as an OOM observation, not excused as passing.",
+    "genuine_prefix_defect": "test_tools installation replay still writes absolute /usr/local/share/man/man1 despite new prefix; this remains a real configure-metadata defect and is addressed in candidate5 source, without changing the original test.",
+    "exclusive_original_test_process_groups_stopped_with_SIGTERM": [
+      15857,
+      29513
+    ],
+    "all_original_and_failed_outputs_preserved": "Complete selected source/objects/stage/package/temporary work/private sealed prefix/consumers/diagnostics archived in13parts; 25177nodes verified on both hosts.",
+    "source_and_all_protected_SDK_base_account_loader_fontcache_mount_guards_pass": true,
+    "external_retry_of_unchanged_valid_profile": false,
+    "fresh_candidate5_execution_profile": "Changed implementation plus explicit child HUP/INT/QUIT defaults, verified uid65534 interrupt behavior before original commands. Original 492-program selection, assertions, all resources,4jobs,builtin-W,1200-second deadline retained; full original run remains required."
+  },
+  "complete_package4_invalid_suite_and_consumer_custody": {
+    "nodes": 25177,
+    "parts": 13,
+    "all_nodes_verified_ARM_and_Intel": 25177,
+    "complete_inventory_sha256": "0faffadbe09d272ade7cb12c5453adbe0c5bbc3807514a0598ad9fdb3429f9b4",
+    "archive_total_bytes": 403052081,
+    "largest_archive_bytes": 48972970,
+    "no_Linux_root_extra_archives": true
+  },
+  "candidate5_original_construction_progress": {
+    "state": "original-build",
+    "source_revision": "ee5dbbc99b46c70ed9333a0f17551048460645b2",
+    "original_command_exits": [
+      [
+        "original-checksum",
+        0
+      ],
+      [
+        "original-extract",
+        0
+      ],
+      [
+        "original-patch",
+        0
+      ],
+      [
+        "original-configure",
+        0
+      ]
+    ],
+    "all4581_original_patched_and_configured_source_bodies_match_independent_eight_patch_reference": true,
+    "actual_child_signal_guard": {
+      "uid": 65534,
+      "SIGINT_handler": "default_int_handler",
+      "SIGHUP": 0,
+      "SIGQUIT": 0,
+      "self_SIGINT_raised_KeyboardInterrupt": true
+    },
+    "fresh_package_original_suite_sealed_API_lifecycle_normal_and_canonical_release_pending": true
+  },
+  "native_execution_profile_followup": {
+    "background_signal_inheritance_defect_confirmed": true,
+    "new_producer_restores_and_measures_original_command_child_dispositions": true,
+    "prior_background_qualification_reuse": "Audit child signal dispositions before reusing previous background-launched results. Original assertions and outcomes remain retained; no aggregate SDK health/native Component admission is inferred."
   }
 }
