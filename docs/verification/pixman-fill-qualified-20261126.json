@@ -1,6 +1,6 @@
 {
   "observed_utc": "2026-11-26T10:50:42.714119+00:00",
-  "status": "historical-normal125-revision1-revision3-private-qualified-independent-custody-and-upgrade-pending",
+  "status": "historical-revision1-normal125-and-current-revision3-normal125-qualified",
   "scope": "Original native construction/tests, independent exact pixel consumers, package lifecycle and actual normal development acceptance. Full API/ABI, canonical Component/provenance/lifecycle/SDK/TCB, matched source/kernel/AMD64, desktop/apps/hardware and full release remain open.",
   "origin": "x11/pixman",
   "version": "0.46.4_1",
@@ -188,7 +188,7 @@
     "finding": "Revision1 Box32 spanning INT32_MIN to INT32_MAX reports success but paints zero of16 image pixels when fast and ARM-NEON fills are disabled; same probe paints16 in normal dispatch. Padded backing allocation remains valid. SDK125 and host state preserved.",
     "finding_result_sha256": "805eff3e347f5eb88f377840eeea283d5ac550abddfdf2cc1fc23db61b1118a4",
     "repair": "Retain the bounded region through raw-fill fallback; clip each original general-composite box before signed subtraction and keep overlapping non-SRC boxes separate. Regression adds signed-range boxes, ADD and exact overlapping ADD pixel expectations.",
-    "qualification": "Revision3 passes fresh complete source verification,37tests, original default metadata, six24824check consumers, all9small/SRCwide/ADDwide probes and six actual ldconfig/no-RPATH lifecycle transactions. Complete revision2 and revision3 archives verify every node and gzipCRC on ARM; independent tester stopped accepting SSH during revision2 transfer, so independent custody and normal revision1-to-revision3 upgrade remain pending. Installed SDK125 remains revision1 source6032dbfb. Earlier facts retain that exact revision1 identity.",
+    "qualification": "Revision3 completes all bounded native source/tests/default/private/lifecycle and actual normal125 acceptance, with both source/private and complete normal archives independently verified onARM/Intel. One package transaction;20successful consumercommands retained without replay plus8remainingcommands. Three old unregistered license files remain exactly preserved. Earlier top-level revision1 facts retain source6032dbfb and their historical scope; latest normal source is0b9e1861. Canonical and full release gates remain separate.",
     "additional_non_SRC_finding": {
       "operator": "ADD",
       "on_revision": "0.46.4_2",
@@ -202,9 +202,9 @@
       "normal_revision2_installation_performed": false
     }
   },
-  "qualified_revision3_private": {
+  "qualified_revision3": {
     "observed_utc": "2026-11-26T11:33:59.351794+00:00",
-    "status": "pass-bounded-native-source-tests-private-runtime-lifecycle-normal-upgrade-pending",
+    "status": "pass-bounded-native-source-tests-private-lifecycle-and-normal125",
     "version": "0.46.4_3",
     "source_revision": "0b9e18618e18ca63ac16c82edcb90bbc670c0b50",
     "source_tree": "75e9c0a08a969debe42e49b2aedc7297f2ef43c7",
@@ -291,12 +291,6 @@
       "exact10_payloads_synthetic_locked_accounts_readonly_base_restricted_devfs_verified": true,
       "all_original_mounts_restored": true
     },
-    "preservation": {
-      "whole_current_SDK125_raw_database_frozen17_base_accounts_loader_system_font_cache_mounts_and_selected_source_preserved": true,
-      "normal_package_transaction_performed": false,
-      "normal_count_still": 125,
-      "normally_installed_Pixman": "0.46.4_1"
-    },
     "retained_intermediate_revision2": {
       "source_revision": "3ce6508396c5ff4d87e489fa5eb2fb1dc3e0f93b",
       "nodes": 2430,
@@ -304,7 +298,7 @@
       "archive_sha256": "4027168c89d72394bc78f85ff9c0a866b6e0afc814a9cb9054757f8156006960",
       "inventory_sha256": "a3847503d84a1dd1a14601b3e237af05d595a1bb0f94b3b24d12a4bde5a85e2a",
       "all_nodes_and_gzip_CRC_verified_on_ARM": true,
-      "independent_Intel_verification_complete": false,
+      "independent_Intel_verification_complete": true,
       "original_partial_transfer_preserved": true,
       "ADD_failure_blocks_revision2_normal_admission": true
     },
@@ -314,13 +308,59 @@
       "archive_sha256": "8fc824a84b5d40f0c8b465b6c2cb97b84207593575d9f7c45717323631abbc6e",
       "inventory_sha256": "f6600144acb0dcb5b984429bca1099bc9b2cc3754bfcf8de4e3cb3ca043204f7",
       "all_nodes_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_on_ARM": true,
-      "independent_Intel_verification_complete": false,
+      "independent_Intel_verification_complete": true,
       "additional_compressed_archive_bytes_on_Linux_controller": 0
     },
     "pending": [
-      "Independent custody of intermediate revision2 and current revision3 archives after tester SSH connectivity returns.",
-      "Exact actual normal revision1-to-revision3 offline dependency/integrity/loader upgrade, all124 other providers, same125 registry count, six original consumers, no-RPATH client and9independent probes.",
-      "New normal archive custody; all original canonical/provenance/lifecycle/SDK/TCB/matchedAMD64/desktop/physical and full1.6release gates remain separate."
-    ]
-  }
+      "Full API/ABI, desktop/apps/fonts, canonical Component ownership/provenance/lifecycle/SDK/TCB and matching complete source/kernel/AMD64 remain open.",
+      "All47 platform profiles/physical acceptance, Pi4 beforePi5, installer/update/rollback/media/freeze/signing/publication remain required."
+    ],
+    "private_phase_preservation": {
+      "whole_current_SDK125_raw_database_frozen17_base_accounts_loader_system_font_cache_mounts_and_selected_source_preserved": true,
+      "normal_package_transaction_performed": false,
+      "normal_count_still": 125,
+      "normally_installed_Pixman": "0.46.4_1"
+    },
+    "normal_acceptance": {
+      "normally_installed_version": "0.46.4_3",
+      "accepted_count": 125,
+      "all10_revised_payloads_and_registry_file_set_exact": true,
+      "all124_other_providers_and_inherited_prefixes_preserved": true,
+      "same_loader_paths_providers_and_priorities_preserved": true,
+      "actual_original_offline_dependency_integrity_and_ldconfig_transaction_passed": true,
+      "package_transaction_count": 1,
+      "package_transaction_replayed": false,
+      "original_six_C_CXX_consumers_checks_each": 24824,
+      "fresh_client_without_RPATH_or_loader_overrides_checks": 24824,
+      "three_small_three_SRCwide_three_ADDwide_padded_probes_pass": true,
+      "normal_consumer_commands_total": 28,
+      "successful_commands_retained_without_replay": 20,
+      "remaining_new_commands": 8,
+      "retained_old_license_files": {
+        "count": 3,
+        "package_registration": "unregistered prior-version license metadata",
+        "all_original_bodies_modes_numeric_owners_flags_nsmtime_exact": true,
+        "deleted": false
+      },
+      "retained_observer_repairs": [
+        "Initial observer incorrectly required obsolete-version license metadata deletion; actual pkg add succeeded once.",
+        "First read-only observer missed a parser import before any commands.",
+        "Second read-only observer parsed a Pixman diagnostic line as JSON after20successful consumercommands.",
+        "Final completion recovers successful raw results via hashes and last JSON lines, then runs only8remaining commands."
+      ],
+      "whole_SDK125_raw_database_frozen_base_accounts_loader_font_cache_mounts_and251source_guards_pass": true,
+      "complete_normal_archive": {
+        "nodes": 84,
+        "bytes": 20496410,
+        "archive_sha256": "25fd4639f66be359be7329aadd28a4df1228407bf2eacc18bd73ba3e25a3ca7d",
+        "inventory_sha256": "531cb9f664deaaa235c177704f613b642b1b9dcb81fe1383c2675343b79c5b58",
+        "all_nodes_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_on_ARM_and_Intel": true,
+        "original_failed_transaction_observer_and_both_readonly_observer_failures_preserved": true,
+        "extra_compressed_archive_bytes_on_Linux_controller": 0
+      }
+    }
+  },
+  "latest_normal_version": "0.46.4_3",
+  "latest_normal_source_revision": "0b9e18618e18ca63ac16c82edcb90bbc670c0b50",
+  "latest_normal_qualification": "qualified_revision3.normal_acceptance"
 }

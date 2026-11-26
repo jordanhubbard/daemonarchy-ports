@@ -1,0 +1,104 @@
+{
+  "observed_utc": "2026-11-26T12:16:34.524156+00:00",
+  "status": "original-source-build-selftests-default-package-pass-private-PC-header-defect-confirmed-repair-source-verification-running",
+  "origin": "archivers/lzo2",
+  "original_version": "2.10_2",
+  "original_source_revision": "0b9e18618e18ca63ac16c82edcb90bbc670c0b50",
+  "original_package": {
+    "bytes": 111017,
+    "sha256": "5f08dab401a98b4e277e45a44a81fdc1201d36165922d968ee689ed4331bd96a"
+  },
+  "scope": "Bounded native FreeBSD ARM development observation; no Lzo2 normal installation, independent runtime, package lifecycle, canonical Component/provenance/SDK/TCB or full release acceptance.",
+  "original_construction": {
+    "all_eight_original_targets_pass": true,
+    "original_post_build_check_and_exhaustive_test_targets_pass": true,
+    "original_MALLOC_OPTIONS": "jz",
+    "original_recursive_targets": "check test",
+    "original_SHELL": "/bin/sh -x",
+    "WITHOUT_CHECKS_defined": false,
+    "original_DOCS_EXAMPLES_shared_static_preserved": true,
+    "selected_recipe_Mk_Templates_ldconfig_keyword_Git_bodies_modes_verified": 250,
+    "all_original_regular_source_bodies_and_modes_checked_across_each_phase": 306,
+    "exact_original_patches": 2,
+    "original_libtool_FreeBSD10_config_template_and_doc_post_install_effects_independently_bound": true,
+    "empty_declared_TEST_TARGET_bridge_exit": 0,
+    "empty_bridge_is_upstream_suite_acceptance": false
+  },
+  "private_observation": {
+    "all_original_named_payloads_metadata_and_bodies_verified": true,
+    "original_PC_cflags": "-I${includedir}/lzo",
+    "qualified_public_header_paths": [
+      "lzo/lzo1x.h",
+      "lzo/lzoconf.h",
+      "lzo/lzodefs.h"
+    ],
+    "same_unchanged_C_client_with_actual_PC_flags_compile_exit": 1,
+    "same_client_change_only_parent_include_directory_compile_exit": 0,
+    "control_actual_headers_resolve_to_original_candidate_payload": true,
+    "original_candidate_PC_payload_and_source_assertions_unchanged": true,
+    "initial_driver_include_flag_expectation_failure_retained_before_any_compiler_or_runtime": true,
+    "native_independent_runtime_clients_executed": false
+  },
+  "complete_original_source_private_failure_and_causal_control_custody": {
+    "nodes": 1622,
+    "archive_bytes": 18569990,
+    "archive_sha256": "d1d28bc8a632bad8b7da05cfb09b89ecadcfec2ee65d6df4a1387aab3a8f4b9d",
+    "inventory_sha256": "aa893d287a2ead732bbcc67fcebed4771eb8c74c627e734f4692b769717c5b34",
+    "all_nodes_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_on_ARM_and_Intel": true,
+    "current_normal125_Pixman3_frozen_base_accounts_loader_font_cache_mounts_and_source_preserved": true,
+    "extra_compressed_archive_bytes_on_Linux_controller": 0
+  },
+  "candidate_repair": {
+    "version": "2.10_3",
+    "review_code_commit": "e3b88d6b1d7223b2dd1fabd4d8de65fe8988d130",
+    "native_source_revision": "0164aca0067d77df984de621c8871f8d6eccce1f",
+    "native_source_tree": "ee2245eaa071e2e838df3587f78eff0d649023ca",
+    "change": "Add parent includedir before the preserved legacy includedir/lzo flag so qualified and short header styles both remain supported.",
+    "Cflags": "-I${includedir} -I${includedir}/lzo",
+    "all_three_patches_apply_with_zero_fuzz_in_controller_control": true,
+    "full_Git_source_member_count": 184390,
+    "changed_or_added_relative_original_source": 2,
+    "removed": 0,
+    "fresh_full_native_source_verification": "pass all184390Gitmembers,0removed,2changed-or-added,allSDK125/frozen/base/accounts/cache/mount/oldsourceguards",
+    "fresh_native_build_selftests_default_package_private_runtime_lifecycle_custody_and_normal_qualification": "fresh build/check/test/default package, four private432case modes and six real package lifecycle transactions PASS; repaired capsule custody and actual normal admission pending",
+    "all251_selected_review_native_input_bodies_modes_equal": true,
+    "fresh_default_package": {
+      "bytes": 110985,
+      "sha256": "235925e104d1c491432727ee410e343501147ded05a91be493939eee2ff4f1af"
+    },
+    "fresh_original_post_build_check_and_exhaustive_test_PASS": true,
+    "all306_original_source_bodies_modes_match_three_patches_and_original_framework_stage_effects": true,
+    "private_runtime": {
+      "C_CXX_shared_static_consumers": 4,
+      "cases_each": 432,
+      "checks_each": 11179,
+      "algorithms": 2,
+      "patterns": 4,
+      "input_alignments": 3,
+      "lengths": 18,
+      "maximum_input_bytes": 262144,
+      "independent_CRC32_Adler32_goldens_and_scalar_references": true,
+      "safe_decompression_output_limit_truncation_and_allocation_guards": true,
+      "actual_PC_library_and_emitted_header_dependency_bindings_verified": true,
+      "qualified_and_short_header_styles_compile_in_C_and_CXX": true,
+      "successful_command_total": 22,
+      "retained_without_replay": 14,
+      "new_remaining_commands": 8,
+      "unchanged_C_fixture_and_assertions": true,
+      "original_driver_static_archive_language_scope_and_argument_failures_retained": true
+    },
+    "real_package_lifecycle": {
+      "transactions_PASS": 6,
+      "actual_original_ldconfig_hooks_cache_add_remove_and_reinstall_verified": true,
+      "fresh_no_RPATH_C_client432cases_after_each_add_reinstall_and_expected_missing_library_before_add_after_deletes": true,
+      "all_payloads_exact": 40,
+      "all_original_mounts_restored": true
+    }
+  },
+  "remaining": [
+    "Fresh exact-source original check/test/default construction and all306 source-body comparisons for repaired version.",
+    "Actual independent C/CXX shared/static consumers, header-style controls, package lifecycle and independent capsule custody.",
+    "Actual normal offline dependency/integrity/ldconfig admission and unchanged other125 providers; no normal Lzo2 acceptance claimed.",
+    "All canonical and broader full1.6release gates remain separate."
+  ]
+}

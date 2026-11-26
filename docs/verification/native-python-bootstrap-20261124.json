@@ -5298,7 +5298,7 @@
   },
   "actual_installed_development_package_count": 125,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-26T10:50:42.714119+00:00",
+  "last_updated_utc": "2026-11-26T12:18:07.462024+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -9342,6 +9342,47 @@
       "Canonical Component ownership/provenance/lifecycle/SDK/TCB and matching complete source/kernel/AMD64 qualification remain open.",
       "All47platform profiles and physical acceptance, Pi4 beforePi5, installer/update/rollback/media/freeze/signing/publication remain required.",
       "Product framework authority and receipt gates remain separate; no human documentation attestation or lifecycle receipt is synthesized."
-    ]
+    ],
+    "historical_scope": "Original revision1 normal125 acceptance at source6032dbfb; preserved historical facts, superseded by separately recorded normal revision3. No historical artifact pin changes."
+  },
+  "Pixman_general_fill_revision3_qualified_normal125_20261126": {
+    "version": "0.46.4_3",
+    "source_revision": "0b9e18618e18ca63ac16c82edcb90bbc670c0b50",
+    "status": "pass-bounded-native-source-tests-private-lifecycle-and-normal125",
+    "normal_development_count": 125,
+    "TEST_programs_PASS": 37,
+    "original_programs_preserved": 35,
+    "six_C_CXX_consumers_checks_each": 24824,
+    "small_SRCwide_ADDwide_normal_padded_probes_PASS": 9,
+    "actual_original_package_lifecycle_transactions_PASS": 6,
+    "actual_normal_upgrade_package_transactions": 1,
+    "normal_consumer_commands": 28,
+    "successful_commands_retained_without_replay": 20,
+    "remaining_new_commands": 8,
+    "old_three_unregistered_license_files_exactly_preserved": true,
+    "whole_SDK125_raw_database_frozen_base_accounts_loader_system_font_cache_mounts_and_source_guards_PASS": true,
+    "complete_normal_archive_nodes": 84,
+    "complete_normal_archive_bytes": 20496410,
+    "complete_normal_archive_sha256": "25fd4639f66be359be7329aadd28a4df1228407bf2eacc18bd73ba3e25a3ca7d",
+    "complete_normal_custody_verified_ARM_and_Intel": true,
+    "report": "docs/verification/pixman-fill-qualified-20261126.json",
+    "canonical_and_full_release_acceptance": false
+  },
+  "Lzo2_original_pkgconf_header_findings_20261126": {
+    "original_version": "2.10_2",
+    "original_source_revision": "0b9e18618e18ca63ac16c82edcb90bbc670c0b50",
+    "original_post_build_check_and_exhaustive_test_targets_PASS": true,
+    "original_DOCS_EXAMPLES_shared_static_preserved": true,
+    "all_original_regular_source_bodies_modes_verified": 306,
+    "original_private_PC_missing_parent_include_actual_compile_failure_and_single_flag_causal_control_confirmed": true,
+    "independent_native_runtime_clients_executed": false,
+    "original_complete_capsule_nodes": 1622,
+    "original_complete_capsule_ARM_and_Intel_verified": true,
+    "normally_installed": false,
+    "candidate_version": "2.10_3",
+    "candidate_review_code": "e3b88d6b1d7223b2dd1fabd4d8de65fe8988d130",
+    "candidate_native_source_revision": "0164aca0067d77df984de621c8871f8d6eccce1f",
+    "candidate_source_verification": "PASS complete184390Gitmembers; freshbuild/runtime/lifecycle/normal pending",
+    "report": "docs/verification/lzo2-pkgconf-native-findings-20261126.json"
   }
 }

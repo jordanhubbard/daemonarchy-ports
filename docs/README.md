@@ -42,3 +42,5 @@ the product repository's DEV-001 and COMP-001 queues retain the parent work.
 - [Pyyaml test import default 20261126](verification/pyyaml-test-import-default-20261126.json)
 - [Tap py parser boundaries 20261126](verification/tap-py-parser-boundaries-20261126.json)
 - [Xxd original default 20261126](verification/xxd-original-default-20261126.json)
+
+- [LZO2 original self-tests and pkg-config header failure](verification/lzo2-pkgconf-native-findings-20261126.json)
