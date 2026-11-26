@@ -163,7 +163,7 @@
     "current_native_preparation_receipt_sha256": "5284ec215e3e1c45092c9b33d90246da5e522126dae63e5598cbc6fa077d347d"
   },
   "remaining": [
-    "Tappy parser-boundary and backup fixes qualify normal120; complete pytest-tap original/nested suite/private/lifecycle/custody/normal acceptance.",
+    "Tappy clean source qualifiesnormal120; pytest-tap original17case suite/5unalteredtestinputs pass, sealed independent plugin/CLI/lifecycle/custody/normal acceptance remains pending.",
     "Rerun the complete original Fontconfig TEST selection, audit nested TAP cases, and retain every failure/skip reason.",
     "Fresh default artifact, independent font/cache/XML/CLI/shared/static tests and original Lua-sample/font-cache-trigger lifecycle.",
     "Complete Fontconfig source/failure/private/normal custody and actual normal dependency/hooks; accepted bounded development set is120 after Tappy.",
@@ -824,6 +824,46 @@
       "default_library_checks": 90,
       "default_CLI_checks": 48,
       "accepted_normal_count": 120
+    },
+    "pytest_tap_original_source_suite": {
+      "observed_utc": "2026-11-26T06:59:25.590375+00:00",
+      "status": "pass-original-source-suite-independent-package-qualification-pending",
+      "origin": "devel/py-pytest-tap",
+      "version": "3.6",
+      "source_revision": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
+      "package": {
+        "bytes": 11421,
+        "sha256": "c79fa3fbc2cdd52e197524ec3b8ca65788a3d40b9e25220cfaa20cfa7c67e246"
+      },
+      "construction_targets_passed": 8,
+      "original_selfsuite": {
+        "discovered": 17,
+        "completed": 17,
+        "PASS": 17,
+        "SKIP": 0,
+        "FAIL": 0,
+        "ERROR": 0,
+        "duplicate_display_ids": 0,
+        "all_case_file_line_id_signatures_unique_and_ordered_completions_match": true,
+        "discovery_includes_function_source_locations_and_item_types": true,
+        "native_junit_xml_sha256": "976a40aaa75ed35b7b93f2d2a3535255c34b72ed6ce0a936de2c79768a96151e",
+        "native_discovery_sha256": "efbc40f118b8d924097a3ea0219151613ddd5b7030a9fa5868c92e13c18fb2fc"
+      },
+      "original_test_and_conftest_files_byte_equal_verified_sdist": 5,
+      "all_original_nested_pytester_captured_output_retained_sha256": "b869b9384c1e5fdff6b1240f23a04a70723424f3580065b293093029cc66b8e5",
+      "staged_distribution_entry_point_visible_to_actual_pytester_subprocesses": true,
+      "xdist_scope": "Three original mock hook-contract cases only; actual xdist transport not qualified.",
+      "selected_origin_Mk_Templates_Git_inputs": 246,
+      "normal_development_count_unchanged": 120,
+      "normal_installation": false,
+      "whole_SDK120_raw_database_frozen_base_accounts_cache_mounts_source_guards_pass": true,
+      "receipt_sha256": "ab655b64f015399dda215c8b7cec94a193735010fa59d147139499e4cbf3a7f6",
+      "remaining": [
+        "Independent sealed plugin/global entrypoint/CLI and nested TAP/status oracles.",
+        "Original actual package lifecycle, both-host source/private/failure custody and normal delivery/custody.",
+        "Complete Fontconfig original16program suite/nestedTAP, freshdefaultfont/cache/XML/CLI/shared/static and original Lua/sample/cache-trigger lifecycle.",
+        "Canonical/SDK/TCB/matching source/kernel/AMD64/desktop/physical/fullrelease gates."
+      ]
     }
   }
 }
