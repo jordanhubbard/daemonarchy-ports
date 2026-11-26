@@ -1,0 +1,84 @@
+{
+  "observed_utc": "2026-11-26T08:25:10.877057+00:00",
+  "status": "pass-bounded-native-ARM-JsonC-normal123",
+  "scope": "Selected public API and package development acceptance only; full public/internal API, canonical Component/provenance/lifecycle/SDK/TCB, matched source/kernel/AMD64 and full release remain open.",
+  "origin": "devel/json-c",
+  "FreeBSD_package_version": "0.19_1",
+  "upstream_pinned_commit": "81092b3",
+  "upstream_header_runtime_CMake_and_pkgconf_version": "0.19.99",
+  "version_note": "The retained development commit identifies itself as 0.19.99 in all four upstream interfaces; the original FreeBSD port package identity remains 0.19_1.",
+  "source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+  "package": {
+    "bytes": 77781,
+    "sha256": "86e79f71985e45e3ad5059ab60fcf6457fb84d6305f1ca82af9631272eee658f"
+  },
+  "original_28_case_suite_report": "json-c-original-suite-20261126.json",
+  "private_and_normal_consumers_each": {
+    "selected_API_checks_per_consumer": 88,
+    "actual_commands": 16,
+    "consumers": [
+      "pkgconf shared",
+      "pkgconf static",
+      "installed CMake shared export",
+      "installed CMake static export"
+    ],
+    "all_check_labels_and_outcomes_equal_private": true,
+    "coverage": [
+      "All JSON types, absent key versus present null, embedded NUL and Unicode bytes, exact serialization and integer limits.",
+      "Deep copy and independent mutation, iteration, sparse arrays/deletion/sorting/search.",
+      "Userdata replacement/destruction and held-reference ownership.",
+      "Escaped JSON pointers, excessive index rejection without growth, patch test/add/copy/move/replace/remove and a real failed patch.",
+      "Incremental parsing, strict invalid inputs and UTF-8, null success versus parse error, depth limits and recovery.",
+      "Exact expected file bytes and native file I/O."
+    ],
+    "actual_shared_candidate_and_static_without_dynamic_json_provider_verified": true,
+    "actual_base_providers": [
+      "libc.so.7",
+      "libm.so.5",
+      "libsys.so.7"
+    ],
+    "full_public_API_or_OOM_threading_fuzz_acceptance_claimed": false
+  },
+  "actual_original_pkg_chroot_transactions": 6,
+  "original_ldconfig_postinstall_postdelete_reinstall_hooks_verified": true,
+  "private_locked_accounts_readonly_base_devfs_full_unmount": true,
+  "normal_acceptance": {
+    "before_count": 122,
+    "accepted_bounded_development_count": 123,
+    "offline_original_dependency_integrity_and_hooks": true,
+    "all28_payloads_exact": true,
+    "all122_inherited_prefixes_preserved": true,
+    "new_loader_provider": "libjson-c.so.5",
+    "all_prior_loader_candidates_paths_and_priorities_preserved": true,
+    "four_consumers_repeat_all88_checks_without_private_LD_or_import_override": true,
+    "whole_SDK123_prefix_raw_database_frozen_base_accounts_cache_mounts_and_248_source_guards_pass": true
+  },
+  "two_host_custody": {
+    "source_failure_private_lifecycle": {
+      "nodes": 2897,
+      "archive_bytes": 20924455,
+      "archive_sha256": "f0002489d60a43fb98550042ec3601c604396e0d92a948433dfd0a9d0dcbf397",
+      "inventory_sha256": "b5974c803c44e33703850c93fb617728483f12e619886a1b5d72bbeafebdf727",
+      "all_archived_nodes_verified_on_native_ARM_and_physical_Intel": true
+    },
+    "normal": {
+      "nodes": 106,
+      "archive_bytes": 18201898,
+      "archive_sha256": "ddf8f6a423eb7bf2509df0a335c6e5b9d0a4549275eaf6f200763f59946acbc3",
+      "inventory_sha256": "f9c437561ad4510ff88191e71b3ca7d5cd7f6447bcd5002c72aaba26e5f9d984",
+      "all_archived_nodes_verified_on_native_ARM_and_physical_Intel": true
+    }
+  },
+  "normal_capture_observer_failure_retained": {
+    "expected_convenience_boolean_absent_from_producer": true,
+    "corrected_capture_independently_checks_actual_producer_private_lifecycle_normal_package_and_source_identities_and_receipt_hashes": true,
+    "no_install_or_consumer_rerun": true
+  },
+  "remaining": [
+    "Fresh Fontconfig TEST executes and passes all 18 restored JSON configuration cases; retain 10 reasoned skips and complete default runtime/hooks.",
+    "Real older cache-version baseline, original network-disabled and Linux bwrap skips remain distinct.",
+    "Fresh default Fontconfig runtime/fonts/cache/XML/CLI/shared/static, Lua/sample/font-cache-trigger lifecycle/custody/normal.",
+    "All wider 1.6 release requirements."
+  ],
+  "subsequent_Fontconfig_TEST_report": "fontconfig-json-c-TEST-20261126.json"
+}

@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-11-26T08:14:51.086314+00:00",
+  "observed_utc": "2026-11-26T08:28:32.172410+00:00",
   "status": "all16programs-OK-nested21PASS28SKIP-18configuration-cases-await-json-c-and-xxd",
   "current_code_commit": "1c38241b2e4a06c2df013f736c0a2e7fbe56fdfc",
   "current_native_source_composition": "82752667e9214aa089bc88be560a9201989a0a5e",
@@ -165,10 +165,10 @@
     "current_native_preparation_receipt_sha256": "84fa86d32926b3a3ea496f7c1442b46dc7aeeafeba54f4ce982ea0f40b64b66a"
   },
   "remaining": [
-    "xxd qualifies at normal count 122; json-c passes all 28 original cases. Complete independent json-c acceptance, then execute the 18 missing Fontconfig configuration cases.",
+    "The 18 missing configuration cases now pass; retain the actual older-version baseline/network/Linux bwrap requirements.",
     "Rerun the complete original Fontconfig TEST selection, audit nested TAP cases, and retain every failure/skip reason.",
     "Fresh default artifact, independent font/cache/XML/CLI/shared/static tests and original Lua-sample/font-cache-trigger lifecycle.",
-    "Complete Fontconfig source/private/normal custody and actual normal dependency/hooks; accepted bounded development set is122.",
+    "Complete Fontconfig source/private/normal custody and actual normal dependencies/hooks; bounded accepted development set is 123.",
     "Matching source/SDK/kernel and AMD64, canonical Component/provenance/lifecycle/SDK/TCB, desktop, physical, installer/update/rollback/media/freeze/signing/publication."
   ],
   "operational_metadata_reconciliation": {
@@ -904,7 +904,8 @@
       "normal_count": 122,
       "original_Vim_selfsuite_claimed": false
     },
-    "json_c_original_suite_report": "json-c-original-suite-20261126.json"
+    "json_c_original_suite_report": "json-c-original-suite-20261126.json",
+    "json_c_qualified_report": "json-c-qualified-20261126.json"
   },
   "current_original_TEST_selection_case_audit": {
     "report": "fontconfig-json-c-test-coverage-20261126.json",
@@ -916,5 +917,7 @@
     "all_unique_case_identities_order_and_numbers_match": true,
     "missing_json_c_configuration_cases": 18,
     "full_TEST_qualification": false
-  }
+  },
+  "subsequent_fresh_TEST_report": "fontconfig-json-c-TEST-20261126.json",
+  "subsequent_fresh_default_report": "fontconfig-fresh-default-20261126.json"
 }

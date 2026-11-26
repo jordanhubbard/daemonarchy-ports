@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-11-26T08:14:51.086314+00:00",
+  "observed_utc": "2026-11-26T08:25:10.877057+00:00",
   "status": "all16originalprograms-OK-full-case-audit-identifies18missing-json-c-configuration-cases",
   "scope": "Actual original TEST option observations; not full selected-test qualification, default-artifact acceptance, normal Fontconfig installation, canonical/SDK/TCB/AMD64 or release acceptance.",
   "source_revision": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
@@ -257,8 +257,9 @@
     "fixed_TEST_DEPENDS": "xxd:sysutils/xxd",
     "all_original_scripts_assertions_golden_canary_UTF8_tail_inputs_retained": true,
     "normal_installation": false,
-    "remaining": "Earlier missing-xxd failure retained. The fresh source-declared build now passes all 28 original cases; see json-c-original-suite-20261126.json. Independent API/lifecycle/custody/normal acceptance remains pending.",
-    "subsequent_original_suite_report": "json-c-original-suite-20261126.json"
+    "remaining": "Earlier missing-xxd failure retained. Fresh json-c now qualifies normally at count 123; fresh Fontconfig coverage follows.",
+    "subsequent_original_suite_report": "json-c-original-suite-20261126.json",
+    "subsequent_qualified_report": "json-c-qualified-20261126.json"
   },
   "current_full_native_source": {
     "revision": "82752667e9214aa089bc88be560a9201989a0a5e",
@@ -270,9 +271,10 @@
     "older_qualified_package_receipts_retain_actual_source_revisions": true
   },
   "remaining": [
-    "xxd qualifies at normal count 122; json-c passes all 28 original cases. Complete its independent API/lifecycle/custody/normal acceptance.",
-    "Fresh source-bound Fontconfig TEST run must execute the18 JSON configuration cases; retain baseline/network/Linux bwrap skip reasons.",
+    "All 18 missing JSON configuration cases now execute and pass in the fresh source-bound TEST report.",
+    "Fresh TEST has 39 passes and 10 explicit skips, with all 49 identities/outcomes matched across discovery/TAP/JUnit. Older baseline/network/bwrap gates remain.",
     "Actual older cache-version baseline remains a distinct release gate; do not substitute another build of the same version.",
     "Fresh default font/cache/XML/CLI/shared/static and actual Lua/sample/font-cache-trigger lifecycle/custody/normal; all wider1.6 gates."
-  ]
+  ],
+  "subsequent_fresh_TEST_report": "fontconfig-json-c-TEST-20261126.json"
 }

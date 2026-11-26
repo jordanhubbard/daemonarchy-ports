@@ -1,7 +1,7 @@
 {
   "observed_utc": "2026-11-26T08:14:51.086314+00:00",
   "status": "pass-original-native-suite-independent-package-qualification-pending",
-  "scope": "Native ARM default artifact and complete original suite only. Independent API/shared/static/pkgconf/CMake, loader-cache lifecycle, custody and normal installation remain open, together with canonical and full release gates.",
+  "scope": "Original-suite checkpoint, followed by independent package qualification in json-c-qualified-20261126.json; wider release gates remain open.",
   "origin": "devel/json-c",
   "version": "0.19_1",
   "source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
@@ -224,5 +224,6 @@
     "Actual original loader-cache package lifecycle, full source/failure/private/lifecycle custody on both hosts, then normal dependency/integrity/API acceptance.",
     "Fresh Fontconfig TEST must execute its 18 missing JSON configuration cases; fresh default runtime and Lua/sample/font-cache-trigger acceptance remain separate.",
     "All canonical Component, SDK, TCB, matched source/kernel/AMD64, desktop, physical hardware, installer, update/rollback and full release gates."
-  ]
+  ],
+  "subsequent_independent_and_normal_qualification_report": "json-c-qualified-20261126.json"
 }
