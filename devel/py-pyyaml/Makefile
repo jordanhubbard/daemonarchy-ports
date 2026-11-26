@@ -19,7 +19,8 @@ USES=		cpe localbase python
 USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
 # Include the built libyaml extension when collecting the original tests.
-TEST_ENV+=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} \
+		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 OPTIONS_DEFINE=	LIBYAML EXAMPLES
 OPTIONS_DEFAULT=LIBYAML
