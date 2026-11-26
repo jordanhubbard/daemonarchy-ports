@@ -60,12 +60,13 @@ hardware, canonical per-unit SDK or retained lifecycle/release acceptance.
 - **Priority:** P1
 - **Owner:** devel/py-nose native qualification
 - **Direction:** Preserve original Nose implementation, assertions, suite discovery and selected runner closure; restore legacy conversion with the current setuptools toolchain.
-- **Conclusion:** Original Mixin2to3 import failure drops conversion and build_tests registration. An isolated native authored fixture passes with the compatibility command prototype; full original Nose construction, suite, runtime, lifecycle and normal delivery remain pending.
+- **Conclusion:** Revision 8 passes the original 387-entry runner, sealed consumers, eight private pkg transactions and actual normal development delivery. SDK129 adds 154 exact payloads while preserving all 128 inherited providers. Complete evidence is retained on ARM and Intel. PR123 remains a draft; human authority review, canonical Component lifecycle and full release admission remain open.
 - **Depends on:** PORT-UNIT-001; PORT-PY312-GRAMMAR-001
 - **Implementation:**
   - [x] Restore source and doctest conversion within the original setup3lib commands; retain both existing patches, all original tests and constraints, and bump the package revision.
 - **Evidence:**
-  - [ ] Retain original failures and all control attempts; qualify fresh original targets, complete discovery/completion, sealed clients, lifecycle, two-host custody and actual normal delivery separately.
+  - [x] Retain original failures and all control attempts; qualify fresh original selected targets, discovery/completion with actual skips, sealed clients, bounded native lifecycle, two-host custody and actual normal development delivery separately.
+  - [ ] Complete reviewed integration and canonical Component lifecycle/provenance admission; optional plugin configurations and full previous-release update/rollback remain separate.
 
 The [bounded native conversion control](../verification/nose-conversion-native-control-20261126.json)
 passes actual command registration, source conversion and a doctest with the
@@ -252,3 +253,21 @@ continuation records verify on ARM and Intel, bound to the 101,892-record
 immutable prestate. All 50,529 final private SDK nodes are covered; 14 exact
 delta nodes and 166 retained removal preimages make the final state recoverable.
 Normal delivery and canonical per-unit/full release admission remain open.
+
+
+Normal revision-8 delivery now passes one actual pkg add with scripts and direct
+dependency checks enabled. The normal registry grows from 128 to 129 providers;
+all 154 new payloads and 12 new directories match the sealed package, and every
+inherited provider payload and version stays exact. Registered checksums and
+dependencies pass. Actual uid65534 default-/usr/local imports, both entry points,
+six metadata files, exact usage data, direct callbacks and both authored CLI
+consumers pass. Matching base, accounts, loader/cache, mounts, old/frozen SDKs,
+source, original run and private lifecycle state pass preservation guards.
+
+All 504 normal-delivery records in two parts verify on ARM and Intel, including
+raw before/after registry databases and complete SDK128/129 inventories. The
+normal Nose development hold clears after that custody; the producer's earlier
+pending-custody flag remains retained. Canonical Component/provenance/lifecycle,
+TCB, SDK and full release gates remain open. The next original dependency target
+is Parameterized, whose Nose/Nose2/pytest/unittest/unittest2 runner closure stays
+unchanged. Its tool metadata is being refreshed against the retained SDK129.

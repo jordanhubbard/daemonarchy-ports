@@ -2,7 +2,7 @@
   "schema_version": 1,
   "work_id": "PORT-NOSE-PY312-001",
   "planned_product_release": "1.6",
-  "status": "candidate8-original-sealed-and-eight-private-pkg-transactions-pass-complete-two-host-custody-normal-pending",
+  "status": "candidate8-original-sealed-private-lifecycle-and-normal-delivery-pass-complete-ARM-Intel-custody-canonical-admission-open",
   "origin": "devel/py-nose",
   "candidate_package": "py312-nose-1.3.7_8",
   "retained_original_failure": {
@@ -94,21 +94,22 @@
     "repaired_Python_package_qualification": true,
     "sealed_Nose_runtime_CLI": true,
     "retained_package_lifecycle": false,
-    "normal_Nose_installation": false,
+    "normal_Nose_installation": true,
     "canonical_Component_SDK_or_release_acceptance": false,
     "selected_original_suite_passed_with_actual_skips": true,
     "complete_original_suite_scope": "Selected original runner passes all387 emitted entries,15actual skips retained; optional dependency/plugin configurations and historical6skipgap remain unqualified.",
     "generated_egg_metadata_semantics": true,
     "private_native_package_lifecycle": true,
-    "retained_package_lifecycle_scope": "Bounded native pkg checks and complete reconstructible final-state ARM/Intel custody pass. Canonical admitted Component lifecycle receipt remains open."
+    "retained_package_lifecycle_scope": "Bounded native pkg checks and complete reconstructible final-state ARM/Intel custody pass. Canonical admitted Component lifecycle receipt remains open.",
+    "normal_development_Nose_feature_hold": false
   },
   "dependencies": [
     "Python grammar repair PR122 and mail validation PR84",
     "Complete original test runner and dependency closure"
   ],
-  "next": "Perform bounded normal development Nose8 install with original dependency checks, registered checksums, 128 inherited providers/payloads preserved and actual unprivileged default namespace runtime/CLI/data/metadata consumers. Normal installation and canonical per-unit provenance/lifecycle/TCB/SDK/full1.6 release admission remain open; optional dependency/plugin profiles, historical original6 unprinted11 skip reasons and full previous-release update/rollback remain unqualified.",
+  "next": "Continue original Parameterized five-runner dependency closure against the newly retained SDK129 baseline, preserving Nose/Nose2/pytest/unittest/unittest2 and every original assertion/selection/dependency/deadline. Current readonly plan refreshes mock/nose2/unittest2 and coverage/traceback2/linecache2/six/pbr metadata without build or installation. Normal Nose delivery is development-qualified; canonical per-unit provenance/lifecycle/TCB/SDK/full1.6 release admission, optional dependency/plugin profiles, historical original6 unprinted11 skip reasons and full previous-release update/rollback remain open.",
   "new_patch_zero_fuzz_applies_to_exact_original_setup3lib_and_equals_native_tested_prototype": true,
-  "observed_utc": "2026-11-26T21:20:57.139567+00:00",
+  "observed_utc": "2026-11-26T21:36:25.339598+00:00",
   "normal_Python_prerequisite_now_qualified": {
     "package": "python312-3.12.16_5",
     "package_sha256": "2502aa401ca32d299524750984a538143e6ce48dfc6b55fd4adc283ed72db7a9",
@@ -1062,7 +1063,8 @@
       "all_nodes_actual_ARM_and_Intel_verified": true,
       "extra_Linux_root_archive_bytes": 0
     },
-    "complete_original8_cases_package_runtime_CLI_lifecycle_normal_admission": false
+    "complete_original8_cases_package_runtime_CLI_lifecycle_normal_admission": false,
+    "native_bounded_cases_runtime_CLI_lifecycle_normal_delivery_complete": true
   },
   "actual_original_Nose8_construction_and_selected_selftest": {
     "source_revision": "a837688a3b7a3aa31f2b71203d9fff70bfa7c58e",
@@ -2012,5 +2014,212 @@
       "extra_Linux_root_archive_bytes": 0
     },
     "normal_host_Nose_installed": false
+  },
+  "actual_normal_Nose8_delivery": {
+    "source_revision": "a837688a3b7a3aa31f2b71203d9fff70bfa7c58e",
+    "package": {
+      "bytes": 289284,
+      "sha256": "8e32cb6dcaff3656db86c1224405fc495ed92ee5441f618795708b7af3b5b2ec"
+    },
+    "actual_normal_package_add_count": 1,
+    "actual_package_database": "/var/db/pkg",
+    "no_pkg_script_or_direct_dependency_suppression": true,
+    "no_forced_add": true,
+    "actual_registry_count_before": 128,
+    "actual_registry_count_after": 129,
+    "exact_new_payloads": 154,
+    "exact_new_directories": 12,
+    "all128_inherited_provider_payloads_and_versions_preserved": true,
+    "actual_unprivileged_default_namespace_origin_metadata": {
+      "uid": 65534,
+      "actual_nose_origin": "/usr/local/lib/python3.12/site-packages/nose/__init__.py",
+      "distribution_origin": "/usr/local/lib/python3.12/site-packages/nose-1.3.7-py3.12.egg-info",
+      "version": "1.3.7",
+      "packaged_console_entry_point": true,
+      "exact_packaged_usage_data_bytes": 4425,
+      "exact_packaged_usage_data_sha256": "5985ebadc1e32235cf6f8417ce1bc76c3eab0c8b0a8dcd4fe2e033007b78729d",
+      "global_imp_shim_absent": true,
+      "six_generated_metadata_files_independently_checked": true,
+      "source_manifest_entries": 432,
+      "all_packaged_Python_sources_declared": 47
+    },
+    "actual_direct_callbacks": {
+      "uid": 65534,
+      "actual_direct_callback_checks": [
+        {
+          "label": "error",
+          "pass": true,
+          "identity": {
+            "classname": "authored_direct_plugin.TC",
+            "name": "runTest",
+            "time": "0.000"
+          }
+        },
+        {
+          "label": "failure",
+          "pass": true,
+          "identity": {
+            "classname": "authored_direct_plugin.TC",
+            "name": "runTest",
+            "time": "0.000"
+          }
+        },
+        {
+          "label": "success",
+          "pass": true,
+          "identity": {
+            "classname": "authored_direct_plugin.TC",
+            "name": "runTest",
+            "time": "0.000"
+          }
+        },
+        {
+          "label": "custom-id",
+          "pass": true,
+          "identity": {
+            "classname": "custom_namespace.CustomCase",
+            "name": "custom_method",
+            "time": "0.000"
+          }
+        }
+      ],
+      "total": 4,
+      "passed": 4,
+      "original_Nose_suite_executed_or_retried": false
+    },
+    "actual_consumers": [
+      {
+        "label": "intentional_outcome_run",
+        "actual_XML_root": {
+          "name": "nosetests",
+          "tests": "5",
+          "errors": "1",
+          "failures": "1",
+          "skip": "1"
+        },
+        "actual_cases": [
+          {
+            "classname": "test_sealed_consumer.TestSealedConsumer",
+            "name": "test_error",
+            "time": "0.000"
+          },
+          {
+            "classname": "test_sealed_consumer.TestSealedConsumer",
+            "name": "test_failure",
+            "time": "0.000"
+          },
+          {
+            "classname": "test_sealed_consumer.TestSealedConsumer",
+            "name": "test_pass",
+            "time": "0.000"
+          },
+          {
+            "classname": "test_sealed_consumer.TestSealedConsumer",
+            "name": "test_skip",
+            "time": "0.000"
+          },
+          {
+            "classname": "consumer_doctest",
+            "name": "consumer_doctest",
+            "time": "0.001"
+          }
+        ],
+        "report_sha256": "539325c710d0abaf6777b48b86e7ca4b072ee3099a7543e3c4bee2bf01f42739"
+      },
+      {
+        "label": "all_pass_run",
+        "actual_XML_root": {
+          "name": "nosetests",
+          "tests": "1",
+          "errors": "0",
+          "failures": "0",
+          "skip": "0"
+        },
+        "actual_cases": [
+          {
+            "classname": "test_sealed_pass",
+            "name": "test_consumer_pass",
+            "time": "0.000"
+          }
+        ],
+        "report_sha256": "54c34de80acb3e2796723595f5ce1d17804167fffce0f2dc4b5b629d7edcae74"
+      }
+    ],
+    "command_exits": [
+      {
+        "label": "actual-normal-package-database",
+        "uid": 0,
+        "exit": 0,
+        "expected_exit": 0
+      },
+      {
+        "label": "actual-normal-registry-before",
+        "uid": 0,
+        "exit": 0,
+        "expected_exit": 0
+      },
+      {
+        "label": "one-actual-normal-package-add",
+        "uid": 0,
+        "exit": 0,
+        "expected_exit": 0
+      },
+      {
+        "label": "actual-normal-registry-after",
+        "uid": 0,
+        "exit": 0,
+        "expected_exit": 0
+      },
+      {
+        "label": "actual-normal-registered-checksums-and-direct-dependencies",
+        "uid": 0,
+        "exit": 0,
+        "expected_exit": 0
+      },
+      {
+        "label": "actual-normal-default-namespace-origins-metadata-data",
+        "uid": 65534,
+        "exit": 0,
+        "expected_exit": 0
+      },
+      {
+        "label": "actual-normal-console-version",
+        "uid": 65534,
+        "exit": 0,
+        "expected_exit": 0
+      },
+      {
+        "label": "actual-normal-direct-xunit-callbacks",
+        "uid": 65534,
+        "exit": 0,
+        "expected_exit": 0
+      },
+      {
+        "label": "actual-normal-intentional_outcome_run",
+        "uid": 65534,
+        "exit": 1,
+        "expected_exit": 1
+      },
+      {
+        "label": "actual-normal-all_pass_run",
+        "uid": 65534,
+        "exit": 0,
+        "expected_exit": 0
+      }
+    ],
+    "registered_checksums_and_direct_dependencies_pass": true,
+    "SDK129_frozen_across_all_normal_consumers": true,
+    "all_base_accounts_loader_fontcache_mounts_source_old18_frozen_original_run_and_private_lifecycle_guards_pass": true,
+    "raw_producer_pending_custody_flag_precedes_actual_complete_custody": true,
+    "normal_development_Nose_feature_hold": false,
+    "complete_two_host_custody": {
+      "nodes": 504,
+      "parts": 2,
+      "archive_bytes": 23940152,
+      "inventory_sha256": "d724dbae56cc1b7c7c2eff7dea652c90a2e877cc1a60b615a0ba99dea3947dcf",
+      "all_nodes_actual_ARM_and_Intel_verified": true,
+      "extra_Linux_root_archive_bytes": 0
+    },
+    "canonical_Component_SDK_TCB_provenance_lifecycle_release_admitted": false
   }
 }
