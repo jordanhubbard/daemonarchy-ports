@@ -71,9 +71,32 @@
              }
 
              pixman_region32_fini (&fill_region);
+@@ -977,11 +1014,20 @@
+     for (i = 0; i < n_boxes; ++i)
+     {
+         const pixman_box32_t *box = &(boxes[i]);
++        int32_t x1 = MAX (box->x1, 0);
++        int32_t y1 = MAX (box->y1, 0);
++        int32_t x2 = MIN (box->x2, dest->bits.width);
++        int32_t y2 = MIN (box->y2, dest->bits.height);
++
++        /* Clip each box before subtracting signed coordinates. Keep boxes
++         * separate: overlapping non-SRC fills must still composite repeatedly.
++         */
++        if (x1 >= x2 || y1 >= y2)
++            continue;
+
+         pixman_image_composite32 (op, solid, NULL, dest,
+                                   0, 0, 0, 0,
+-                                  box->x1, box->y1,
+-                                  box->x2 - box->x1, box->y2 - box->y1);
++                                  x1, y1, x2 - x1, y2 - y1);
+     }
+
+     pixman_image_unref (solid);
 --- /dev/null
 +++ test/fill-bounds-test.c
-@@ -0,0 +1,92 @@
+@@ -0,0 +1,111 @@
 +/* SPDX-License-Identifier: MIT */
 +#include <pixman.h>
 +#include <stdint.h>
@@ -85,7 +108,7 @@
 +
 +int main (void)
 +{
-+    const pixman_op_t ops[] = { PIXMAN_OP_SRC, PIXMAN_OP_OVER, PIXMAN_OP_CLEAR };
++    const pixman_op_t ops[] = { PIXMAN_OP_SRC, PIXMAN_OP_OVER, PIXMAN_OP_CLEAR, PIXMAN_OP_ADD };
 +    const pixman_color_t color = { 65535, 0, 65535, 65535 };
 +    const pixman_rectangle16_t rectangles[] = { { -1, -1, 2, 2 }, { 3, 3, 2, 2 } };
 +    const pixman_box32_t boxes[] = { { -1, -1, 1, 1 }, { 3, 3, 5, 5 } };
@@ -96,6 +119,7 @@
 +    const unsigned pixel_bytes[] = { 4, 2, 1 };
 +    const uint32_t sentinels[] = { 0x12121212, 0x1212, 0x12 };
 +    const uint32_t filled_pixels[] = { 0xffff00ff, 0xf81f, 0xff };
++    const uint32_t added_pixels[] = { 0xffff12ff, 0xfa1f, 0xff };
 +    unsigned format, api, op, clipped;
 +    int x, y;
 +
@@ -145,7 +169,8 @@
 +                          logical_y >= 0 && logical_y < size;
 +            }
 +            uint32_t expected = !painted ? sentinels[format] :
-+                ops[op] == PIXMAN_OP_CLEAR ? 0 : filled_pixels[format];
++                ops[op] == PIXMAN_OP_CLEAR ? 0 :
++                ops[op] == PIXMAN_OP_ADD ? added_pixels[format] : filled_pixels[format];
 +            uint32_t actual = 0;
 +            const uint8_t *pixel = pixels + (y * 16 + x) * bpp;
 +            if (bpp == 4)
@@ -162,6 +187,23 @@
 +        }
 +        for (x = 16 * 16 * bpp; x < (int) sizeof (storage); x++)
 +            CHECK (pixels[x] == 0x12);
++        pixman_image_unref (image);
++    }
++    /* Non-idempotent operators must preserve overlapping-box multiplicity. */
++    {
++        uint32_t pixels[4] = { 0, 0, 0, 0 };
++        const pixman_box32_t overlap[] = { { INT32_MIN, INT32_MIN, 1, 1 },
++                                         { 0, 0, INT32_MAX, INT32_MAX } };
++        const pixman_color_t quarter_red = { 0x4000, 0, 0, 0x4000 };
++        pixman_image_t *image = pixman_image_create_bits (PIXMAN_a8r8g8b8,
++                                                         2, 2, pixels, 8);
++        CHECK (image != NULL);
++        CHECK (pixman_image_fill_boxes (PIXMAN_OP_ADD, image, &quarter_red,
++                                        2, overlap));
++        CHECK (pixels[0] == 0x80800000);
++        CHECK (pixels[1] == 0x40400000);
++        CHECK (pixels[2] == 0x40400000);
++        CHECK (pixels[3] == 0x40400000);
 +        pixman_image_unref (image);
 +    }
 +    return 0;
