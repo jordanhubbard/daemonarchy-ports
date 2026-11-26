@@ -1280,5 +1280,99 @@
     "original_failure_before_upstream_execution": "Original pre-test redirects dbus-uuidgen to root-owned /var/lib/dbus/machine-id; UID65534 receives Permission denied. Full original failure and all products/work retained; SDK110 rawprefix, logical registry, base and mounts preserved.",
     "fresh_followup": "Fresh second build underway with short separately owned parent and exact original selected260sourceinputs. Original make test will run original pre-test as root; supported DO_MAKE_TEST hook wraps the exact expanded original backend/environment/target to drop only its execution identity to UID/GID65534. No source/test/options/filter changes. Expected UUID generated-state transition and account/cache guards will be recorded.",
     "qualification": "Build/test outcome pending; no new GLib package installed or suite acceptance claimed."
+  },
+  "full_GLib_original_default_portability_checkpoint_20261125": {
+    "observed_utc": "2026-11-26T00:34:47.046201+00:00",
+    "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/118",
+    "installed_accepted_bounded_development_count": 110,
+    "new_candidates_normally_installed": false,
+    "original_discovered_programs": 420,
+    "original_default_selected_programs": 418,
+    "original_excluded_unqualified": [
+      "iptosmessage",
+      "codegen.py"
+    ],
+    "default_options_preserved": [
+      "DOCS",
+      "MANPAGES",
+      "NLS",
+      "TEST"
+    ],
+    "baseline_actual_selected_suite": {
+      "OK": 407,
+      "SKIP": 9,
+      "ERROR": 2,
+      "failures": [
+        "pollable",
+        "gdbus-auth"
+      ],
+      "numbered_TAP_events": 6987
+    },
+    "first_two_upstream_backports": {
+      "qualification_source_revision": "76ea8e22a12d73da9255afc2b021ff022f11ad95",
+      "all8construction_targets_passed": true,
+      "selected_suite": {
+        "OK": 404,
+        "SKIP": 9,
+        "ERROR": 5
+      },
+      "failure_names": [
+        "testfilemonitor",
+        "file",
+        "documentportal",
+        "dbus-appinfo",
+        "desktop-app-info"
+      ],
+      "numbered_TAP_events": 6900,
+      "package_sha256": "83cb87d35c5eb90da802bbcd17b4566103d9f88ae2590616c32f27e74a79293d"
+    },
+    "causal_worker_capacity": {
+      "independent_base_C_F_KINFO_reproduces_empty_descriptor_paths": true,
+      "fresh_A_B_A": "Empty paths at original capacity, correct paths at increased capacity, empty paths again after restoration. No GLib source needed.",
+      "disconfirmed_hypothesis": "A separate null-device kqueue registration probe disproves the proposed ignored-error hypothesis; no library change was made.",
+      "original_ABA_observer_failure_retained": "Original writable limits and capacity restored, but rebuilt read-only hash geometry differs from boot. Explicit read-only completion verifies current geometry and preserves original failure. No claim of original boot internal geometry restoration."
+    },
+    "adequate_capacity_full_selected_rerun": {
+      "all8construction_targets_passed": true,
+      "selected_suite": {
+        "OK": 408,
+        "SKIP": 9,
+        "ERROR": 1
+      },
+      "failure_names": [
+        "filenamecompleter"
+      ],
+      "numbered_TAP_events": 6988,
+      "all5_prior_capacity_related_failures_passed": true,
+      "minimum_measured_cache_headroom": 1275601,
+      "original_worker_settings_capacity_and_current_runtime_hash_restored": true,
+      "independent_process_exit_watchdog_verified_restoration": true,
+      "package_bytes": 11263642,
+      "package_sha256": "732c10ac4b45c6286d2210a6861311f5205534caa241d6f60be7191f751aa230",
+      "suite_passed": false
+    },
+    "complete_original_failed_source_resource_custody": {
+      "nodes": 65018,
+      "archive_bytes": 285816034,
+      "archive_sha256": "281982442c0b4c2d6c1ea0fe8b950a35815c358db5b1e8c090293f8416856174",
+      "inventory_sha256": "9f670742eccf8c0ca0b7597e74ac64c63302500bc48b1a32cdaacbea17b9a360",
+      "all_nodes_independently_verified_native_ARM_and_Intel": true,
+      "includes": "First three complete source/build/failure trees, full Git composition, probes, original A/B/A observer failure and read-only completion. Later capacity reruns are separately retained and not claimed inside this capsule."
+    },
+    "filename_order_correction": {
+      "upstream_commit": "70355ac696600d7cd99dcb7e1cf110b52bd158b9",
+      "test_only": true,
+      "original_expected_membership_multiplicity_suffix_and_directory_assertions_preserved": true,
+      "original_inputs_options_dependencies_distinfo_exclusions_preserved": true,
+      "package_revision_bump": false,
+      "combined_zero_fuzz_patch_equals_pinned_upstream_test_body": true
+    },
+    "latest_source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+    "latest_source_members": 184381,
+    "latest_native_result": "Complete native Git source verification passed:184381members, original retained source unchanged, strict SDK110/frozen17/base/mount guards passed. Fresh original construction/test now running under the recorded temporary capacity profile with independent restoration watchdog; actual patched test bodies checked against pinned upstream. Terminal build/test outcome pending.",
+    "strict_guards": "Each terminal audited run preserves entire SDK110 prefix/raw database, frozen SDK17, base/kernel/shells, accounts/loader cache, mounts and original selected source inputs. Expected original root UUID pre-test runs before exact unchanged test backend drops to UID/GID65534. Read-only pkg-query sidecar transitions are explicit; no timestamp restoration or blanket exclusion.",
+    "remaining": "Latest native selected suite and actual package consumer/custody/normal acceptance; original skipped/optional/failing variants, six OpenSP suite failures, absent XInclude schemas, complete desktop, matching AMD64/source/SDK/kernel, canonical ownership/provenance/lifecycle/SDK/TCB, physical fleet, installer/update/rollback/final media/freeze/signing/publication.",
+    "latest_source_verification_finished_utc": "2026-11-26T00:34:14.997568+00:00",
+    "latest_source_all_members_and_guards_verified": true
   }
 }
