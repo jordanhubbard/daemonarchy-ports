@@ -54,3 +54,19 @@ This selected-port workflow uses ordinary binary dependency bootstrap and a
 source-built libdvdcss dependency on FreeBSD 15.1 amd64. It does not establish
 the full matching-CURRENT source-built closure, graphical session, physical
 hardware, canonical per-unit SDK or retained lifecycle/release acceptance.
+
+### Linecache2 native qualification observations
+
+The [native report](../verification/linecache2-native-consumers-20261126.json)
+records unchanged Linecache2 1.0.0_2 original construction and 28 exact sealed
+payloads with 15 independent cache/encoding/loader/metadata cases. Five private
+pkg actions and three default-namespace consumer phases pass without changing
+130 inherited providers. Complete original, sealed and private evidence verifies
+on ARM and Intel. One normal pkg add also passes, producing registry131 with all
+inherited providers intact. All 405 normal evidence records verify on ARM and
+Intel; normal development delivery is qualified.
+
+The original port has no do-test target; the unchanged upstream tests need
+unittest2, which remains in the bootstrap closure. No upstream-suite or prior
+release upgrade/rollback acceptance is claimed. Canonical Component execution,
+complete ownership/provenance/TCB, SDK and full release admission remain open.

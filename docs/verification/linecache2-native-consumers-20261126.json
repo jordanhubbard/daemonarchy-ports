@@ -1,0 +1,202 @@
+{
+  "schema": "daemonarchy.native-verification-observation@1",
+  "status": "native-original-construction-sealed-private-and-normal-development-delivery-complete-ARM-Intel-custody-pass",
+  "origin": "devel/py-linecache2",
+  "version": "1.0.0_2",
+  "native_ports_commit": "2ca68fcb66d940c57d6a9b1a4bce53f2f5fa0d4e",
+  "native_ports_tree": "b2d6eef1aa2b09e2083c0f746b4bfa2d7163c99b",
+  "unchanged_port_blobs_identical_to_review_base": {
+    "devel/py-linecache2/Makefile": "a1d1e675bd45536002ae464985e016ded3509586",
+    "devel/py-linecache2/distinfo": "2ed38aed98d90b12a57228bd2430da0c2e4ee7e3"
+  },
+  "target": {
+    "OS": "matching FreeBSD CURRENT calendar-f4eb2cff",
+    "architecture": "arm64",
+    "Python": "3.12.16_5",
+    "initial_normal_provider_count": 130
+  },
+  "source": {
+    "archive_bytes": 11013,
+    "archive_sha256": "4b26ff4e7110db76eeb6f5a7b64a82623839d595c2038eeda662f2a2db78e97c",
+    "original_regular_files": 23,
+    "all_original_Python_bodies_and_upstream_tests_unchanged": true,
+    "original_permission_rule": "Mk/bsd.port.mk extract-fixup-modes: chmod -R u+w,a+rX ${WRKDIR}",
+    "first_observer_failure": "Expected raw umask-filtered update.sh mode0744; original permission fixup correctly produced0755. All208bytes unchanged. Preserve first attempt; correct observer only.",
+    "raw_tar_modes_and_exact_framework_fixup_effects_retained": true,
+    "only_recorded_generated_input_delta_during_build": "linecache2.egg-info/PKG-INFO"
+  },
+  "construction": {
+    "all_eight_original_phases_pass": [
+      "checksum",
+      "extract",
+      "patch",
+      "configure",
+      "build",
+      "stage",
+      "check-plist",
+      "package"
+    ],
+    "original_do_test_target": "undefined: actual exit2 is not suite acceptance",
+    "upstream_test_dependencies": [
+      "fixtures",
+      "unittest2"
+    ],
+    "upstream_suite_qualified": false,
+    "upstream_suite_limit": "unittest2 is not yet available in the current dependency closure; return to the unchanged upstream tests after bootstrap.",
+    "package_bytes": 34149,
+    "package_sha256": "b98d48bf19caf51d6d6f5ae9a0f250698ecf7e1f3974834df8a99edecfb4680f"
+  },
+  "independent_sealed": {
+    "pass": true,
+    "exact_payloads": 28,
+    "all_bodies_types_modes_owners_mtimes_symlink_targets_verified": true,
+    "no_ELF_or_package_scripts": true,
+    "UID": 65534,
+    "actual_normal_Python": "3.12.16_5",
+    "independent_cases": [
+      "packaged-origin-distribution-metadata-and-exported-interface",
+      "missing-file-empty-result",
+      "UTF8-lines-normalized-final-newline-and-bounds",
+      "cache-stays-until-explicit-size-invalidation",
+      "deleted-file-invalidation",
+      "empty-file",
+      "Latin1-encoding-cookie",
+      "UTF8-BOM",
+      "BOM-cookie-mismatch-SyntaxError",
+      "unknown-encoding-SyntaxError",
+      "lazy-loader-deferred-once-and-retained",
+      "loader-without-source",
+      "pseudo-filenames-not-cached",
+      "relative-source-search-path",
+      "clearcache-removes-all-entries"
+    ],
+    "passed": 15
+  },
+  "private_lifecycle": {
+    "pass": true,
+    "actual_transactions": [
+      {
+        "label": "fresh-Linecache2-install",
+        "args": [
+          "add",
+          "/bootstrap/new.pkg"
+        ],
+        "exit": 0
+      },
+      {
+        "label": "explicit-Linecache2-reinstall",
+        "args": [
+          "add",
+          "-f",
+          "/bootstrap/new.pkg"
+        ],
+        "exit": 0
+      },
+      {
+        "label": "ordinary-delete-first",
+        "args": [
+          "delete",
+          "-y",
+          "py312-linecache2"
+        ],
+        "exit": 0
+      },
+      {
+        "label": "fresh-Linecache2-reinstall-after-delete",
+        "args": [
+          "add",
+          "/bootstrap/new.pkg"
+        ],
+        "exit": 0
+      },
+      {
+        "label": "ordinary-delete-final",
+        "args": [
+          "delete",
+          "-y",
+          "py312-linecache2"
+        ],
+        "exit": 0
+      }
+    ],
+    "preparation": "Install already development-qualified PBR7.1.3_1 once into the existing archived private129 SDK, obtaining130 inherited providers. No new SDK clone.",
+    "all130_normal_provider_payloads_match_private_preparation": true,
+    "positive_default_namespace_phases": [
+      "after-fresh-install",
+      "after-reinstall",
+      "after-second-fresh-install"
+    ],
+    "same15_consumer_cases_and_exact28_payloads_checksums_dependencies_pass_in_all_three_installed_states": true,
+    "UID": 65534,
+    "PBR_Linecache2_source_or_loader_override": false,
+    "final_private_registry_count": 130,
+    "Linecache2_import_distribution_and_code_absent_after_delete": true,
+    "retained_Linecache2_license_records": [],
+    "full_initial_database_or_directory_metadata_rollback_claimed": false,
+    "prior_released_upgrade_rollback_qualified": false,
+    "final_private_reconstruction": {
+      "all_final_nodes": 50932,
+      "selected_delta_nodes": 246,
+      "added_nodes": 233,
+      "changed_nodes": 8,
+      "removed_nodes": 0,
+      "every_final_node_is_exact_prior_custodied_final_or_captured_delta": true,
+      "provider_hardlink_families_preserved": true
+    }
+  },
+  "normal_development_delivery": {
+    "native_pass": true,
+    "one_actual_pkg_add_no_force_or_dependency_script_suppression": true,
+    "registry_before": 130,
+    "registry_after": 131,
+    "exact_new_payloads": 28,
+    "new_directories": 6,
+    "all130_inherited_provider_payloads_and_versions_preserved": true,
+    "UID": 65534,
+    "same15_default_namespace_consumers_pass": true,
+    "all_old_frozen_base_accounts_loader_fontcache_mounts_source_original_jobs_and_private_working_state_guards_pass": true,
+    "normal_feature_hold_pending_actual_complete_custody": false,
+    "actual_native_result_sha256": "af1f79a48276489455da2505fb728c5218d91005c01dde7de1c57201caf9d19c",
+    "SDK131_inventory_sha256": "16c7e9a44010c73247e0db871cddd1a66ae8a858a3e352df351b1956263c14f1"
+  },
+  "complete_custodies": {
+    "original": {
+      "records": 971,
+      "parts": 2,
+      "inventory_sha256": "fb906b29f74f94300a6ec597fb1be5abe37e0a82ec170185548b7bbca593c96d",
+      "receipt_sha256": "239868e04756afc61fddc347663dbcc25affbe5b572c49b8034df258e8d427a9",
+      "verified_on_ARM_and_Intel": true
+    },
+    "sealed": {
+      "records": 387,
+      "parts": 1,
+      "inventory_sha256": "88ff89dfb6a66a9965270a3171606c3a8d60a18e67c5bebcbc89c0dc628d464b",
+      "receipt_sha256": "ff9e8ad415a49d8db63e07dfca9c74f106fc5aff59b38ccc4a9ea5f2556ea7b9",
+      "verified_on_ARM_and_Intel": true
+    },
+    "private": {
+      "records": 813,
+      "parts": 6,
+      "inventory_sha256": "b887b63845f2c9b917c0f43fc7225f42a454a9684ccf57b9dd912565171349a4",
+      "receipt_sha256": "85c1aea63284d646d61dd68f6c1cde6bcbb4e199e326f9cbf784ce00e9b87021",
+      "verified_on_ARM_and_Intel": true
+    },
+    "normal": {
+      "records": 405,
+      "parts": 2,
+      "inventory_sha256": "123d31563bbecd1ec005840e7c992c1dcb0fff82655e9c75d6f005897b2b62c8",
+      "receipt_sha256": "ce59db2a0342b80f003df03679f49efc49d8039677df00970975c4cbcddc42d7",
+      "verified_on_ARM_and_Intel": true
+    }
+  },
+  "admission": {
+    "canonical_Component_lifecycle": false,
+    "complete_per_unit_ownership_provenance_or_TCB": false,
+    "canonical_SDK": false,
+    "full_1_6_release": false,
+    "upstream_suite_or_prior_release_acceptance": false
+  },
+  "dependencies": {
+    "PBR_development_qualification_review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/124"
+  }
+}

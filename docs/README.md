@@ -14,3 +14,5 @@ integration branch is `main`, matching the product's release checkout catalog
 and HACKING.md. Track FreeBSD upstream `main` separately from the owned branch.
 GitHub issues are disabled in this fork;
 the product repository's DEV-001 and COMP-001 queues retain the parent work.
+
+- [Linecache2 native consumer observations](verification/linecache2-native-consumers-20261126.json)
