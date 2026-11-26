@@ -1,6 +1,6 @@
 {
   "observed_utc": "2026-11-26T10:50:42.714119+00:00",
-  "status": "pass-bounded-native-ARM-repaired-Pixman-normal125",
+  "status": "historical-bounded-revision1-pass-additional-wide-Box32-fallback-failure-confirmed",
   "scope": "Original native construction/tests, independent exact pixel consumers, package lifecycle and actual normal development acceptance. Full API/ABI, canonical Component/provenance/lifecycle/SDK/TCB, matched source/kernel/AMD64, desktop/apps/hardware and full release remain open.",
   "origin": "x11/pixman",
   "version": "0.46.4_1",
@@ -179,5 +179,15 @@
     "Canonical Component ownership/provenance/lifecycle/SDK/TCB and matching complete source/kernel/AMD64 qualification remain open.",
     "All47platform profiles and physical acceptance, Pi4 beforePi5, installer/update/rollback/media/freeze/signing/publication remain required.",
     "Product framework authority and receipt gates remain separate; no human documentation attestation or lifecycle receipt is synthesized."
-  ]
+  ],
+  "follow_up": {
+    "observed_utc": "2026-11-26T11:02:40.773976+00:00",
+    "candidate_version": "0.46.4_2",
+    "candidate_review_code_commit": "ecd0aa70edd9",
+    "candidate_native_source_revision": "3ce6508396c5ff4d87e489fa5eb2fb1dc3e0f93b",
+    "finding": "Revision1 Box32 spanning INT32_MIN to INT32_MAX reports success but paints zero of16 image pixels when fast and ARM-NEON fills are disabled; same probe paints16 in normal dispatch. Padded backing allocation remains valid. SDK125 and host state preserved.",
+    "finding_result_sha256": "805eff3e347f5eb88f377840eeea283d5ac550abddfdf2cc1fc23db61b1118a4",
+    "repair": "Keep the bounded region alive and composite remaining rectangles after the first unsupported raw fill. Add extreme Box32 to all original authored regression format/operator/clip combinations.",
+    "qualification": "Fresh native source verification running. No revision2 build, runtime, lifecycle, custody or normal-upgrade acceptance yet. All facts below retain their exact revision1 source and package identity."
+  }
 }
