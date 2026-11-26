@@ -1,0 +1,121 @@
+{
+  "observed_utc": "2026-11-26T13:08:36.382475+00:00",
+  "status": "pass-original-full-default-GI-normal127-and-independent-custody",
+  "origin": "devel/gobject-introspection",
+  "flavor": "default",
+  "version": "1.86.0,1",
+  "source_revision": "0164aca0067d77df984de621c8871f8d6eccce1f",
+  "scope": "Bounded native FreeBSD ARM development qualification of original full default gobject-introspection, separate from the required named bootstrap. No complete public API/ABI, canonical Component/provenance/lifecycle/SDK/TCB, matched AMD64, desktop/physical or full 1.6 release acceptance.",
+  "source": {
+    "full_Git_members_verified": 184390,
+    "selected_original_recipe_Mk_Templates_ldconfig_inputs": 249,
+    "independent_original_source_regular_body_and_mode_references": 2634,
+    "original_port_patch_and_PYTHON_substitution_only": true,
+    "all_original_source_bodies_preserved_through_construction_and_tests": true
+  },
+  "original_construction": {
+    "targets_PASS": 8,
+    "selected_options": [],
+    "original_TEST_option": "off",
+    "original_doctool_and_cairo_disabled_selection_preserved": true,
+    "all_original_dependencies_arguments_tests_assertions_deadlines_and_schedule_preserved": true,
+    "package": {
+      "bytes": 653906,
+      "sha256": "64c5f9ec50ab8d6bd3552b3a4ffed0240ce3cea78946a1d7e6a81fbb25c1b144"
+    },
+    "payloads": 239,
+    "explicit_directories": 0
+  },
+  "original_selected_Meson_suite": {
+    "discovered_and_matched_programs": 64,
+    "OK": 64,
+    "FAIL": 0,
+    "SKIP": 0,
+    "all_names_argv_env_protocol_deadlines_and_parallel_selection_retained": true,
+    "nested_case_counts_not_summed": true,
+    "observer_correction": "Generated introspection inventory stores unqualified names; actual testlog prefixes the project. Original failed observer retained. Read-only completion binds the exact project-qualified names and all original commands; no tests or construction replayed."
+  },
+  "private_and_normal_consumers_each": {
+    "actual_commands": 27,
+    "tools": [
+      "g-ir-scanner",
+      "g-ir-compiler",
+      "g-ir-inspect",
+      "g-ir-generate"
+    ],
+    "native_GIRepository_reflection_and_function_invocation": true,
+    "changed_library_inputs": [
+      73,
+      91,
+      104
+    ],
+    "actual_invocation_results": [
+      75,
+      93,
+      106
+    ],
+    "typed_argument_and_missing_namespace_error_recovery": true,
+    "malformed_GIR_and_required_header_compile_rejection_and_recovery": true,
+    "actual_candidate_header_library_and_GLib_dependency_binding": true
+  },
+  "real_package_lifecycle": {
+    "actual_transactions_PASS": 6,
+    "all239_payloads_and_original_ldconfig_hooks_verified": true,
+    "actual_fresh_no_RPATH_client_succeeds_after_add_reinstall_and_fails_before_add_after_delete": true,
+    "synthetic_locked_accounts_readonly_native_base_restricted_devfs_preserved": true,
+    "all_temporary_mounts_restored": true,
+    "dependency_scope": "Copied exact accepted SDK ELF bindings for isolated hook/client exercise; no private dependency solver/package admission claimed."
+  },
+  "normal": {
+    "all239_new_payloads_exact": true,
+    "all126_inherited_providers_and_payloads_preserved": true,
+    "exact_package_registry_count": 127,
+    "original_offline_dependency_integrity_and_ldconfig_hooks_PASS": true,
+    "first_preflight_failed_before_any_package_or_consumer_command": true,
+    "loader_prediction_and_actual_result": {
+      "existing_search_directories_unchanged": true,
+      "GIRepository_candidates_in_order": [
+        "default library in standard local lib",
+        "retained named bootstrap library"
+      ],
+      "old_bootstrap_candidate_body_metadata_unchanged": true,
+      "all_other_ordered_provider_paths_and_priorities_unchanged": true
+    },
+    "same27_default_consumers_without_pkgconf_or_loader_override_PASS": true,
+    "fresh_no_RPATH_client_ELF_verified": true,
+    "wholeSDK127_raw_database_frozen17_base_accounts_loader_fontcache_mount_source_guards_PASS": true
+  },
+  "custody": {
+    "source_private_tests_and_lifecycle": {
+      "nodes": 5103,
+      "archive_bytes": 34102247,
+      "archive_sha256": "8c7421fd97f1ec5c47e4cef5532772342cd36a0f35c9dce97953a4d5746503e5",
+      "inventory_sha256": "6196c1c4e19ae377beb9f7707cd3d0c1d97b506236b0ae856855fb54108598e6",
+      "all_node_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_ARM_and_Intel": true,
+      "extra_compressed_archive_bytes_on_Linux_controller": 0
+    },
+    "initial_normal_preflight_and_corrected_helper": {
+      "nodes": 11,
+      "archive_bytes": 2269271,
+      "archive_sha256": "846d010fbf37f33271ce71cdf3676da16282b9f2a599655e68d762cf3c8d6941",
+      "inventory_sha256": "f77f0b69a5de82e91a4bb17c4bebc9a0470889f73a92984d55211ff2f74bb734",
+      "all_node_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_ARM_and_Intel": true,
+      "extra_compressed_archive_bytes_on_Linux_controller": 0
+    },
+    "actual_normal": {
+      "nodes": 103,
+      "archive_bytes": 18274993,
+      "archive_sha256": "bb9ed7c2137e1f41fbfca933f3ad2c4d11c441e1c4586c3c24f05d790efe1e14",
+      "inventory_sha256": "31879b0585590bfb253e7f4b7229f9ca12928482c852080b40bd661a754bee1a",
+      "all_node_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_ARM_and_Intel": true,
+      "extra_compressed_archive_bytes_on_Linux_controller": 0
+    }
+  },
+  "remaining": [
+    "Original TEST-option Cairo variant and complete public API/ABI qualification remain separate.",
+    "Original default gtk-doc/parameterized full declared test-tool closure and complete Graphviz/desktop prerequisites.",
+    "Canonical ownership/per-unit source and tool provenance/lifecycle/SDK/TCB; matched complete source/kernel/AMD64.",
+    "All 47 platform profiles and physical acceptance, Pi4 before Pi5, installer/update/rollback/media/freeze/signing/publication.",
+    "Human documentation authority review and canonical receipts remain open; no attestation changed."
+  ]
+}

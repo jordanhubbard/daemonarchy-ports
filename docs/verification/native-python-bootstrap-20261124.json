@@ -3,7 +3,7 @@
   "date": "2026-11-24",
   "planned_release": "1.6",
   "scope": "Observed source-built ARM64 development package progress using original ports and sealed/default-path API checks. Not canonical Component/SDK/TCB/lifecycle, complete desktop, physical hardware or release acceptance. Inherited bootstrap provenance gaps remain explicit.",
-  "normal_development_package_count": 126,
+  "normal_development_package_count": 127,
   "groups": [
     {
       "label": "Docutils, Setuptools-SCM and Calver",
@@ -2416,7 +2416,8 @@
     "Brotli admitted at115 for original default native ARM standard-stream surface:28original CTest,88private/88normal commands,54Linux AArch64 cross-binary decodes and54physical Intel existing-decoder cross-ISA decodes. No new AMD64 build/deployment qualification. Extension APIs and broader release gates remain open.",
     "FreeType admitted at116: original8construction targets and options,33private/33normal actualfont commands across10inputs/13faces, knownbitmap andWOFF2, unchanged112characterupstreamregression,6originalhooktransactions andfullboth-hostsource/failure/normalcustody. OriginalportnoTEST_TARGET; nofullMesonsuite/fullAPI/desktop/AMD64/canonicalrelease claim. Fontconfig/HarfBuzz/Pango andbroaderreleaseacceptance remainopen.",
     "Current accepted119 after MoreItertools118 andPyYAML119. Original929/2608case audits,245/62private anddefaultchecks,sixrealpackage transactions each andcompletebothhostsource/failure/normalcustody pass. NewTAP source ports andFontconfig completeoriginalsuite/default-runtime acceptance remainpending.",
-    "Current checkpoint: lzo2 2.10_3 is normally integrated among126 bounded ARM development packages. Four private/normal432case C/CXX shared/static consumers, original exhaustive check/test, six real loader lifecycle transactions and all original/fixed/normal independent custody PASS. Refresh original default desktop/Graphviz dependency graph on source0164; all canonical, matching AMD64, physical, media and full1.6release gates remain open."
+    "Current checkpoint: lzo2 2.10_3 is normally integrated among126 bounded ARM development packages. Four private/normal432case C/CXX shared/static consumers, original exhaustive check/test, six real loader lifecycle transactions and all original/fixed/normal independent custody PASS. Refresh original default desktop/Graphviz dependency graph on source0164; all canonical, matching AMD64, physical, media and full1.6release gates remain open.",
+    "Current bounded checkpoint: full default gobject-introspection1.86.0,1 normally integrated among127 ARM development packages, distinct from namedbootstrap. Original8targets/64programs,2634sourcebodyrefs,27private/normalcommands each,sixrealhooks andallcustodyPASS. Continue originaldefault gtk-doc/parameterized declaredtesttoolclosure and completeGraphviz/desktop; canonical/AMD64/physical/media/full1.6release gates open."
   ],
   "related_reviews": {
     "Setuptools": "https://github.com/jordanhubbard/daemonarchy-ports/pull/90",
@@ -5297,9 +5298,9 @@
     "no_source_or_failure_deleted": true,
     "four_source_private_script_capsules_now_verified_on_both_hosts": true
   },
-  "actual_installed_development_package_count": 126,
+  "actual_installed_development_package_count": 127,
   "current_installed_held_packages": [],
-  "last_updated_utc": "2026-11-26T12:52:32.554204+00:00",
+  "last_updated_utc": "2026-11-26T13:08:36.382475+00:00",
   "shared_xmlcatmgr_keyword_consumer_inventory": {
     "source_revision": "279e0a6de2fa7808d8aa77eef1dee8766203de03",
     "pkg_plist_origins": [
@@ -9415,5 +9416,44 @@
     },
     "report": "docs/verification/lzo2-pkgconf-native-findings-20261126.json",
     "scope": "Bounded native FreeBSD ARM development qualification of corrected lzo2 2.10_3, including independent private/normal consumers, original package lifecycle and both-host custody. Canonical Component/provenance/lifecycle/SDK/TCB, full API/ABI, AMD64, desktop and full release acceptance remain separate."
+  },
+  "selected_original_full_default_GI_qualified_normal127_20261126": {
+    "origin": "devel/gobject-introspection",
+    "flavor": "default",
+    "version": "1.86.0,1",
+    "source_revision": "0164aca0067d77df984de621c8871f8d6eccce1f",
+    "original8targets_and64programs_PASS": true,
+    "private_and_normal27_commands_each_PASS": true,
+    "six_actual_package_lifecycle_transactions_PASS": true,
+    "all126_prior_providers_preserved": true,
+    "normal_count": 127,
+    "custody": {
+      "source_private_tests_and_lifecycle": {
+        "nodes": 5103,
+        "archive_bytes": 34102247,
+        "archive_sha256": "8c7421fd97f1ec5c47e4cef5532772342cd36a0f35c9dce97953a4d5746503e5",
+        "inventory_sha256": "6196c1c4e19ae377beb9f7707cd3d0c1d97b506236b0ae856855fb54108598e6",
+        "all_node_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_ARM_and_Intel": true,
+        "extra_compressed_archive_bytes_on_Linux_controller": 0
+      },
+      "initial_normal_preflight_and_corrected_helper": {
+        "nodes": 11,
+        "archive_bytes": 2269271,
+        "archive_sha256": "846d010fbf37f33271ce71cdf3676da16282b9f2a599655e68d762cf3c8d6941",
+        "inventory_sha256": "f77f0b69a5de82e91a4bb17c4bebc9a0470889f73a92984d55211ff2f74bb734",
+        "all_node_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_ARM_and_Intel": true,
+        "extra_compressed_archive_bytes_on_Linux_controller": 0
+      },
+      "actual_normal": {
+        "nodes": 103,
+        "archive_bytes": 18274993,
+        "archive_sha256": "bb9ed7c2137e1f41fbfca933f3ad2c4d11c441e1c4586c3c24f05d790efe1e14",
+        "inventory_sha256": "31879b0585590bfb253e7f4b7229f9ca12928482c852080b40bd661a754bee1a",
+        "all_node_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_ARM_and_Intel": true,
+        "extra_compressed_archive_bytes_on_Linux_controller": 0
+      }
+    },
+    "report": "docs/verification/gobject-introspection-full-default-20261126.json",
+    "scope": "Bounded native FreeBSD ARM development qualification of original full default gobject-introspection, separate from the required named bootstrap. No complete public API/ABI, canonical Component/provenance/lifecycle/SDK/TCB, matched AMD64, desktop/physical or full 1.6 release acceptance."
   }
 }
