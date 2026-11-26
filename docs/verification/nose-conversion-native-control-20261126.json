@@ -2,9 +2,9 @@
   "schema_version": 1,
   "work_id": "PORT-NOSE-PY312-001",
   "planned_product_release": "1.6",
-  "status": "candidate7-native-compatibility12-and-reporting-isolation-pass-all516nodes-two-host-source22-verification-running-original7-pending",
+  "status": "candidate8-native-boundary17-pass-all535nodes-two-host-full-source23-verification-running-original8-pending",
   "origin": "devel/py-nose",
-  "candidate_package": "py312-nose-1.3.7_7",
+  "candidate_package": "py312-nose-1.3.7_8",
   "retained_original_failure": {
     "setup3lib_import": "Mixin2to3 absent in setuptools63.1.0",
     "effect": "Original setup.py ImportError fallback loses conversion and custom build_tests command registration.",
@@ -101,9 +101,9 @@
     "Python grammar repair PR122 and mail validation PR84",
     "Complete original test runner and dependency closure"
   ],
-  "next": "Complete all184399 native Git-source checks for f73e3f2, then fresh original7 checksum/extract/sixpatches/configure/build/stage/plist/package/build_tests/selftest with upstream XML reporting only. Bind added fixer explicitly throughout all source observations. Reconcile actual original case outcomes and skip identities/reasons; historical original6 unprinted11 skips remain unreconciled. Sealed product/CLI, generated metadata acceptance, lifecycle, normal delivery and full canonical1.6 release gates remain open.",
+  "next": "Verify all184400 source members for a837688, then fresh original8 checksum/extract/sevenpatches/configure/build/stage/plist/package/build_tests/selftest with upstream XML reporting only. Audit every actual original case and skip. Historical original6 unprinted11 skip reasons remain unreconciled. Sealed product/CLI, generated metadata, lifecycle, normal delivery and canonical1.6 release gates remain open.",
   "new_patch_zero_fuzz_applies_to_exact_original_setup3lib_and_equals_native_tested_prototype": true,
-  "observed_utc": "2026-11-26T19:54:24.490070+00:00",
+  "observed_utc": "2026-11-26T20:32:54.568519+00:00",
   "normal_Python_prerequisite_now_qualified": {
     "package": "python312-3.12.16_5",
     "package_sha256": "2502aa401ca32d299524750984a538143e6ce48dfc6b55fd4adc283ed72db7a9",
@@ -642,5 +642,421 @@
       "extra_Linux_root_archive_bytes": 0
     },
     "complete_original7_discovery_cases_package_runtime_CLI_lifecycle_normal_admission": false
+  },
+  "actual_original_Nose7_construction_and_selected_selftest": {
+    "source_revision": "f73e3f217ceee66b89de7f035df9f0e1e27f7c6c",
+    "original_target_exit": 1,
+    "original_runner_entries": 387,
+    "original_runner_seconds": 19.859,
+    "actual_upstream_XML_counts": {
+      "failure": 5,
+      "passed": 366,
+      "skipped": 15,
+      "error": 1
+    },
+    "runner_XML_root_and_all387_occurrences_reconcile": true,
+    "original_synthetic_Failure_error_occurrences": 0,
+    "all15_skips_have_actual_emitted_identity_type_and_message_fields": true,
+    "skip_cases": [
+      {
+        "occurrence": 47,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_coverage_plugin.TestCoverageMinPercentagePlugin",
+          "name": "runTest"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "coverage not available; skipping"
+        }
+      },
+      {
+        "occurrence": 48,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_coverage_plugin.TestCoverageMinPercentageSinglePackagePlugin",
+          "name": "runTest"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "coverage not available; skipping"
+        }
+      },
+      {
+        "occurrence": 49,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_coverage_plugin.TestCoverageMinPercentageSinglePackageWithBranchesPlugin",
+          "name": "runTest"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "coverage not available; skipping"
+        }
+      },
+      {
+        "occurrence": 50,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_coverage_plugin.TestCoverageMinPercentageTOTALPlugin",
+          "name": "runTest"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "coverage not available; skipping"
+        }
+      },
+      {
+        "occurrence": 51,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_coverage_plugin.TestCoverageMinPercentageWithBranchesTOTALPlugin",
+          "name": "runTest"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "coverage not available; skipping"
+        }
+      },
+      {
+        "occurrence": 52,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_coverage_plugin.TestCoveragePlugin",
+          "name": "runTest"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "coverage not available; skipping"
+        }
+      },
+      {
+        "occurrence": 139,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_program.TestTestProgram",
+          "name": "test_run_support_twist"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "twisted not available; skipping"
+        }
+      },
+      {
+        "occurrence": 143,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_string_exception.TestStringException",
+          "name": "test_string_exception_works"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "String exceptions are not supported in this version of Python"
+        }
+      },
+      {
+        "occurrence": 231,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_issue_101.TestErrorClassWithStringException",
+          "name": "test_string_exception_not_masked"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "Python 3.x does not support string exceptions"
+        }
+      },
+      {
+        "occurrence": 310,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_plugins.TestProfPlugin",
+          "name": "test_begin"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "profile plugin not available; skipping"
+        }
+      },
+      {
+        "occurrence": 311,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_plugins.TestProfPlugin",
+          "name": "test_finalize"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "profile plugin not available; skipping"
+        }
+      },
+      {
+        "occurrence": 312,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_plugins.TestProfPlugin",
+          "name": "test_options"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "profile plugin not available; skipping"
+        }
+      },
+      {
+        "occurrence": 313,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "test_plugins.TestProfPlugin",
+          "name": "test_prepare_test"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "profile plugin not available; skipping"
+        }
+      },
+      {
+        "occurrence": 364,
+        "identity_occurrence": 1,
+        "reported_identity": {
+          "classname": "nose.failure.Failure",
+          "name": "runTest"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "twisted not available; skipping"
+        }
+      },
+      {
+        "occurrence": 365,
+        "identity_occurrence": 2,
+        "reported_identity": {
+          "classname": "nose.failure.Failure",
+          "name": "runTest"
+        },
+        "actual_skip_fields": {
+          "type": "unittest.case.SkipTest",
+          "message": "twisted not available; skipping"
+        }
+      }
+    ],
+    "actual_skip_reason_counts": {
+      "coverage not available; skipping": 6,
+      "twisted not available; skipping": 3,
+      "String exceptions are not supported in this version of Python": 1,
+      "Python 3.x does not support string exceptions": 1,
+      "profile plugin not available; skipping": 4
+    },
+    "duplicate_identities_preserved": [
+      {
+        "classname": "test_suite.TestContextSuiteFactory",
+        "name": "test_ancestry",
+        "occurrences": 2
+      },
+      {
+        "classname": "nose.failure.Failure",
+        "name": "runTest",
+        "occurrences": 2
+      }
+    ],
+    "case_inventory_sha256": "b1e13bdc17b9bb9da76e8a7643ca2c16ea9a52278cb854f17771792294e123b6",
+    "raw_XML_sha256": "02d34d30d7537c3d9925ad68a65938a61a9d50bd6806bbfbd574de1357474ef6",
+    "raw_XML_bytes": 199316,
+    "raw_stderr_sha256": "15a891746c1a4a3a6b7388b063a6cba91d056c64ad32489e0e48a9a74d0f6790",
+    "historical_source6_unprinted11_skip_reasons_remain_unreconciled": true,
+    "no_skip_reason_inferred_from_source_or_another_run": true,
+    "raw_original_test_input_assertion_bodies_and_selection_dependencies_deadlines_retained": true,
+    "normal_Nose_installed": false,
+    "complete_original_case_acceptance": false,
+    "complete_native_source_members_verified": 184399,
+    "all8_original_construction_targets_exit": 0,
+    "remaining_failure_groups": {
+      "raw_stdlib_reporter_description": 1,
+      "internal_missing_dependency_legacy_category": 1,
+      "imp_load_source_nonpy_fixture_error": 1,
+      "direct_raw_xunit_callback_class_IDs": 3
+    },
+    "complete_two_host_custody": {
+      "nodes": 2142,
+      "parts": 1,
+      "inventory_sha256": "0fe88da0bae375ab5f391be6624ea4667e83688acc663538ff1d1ab828d96ad7",
+      "all_nodes_actual_ARM_and_Intel_verified": true,
+      "extra_Linux_root_archive_bytes": 0
+    },
+    "derived_full_audit_sha256": "6356962c50768d36f6cb38b58598080c76e7cf0563b530316bae996f4e65b551",
+    "package": {
+      "bytes": 288692,
+      "sha256": "6ac88515e90c8e85daf8ad9256ebbc6b2bbef0757ce63f948dea345a2bb6f76a"
+    }
+  },
+  "candidate8_native_boundary_controls": {
+    "identity": {
+      "implementation_commit": "a789ff83adbae16d740edcad78854084167e93be",
+      "source_revision": "a837688a3b7a3aa31f2b71203d9fff70bfa7c58e",
+      "source_tree": "668360b0aab818b5ac0278871a1941cc06fde724",
+      "files": {
+        "devel/py-nose/Makefile": {
+          "sha256": "1b387a328e4302f4429b3446a2da3d3d58cce3063a0132b527356bc392aaadb2",
+          "blob": "01385dfb3247886f38687d80b018123a874f74fe"
+        },
+        "devel/py-nose/files/patch-python312-zcompat": {
+          "sha256": "881dae7ec679c0c42cd0b5d716cd213f467e8e09cf9bfdaa70c3a6291b855f13",
+          "blob": "71dfbb8badd0af9af2e0715453c6082f55a3b8e5"
+        }
+      },
+      "patched_regular_sources": 434,
+      "original_raw_preimages": 433,
+      "original_nonmetadata_sources": 427,
+      "added_build_only_sources": [
+        "fix_imp_new_module.py"
+      ],
+      "selected_port_patch_count": 7,
+      "reporter_only_TEST_ARGS_interface_retained": true
+    },
+    "negative_original7": {
+      "checks": 17,
+      "passed": 11,
+      "not_reexecuted_in_changed_positive_r2": true
+    },
+    "retained_direct_xunit_prototype": {
+      "callbacks": 4,
+      "passed": 1,
+      "failed_default_class_IDs": 3,
+      "custom_ID_preserved": true
+    },
+    "retained_candidate8_r1": {
+      "checks": 17,
+      "passed": 16,
+      "failure": "Generated private helper import omitted required space; all inputs and failed logs preserved."
+    },
+    "positive_candidate8_r2": {
+      "uid": 65534,
+      "cases": [
+        {
+          "label": "stream-config-valid",
+          "pass": true
+        },
+        {
+          "label": "stream-config-invalid",
+          "pass": true
+        },
+        {
+          "label": "legacy-str",
+          "pass": true
+        },
+        {
+          "label": "legacy-id",
+          "pass": true
+        },
+        {
+          "label": "legacy-result",
+          "pass": true
+        },
+        {
+          "label": "custom-identity-overrides",
+          "pass": true
+        },
+        {
+          "label": "missing-requested-module",
+          "pass": true
+        },
+        {
+          "label": "missing-requested-submodule",
+          "pass": true
+        },
+        {
+          "label": "internal-missing-dependency-preserved",
+          "pass": true
+        },
+        {
+          "label": "specific-import-error-subclass-preserved",
+          "pass": true
+        },
+        {
+          "label": "actual-upstream-xml-stable-class-name",
+          "pass": true
+        },
+        {
+          "label": "original-command-conversion-data-and-original-fixture-constructor",
+          "pass": true,
+          "evidence": {
+            "status": "pass-original-command-conversion-data-original-fixtures-and-nonpy-source-discovery",
+            "uid": 65534,
+            "original_fixture_source_assertion_audit": {
+              "original_mock_input.py": {
+                "original_sha256": "00f478131b0a166c1141418cd3127d85e5870dd43f48cd89a28514f665e69280",
+                "assertions": 9,
+                "test_definitions": 0,
+                "all_assertions_and_test_definitions_unchanged": true,
+                "constructor_import_conversion_present": true
+              },
+              "original_test_utils_input.py": {
+                "original_sha256": "ddb8807453a6fb392292067b3cc0861f7ebca59a78b4d8faf92ba745a1719a81",
+                "assertions": 41,
+                "test_definitions": 13,
+                "all_assertions_and_test_definitions_unchanged": true,
+                "constructor_import_conversion_present": true
+              },
+              "original_noname_wrapper_input.py": {
+                "original_sha256": "a383b78e6f89e253f80e10aba55facea26d8a29516ff51ed867435d0187b430e",
+                "assertions": 0,
+                "test_definitions": 0,
+                "all_assertions_and_test_definitions_unchanged": true,
+                "constructor_import_conversion_present": true
+              },
+              "original_test_no_name_input.py": {
+                "original_sha256": "d6bd93e47c05b41c8c76105b6ebea6e8c6a18bc744919f673f82e16ad0ca8b98",
+                "assertions": 3,
+                "test_definitions": 2,
+                "all_assertions_and_test_definitions_unchanged": true,
+                "constructor_import_conversion_present": true
+              }
+            },
+            "original_fixture_ModuleType_constructor_and_registration": true,
+            "original_nonpy_wrapper_reuses_cached_module_and_discovers_one_doctest": true,
+            "global_imp_shim_absent": true,
+            "unsupported_imp_usage_and_alias_collision_left_unchanged": 5,
+            "original_Nose_cases_executed_or_accepted": false,
+            "existing_registration_module_test_doctest_data_assertions_retained": true
+          }
+        },
+        {
+          "label": "raw-stdlib-result-errorclass-adapter",
+          "pass": true
+        },
+        {
+          "label": "custom-result-description-preserved",
+          "pass": true
+        },
+        {
+          "label": "specific-missing-subclass-preserved",
+          "pass": true
+        },
+        {
+          "label": "direct-raw-xunit-four-callbacks",
+          "pass": true
+        },
+        {
+          "label": "two-argument-source-loader-cache-errors-locking",
+          "pass": true
+        }
+      ],
+      "total": 17,
+      "passed": 17,
+      "original_Nose_suite_replayed_or_accepted": false
+    },
+    "native_BSD_zero_fuzz_source_patches_equal_GNU": true,
+    "all_original7_SDK128_old18_frozen_base_accounts_loader_fontcache_mount_guards_pass": true,
+    "builtin_missing_exception_policy": "Only exact builtin ModuleNotFoundError becomes legacy ImportError at synthetic Failure boundary, including internal dependencies. Original exception remains cause with name/path/traceback. Specific subclasses retain their types. This extends revision7 requested-name-only policy to satisfy unchanged original internal-import doctest.",
+    "source_loader_policy": "Two positional arguments only; SourceFileLoader plus importlib module cache/reload locking semantics. Non-.py source, existing module identity, initial failure cleanup, failed reload retention and concurrent per-module serialization checked. Optional file-handle, aliases and mixed API cases remain unchanged.",
+    "no_global_imp_shim": true,
+    "raw_original_test_and_assertion_bodies_preserved": true,
+    "complete_two_host_custody": {
+      "nodes": 535,
+      "parts": 1,
+      "inventory_sha256": "1702320a4eb3850250606c9564be9b8e335545b5e3bb92461fdc5bc1b9ffc857",
+      "all_nodes_actual_ARM_and_Intel_verified": true,
+      "extra_Linux_root_archive_bytes": 0
+    },
+    "complete_original8_cases_package_runtime_CLI_lifecycle_normal_admission": false
   }
 }

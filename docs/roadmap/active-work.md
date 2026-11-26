@@ -165,3 +165,33 @@ reporting flags for the next original run without selection or deadline flags.
 Full 184,399-file source verification precedes original revision-7 construction
 and complete case/skip auditing. The historical revision-6 unprinted skips remain
 unreconciled. Nose remains uninstalled and full release admission remains open.
+
+
+Revision 7 verifies all 184,399 source members and passes all eight construction
+phases. The original runner with upstream reporting flags records 387 entries:
+366 pass, 15 actual skips, one error and five failures. All entries reconcile
+with the upstream XML, preserving two duplicate identity groups by occurrence.
+All 15 emitted skip identities, types and messages are retained: coverage (six),
+Twisted (three), profile plugin (four), and unsupported string exceptions (two).
+These do not reconcile the earlier revision-6 unprinted skips. All 2,142 source,
+object, package, raw-log, XML and audit records verify on ARM and Intel.
+
+Revision 8 addresses the remaining raw-result reporter description, internal
+missing-dependency exception category, three direct xUnit callback IDs and the
+original non-.py imp.load_source fixture. The conversion extension accepts only
+two positional arguments and preserves module cache/reload identity, failure
+cleanup and locking; unsupported file handles, mixed APIs and aliases remain
+unchanged. Only exact builtin missing-module exceptions receive the legacy
+ImportError category at the synthetic Failure boundary; original cause and
+metadata and specific subclasses remain intact. This extends revision 7's
+requested-name-only policy after the unchanged upstream internal-import doctest
+exposed the remaining difference. No global imp shim is installed.
+
+The same 17 authored boundary checks pass on revision 8; unchanged revision 7
+passes 11. An earlier positive result of 16/17 exposed generated-import spacing;
+that failure and the direct xUnit prototype's 1/4 result remain retained. Four
+original fixture files retain 53 assertion AST nodes and 15 test definitions.
+All 535 control records verify on ARM and Intel. Full source verification now
+checks 184,400 members and seven port patches before the fresh original run.
+Original revision-8 acceptance, sealed product/CLI, metadata, lifecycle, normal
+delivery and canonical release admission remain open. Nose stays uninstalled.
