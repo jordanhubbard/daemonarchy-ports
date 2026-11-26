@@ -2,9 +2,9 @@
   "schema_version": 1,
   "work_id": "PORT-NOSE-PY312-001",
   "planned_product_release": "1.6",
-  "status": "native-authored-registration-and-conversion-fixture-pass-original-Nose-suite-pending",
+  "status": "original-Nose3-package-data-build-failure-retained-Nose4-native-regression-control-pass-original-full-qualification-pending",
   "origin": "devel/py-nose",
-  "candidate_package": "py312-nose-1.3.7_3",
+  "candidate_package": "py312-nose-1.3.7_4",
   "retained_original_failure": {
     "setup3lib_import": "Mixin2to3 absent in setuptools63.1.0",
     "effect": "Original setup.py ImportError fallback loses conversion and custom build_tests command registration.",
@@ -18,7 +18,8 @@
     "original_runtime_and_test_source_edits": false,
     "both_existing_port_patches_preserved": true,
     "original_make_test_commands_unchanged": true,
-    "original_assertions_discovery_deadlines_or_runner_selection_changed": false
+    "original_assertions_discovery_deadlines_or_runner_selection_changed": false,
+    "package_data_repair": "The fallback build_py byte_compile receives all get_outputs paths, including nose/usage.txt. Convert only .py output paths, preserve the full output list passed to original base byte_compile, and retain the existing explicit doctest conversion path."
   },
   "native_authored_control": {
     "architecture": "arm64",
@@ -81,12 +82,13 @@
         }
       ],
       "additional_Linux_root_archive_bytes": 0
-    }
+    },
+    "scope": "Historical initial source3 fixture, without package data. It passed its declared bounded registration/source/doctest scope; the full original build later exposed a separate package-data conversion defect. Original evidence retained unchanged."
   },
   "boundaries": {
     "fresh_original_Nose_build": false,
     "complete_original_suite": false,
-    "repaired_Python_package_qualification": false,
+    "repaired_Python_package_qualification": true,
     "sealed_Nose_runtime_CLI": false,
     "retained_package_lifecycle": false,
     "normal_Nose_installation": false,
@@ -96,6 +98,108 @@
     "Python grammar repair PR122 and mail validation PR84",
     "Complete original test runner and dependency closure"
   ],
-  "next": "Qualify fresh exact original Nose sources and test discovery/completion against repaired Python, then independent packaged runtime/CLI, lifecycle, custody and normal delivery. No original tests or five parameterized runners may be dropped.",
-  "new_patch_zero_fuzz_applies_to_exact_original_setup3lib_and_equals_native_tested_prototype": true
+  "next": "Verify complete184396-member candidate4 native source, then fresh unchanged original checksum/extract/3patch/configure/build/stage/plist/package/custom build_tests+selftest against normal Python5. Preserve every actual failure and case/skip; independent package runtime/CLI, full metadata acceptance, lifecycle/custody/normal and canonical release gates remain pending.",
+  "new_patch_zero_fuzz_applies_to_exact_original_setup3lib_and_equals_native_tested_prototype": true,
+  "observed_utc": "2026-11-26T18:48:44.763539+00:00",
+  "normal_Python_prerequisite_now_qualified": {
+    "package": "python312-3.12.16_5",
+    "package_sha256": "2502aa401ca32d299524750984a538143e6ce48dfc6b55fd4adc283ed72db7a9",
+    "actual_original_Python_fullsuite_exit": 0,
+    "actual_normal_unprivileged_grammar16_native75_embedding36_ABI3_164_pass": true,
+    "matching_f4eb_all9_original_stdtime_cases_pass": true,
+    "normal_installed_count_observed": 128,
+    "whole_SDK_provenance_or_canonical_release_admitted": false,
+    "normal_Python_complete_custody": {
+      "nodes": 8121,
+      "parts": 7,
+      "all_nodes_verified_ARM_and_Intel": 8121,
+      "complete_inventory_sha256": "d16dc6812962c9dc0f3537bc533155cc382db4d6d3461127062cd5421adee24a",
+      "archive_total_bytes": 97887232,
+      "largest_archive_bytes": 22275613,
+      "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_hardlinks_gzip_CRC_verified": true,
+      "extra_Linux_root_archive_bytes": 0
+    },
+    "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/122"
+  },
+  "actual_original_Nose3_construction": {
+    "source_revision": "ee5dbbc99b46c70ed9333a0f17551048460645b2",
+    "original_target_exits": [
+      [
+        "original-checksum",
+        0
+      ],
+      [
+        "original-extract",
+        0
+      ],
+      [
+        "original-patch",
+        0
+      ],
+      [
+        "original-configure",
+        0
+      ],
+      [
+        "original-build",
+        1
+      ]
+    ],
+    "failure": "Fallback tries to parse build/lib/nose/usage.txt as Python; strict converter reports ParseError at ordinary prose.",
+    "original_regular_input_preimages": 433,
+    "exact_patched_original_code_and_test_source_bodies": 427,
+    "original_generated_egg_info_inputs": 6,
+    "all_actual_generated_metadata_deltas_preserved_and_independent_acceptance_pending": true,
+    "original_selftest_cases_executed": 0,
+    "stage_package_selftest_runtime_and_normal_not_executed": true,
+    "actual_builder_uid": 65534,
+    "actual_default_Python_grammar_and_self_SIGINT_profile_pass": true,
+    "whole_normal_SDK128_rawDB_old18_frozen_base_accounts_loader_fontcache_mount_source_guards_pass": true,
+    "custody": {
+      "nodes": 974,
+      "parts": 1,
+      "all_nodes_verified_ARM_and_Intel": 974,
+      "complete_inventory_sha256": "5c7232ba384067f3487a668c5d19635a54fcdafdc1b61344fa7cc6d78616b62c",
+      "archive_total_bytes": 12730996,
+      "largest_archive_bytes": 12730996,
+      "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_hardlinks_gzip_CRC_verified": true,
+      "extra_Linux_root_archive_bytes": 0
+    }
+  },
+  "candidate4_package_data_native_control": {
+    "implementation_commit": "c83899a031425dd667634dccb870f9577f2a7be6",
+    "qualification_source_revision": "01248fc08739686b9f1624d4562a3f73e15fc911",
+    "qualification_source_tree": "d8ea2d746e86e52992906133a2a8a1b25b6fd806",
+    "recipe_sha256": "6b8ac6f79f45bf7bbfcc26d0351aa0e4a2d1c71e4eeb8962d6462c9783516177",
+    "patch_sha256": "1312ed31d4d56c6faad95ed8f937af1fc6e2498795b2f33daf62680864c0ed4e",
+    "native_BSD_zero_fuzz_patch_exit": 0,
+    "native_BSD_and_independent_GNU_exact_source_sha256_equal": true,
+    "positive_setup3lib_sha256": "2f6d905dd03e58d5adb47fe759c2ffac7cd26f3ca59e707d6975d7f61173e2be",
+    "negative_source3_same_fixture_exit": 1,
+    "negative_reproduces_exact_original_package_data_failure": true,
+    "positive_source4_same_fixture_exit": 0,
+    "uid": 65534,
+    "actual_normal_Python_package": "3.12.16_5",
+    "setuptools": "63.1.0",
+    "registration_checks": 3,
+    "converted_module_semantics_checks": 1,
+    "converted_original_test_source_checks": 1,
+    "converted_doctest_cases": 1,
+    "actual_original_usage_data_bytes": 4425,
+    "original_usage_data_sha256": "5985ebadc1e32235cf6f8417ce1bc76c3eab0c8b0a8dcd4fe2e033007b78729d",
+    "data_path_in_original_build_py_get_outputs_verified": true,
+    "package_data_output_and_all_original_fixture_source_bytes_preserved": true,
+    "all_normal_SDK128_rawDB_old18_frozen_base_accounts_loader_fontcache_mount_guards_pass": true,
+    "original_Nose4_fullsuite_executed_or_qualified": false,
+    "custody": {
+      "nodes": 62,
+      "parts": 1,
+      "all_nodes_verified_ARM_and_Intel": 62,
+      "complete_inventory_sha256": "f2947b8cfa79bdfdb2871c95fd541a71c9df6d146b143dae87669aab5b5326e8",
+      "archive_total_bytes": 2253317,
+      "largest_archive_bytes": 2253317,
+      "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_hardlinks_gzip_CRC_verified": true,
+      "extra_Linux_root_archive_bytes": 0
+    }
+  }
 }

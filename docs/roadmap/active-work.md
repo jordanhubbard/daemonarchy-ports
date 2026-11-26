@@ -73,3 +73,21 @@ current setuptools toolchain. It uses an explicitly bound private grammar
 control; it does not qualify a repaired Python package or the original Nose
 suite. Complete shared source/object/failure custody verifies all 9,403 nodes
 on ARM and Intel. Original test execution and normal Nose delivery remain open.
+
+The fresh original revision3 build now runs against the repaired normal Python5.
+Checksum, extraction, three patches and configure pass; build fails because the
+new fallback sends non-Python package data `nose/usage.txt` to lib2to3. No original
+selftest cases run and no package is delivered. All 433 original inputs, 427
+patched code/test bodies, generated metadata deltas and partial build artifacts
+are retained in 974 records verified on ARM and Intel.
+
+Revision4 filters only Python source outputs for conversion, keeps the complete
+base byte-compile output list and retains explicit doctest conversion. A fresh
+same-fixture negative source3 reproduces the real failure; positive source4 passes
+registration, module, test-source, doctest and exact 4,425-byte package-data checks.
+Native BSD zero-fuzz patch output equals the independent GNU output. All 62
+control records verify on both hosts. Source identity is recorded in the report;
+full native source verification and original revision4 construction/selftests,
+packaged runtime/CLI, lifecycle and normal delivery remain open. Nose is still
+uninstalled. The Python prerequisite now passes normal unprivileged use, without
+implying complete SDK provenance or canonical release admission.
