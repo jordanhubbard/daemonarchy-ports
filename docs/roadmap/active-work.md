@@ -54,3 +54,23 @@ This selected-port workflow uses ordinary binary dependency bootstrap and a
 source-built libdvdcss dependency on FreeBSD 15.1 amd64. It does not establish
 the full matching-CURRENT source-built closure, graphical session, physical
 hardware, canonical per-unit SDK or retained lifecycle/release acceptance.
+
+
+### Current 1.6 native Python test-tool holds
+
+The current development checkpoint contains 128 installed packages, with an
+explicit installed Python conversion-feature hold. Nose remains uninstalled.
+The [native finding](../verification/nose-python312-native-findings-20261126.json)
+retains complete construction, original test-target and sealed runtime failures,
+plus the exact registered Python artifact, verified independently on both hosts.
+
+- [ ] Repair retained source/package delivery of Python's two root-0600 grammar
+  pickles and qualify unprivileged conversion. Preserve the original artifact;
+  a live chmod does not qualify the repair or establish seed source provenance.
+- [ ] Restore Nose conversion and original custom test registration with the
+  selected toolchain, then qualify complete original tests, packaged imports/CLI,
+  lifecycle, custody and actual normal delivery. Keep all five original
+  parameterized runners and their declared prerequisites.
+
+These holds are additional to complete ownership/provenance/lifecycle/SDK/TCB,
+matched AMD64, graphical/physical and full release acceptance requirements.
