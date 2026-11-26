@@ -46,3 +46,5 @@ the product repository's DEV-001 and COMP-001 queues retain the parent work.
 - [LZO2 original self-tests and pkg-config header failure](verification/lzo2-pkgconf-native-findings-20261126.json)
 
 - [GObject Introspection full default native qualification](verification/gobject-introspection-full-default-20261126.json)
+
+- [Mock original native suite and normal qualification](verification/mock-original-native-20261126.json)
