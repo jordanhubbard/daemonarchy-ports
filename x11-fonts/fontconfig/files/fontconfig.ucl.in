@@ -1,4 +1,6 @@
-path: [ "%%PREFIX%%/share/fonts", %%PREFIX%%/etc/fonts/conf.d ]
+# pkg records the immediate directory touched by a package file.
+path: [ "%%PREFIX%%/share/fonts", "%%LOCALBASE%%/lib/X11/fonts", "%%LOCALBASE%%/etc/fonts/conf.d" ]
+path_glob: [ "%%PREFIX%%/share/fonts/*", "%%LOCALBASE%%/lib/X11/fonts/*" ]
 trigger: {
 	type: lua
 	sandbox: false
