@@ -87,7 +87,20 @@ same-fixture negative source3 reproduces the real failure; positive source4 pass
 registration, module, test-source, doctest and exact 4,425-byte package-data checks.
 Native BSD zero-fuzz patch output equals the independent GNU output. All 62
 control records verify on both hosts. Source identity is recorded in the report;
-full native source verification and original revision4 construction/selftests,
-packaged runtime/CLI, lifecycle and normal delivery remain open. Nose is still
+full native source verification and original revision4 construction now pass.
+The unchanged selftest aborts during import because Python3.12 removed `imp`;
+zero original cases execute. All 2,104 failure/source/object/stage/package records
+verify on ARM and Intel. Packaged runtime/CLI, lifecycle and normal delivery
+remain open. Nose is still
 uninstalled. The Python prerequisite now passes normal unprivileged use, without
 implying complete SDK provenance or canonical release admission.
+
+Revision5 preserves Nose's path-specific importer with an importlib fallback on
+Python3.12, retaining the import lock, module identity, package paths and failure
+cleanup. An isolated native importer control uses only a stand-in nose.config;
+it runs the actual importer and normal Python5 with no imp shim. Original4
+reproduces the import failure; fixed5 passes17 checks for path collisions,
+cache reuse, firstPackageWins, relative/dotted/circular imports, failure cleanup,
+bytecode, native extensions and source preservation. GNU and BSD zero-fuzz patch
+outputs are identical. Full changed-source verification and the unchanged
+original build/selftest are next; this control grants no original case acceptance.

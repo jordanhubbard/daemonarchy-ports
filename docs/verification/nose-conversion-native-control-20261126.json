@@ -2,9 +2,9 @@
   "schema_version": 1,
   "work_id": "PORT-NOSE-PY312-001",
   "planned_product_release": "1.6",
-  "status": "original-Nose3-package-data-build-failure-retained-Nose4-native-regression-control-pass-original-full-qualification-pending",
+  "status": "original-Nose4-construction-pass-selftest-import-failed-Nose5-isolated-importer-native-control-pass-original-qualification-pending",
   "origin": "devel/py-nose",
-  "candidate_package": "py312-nose-1.3.7_4",
+  "candidate_package": "py312-nose-1.3.7_5",
   "retained_original_failure": {
     "setup3lib_import": "Mixin2to3 absent in setuptools63.1.0",
     "effect": "Original setup.py ImportError fallback loses conversion and custom build_tests command registration.",
@@ -19,7 +19,8 @@
     "both_existing_port_patches_preserved": true,
     "original_make_test_commands_unchanged": true,
     "original_assertions_discovery_deadlines_or_runner_selection_changed": false,
-    "package_data_repair": "The fallback build_py byte_compile receives all get_outputs paths, including nose/usage.txt. Convert only .py output paths, preserve the full output list passed to original base byte_compile, and retain the existing explicit doctest conversion path."
+    "package_data_repair": "The fallback build_py byte_compile receives all get_outputs paths, including nose/usage.txt. Convert only .py output paths, preserve the full output list passed to original base byte_compile, and retain the existing explicit doctest conversion path.",
+    "importer_repair": "Retain legacy imp path where available; Python3.12 fallback uses path-local PathFinder and module specs, preserving global import lock, explicit fullname registration, package-relative imports and failed-module cleanup. No fake imp module or test assertion modifications."
   },
   "native_authored_control": {
     "architecture": "arm64",
@@ -86,7 +87,7 @@
     "scope": "Historical initial source3 fixture, without package data. It passed its declared bounded registration/source/doctest scope; the full original build later exposed a separate package-data conversion defect. Original evidence retained unchanged."
   },
   "boundaries": {
-    "fresh_original_Nose_build": false,
+    "fresh_original_Nose_build": true,
     "complete_original_suite": false,
     "repaired_Python_package_qualification": true,
     "sealed_Nose_runtime_CLI": false,
@@ -98,9 +99,9 @@
     "Python grammar repair PR122 and mail validation PR84",
     "Complete original test runner and dependency closure"
   ],
-  "next": "Verify complete184396-member candidate4 native source, then fresh unchanged original checksum/extract/3patch/configure/build/stage/plist/package/custom build_tests+selftest against normal Python5. Preserve every actual failure and case/skip; independent package runtime/CLI, full metadata acceptance, lifecycle/custody/normal and canonical release gates remain pending.",
+  "next": "Complete two-host control custody and full184397-member source verification; then fresh revision5 unchanged original checksum/extract/4patch/configure/build/stage/plist/package/custom build_tests+selftest. Audit every actual failure, case and skip. Metadata acceptance, sealed runtime/CLI, lifecycle, normal delivery, canonical provenance SDK and full1.6 release remain open.",
   "new_patch_zero_fuzz_applies_to_exact_original_setup3lib_and_equals_native_tested_prototype": true,
-  "observed_utc": "2026-11-26T18:48:44.763539+00:00",
+  "observed_utc": "2026-11-26T19:00:18.346352+00:00",
   "normal_Python_prerequisite_now_qualified": {
     "package": "python312-3.12.16_5",
     "package_sha256": "2502aa401ca32d299524750984a538143e6ce48dfc6b55fd4adc283ed72db7a9",
@@ -199,6 +200,132 @@
       "archive_total_bytes": 2253317,
       "largest_archive_bytes": 2253317,
       "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_hardlinks_gzip_CRC_verified": true,
+      "extra_Linux_root_archive_bytes": 0
+    }
+  },
+  "actual_original_Nose4_construction": {
+    "source_revision": "01248fc08739686b9f1624d4562a3f73e15fc911",
+    "all_complete_native_source_members_verified": 184396,
+    "original_target_exits": [
+      [
+        "original-native-metadata",
+        0
+      ],
+      [
+        "original-custom-test-emitted-without-execution",
+        0
+      ],
+      [
+        "original-checksum",
+        0
+      ],
+      [
+        "original-extract",
+        0
+      ],
+      [
+        "original-patch",
+        0
+      ],
+      [
+        "original-configure",
+        0
+      ],
+      [
+        "original-build",
+        0
+      ],
+      [
+        "original-stage",
+        0
+      ],
+      [
+        "original-check-plist",
+        0
+      ],
+      [
+        "original-package",
+        0
+      ],
+      [
+        "original-complete-custom-build-tests-and-selftest",
+        1
+      ]
+    ],
+    "original_selftest_failure": "ModuleNotFoundError: No module named 'imp' in nose/importer.py during import; no original cases executed.",
+    "original_cases_executed": 0,
+    "package": {
+      "bytes": 286023,
+      "sha256": "17888220f4418c7b82df08754c79865a6318ed71719deff46fe4184f609a8659"
+    },
+    "package_unchanged_after_original_test": true,
+    "all427_original_patched_source_test_bodies_preserved": true,
+    "all_normal_SDK128_old18_frozen_base_accounts_loader_fontcache_mounts_preserved": true,
+    "normal_Nose_installed": false,
+    "complete_two_host_custody": {
+      "nodes": 2104,
+      "parts": 1,
+      "inventory_sha256": "25745cc3a8b5837496f6549727b37515698871dbefc30ccdd745b9aa98c3ab87",
+      "archive_bytes": 13780002,
+      "all_nodes_verified_ARM_and_Intel": true,
+      "extra_Linux_root_archive_bytes": 0
+    }
+  },
+  "candidate5_importer_native_control": {
+    "identity": {
+      "implementation_commit": "0b3f497fd244a3ebc8211091930287e46539962a",
+      "source_revision": "c896943f8eec19d45ecb6300ab73f2f4fb091b0f",
+      "source_tree": "a5905c19c3eeb4a9d530d409ba709c50267d796f",
+      "positive_importer_sha256": "f46eaf4b8988551e911b47a5fd2ba7c597d4d18f771e65a10d6d96c053e3ef78",
+      "files": {
+        "devel/py-nose/Makefile": {
+          "sha256": "8c3849c442493c44314900d2c96e5486b2fd01e0f829e6e4995466bb7180adab",
+          "blob": "3ea5b60581ee9dfde3ac505ff1bcf0b374e90521"
+        },
+        "devel/py-nose/files/patch-nose_importer.py": {
+          "sha256": "bcdf793d85e93e861bd7703c5fafc9486931d7add7a9fc397d2e0ba792ead9a9",
+          "blob": "c5f53aab9f5d9e52a7c48c6222dfbdbde247d101"
+        }
+      }
+    },
+    "scope": "Isolated actual Nose importer authored compatibility regression, actual unprivileged normal Python3.12.16_5. Only nose.config is isolated; no imp shim. Same original4 negative and fixed5 positive, native BSD GNU zero-fuzz equality. Preserve path-local semantics, caches, dotted packages, relative circular imports, failures, native extensions, bytecode and original source. Not original fullsuite acceptance.",
+    "negative_original4_exit": 1,
+    "positive_fixed5_exit": 0,
+    "positive_authored_result": {
+      "uid": 65534,
+      "checks": [
+        "path-local-first",
+        "same-path-reuses-module",
+        "same-name-new-path",
+        "package-relative-import",
+        "first-package-wins",
+        "dotted-new-path",
+        "circular-self-registration",
+        "original-error-propagates",
+        "failed-module-removed",
+        "import-lock-released",
+        "missing-module-errors",
+        "lookup-failure-lock-released",
+        "sourceless-bytecode",
+        "legacy-namespace-rejected",
+        "native-extension",
+        "main-special-case",
+        "input-source-unchanged"
+      ],
+      "count": 17,
+      "importer_sha256": "f46eaf4b8988551e911b47a5fd2ba7c597d4d18f771e65a10d6d96c053e3ef78",
+      "original_Nose_fullsuite_acceptance": false,
+      "isolated_config_only": true
+    },
+    "BSD_and_GNU_zero_fuzz_exact": true,
+    "all_normal_SDK128_old18_frozen_base_accounts_loader_fontcache_mounts_preserved": true,
+    "original_fullsuite_pending": true,
+    "complete_two_host_custody": {
+      "nodes": 43,
+      "parts": 1,
+      "inventory_sha256": "a1c60f0f1ae34c20f4b90c38f8ec6468882d86b6f356e8f7dafb78b82664a386",
+      "archive_bytes": 2240397,
+      "all_nodes_verified_ARM_and_Intel": true,
       "extra_Linux_root_archive_bytes": 0
     }
   }
