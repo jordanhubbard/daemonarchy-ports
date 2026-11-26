@@ -181,5 +181,13 @@
     "inventory_sha256": "9f670742eccf8c0ca0b7597e74ac64c63302500bc48b1a32cdaacbea17b9a360",
     "all_nodes_fully_verified_native_ARM_and_independent_Intel": true,
     "scope": "All three initial source/build trees, baseline2errors/fixed5errors, original audits/exclusions/skips, full selected source/Git compositions, raw probes/failed hypotheses, failed restoration observer and read-only completion. This is failed evidence custody, not suite acceptance."
+  },
+  "third_correction_complete_native_source_verification": {
+    "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+    "source_tree": "85769a7c8458b1ef2a7c375e26cfbff48cddb594",
+    "verified_members": 184381,
+    "source_and_SDK110_frozen17_base_mount_preservation_guards": true,
+    "finished_utc": "2026-11-26T00:34:14.997568+00:00",
+    "fresh_original_build_and_test": "Now running; terminal outcome pending. New package remains uninstalled."
   }
 }
