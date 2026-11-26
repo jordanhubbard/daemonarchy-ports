@@ -54,3 +54,14 @@ This selected-port workflow uses ordinary binary dependency bootstrap and a
 source-built libdvdcss dependency on FreeBSD 15.1 amd64. It does not establish
 the full matching-CURRENT source-built closure, graphical session, physical
 hardware, canonical per-unit SDK or retained lifecycle/release acceptance.
+
+### PBR metadata compatibility qualification
+
+The [native observations](../verification/pbr-importlib-metadata-native-20261126.json)
+retain the original packaged `pbr freeze` failure and nine authored metadata/CLI
+regressions: original 3 pass, 3 fail and 3 error; repaired 9 pass on matching
+FreeBSD CURRENT arm64 with Python 3.12.16_5. The patch preserves upstream test
+bodies. Full native source verification, a fresh repaired package, sealed
+consumption, private pkg lifecycle and normal delivery remain pending. The
+original port has no `do-test` target; no upstream-suite pass or canonical
+Component, provenance, SDK or release admission is claimed.
