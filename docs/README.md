@@ -22,3 +22,5 @@ the product repository's DEV-001 and COMP-001 queues retain the parent work.
 - [Linecache2 native consumer observations](verification/linecache2-native-consumers-20261126.json)
 
 - [LZO2 original self-tests and pkg-config header failure](verification/lzo2-pkgconf-native-findings-20261126.json)
+
+- [Pixman image-fill and loader-hook repair, native qualification](verification/pixman-fill-qualified-20261126.json)

@@ -1,6 +1,6 @@
 PORTNAME=	pixman
 DISTVERSION=	0.46.4
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	https://cairographics.org/releases/
 
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cpe ${USES_LLVM_${ARCH}} meson pkgconfig tar:xz
 # Newer Clang does not permit MMX without SSE, see PR 295268
 USES_LLVM_i386=	llvm:max=19
+USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Dloongson-mmi=disabled \
 		-Dgtk=disabled \
