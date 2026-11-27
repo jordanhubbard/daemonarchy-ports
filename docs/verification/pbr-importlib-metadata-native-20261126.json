@@ -277,5 +277,10 @@
     "documentation_authority_review": "stale",
     "current_canonical_receipt": "not earned",
     "no_human_review_marker_or_receipt_synthesized": true
+  },
+  "later_worker_storage_revalidation": {
+    "observed": "2026-11-27",
+    "status": "historical native qualification retained; current worker storage recovery in progress",
+    "scope": "Port and control inputs remain identical to qualified native source. Independent accepted SDK/source/prior-work content readback is required before current recovered-worker package qualification. This merge does not establish current SDK integrity or canonical release admission."
   }
 }

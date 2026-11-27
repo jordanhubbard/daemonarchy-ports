@@ -1,0 +1,322 @@
+{
+  "schema": "daemonarchy/gdbm-cloexec-native-observation@1",
+  "observed": "2026-11-27T00:00:21.332972+00:00",
+  "canonical_receipt": false,
+  "origin": "databases/gdbm",
+  "original_version": "1.26",
+  "repair_version": "1.26_1",
+  "implementation_review_commit": "148696be11f40a5f5fc190eeab76b77edada1dd9",
+  "native_candidate_source": "a11415e8a4e92fa6c88b82368abf9cbbc2ea3ae2",
+  "upstream_distfile": {
+    "name": "gdbm-1.26.tar.gz",
+    "bytes": 1226591,
+    "sha256": "6a24504a14de4a744103dcb936be976df6fbe88ccff26065e54c1c47946f4a5e"
+  },
+  "original_profile": {
+    "options": {
+      "COMPAT": "off",
+      "NLS": "on"
+    },
+    "target": "FreeBSD16 aarch64 matching CURRENT base",
+    "normal_SDK_packages": 131,
+    "native_make_jobs": 4,
+    "test_target": "check",
+    "original_upstream_test_sources_unchanged": true,
+    "test_cases": 38,
+    "passed": 27,
+    "skipped": 11,
+    "failed": 0,
+    "skip_reason": "All eleven original AT_COMPAT_PREREQ guards require COMPAT=1. The original default profile has COMPAT=0; that profile remains unqualified."
+  },
+  "independent_sealed_failure": {
+    "original_package_sha256": "92eca35d16bbab0033d261716bc4578ac19bd860010b6ec56302472dc9d3fd99",
+    "exact_payloads": 34,
+    "ELF_products": 4,
+    "static_native_objects": 29,
+    "failure": "The independent packaged-library C client requests GDBM_CLOEXEC, reorganizes a database, then observes FD_CLOEXEC cleared. Overall sealed acceptance failed."
+  },
+  "original_native_regression_controls": {
+    "uid": 65534,
+    "cases": [
+      {
+        "supplied_fd": 0,
+        "requested_cloexec": 0,
+        "initial_cloexec": 0,
+        "initial_exec_closed": 0,
+        "reorganized_cloexec": 0,
+        "reorganized_exec_closed": 0,
+        "passed": true
+      },
+      {
+        "supplied_fd": 0,
+        "requested_cloexec": 1,
+        "initial_cloexec": 1,
+        "initial_exec_closed": 1,
+        "reorganized_cloexec": 0,
+        "reorganized_exec_closed": 0,
+        "passed": false
+      },
+      {
+        "supplied_fd": 1,
+        "requested_cloexec": 0,
+        "initial_cloexec": 0,
+        "initial_exec_closed": 0,
+        "reorganized_cloexec": 0,
+        "reorganized_exec_closed": 0,
+        "passed": true
+      },
+      {
+        "supplied_fd": 1,
+        "requested_cloexec": 1,
+        "initial_cloexec": 0,
+        "initial_exec_closed": 0,
+        "reorganized_cloexec": 0,
+        "reorganized_exec_closed": 0,
+        "passed": false
+      }
+    ],
+    "passed": 2,
+    "failed": 2
+  },
+  "cause": "gdbm_open_ext assigns an existing descriptor without applying the requested close-on-exec flag. Recovery passes its temporary descriptor through this path. The original fdop helper compares the target descriptor number with dup(0), which can miss a leaked higher descriptor. The additional control uses fcntl plus actual fork/exec descriptor inspection.",
+  "repair": "Apply F_GETFD/F_SETFD when GDBM_CLOEXEC is requested for a supplied descriptor. Preserve existing flags and the existing GDBM_CLOERROR ownership/error rules. Add a port revision and an authored four-case native regression control; retain all original upstream tests and defaults.",
+  "complete_two_host_custody": {
+    "original_construction_records": 1452,
+    "failed_sealed_records": 473,
+    "original_negative_control_records": 367,
+    "fixed_construction_and_controls": {
+      "records": 1495,
+      "parts": 2,
+      "all_nodes_verified_on_ARM_and_Intel": true
+    },
+    "fixed_first_sealed_attempt": {
+      "records": 485,
+      "parts": 1,
+      "all_nodes_verified_on_ARM_and_Intel": true,
+      "result": "Shared C/API passes, then authored static client link lacks librt. All work, logs and package preserved before corrected consumer execution."
+    },
+    "fixed_successful_sealed": {
+      "records": 566,
+      "parts": 1,
+      "all_nodes_verified_on_ARM_and_Intel": true
+    },
+    "private_first_attempt": {
+      "records": 894,
+      "parts": 4,
+      "all_nodes_verified_on_ARM_and_Intel": true,
+      "outcome": "Two actual completed pkg actions retained. Author consumer check incorrectly rejected original packaged CLI /usr/local/lib RUNPATH after four C/CXX API clients passed; failure and whole current state preserved before continuation."
+    },
+    "private_continuation": {
+      "records": 1254,
+      "parts": 5,
+      "all_nodes_verified_on_ARM_and_Intel": true,
+      "whole_final_owned_clone_nodes": 50970,
+      "final_nodes_reconstructed_from_prior_custodied_state_plus_exact_delta": true,
+      "delta_records": 51,
+      "removed_nodes_with_retained_preimages": 35
+    },
+    "normal_delivery": {
+      "records": 579,
+      "parts": 2,
+      "all_nodes_verified_on_ARM_and_Intel": true
+    }
+  },
+  "candidate_qualification": {
+    "full_native_source_verification": {
+      "members": 184404,
+      "all_git_bodies_modes_links_verified": true,
+      "tree": "ef0da801aa56705b7c43bf0649753e72e182b280",
+      "all_host_SDK_base_accounts_loader_cache_mount_guards_pass": true
+    },
+    "original_make_build_test_package": {
+      "passed": 27,
+      "phases": [
+        "checksum",
+        "extract",
+        "patch",
+        "configure",
+        "build",
+        "test",
+        "stage",
+        "check-plist",
+        "package"
+      ],
+      "package_bytes": 253750,
+      "package_sha256": "1e4de5c7c5d979f2489e1da0eed8b820bd32616ebfdfb0a262fff31d231e47d4",
+      "independent_BSD_zero_fuzz_C_body_sha256": "a39a7b6a65300be9fb86049206206b77cad095845c8946f0c9056bc5def8bdba",
+      "original_upstream_test_cases": 38,
+      "skipped": 11,
+      "failed": 0,
+      "all_original_upstream_tests_unchanged": true
+    },
+    "fixed_same_four_controls": {
+      "uid": 65534,
+      "cases": [
+        {
+          "supplied_fd": 0,
+          "requested_cloexec": 0,
+          "initial_cloexec": 0,
+          "initial_exec_closed": 0,
+          "reorganized_cloexec": 0,
+          "reorganized_exec_closed": 0,
+          "passed": true
+        },
+        {
+          "supplied_fd": 0,
+          "requested_cloexec": 1,
+          "initial_cloexec": 1,
+          "initial_exec_closed": 1,
+          "reorganized_cloexec": 1,
+          "reorganized_exec_closed": 1,
+          "passed": true
+        },
+        {
+          "supplied_fd": 1,
+          "requested_cloexec": 0,
+          "initial_cloexec": 0,
+          "initial_exec_closed": 0,
+          "reorganized_cloexec": 0,
+          "reorganized_exec_closed": 0,
+          "passed": true
+        },
+        {
+          "supplied_fd": 1,
+          "requested_cloexec": 1,
+          "initial_cloexec": 1,
+          "initial_exec_closed": 1,
+          "reorganized_cloexec": 1,
+          "reorganized_exec_closed": 1,
+          "passed": true
+        }
+      ],
+      "passed": 4,
+      "failed": 0
+    },
+    "fixed_sealed_API_ELF_C_CXX_shared_static_CLI": {
+      "passed": true,
+      "exact_payloads": 34,
+      "ELF_products": 4,
+      "static_native_objects": 29,
+      "all_original_failed_C_API_source_and_assertions_unchanged": true,
+      "C_API_source_sha256": "27296061327a2413343ea0a2634d25a04fd503c3df16ef7a6ac87100d8e5b5c2",
+      "driver_sha256": "9193a03cdbbb06ebb10d7a84afc15c933b59ecb54abf4b70abbb8a5233222ed3",
+      "API_clients": [
+        {
+          "language": "C",
+          "linkage": "shared",
+          "dataset_records": 63,
+          "create_assertions": 987,
+          "fresh_process_assertions": 458
+        },
+        {
+          "language": "C",
+          "linkage": "static",
+          "dataset_records": 63,
+          "create_assertions": 987,
+          "fresh_process_assertions": 458
+        },
+        {
+          "language": "CXX",
+          "linkage": "shared",
+          "dataset_records": 63,
+          "create_assertions": 987,
+          "fresh_process_assertions": 458
+        },
+        {
+          "language": "CXX",
+          "linkage": "static",
+          "dataset_records": 63,
+          "create_assertions": 987,
+          "fresh_process_assertions": 458
+        }
+      ],
+      "CLI_roundtrips": [
+        "ascii",
+        "binary"
+      ],
+      "gdbmtool_count": 63,
+      "static_dependencies_from_packaged_ELF": [
+        "libintl.so.8",
+        "librt.so.1",
+        "libc.so.7"
+      ],
+      "authored_driver_corrections": "Correct strict count sentence from original gdbmshell.c before first repaired run; then include static dependency flags from actual packaged ELF DT_NEEDED. Original C/API assertions and timeouts unchanged. Failed authored-link attempt retained in full on both hosts.",
+      "all_SDK131_base_source_accounts_loader_fontcache_mount_and_prior_work_guards_pass": true
+    },
+    "private_real_package_lifecycle": {
+      "passed": true,
+      "actual_package_actions": 8,
+      "completed_first_attempt": 2,
+      "completed_continuation": 6,
+      "previous_completed_actions_and_preparation_replayed": false,
+      "actions": [
+        "fresh unqualified original comparison",
+        "upgrade to repaired",
+        "explicit repaired reinstall",
+        "explicit unqualified comparison rollback",
+        "re-upgrade repaired",
+        "ordinary delete",
+        "fresh repaired install",
+        "ordinary final delete"
+      ],
+      "positive_default_namespace_phases": 4,
+      "comparison_negative_phases": 2,
+      "all_positive_four_CLOEXEC_controls_and_C_CXX_shared_static_API_CLI_roundtrips_pass": true,
+      "both_comparison_controls_observe_expected_two_failures": true,
+      "registered_checksums_and_dependencies_pass": true,
+      "actual_ldconfig_and_info_index_hooks_pass": true,
+      "both_deletes_remove_GDBM_code_loader_entry_and_info_index_entry": true,
+      "final_registered_providers": 131,
+      "no_forced_delete_or_script_dependency_suppression": true,
+      "normal_compiled_clients_strictly_without_RPATH_RUNPATH": true,
+      "packaged_original_CLI_RUNPATH": "Exact /usr/local/lib permitted; actual default library bindings checked. No private, producer or build path allowed. All C/API assertions and deadlines unchanged.",
+      "prior_released_upgrade_rollback_baseline_qualified": false,
+      "license_retention_and_database_directory_metadata_boundary": "Actual retained license files and metadata transitions recorded. No full initial database or directory-metadata rollback claim."
+    },
+    "normal_delivery": {
+      "passed_native_runtime": true,
+      "package_add_actions": 1,
+      "registry_before": 131,
+      "registry_after": 132,
+      "exact_new_payloads": 34,
+      "inherited_provider_payloads_preserved": 131,
+      "four_CLOEXEC_controls_pass": true,
+      "four_C_CXX_shared_static_and_CLI_roundtrip_consumers_pass": true,
+      "UID": 65534,
+      "normal_unowned_info_index_matches_qualified_private_positive": true,
+      "actual_loader_hint_before": "0b41ce3feabd43e6e4705840198caa52d4b92e3569500ceeddcfd947af874347",
+      "actual_loader_hint_after": "0b41ce3feabd43e6e4705840198caa52d4b92e3569500ceeddcfd947af874347",
+      "source_base_accounts_fontcache_mounts_prior_jobs_private_state_preserved": true,
+      "development_feature_hold": false,
+      "same_qualified_sealed_library_archive_and_header_bytes": true,
+      "final_SDK132_inventory_sha256": "26a7505e359abc229f6078075d82d4b5c15763324de02c877fca034adaa538de"
+    }
+  },
+  "remaining_release_gates": [
+    "Previous released upgrade/rollback baseline has not been qualified.",
+    "Canonical Component, ownership, provenance, TCB, SDK and full release admission remain open."
+  ],
+  "qualification_boundary": "Observed development evidence only. No canonical receipt, SDK admission or release completion is inferred.",
+  "verification": {
+    "litai_verify_exit": 1,
+    "committed_locks_current": 2,
+    "authority_gate": "stale documentation authority review; no human review marker fabricated",
+    "canonical_receipt": "unearned; authority gate fails before admission",
+    "initial_sparse_layout_failure": "Restored all Tools/daemonarchy authority directories and reran verification. Both committed locks now pass."
+  },
+  "review_and_native_implementation_blobs_identical": {
+    "databases/gdbm/Makefile": "a4fe4641fc3336ce21a2a07f0b8879d9f64421ea",
+    "databases/gdbm/files/patch-src_gdbmopen.c": "ac399c6d4a914dffa63179cd5dd6805eaead789f",
+    "Tools/daemonarchy/verification/check_gdbm_cloexec.c": "47e8c62da57cc0b49d02a1b4616070e2ea6c3899"
+  },
+  "coverage_boundaries": {
+    "COMPAT_enabled": "Not selected by the original default profile; no qualification claimed for that optional variant."
+  },
+  "later_worker_storage_revalidation": {
+    "observed": "2026-11-27",
+    "status": "recovery-and-independent-content-revalidation-pending",
+    "prior_results_scope": "Original retained artifacts and historical native transactions only; independently retained custody is preserved.",
+    "current_worker": "Original ARM root/data filesystems found inconsistent; original disks preserved and reversible COW-only recovery in progress.",
+    "required_before_further_use": "Prove or restore exact protected SDK, source and prior-custody state against accepted independent inventories. No candidate runtime, canonical or new release admission from repair."
+  }
+}

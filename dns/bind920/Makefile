@@ -4,10 +4,10 @@ PORTNAME=	bind
 DISTVERSION=	9.20.31
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
-PORTREVISION=	0
+PORTREVISION=	1
 .else
 # dns/bind920 here
-PORTREVISION=	0
+PORTREVISION=	1
 .endif
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${DISTVERSION}
@@ -30,7 +30,7 @@ WWW=		https://www.isc.org/bind/
 # DEPRECATED=	End of life, please migrate to a newer version of BIND9
 # EXPIRATION_DATE=	2028-06-30
 
-LICENSE=	MPL20
+LICENSE=	MPL-2.0
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2 \
