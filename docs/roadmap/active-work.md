@@ -315,3 +315,33 @@ worker filesystem corruption and current SDK/source revalidation requirement
 recorded above also apply to Nose. Accepted independent custody is preserved;
 no recovered SDK, new dependency closure, optional profile or canonical release
 acceptance follows from integrating this source correction.
+
+### PBR metadata compatibility qualification
+
+The [native observations](../verification/pbr-importlib-metadata-native-20261126.json)
+retain the original packaged `pbr freeze` failure and nine authored metadata/CLI
+regressions: original 3 pass, 3 fail and 3 error; repaired 9 pass on matching
+FreeBSD CURRENT arm64 with Python 3.12.16_5. The patch preserves upstream test
+bodies. All 184,402 native Git members verify; the fresh repaired package passes all
+eight original construction phases. Its 207 sealed payloads, version/API/CLI
+checks, the original freeze assertion, nine unchanged package regressions and
+actual PEP517 metadata/wheel/sdist/fresh-child consumers pass. Construction
+and all 617 sealed evidence records verify on ARM and Intel.
+Eight private pkg actions pass, including upgrade/reinstall/comparison rollback,
+re-upgrade, delete/fresh install/delete; four default-namespace repaired phases
+pass all nine authored regressions and real PEP517 consumers. Complete private
+evidence verifies on ARM and Intel. Final private state has 129 inherited
+providers and no PBR runtime or registration, retaining three exact comparison
+license records; full database/directory metadata rollback is not claimed. One
+normal pkg add also passes: registry 129 to 130, 207 exact new payloads, 26 new
+directories and all inherited provider payloads preserved. Normal unprivileged
+default-namespace consumers pass; all 637 normal evidence records verify on
+ARM and Intel. Normal PBR development delivery is qualified. The
+original port has no `do-test` target; no upstream-suite pass or canonical
+Component, provenance, SDK or release admission is claimed.
+
+PBR recovery scope, November 27: these source and artifact observations retain
+their original identities. Worker filesystem recovery is in progress; independent
+accepted SDK, source and prior-work content readback is required before further
+package qualification. Integration grants no current recovered-SDK or canonical
+release admission.

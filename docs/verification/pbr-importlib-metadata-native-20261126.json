@@ -1,0 +1,286 @@
+{
+  "schema": "daemonarchy.native-verification-observation@1",
+  "status": "native-original-construction-sealed-private-lifecycle-normal-development-delivery-complete-ARM-Intel-custody-pass",
+  "component": "devel/py-pbr",
+  "version": "7.1.3_1",
+  "native_source_commit": "2ca68fcb66d940c57d6a9b1a4bce53f2f5fa0d4e",
+  "native_source_tree": "b2d6eef1aa2b09e2083c0f746b4bfa2d7163c99b",
+  "review_implementation_commit": "b4c4cd5e236802944443656e2d9ecea9c24366c4",
+  "target": {
+    "os": "FreeBSD CURRENT matching calendar-f4eb2cff",
+    "architecture": "arm64",
+    "normal_python": "3.12.16_5",
+    "normal_provider_count_before": 129
+  },
+  "observed_original": {
+    "package_version": "7.1.3",
+    "package_bytes": 187828,
+    "package_sha256": "fe3c5db835fd7ecf722a94604b4b2d808231c5135af93a75f0c6c47fab95f99e",
+    "original_construction_phases_pass": [
+      "checksum",
+      "extract",
+      "patch",
+      "configure",
+      "build",
+      "stage",
+      "check-plist",
+      "package"
+    ],
+    "original_upstream_do_test": "undefined: exit2 is not test-suite acceptance",
+    "sealed_overall_pass": false,
+    "sealed_passing_consumers": [
+      "exact payload bodies and metadata",
+      "distribution/import and console version",
+      "semantic version API",
+      "prepared wheel metadata",
+      "actual wheel and sdist builds",
+      "fresh-process wheel import"
+    ],
+    "required_sealed_failure": "freeze prints PathDistribution project_name AttributeError with process exit0",
+    "failed_sealed_complete_custody": {
+      "records": 611,
+      "parts": 1,
+      "inventory_sha256": "a150b2f9b104a70e9c24f1cafa2af0d07825e98932f5b5a213a008422879bc74",
+      "verified_on_ARM_and_Intel": true
+    }
+  },
+  "fix": [
+    "Use metadata Name for importlib distributions and preserve project_name for the legacy adapter.",
+    "Read pbr.json through Distribution.read_text rather than the metadata header mapping.",
+    "Send caught CLI errors to stderr and return status1."
+  ],
+  "authored_native_controls": {
+    "total": 9,
+    "original": {
+      "passed": 3,
+      "failures": 3,
+      "errors": 3,
+      "process_exit": 1
+    },
+    "patched": {
+      "passed": 9,
+      "failures": 0,
+      "errors": 0,
+      "process_exit": 0
+    },
+    "same_control_source_sha256": "502fc93fcc8d43e32de8e8a9060ee06a241b666bc4fe9ebfa29c0698faa6f605",
+    "BSD_patch_zero_fuzz_and_offsets": true,
+    "original_regular_sources": 142,
+    "changed_original_sources": [
+      "pbr/_compat/metadata.py",
+      "pbr/cmd/main.py"
+    ],
+    "all_original_upstream_test_bodies_unchanged": true,
+    "backport_limit": "Adapter API contract uses the real stdlib Distribution; no installed backport runtime claimed.",
+    "legacy_limit": "Distribution-name adapter contract; no older Python runtime claimed.",
+    "complete_custody": {
+      "records": 507,
+      "parts": 1,
+      "inventory_sha256": "3efd2466b16ee6f5867a99d99cf9cd2f0e5ea717695ced42c4c301ad73f92e6f",
+      "receipt_sha256": "16ec5b31a159a7c6a0279cc4ae1749f4c053ea97d5e34cc85ed98b2b404c6b0a",
+      "verified_on_ARM_and_Intel": true
+    }
+  },
+  "qualification": {
+    "full_native_git_source_verification": {
+      "pass": true,
+      "members": 184402,
+      "unchanged_regular_files_shared_root_owned_readonly": 184399,
+      "changed_Git_paths": 3
+    },
+    "repaired_original_build": {
+      "pass": true,
+      "all_eight_original_phases_pass": true,
+      "package": {
+        "bytes": 187864,
+        "sha256": "6153c7f4a113a5f5b9b2a6d441e17ee224eceba64e63cab902ec9e6c3e850479"
+      },
+      "complete_custody": {
+        "records": 1368,
+        "parts": 1,
+        "inventory_sha256": "ef544c4691c17b0945c7862a094fa014582a7dc84b27676d37faf23e74215330",
+        "receipt_sha256": "7f8295aa82965193d7b0508b45d230664608b96270d3bb0865038a0e0f4ff1b8",
+        "verified_on_ARM_and_Intel": true
+      }
+    },
+    "repaired_sealed_runtime": {
+      "pass": true,
+      "exact_payloads": 207,
+      "no_ELF_or_package_scripts": true,
+      "all_payload_bodies_modes_owners_mtimes_links_exact": true,
+      "same_freeze_assertion_passed": true,
+      "same_nine_authored_regressions_against_actual_package_passed": true,
+      "missing_package_CLI_exit": 1,
+      "missing_package_CLI_error_on_stderr": true,
+      "actual_UID": 65534,
+      "actual_Python": "3.12.16_5",
+      "PEP517_prepared_metadata_wheel_sdist_and_fresh_child_wheel_import_pass": true,
+      "all_normal_SDK129_raw_database_old18_frozen_base_accounts_loader_cache_mounts_and_selected_source_guards_pass": true,
+      "sealed_full_custody": {
+        "records": 617,
+        "parts": 1,
+        "inventory_sha256": "cc73146eaa0434befecd93c914b0bd9d03f211be64babb38b1ef56d559bb14fd",
+        "receipt_sha256": "8687310c3a74b2a4b9e4400b8cb558cca87eb088cd6d7e1d44f398627a0d829a",
+        "verified_on_ARM_and_Intel": true
+      }
+    },
+    "private_package_lifecycle": {
+      "pass": true,
+      "actual_PBR_package_transactions": [
+        {
+          "label": "fresh-original-comparison",
+          "args": [
+            "add",
+            "/bootstrap/comparison.pkg"
+          ],
+          "exit": 0
+        },
+        {
+          "label": "upgrade-to-fixed",
+          "args": [
+            "add",
+            "/bootstrap/new.pkg"
+          ],
+          "exit": 0
+        },
+        {
+          "label": "explicit-fixed-reinstall",
+          "args": [
+            "add",
+            "-f",
+            "/bootstrap/new.pkg"
+          ],
+          "exit": 0
+        },
+        {
+          "label": "explicit-comparison-rollback",
+          "args": [
+            "add",
+            "-f",
+            "/bootstrap/comparison.pkg"
+          ],
+          "exit": 0
+        },
+        {
+          "label": "re-upgrade-after-rollback",
+          "args": [
+            "add",
+            "/bootstrap/new.pkg"
+          ],
+          "exit": 0
+        },
+        {
+          "label": "ordinary-delete-first",
+          "args": [
+            "delete",
+            "-y",
+            "py312-pbr"
+          ],
+          "exit": 0
+        },
+        {
+          "label": "fresh-fixed-install",
+          "args": [
+            "add",
+            "/bootstrap/new.pkg"
+          ],
+          "exit": 0
+        },
+        {
+          "label": "ordinary-delete-final",
+          "args": [
+            "delete",
+            "-y",
+            "py312-pbr"
+          ],
+          "exit": 0
+        }
+      ],
+      "environment_preparation": "One qualified Nose8 install into the existing private128 SDK, producing129 inherited providers before PBR tests. No new SDK clone.",
+      "positive_default_namespace_phases": [
+        "after-upgrade",
+        "after-reinstall",
+        "after-re-upgrade",
+        "after-fresh-fixed"
+      ],
+      "all_four_positive_phases_pass_same_nine_controls_CLI_API_and_real_PEP517_consumers": true,
+      "comparison_negative_phases": [
+        "original-comparison",
+        "after-comparison-rollback"
+      ],
+      "original_comparison_limit": "7.1.3 is an unqualified comparison, not a previously released baseline.",
+      "scripts_and_direct_dependencies_enabled": true,
+      "no_forced_deletion": true,
+      "checksums_and_direct_dependencies_pass_in_all_six_installed_states": true,
+      "UID": 65534,
+      "no_PBR_import_loader_or_package_path_override": true,
+      "all_nine_original_authored_test_method_ASTs_preserved": true,
+      "final_registry_count": 129,
+      "PBR_code_import_distribution_console_absent": true,
+      "exact_original_comparison_license_records_retained": [
+        "usr/local/share/licenses/py312-pbr-7.1.3/APACHE20",
+        "usr/local/share/licenses/py312-pbr-7.1.3/LICENSE",
+        "usr/local/share/licenses/py312-pbr-7.1.3/catalog.mk"
+      ],
+      "full_initial_private_database_directory_metadata_rollback_claimed": false,
+      "complete_custody": {
+        "records": 1383,
+        "parts": 8,
+        "inventory_sha256": "ee58699de64bee6e4b2b0c68a98d82c177fd69c4b03d42201af7bdedc22c08d1",
+        "receipt_sha256": "9488cbd56aaf513d34988d4832b83077996bf8158e3c2edc4e5a6e44a7d4ca7c",
+        "verified_on_ARM_and_Intel": true
+      },
+      "final_private_SDK_reconstruction": {
+        "all_final_nodes": 50699,
+        "selected_delta_nodes": 183,
+        "added_nodes": 170,
+        "changed_nodes": 8,
+        "removed_nodes": 0,
+        "every_node_exact_prior_custodied_final_or_captured_delta": true,
+        "inherited_hardlink_families_preserved": true,
+        "no_extra_full_SDK_copy_or_Linux_root_archive": true
+      }
+    },
+    "normal_development_delivery": {
+      "native_pass": true,
+      "one_actual_pkg_add": true,
+      "no_force_dependency_or_script_suppression": true,
+      "normal_registry_before": 129,
+      "normal_registry_after": 130,
+      "exact_new_payloads": 207,
+      "new_directories": 26,
+      "all_inherited_129_provider_payloads_and_versions_preserved": true,
+      "registered_checksums_and_direct_dependencies_pass": true,
+      "actual_UID": 65534,
+      "default_namespace_import_distribution_version_API_nine_regressions_CLI_real_PEP517_metadata_wheel_sdist_fresh_child_pass": true,
+      "all_old18_frozen_base_accounts_loader_cache_mount_source_original_jobs_and_private_working_state_guards_pass": true,
+      "normal_complete_custody": {
+        "records": 637,
+        "parts": 2,
+        "inventory_sha256": "022cffcbd6361fccc7a07135e8c351c6c884c9153b0178a2068738b8e06f571f",
+        "receipt_sha256": "bb6278fcace4a9b2e9f203bc04bf24b84148e3dc403e57fdd47ce9d043673a3c",
+        "verified_on_ARM_and_Intel": true
+      },
+      "normal_feature_hold_pending_actual_two_host_custody": false,
+      "native_result_sha256": "3fb531a7536b04ac51ceb9dc5db8e2e59d5c76a709fcca04cf3bc71259649af5",
+      "SDK130_inventory_sha256": "8e317c27a48062d4d12f1ccb64f626d5fc88df496baf12321425755fac0b6643",
+      "historical_native_producer_hold_flag": "Written before capture; actual complete custody above clears the development delivery hold. Canonical admission remains false."
+    },
+    "original_upstream_suite": "not earned: original port has no do-test target",
+    "canonical_component_admitted": false,
+    "per_unit_provenance_or_TCB_admitted": false,
+    "SDK_or_full_release_admitted": false
+  },
+  "authority_validation": {
+    "actual_litai_verify_exit": 1,
+    "committed_locks_passed": 2,
+    "documentation_authority_review": "stale",
+    "current_canonical_receipt": "not earned",
+    "no_human_review_marker_or_receipt_synthesized": true
+  },
+  "later_worker_storage_revalidation": {
+    "observed": "2026-11-27",
+    "status": "historical native qualification retained; current worker storage recovery in progress",
+    "scope": "Port and control inputs remain identical to qualified native source. Independent accepted SDK/source/prior-work content readback is required before current recovered-worker package qualification. This merge does not establish current SDK integrity or canonical release admission."
+  }
+}
