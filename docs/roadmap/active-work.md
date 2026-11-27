@@ -14,7 +14,7 @@
   - [ ] Expose installed build/test/package execution and original outcomes plus independent sealed-product acceptance; forbid ambient dependency installation.
   - [ ] Prove clean/warm/source/Mk/options/toolchain invalidation and actual pkg BOM/provenance, then disposable VM installation/update/rollback.
 - **Evidence:**
-  - [x] Current project authority, documentation review and both exact FreeBSD/pkg locks validate through the installed canonical wheel at framework revision `5b9afcd7c9016341620695b9110ec073809d239c`. Standard binding preserves all sixteen required evidence kinds. Verification fails solely on the missing current test receipt; native execution is not admitted.
+  - [x] At the recorded Standard-binding checkpoint, project authority, documentation review and both exact FreeBSD/pkg locks validated through the installed canonical wheel at framework revision `5b9afcd7c9016341620695b9110ec073809d239c`. Standard binding preserves all sixteen required evidence kinds. Verification fails solely on the missing current test receipt; native execution is not admitted.
   - [ ] The installed CLI executes the original build, complete selected upstream tests and independent acceptance, and admits per-unit pkg products with actual provenance.
   - [ ] Equivalent native measurements and upstream-refresh/cut-over/rollback evidence satisfy the product requirements.
 
@@ -55,12 +55,48 @@ source-built libdvdcss dependency on FreeBSD 15.1 amd64. It does not establish
 the full matching-CURRENT source-built closure, graphical session, physical
 hardware, canonical per-unit SDK or retained lifecycle/release acceptance.
 
+### GDBM supplied-descriptor close-on-exec repair
+
+The original GDBM 1.26 default NLS profile built and packaged on matching
+CURRENT aarch64, with 27 original checks passing and 11 original compatibility
+skips. Independent packaged-library acceptance found that reorganization clears
+a requested close-on-exec flag. Four additional native controls inspect both
+file descriptor flags and actual exec inheritance: the original library passes
+the two flag-off cases and fails both flag-on cases.
+
+The port revision applies the requested flag to supplied descriptors while
+preserving existing flags and error ownership. Original upstream tests remain
+unchanged. Repaired native construction and the original checks pass; the same four
+regression controls now all pass, including actual exec inheritance. Fixed sealed C/CXX shared/static consumers and ASCII/binary CLI round-trips
+also pass with unchanged original C/API assertions. Eight actual private package actions, including comparison upgrade/rollback,
+and four positive default-namespace consumer phases pass. One normal package
+add now delivers 34 exact payloads and registry 132 while preserving 131
+inherited providers. Complete construction, failure, private lifecycle and normal-delivery evidence
+is independently retained on ARM and Intel; the development hold is cleared.
+Previous released baseline and canonical admission remain open; this repair grants no canonical
+Component, SDK or release admission. The [native observation](../verification/gdbm-cloexec-native-20261126.json)
+keeps the exact original failure, controls and qualification boundary.
+
+
+**Storage revalidation, 2026-11-27:** the previously used ARM worker was found
+to have root/data filesystem corruption. Its original disks are preserved;
+recovery is running in an isolated copy-on-write data layer. The qualification
+above remains evidence for the original retained artifacts and transactions.
+Recovered SDK, source and historical-work contents require comparison against
+accepted independent inventories and custody before further use. No recovered
+runtime or new release qualification is claimed.
+
+The current documentation review is stale and the canonical receipt remains
+missing. Two committed locks are current. The historical Standard-binding
+validation above is not a current passing authority review; that review still
+must be earned without fabricating the human attestation marker.
+
 ### [ ] PORT-NOSE-PY312-001 — Restore Nose conversion and original command registration
 
 - **Priority:** P1
 - **Owner:** devel/py-nose native qualification
 - **Direction:** Preserve original Nose implementation, assertions, suite discovery and selected runner closure; restore legacy conversion with the current setuptools toolchain.
-- **Conclusion:** Revision 8 passes the original 387-entry runner, sealed consumers, eight private pkg transactions and actual normal development delivery. SDK129 adds 154 exact payloads while preserving all 128 inherited providers. Complete evidence is retained on ARM and Intel. PR123 remains a draft; human authority review, canonical Component lifecycle and full release admission remain open.
+- **Conclusion:** Revision 8 passes the original 387-entry runner, sealed consumers, eight private pkg transactions and actual normal development delivery. SDK129 adds 154 exact payloads while preserving all 128 inherited providers. Complete evidence is retained on ARM and Intel. Source integration is tracked in [PR #123](https://github.com/jordanhubbard/daemonarchy-ports/pull/123); human authority review, canonical Component lifecycle and full release admission remain open.
 - **Depends on:** PORT-UNIT-001; PORT-PY312-GRAMMAR-001
 - **Implementation:**
   - [x] Restore source and doctest conversion within the original setup3lib commands; retain both existing patches, all original tests and constraints, and bump the package revision.
@@ -271,3 +307,11 @@ pending-custody flag remains retained. Canonical Component/provenance/lifecycle,
 TCB, SDK and full release gates remain open. The next original dependency target
 is Parameterized, whose Nose/Nose2/pytest/unittest/unittest2 runner closure stays
 unchanged. Its tool metadata is being refreshed against the retained SDK129.
+
+
+**Nose recovery scope, 2026-11-27:** the native delivery observations above
+remain bound to their original source, package and runtime identities. The
+worker filesystem corruption and current SDK/source revalidation requirement
+recorded above also apply to Nose. Accepted independent custody is preserved;
+no recovered SDK, new dependency closure, optional profile or canonical release
+acceptance follows from integrating this source correction.

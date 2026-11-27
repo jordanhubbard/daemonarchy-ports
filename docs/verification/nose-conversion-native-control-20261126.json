@@ -2221,5 +2221,13 @@
       "extra_Linux_root_archive_bytes": 0
     },
     "canonical_Component_SDK_TCB_provenance_lifecycle_release_admitted": false
+  },
+  "later_worker_storage_revalidation": {
+    "observed": "2026-11-27",
+    "status": "recovery-and-independent-content-revalidation-pending",
+    "historical_native_scope": "Original selected387entries/15actualskips, sealedclients, boundedprivate8transactions and normaldevelopmentdelivery remain evidence for original retained identities only.",
+    "current_worker_scope": "Original disks preserved; COW-only repair in progress. RecoveredSDK/source/priorwork must be independently compared/restored beforeuse. No candidateSDK or currentclosure admission.",
+    "canonical_receipt": "missing; human documentation authority review remains stale",
+    "implementation_source_equivalence": "All10originalNoseportinputs match qualified native source a11415e8a4e92fa6c88b82368abf9cbbc2ea3ae2, including the original selected source8 inputs."
   }
 }
