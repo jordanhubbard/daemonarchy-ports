@@ -198,5 +198,9 @@
   },
   "dependencies": {
     "PBR_development_qualification_review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/124"
+  },
+  "later_worker_storage_revalidation": {
+    "observed": "2026-11-27",
+    "scope": "Historical qualification remains bound to original source/artifacts/custody. Worker storage recovery remains active; independent SDK/source/prior-work content verification must precede further recovered-worker package qualification. No current SDK integrity, upstream-suite or canonical admission follows from this documentation merge."
   }
 }

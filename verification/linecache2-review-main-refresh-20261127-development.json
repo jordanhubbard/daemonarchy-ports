@@ -1,0 +1,27 @@
+{
+  "schema": "daemonarchy/upstream-import-audit@2",
+  "observed": "2026-11-27T19:31:17.540801+00:00",
+  "repository": "daemonarchy-ports",
+  "previous_owned_main": "49842cf5b84e0d334f245cd49ab348b9be4a9bbd",
+  "upstream_reference": "origin/main",
+  "upstream_commit": "45630f750ceed8b207d7fcf1155c450f3a382ec2",
+  "merge_base": "1370ce77dd1539ac7c3ca301efaabac764814a07",
+  "import_tree_before_this_evidence_file": "b1ee8c58cf1a63f3a928bb120e83ef85c01086f8",
+  "complete_tree_file_entries": 184499,
+  "upstream_changed_paths": 4148,
+  "fork_changed_paths": 3,
+  "path_inventory_includes_both_sides_of_renames": true,
+  "shared_changed_paths": [
+    "docs/README.md",
+    "docs/roadmap/active-work.md"
+  ],
+  "upstream_bytes_modes_and_deletions_exact_outside_fork_delta": true,
+  "fork_bytes_modes_and_deletions_exact_outside_upstream_delta": true,
+  "native_build_and_runtime_qualified": false,
+  "qualification_scope": "Complete source-tree import and preservation audit. Previous native receipts remain bound to original commits; native build/runtime, per-unit ownership/provenance, SDK and release acceptance remain open.",
+  "resolution": {
+    "scope": "Preserved complete current main documents and byte-exact Linecache2 appendices",
+    "port_inputs_unchanged_from_native_source": "2ca68fcb66d940c57d6a9b1a4bce53f2f5fa0d4e",
+    "current_recovered_SDK_admitted": false
+  }
+}

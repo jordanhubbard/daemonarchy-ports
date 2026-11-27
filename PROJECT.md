@@ -38,8 +38,9 @@ make probe that built LZ4, ran its default upstream checks and created a pkg;
 that probe is not a Literate AI lifecycle receipt or a qualified Component pkg.
 Original-source adoption now records the clean Git tree without moving source.
 The installed Standard binding selects framework revision `5b9afcd7c9016341620695b9110ec073809d239c`
-and its complete evidence policy. Project authority and both FreeBSD/pkg locks
-validate through that installed CLI. Verification still fails on the missing
+and its complete evidence policy. At that recorded binding checkpoint, project authority and both FreeBSD/pkg
+locks validated through the installed CLI. The subsequent documentation review
+is stale; both locks remain current. Verification still fails on the missing
 current test receipt. Exact native profiles, toolchain custody, original input
 admission and installed target execution remain unfinished.
 

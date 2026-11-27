@@ -1,0 +1,44 @@
+{
+  "schema": "daemonarchy/upstream-import-audit@2",
+  "observed": "2026-11-27T05:46:30.642947+00:00",
+  "repository": "daemonarchy-ports",
+  "previous_owned_main": "1370ce77dd1539ac7c3ca301efaabac764814a07",
+  "upstream_reference": "freebsd/main",
+  "upstream_commit": "729a8208b2243dae72bfec2d8199cef391e00685",
+  "merge_base": "deb3f9d2f40f52f6a3cc8c590c3220fdbde20c1a",
+  "import_tree_before_this_evidence_file": "caec0b5ee564665c978a8e59ded65c46f14c8da9",
+  "complete_tree_file_entries": 184474,
+  "upstream_changed_paths": 4101,
+  "fork_changed_paths": 291,
+  "path_inventory_includes_both_sides_of_renames": true,
+  "shared_changed_paths": [
+    "devel/bison/Makefile",
+    "devel/gettext-runtime/Makefile",
+    "devel/m4/Makefile",
+    "math/openblas/Makefile",
+    "net/Makefile",
+    "security/Makefile"
+  ],
+  "upstream_bytes_modes_and_deletions_exact_outside_fork_delta": true,
+  "fork_bytes_modes_and_deletions_exact_outside_upstream_delta": true,
+  "native_build_and_runtime_qualified": false,
+  "qualification_scope": "Complete source-tree import and preservation audit. Previous native receipts remain bound to original commits; native build/runtime, per-unit ownership/provenance, SDK and release acceptance remain open.",
+  "portable_controller_tests": {
+    "cases": 40,
+    "passed": 39,
+    "skipped": 1,
+    "skip_reasons": [
+      "test_actual_native_bsd_make_metadata (test_observe_unit_inputs_native.NativeProducerSmoke.test_actual_native_bsd_make_metadata) ... skipped 'native-unavailable: actual FreeBSD BSD-make report required'"
+    ]
+  },
+  "authority_validation": "pass",
+  "committed_contract_locks_current": 2,
+  "canonical_test_receipt": "missing; not fabricated",
+  "imported_whitespace_check": {
+    "exit": 2,
+    "warning_files": 56,
+    "all_warning_files_exact_upstream_blobs": true,
+    "mixed_warning_files": [],
+    "policy": "Retain exact upstream bytes, including upstream whitespace in source and patches."
+  }
+}
