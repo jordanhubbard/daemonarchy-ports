@@ -20,3 +20,5 @@ the product repository's DEV-001 and COMP-001 queues retain the parent work.
 - [PBR metadata compatibility observations](verification/pbr-importlib-metadata-native-20261126.json)
 
 - [Linecache2 native consumer observations](verification/linecache2-native-consumers-20261126.json)
+
+- [LZO2 original self-tests and pkg-config header failure](verification/lzo2-pkgconf-native-findings-20261126.json)
