@@ -345,3 +345,25 @@ their original identities. Worker filesystem recovery is in progress; independen
 accepted SDK, source and prior-work content readback is required before further
 package qualification. Integration grants no current recovered-SDK or canonical
 release admission.
+
+### Linecache2 native qualification observations
+
+The [native report](../verification/linecache2-native-consumers-20261126.json)
+records unchanged Linecache2 1.0.0_2 original construction and 28 exact sealed
+payloads with 15 independent cache/encoding/loader/metadata cases. Five private
+pkg actions and three default-namespace consumer phases pass without changing
+130 inherited providers. Complete original, sealed and private evidence verifies
+on ARM and Intel. One normal pkg add also passes, producing registry131 with all
+inherited providers intact. All 405 normal evidence records verify on ARM and
+Intel; normal development delivery is qualified.
+
+The original port has no do-test target; the unchanged upstream tests need
+unittest2, which remains in the bootstrap closure. No upstream-suite or prior
+release upgrade/rollback acceptance is claimed. Canonical Component execution,
+complete ownership/provenance/TCB, SDK and full release admission remain open.
+
+Linecache2 recovery scope, November 27: historical qualification retains its
+original source and custody identities. Worker storage recovery is active;
+independent SDK/source/prior-work content readback remains required before
+further package qualification. Current recovered-SDK and canonical release
+admission remain unearned.

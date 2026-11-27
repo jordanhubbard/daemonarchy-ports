@@ -18,3 +18,5 @@ the product repository's DEV-001 and COMP-001 queues retain the parent work.
 - [GDBM supplied-descriptor close-on-exec repair](verification/gdbm-cloexec-native-20261126.json)
 
 - [PBR metadata compatibility observations](verification/pbr-importlib-metadata-native-20261126.json)
+
+- [Linecache2 native consumer observations](verification/linecache2-native-consumers-20261126.json)
