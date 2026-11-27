@@ -14,7 +14,7 @@
   - [ ] Expose installed build/test/package execution and original outcomes plus independent sealed-product acceptance; forbid ambient dependency installation.
   - [ ] Prove clean/warm/source/Mk/options/toolchain invalidation and actual pkg BOM/provenance, then disposable VM installation/update/rollback.
 - **Evidence:**
-  - [x] Current project authority, documentation review and both exact FreeBSD/pkg locks validate through the installed canonical wheel at framework revision `5b9afcd7c9016341620695b9110ec073809d239c`. Standard binding preserves all sixteen required evidence kinds. Verification fails solely on the missing current test receipt; native execution is not admitted.
+  - [x] At the recorded Standard-binding checkpoint, project authority, documentation review and both exact FreeBSD/pkg locks validated through the installed canonical wheel at framework revision `5b9afcd7c9016341620695b9110ec073809d239c`. Standard binding preserves all sixteen required evidence kinds. Verification fails solely on the missing current test receipt; native execution is not admitted.
   - [ ] The installed CLI executes the original build, complete selected upstream tests and independent acceptance, and admits per-unit pkg products with actual provenance.
   - [ ] Equivalent native measurements and upstream-refresh/cut-over/rollback evidence satisfy the product requirements.
 
@@ -76,3 +76,17 @@ is independently retained on ARM and Intel; the development hold is cleared.
 Previous released baseline and canonical admission remain open; this repair grants no canonical
 Component, SDK or release admission. The [native observation](../verification/gdbm-cloexec-native-20261126.json)
 keeps the exact original failure, controls and qualification boundary.
+
+
+**Storage revalidation, 2026-11-27:** the previously used ARM worker was found
+to have root/data filesystem corruption. Its original disks are preserved;
+recovery is running in an isolated copy-on-write data layer. The qualification
+above remains evidence for the original retained artifacts and transactions.
+Recovered SDK, source and historical-work contents require comparison against
+accepted independent inventories and custody before further use. No recovered
+runtime or new release qualification is claimed.
+
+The current documentation review is stale and the canonical receipt remains
+missing. Two committed locks are current. The historical Standard-binding
+validation above is not a current passing authority review; that review still
+must be earned without fabricating the human attestation marker.

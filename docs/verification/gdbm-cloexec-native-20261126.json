@@ -311,5 +311,12 @@
   },
   "coverage_boundaries": {
     "COMPAT_enabled": "Not selected by the original default profile; no qualification claimed for that optional variant."
+  },
+  "later_worker_storage_revalidation": {
+    "observed": "2026-11-27",
+    "status": "recovery-and-independent-content-revalidation-pending",
+    "prior_results_scope": "Original retained artifacts and historical native transactions only; independently retained custody is preserved.",
+    "current_worker": "Original ARM root/data filesystems found inconsistent; original disks preserved and reversible COW-only recovery in progress.",
+    "required_before_further_use": "Prove or restore exact protected SDK, source and prior-custody state against accepted independent inventories. No candidate runtime, canonical or new release admission from repair."
   }
 }
