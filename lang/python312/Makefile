@@ -1,6 +1,6 @@
 PORTNAME=	python
 DISTVERSION=	${PYTHON_DISTVERSION}
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	lang python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION:C/[a-z].*//}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
@@ -25,6 +25,8 @@ USES=		compiler:c11 cpe ncurses pathfix pkgconfig \
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+# Retain prefix expansion when Python replays its configure arguments.
+GNU_CONFIGURE_MANPREFIX=	\$${prefix}/share
 python_CMD=	${PREFIX}/bin/python${PYTHON_DISTVERSION:R}
 SHEBANG_FILES=	Lib/*.py Lib/*/*.py Lib/*/*/*.py Lib/*/*/*/*.py
 SHEBANG_FILES+=	Lib/test/ziptestdata/exe_with_z64 \
@@ -123,6 +125,9 @@ CONFIGURE_ARGS:=	${CONFIGURE_ARGS:N${LTO_CONFIGURE_ON}}
 .endif
 
 post-patch:
+# Python configures lowercase prefix; retain it after generic pathfix.
+	@${REINPLACE_CMD} -e 's|^LIBPC=.*|LIBPC= $$(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.pre.in
+
 # disable the detection of includes and library from libuuid,
 # which introduces hidden dependency and breaks build
 	@${REINPLACE_CMD} -e 's|uuid/uuid.h|ignore_&|' ${WRKSRC}/configure
@@ -141,6 +146,10 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib/libpython3.so						# Upstream Issue: https://bugs.python.org/issue17975
 .endif
 	${LN} -sf libpython${PYTHON_VER}${ABIFLAGS}.so.1.0 ${STAGEDIR}${PREFIX}/lib/libpython${PYTHON_VER}${ABIFLAGS}.so.1
+# Generated grammar caches are shared standard-library data.
+	${CHMOD} 644 \
+		${STAGEDIR}${PREFIX}/lib/python${PYTHON_VER}/lib2to3/Grammar${DISTVERSION}.final.0.pickle \
+		${STAGEDIR}${PREFIX}/lib/python${PYTHON_VER}/lib2to3/PatternGrammar${DISTVERSION}.final.0.pickle
 # This code block exists for the qemu-user enabled cross build environment.
 # When using this environment in poudriere, CC is not set to the default
 # of /usr/bin/cc and a cross-compile toolchain is used.  We need to hand
