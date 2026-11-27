@@ -733,5 +733,9 @@
       "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_hardlinks_gzip_CRC_verified": true,
       "extra_Linux_root_archive_bytes": 0
     }
+  },
+  "later_worker_storage_revalidation": {
+    "observed": "2026-11-27",
+    "scope": "PR84 mail patches are integrated before the grammar repair. The entire merged Python port is byte/mode identical to qualified native source ee5dbbc99b46c70ed9333a0f17551048460645b2. Current worker filesystem recovery is still active; independent accepted SDK/source/prior-work readback is required before further package qualification. Historical Nose-uninstalled/registry128 observations retain their original time and are not current SDK state. No current SDK integrity, full skip attribution, canonical admission or release acceptance follows from integration."
   }
 }
