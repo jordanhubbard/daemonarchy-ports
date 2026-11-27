@@ -1,0 +1,200 @@
+--- nose/config.py.orig
++++ nose/config.py
+@@ -78,7 +78,10 @@
+         except AttributeError:
+             filename = '<???>'
+         try:
+-            cfg.readfp(fh)
++            read_file = getattr(cfg, 'read_file', None)
++            if read_file is None:
++                read_file = cfg.readfp
++            read_file(fh)
+         except ConfigParser.Error as exc:
+             raise ConfigError("Error reading config file %r: %s" %
+                               (filename, str(exc)))
+--- nose/pyversion.py.orig
++++ nose/pyversion.py
+@@ -6,6 +6,7 @@
+ import traceback
+ import types
+ import inspect
++import unittest
+ import nose.util
+ 
+ 
+@@ -14,6 +15,53 @@
+     if hasattr(inspect, 'getfullargspec'):
+         return inspect.getfullargspec(func)[:4]
+     return inspect.getargspec(func)
++
++def _method_function(method):
++    return getattr(method, '__func__', getattr(method, 'im_func', method))
++
++
++def _unittest_case_info(test):
++    if not isinstance(test, unittest.TestCase):
++        return None
++    method = getattr(test, '_testMethodName', None)
++    if method is None:
++        method = getattr(test, '_TestCase__testMethodName', None)
++    if method is not None:
++        return test.__class__, method
++    return None
++
++
++def _unittest_case_id(test):
++    method = test.id
++    info = _unittest_case_info(test)
++    if (info is not None and
++            _method_function(method) is _method_function(unittest.TestCase.id)):
++        cls, name = info
++        return '%s.%s.%s' % (cls.__module__, cls.__name__, name)
++    return method()
++
++
++def _unittest_case_str(test):
++    info = _unittest_case_info(test)
++    if (info is not None and _method_function(test.__class__.__str__) is
++            _method_function(unittest.TestCase.__str__)):
++        cls, name = info
++        return '%s (%s.%s)' % (name, cls.__module__, cls.__name__)
++    return str(test)
++
++
++def _legacy_import_error(exc_info, module_name):
++    kind, error, tb = exc_info
++    if sys.version_info >= (3, 6) and isinstance(error, ModuleNotFoundError):
++        missing = error.name
++        if missing and (module_name == missing or
++                        module_name.startswith(missing + '.')):
++            # Keep Nose's requested-module category and the original cause.
++            legacy = ImportError(str(error), name=missing, path=error.path)
++            legacy.__cause__ = error
++            return ImportError, legacy, tb
++    return exc_info
++
+ 
+ __all__ = ['make_instancemethod', 'cmp_to_key', 'sort_list', 'ClassType',
+            'TypeType', 'UNICODE_STRINGS', 'unbound_method', 'ismethod',
+--- nose/case.py.orig
++++ nose/case.py
+@@ -9,6 +9,7 @@
+ from nose.config import Config
+ from nose.failure import Failure # for backwards compatibility
+ from nose.util import resolve_name, test_address, try_run
++from nose.pyversion import _unittest_case_id, _unittest_case_str
+ 
+ log = logging.getLogger(__name__)
+ 
+@@ -48,7 +49,7 @@
+         name = self.plugins.testName(self)
+         if name is not None:
+             return name
+-        return str(self.test)
++        return _unittest_case_str(self.test)
+ 
+     def __repr__(self):
+         return "Test(%r)" % self.test
+@@ -82,7 +83,7 @@
+     def id(self):
+         """Get a short(er) description of the test
+         """
+-        return self.test.id()
++        return _unittest_case_id(self.test)
+ 
+     def address(self):
+         """Return a round-trip name for this test, a name that can be
+--- nose/result.py.orig
++++ nose/result.py
+@@ -16,6 +16,7 @@
+     from unittest import _TextTestResult
+ from nose.config import Config
+ from nose.util import isclass, ln as _ln # backwards compat
++from nose.pyversion import _unittest_case_str
+ 
+ log = logging.getLogger('nose.result')
+ 
+@@ -79,9 +80,9 @@
+     # override to bypass changes in 2.7
+     def getDescription(self, test):
+         if self.descriptions:
+-            return test.shortDescription() or str(test)
++            return test.shortDescription() or _unittest_case_str(test)
+         else:
+-            return str(test)
++            return _unittest_case_str(test)
+ 
+     def printLabel(self, label, err=None):
+         # Might get patched into a streamless result
+--- nose/loader.py.orig
++++ nose/loader.py
+@@ -24,7 +24,7 @@
+     ispackage, regex_last_key, resolve_name, transplant_func, \
+     transplant_class, test_address
+ from nose.suite import ContextSuiteFactory, ContextList, LazySuite
+-from nose.pyversion import sort_list, cmp_to_key
++from nose.pyversion import sort_list, cmp_to_key, _legacy_import_error
+ 
+ 
+ log = logging.getLogger(__name__)
+@@ -422,7 +422,7 @@
+                 except (KeyboardInterrupt, SystemExit):
+                     raise
+                 except:
+-                    exc = sys.exc_info()
++                    exc = _legacy_import_error(sys.exc_info(), addr.module)
+                     return suite([Failure(exc[0], exc[1], exc[2],
+                                           address=addr.totuple())])
+                 if addr.call:
+--- /dev/null
++++ fix_imp_new_module.py
+@@ -0,0 +1,49 @@
++"""Translate legacy module-construction imports with no other imp usage."""
++from lib2to3 import fixer_base, pytree
++from lib2to3.fixer_util import Name
++from lib2to3.pgen2 import token
++from lib2to3.pygram import python_symbols as syms
++
++
++class FixImpNewModule(fixer_base.BaseFix):
++    BM_compatible = True
++    run_order = 4
++    PATTERN = "import_name< 'import' 'imp' > | power< 'imp' trailer< '.' 'new_module' > any* >"
++
++    def start_tree(self, tree, filename):
++        super(FixImpNewModule, self).start_tree(tree, filename)
++        self.safe = True
++        for leaf in tree.leaves():
++            if leaf.type != token.NAME:
++                continue
++            if leaf.value == '_nose_types':
++                self.safe = False
++                break
++            if leaf.value != 'imp':
++                continue
++            parent = leaf.parent
++            if parent.type == syms.import_name and len(parent.children) == 2:
++                continue
++            if (parent.type == syms.power and parent.children[0] is leaf
++                    and len(parent.children) > 1
++                    and parent.children[1].type == syms.trailer
++                    and len(parent.children[1].children) == 2
++                    and parent.children[1].children[0].value == '.'
++                    and parent.children[1].children[1].value == 'new_module'):
++                continue
++            self.safe = False
++            break
++
++    def transform(self, node, results):
++        if not self.safe:
++            return None
++        new = node.clone()
++        if node.type == syms.import_name:
++            old = new.children[1]
++            old.replace(pytree.Node(syms.dotted_as_name, [
++                Name('types', prefix=old.prefix), Name('as', prefix=' '),
++                Name('_nose_types', prefix=' ')]))
++        else:
++            new.children[0].value = '_nose_types'
++            new.children[1].children[1].value = 'ModuleType'
++        return new

@@ -1,0 +1,23 @@
+{
+  "schema": "daemonarchy/upstream-import-audit@2",
+  "observed": "2026-11-27T07:01:21.637383+00:00",
+  "repository": "daemonarchy-ports",
+  "previous_owned_main": "1d3633154b9d28a85460fcbeee095b7d47b22686",
+  "upstream_reference": "https://git.FreeBSD.org/ports.git/main",
+  "upstream_commit": "1ba4ddd7286037a7598b7a8da7c8b79bda192c76",
+  "merge_base": "69f02ee8f13bb222df883ce11b0786cfc40b09aa",
+  "import_tree_before_this_evidence_file": "160e93d5503154b474b2e04a49b44c82362d297a",
+  "complete_tree_file_entries": 184482,
+  "upstream_changed_paths": 14,
+  "fork_changed_paths": 290,
+  "path_inventory_includes_both_sides_of_renames": true,
+  "shared_changed_paths": [],
+  "upstream_bytes_modes_and_deletions_exact_outside_fork_delta": true,
+  "fork_bytes_modes_and_deletions_exact_outside_upstream_delta": true,
+  "native_build_and_runtime_qualified": false,
+  "qualification_scope": "Complete source-tree import and preservation audit. Previous native receipts remain bound to original commits; native build/runtime, per-unit ownership/provenance, SDK and release acceptance remain open.",
+  "portable_controller_code_unchanged_since_tested_import": true,
+  "ports_framework_and_qualified_omarchy_inputs_unchanged": true,
+  "preceding_import_audit": "verification/freebsd-main-sync-20261126-final-development.json",
+  "snapshot_scope": "Bounded final main snapshot observed 2026-11-27; native acceptance of changed upstream ports pending."
+}
