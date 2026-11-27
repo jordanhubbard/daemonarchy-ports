@@ -1,6 +1,6 @@
 {
   "schema": "daemonarchy/gdbm-cloexec-native-observation@1",
-  "observed": "2026-11-26T23:32:42.594732+00:00",
+  "observed": "2026-11-27T00:00:21.332972+00:00",
   "canonical_receipt": false,
   "origin": "databases/gdbm",
   "original_version": "1.26",
@@ -98,6 +98,26 @@
     "fixed_successful_sealed": {
       "records": 566,
       "parts": 1,
+      "all_nodes_verified_on_ARM_and_Intel": true
+    },
+    "private_first_attempt": {
+      "records": 894,
+      "parts": 4,
+      "all_nodes_verified_on_ARM_and_Intel": true,
+      "outcome": "Two actual completed pkg actions retained. Author consumer check incorrectly rejected original packaged CLI /usr/local/lib RUNPATH after four C/CXX API clients passed; failure and whole current state preserved before continuation."
+    },
+    "private_continuation": {
+      "records": 1254,
+      "parts": 5,
+      "all_nodes_verified_on_ARM_and_Intel": true,
+      "whole_final_owned_clone_nodes": 50970,
+      "final_nodes_reconstructed_from_prior_custodied_state_plus_exact_delta": true,
+      "delta_records": 51,
+      "removed_nodes_with_retained_preimages": 35
+    },
+    "normal_delivery": {
+      "records": 579,
+      "parts": 2,
       "all_nodes_verified_on_ARM_and_Intel": true
     }
   },
@@ -223,11 +243,56 @@
       "authored_driver_corrections": "Correct strict count sentence from original gdbmshell.c before first repaired run; then include static dependency flags from actual packaged ELF DT_NEEDED. Original C/API assertions and timeouts unchanged. Failed authored-link attempt retained in full on both hosts.",
       "all_SDK131_base_source_accounts_loader_fontcache_mount_and_prior_work_guards_pass": true
     },
-    "private_real_package_lifecycle": "pending",
-    "normal_delivery": "not installed"
+    "private_real_package_lifecycle": {
+      "passed": true,
+      "actual_package_actions": 8,
+      "completed_first_attempt": 2,
+      "completed_continuation": 6,
+      "previous_completed_actions_and_preparation_replayed": false,
+      "actions": [
+        "fresh unqualified original comparison",
+        "upgrade to repaired",
+        "explicit repaired reinstall",
+        "explicit unqualified comparison rollback",
+        "re-upgrade repaired",
+        "ordinary delete",
+        "fresh repaired install",
+        "ordinary final delete"
+      ],
+      "positive_default_namespace_phases": 4,
+      "comparison_negative_phases": 2,
+      "all_positive_four_CLOEXEC_controls_and_C_CXX_shared_static_API_CLI_roundtrips_pass": true,
+      "both_comparison_controls_observe_expected_two_failures": true,
+      "registered_checksums_and_dependencies_pass": true,
+      "actual_ldconfig_and_info_index_hooks_pass": true,
+      "both_deletes_remove_GDBM_code_loader_entry_and_info_index_entry": true,
+      "final_registered_providers": 131,
+      "no_forced_delete_or_script_dependency_suppression": true,
+      "normal_compiled_clients_strictly_without_RPATH_RUNPATH": true,
+      "packaged_original_CLI_RUNPATH": "Exact /usr/local/lib permitted; actual default library bindings checked. No private, producer or build path allowed. All C/API assertions and deadlines unchanged.",
+      "prior_released_upgrade_rollback_baseline_qualified": false,
+      "license_retention_and_database_directory_metadata_boundary": "Actual retained license files and metadata transitions recorded. No full initial database or directory-metadata rollback claim."
+    },
+    "normal_delivery": {
+      "passed_native_runtime": true,
+      "package_add_actions": 1,
+      "registry_before": 131,
+      "registry_after": 132,
+      "exact_new_payloads": 34,
+      "inherited_provider_payloads_preserved": 131,
+      "four_CLOEXEC_controls_pass": true,
+      "four_C_CXX_shared_static_and_CLI_roundtrip_consumers_pass": true,
+      "UID": 65534,
+      "normal_unowned_info_index_matches_qualified_private_positive": true,
+      "actual_loader_hint_before": "0b41ce3feabd43e6e4705840198caa52d4b92e3569500ceeddcfd947af874347",
+      "actual_loader_hint_after": "0b41ce3feabd43e6e4705840198caa52d4b92e3569500ceeddcfd947af874347",
+      "source_base_accounts_fontcache_mounts_prior_jobs_private_state_preserved": true,
+      "development_feature_hold": false,
+      "same_qualified_sealed_library_archive_and_header_bytes": true,
+      "final_SDK132_inventory_sha256": "26a7505e359abc229f6078075d82d4b5c15763324de02c877fca034adaa538de"
+    }
   },
   "remaining_release_gates": [
-    "Actual package scripts/lifecycle must pass before normal delivery.",
     "Previous released upgrade/rollback baseline has not been qualified.",
     "Canonical Component, ownership, provenance, TCB, SDK and full release admission remain open."
   ],

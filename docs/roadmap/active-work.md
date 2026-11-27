@@ -68,7 +68,11 @@ The port revision applies the requested flag to supplied descriptors while
 preserving existing flags and error ownership. Original upstream tests remain
 unchanged. Repaired native construction and the original checks pass; the same four
 regression controls now all pass, including actual exec inheritance. Fixed sealed C/CXX shared/static consumers and ASCII/binary CLI round-trips
-also pass with unchanged original C/API assertions. Actual package lifecycle
-and normal delivery remain pending; this repair grants no canonical
+also pass with unchanged original C/API assertions. Eight actual private package actions, including comparison upgrade/rollback,
+and four positive default-namespace consumer phases pass. One normal package
+add now delivers 34 exact payloads and registry 132 while preserving 131
+inherited providers. Complete construction, failure, private lifecycle and normal-delivery evidence
+is independently retained on ARM and Intel; the development hold is cleared.
+Previous released baseline and canonical admission remain open; this repair grants no canonical
 Component, SDK or release admission. The [native observation](../verification/gdbm-cloexec-native-20261126.json)
 keeps the exact original failure, controls and qualification boundary.
