@@ -1,3 +1,558 @@
+  <vuln vid="a22c60b3-e987-11f1-97dc-40b034429ecf">
+    <topic>p5-CGI-PSGI -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>p5-CGI-PSGI</name>
+<range><lt>0.16</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CGI-PSGI project reports:</p>
+	<blockquote cite="https://metacpan.org/dist/CGI-PSGI/changes">
+	  <p>Multiple vulnerabilities:</p>
+      <ul>
+	<li>Never read the process's @ARGV as request parameters
+	  (CVE-2026-120637 on CGI.pm &lt; 5.02, and envs with no REQUEST_METHOD)</li>
+	<li>header and redirect values are no longer HTML unescaped, which
+	  allowed header injection via &#13;
+ (CVE-2026-120639) and
+	  open redirects via /&amp;#47evil.example/ (CVE-2026-120638)</li>
+	<li>quotes and backslashes in the -attachment filename are escaped
+	    (CVE-2026-120647)</li>
+      </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-120637</cvename>
+      <cvename>CVE-2026-120638</cvename>
+      <cvename>CVE-2026-120639</cvename>
+      <cvename>CVE-2026-120647</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-120637</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-120638</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-120639</url>
+      <url>https://nvd.nist.gov/vuln/detail/cve-2026-120647</url>
+    </references>
+    <dates>
+      <discovery>2026-11-04</discovery>
+      <entry>2026-11-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a454f42d-e904-11f1-9b74-3497f65b111b">
+    <topic>MySQL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql2610-client</name>
+	<name>mysql2610-server</name>
+	<range><lt>26.10.0.1</lt></range>
+      </package>
+      <package>
+	<name>mysql84-client</name>
+	<name>mysql84-server</name>
+	<range><lt>8.4.13.1</lt></range>
+      </package>
+      <package>
+	<name>mysql97-client</name>
+	<name>mysql97-server</name>
+	<range><lt>9.7.4.1</lt></range>
+      </package>
+      <package>
+	<name>mysql-shell</name>
+	<range><lt>26.10.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cspunov2026.html">
+	  <p>This Critical Security Patch Update contains 655 new security
+	    patches across the product families listed below.</p>
+	  <p>MySQL Server, versions 8.4.0-8.4.13, 9.7.0-9.7.4, 26.10;
+	    MySQL Shell, version 26.10.0.</p>
+	</blockquote>
+	<p>Six of the server issues apply to these ports, in the client
+	  programs, the optimizer, the logging code, the GIS code and
+	  replication. The most severe, in the client programs, scores 9.1
+	  and can be exploited over a network without authentication. The
+	  shell issue, in the Python core client, scores 9.8 and is likewise
+	  remotely exploitable without authentication; the 9.7 shell series
+	  has been discontinued upstream and receives no fix, so the port
+	  moves to the current series.</p>
+	<p>A seventh server issue in the advisory concerns the curl library
+	  bundled in the Oracle tarball. These ports build against the
+	  system curl and are not affected by it.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-114949</cvename>
+      <cvename>CVE-2026-114950</cvename>
+      <cvename>CVE-2026-114951</cvename>
+      <cvename>CVE-2026-114952</cvename>
+      <cvename>CVE-2026-114953</cvename>
+      <cvename>CVE-2026-115557</cvename>
+      <cvename>CVE-2026-127428</cvename>
+      <url>https://www.oracle.com/security-alerts/cspunov2026.html</url>
+    </references>
+    <dates>
+      <discovery>2026-11-24</discovery>
+      <entry>2026-11-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="aec2b759-e98b-11f1-b3a2-2cf05da270f3">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+<package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>19.6.0</ge><lt>19.6.2</lt></range>
+	<range><ge>19.5.0</ge><lt>19.5.9</lt></range>
+	<range><ge>11.7.0</ge><lt>19.4.11</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-6-2-released/?nav=19.6.2">
+	  <p>Exposure of Sensitive Information issue in dependency proxy authentication impacts GitLab CE/EE</p>
+	  <p>Improper Validation of Specified Quantity in Input issue in on-call rotation length API impacts GitLab EE</p>
+	  <p>Allocation of Resources Without Limits or Throttling issue in Sentry error tracking client impacts GitLab CE/EE</p>
+	  <p>Improper Neutralization of Special Elements issue in Service Desk quick action redaction impacts GitLab CE/EE</p>
+	  <p>Exposure of Sensitive Information issue in Work Item REST API CI job token scope validation impacts GitLab CE/EE</p>
+	  <p>Server-Side Request Forgery issue in MCP server OAuth token endpoint handler impacts GitLab EE</p>
+	  <p>Use of Weak Hash issue in merge request approval reset mechanism impacts GitLab CE/EE</p>
+	  <p>Inefficient Regular Expression Complexity issue in dependency proxy route matching middleware impacts GitLab CE/EE</p>
+	  <p>Server-Side Request Forgery issue in cluster agent URL configuration validator impacts GitLab EE</p>
+	  <p>Incorrect Authorization issue in merge request approval policy enforcement impacts GitLab EE</p>
+	  <p>Incorrect Authorization issue in work items API impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in batch suggestion apply API impacts GitLab CE/EE</p>
+	  <p>Server-Side Request Forgery (SSRF) issue in remote Git endpoint validation impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-119452</cvename>
+      <cvename>CVE-2026-132156</cvename>
+      <cvename>CVE-2026-132822</cvename>
+      <cvename>CVE-2026-81336</cvename>
+      <cvename>CVE-2026-131867</cvename>
+      <cvename>CVE-2026-135221</cvename>
+      <cvename>CVE-2026-17194</cvename>
+      <cvename>CVE-2026-132102</cvename>
+      <cvename>CVE-2026-16744</cvename>
+      <cvename>CVE-2026-107633</cvename>
+      <cvename>CVE-2026-132794</cvename>
+      <cvename>CVE-2026-129982</cvename>
+      <cvename>CVE-2026-135636</cvename>
+      <url>https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-6-2-released/?nav=19.6.2</url>
+    </references>
+    <dates>
+      <discovery>2026-11-25</discovery>
+      <entry>2026-11-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d6298f47-e90c-11f1-90f4-589cfc0dc9a2">
+    <topic>Prosody XMPP server advisory 2026-11-25</topic>
+    <affects>
+	<package>
+	  <name>prosody</name>
+	  <range><lt>13.0.8</lt></range>
+	</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Prosody team reports:</p>
+	<blockquote cite="https://prosody.im/security/advisory_2026_8112eaa9/">
+	  <ul>
+	    <li>Cross-host confusion in stanza processing.</li>
+	    <li>Stream reset did not discard all pending data.</li>
+	    <li>Invitation reuse.</li>
+	    <li>Invitation username restrictions not enforced.</li>
+	    <li>Password-protected MUC exposure.</li>
+	    <li>Non-moderators may modify state and cause occupants to be kicked from MUCs.</li>
+	    <li>Insufficient filtering of muc-user namespace in MUC.</li>
+	    <li>Mixed-case HTTPS scheme results in unencrypted HTTP request.</li>
+	    <li>mod_http_file_share header injection</li>
+	    <li>Doubled responses to certain HTTP requests.</li>
+	    <li>Insufficient validation of archive query limits.</li>
+	    <li>Server-to-Server Policy Bypass.</li>
+	    <li>mod_auth_ldap does not reject empty password.</li>
+	    <li>OAuth role not applied via SASL authentication.</li>
+	    <li>Potential storage policy bypass.</li>
+	    <li>PEP broadcasts include explicit subscriptions after roster removal.</li>
+	    <li>MUC mediated invites and declines relay arbitrary message children.</li>
+	    <li>Memory Exhaustion via Aborted HTTP Requests.</li>
+	    <li>mod_http_file_share unrestricted upload size.</li>
+	    <li>Stanza child elements limit bypass.</li>
+	    <li>Completed stanzas bypass byte-size limit when they fit in a single feed.</li>
+	    <li>mod_bosh and mod_component don’t apply child element limit.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://prosody.im/security/advisory_2026_8112eaa9/</url>
+    </references>
+    <dates>
+      <discovery>2026-11-25</discovery>
+      <entry>2026-11-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="aa7e7798-a716-4e2f-807d-019f9c61af91">
+    <topic>PyMySQL -- SQL injection via sequence parameters with NO_BACKSLASH_ESCAPES</topic>
+    <affects>
+      <package>
+	<name>py310-pymysql</name>
+	<name>py311-pymysql</name>
+	<name>py312-pymysql</name>
+	<name>py313-pymysql</name>
+	<name>py313t-pymysql</name>
+	<name>py314-pymysql</name>
+	<name>py314t-pymysql</name>
+	<range><lt>1.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PyMySQL project reports:</p>
+	<blockquote cite="https://github.com/PyMySQL/PyMySQL/blob/main/CHANGELOG.md#v124-security-fix">
+	  <p>Fixed a SQL injection vulnerability caused by incorrect escaping
+	    of string values inside <code>tuple</code>, <code>list</code>,
+	    <code>set</code>, or <code>frozenset</code> query parameters when
+	    the <code>NO_BACKSLASH_ESCAPES</code> SQL mode is enabled.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/PyMySQL/PyMySQL/blob/main/CHANGELOG.md#v124-security-fix</url>
+    </references>
+    <dates>
+      <discovery>2026-11-09</discovery>
+      <entry>2026-11-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5734413b-e8a5-11f1-9b74-3497f65b111b">
+    <topic>freenginx -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>freenginx</name>
+       <range><lt>1.30.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>The freenginx project reports:</p>
+       <blockquote cite="https://freenginx.org/en/CHANGES-1.30">
+       <p>
+       a flow control window overflow might cause memory corruption in a
+       worker process when using HTTP/2, potentially resulting in arbitrary
+       code execution (CVE-2026-123007).
+       </p>
+       <p>
+       use-after-free might occur when using HTTP/2, potentially resulting
+       in arbitrary code execution (CVE-2026-123633).
+       </p>
+       <p>
+       use-after-free might occur when using HTTP/3, potentially resulting
+       in arbitrary code execution (CVE-2026-121810).
+       </p>
+       <p>
+       use-after-free might occur when using the mail proxy module,
+       potentially resulting in arbitrary code execution (CVE-2026-113425).
+       </p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://freenginx.org/en/CHANGES-1.30</url>
+      <cvename>CVE-2026-113425</cvename>
+      <cvename>CVE-2026-121810</cvename>
+      <cvename>CVE-2026-123007</cvename>
+      <cvename>CVE-2026-123633</cvename>
+    </references>
+    <dates>
+      <discovery>2026-11-24</discovery>
+      <entry>2026-11-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="573460ab-e8a5-11f1-9b74-3497f65b111b">
+    <topic>OpenResty -- multiple vulnerabilities in the bundled nginx core</topic>
+    <affects>
+      <package>
+       <name>openresty</name>
+       <range><lt>1.31.9.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>The OpenResty developers report:</p>
+       <blockquote cite="https://openresty.org/en/changelog-1031009.html">
+       <p>
+       The nginx core was upgraded from nginx 1.31.8 to 1.31.9, which
+       incorporates 10 CVE fixes: a buffer overflow involving try_files
+       and alias (CVE-2026-125283), a flow control window overflow and a
+       use-after-free when using HTTP/2 (CVE-2026-123007,
+       CVE-2026-123633), a use-after-free when using HTTP/3
+       (CVE-2026-121810), a use-after-free in the resolver
+       (CVE-2026-123634), a use-after-free in the mail proxy server
+       (CVE-2026-113425), client SSL certificate verification performed
+       using the configuration of the default server in the stream module
+       (CVE-2026-120967), a segmentation fault with PROXY protocol version
+       2 and dynamic SSL certificate loading (CVE-2026-120993), malformed
+       ClientHello messages interpreted differently by the
+       ngx_stream_ssl_preread_module (CVE-2026-123640), and an endless
+       loop while reading the request body over SSL (CVE-2026-118899).
+       </p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://openresty.org/en/changelog-1031009.html</url>
+      <url>https://nginx.org/en/security_advisories.html</url>
+      <cvename>CVE-2026-113425</cvename>
+      <cvename>CVE-2026-118899</cvename>
+      <cvename>CVE-2026-120967</cvename>
+      <cvename>CVE-2026-120993</cvename>
+      <cvename>CVE-2026-121810</cvename>
+      <cvename>CVE-2026-123007</cvename>
+      <cvename>CVE-2026-123633</cvename>
+      <cvename>CVE-2026-123634</cvename>
+      <cvename>CVE-2026-123640</cvename>
+      <cvename>CVE-2026-125283</cvename>
+    </references>
+    <dates>
+      <discovery>2026-11-23</discovery>
+      <entry>2026-11-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2014ba8f-e818-11f1-ae3c-4c526214c986">
+    <topic>Erlang/OTP -- multiple vulnerabilities in erts, inets, snmp and xmerl</topic>
+    <affects>
+      <package>
+	<name>erlang</name>
+	<range><lt>28.5.0.9,4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.20</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.9</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Erlang/OTP project reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories">
+	  <p>OTP 29.1.3, 28.5.0.9 and 27.3.4.20 fix the following
+	  issues:</p>
+	  <ul>
+	    <li>CVE-2026-116293: binary_to_term of a reference
+	    encoded with NEW_REFERENCE_EXT or NEWER_REFERENCE_EXT and
+	    a zero length field could abort the VM, or return data
+	    read past the end of the input buffer.</li>
+	    <li>CVE-2026-117642: binary_to_term of incorrectly
+	    encoded funs (NEW_FUN_EXT, EXPORT_EXT) could exhaust the
+	    runtime stack and abort the VM.</li>
+	    <li>CVE-2026-120961: binary_to_term of an old FLOAT_EXT
+	    without a terminating zero byte could overrun the heap
+	    and abort the VM.</li>
+	    <li>CVE-2026-115747: the AArch64 JIT misused a CPU
+	    register in some chained comparisons, so crafted input
+	    (for example an oversized numeric character reference
+	    passed to xmerl_sax_parser) could crash the runtime
+	    system.  x86-64 and interpreter builds are not
+	    affected.</li>
+	    <li>CVE-2026-116382: an inets httpd server serving ESI
+	    scripts created a new atom from the name of each client
+	    request header, so an unauthenticated client could grow
+	    the atom table until the VM aborted.</li>
+	    <li>CVE-2026-116295: httpc did not neutralize CR, LF or
+	    NUL characters in request header names and values,
+	    allowing header injection and request splitting when
+	    header data comes from an untrusted source.</li>
+	    <li>CVE-2026-116225: the snmp BER decoder did not bound
+	    the length of OBJECT IDENTIFIER sub-identifiers, so an
+	    unauthenticated attacker could keep the agent or manager
+	    busy with quadratic decoding time.</li>
+	    <li>CVE-2026-119443: xmerl_scan fetched and parsed the
+	    external DTD named by an untrusted document by default,
+	    so a document pointing at a file such as /dev/zero could
+	    exhaust memory.  External DTDs are no longer fetched
+	    unless the new fetch_external_DTD option is set.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-115747</cvename>
+      <cvename>CVE-2026-116225</cvename>
+      <cvename>CVE-2026-116293</cvename>
+      <cvename>CVE-2026-116295</cvename>
+      <cvename>CVE-2026-116382</cvename>
+      <cvename>CVE-2026-117642</cvename>
+      <cvename>CVE-2026-119443</cvename>
+      <cvename>CVE-2026-120961</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-6qhv-446c-985v</url>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-8575-6vgw-5v3c</url>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-r7pf-rpq8-5pf4</url>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-7fjc-wcvc-vp96</url>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-84cc-vh37-jqpf</url>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-9p2q-5p4x-rhpq</url>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-j6vp-frc3-9g33</url>
+      <url>https://github.com/erlang/otp/releases/tag/OTP-29.1.3</url>
+      <url>https://github.com/erlang/otp/releases/tag/OTP-28.5.0.9</url>
+      <url>https://github.com/erlang/otp/releases/tag/OTP-27.3.4.20</url>
+    </references>
+    <dates>
+      <discovery>2026-11-24</discovery>
+      <entry>2026-11-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2014dc89-e818-11f1-ae3c-4c526214c986">
+    <topic>Erlang/OTP -- TLS 1.2 client completes handshake without a server certificate</topic>
+    <affects>
+      <package>
+	<name>erlang</name>
+	<range><lt>28.5.0.9,4</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime27</name>
+	<range><lt>27.3.4.14</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime28</name>
+	<range><lt>28.5.0.9</lt></range>
+      </package>
+      <package>
+	<name>erlang-runtime29</name>
+	<range><lt>29.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/erlang/otp/security/advisories/GHSA-7mff-v332-665j reports:</p>
+	<blockquote cite="https://github.com/erlang/otp/security/advisories/GHSA-7mff-v332-665j">
+	  <p>An Erlang/OTP TLS client configured with full server
+	  authentication completes a TLS 1.2 handshake, for example
+	  for an ECDHE_RSA cipher suite, when a malicious server
+	  sends no Certificate message and an unsigned
+	  ServerKeyExchange.  An attacker in a man-in-the-middle
+	  position can therefore impersonate any TLS server to an
+	  affected client, and read and modify all traffic, even
+	  when the client is configured for full server
+	  authentication.  TLS 1.3 connections and servers are not
+	  affected.</p>
+	</blockquote>
+	<p>The hardening that fixes this went into OTP 29.0.3 and
+	27.3.4.14 but was missed on the OTP 28 track until
+	28.5.0.9.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-124286</cvename>
+      <url>https://github.com/erlang/otp/security/advisories/GHSA-7mff-v332-665j</url>
+      <url>https://github.com/erlang/otp/releases/tag/OTP-28.5.0.9</url>
+    </references>
+    <dates>
+      <discovery>2026-11-24</discovery>
+      <entry>2026-11-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="99846c9e-e81a-11f1-b58b-8447094a420f">
+    <topic>zstd -- Information disclosure vulnerability</topic>
+    <affects>
+      <package>
+	<name>zstd</name>
+	<range><ge>1.5.1</ge><le>1.5.7_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>CVE-2026-124851: An information disclosure vulnerability in Zstandard
+	  versions 1.5.1 through 1.5.7 allows specially crafted compressed data
+	  to expose the contents of an internal buffer through decompressed
+	  output. The buffer is 64 KiB in the default configuration and may
+	  contain uninitialized memory or literals from earlier decompressions
+	  performed using the same decompression context. An attacker who can
+	  submit compressed data and observe the resulting output can recover
+	  the buffer's contents.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-124851</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2026-124851</url>
+    </references>
+    <dates>
+      <discovery>2026-11-23</discovery>
+      <entry>2026-11-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8ece53f2-e818-11f1-b58b-8447094a420f">
+    <topic>OpenSSL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.5.10,1</lt></range>
+      </package>
+      <package>
+	<name>openssl30</name>
+	<range><lt>3.0.24</lt></range>
+      </package>
+      <package>
+	<name>openssl36</name>
+	<range><lt>3.6.6</lt></range>
+      </package>
+      <package>
+	<name>openssl40</name>
+	<range><lt>4.0.4</lt></range>
+      </package>
+      <package>
+	<name>openssl41</name>
+	<range><lt>4.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="https://openssl-library.org/news/secadv/20261124.txt">
+	  <ul>
+	    <li>Possible NULL Dereference in Non-SMTP DANE Clients (CVE-2026-84786) (low)</li>
+	    <li>Unbounded QUIC RETIRE_CONNECTION_ID Frame Sending Queue (CVE-2026-107494) (low)</li>
+	    <li>Relative CRL Distribution Point Names Rebuilt per CRL in X.509 Verification (CVE-2026-121482) (low)</li>
+	    <li>Unbounded Out-of-Order Fragment Reassembly in QUIC Streams (CVE-2026-84785) (low)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-84786</cvename>
+      <cvename>CVE-2026-107494</cvename>
+      <cvename>CVE-2026-121482</cvename>
+      <cvename>CVE-2026-84785</cvename>
+      <url>https://openssl-library.org/news/secadv/20261124.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-11-24</discovery>
+      <entry>2026-11-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8c970d0a-e7ef-11f1-b097-3c7c3fba4204">
     <topic>py-py7zr -- multiple vulnerabilities</topic>
     <affects>
@@ -95,6 +650,10 @@
        <name>freenginx</name>
        <range><lt>1.30.2_14</lt></range>
       </package>
+      <package>
+       <name>openresty</name>
+       <range><lt>1.31.9.1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -106,7 +665,8 @@
        </p>
        </blockquote>
        <p>
-       freenginx shares the affected code; the port carries the fix.
+       freenginx and OpenResty share the affected code; the ports carry
+       the fix.
        </p>
      </body>
     </description>
