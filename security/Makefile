@@ -464,7 +464,6 @@
     SUBDIR += openssl-pkcs11provider
     SUBDIR += openssl-unsafe
     SUBDIR += openssl30
-    SUBDIR += openssl36
     SUBDIR += openssl40
     SUBDIR += openssl41
     SUBDIR += openvas
@@ -832,7 +831,6 @@
     SUBDIR += pecl-gnupg
     SUBDIR += pecl-krb5
     SUBDIR += pecl-libsodium
-    SUBDIR += pecl-mcrypt
     SUBDIR += pecl-pam
     SUBDIR += pecl-pkcs11
     SUBDIR += pecl-scrypt
@@ -844,6 +842,7 @@
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
     SUBDIR += pgpin
+    SUBDIR += php-mcrypt
     SUBDIR += php82-filter
     SUBDIR += php82-sodium
     SUBDIR += php83-filter
