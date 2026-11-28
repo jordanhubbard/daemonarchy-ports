@@ -52,7 +52,7 @@ PLIST_SUB=		ABI=${ABIFLAGS} \
 			DISTVERSION=${DISTVERSION} \
 			OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}		# For plat-freebsd* in pkg-plist. https://bugs.python.org/issue19554
 
-OPTIONS_DEFINE=		DEBUG IPV6 LIBMPDEC LTO NLS PYMALLOC
+OPTIONS_DEFINE=		DEBUG DTRACE IPV6 LIBMPDEC LTO NLS PYMALLOC
 OPTIONS_DEFAULT=	LIBMPDEC LTO PYMALLOC
 OPTIONS_EXCLUDE_riscv64=	LTO
 OPTIONS_RADIO=		HASH
@@ -71,6 +71,8 @@ FNV_CONFIGURE_ON=	--with-hash-algorithm=fnv
 SIPHASH_CONFIGURE_ON=	--with-hash-algorithm=siphash24
 
 DEBUG_CONFIGURE_WITH=	pydebug
+DTRACE_CONFIGURE_WITH=	dtrace
+DTRACE_USES=		gmake
 IPV6_CONFIGURE_ENABLE=	ipv6
 
 LIBMPDEC_CONFIGURE_ON=	--with-system-libmpdec
@@ -90,6 +92,19 @@ PYMALLOC_CONFIGURE_WITH=	pymalloc
 
 .include "${.CURDIR}/Makefile.version"
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDTRACE}
+# The upstream freeze test configures and rebuilds a private source copy.
+MAKE_ENV+=	MAKE=${GMAKE}
+# An object-free dtrace -G probe otherwise defaults to the wrong ELF class.
+.  if !empty(ARCH:M*64*)
+CONFIGURE_ENV+=	DFLAGS=-64
+MAKE_ENV+=	DFLAGS=-64
+.  else
+CONFIGURE_ENV+=	DFLAGS=-32
+MAKE_ENV+=	DFLAGS=-32
+.  endif
+.endif
 
 .if ${PORT_OPTIONS:MDEBUG}
 ABIFLAGS:=	d${ABIFLAGS}
@@ -140,6 +155,11 @@ post-patch:
 .  for _module in ${DISABLED_EXTENSIONS}
 		@${ECHO_CMD} ${_module} >> ${WRKSRC}/Modules/Setup.local
 .  endfor
+
+post-patch-DTRACE-on:
+# dtrace -G needs native ELF probe sites.  Preserve LTO for all other objects;
+# GNU make's private assignment prevents the flag reaching prerequisites.
+	@${ECHO_CMD} '$$(DTRACE_DEPS): private CFLAGS_NODIST += -fno-lto' >> ${WRKSRC}/Makefile.pre.in
 
 post-install:
 .if ! ${PORT_OPTIONS:MDEBUG}
