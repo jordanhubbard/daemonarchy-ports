@@ -1,9 +1,9 @@
 PORTNAME=	stalwart-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.14
+DISTVERSION=	2.0.0
 CATEGORIES=	mail
 
-MAINTAINER=	orville@anislet.dev
+MAINTAINER=	jsi@jules.de
 COMMENT=	Stalwart Mail Server CLI
 WWW=		https://stalw.art/
 
