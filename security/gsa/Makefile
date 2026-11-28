@@ -14,7 +14,10 @@ ONLY_FOR_ARCHS=	amd64
 BUILD_DEPENDS=	npm-node24>0:www/npm-node24
 RUN_DEPENDS=	${LOCALBASE}/sbin/gsad:security/gsad
 
-USES=		nodejs:24,build
+USES=		cpe nodejs:24,build
+
+CPE_VENDOR=	greenbone
+CPE_PRODUCT=	greenbone_security_assistant
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	greenbone
@@ -35,7 +38,7 @@ DEPS_CACHE_DIR=		${WRKSRC}
 .if (${DEV_UPDATE_MODE} == "yes")
 NPM_ARGS=	install
 post-patch:
-	@${RM} ${WKRSRC}/package-lock.json
+	@${RM} ${WRKSRC}/package-lock.json
 
 post-build:
 	@cd ${DEPS_CACHE_DIR} && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-cache-${ARCH}-${DISTVERSION}${EXTRACT_SUFX} node_modules
