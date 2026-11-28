@@ -1,6 +1,7 @@
 PORTNAME=	gitolite
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.6.15
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -8,7 +9,7 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Access control layer on top of git
 WWW=		https://github.com/sitaramc/gitolite
 
-LICENSE=	GPLv2
+LICENSE=	GPL-2.0-only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	git>=0:devel/git \
