@@ -46,15 +46,6 @@
          else
  		OPENSSL_LINK =
          endif
-@@ -2672,7 +2672,7 @@ else # NO_PERL
- 	chmod +x $@+ && \
- 	mv $@+ $@
- else # NO_PERL
--$(SCRIPT_PERL_GEN) git-instaweb: % : unimplemented.sh
-+$(SCRIPT_PERL_GEN) git-instaweb git-request-pull: % : unimplemented.sh
- 	$(QUIET_GEN) \
- 	sed -e '1s|#!.*/sh|#!$(SHELL_PATH_SQ)|' \
- 	    -e 's|@REASON@|NO_PERL=$(NO_PERL)|g' \
 @@ -3540,7 +3540,7 @@ install: all
  	$(INSTALL) $(SCRIPTS) '$(DESTDIR_SQ)$(gitexec_instdir_SQ)'
  	$(INSTALL) -m 644 $(SCRIPT_LIB) '$(DESTDIR_SQ)$(gitexec_instdir_SQ)'
