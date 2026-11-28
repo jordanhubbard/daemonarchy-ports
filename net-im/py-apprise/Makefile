@@ -1,5 +1,6 @@
 PORTNAME=	apprise
 DISTVERSION=	1.13.1
+PORTREVISION=	1
 CATEGORIES=	net-im python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +12,7 @@ WWW=		https://github.com/caronc/apprise
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>0:devel/py-babel@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}babel>0:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
@@ -28,8 +29,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gntp>0:net/py-gntp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}slixmpp>=0:net-im/py-slixmpp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}smpplib>=0:net-im/py-smpplib@${PY_FLAVOR}
 
-USES=		pytest python
+USES=		cpe pytest python
 USE_PYTHON=	autoplist concurrent cryptography_test pep517
+CPE_VENDOR=	nuxref
 
 NO_ARCH=	yes
 
