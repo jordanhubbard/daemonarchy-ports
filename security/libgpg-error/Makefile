@@ -34,7 +34,26 @@ NLS_CONFIGURE_OFF=	--disable-nls
 NLS_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG} --with-libintl-prefix=${LOCALBASE}
 
 TEST_CONFIGURE_ENABLE=	tests
+TEST_DEPENDS=		pkgconf:devel/pkgconf
 TEST_TARGET=	check
+
+NLS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nls-static-pkgconfig
+
+# Link the original archive using its generated static metadata.  Selecting the
+# archive explicitly keeps an installed shared library from hiding missing deps.
+post-test:
+	@set -eu; \
+	flags=$$(${LOCALBASE}/bin/pkgconf --static --libs ${WRKSRC}/src/gpg-error.pc); \
+	set --; \
+	for flag in $$flags; do \
+		case $$flag in \
+		-lgpg-error) set -- "$$@" ${WRKSRC}/src/.libs/libgpg-error.a ;; \
+		*) set -- "$$@" "$$flag" ;; \
+		esac; \
+	done; \
+	${CC} ${CFLAGS} -I${WRKSRC}/src ${FILESDIR}/static-pkgconfig.c \
+		"$$@" ${LDFLAGS} -o ${WRKDIR}/static-pkgconfig; \
+	${WRKDIR}/static-pkgconfig
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
