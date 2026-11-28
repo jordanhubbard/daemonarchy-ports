@@ -3,6 +3,8 @@ PORTVERSION=	1.13.2
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	4
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/google/googletest/releases/download/v${_GTEST_VERSION}/:gtest
+DISTFILES=	googletest-${_GTEST_VERSION}.tar.gz:gtest
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Small build system closest in spirit to Make
@@ -14,6 +16,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	ninja-build
+
+# Match the GoogleTest version selected by upstream's CMake test build.
+_GTEST_VERSION=	1.16.0
 
 PORTSCOUT=	limit:^1\.
 
@@ -63,6 +68,10 @@ do-install-ZSH-on:
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_ninja
 
 do-test: build
-	cd ${WRKSRC} && ./ninja ninja_test && ./ninja_test
+	cd ${WRKSRC} && \
+		${SETENVI} ${CONFIGURE_ENV} ${NINJA_ENV} \
+		LDFLAGS="${LDFLAGS} -pthread" ${PYTHON_CMD} configure.py \
+		--gtest-source-dir=${WRKDIR}/googletest-${_GTEST_VERSION}
+	cd ${WRKSRC} && ./ninja -j${MAKE_JOBS_NUMBER} ninja_test && ./ninja_test
 
 .include <bsd.port.mk>

@@ -1,3 +1,5 @@
-TIMESTAMP = 1766255207
+TIMESTAMP = 1795538585
 SHA256 (ninja-build-ninja-v1.13.2_GH0.tar.gz) = 974d6b2f4eeefa25625d34da3cb36bdcebe7fbce40f4c16ac0835fd1c0cbae17
 SIZE (ninja-build-ninja-v1.13.2_GH0.tar.gz) = 292385
+SHA256 (googletest-1.16.0.tar.gz) = 78c676fc63881529bf97bf9d45948d905a66833fbfa5318ea2cd7478cb98f399
+SIZE (googletest-1.16.0.tar.gz) = 876245
