@@ -7,6 +7,7 @@ their native tests remain implementation authority.
 - [Authority and acceptance map](architecture/design-traceability.md)
 - [Active native work](roadmap/active-work.md)
 - [Ninja upstream test setup and native observations](verification/ninja-unit-tests-20261124.json)
+- [FreeBSD libuv kqueue poll repair observations](verification/libuv-freebsd-kqueue-20261124.json)
 
 Use explicit `--repo jordanhubbard/daemonarchy-ports` for GitHub commands; the
 fork's upstream repository must not receive downstream-only reviews. The owned

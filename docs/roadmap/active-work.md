@@ -492,3 +492,21 @@ Historical package and registry observations retain their original identities.
 Current worker filesystem recovery is active, with independent accepted SDK,
 source and prior-work readback required before more package qualification.
 The 252 aggregate skip attribution gap and canonical/release gates remain open.
+
+### Native libuv kqueue poll repair
+
+The original FreeBSD ARM64 `poll_nested_kqueue` test fails because both
+nonblocking operations reject the kqueue descriptor with `ENOTTY`. The candidate
+checks that descriptor using a zero-event, zero-timeout `kevent` call before
+accepting this specific failure. Native controls preserve a pending event and
+reject five other descriptor cases. Seven original poll cases pass; the two
+Windows-only cases keep their original skips. Test code and filters stay unchanged.
+
+The [native observation](../verification/libuv-freebsd-kqueue-20261124.json)
+binds the original and candidate source bodies. The probe relinks original test
+objects; it is separate from a fresh complete port build. The full unfiltered
+runner invokes all 451 cases: 436 pass, 12 keep original skips, and three
+pre-existing connect/UDP failures remain. Network-policy and IPv6 fixture
+qualification is still needed.
+AMD64, independent packages, normal installation and canonical lifecycle/SDK
+acceptance remain open. No kernel or network policy is changed by this repair.
