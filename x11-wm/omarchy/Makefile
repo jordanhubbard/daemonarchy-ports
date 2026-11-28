@@ -1,6 +1,5 @@
 PORTNAME=	omarchy
-DISTVERSION=	4.5.0.20261124
-PORTREVISION=	5
+DISTVERSION=	4.6.0-rc1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jkh@FreeBSD.org
@@ -48,8 +47,8 @@ RUN_DEPENDS=	Hyprland:x11-wm/hyprland \
 USES=		fonts perl5 python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	jordanhubbard
-# Reviewed dated snapshot after v4.5.0; retain the exact owned integration.
-GH_TAGNAME=	9a8aad4c389194597316886576db3e0c84a31b5f
+# Upstream v4.6.0-rc1 plus the reviewed owned integration; never follow tip.
+GH_TAGNAME=	1fae8ac7713369857246d13515e1ee3467b37301
 # The FreeBSD compatibility layer: freebsdize, compat tools, FreeBSD commands.
 GH_TUPLE=	jordanhubbard:omarchy-freebsd:1923ffefc9fb5328e7d2054a01433e7cb77551eb:freebsd
 USE_PERL5=	run

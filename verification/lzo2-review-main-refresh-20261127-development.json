@@ -1,0 +1,27 @@
+{
+  "schema": "daemonarchy/upstream-import-audit@2",
+  "observed": "2026-11-27T19:37:15.817599+00:00",
+  "repository": "daemonarchy-ports",
+  "previous_owned_main": "8d7d6b11566b44db74cf5152ae557db76cf51210",
+  "upstream_reference": "origin/main",
+  "upstream_commit": "470fbf88efeaa06420d53b83e19794add2d5b456",
+  "merge_base": "1370ce77dd1539ac7c3ca301efaabac764814a07",
+  "import_tree_before_this_evidence_file": "4202d260529b72a32f97f24f2b114697ae75313c",
+  "complete_tree_file_entries": 184510,
+  "upstream_changed_paths": 4158,
+  "fork_changed_paths": 4,
+  "path_inventory_includes_both_sides_of_renames": true,
+  "shared_changed_paths": [
+    "archivers/lzo2/Makefile",
+    "docs/README.md"
+  ],
+  "upstream_bytes_modes_and_deletions_exact_outside_fork_delta": true,
+  "fork_bytes_modes_and_deletions_exact_outside_upstream_delta": true,
+  "native_build_and_runtime_qualified": false,
+  "qualification_scope": "Complete source-tree import and preservation audit. Previous native receipts remain bound to original commits; native build/runtime, per-unit ownership/provenance, SDK and release acceptance remain open.",
+  "resolution": {
+    "docs_index": "Preserved full main and exact feature appendix",
+    "all_port_inputs_identical_to_native_source": "0164aca0067d77df984de621c8871f8d6eccce1f",
+    "current_recovered_SDK_admitted": false
+  }
+}

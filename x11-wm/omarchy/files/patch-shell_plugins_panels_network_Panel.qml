@@ -119,16 +119,21 @@
        bandAutoFocused = true
      }
    }
-@@ -229,7 +280,7 @@
+@@ -229,7 +280,12 @@
 
    function toggleNetwork() {
      if (!networkManagerAvailable) return
--    Networking.wifiEnabled = !Networking.wifiEnabled
-+    networking.wifiEnabled = !networking.wifiEnabled
-     Qt.callLater(function() { root.refresh(true) })
+-    Quickshell.execDetached(["omarchy-network-wifi", Networking.wifiEnabled ? "off" : "on"])
++    if (hasNetworkManager) {
++      Quickshell.execDetached(["omarchy-network-wifi", Networking.wifiEnabled ? "off" : "on"])
++    } else {
++      freebsdWifi.wifiEnabled = !freebsdWifi.wifiEnabled
++      Qt.callLater(function() { root.refresh(true) })
++    }
    }
 
-@@ -350,7 +401,7 @@
+   ShellIpc {
+@@ -349,7 +405,7 @@
        refresh(true)
        selectedIndex = wifiNetworks.length > 0 ? 0 : -1
        wifiActionFocused = false
@@ -137,7 +142,7 @@
        var idx = dnsProviders.indexOf(dnsProvider)
        dnsIndex = idx >= 0 ? idx : 0
        syncBandIndex()
-@@ -393,7 +444,7 @@
+@@ -392,7 +448,7 @@
      if (wifiNetworks.length === 0) {
        selectedIndex = -1
        wifiActionFocused = false
@@ -146,7 +151,7 @@
      } else if (passwordSsid !== "") {
        var passwordIndex = wifiIndexForSsid(passwordSsid)
        if (passwordIndex >= 0) {
-@@ -614,11 +665,11 @@
+@@ -613,11 +669,11 @@
      checkConnectivity()
      if (scanWifi === undefined) scanWifi = false
      if (!detailsProc.running) detailsProc.running = true
@@ -160,7 +165,7 @@
        bandProc.command = ["omarchy-network-band"]
        bandProc.running = true
      }
-@@ -793,7 +844,7 @@
+@@ -792,7 +848,7 @@
    // reconnect is the thing you want to watch, and the details rows above
    // report it as it happens.
    function setBand(band) {
@@ -168,8 +173,8 @@
 +    if (!hasNetworkManager || !band || actionProc.running) return
 
      root.pendingBand = band
-     actionProc.command = ["omarchy-network-band", band]
-@@ -820,7 +871,7 @@
+     actionProc.command = ["omarchy-network-wifi", "band", band]
+@@ -819,7 +875,7 @@
    }
 
    function setDns(provider) {
@@ -178,7 +183,7 @@
 
      if (provider === "Custom") {
        var launcher = "omarchy-launch-floating-terminal-with-presentation"
-@@ -837,6 +888,9 @@
+@@ -836,6 +892,9 @@
    }
 
    function requiresCredentials(security) {
@@ -188,25 +193,56 @@
      return Model.requiresCredentials(security, WifiSecurityType.Open, WifiSecurityType.Owe)
    }
 
-@@ -932,7 +986,13 @@
+@@ -958,18 +1017,27 @@
    }
 
    function connectDirectly(ssid) {
--    runNetworkAction("connect", networkForSsid(ssid), function(network) { network.connect() })
+-    runNetworkAction("connect", networkForSsid(ssid), function(network) {
 +    var network = networkForSsid(ssid)
 +    if (!hasNetworkManager && network && !network.known &&
 +        (network.security === WifiSecurityType.WpaEap || network.security === WifiSecurityType.Wpa2Eap)) {
 +      freebsdWifi.configureEnterprise(network)
 +      return
 +    }
-+    runNetworkAction("connect", network, function(network) { network.connect() })
++    runNetworkAction("connect", network, function(network) {
++      if (!root.hasNetworkManager) { network.connect(); return }
+       runWifiCli(network.name || ssid, wifiConnectCommand(network.name || ssid))
+     })
    }
 
    function connectWithPassphrase(ssid, passphrase) {
-@@ -981,6 +1041,27 @@
+     runNetworkAction("connect", networkForSsid(ssid), function(network) {
++      if (!root.hasNetworkManager) { network.connectWithPsk(passphrase); return }
+       runWifiCli(network.name || ssid, wifiConnectCommand(network.name || ssid, ["--password-stdin"]), passphrase)
+     })
+   }
+
+   function connectEnterprise(ssid, identity, passphrase) {
++    if (!hasNetworkManager) { freebsdWifi.configureEnterprise(networkForSsid(ssid)); return }
+     runNetworkAction("connect", networkForSsid(ssid), function(network) {
+       runWifiCli(
+         network.name || ssid,
+@@ -1048,6 +1116,7 @@
+
+   function disconnect(network) {
+     runNetworkAction("disconnect", network || connectedWifiNetwork, function(net) {
++      if (!root.hasNetworkManager) { net.disconnect(); return }
+       var cmd = wifiDevice && wifiDevice.name
+         ? ["omarchy-network-wifi", "disconnect", "--", wifiDevice.name]
+         : ["omarchy-network-wifi", "disconnect"]
+@@ -1066,6 +1135,7 @@
+
+   function forget(net) {
+     runNetworkAction("forget", net ? networkForSsid(net.ssid) : null, function(network) {
++      if (!root.hasNetworkManager) { network.forget(); return }
+       runWifiCli(network.name || "", ["omarchy-network-wifi", "forget", "--ssid", "--", network.name])
+     })
+   }
+@@ -1074,6 +1144,27 @@
+   implicitHeight: button.implicitHeight
 
    Component.onCompleted: refresh()
-
++
 +  FileView {
 +    id: debugStatusFile
 +    path: "/var/run/daemonarchy-debug.status"
@@ -227,11 +263,10 @@
 +      root.updateDebugStatus(root.debugStatusText)
 +    }
 +  }
-+
+
    // Pulls everything we want about the active route's interface in one shot.
    Process {
-     id: detailsProc
-@@ -1155,8 +1236,8 @@
+@@ -1271,8 +1362,8 @@
      bar: root.bar
      text: root.icon
      active: root.restricted
@@ -242,10 +277,12 @@
 
      onPressed: function(b) {
        if (root.opened) root.close()
-@@ -1168,6 +1249,17 @@
+@@ -1282,6 +1373,17 @@
+       // that deferral and stalling the open on NetworkManager's AP flood.
+       else root.open()
      }
-   }
-
++  }
++
 +  Rectangle {
 +    visible: root.debugStatus.grant
 +    anchors.right: button.right
@@ -255,12 +292,10 @@
 +    radius: width / 2
 +    color: root.debugStatus.connected ? Commons.Color.accent :
 +      (root.debugStatus.listener ? root.bar.foreground : root.bar.urgent)
-+  }
-+
+   }
+
    // Keyboard-driven popup anchored to the bar widget icon. The shared
-   // KeyboardPanel handles the layer-shell PanelWindow scaffolding
-   // (focus priming on open, screen binding, anchored-to-icon positioning,
-@@ -1211,7 +1303,7 @@
+@@ -1327,7 +1429,7 @@
                  root.focusSection = "band"
                  root.bandAutoFocused = true
                } else {
@@ -269,7 +304,7 @@
                }
              }
            } else if (root.focusSection === "portal") {
-@@ -1237,7 +1329,7 @@
+@@ -1353,7 +1455,7 @@
              } else if (root.bandAutoFocused && root.bandPillsVisible) {
                root.bandAutoFocused = false
              } else {
@@ -278,7 +313,7 @@
              }
            } else if (root.focusSection === "dns") {
              // k from DNS moves up into the band section when it's on screen,
-@@ -1261,7 +1353,7 @@
+@@ -1377,7 +1479,7 @@
              // k from the top row escapes back up to the DNS row rather than
              // wrapping around to the bottom of the list.
              if (dy < 0 && root.selectedIndex <= 0) {
@@ -287,7 +322,7 @@
                root.wifiActionFocused = false
              }
              else root.selectByDelta(dy)
-@@ -1356,7 +1448,7 @@
+@@ -1472,7 +1574,7 @@
            ToggleSwitch {
              id: powerSwitch
              visible: root.canToggleWifi
@@ -296,7 +331,7 @@
              hasCursor: root.toggleHeaderHasCursor
              foreground: root.bar.foreground
              Layout.alignment: Qt.AlignVCenter
-@@ -1512,6 +1604,60 @@
+@@ -1628,6 +1730,60 @@
          }
        }
 
@@ -357,7 +392,7 @@
        // Wi-Fi band selection. Only on Wi-Fi, and only when the network answers
        // on more than one band -- a single-band AP has nothing to toggle.
        PanelSeparator {
-@@ -1643,12 +1789,14 @@
+@@ -1759,12 +1915,14 @@
 
        }
 
@@ -373,7 +408,7 @@
          width: parent.width
          spacing: Style.space(10)
 
-@@ -1818,7 +1966,7 @@
+@@ -1934,7 +2092,7 @@
      onHovered: function(isHovered) {
        if (!isHovered) return
        root.cursorActive = true
