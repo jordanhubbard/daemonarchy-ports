@@ -1,12 +1,12 @@
 PORTNAME=	ripe.atlas.cousteau
-DISTVERSION=	2.3.0
+DISTVERSION=	2.3.1
 DISTNAME=	ripe_atlas_cousteau-${DISTVERSION}
 
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
+MAINTAINER=	mzar@freebsd.org
 COMMENT=	Python wrapper around the RIPE Atlas API
 WWW=		https://github.com/RIPE-NCC/ripe-atlas-cousteau
 
