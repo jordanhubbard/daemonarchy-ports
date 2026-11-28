@@ -1,5 +1,5 @@
 PORTNAME=	liferea
-DISTVERSION=	2.0.3
+DISTVERSION=	2.0.4
 CATEGORIES=	net gnome
 MASTER_SITES=	https://github.com/lwindolf/liferea/releases/download/v${DISTVERSION}/
 
