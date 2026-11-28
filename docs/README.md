@@ -16,14 +16,26 @@ and HACKING.md. Track FreeBSD upstream `main` separately from the owned branch.
 GitHub issues are disabled in this fork;
 the product repository's DEV-001 and COMP-001 queues retain the parent work.
 
+- [GDBM supplied-descriptor close-on-exec repair](verification/gdbm-cloexec-native-20261126.json)
+
+- [PBR metadata compatibility observations](verification/pbr-importlib-metadata-native-20261126.json)
+
+- [Linecache2 native consumer observations](verification/linecache2-native-consumers-20261126.json)
+
+- [LZO2 original self-tests and pkg-config header failure](verification/lzo2-pkgconf-native-findings-20261126.json)
+
+- [Pixman image-fill and loader-hook repair, native qualification](verification/pixman-fill-qualified-20261126.json)
+
 ## Native verification records
+
+These source-identified observations retain their original artifact and worker
+boundaries; they do not establish current worker health or release admission.
 
 - [Brotli original default variant](verification/brotli-original-default-20261126.json)
 - [Fontconfig pre-repair default construction](verification/fontconfig-fresh-default-20261126.json)
 - [Fontconfig TEST json-c prerequisites](verification/fontconfig-json-c-TEST-20261126.json)
 - [Fontconfig JSON configuration test coverage](verification/fontconfig-json-c-test-coverage-20261126.json)
 - [Fontconfig original nested-trigger failure and repair](verification/fontconfig-nested-trigger-repair-20261126.json)
-- [Pixman fill and loader-hook repair qualification](verification/pixman-fill-qualified-20261126.json)
 
 - [Fontconfig older cache baseline 20261126](verification/fontconfig-older-cache-baseline-20261126.json)
 - [Fontconfig trigger fixed qualified 20261126](verification/fontconfig-trigger-fixed-qualified-20261126.json)
@@ -43,7 +55,6 @@ the product repository's DEV-001 and COMP-001 queues retain the parent work.
 - [Tap py parser boundaries 20261126](verification/tap-py-parser-boundaries-20261126.json)
 - [Xxd original default 20261126](verification/xxd-original-default-20261126.json)
 
-- [LZO2 original self-tests and pkg-config header failure](verification/lzo2-pkgconf-native-findings-20261126.json)
 
 - [GObject Introspection full default native qualification](verification/gobject-introspection-full-default-20261126.json)
 
@@ -52,3 +63,6 @@ the product repository's DEV-001 and COMP-001 queues retain the parent work.
 - [Nose compatibility and Python grammar permission findings](verification/nose-python312-native-findings-20261126.json)
 
 - [Nose conversion repair control](verification/nose-conversion-native-control-20261126.json)
+
+- [Initial Nose source3 conversion-only control, historical](verification/nose-conversion-source3-initial-control-20261126.json)
+- [Original review 0758c563 native checkpoint, historical](verification/native-checkpoint-0758c563-active-work.txt)

@@ -135,5 +135,9 @@
     "Canonical per-unit source/tool provenance, ownership, lifecycle and installed SDK/TCB admission.",
     "Complete desktop and original dependency/test closures, physical platform acceptance, installer/update/rollback/media/freeze/signing/publication for full 1.6 release.",
     "Human documentation authority review and canonical receipts remain open; no attestation changed."
-  ]
+  ],
+  "later_worker_storage_revalidation": {
+    "observed": "2026-11-27",
+    "scope": "Historical native source/products/custody retained. Entire merged Lzo2 port remains exact to native0164aca0067d77df984de621c8871f8d6eccce1f. Worker filesystem recovery is active; independent accepted SDK/source/prior-work verification is required before further package qualification. No current recovered-SDK integrity, canonical or release admission follows from integration."
+  }
 }

@@ -362,5 +362,9 @@
   },
   "latest_normal_version": "0.46.4_3",
   "latest_normal_source_revision": "0b9e18618e18ca63ac16c82edcb90bbc670c0b50",
-  "latest_normal_qualification": "qualified_revision3.normal_acceptance"
+  "latest_normal_qualification": "qualified_revision3.normal_acceptance",
+  "later_worker_storage_revalidation": {
+    "observed": "2026-11-27",
+    "scope": "All port inputs remain exact to qualified native source0b9e18618e18ca63ac16c82edcb90bbc670c0b50. Original source/artifact/custody identities and failed earlier revisions remain retained. Current worker filesystem recovery is active; independent SDK/source/prior-work verification is required before further native package qualification. No current SDK integrity, matched AMD64, canonical or release admission follows from integration."
+  }
 }
