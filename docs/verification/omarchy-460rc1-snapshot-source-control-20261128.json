@@ -1,0 +1,116 @@
+{
+  "schema": "daemonarchy/omarchy-rc1-snapshot-source-control-development@1",
+  "observed": "2026-11-28T04:26:19.791636+00:00",
+  "planned_product_release": "1.6.0",
+  "product_issue": 334,
+  "status": "native-FreeBSD-source-command-control-pass-original-installed-package-target-pending",
+  "selection": {
+    "Omarchy_upstream_tag": "v4.6.0-rc1",
+    "owned_Omarchy_GH_TAGNAME": "1fae8ac7713369857246d13515e1ee3467b37301",
+    "FreeBSD_compatibility_pin": "1923ffefc9fb5328e7d2054a01433e7cb77551eb",
+    "upstream_snapper_Git_blob": "0c2aed814b639ae80fbd29697cc69a6ad0df0be8",
+    "tested_ports_review_sources": [
+      "d63d775257fba73f9a42d6c54638443718ce1a17",
+      "f9d82635f1322f24d2d2fd5f57381a34c4fa5c13"
+    ],
+    "shared_complete_omarchy_port_tree": "5dd51fef252bb13e493f5a8a9b8844cf02a03851",
+    "whole_original_native_test_script_sha256": "c514cade33f44a4be2632c9b6bc41ee2168c3961aa3ee4e66e21635eb4b64f45",
+    "unchanged_extracted_original_canary_sha256": "aab4f996a3874b56c52f5e09d9f095cc5fa7f68421ade7442f32e3ca42bc0691",
+    "upstream_original_snapper_sha256": "10f3263ad82d5cdaf3434cdafea9c2f5ca07449beb08553287794e98c95d8bcc",
+    "refreshed_port_patch_sha256": "72c370984e7fa9648ec438bea58aaff6deb0882578f9f01620b7eb26c6472308",
+    "native_constructed_postimage_sha256": "72a6eaa5c117c5bd386e38a8159465e1aea669b7434629213e5afa6637e2021d"
+  },
+  "native_runtime": {
+    "OS": "FreeBSD",
+    "release": "16.0-CURRENT",
+    "architecture": "amd64",
+    "kernel_source_revision": "cb38d6498a24",
+    "matches_selected_CURRENT_source_snapshot": false,
+    "bootstrap_tools": {
+      "Python": {
+        "observed_version": "Python 3.12.15",
+        "sha256": "05587422e95c177bedf8622ec5d6771150412a652a3c38417d45e6c00dbd91b7",
+        "installed_source_build_provenance": "unknown"
+      },
+      "bash": {
+        "observed_version": "GNU bash, version 5.3.20(0)-release (amd64-portbld-freebsd16.0)",
+        "sha256": "ef39f03eca8db37b580bc4b1bcc712813c6a8ddec6acde82cd6fef22e58d39ce",
+        "installed_source_build_provenance": "unknown"
+      },
+      "patch": {
+        "observed_version": "patch 2.0-12u11 FreeBSD",
+        "sha256": "0f0694fd21f24b8f0f52b1c97aa9702b3bf60948166a4f65d390f9bb8d966bb6",
+        "installed_source_build_provenance": "unknown"
+      }
+    },
+    "qualification_boundary": "Allocated Intel source-command fixture on the older retained world; no matching-CURRENT, complete SDK or canonical bootstrap provenance is claimed."
+  },
+  "native_construction": {
+    "tool": "FreeBSD base patch",
+    "fuzz": 0,
+    "exit": 0,
+    "postimage_byte_identical_to_expected_refreshed_RC1_source": true,
+    "original_RC1_Linux_body_preserved_inside_outer_FreeBSD_guard": true,
+    "full_original_port_patch_target_executed": false
+  },
+  "unchanged_original_canary": {
+    "program_executions": 2,
+    "original_source": {
+      "program_exit": 1,
+      "first_Bash_child_exit": 73,
+      "expected_Linux_command_canary_failure_reproduced": true,
+      "stdout_sha256": "0e2c152f3b56d6d2d1d1d35090514c2d578cf86f5576b90c863a0b58de22d6ac",
+      "stderr_sha256": "eb160d2d96c726571f2c5c58e7b818c61d32d2a77a40b5dfe846e95e7b9409b3"
+    },
+    "native_constructed_patched_source": {
+      "program_exit": 0,
+      "direct_invocation": "pass",
+      "sourced_invocation_and_source_continuation": "pass",
+      "absence_of_config_and_Linux_command_canary_files": "pass",
+      "stdout_sha256": "01ba1c506dabdc3917f57189080d7c71c067857eafcace5ed7fab843958ac6bc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "unprivileged_actor_uid": 65534,
+    "original_child_timeout_seconds": 30,
+    "source_assertions_case_order_and_deadlines_changed": false,
+    "temporary_fixture_cleanup": "The original finally block remains unchanged; its transient canary directories are removed by the original program. Complete persistent control inputs, constructed source, backup and command logs remain retained.",
+    "execution_repeated_for_second_draft": false,
+    "second_draft_binding": "Exact same complete Omarchy port subtree and original native test source; mixed Mono/Herdr changes receive no qualification from this control."
+  },
+  "preservation": {
+    "all_source_and_original_test_bytes_modes_numeric_owners_flags_nsmtime": true,
+    "native_constructed_source_after_original_canary": true,
+    "selected_bootstrap_accounts_and_package_database": true,
+    "mount_table": true,
+    "package_install_or_feed_kernel_boot_service_changes": false
+  },
+  "independent_custody": {
+    "native_and_independent_host_verification": true,
+    "native_revalidation_after_independent_host_acceptance": true,
+    "scope": "Complete persistent source-command control namespace; not a full port build, package, installed SDK or original whole-native-target archive. Bootstrap runtime bodies remain outside this namespace and their complete source-build provenance is unknown.",
+    "nodes": 23,
+    "files": 13,
+    "directories": 10,
+    "capsule_bytes": 32714,
+    "capsule_sha256": "aaa1a3f43f2e7d559642b09a7491bb23e12e0588dc7a078b39a741da802f0da4",
+    "all_bodies_types_modes_numeric_owners_flags_nsmtime_and_hardlink_metadata_verified": true
+  },
+  "canonical_admitted": false,
+  "qualification": {
+    "complete_unchanged_original_native_port_test_target": false,
+    "fresh_complete_original_make_targets_stage_check_plist_package": false,
+    "actual_installed_package_snapshot_leaf": false,
+    "sealed_private_package_lifecycle": false,
+    "matching_CURRENT_kernel_world_and_toolchain_closure": false,
+    "ARM_native_execution": false,
+    "real_boot_environment_update_rollback_or_physical_desktop": false,
+    "canonical_Component_SDK_TCB_or_release_admission": false
+  },
+  "bootstrap_versions_observed": "2026-11-28T04:30:14.379908+00:00",
+  "recorded": "2026-11-28T04:32:19.776017+00:00",
+  "required_next_work": [
+    "Run the complete unchanged original port workflow and installed snapshot leaf against fresh exact products, including stage, check-plist and package.",
+    "Qualify matching CURRENT kernel/world, selected toolchain/runtime closure and both architectures; this older-world source control grants no matching-world result.",
+    "Complete sealed/private lifecycle, actual boot-environment update/rollback, physical desktop and canonical Component/SDK/TCB and full1.6release acceptance."
+  ]
+}
