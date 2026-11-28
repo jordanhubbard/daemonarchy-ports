@@ -1,0 +1,28 @@
+{
+  "schema": "daemonarchy/upstream-import-audit@2",
+  "observed": "2026-11-27T19:38:38.532028+00:00",
+  "repository": "daemonarchy-ports",
+  "previous_owned_main": "ec4ce16580dee79d9c4c49de49ee668e27000a15",
+  "upstream_reference": "origin/main",
+  "upstream_commit": "5434b7eaba52bab53ee00e88f76b1f6eec13f66e",
+  "merge_base": "1370ce77dd1539ac7c3ca301efaabac764814a07",
+  "import_tree_before_this_evidence_file": "ee9b5047452a08b1aecff4191c406f22a759bed0",
+  "complete_tree_file_entries": 184513,
+  "upstream_changed_paths": 4161,
+  "fork_changed_paths": 4,
+  "path_inventory_includes_both_sides_of_renames": true,
+  "shared_changed_paths": [
+    "docs/README.md",
+    "x11/pixman/Makefile"
+  ],
+  "upstream_bytes_modes_and_deletions_exact_outside_fork_delta": true,
+  "fork_bytes_modes_and_deletions_exact_outside_upstream_delta": true,
+  "native_build_and_runtime_qualified": false,
+  "qualification_scope": "Complete source-tree import and preservation audit. Previous native receipts remain bound to original commits; native build/runtime, per-unit ownership/provenance, SDK and release acceptance remain open.",
+  "resolution": {
+    "docs_index": "Preserved full current main text and exact Pixman appendix",
+    "Makefile": "Keep qualified revision3 and ldconfig; other bytes exact current main",
+    "all_port_inputs_identical_to_native_source": "0b9e18618e18ca63ac16c82edcb90bbc670c0b50",
+    "current_recovered_SDK_admitted": false
+  }
+}

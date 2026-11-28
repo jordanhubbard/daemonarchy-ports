@@ -1,5 +1,5 @@
 PORTNAME=	omarchy
-DISTVERSION=	4.5.0.20261119
+DISTVERSION=	4.6.0-rc1
 PORTREVISION=	1
 CATEGORIES=	x11-wm
 
@@ -48,15 +48,15 @@ RUN_DEPENDS=	Hyprland:x11-wm/hyprland \
 USES=		fonts perl5 python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	jordanhubbard
-# Reviewed dated snapshot after v4.5.0; retain the exact owned integration.
-GH_TAGNAME=	0640b8c1c761fd962298907712596c1197c13a29
+# Upstream v4.6.0-rc1 plus the reviewed owned integration; never follow tip.
+GH_TAGNAME=	1fae8ac7713369857246d13515e1ee3467b37301
 # The FreeBSD compatibility layer: freebsdize, compat tools, FreeBSD commands.
-GH_TUPLE=	jordanhubbard:omarchy-freebsd:029e0eba6ff69392e416abb5bbd58206d4d20443:freebsd
+GH_TUPLE=	jordanhubbard:omarchy-freebsd:1923ffefc9fb5328e7d2054a01433e7cb77551eb:freebsd
 USE_PERL5=	run
 
 SHEBANG_FILES=	bin/* config/omarchy/hooks/*/* default/systemd/system-sleep/* \
 		install/user/first-run/* install/provisioning/console-font.py \
-		default/agents/skills/omarchy-app/scaffold \
+		default/agents/skills/omarchy-make-app/scaffold \
 		shell/plugins/*/*.sh shell/services/*.sh
 SHEBANG_GLOB=	*.sh
 
@@ -124,12 +124,14 @@ do-build:
 do-install:
 # Commands, with the ${DATADIR}/bin links Omarchy uses to find them.
 	${MKDIR} ${STAGEDIR}${DATADIR}/bin
+# Preserve patch backups in the work tree without installing them as commands.
 	cd ${WRKSRC}/bin && for f in *; do \
+		case "$$f" in *.orig) continue ;; esac; \
 		${INSTALL_SCRIPT} "$$f" ${STAGEDIR}${PREFIX}/bin/; \
 		${RLN} ${STAGEDIR}${PREFIX}/bin/"$$f" ${STAGEDIR}${DATADIR}/bin/"$$f"; \
 	done
 .for d in ${DATA_DIRS}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR} "! -name *.orig"
 .endfor
 	${RM} -r ${STAGEDIR}${DATADIR}/applications/icons
 	${INSTALL_DATA} ${WRKSRC}/version ${WRKSRC}/logo.txt ${WRKSRC}/logo.svg \
@@ -194,7 +196,7 @@ do-install:
 
 # Login manager theme and greeter configuration.
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/sddm/themes ${STAGEDIR}${PREFIX}/etc/sddm.conf.d
-	cd ${WRKSRC}/default/sddm && ${COPYTREE_SHARE} omarchy ${STAGEDIR}${PREFIX}/share/sddm/themes
+	cd ${WRKSRC}/default/sddm && ${COPYTREE_SHARE} omarchy ${STAGEDIR}${PREFIX}/share/sddm/themes "! -name *.orig"
 	${INSTALL_DATA} ${WRKSRC}/default/sddm/hyprland.lua ${STAGEDIR}${PREFIX}/share/sddm
 .for f in 10-theme.conf 10-wayland.conf
 	${INSTALL_DATA} ${WRKSRC}/etc/sddm.conf.d/${f} ${STAGEDIR}${PREFIX}/etc/sddm.conf.d/${f:S/^10-/10-omarchy-/}
@@ -227,7 +229,7 @@ do-install:
 		${STAGEDIR}${DATADIR}/skel/.local/state/omarchy/migrations \
 		${STAGEDIR}${DATADIR}/skel/.local/state/omarchy/toggles/hypr \
 		${STAGEDIR}${DATADIR}/skel/.local/state/tensaku
-	cd ${WRKSRC}/config && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/skel/.config
+	cd ${WRKSRC}/config && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/skel/.config "! -name *.orig"
 	${INSTALL_DATA} ${WRKSRC}/logo.txt ${STAGEDIR}${DATADIR}/skel/.config/omarchy/branding/screensaver.txt
 	${INSTALL_DATA} ${WRKSRC}/icon.txt ${STAGEDIR}${DATADIR}/skel/.config/omarchy/branding/about.txt
 	${INSTALL_DATA} ${WRKSRC}/applications/*.desktop \
