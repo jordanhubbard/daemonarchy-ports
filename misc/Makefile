@@ -15,6 +15,7 @@
     SUBDIR += amanda-perl-wrapper
     SUBDIR += amanda-server
     SUBDIR += ansiweather
+    SUBDIR += anthropic-cli
     SUBDIR += antigravity-cli
     SUBDIR += apparix
     SUBDIR += arrow-datafusion
@@ -419,6 +420,9 @@
     SUBDIR += p5-Zen-Koans
     SUBDIR += p5-asterisk-perl
     SUBDIR += parley
+    SUBDIR += paseo
+    SUBDIR += paseo-desktop
+    SUBDIR += paseo-hub
     SUBDIR += pastebinit
     SUBDIR += patchutils
     SUBDIR += pauker

@@ -1,0 +1,9 @@
+--- lzo2.pc.in.orig
++++ lzo2.pc.in
+@@ -17,5 +17,5 @@
+ Version: @PACKAGE_VERSION@
+ Description: LZO - a real-time data compression library
+ URL: http://www.oberhumer.com/opensource/lzo/
+-Cflags: -I${includedir}/lzo
++Cflags: -I${includedir} -I${includedir}/lzo
+ Libs: -L${libdir} -llzo2
