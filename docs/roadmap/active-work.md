@@ -492,3 +492,12 @@ Historical package and registry observations retain their original identities.
 Current worker filesystem recovery is active, with independent accepted SDK,
 source and prior-work readback required before more package qualification.
 The 252 aggregate skip attribution gap and canonical/release gates remain open.
+
+### Earlier native checkpoint retained as history
+
+The [original review 0758c563 checkpoint](../verification/native-checkpoint-0758c563-active-work.txt)
+retains its earlier Python conversion and Nose installation holds verbatim.
+Later source-identified entries above supersede those earlier holds. The
+[initial Nose source3 conversion-only control](../verification/nose-conversion-source3-initial-control-20261126.json)
+remains separate from the cumulative source8 report. These historical reports
+do not establish present worker health, complete SDK or release admission.

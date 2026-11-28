@@ -1,0 +1,155 @@
+{
+  "schema": "daemonarchy-native-PNG-observation@1",
+  "observed_utc": "2026-11-26T02:07:56.842265+00:00",
+  "planned_release": "1.6",
+  "scope": "Bounded native ARM development qualification only. Matching source/SDK/kernel and AMD64, full desktop/apps, canonical ownership/provenance/lifecycle/SDK/TCB, complete physical matrix, installer/update/rollback/media, freeze/signing/publication remain open.",
+  "source_revision": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+  "original_port": "graphics/png",
+  "version": "1.6.59_1",
+  "package": {
+    "bytes": 293396,
+    "sha256": "58f084e06e8b41148dc63a49b3df507bfd90f994657b524a30de784efd05a3b3"
+  },
+  "original_options_preserved": [
+    "APNG",
+    "SIMD"
+  ],
+  "selected_original_port_Mk_Template_members": 248,
+  "full_original_Git_composition_members": 184381,
+  "original_construction_and_tests": {
+    "fresh_builds": 2,
+    "construction_targets_per_build": 8,
+    "original_make_test_passes": 2,
+    "bridge": "Mk/Uses/cmake.mk reconfigures PNG_TESTS ON and runs original Ninja test/CTest; empty TEST_TARGET does not mean no original suite.",
+    "independently_audited_original_CTest_cases": 37,
+    "passed": 37,
+    "failed": 0,
+    "skipped": 0,
+    "all_names_commands_directories_and_completion_ids_match_discovery": true,
+    "saved_original_LastTest_log_sha256": "9c7cc6af9e0d3107a810df82836496426b61e6bb6c66c6c2b76af82761b02fef",
+    "production_library_bytes_and_package_unchanged_by_test_reconfigure": true
+  },
+  "private": {
+    "payloads": 31,
+    "explicit_directories": 0,
+    "all_payload_bodies_and_metadata_exact": true,
+    "actual_codec_commands": 31,
+    "actual_tool_commands": 15,
+    "actual_original_pkg_chroot_transactions": 6,
+    "original_ldconfig_install_delete_reinstall_hooks": true,
+    "private_extraction": "pkg -r add -IM skips scripts and dependency delivery only for isolated extraction; actual original pkg -c lifecycle hooks separately executed.",
+    "codec_coverage": "Shared/static classic and simplified APIs, all five filters, 24 static images and four two-frame APNGs (32 independently decoded RGBA planes), timing/sequence/chunk CRC, malformed input callbacks and recovery.",
+    "tool_coverage": "Actual pngfix CRC detection/repair and png-fix-itxt legacy length repair; independent expected bytes/pixels; both config/pkgconf aliases; three owned gzip manpages.",
+    "guards": "Whole SDK110/raw database, frozen17, native base/library bindings, host accounts/cache/mounts and selected original inputs preserved; temporary mounts removed."
+  },
+  "normal": {
+    "accepted_bounded_development_count": 111,
+    "installed_held_packages": [],
+    "original_local_only_pkg_solver_shlibs_and_hooks_enabled": true,
+    "normal_install_used_no_dependency_or_hook_bypass": true,
+    "new_payloads_verified": 31,
+    "inherited_package_prefixes_preserved": 110,
+    "normal_codec_commands": 31,
+    "normal_metadata_tool_commands": 30,
+    "commands_match_expected_exits_including_error_controls": true,
+    "no_normal_loader_or_CMake_prefix_override": true,
+    "actual_default_CMake_CONFIG_and_MODULE_finders_pass": true,
+    "actual_native_CMake_clients": 3,
+    "CMake_clients": "CONFIG shared PNG::PNG, CONFIG static PNG::png_static, MODULE shared PNG::PNG; Ninja builds, loader and actual decoding.",
+    "read_only_completion": "Original wrapper failed after successful install/hooks and all31codec commands because its observer scanned unrelated packages manpages. Corrected observer limits to PNG-owned three pages. Separate read-only completion revalidates every payload/inherited prefix and runs30metadata/tools commands without replaying install/hooks/codecs.",
+    "guards": "Fresh whole SDK111 prefix/rawdatabase, frozen17, native base/libc/libm/libz, accounts, actual normal loader cache, mounts and all248source inputs preserved. Existing loader candidates and per-soname priority retained."
+  },
+  "physical_Intel_existing_baseline": {
+    "status": "pass-existing-installed-component-only",
+    "existing_version": "1.6.59_1",
+    "installed_registry_rows_preserved": 1195,
+    "existing_payloads_preserved": 30,
+    "actual_native_codec_commands": 31,
+    "same_portable_fixture_as_ARM": true,
+    "actual_codec_coverage": "Shared/static/classic/simplified/all5filters/APNG timing/sequence/CRC/errors/recovery;32independently decoded planes.",
+    "kernel_loader_compiler_base_accounts_cache_mounts_preserved": true,
+    "qualification_limits": "Existing Daemonarchy1.5.1 kernel cb38d6498a24 baseline. No new source build, package, matching AMD64SDK/kernel, new1.6deployment/upgrade/rendered-desktop or rollback acceptance. CMake absent; original37case suite not run on this host."
+  },
+  "custody": {
+    "source_private": {
+      "nodes": 3552,
+      "archive_bytes": 33020836,
+      "archive_sha256": "a30b4cc989e0e203974dfa610e10b8ff9dbabfc271a0f05f0c7c82ab2080e17c",
+      "inventory_sha256": "95cb4a9ee13307aeb69838f0d6c61b3c4adeeee98e23522e05242d5398de1295",
+      "independently_verified_hosts": [
+        "native ARM FreeBSD",
+        "physical Intel FreeBSD"
+      ],
+      "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_verified": true
+    },
+    "normal": {
+      "nodes": 298,
+      "archive_bytes": 18303533,
+      "archive_sha256": "d9029b13476b9449d8c91b2753217311927b10a1cf5bf000da3a41086971c300",
+      "inventory_sha256": "c2bc8493e1c8c4a536d0188ea1f4eb261ba8d38a56470f80cf50c929c86da1bb",
+      "independently_verified_hosts": [
+        "native ARM FreeBSD",
+        "physical Intel FreeBSD"
+      ],
+      "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_verified": true
+    },
+    "physical_existing_baseline": {
+      "nodes": 228,
+      "archive_bytes": 1190404,
+      "archive_sha256": "cc8aed0da0a26264a3b3bebb8df73dc0f89e9c005fda1dc285350c9fadef54ab",
+      "inventory_sha256": "c0ce394d3ed80d94ab8fa02fed6631ccfff154a8cffc1c2b7dbcc28027cfea27",
+      "independently_verified_hosts": [
+        "physical Intel FreeBSD",
+        "Sparky Linux scratch"
+      ],
+      "all_bodies_types_modes_numeric_ids_flags_nsmtime_links_hardlink_topology_and_gzip_CRC_verified": true,
+      "file_flags_format": "pax-DAEMONARCHY.bsd.flags-v1",
+      "preserved_flag_values": [
+        2048
+      ],
+      "negative_controls": [
+        {
+          "name": "mismatched-recorded-flag",
+          "exit": 1,
+          "rejected": true
+        },
+        {
+          "name": "missing-format-declaration",
+          "exit": 1,
+          "rejected": true
+        }
+      ],
+      "scope": "Metadata capture and independent verification; no restore execution claimed."
+    }
+  },
+  "retained_failures_and_corrections": [
+    "First original build passed but post-test discovery overwrote LastTest.log; fresh second build saves full native log before discovery and independently audits37cases.",
+    "Empty private root lacked base libc; corrected established isolated extraction binds actual native base libraries.",
+    "Manifest observer assumed empty deps key exists; corrected before real transactions.",
+    "Normal manpage observer scanned unrelated packages; corrected owned-file read-only completion preserves actual successful install/hooks/codecs.",
+    "First Intel actor could not traverse home; corrected actor-owned /var/tmp fixture before codec execution.",
+    "Initial Intel capsule rejected nonzero BSD flags; explicit numeric PAX flags format preserves actual2048 and rejects mismatched flags or absent declaration, without clearing flags.",
+    "Graph plan r2 observer failed before queries; r3 handles all compound version clauses using actual native pkg version comparisons."
+  ],
+  "next_original_Graphviz_plan": {
+    "metadata_only": true,
+    "version": "16.1.2",
+    "selected_options": [
+      "DIGCOLA",
+      "DOCS",
+      "EXAMPLES",
+      "ICONV",
+      "IPSEPCOLA",
+      "NLS",
+      "NVTHREADS",
+      "PANGOCAIRO",
+      "XPM"
+    ],
+    "unbuilt_nodes": 59,
+    "ready_missing_frontier_count": 32,
+    "all_compound_constraints_native_version_compared": true,
+    "whole_SDK111_and_frozen17_preserved": true,
+    "build_install_runtime_qualification": false
+  },
+  "remaining_specific": "Original OpenSP six failures, missing XInclude XSDs, optional/excluded GLib variants, default-kernel capacity, CMake BSD-make space-path/backend and full original-suite coverage, full Graphviz/default desktop closure remain open."
+}

@@ -1,0 +1,115 @@
+{
+  "observed_utc": "2026-11-26T13:43:25.361249+00:00",
+  "status": "confirmed-held-original-Nose-runtime-selftest-defects-and-installed-Python-lib2to3-grammar-permission-defect",
+  "scope": "Bounded native FreeBSD ARM diagnosis, complete retained negative evidence and independent custody. Nose remains uninstalled. The installed 128-package development checkpoint has a Python conversion-feature hold; package count is not healthy/release-admitted SDK proof. No repair, complete API, canonical source/tool provenance/lifecycle/SDK/TCB, AMD64, physical or release acceptance claimed.",
+  "source_revision": "0164aca0067d77df984de621c8871f8d6eccce1f",
+  "Nose": {
+    "origin": "devel/py-nose",
+    "flavor": "py312",
+    "version": "1.3.7_2",
+    "original_distfile": {
+      "bytes": 280488,
+      "sha256": "f1bffef9cbc82628f6e7d7b40d7e255aefaa1adb6a1b1d26c69a8b79e6208a98"
+    },
+    "full_Git_source_members_verified": 184390,
+    "selected_original_recipe_two_patches_Mk_Templates_inputs": 248,
+    "original_source_references": 433,
+    "original_port_patches": 2,
+    "original_stage_effects": {
+      "unchanged_original_patched_files": 429,
+      "independently_derived_generated_metadata_rewrites": [
+        "nose.egg-info/PKG-INFO",
+        "nose.egg-info/SOURCES.txt"
+      ],
+      "generated_metadata_removals": [
+        "nose.egg-info/entry_points.txt",
+        "nose.egg-info/not-zip-safe"
+      ],
+      "derivation": "Exact original setup.py long description/header semantics, original AUTHORS license declaration and exactly two removed SOURCES entries; all other bytes/order/modes remain exact."
+    },
+    "original_construction_targets_PASS": 8,
+    "successful_targets_retained_without_replay_through_observer_corrections": 6,
+    "package": {
+      "bytes": 285541,
+      "sha256": "90b80cb52862165a786fb89fb88b302b92439b81d038f69563448d3a7dfcea2b"
+    },
+    "original_custom_test_target": {
+      "exit": 1,
+      "first_command_failure": "invalid command 'build_tests'",
+      "selftest_py_executed": false,
+      "upstream_cases_completed": 0,
+      "suite_acceptance": false
+    },
+    "actual_sealed_package": {
+      "payloads_verified": 152,
+      "candidate_import_exit": 1,
+      "actual_nosetests_version_CLI_exit": 1,
+      "failure": "No module named 'ConfigParser'",
+      "actual_candidate_binding_verified": true,
+      "normal_installation_performed": false
+    },
+    "confirmed_cause": {
+      "original_setup3lib_uncaught_import_exit": 1,
+      "failure": "cannot import name 'Mixin2to3' from setuptools.command.build_py",
+      "native_setuptools": "63.1.0",
+      "native_Python": "3.12.16",
+      "effect": "The original setup.py ImportError fallback drops legacy conversion and custom command registration, yields Python2 ConfigParser references in the package, removes entry-point metadata and leaves original build_tests unavailable."
+    },
+    "retained_observer_failures": [
+      "Initial source reference omitted the two existing original patches; checksum/extract/patch were preserved.",
+      "Next reference omitted original stage egg metadata effects; configure, build and stage were preserved.",
+      "Initial diagnostic expected a later imp error; the actual earlier ConfigParser import failure was retained without replay.",
+      "Conversion capability probe expected importability; it instead exposed the separate grammar permission failure. All raw results and controls are retained."
+    ]
+  },
+  "installed_Python312_lib2to3_hold": {
+    "package": "python312-3.12.16",
+    "current_installed_package_owned": true,
+    "original_registered_artifact": {
+      "bytes": 40533820,
+      "sha256": "3436996127141576dc3f282cb15fe0696f5f0930ce1f5c611f89f12008687be7"
+    },
+    "grammar_members": {
+      "Grammar3.12.16.final.0.pickle": {
+        "original_package_mode": "0600",
+        "numeric_uid": 0,
+        "numeric_gid": 0,
+        "bytes": 15313,
+        "sha256": "97c8ed74d091fcfd23498029bb819c29d096c3dcb1326edee5dfb0591ade2e4b",
+        "original_manifest_and_installed_bytes_modes_owners_equal": true
+      },
+      "PatternGrammar3.12.16.final.0.pickle": {
+        "original_package_mode": "0600",
+        "numeric_uid": 0,
+        "numeric_gid": 0,
+        "bytes": 1225,
+        "sha256": "36ee934395b9209737b13893ddaff05fad8e239c2fdfac29d401d3fceeb30768",
+        "original_manifest_and_installed_bytes_modes_owners_equal": true
+      }
+    },
+    "actual_unprivileged_import_exit": 1,
+    "failure": "PermissionError reading Grammar3.12.16.final.0.pickle",
+    "before_any_Nose_probe_modes_equal": true,
+    "original_package_itself_ships_inaccessible_modes": true,
+    "native_unprivileged_uid": 65534,
+    "chmod_reinstall_or_repair_performed": false,
+    "original_seed_source_build_provenance": "Still unproven; the artifact/member diagnosis does not establish a fresh original ports build or canonical admission."
+  },
+  "custody": {
+    "nodes": 1868,
+    "archive_bytes": 69512118,
+    "archive_sha256": "ab8ed33345729d62317b47902261d55597a5214c8bca59dbbc03cba5a9dfc50e",
+    "inventory_sha256": "2d13ad8999b61273b36c94300b5cf85289fec39bd1c6fb1cdd52d6b6e08a6ad1",
+    "all_nodes_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_gzip_CRC_verified_ARM_and_Intel": true,
+    "entire_original_registered_Python_package_included": true,
+    "extra_compressed_archive_bytes_on_Linux_controller": 0
+  },
+  "guards": "Whole normal SDK128/main registry/payloads/frozen17/base/accounts/loader/fontcache/mount/original source preserved. Only explicitly checked SQLite query sidecars may transition during package ownership observations. No successful original target or test was replayed.",
+  "remaining": [
+    "Inspect original Python source/build provenance and restore publicly readable grammar delivery through a retained source/package repair, then fresh unprivileged validation; no one-host chmod workaround.",
+    "Repair original Nose conversion/custom command registration and current-Python package behavior without removing original assertions, cases, deadlines or five-runner requirements.",
+    "Fresh exact-source construction, complete original selftest discovery/completion, sealed clients, package lifecycle, independent custody and actual normal delivery remain mandatory for corrected products.",
+    "Complete original nose2/unittest2 and coverage/six/traceback2/SQLite/pbr/linecache2/gdbm/Tkinter test closure, gtk-doc/Cairo/desktop and full 1.6 release scope.",
+    "All canonical ownership/source-tool provenance/lifecycle/SDK/TCB, matched source/kernel/AMD64, 47-profile physical acceptance, Pi4 before Pi5, installer/update/rollback/media/freeze/signing/publication and human documentation authority/receipt gates remain open."
+  ]
+}

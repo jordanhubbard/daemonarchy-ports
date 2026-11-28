@@ -1,0 +1,101 @@
+{
+  "observed_utc": "2026-11-26T08:30:30.271244+00:00",
+  "status": "historical-revision0-default-construction-runtime-pass-lifecycle-rejected-superseded",
+  "scope": "Fresh original default artifact construction only; zero-case default test bridge is not an original upstream suite pass. Separate TEST variant has its own full case report.",
+  "origin": "x11-fonts/fontconfig",
+  "version": "2.18.3,1",
+  "source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+  "package": {
+    "bytes": 489017,
+    "sha256": "ce3dbabf663b4fcbcce1828f2ff64e2c82377e356b579530a9d054980530d8ba"
+  },
+  "normal_dependency_anchor_count": 123,
+  "all_eight_original_construction_targets_pass": true,
+  "default_options": [
+    "BITMAPS",
+    "DOCS",
+    "HINTING_SLIGHT",
+    "NLS"
+  ],
+  "effective_original_Meson_features": {
+    "default_library": "both",
+    "default-hinting": "slight",
+    "bitmap-conf": "yes",
+    "tests": "disabled",
+    "doc": "disabled",
+    "cache-build": "disabled",
+    "nls": "enabled"
+  },
+  "default_arguments_options_and_dependencies_equal_retained_original_metadata": {
+    "original_fixed_metadata": [
+      "PKGNAME",
+      "BUILD_DEPENDS",
+      "LIB_DEPENDS",
+      "RUN_DEPENDS",
+      "TEST_DEPENDS",
+      "SELECTED_OPTIONS",
+      "MESON_ARGS"
+    ],
+    "original_default_producer_metadata": [
+      "EXTRACT_DEPENDS",
+      "USES"
+    ]
+  },
+  "zero_case_original_default_bridge": {
+    "exit": 0,
+    "upstream_cases": 0,
+    "suite_pass_claimed": false
+  },
+  "manifest": {
+    "payloads": 344,
+    "directories": {
+      "/var/db/fontconfig": {
+        "uname": "root",
+        "gname": "wheel",
+        "perm": "0755"
+      }
+    },
+    "scripts": [
+      "post-install",
+      "post-deinstall"
+    ],
+    "lua_scripts": [
+      "post-install",
+      "pre-deinstall"
+    ],
+    "shlibs_provided": [
+      "libfontconfig.so.1"
+    ],
+    "deps": {
+      "expat": {
+        "origin": "textproc/expat2",
+        "version": "2.10.0"
+      },
+      "freetype2": {
+        "origin": "print/freetype2",
+        "version": "2.14.3"
+      },
+      "gettext-runtime": {
+        "origin": "devel/gettext-runtime",
+        "version": "1.0_2"
+      }
+    }
+  },
+  "separate_original_TEST_report": "fontconfig-json-c-TEST-20261126.json",
+  "whole_SDK123_raw_database_frozen_base_accounts_cache_mounts_and_250_source_inputs_preserved": true,
+  "preconstruction_observer_failure_retained": {
+    "expected_EXTRACT_DEPENDS_in_narrow_option_probe": true,
+    "actual_construction_commands_run": 0,
+    "corrected_guard_binds_probe_fields_and_original_producer_EXTRACT_DEPENDS_USES_separately": true,
+    "original_failed_result_sha256": "72b425ec742ef8a69facf9180ae024e26ca46d566055edad97710092cab431a7"
+  },
+  "normal_installation": false,
+  "remaining": [
+    "Revision 0 was rejected by its nested-font trigger lifecycle. Repaired revision 1 now has bounded normal acceptance in the linked report.",
+    "Original Lua sample behavior, preserve modified fonts.conf, actual font-directory/config trigger execution and real ldconfig lifecycle.",
+    "Exact outside-prefix /var/db/fontconfig ownership/mode and cache behavior, full source/failure/private/lifecycle custody, actual normal delivery and same default-path consumers.",
+    "Real older cache baseline, original network/Linux bwrap scope and all wider 1.6 release gates."
+  ],
+  "subsequent_runtime_and_failed_lifecycle_report": "fontconfig-nested-trigger-repair-20261126.json",
+  "subsequent_repaired_normal_report": "fontconfig-trigger-fixed-qualified-20261126.json"
+}

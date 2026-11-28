@@ -1,0 +1,106 @@
+{
+  "observed_utc": "2026-11-26T13:24:46.421053+00:00",
+  "status": "pass-original-Mock-py312-normal128-and-independent-custody",
+  "origin": "devel/py-mock",
+  "flavor": "py312",
+  "version": "5.2.0_1",
+  "source_revision": "0164aca0067d77df984de621c8871f8d6eccce1f",
+  "scope": "Bounded original native FreeBSD ARM development qualification. No complete public API/ABI, canonical Component/ownership/provenance/lifecycle/SDK/TCB, matched AMD64, desktop/physical or full 1.6 release acceptance.",
+  "source": {
+    "full_Git_members_verified": 184390,
+    "selected_original_recipe_Mk_Templates_inputs": 246,
+    "independent_original_source_body_mode_references": 33,
+    "original_patches": 0,
+    "all_original_source_bodies_modes_preserved_through_construction_and_suite": true,
+    "original_GitHub_test_bearing_distfile": {
+      "bytes": 90933,
+      "sha256": "ab700375e77a5213e8def1f61c2d83ca1b50ff9b56b541992dc54784c1274c52"
+    }
+  },
+  "original_construction": {
+    "targets_PASS": 8,
+    "selected_options": [],
+    "original_distutils_dependencies_and_pytest_selection_preserved": true,
+    "package": {
+      "bytes": 73612,
+      "sha256": "1d192be9167e0d75c6db579b2bacaa8e02ab97c9b12d8879ae33938092090427"
+    },
+    "payloads": 18,
+    "explicit_directories": 0
+  },
+  "original_pytest_suite": {
+    "discovered": 550,
+    "completed": 550,
+    "PASS": 550,
+    "FAIL_or_ERROR": 0,
+    "SKIP": 0,
+    "failures": [],
+    "skips": [],
+    "original_ordered_identity_file_line_signatures_match": true,
+    "junit_sha256": "bd2738664274722dad97185016eb95782344f6dcb94be97b5fccee7d80e74701",
+    "discovery_sha256": "fbc0416519c5965c61471f03b6caca86bbd24547ff89dceb5ce2c3125642767a"
+  },
+  "independent_private_and_normal_consumers_each": {
+    "checks": 575,
+    "seed_cases": 12,
+    "async_cases": 12,
+    "thread_cases": 3,
+    "semantic_sha256": "7b1befd27f5617c3729fb80f3938493a89d6923a1c77a4fbbe30f87f44a409cb",
+    "actual_candidate_module_and_distribution_binding": true,
+    "behaviors": [
+      "Autospec/spec_set signatures, invalid call and missing attribute rejection, sealing.",
+      "Side-effect sequences, DEFAULT/exception handling, call trees, ANY and reset behavior.",
+      "Magic/context-manager protocols and repeated iteration.",
+      "Object/multiple/dict/property patching with restoration after exceptions and stopall.",
+      "AsyncMock call/await counts, side effects, async iteration/context and coroutine patching/error recovery.",
+      "ThreadingMock event-based wait and zero-timeout negative controls.",
+      "Sentinel pickle identity."
+    ],
+    "unchanged_client_body_and_assertions_across_contexts": true
+  },
+  "real_package_lifecycle": {
+    "actual_pkg_root_transactions_PASS": 6,
+    "all18_payloads_exact": true,
+    "fresh_unprivileged_client_575checks_after_four_adds_reinstalls": true,
+    "expected_missing_candidate_module_before_add_and_after_two_deletions": true,
+    "no_original_scripts_Lua_or_shared_providers": true,
+    "no_hooks_suppressed_or_invented": true,
+    "dependency_scope": "Fresh accepted native Python imports only the isolated installed candidate with -S and an explicit private prefix. Host Python runtime is not copied/admitted as a private dependency. Private -M skips dependency delivery; this is not private solver or chroot execution qualification."
+  },
+  "normal": {
+    "actual_original_offline_dependency_and_integrity_admission_PASS": true,
+    "all18_new_payloads_exact": true,
+    "all127_inherited_providers_and_payloads_preserved": true,
+    "exact_registry_package_count": 128,
+    "actual_same575_default_checks_and_semantic_results_equal_private": true,
+    "actual_default_module_and_distribution_binding_without_PYTHONPATH_or_loader_override": true,
+    "whole_loader_cache_body_metadata_and_all_provider_paths_priorities_unchanged": true,
+    "wholeSDK128_rawDB_frozen17_base_accounts_loader_fontcache_mount_source_guards_PASS": true
+  },
+  "custody": {
+    "source_private_and_lifecycle": {
+      "nodes": 1047,
+      "archive_bytes": 18642968,
+      "archive_sha256": "0b099ad484ba63c87c7baedc80c1f7adb99ffe58065a9fb6136edf589928dcf0",
+      "inventory_sha256": "ba1a54401721522facae2dbc3112aae67f1c14481ef3791366349dd6fc469464",
+      "all_nodes_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_ARM_and_Intel": true,
+      "extra_compressed_archive_bytes_on_Linux_controller": 0
+    },
+    "actual_normal": {
+      "nodes": 29,
+      "archive_bytes": 18284865,
+      "archive_sha256": "b2b358661404970d8d78359f2854a9f4fd36478e909804ece5260c4a052e1810",
+      "inventory_sha256": "b5b9eeb9df45324e601a5b70c93c6de8ccc0978ad20ef544fbd732cc79d9ff2c",
+      "all_nodes_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_ARM_and_Intel": true,
+      "extra_compressed_archive_bytes_on_Linux_controller": 0
+    }
+  },
+  "remaining": [
+    "Parameterized original five-runner requirement still needs nose/nose2/unittest2; pytest is present and mock now normally qualified.",
+    "Nose original native construction/selftests still need actual current-toolchain qualification.",
+    "Nose2 needs original coverage/six; unittest2 needs original six/traceback2, leading to SQLite/pbr/linecache2 and original six gdbm/Tkinter test closure. No declared runner is removed.",
+    "Original gtk-doc/Cairo/Graphviz and complete desktop dependency/test closure.",
+    "Complete public API/ABI, canonical ownership/provenance/lifecycle/SDK/TCB, matched full source/kernel/AMD64, all 47 platform profiles and physical acceptance, Pi4 before Pi5, installer/update/rollback/media/freeze/signing/publication.",
+    "Human documentation authority review and canonical receipt gates remain open; no attestation changed."
+  ]
+}
