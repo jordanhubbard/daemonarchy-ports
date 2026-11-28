@@ -1,0 +1,370 @@
+{
+  "observed_utc": "2026-11-26T10:50:42.714119+00:00",
+  "status": "historical-revision1-normal125-and-current-revision3-normal125-qualified",
+  "scope": "Original native construction/tests, independent exact pixel consumers, package lifecycle and actual normal development acceptance. Full API/ABI, canonical Component/provenance/lifecycle/SDK/TCB, matched source/kernel/AMD64, desktop/apps/hardware and full release remain open.",
+  "origin": "x11/pixman",
+  "version": "0.46.4_1",
+  "upstream_runtime_and_header_version": "0.46.4",
+  "source_revision": "6032dbfb816fb8e6ed16a13a211235956bbd6a5c",
+  "source_tree": "ef41000c8e917dd98e77441e3e82079948b6e377",
+  "review_code_commit": "30770cfb54cb99342d7fb1cf5186b656a9d95fb4",
+  "package": {
+    "bytes": 205206,
+    "sha256": "38c1a9717e44447e5d1c01deb50741cab767013f7d0f10499820760d59665402"
+  },
+  "repairs": [
+    "Bound fast fill regions to destination image dimensions before invoking the raw fill primitive, preserving explicit clipping.",
+    "Use the existing idempotent SRC composite fallback when a raw fill is unsupported instead of reporting success without painting.",
+    "Set USE_LDCONFIG and PORTREVISION1 to run original shared loader-cache hooks on package installation/removal."
+  ],
+  "source_verification": {
+    "complete_Git_members": 184389,
+    "changed_or_added_relative_fadd": 14,
+    "removed": 0,
+    "selected_recipe_Mk_Templates_and_shared_ldconfig_keyword_Git_bodies_modes_verified": 251,
+    "all207_distfile_source_bodies_with_exact_original_and_repair_patch_effects_verified": true,
+    "new_authored_regression_source_bodies": 1,
+    "all_original_patches_apply_without_fuzz": true,
+    "review_native_all251_selected_inputs_equal": true
+  },
+  "native_TEST": {
+    "original_programs_discovered_and_completed_PASS": 35,
+    "added_authored_regression_invocations_PASS": 2,
+    "total_PASS": 37,
+    "FAIL": 0,
+    "SKIP": 0,
+    "original_names_argv_env_protocol_selection_and_deadlines_preserved": true,
+    "original_native_deadline_seconds": 600,
+    "original_OPENMP_serial_program_schedule_preserved": true,
+    "OMP_workers_bounded_to": 4,
+    "new_regression_coverage": [
+      "Both rectangle and box fill APIs",
+      "SRC, opaque OVER and CLEAR",
+      "No explicit clip, whole-image clip and smaller clip",
+      "ARGB32, RGB565 and A8",
+      "All image pixels and padded backing storage in normal and forced-general dispatch"
+    ]
+  },
+  "native_default": {
+    "all_eight_original_construction_targets_pass": true,
+    "original_default_options_arguments_and_dependencies_preserved_except_intentional_revision_and_loader_hook": true,
+    "unchanged_selected_metadata_fields": 12,
+    "actual_features": {
+      "openmp": "enabled",
+      "a64-neon": "enabled",
+      "tests": "disabled",
+      "libpng": "disabled",
+      "default_library": "shared"
+    },
+    "zero_discovered_programs": true,
+    "original_zero_case_bridge_exit": 0,
+    "zero_case_bridge_is_upstream_suite_acceptance": false
+  },
+  "independent_private_and_actual_default_consumers_each": {
+    "original_unclipped_C_client_assertions_preserved": true,
+    "languages": [
+      "C",
+      "C++"
+    ],
+    "modes_each": [
+      "default",
+      "arm-neon disabled",
+      "fast and arm-neon disabled"
+    ],
+    "positive_runs": 6,
+    "checks_each": 24824,
+    "independent_scalar_reference_OVER_pixels_each": 8192,
+    "independent_SRC_and_CLEAR_pixels_each": 8192,
+    "coverage": [
+      "Masks and component alpha",
+      "RGB565 conversion endpoints",
+      "Clipping, image bounds and canaries",
+      "Negative stride",
+      "Fixed-point transforms, nearest repeat and regions",
+      "Reference and destroy callback lifetime"
+    ],
+    "all_six_modes_and_C_and_CXX_semantics_equal": true,
+    "actual_candidate_library_and_public_header_pkgconf_binding_verified": true,
+    "private_candidate_PC_copy_prefix_relocation_only_no_dependency_metadata_rewrite": true,
+    "normal_private_loader_or_pkgconf_override_present": false,
+    "complete_public_API_or_instruction_coverage_claimed": false
+  },
+  "three_original_padded_controls": {
+    "before": [
+      {
+        "mode": "unclipped default",
+        "fill_returns_true": true,
+        "painted_inside": 2,
+        "painted_outside_logical_image": 6
+      },
+      {
+        "mode": "explicit clip default",
+        "fill_returns_true": true,
+        "painted_inside": 2,
+        "painted_outside_logical_image": 0
+      },
+      {
+        "mode": "explicit clip forced general",
+        "fill_returns_true": true,
+        "painted_inside": 0,
+        "painted_outside_logical_image": 0
+      }
+    ],
+    "after_all_three_modes": {
+      "fill_returns_true": true,
+      "painted_inside": 2,
+      "painted_outside_logical_image": 0
+    },
+    "padded_allocation_keeps_all_accessed_addresses_valid": true,
+    "original_failed_artifacts_and_assertions_retained": true
+  },
+  "original_package_lifecycle": {
+    "copied_original_failure_reproduced_then_same_client_passes_after_only_shared_ldconfig_action": true,
+    "original_failed_root_unchanged": true,
+    "actual_original_shared_hook_install_force_delete_and_readd_transactions": 6,
+    "fresh_no_RPATH_no_loader_override_client_passes_after_all_four_adds_and_fails_before_add_and_after_both_deletes": true,
+    "actual_loader_cache_provider_add_remove_reinstall_verified": true,
+    "exact_payloads_accounts_readonly_base_restricted_devfs_and_full_unmount_verified": true,
+    "dependency_package_admission_inside_fixture_claimed": false
+  },
+  "retained_observer_repairs": {
+    "successful_six_clients_retained_without_replay_after_result_counter_observer_fix": true,
+    "original_predicted_counter": 24823,
+    "actual_unchanged_client_counter": 24824,
+    "source_assertions_or_original_test_deadlines_weakened": false,
+    "lifecycle_preflight_readonly_completion_field_mismatch_retained_before_any_package_transaction": true
+  },
+  "normal_acceptance": {
+    "before_count": 124,
+    "accepted_bounded_development_count": 125,
+    "actual_offline_original_dependencies_integrity_and_shared_ldconfig_hooks": true,
+    "all10_payloads_exact": true,
+    "all124_inherited_prefixes_preserved": true,
+    "raw_registry_exact125": true,
+    "new_loader_provider": "libpixman-1.so.0",
+    "all_previous_loader_paths_candidates_and_priorities_preserved": true,
+    "same_six_normal_consumers_equal_private": true,
+    "additional_actual_fresh_no_RPATH_no_loader_override_client_checks": 24824,
+    "normal_consumer_commands_total": 16,
+    "whole_SDK125_raw_database_frozen_base_accounts_loader_system_font_cache_mounts_and251_source_guards_pass": true
+  },
+  "complete_two_host_custody": {
+    "original": {
+      "source_revision": "d76dd1dd03c3186f635fef2722252327d19b750c",
+      "nodes": 4411,
+      "archive_bytes": 39615838,
+      "archive_sha256": "94b16cc05e4c2b0b2d90c954507227eb0f27cd92e6cb5ccd28fdc73e1d07996c",
+      "inventory_sha256": "590dd6f3a7816309ee6789432523715c6db78f509ddc90113d5bda0855ea2d11",
+      "all_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_on_ARM_and_Intel": true
+    },
+    "repaired": {
+      "source_revision": "6032dbfb816fb8e6ed16a13a211235956bbd6a5c",
+      "nodes": 2496,
+      "archive_bytes": 30374916,
+      "archive_sha256": "30dcb5026f2beb5dafabaab4e3ff0263aaa95defcb6428d0f6b5422974293af1",
+      "inventory_sha256": "bc40cc7536e6fbc795dea21b1af3b4748e8993279a4415c824ee44095505cab0",
+      "all_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_on_ARM_and_Intel": true
+    },
+    "normal": {
+      "source_revision": "6032dbfb816fb8e6ed16a13a211235956bbd6a5c",
+      "nodes": 39,
+      "archive_bytes": 18202532,
+      "archive_sha256": "2a695b7dd24be9590510670042efcb35a9db599ae0e1c0eb97e9c991ed370775",
+      "inventory_sha256": "57f3620ddaaa30bad9c9528855e70a407214fe0ff9855cb29619c67294a212be",
+      "all_bodies_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_on_ARM_and_Intel": true
+    }
+  },
+  "remaining": [
+    "Full public API/ABI, OOM/concurrency breadth and actual desktop/application rendering remain open.",
+    "Canonical Component ownership/provenance/lifecycle/SDK/TCB and matching complete source/kernel/AMD64 qualification remain open.",
+    "All47platform profiles and physical acceptance, Pi4 beforePi5, installer/update/rollback/media/freeze/signing/publication remain required.",
+    "Product framework authority and receipt gates remain separate; no human documentation attestation or lifecycle receipt is synthesized."
+  ],
+  "follow_up": {
+    "observed_utc": "2026-11-26T11:02:40.773976+00:00",
+    "candidate_version": "0.46.4_3",
+    "candidate_review_code_commit": "91d12cb5175754358dd3a3c244ecefeb22e3eeb6",
+    "candidate_native_source_revision": "0b9e18618e18ca63ac16c82edcb90bbc670c0b50",
+    "finding": "Revision1 Box32 spanning INT32_MIN to INT32_MAX reports success but paints zero of16 image pixels when fast and ARM-NEON fills are disabled; same probe paints16 in normal dispatch. Padded backing allocation remains valid. SDK125 and host state preserved.",
+    "finding_result_sha256": "805eff3e347f5eb88f377840eeea283d5ac550abddfdf2cc1fc23db61b1118a4",
+    "repair": "Retain the bounded region through raw-fill fallback; clip each original general-composite box before signed subtraction and keep overlapping non-SRC boxes separate. Regression adds signed-range boxes, ADD and exact overlapping ADD pixel expectations.",
+    "qualification": "Revision3 completes all bounded native source/tests/default/private/lifecycle and actual normal125 acceptance, with both source/private and complete normal archives independently verified onARM/Intel. One package transaction;20successful consumercommands retained without replay plus8remainingcommands. Three old unregistered license files remain exactly preserved. Earlier top-level revision1 facts retain source6032dbfb and their historical scope; latest normal source is0b9e1861. Canonical and full release gates remain separate.",
+    "additional_non_SRC_finding": {
+      "operator": "ADD",
+      "on_revision": "0.46.4_2",
+      "all_three_modes": {
+        "fill_returns_true": true,
+        "painted_inside": 0,
+        "painted_outside": 0
+      },
+      "expected_painted_inside": 16,
+      "padded_allocation_valid": true,
+      "normal_revision2_installation_performed": false
+    }
+  },
+  "qualified_revision3": {
+    "observed_utc": "2026-11-26T11:33:59.351794+00:00",
+    "status": "pass-bounded-native-source-tests-private-lifecycle-and-normal125",
+    "version": "0.46.4_3",
+    "source_revision": "0b9e18618e18ca63ac16c82edcb90bbc670c0b50",
+    "source_tree": "75e9c0a08a969debe42e49b2aedc7297f2ef43c7",
+    "review_code_commit": "91d12cb5175754358dd3a3c244ecefeb22e3eeb6",
+    "repairs": [
+      "Keep bounded raw-fill region alive through unsupported raw-fill composite fallback.",
+      "Clip every original general-composite box to destination bounds before signed width/height subtraction.",
+      "Preserve separate original boxes and repeated compositing of non-idempotent overlapping operators."
+    ],
+    "package": {
+      "bytes": 205236,
+      "sha256": "8d7f4239af65f8c726113f19bc019e74fb5cbde23fb0d479d1e0a5ddb3c08ee5"
+    },
+    "complete_source_Git_members_verified": 184389,
+    "changed_bodies_relative_revision2": 2,
+    "removed": 0,
+    "selected251_review_and_native_source_bodies_modes_equal": true,
+    "all207_distfile_and1_authored_patched_regular_source_bodies_verified": true,
+    "all3_port_patches_apply_without_fuzz": true,
+    "TEST": {
+      "original_programs_PASS": 35,
+      "extended_authored_regression_invocations_PASS": 2,
+      "PASS": 37,
+      "FAIL": 0,
+      "SKIP": 0,
+      "original_names_argv_env_protocol_selection_deadlines_preserved": true,
+      "native_deadline_seconds_each": 600,
+      "original_OpenMP_serial_process_schedule_preserved": true,
+      "OpenMP_workers": 4,
+      "new_regression_matrix_each": {
+        "formats": 3,
+        "API_and_box_extent_cases": 3,
+        "operators": 4,
+        "clip_configurations": 3,
+        "matrix_cases": 108,
+        "additional_exact_overlapping_ADD_case": 1
+      },
+      "new_regression_detects_actual_revision2_failure_in_normal_and_general_dispatch": true
+    },
+    "default": {
+      "original_eight_construction_targets_and_original_zero_case_test_bridge_pass": true,
+      "zero_case_bridge_is_upstream_suite_acceptance": false,
+      "unchanged_native_option_dependency_argument_fields": 12,
+      "features": {
+        "openmp": "enabled",
+        "a64-neon": "enabled",
+        "tests": "disabled",
+        "libpng": "disabled",
+        "default_library": "shared"
+      }
+    },
+    "private_consumers": {
+      "C_and_CXX_modes": 6,
+      "checks_each": 24824,
+      "commands": 13,
+      "original_unclipped_client_and_assertions_preserved": true,
+      "actual_candidate_library_header_and_pkgconf_binding_verified": true,
+      "candidate_PC_copy_only_prefix_relocated": true
+    },
+    "independent_padded_probes": {
+      "padded": {
+        "modes": 3,
+        "fill_returns_true": true,
+        "painted_inside_each": 2,
+        "painted_outside_each": 0
+      },
+      "wide": {
+        "modes": 3,
+        "fill_returns_true": true,
+        "painted_inside_each": 16,
+        "painted_outside_each": 0
+      },
+      "add": {
+        "modes": 3,
+        "fill_returns_true": true,
+        "painted_inside_each": 16,
+        "painted_outside_each": 0
+      }
+    },
+    "lifecycle": {
+      "real_original_pkg_chroot_transactions_passed": 6,
+      "actual_shared_ldconfig_hooks_verified": true,
+      "fresh_client_without_RPATH_or_loader_overrides_passes_after_add_reinstall_and_expected_failure_before_add_and_after_delete": true,
+      "exact10_payloads_synthetic_locked_accounts_readonly_base_restricted_devfs_verified": true,
+      "all_original_mounts_restored": true
+    },
+    "retained_intermediate_revision2": {
+      "source_revision": "3ce6508396c5ff4d87e489fa5eb2fb1dc3e0f93b",
+      "nodes": 2430,
+      "archive_bytes": 25100320,
+      "archive_sha256": "4027168c89d72394bc78f85ff9c0a866b6e0afc814a9cb9054757f8156006960",
+      "inventory_sha256": "a3847503d84a1dd1a14601b3e237af05d595a1bb0f94b3b24d12a4bde5a85e2a",
+      "all_nodes_and_gzip_CRC_verified_on_ARM": true,
+      "independent_Intel_verification_complete": true,
+      "original_partial_transfer_preserved": true,
+      "ADD_failure_blocks_revision2_normal_admission": true
+    },
+    "complete_current_source_private_archive": {
+      "nodes": 2414,
+      "archive_bytes": 25096883,
+      "archive_sha256": "8fc824a84b5d40f0c8b465b6c2cb97b84207593575d9f7c45717323631abbc6e",
+      "inventory_sha256": "f6600144acb0dcb5b984429bca1099bc9b2cc3754bfcf8de4e3cb3ca043204f7",
+      "all_nodes_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_on_ARM": true,
+      "independent_Intel_verification_complete": true,
+      "additional_compressed_archive_bytes_on_Linux_controller": 0
+    },
+    "pending": [
+      "Full API/ABI, desktop/apps/fonts, canonical Component ownership/provenance/lifecycle/SDK/TCB and matching complete source/kernel/AMD64 remain open.",
+      "All47 platform profiles/physical acceptance, Pi4 beforePi5, installer/update/rollback/media/freeze/signing/publication remain required."
+    ],
+    "private_phase_preservation": {
+      "whole_current_SDK125_raw_database_frozen17_base_accounts_loader_system_font_cache_mounts_and_selected_source_preserved": true,
+      "normal_package_transaction_performed": false,
+      "normal_count_still": 125,
+      "normally_installed_Pixman": "0.46.4_1"
+    },
+    "normal_acceptance": {
+      "normally_installed_version": "0.46.4_3",
+      "accepted_count": 125,
+      "all10_revised_payloads_and_registry_file_set_exact": true,
+      "all124_other_providers_and_inherited_prefixes_preserved": true,
+      "same_loader_paths_providers_and_priorities_preserved": true,
+      "actual_original_offline_dependency_integrity_and_ldconfig_transaction_passed": true,
+      "package_transaction_count": 1,
+      "package_transaction_replayed": false,
+      "original_six_C_CXX_consumers_checks_each": 24824,
+      "fresh_client_without_RPATH_or_loader_overrides_checks": 24824,
+      "three_small_three_SRCwide_three_ADDwide_padded_probes_pass": true,
+      "normal_consumer_commands_total": 28,
+      "successful_commands_retained_without_replay": 20,
+      "remaining_new_commands": 8,
+      "retained_old_license_files": {
+        "count": 3,
+        "package_registration": "unregistered prior-version license metadata",
+        "all_original_bodies_modes_numeric_owners_flags_nsmtime_exact": true,
+        "deleted": false
+      },
+      "retained_observer_repairs": [
+        "Initial observer incorrectly required obsolete-version license metadata deletion; actual pkg add succeeded once.",
+        "First read-only observer missed a parser import before any commands.",
+        "Second read-only observer parsed a Pixman diagnostic line as JSON after20successful consumercommands.",
+        "Final completion recovers successful raw results via hashes and last JSON lines, then runs only8remaining commands."
+      ],
+      "whole_SDK125_raw_database_frozen_base_accounts_loader_font_cache_mounts_and251source_guards_pass": true,
+      "complete_normal_archive": {
+        "nodes": 84,
+        "bytes": 20496410,
+        "archive_sha256": "25fd4639f66be359be7329aadd28a4df1228407bf2eacc18bd73ba3e25a3ca7d",
+        "inventory_sha256": "531cb9f664deaaa235c177704f613b642b1b9dcb81fe1383c2675343b79c5b58",
+        "all_nodes_types_modes_numeric_owners_zero_flags_nsmtime_literal_links_hardlinks_and_gzip_CRC_verified_on_ARM_and_Intel": true,
+        "original_failed_transaction_observer_and_both_readonly_observer_failures_preserved": true,
+        "extra_compressed_archive_bytes_on_Linux_controller": 0
+      }
+    }
+  },
+  "latest_normal_version": "0.46.4_3",
+  "latest_normal_source_revision": "0b9e18618e18ca63ac16c82edcb90bbc670c0b50",
+  "latest_normal_qualification": "qualified_revision3.normal_acceptance",
+  "later_worker_storage_revalidation": {
+    "observed": "2026-11-27",
+    "scope": "All port inputs remain exact to qualified native source0b9e18618e18ca63ac16c82edcb90bbc670c0b50. Original source/artifact/custody identities and failed earlier revisions remain retained. Current worker filesystem recovery is active; independent SDK/source/prior-work verification is required before further native package qualification. No current SDK integrity, matched AMD64, canonical or release admission follows from integration."
+  }
+}

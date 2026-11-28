@@ -1,6 +1,6 @@
 PORTNAME=	lg
 PORTVERSION=	1.9.s20140622
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	LOCAL/mat/lg \
 		GH
@@ -9,7 +9,7 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Looking Glass written in Perl as a CGI script
 WWW=		https://github.com/Cougar/lg
 
-LICENSE=	GPLv2
+LICENSE=	GPL-2.0-or-later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe perl5 shebangfix
