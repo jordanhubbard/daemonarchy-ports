@@ -1,0 +1,36 @@
+Opt-in EFI framebuffer KMS display control
+========================================
+
+The aarch64 EFIFB build option supplies efifb_drm.ko and the shared helpers
+needed for firmware scanout. The pinned upstream archive and original ports
+patches remain intact. The additional patch retains upstream licenses and
+applies only with EFIFB enabled; amd64 keeps its preceding source selection.
+
+This driver exposes the existing fixed EFI mode through a primary DRM node
+and shmem dumb buffers. It performs CPU copies, reports no accelerated render
+node, does not change HDMI timings, and is not a native VC4/V3D driver. The
+build option defaults on for aarch64; runtime activation defaults off.
+
+Activation requires hw.efifb_drm.enable=1 before loading the modules during
+rc startup, after kernel subsystem initialization. Do not preload the modules
+from loader.conf. The private hwtrace image control loads lindebugfs,
+linuxkpi_hdmi, linuxkpi_video, dmabuf, drm and efifb_drm in that order. Do not
+enable firmware scanout alongside another active driver for that display.
+Unloading a published display is refused because devfs teardown is unqualified.
+
+Original native controls passed 16,404 layout/bounds checks and actual KMS
+modeset, damage, page-flip event and console restoration on ARM64 QEMU and
+the Pi 4. The Pi operator confirmed the color pattern. Actual software
+Wayland terminal pixels and compositor IPC were also observed. These were
+module/image controls, not tests of this newly packaged artifact. Native
+ports stage/package/independent installation acceptance must be recorded
+separately before package qualification.
+
+Run the port's original test target to compile and execute the layout checks.
+tests/test_efi_kms_device.c supplies explicit attended device controls; it
+must not run automatically during package build/install. The preserved
+VirtIO custom framebuffer path has separate unchecked GEM-size validation
+work outstanding; the EFI negative tests do not qualify that path.
+
+Physical Pi 5, native GPU acceleration, WiFi, full memory, the complete
+Daemonarchy session and update/rollback remain independent release gates.

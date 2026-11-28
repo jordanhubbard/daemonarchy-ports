@@ -5,3 +5,4 @@
 %%FULLKMS%%/%%KMODDIR%%/radeonkms.ko
 /%%KMODDIR%%/ttm.ko
 /%%KMODDIR%%/virtio_gpu_drm.ko
+%%EFIFB%%/%%KMODDIR%%/efifb_drm.ko
