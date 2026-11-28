@@ -1,6 +1,6 @@
 PORTNAME=	mono
 PORTVERSION=	5.20.1.34
-PORTREVISION=	5
+PORTREVISION=	9
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 PKGNAMESUFFIX=	5.20
@@ -46,6 +46,11 @@ USE_PERL5=	build
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USE_LDCONFIG=	yes
+# The release tarball omits inputs required by its original check target.
+# Keep test sources and the upstream-selected xUnit binaries at their exact pins.
+USE_GITHUB=	nodefault
+GH_TUPLE=	mono:mono:feca91f7eb1b440a6520cf754370b98271339d1a:tests \
+		mono:xunit-binaries:bb583470c7fc9f5b8369a4c273176c8202f00b1a:xunit
 SHEBANG_FILES=	scripts/mono-heapviz scripts/mono-package-runtime \
 		mono/mini/genmdesc.py mono/tests/test_lldb.py
 BINARY_ALIAS=	python=${PYTHON_CMD}
@@ -82,6 +87,10 @@ PLIST_SUB+=	BOEHM="@comment "
 .else
 PLIST_SUB+=	BOEHM=""
 .endif
+
+post-extract:
+	${SH} ${FILESDIR}/restore-test-inputs.sh ${WRKSRC} \
+		${WRKSRC_tests} ${WRKSRC_xunit}
 
 post-extract-MONOLITE-on:
 	${MKDIR} ${WRKSRC}/mcs/class/lib/monolite-linux
