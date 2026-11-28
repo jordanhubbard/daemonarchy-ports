@@ -1,0 +1,15 @@
+--- llvm/unittests/Support/CMakeLists.txt.orig
++++ llvm/unittests/Support/CMakeLists.txt
+@@ -113,6 +113,12 @@
+ 
+ target_link_libraries(SupportTests PRIVATE LLVMTestingSupport)
+ 
++if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++  # FreeBSD does not emit a build ID by default. SignalsTest requires one for
++  # the main executable's symbolizer module and mmap markup records.
++  target_link_options(SupportTests PRIVATE "LINKER:--build-id")
++endif()
++
+ # Disable all warning for AlignOfTest.cpp,
+ # as it does things intentionally, and there is no reliable way of
+ # disabling all warnings for all the compilers by using pragmas.

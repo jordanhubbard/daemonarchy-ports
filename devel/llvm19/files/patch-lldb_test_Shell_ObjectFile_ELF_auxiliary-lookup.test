@@ -1,0 +1,68 @@
+--- /dev/null
++++ lldb/test/Shell/ObjectFile/ELF/auxiliary-lookup.test
+@@ -0,0 +1,65 @@
++# REQUIRES: system-freebsd || system-linux
++# REQUIRES: python
++# RUN: split-file %s %t
++# RUN: %clang_host -shared -fPIC -nostdlib %t/first.c -Wl,-soname,libfirst.so -o %t/libfirst.so
++# RUN: %clang_host -shared -fPIC -nostdlib %t/second.c -Wl,-soname,libsecond.so -o %t/libsecond.so
++# RUN: %clang_host -shared -fPIC -nostdlib %t/other.c -Wl,-soname,libother.so -o %t/libother.so
++# RUN: %clang_host -shared -fPIC -nostdlib %t/filter.c -Wl,--auxiliary,libmissing.so -Wl,--auxiliary,libfirst.so -Wl,--auxiliary,libsecond.so -o %t/libfilter.so
++# RUN: %clang_host -shared -fPIC -nostdlib %t/first.c -Wl,--auxiliary,libcycle-filter.so -o %t/libcycle-first.so
++# RUN: %clang_host -shared -fPIC -nostdlib %t/filter.c -Wl,--auxiliary,libcycle-first.so -o %t/libcycle-filter.so
++# RUN: %lldb -b -o "script import runpy; runpy.run_path(r'%t/check.py')" 2>&1 | FileCheck %s --implicit-check-not=Traceback
++# CHECK: auxiliary lookup checks passed
++
++#--- filter.c
++int winner(void) { return 1; }
++int from_second(void) { return 2; }
++int filter_only(void) { return 7; }
++
++#--- first.c
++int winner(void) { return 41; }
++int not_exported_by_filter(void) { return 42; }
++
++#--- second.c
++int winner(void) { return 51; }
++int from_second(void) { return 52; }
++
++#--- other.c
++int not_exported_by_filter(void) { return 61; }
++
++#--- check.py
++import os
++import lldb
++
++root = os.path.dirname(__file__)
++
++def add(target, name):
++    module = target.AddModule(os.path.join(root, name), None, None)
++    assert module.IsValid(), name
++
++def names(contexts):
++    return [contexts.GetContextAtIndex(i).GetModule().GetFileSpec().GetFilename()
++            for i in range(contexts.GetSize())]
++
++def functions(target, name):
++    return names(target.FindFunctions(name, lldb.eFunctionNameTypeFull))
++
++target = lldb.debugger.CreateTarget(os.path.join(root, "libfilter.so"))
++assert target.IsValid()
++# Original module order deliberately puts an unrelated definition before the
++# providers. Auxiliary lookup must not promote names absent from the filter.
++for library in ["libother.so", "libfirst.so", "libsecond.so"]:
++    add(target, library)
++assert functions(target, "winner")[0] == "libfirst.so"
++assert "libfilter.so" in functions(target, "winner")
++assert functions(target, "from_second")[0] == "libsecond.so"
++assert functions(target, "filter_only") == ["libfilter.so"]
++assert functions(target, "not_exported_by_filter")[0] == "libother.so"
++assert names(target.FindSymbols("winner", lldb.eSymbolTypeCode))[0] == "libfirst.so"
++assert names(target.FindSymbols("not_exported_by_filter", lldb.eSymbolTypeCode))[0] == "libother.so"
++
++cycle = lldb.debugger.CreateTarget(os.path.join(root, "libcycle-filter.so"))
++assert cycle.IsValid()
++add(cycle, "libcycle-first.so")
++assert functions(cycle, "winner") == ["libcycle-first.so", "libcycle-filter.so"]
++assert functions(cycle, "filter_only") == ["libcycle-filter.so"]
++print("auxiliary lookup checks passed")

@@ -1,0 +1,1738 @@
+{
+  "schema": "daemonarchy/llvm19-native-test-development-evidence@1",
+  "status": "full-R74-failure-retained-selected-R100-fixture-followup-completed183-unexpected-entries-release-open",
+  "port": "devel/llvm19",
+  "original_makefile_sha256": "d43b3578b552dc5b393e81ea48e1bba8fbeede5fc9061414fdb825d2c436b721",
+  "original_llvm_source_archive": {
+    "name": "llvm-project-19.1.7.src.tar.xz",
+    "bytes": 141249332,
+    "sha256": "82401fea7b79d0078043f7598b835284d6650a75b93e64b6f761ea7b63097501"
+  },
+  "package": {
+    "name": "llvm19-19.1.7_5.pkg",
+    "bytes": 281434647,
+    "sha256": "f616dac3bb641eb6de511edcb25bda2d2f8cb5b6f96a102c8d2720a2062587ff",
+    "original_checksum_package_and_check_plist_exit": [
+      0,
+      0,
+      0
+    ],
+    "root_package_installed_in_worker": false
+  },
+  "original_test": {
+    "target": "make test",
+    "exit": 1,
+    "failure": "chown of nonexistent WRKSRC/test before any upstream test execution",
+    "observed_dependency_package_count": 139,
+    "observed_prefix_nodes_unchanged": 82739,
+    "extracted_source_nodes_unchanged": 160681,
+    "original_frozen_ports_files_unchanged": 184142,
+    "registry_base_mounts_and_stopped_broker_data_guards_passed": true
+  },
+  "corrected_target_initial_observation": {
+    "upstream_target": "check-all",
+    "working_directory": "configured out-of-source CMake binary tree",
+    "ninja_arguments": "-v -j4 check-all",
+    "ninja_and_clang_observed_uid": 65534,
+    "all_default_selected_options_preserved": true,
+    "configure_arguments_and_dependencies_match_original_build": true,
+    "original_frozen_ports_view_retained_unchanged": true,
+    "candidate_full_ports_view_files_verified": 184142,
+    "test_filter_added": false,
+    "upstream_test_programs_building": false,
+    "complete_suite_result_recorded": false,
+    "terminal_exit": 1,
+    "completed_preparatory_build_actions": 1663,
+    "failure": "Build-tree LIT imports upstream lit, but original post-patch rewrites source imports to installed lit19 namespace; ModuleNotFoundError before test case discovery",
+    "final_source_dependency_registry_base_mount_and_stopped_data_guards_passed": true
+  },
+  "retention": {
+    "complete_baseline_archive_bytes": 6203574065,
+    "complete_baseline_archive_sha256": "226ed797668b87ed83761bbf5edb0d8b3db0bd416f764d25c282817eac5c787b",
+    "complete_baseline_inventory_sha256": "ef25c8ca276c0273151a8d6bc1f762604834be9d2b1366471f146c6dfe251fe5",
+    "baseline_nodes_checked_on_both_physical_filesystems": 585313,
+    "regular_file_bodies_checked": 475881,
+    "hardlink_entries_checked": 5598,
+    "hardlink_groups_checked": 5313,
+    "complete_baseline_gzip_decode_bytes": 14474608640,
+    "all_baseline_nodes_unchanged_after_original_test_failure": true,
+    "additive_failure_archive_bytes": 12735,
+    "additive_failure_archive_sha256": "da41dee9f179b94bfffaa0d8d2c74b291aeaafb27ee9552b6b08d127ee917f65",
+    "additive_failure_inventory_sha256": "87a61a7051c7d3d08e284ad4841c5af00dffe1baee56d3c1dec1bd0681fc8589",
+    "additive_failure_nodes_checked_on_both_physical_filesystems": 10,
+    "baseline_and_additive_archives_both_required": true,
+    "raw_evidence": "Retained privately, not published",
+    "second_failure_source_work_stage_test_products_archive_bytes": 2637445244,
+    "second_failure_source_work_stage_test_products_archive_sha256": "1a888fea49fb2d6adaec2e8682221e1607fdc26e59196d4a5631302ecf553ab2",
+    "second_failure_inventory_sha256": "94d03bd37b4a853400a2df331d6c2eabab788d1d11ba9e3e3a87b3a4a697bd4f",
+    "second_failure_nodes_checked_on_both_physical_filesystems": 435967,
+    "third_failure_archive_bytes": 3937042403,
+    "third_failure_archive_sha256": "7b66745378de5f40da0ae2a5f2da370e3fdebc6fb3ba54296c5e71704f7f7787",
+    "third_failure_inventory_sha256": "fb77ba7a1a7c76a49f0948e37ff20cb24fc799231455ba9efc1d407b5fa03e2b",
+    "third_failure_nodes_checked_on_both_physical_filesystems": 621320
+  },
+  "remaining": [
+    "Full upstream case discovery, per-project results and skip reasons",
+    "Final namespace-corrected original-target results and all source/dependency/runtime guards",
+    "Fresh changed-input complete stage/check-plist/package and independent installed compiler acceptance",
+    "Independent installed compiler consumers and native arm64 coverage",
+    "Final CURRENT source and dependency integration",
+    "Complete original toolchain provenance and canonical Component/SDK/lifecycle admission",
+    "Product release qualification and signed 1.6 acceptance"
+  ],
+  "canonical_lifecycle_receipt_earned": false,
+  "release_acceptance": false,
+  "first_test_target_candidate_makefile_sha256": "98d231377328a8e16d374669a1b6d6b5661d6ab99744a26ce5194e31468d1548",
+  "candidate_makefile_sha256": "c999babe9555d4470a9cc07180c11def3264f7727159bbbc41b52e3524d78530",
+  "lit_namespace_fix": {
+    "behavior": "Leave original source LIT imports unversioned and apply the same three existing namespace substitutions only to installed copies before creating the lit/llvm-lit hardlink.",
+    "fresh_original_checksum_patch_exit": 0,
+    "isolated_original_post_install_LIT_hook_exit": 0,
+    "complete_staged_nodes_compared": 12340,
+    "all_stage_bytes_modes_owners_flags_symlinks_and_hardlink_groups_identical": true,
+    "original_stage_unchanged": true,
+    "backup_files_added": false,
+    "raw_source_and_namespaced_staged_cli_version_exit": [
+      0,
+      0
+    ],
+    "full_upstream_test_result_pending": false,
+    "initial_probe_failure": "Three symlink modes differed because the probe used a different umask; retained failure and reran on a fresh stage with the original producer umask. No product change or assertion relaxation."
+  },
+  "namespace_corrected_original_target_result": {
+    "exit": 1,
+    "phase": "test discovery",
+    "lit_import_failure_resolved": true,
+    "fatal": "PyYAML yaml/__init__.py installed root-owned mode 0600 is unreadable to nobody; original dependency stage has the same mode",
+    "additional_discovery_failures": [
+      "Two dynamic ASan GoogleTest discovery programs crash with SIGBUS in libc",
+      "MLIRTargetLLVMTests aborts with duplicate enable-branch-hint command-line option registration"
+    ],
+    "complete_suite_case_results_available": false,
+    "all_source_dependency_registry_base_mount_and_stopped_data_guards_passed": true,
+    "source_change_boundary": "Exactly 18 of 24 selected LIT Python files copied from fresh original checksum/patch source; every other source node unchanged",
+    "raw_evidence": "Retained privately; this run is not a test-suite pass"
+  },
+  "dependency_permission_diagnosis": {
+    "cause": "Qualification controller inherited umask 077 into normal source package production.",
+    "native_causal_probe": "Actual installed setuptools build_py and installer methods produce mode 0600 under 077 and 0644 under 022 using byte-identical original source.",
+    "affected_installed_python_packages": 46,
+    "affected_installed_python_files": 8009,
+    "affected_packages_all_added_during_llvm_dependency_build": true,
+    "prior_87_package_baseline_affected": false,
+    "recovery": "Fresh original default PyYAML checksum/package/check-plist with build child umask 022 all exit zero; all staged regular files readable, exact staged-module identity asserted and both pure-Python and libyaml parsers pass as nobody.",
+    "recovered_package": {
+      "name": "py312-pyyaml-6.0.3_1.pkg",
+      "bytes": 186060,
+      "sha256": "ead2809704dcc11be33be7204d988cb4f68448b32949e1fc8d61ccaa46a6f7a3"
+    },
+    "fixture_control": "First staged consumer blocked by a private controller-created ancestor mode 0700; complete failure retained and independently verified on two physical filesystems before explicit search-only correction to 0701. Whole fixture otherwise unchanged.",
+    "installed_SDK139_unchanged": true,
+    "package_installed": false,
+    "original_pytest_target_run": false,
+    "remaining": "Qualify original tests and sealed installed consumers for all 52 recovered dependencies in an explicitly retained SDK generation, then repeat full LLVM tests; sanitizer discovery failures remain open.",
+    "remaining_45_recovery": {
+      "original_checksum_package_check_plist_exit": 0,
+      "successful_packages": 45,
+      "failed_packages": 0,
+      "independent_nobody_stage_file_bodies_read_and_sha256_verified": 9364,
+      "package_bytes_total": 21500607,
+      "all_original_versions_options_distinfo_and_dependency_declarations_preserved": true,
+      "installed_SDK139_unchanged": true,
+      "full_source_work_stage_package_inputs_and_logs_archive_bytes": 147241223,
+      "full_archive_sha256": "94add005b05c78f0ca7905de0556f1175370b84af9bfb443cd81af097964f76d",
+      "full_inventory_sha256": "a39a7cec65c1e290c53664f6a5a00021ce3ed5fc39959eabd015a09734e217db",
+      "all_nodes_verified_on_two_physical_filesystems": 51332,
+      "original_unit_tests_and_installed_consumers_pending": true
+    },
+    "remaining_six_nonpython_recovery": {
+      "scope": "Generated SBOM files were unreadable; runtime files were readable. Fresh original source rebuilds correct production permissions.",
+      "packages": [
+        "ca_root_nss",
+        "libedit",
+        "lua53",
+        "lua54",
+        "snowballstemmer",
+        "swig"
+      ],
+      "successful_packages": 6,
+      "failed_packages": 0,
+      "original_checksum_package_and_plist_checks_passed": true,
+      "independent_nobody_stage_file_bodies_read_and_sha256_verified": 6122,
+      "installed_SDK139_unchanged": true,
+      "archive_bytes": 32930947,
+      "archive_sha256": "503ab172b3755b6f538c291fbb98018c153a2282ca0f014326b064cff11ed89d",
+      "inventory_sha256": "e2403439e384b22bd19301bdffce44a3e08dc792e957c0ed855112168772749f",
+      "all_nodes_verified_on_two_physical_filesystems": 17267
+    },
+    "all_rebuilt_llvm_dependency_packages": 52
+  },
+  "mlir_native_codegen_link_fix": {
+    "patch": "devel/llvm19/files/patch-mlir_unittests_Target_LLVM_CMakeLists.txt",
+    "patch_sha256": "a4f2c350d09e02dfe06db3b5f55f7295ed7fe884a913ac88d74ef4842da8641b",
+    "cause": "Unit target explicitly maps nativecodegen to static LLVM X86 libraries while already linking shared libLLVM, duplicating command-line option registration.",
+    "fix": "Set LLVM_LINK_COMPONENTS before add_mlir_unittest so the existing LLVM executable helper honors the selected shared-library policy.",
+    "fresh_original_checksum_and_patch_exit": [
+      0,
+      0
+    ],
+    "patch_fuzz": false,
+    "original_configure_with_distinct_new_cookie_exit": 0,
+    "original_make_test_build_with_TEST_TARGET_MLIRTargetLLVMTests_exit": 0,
+    "default_unit_binary_execution_as_nobody_exit": 0,
+    "test_cases_discovered": 7,
+    "test_cases_passed": 5,
+    "test_cases_failed": 0,
+    "test_cases_skipped": [
+      {
+        "case": "MLIRTargetLLVMNVVM.SerializeNVVMToBinary",
+        "reason": "PTXAS compiler not found"
+      },
+      {
+        "case": "MLIRTargetLLVMROCDL.SerializeROCDLToBinary",
+        "reason": "ROCm installation not found"
+      }
+    ],
+    "changed_unit_binary_sha256": "a7e2675ad62162a53356518fb15c1d4d3d4367b5a8229b3ad323ba5d1740d676",
+    "all_source_nodes_unchanged_except_explicit_CMake_file": true,
+    "source_cpp_case_bodies_and_assertions_unchanged": true,
+    "SDK139_registry_base_mount_stopped_data_guards_passed": true,
+    "scope": "Changed-input native diagnostic of one complete unit executable; not full check-all or package/release acceptance.",
+    "complete_post_change_source_work_retention": {
+      "before_after_all_nodes_equal": true,
+      "archive_bytes": 2922990682,
+      "archive_sha256": "bf86708f861dec8280be73ea7f87bf2525c745d12cb5094881c4283f7681a5bf",
+      "inventory_sha256": "9d147e775011e184e1536252a28df57283e5db960c915e3fe0d26e56d78e745a",
+      "all_nodes_verified_on_two_physical_filesystems": 596640,
+      "all_regular_bodies_checked": 512460,
+      "all_hardlink_groups_checked": 3,
+      "complete_gzip_decode_bytes": 12790753280
+    }
+  },
+  "installed_sdk_permission_recovery": {
+    "generation": "SDK139-umask022-r1",
+    "method": "Independent prefix/raw-database copy, explicit runtime nullfs alias switch, normal source pkg add -f for all 52 replacements with original install scripts and build umask 022.",
+    "copied_prefix_and_database_nodes_identical": 82744,
+    "old_and_new_regular_file_inodes_disjoint": true,
+    "source_package_bodies_and_typed_identities_verified": 52,
+    "normal_package_adds_exit_zero": 52,
+    "all_139_installed_package_checksum_and_no_fetch_dependency_checks_exit": [
+      0,
+      0
+    ],
+    "registry_139_names_versions_origins_preserved": true,
+    "original_87_owned_prefix_paths_preserved": 60473,
+    "original_prefix_and_raw_database_preserved_unchanged": true,
+    "nobody_installed_regular_file_bodies_read_and_sha256_verified": 15554,
+    "nobody_functional_consumers": [
+      "YAML safe loader and libyaml C loader",
+      "Jinja2 template rendering",
+      "Docutils HTML rendering",
+      "LLVM Python dependency imports",
+      "Sphinx CLI version"
+    ],
+    "all_local_consumer_commands_exit_zero": true,
+    "selected_base_and_stopped_broker_data_guards_passed": true,
+    "persistent_boot_profile": "Unchanged; this SDK generation switch applies to the running worker. Reboot and installed disposable-VM qualification remain open.",
+    "pre_transition_retention": {
+      "archive_bytes": 1079864329,
+      "archive_sha256": "2a3bb0606911085b11fa403525d0483e35bf346a0e00bc11513ba78274a27bf0",
+      "inventory_sha256": "954b8682baf02f9de7f9de6cd8a8a5925650149d3037cbc89b6a5a25e05371cc",
+      "all_nodes_verified_on_two_physical_filesystems": 165677
+    },
+    "post_transition_retention": {
+      "archive_bytes": 544383032,
+      "archive_sha256": "1000bbba7a3e32726effda1ce37a45a19e7e988777a8acb8693d8973f66b0cd3",
+      "inventory_sha256": "fb369ffcaf79efcd13a409b36215257d42732330e03930a02614889d9fe59b78",
+      "all_nodes_verified_on_two_physical_filesystems": 83051
+    },
+    "original_dependency_unit_tests_qualified": false,
+    "independent_disposable_VM_acceptance_qualified": false,
+    "canonical_SDK_admission_earned": false
+  },
+  "subsequent_full_upstream_tests": {
+    "entrypoint": "Original make test/check-all",
+    "default_component_selection_preserved": true,
+    "test_filters_added": false,
+    "status": "Terminal incomplete: kernel memory-reclaim kills terminated the LIT driver before a complete suite summary.",
+    "active_SDK_prefix_guard": "Binds the new active generation and both mount aliases; retained original SDK prefix is not used as the active runtime guard.",
+    "full_suite_result_available": false,
+    "fresh_full_package_build_with_updated_inputs_qualified": false,
+    "original_make_test_exit": 1,
+    "ninja_exit": 137,
+    "discovered_test_count": 87540,
+    "discovered_count_is_not_completed_case_count": true,
+    "selected_ninja_build_jobs": 4,
+    "observed_lit_test_workers": 8,
+    "kernel_memory_reclaim_killed_processes": [
+      "fork_threaded.c.tmp",
+      "huge_malloc.c.tmp",
+      "python3.12 LIT driver"
+    ],
+    "postguards_all_passed": true,
+    "unresolved_coverage": [
+      "Two dynamic ASan GoogleTest programs fail case discovery.",
+      "Missing psutil disables per-test timeout support and leaves optional coverage skipped."
+    ],
+    "next_run_requirement": "Preserve all original cases; explicitly bind actual LIT concurrency to the worker resource budget.",
+    "candidate_follow_up": {
+      "test_dependency": "sysutils/py-psutil for the selected Python flavor",
+      "LIT_OPTS": "Append -j${MAKE_JOBS_NUMBER} to bind actual test workers.",
+      "original_lit_environment_precedence_verified_from_source": true,
+      "native_changed_input_validation_complete": false,
+      "original_patch_and_native_metadata_checks_pass": true
+    },
+    "complete_source_work_tests_and_diagnostics_retention": {
+      "before_after_all_nodes_equal": true,
+      "archive_format": "gzip-compressed standard newc with explicit inert-socket restoration helper",
+      "archive_bytes": 3617373247,
+      "archive_sha256": "164d95a29c02d0995405a728e2f28d4bb869b6d7c50dfa56e7b312155ab7215a",
+      "inventory_sha256": "ca852bea03065af46231f9857734adc786b639f5f6f3f88dcda3c33dac506aa3",
+      "all_nodes_verified_on_two_physical_filesystems": 547967,
+      "all_regular_file_nodes_checked": 469906,
+      "all_hardlink_groups_checked": 5,
+      "socket_nodes_checked": 4,
+      "fifo_nodes_checked": 2,
+      "complete_gzip_decode_bytes": 14415308800,
+      "restoration_note": "FreeBSD bsdtar preserves socket type in newc headers but extracts sockets as empty regular files. The retained manifest-bound helper recreates inert sockets with their original mode/owner/group/flags. Actual socket and FIFO native replay passes. Original source/work remains retained.",
+      "verifier_negative_controls_rejected": [
+        "wrong socket kind",
+        "wrong regular body hash",
+        "missing hardlink group",
+        "missing node"
+      ]
+    },
+    "partial_log_observations_before_kernel_kill": {
+      "FAIL_result_lines": 269,
+      "XPASS_result_lines": 2,
+      "scope": "Observed lines in the incomplete run only; no complete suite summary or final outcome inventory. Includes both failed dynamic GoogleTest discovery placeholders and other sanitizer failures."
+    }
+  },
+  "asan_FreeBSD_TLS_diagnosis": {
+    "status": "Native changed-input dynamic runtime and both original dynamic ASan unit programs pass; static runtime, broader sanitizer/full-suite and package qualification remain open.",
+    "observed_invalid_TLS_begin": "0xffffffffffffff80",
+    "observed_TLS_end": "0x0",
+    "cause": "Static TLS boundary discovery assumes module ID 1. A native dl_iterate_phdr probe instead observes libc PT_TLS at module ID 2 with no module ID 1. The absent anchor yields address zero, followed by a 128-byte FreeBSD TLS reserve subtraction.",
+    "candidate": "Use the minimum allocated FreeBSD TLS module ID as the local anchor while preserving real TLS range discovery.",
+    "original_test_bodies_and_assertions_unchanged": true,
+    "runtime_fix_qualified": false,
+    "candidate_port_revision": 6,
+    "native_dynamic_runtime_validation": {
+      "fresh_original_checksum_and_patch_exits": [
+        0,
+        0
+      ],
+      "patch_fuzz": false,
+      "original_ports_entrypoint": "make do-build ALL_TARGET=clang_rt.asan-dynamic-x86_64 as nobody",
+      "new_shared_runtime_sha256": "da641a85bffb05830a5f5f5ffc611b7d5fb0a8ba3bd03bc2c17718fd6954c300",
+      "source_cpp_before_sha256": "a294e96915780fd9a0aac8594693d537cea2766e1ce7306b62988585549099e9",
+      "source_cpp_after_sha256": "48c51043f0f97a23caa9cce7604f37c5adc06bdfb6cc76f04c2befe51bc47bc3",
+      "original_test_binaries_unchanged": true,
+      "all_other_source_nodes_unchanged": true,
+      "programs": [
+        {
+          "variant": "calls",
+          "discovery_exit": 0,
+          "listed_cases_including_disabled": 119,
+          "default_execution_exit": 0,
+          "original_default_cases_passed": 95,
+          "original_default_disabled_cases": 24
+        },
+        {
+          "variant": "inline",
+          "discovery_exit": 0,
+          "listed_cases_including_disabled": 119,
+          "default_execution_exit": 0,
+          "original_default_cases_passed": 95,
+          "original_default_disabled_cases": 24
+        }
+      ],
+      "new_filters_or_assertion_edits": false,
+      "ASAN_OPTIONS_override": false,
+      "nobody_lo_only_VNET_execution": true,
+      "all_final_SDK_source_ports_registry_base_mount_data_guards_passed": true,
+      "scope": "Named runtime build and both original default dynamic unit programs; not full make test, all sanitizer variants or fresh package acceptance.",
+      "complete_source_work_stage_products_retention": {
+        "before_after_all_nodes_equal": true,
+        "archive_format": "gzip-compressed standard newc with retained inert-socket restoration helper",
+        "archive_bytes": 3617220292,
+        "archive_sha256": "8e55d4f706812c1c28f1d012efd12d8d397a1a80f87a88b3e454ba41aa7f55a1",
+        "inventory_sha256": "21c283c8c8e7de58251678f7fa9924e81c557a885286c6bc33dab5d51a41986b",
+        "all_nodes_verified_on_two_physical_filesystems": 547931,
+        "regular_file_nodes_checked": 469893,
+        "hardlink_groups_checked": 5,
+        "socket_nodes_checked": 4,
+        "fifo_nodes_checked": 2,
+        "complete_gzip_decode_bytes": 14413199360
+      }
+    }
+  },
+  "psutil_test_support_source_build": {
+    "package": "py312-psutil-7.2.2_1",
+    "package_bytes": 218834,
+    "package_sha256": "fb120807ec0dc526b52089e6924ceb5d62121a3d412206333b7968c823ae6527",
+    "original_checksum_package_and_check_plist_exits": [
+      0,
+      0,
+      0
+    ],
+    "all_original_declared_build_dependencies_present": true,
+    "staged_regular_file_bodies_read_as_nobody": 40,
+    "staged_nobody_APIs": "Process identity, memory and threads; system memory and PID enumeration.",
+    "active_SDK139_prefix_and_raw_database_unchanged": true,
+    "original_upstream_tests_qualified": false,
+    "installed_consumer_qualified": true,
+    "complete_source_work_stage_package_retention": {
+      "archive_bytes": 2125033,
+      "archive_sha256": "a44dc2044053e3dba96a70f931a295eed6865bbbc7d6761185f1c1f3eb885648",
+      "inventory_sha256": "da53f7de9b91e8d102531c3bbeda34ad3ee9aae21a674b814e3f1cb2570544d4",
+      "all_nodes_verified_on_two_physical_filesystems": 805,
+      "all_regular_bodies_checked": 337,
+      "hardlink_groups_checked": 1,
+      "complete_gzip_decode_bytes": 5509120,
+      "before_after_all_nodes_equal": true
+    }
+  },
+  "installed_psutil_test_support": {
+    "generation": "SDK140-psutil-r1",
+    "method": "Exact independent prefix/rawDB copy with disjoint regular inodes, explicit nonforced nullfs alias switch, normal source-built psutil pkg add; all139 prior packages preserved.",
+    "prior_sdk_copy_nodes_identical": 82744,
+    "original_prefix_and_raw_database_retained_unchanged": true,
+    "original139_prefix_nodes_preserved": 82739,
+    "exactly_one_declared_package_added": true,
+    "registry_count": 140,
+    "all140_checksum_and_no_fetch_dependency_checks_exit": [
+      0,
+      0
+    ],
+    "installed_regular_bodies_read_and_hash_verified_as_nobody": 40,
+    "installed_process_memory_threads_system_memory_and_PID_APIs_pass": true,
+    "fstab_unchanged": true,
+    "persistent_boot_profile": "Unchanged original SDK; the observed SDK140 generation applies to the running worker.",
+    "active_prefix_and_database_inventory_sha256": "376e368c77f9c2632ab61a675f870d6552d4ab14bb279db15cb56ce3f10e6ef7",
+    "complete_post_transition_retention": {
+      "archive_bytes": 548987186,
+      "archive_sha256": "0b0b3d1c0674c9321bb1eb4d4e07a9a3fec024da33cff1e985013e46c4530182",
+      "inventory_sha256": "1ac56bea6d656a8a8c173cef6a8536db0374e479b1c7af61dff908ee0a48b583",
+      "all_nodes_verified_on_two_physical_filesystems": 82998,
+      "all_regular_bodies_checked": 75927,
+      "hardlink_groups_checked": 8,
+      "complete_gzip_decode_bytes": 1373532160,
+      "before_after_all_nodes_equal": true
+    },
+    "original_upstream_unit_tests_qualified": false,
+    "independent_disposable_VM_and_reboot_qualified": false,
+    "canonical_SDK_admission_earned": false
+  },
+  "follow_up_full_upstream_tests_r6": {
+    "entrypoint": "Original make test/check-all",
+    "generation": "SDK140-psutil-r1",
+    "port_revision": 6,
+    "all_original_default_components_retained": true,
+    "case_filters_added": false,
+    "assertions_edited": false,
+    "timeout_padding_added": false,
+    "selected_ninja_build_jobs": 4,
+    "LIT_OPTS_workers": 4,
+    "actual_upstream_argument_parser_environment_precedence_probe": "Command-line -j8 plus LIT_OPTS=-j4 parses to four workers. No cases executed in this argument probe.",
+    "status": "Terminal incomplete: kernel memory-reclaim kills terminate fork_threaded and the LIT driver before a complete summary, despite four workers.",
+    "full_suite_result_available": false,
+    "observed_at": "2026-11-23T10:52:53.323329+00:00",
+    "LIT_reported_test_entries": 87562,
+    "LIT_reported_workers": 4,
+    "LIT_entries_are_not_a_complete_individual_GoogleTest_case_inventory": true,
+    "early_result_lines_at_recorded_observation": [
+      "FAIL: AddressSanitizer-x86_64-freebsd :: TestCases/atexit_stats.cpp (393 of 87562)",
+      "FAIL: AddressSanitizer-x86_64-freebsd :: TestCases/replaceable_new_delete_shared.cpp (483 of 87562)",
+      "FAIL: AddressSanitizer-x86_64-freebsd-dynamic :: TestCases/atexit_stats.cpp (893 of 87562)",
+      "XPASS: AddressSanitizer-x86_64-freebsd-dynamic :: TestCases/interception_failure_test.cpp (947 of 87562)",
+      "FAIL: AddressSanitizer-x86_64-freebsd-dynamic :: TestCases/replaceable_new_delete_shared.cpp (984 of 87562)"
+    ],
+    "known_remaining_failures_present": true,
+    "terminal_at": "2026-11-23T11:26:52.117313+00:00",
+    "original_make_test_exit": 1,
+    "ninja_exit": 137,
+    "kernel_memory_reclaim_killed_processes": [
+      "fork_threaded.c.tmp",
+      "python3.12 LIT driver"
+    ],
+    "all_final_source_SDK140_rawdb_ports_registry_base_mount_stopped_data_guards_passed": true,
+    "partial_result_line_counts": {
+      "FAIL": 43,
+      "XPASS": 3
+    },
+    "whole_failed_frontier_retention": {
+      "status": "Complete before/after-equal boundary independently verified on both physical filesystems before warm source mutation.",
+      "archive_bytes": 4030211757,
+      "archive_sha256": "9a4ffc9ebf0b7390965416571bfb80b9f709bea08dd23ccf8ba091dd55255d25",
+      "inventory_sha256": "0902b060d976c9233e08bc8bb723daaddaa41bc1fe9db085dea0020f4d1f6a37",
+      "nodes": 942954,
+      "regular_files": 801874,
+      "sockets": 8,
+      "fifos": 4,
+      "hardlink_groups": 5,
+      "complete_gzip_decode_bytes": 16763658240
+    }
+  },
+  "further_FreeBSD_runtime_and_Clang_candidates": {
+    "status": "Revised original ports do-build R20 passes. All eleven R21 targeted executions pass, including both original shared-ASan scripts, new driver regression, complete original sanitizer driver regression, original TSan compile/run script and both default dynamic ASan unit programs. Full unfiltered R22 ends incomplete with make1/Ninja137 after kernel memory-reclaim kills huge_malloc and LIT. Requested JSON/xUnit reports are absent;38 FAIL and3 XPASS partial lines remain. All final integrity guards pass. Complete outcomes and package/lifecycle qualification remain open.",
+    "port_revision": 6,
+    "unreleased_revision_note": "Retain revision6 for this draft combined runtime repair; no final revision6 root package is produced or admitted. R7-R9 are experiment identifiers.",
+    "patches": [
+      {
+        "path": "devel/llvm19/files/patch-compiler-rt_lib_sanitizer__common_sanitizer__procmaps__bsd.cpp",
+        "sha256": "75d46bb8c2f4602853076677b07c060d7e4dd13b6435508065fdbf1411ddf683"
+      },
+      {
+        "path": "devel/llvm19/files/patch-clang_lib_Driver_ToolChains_FreeBSD.cpp",
+        "sha256": "2036cfe799d9dd848669c974bb5e5a823411b6caabb0fba298ed0f500ff8f721"
+      },
+      {
+        "path": "devel/llvm19/files/patch-clang_lib_Interpreter_Interpreter.cpp",
+        "sha256": "da35cdd92642fd73a01aa0ce829e7f5d5581a936e79026ab591e8eddccb7eca9"
+      },
+      {
+        "path": "devel/llvm19/files/patch-compiler-rt_lib_tsan_rtl_tsan__interceptors__posix.cpp",
+        "sha256": "0dee78ba1c92e2bf71aa8f38bbd17cd5aeea0df78ab765c81fc5771ce0286dee"
+      },
+      {
+        "path": "devel/llvm19/files/patch-clang_test_Driver_freebsd-shared-asan.c",
+        "sha256": "f3d25790589f08a6a21775b429ed18849ce3b6bba5bd582df64b0c92aa66f8a4"
+      }
+    ],
+    "native_combined_original_checksum_and_patch_exits": [
+      0,
+      0
+    ],
+    "patch_fuzz": false,
+    "FreeBSD_memory_profile_sysctl": {
+      "observed": "Original static/dynamic atexit_stats binaries print exit stats then fail the memory-profile sysctl CHECK.",
+      "cause": "Output buffer and output-length pointers occupy the wrong internal_sysctl argument positions, with the length pointer incorrectly passed as a new-value buffer.",
+      "native_nobody_API_control": {
+        "original_layout_errno": 1,
+        "correct_layout_errno": 0,
+        "returned_and_expected_structure_bytes": 1088,
+        "returned_PID_matches_actual_process": true,
+        "resident_pages_positive": true,
+        "original_sysctl_return": -1,
+        "corrected_sysctl_return": 0,
+        "native_probe_process_exit": 0
+      },
+      "candidate": "Correct only the selected FreeBSD GetMemoryProfile argument layout; NetBSD branch unchanged.",
+      "original_static_and_dynamic_atexit_stats_script_exits": [
+        0,
+        0
+      ]
+    },
+    "early_shared_ASan_initialization": {
+      "unchanged_shared_new_delete_program_exit": 1,
+      "original_pthread_key_create_errno": 78,
+      "native_errno_name": "ENOSYS",
+      "observed_stack": "libc startup -> readlink interceptor -> TryAsanInitFromRtl -> AsanTSDInit -> pthread_key_create CHECK",
+      "candidate": "Abandoned: pre-initialization readlink bypass built but both original shared new/delete scripts still exit1 at pthread_key_create. Removed from the current candidate; failed implementation/products/results retained.",
+      "debugger_only_option": "abort_on_error=1, solely to stop at the original CHECK instead of normal exit. Separate plain original replay retains its original options.",
+      "debugger_exit": 1,
+      "debugger_exit_note": "Trace acquired, then an inherited register-memory inspection command fails reading address zero; not an original-program or suite result.",
+      "diagnostic_binary_runtime_hashes_and_mounts_unchanged": true
+    },
+    "explicit_CXX_standard_library": {
+      "observed": "-stdlib=libstdc++ -fexperimental-library still emits -lc++ and -lc++experimental in the original FreeBSD linker arguments.",
+      "candidate": "Delegate non-libc++ selection to the existing ToolChain implementation; retain libc++ and legacy profiling handling.",
+      "installed_GNU_CXX_consumer_qualified": false,
+      "original_three_RUN_script_exit": 0
+    },
+    "interpreter_randomized_mapping": {
+      "unchanged_default_replays": 3,
+      "unchanged_default_program_exits": [
+        -11,
+        -11,
+        -11
+      ],
+      "unchanged_default_original_FileCheck_exits": [
+        2,
+        2,
+        2
+      ],
+      "observed_error": "External C++ type-info reference exceeds the x86_64 Delta32 relocation range between shared-library data and randomized JIT code.",
+      "diagnostic_only_option": "-Xcc=-fPIC",
+      "diagnostic_PIC_replays": 3,
+      "diagnostic_PIC_program_exits": [
+        0,
+        0,
+        0
+      ],
+      "diagnostic_PIC_original_FileCheck_exits": [
+        0,
+        0,
+        0
+      ],
+      "ASLR_disabled": false,
+      "source_binary_FileCheck_and_mounts_unchanged": true,
+      "candidate": "Default FreeBSD C++ interpreter invocations to PIC before appending user arguments; preserve explicit user overrides.",
+      "rebuilt_default_behavior_qualified": true,
+      "original_default_script_exit": 0
+    },
+    "original_case_bodies_assertions_and_selection_unchanged": true,
+    "next_full_run_reporting": "Use upstream JSON and xUnit reports through LIT_OPTS, keeping all default cases and four workers. JSON excludes user-skipped entries, so retain xUnit as well. Original TestingConfig excludes LIT_OPTS from test subprocesses.",
+    "native_normalized_patch_validation": "Fresh original checksum/patch R10 exits0/0 with zero fuzz; four implementation source hashes exactly match the prior candidate source bytes.",
+    "native_combined_original_checksum_and_patch_exits_note": "Revised shared-ASan driver, removed readlink bypass, new regression and retained fixes all pass fresh original checksum/patch R19 exits0/0 without fuzz.",
+    "shared_ASan_pthread_dependency": {
+      "original_script_exits_with_readlink_candidate": [
+        1,
+        1
+      ],
+      "diagnostic_original_case_compile_exit_without_and_with_explicit_pthread": [
+        0,
+        0
+      ],
+      "diagnostic_original_case_FileCheck_exit_without_and_with_explicit_pthread": [
+        1,
+        0
+      ],
+      "diagnostic_case_program_exit_without_and_with_explicit_pthread": [
+        1,
+        1
+      ],
+      "expected_nonzero_program_exit_note": "Upstream deliberately triggers heap-use-after-free; successful behavior requires replacement new/delete output and the original ASan error checks, not program exit0.",
+      "ELF_observation": "Without pthread, direct libc precedes transitive libthr. Explicit pthread adds direct libthr before libc. Shared-runtime-only addSanitizerRuntimes returns false for static dependency linking.",
+      "candidate": "FreeBSD driver includes sanitizer runtime dependencies for shared ASan when runtime linking is enabled. New driver test also checks disabled-runtime linking and shared-libsan without an enabled sanitizer.",
+      "candidate_built": true,
+      "original_tests_pass_with_revised_driver": true,
+      "new_regression_unfixed_compiler_RUN_exits": [
+        1,
+        0,
+        0
+      ],
+      "new_regression_causal_control": "First RUN detects missing pthread dependency on unchanged preceding compiler; both negative controls pass. After revision, the complete new regression passes through original LIT.",
+      "warm_build_status": "Original ports do-build R20 exits0; all source except the two explicit replacements and new regression, SDK140/rawDB, ports, base, registry, mounts and stopped-data guards pass.",
+      "revised_original_shared_new_delete_script_exits": [
+        0,
+        0
+      ],
+      "new_driver_regression_LIT_exit": 0,
+      "complete_original_sanitizer_driver_regression_LIT_exit": 0
+    },
+    "warm_original_build_r12": {
+      "original_make_do_build_exit": 0,
+      "targets": [
+        "clang",
+        "clang-repl",
+        "clang_rt.asan-x86_64",
+        "clang_rt.asan-dynamic-x86_64",
+        "clang_rt.tsan-x86_64"
+      ],
+      "all_other_warm_source_nodes_preserved": true,
+      "all_source_ports_SDK140_rawdb_registry_base_mount_data_guards_pass": true,
+      "original_script_exits": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "original_script_order": [
+        "static atexit_stats",
+        "dynamic atexit_stats",
+        "static-config shared new/delete",
+        "dynamic-config shared new/delete",
+        "FreeBSD CXX stdlib",
+        "default interpreter exception"
+      ],
+      "both_default_dynamic_ASan_unit_program_exits": [
+        0,
+        0
+      ]
+    },
+    "FreeBSD_TSan_thread_exit": {
+      "cause": "Ignored instrumentation in a multithreaded fork child bypasses SCOPED_TSAN_INTERCEPTOR cleanup in FreeBSD thr_exit; kernel thread exits but TSan registry join never completes.",
+      "ELF_identity": "libthr imports public thr_exit@FBSD_1.0; private __sys_thr_exit alias is not the cause.",
+      "candidate": "Use raw interceptor and explicitly destroy initialized live thread state even when instrumentation is ignored; leave NetBSD path unchanged.",
+      "original_compile_arguments_and_case_source_preserved": true,
+      "original_TSAN_OPTIONS": "die_after_fork=0",
+      "prior_diagnostic_stops": [
+        "128MiB RSS sampling threshold",
+        "two-second inspection deadline"
+      ],
+      "prior_stops_are_not_passes": true,
+      "normal_replay_program_exit": 0,
+      "normal_replay_peak_sampled_RSS_KiB": 2824344,
+      "normal_replay_guard_limits": {
+        "RSS_KiB": 8388608,
+        "seconds": 10
+      },
+      "normal_replay_guard_triggered": false,
+      "normal_replay_input_and_mount_guards_pass": true,
+      "full_suite_acceptance": false,
+      "original_failed_binary_diagnostic_retention": {
+        "archive_sha256": "f9c40dfa03deab0c2913db8f4a1938b8738ca57cde518b9a7f1dac71460bcaff",
+        "archive_bytes": 9759,
+        "inventory_sha256": "a174cb986a7b91c65e7a3c66ad18d7f69f76400023b48d3484e2ca633cce06ad",
+        "nodes": 37,
+        "independently_verified_on_two_physical_filesystems": true
+      },
+      "original_compile_and_run_script_after_readlink_removal_exit": 0
+    },
+    "followup_source_work_and_diagnostic_retention": {
+      "status": "Complete before/after-equal R12-R18 boundary independently verified on both physical filesystems before R20 warm mutation.",
+      "archive_sha256": "5c9d3b4ed21fef115eaf37005ecf5a5b4ce49b836de71a5a6c7bd2efd3479009",
+      "archive_bytes": 3904426423,
+      "inventory_sha256": "bb9165a2c1d21c0a1931edfa7c8179255a6cec3f31e5c8e60635c35c4c120b95",
+      "nodes": 710219,
+      "regular_files": 617749,
+      "directories": 92210,
+      "symlinks": 248,
+      "sockets": 8,
+      "fifos": 4,
+      "hardlink_groups": 5,
+      "complete_gzip_decode_bytes": 16122777600
+    },
+    "original_followup_executions_r21": {
+      "executions": 11,
+      "all_program_or_script_exits": 0,
+      "new_driver_regression_LIT_cases_passed": 1,
+      "complete_original_sanitizer_driver_regression_LIT_cases_passed": 1,
+      "original_TSan_compile_and_run_script_exit": 0,
+      "both_default_dynamic_ASan_programs": {
+        "each_enabled_cases_passed": 95,
+        "each_original_disabled_cases": 24
+      },
+      "compiler_runtime_scripts_unit_inputs_and_case_sources_unchanged": true,
+      "owned_jail_removed": true,
+      "mounts_unchanged": true,
+      "resource_observation_correction": "The R21 jid=,rss= ps format produces one field on FreeBSD; its peak0 is invalid and intended RSS guard ineffective. Original script naturally exits0. Corrected three-field native parsing separately checks PID/jid/positive RSS. No R21 peak memory or effective resource guard is claimed; valid R18 observation remains separate.",
+      "original_test_input_bodies_and_compiled_case_products_retained_before_full_target_overwrites_outputs": true
+    },
+    "full_unfiltered_r22": {
+      "status": "Terminal incomplete: kernel memory reclaim kills huge_malloc and LIT before final summary or report emission.",
+      "entrypoint": "Original make test/check-all",
+      "all_default_components_and_original_assertions_preserved": true,
+      "case_filters_added": false,
+      "new_case": "FreeBSD shared-ASan driver regression",
+      "workers": 4,
+      "report_formats": [
+        "upstream JSON",
+        "upstream xUnit XML"
+      ],
+      "full_suite_result_available": false,
+      "fresh_complete_package_qualified": false,
+      "terminal_at": "2026-11-23T13:11:15.155153+00:00",
+      "original_make_exit": 1,
+      "ninja_internal_exit": 137,
+      "LIT_reported_entries": 87563,
+      "partial_framed_result_line_counts": {
+        "FAIL": 38,
+        "XPASS": 3
+      },
+      "JSON_report_exists": false,
+      "xunit_report_exists": false,
+      "kernel_memory_reclaim_killed_processes": [
+        "huge_malloc.c.tmp",
+        "python3.12 LIT driver"
+      ],
+      "all_final_source_SDK140_rawdb_ports_base_registry_mount_data_guards_pass": true,
+      "whole_failed_frontier_retention": {
+        "status": "Complete before/after-equal failed source/work/products/ports/controls boundary independently verified on both physical filesystems before further diagnosis.",
+        "archive_bytes": 3647994866,
+        "archive_sha256": "b3237f6c6b250e20ba8dd6f0339736a4311b9c7884234298ac250e00285113aa",
+        "inventory_sha256": "c58686fa9281f695957d183489e4021570ea70fad4a66038e3b373b3bee90da7",
+        "nodes": 551031,
+        "regular_files": 472792,
+        "directories": 77981,
+        "symlinks": 240,
+        "sockets": 12,
+        "fifos": 6,
+        "hardlink_groups": 5,
+        "complete_gzip_decode_bytes": 14532464640
+      },
+      "reported_entries_are_not_completed_individual_case_counts": true
+    },
+    "last_canonical_checks": {
+      "project_validate": "fails stale documentation-authority review",
+      "verify": "authority and receipt fail; both committed locks pass",
+      "receipt_earned": false
+    },
+    "scope": "R19-R22 generation, before the following explicit API portability corrections; its original case bodies and assertions remain unchanged in that frozen running generation."
+  },
+  "additional_API_portability_candidates_r24": {
+    "status": "Fresh original checksum/full patch R24 exits0/0 without fuzz; full default configuration and named MSan/CXX runtime/header build phases exit0. Independent native archive/link and positive/negative consumer checks pass. The preceding frozen R22 generation ends incomplete after huge_malloc/LIT memory-reclaim kills and does not cover these additional patches.",
+    "port_revision": 6,
+    "patches": [
+      {
+        "path": "devel/llvm19/files/patch-compiler-rt_lib_sanitizer__common_sanitizer__common__interceptors.inc",
+        "sha256": "01dafdb985471d2f8a247ecdd94c45a6de433b17a3ec49101f4ba1190af95556"
+      },
+      {
+        "path": "devel/llvm19/files/patch-compiler-rt_test_sanitizer__common_TestCases_FreeBSD_procctl.cpp",
+        "sha256": "25034f9c5153874d943fd51ca008fcf46c4b595fa02044c70ebb3dae7f02d1fb"
+      },
+      {
+        "path": "devel/llvm19/files/patch-compiler-rt_test_sanitizer__common_TestCases_Posix_posix_spawn.c",
+        "sha256": "11eda552233f4f85923b80b374529e8903e8dacd0b1aa67814cbf72b248027df"
+      },
+      {
+        "path": "devel/llvm19/files/patch-compiler-rt_test_msan_procctl.cpp",
+        "sha256": "afe11c0143bf5169722880dca713e1c49755e0f40c34fa8972257c65f1582578"
+      }
+    ],
+    "explicit_original_test_corrections": {
+      "ASLR_status": "Mask documented PROC_ASLR_ACTIVE flag locally before checking exact legal policy values; do not change kernel or process policy in this test. Original signed minimum assertion rejects raw0x80000003 although policy3 is valid.",
+      "spawn": "Initialize and destroy POSIX attribute/action objects through their APIs, preserve both spawn calls, arguments and SPAWNED checks, and assert both waitpid results and successful child exit statuses. Initialization/destruction side effects occur outside assert.",
+      "original_assertions_are_corrected": true,
+      "original_coverage_removed": false,
+      "case_filters_or_sanitizer_option_suppressions_added": false,
+      "test_expectation_or_skip_annotations_changed": false
+    },
+    "primary_API_contracts": [
+      "https://man.freebsd.org/cgi/man.cgi?query=procctl&sektion=2&manpath=FreeBSD+16.0-CURRENT",
+      "https://raw.githubusercontent.com/freebsd/freebsd-src/main/lib/libc/gen/posix_spawnattr_init.3",
+      "https://man.freebsd.org/cgi/man.cgi?query=posix_spawn_file_actions_init&sektion=3"
+    ],
+    "original_and_candidate_API_case_controls_r23": {
+      "runtime_scope": "Existing R22 compiler and resources; isolated source/output copies, not a rebuilt all-runtime R24 generation.",
+      "procctl_original_and_corrected_exits_by_variant": {
+        "base": [
+          -6,
+          0
+        ],
+        "asan": [
+          0,
+          0
+        ],
+        "msan": [
+          1,
+          1
+        ],
+        "tsan": [
+          0,
+          0
+        ],
+        "ubsan": [
+          -6,
+          0
+        ]
+      },
+      "spawn_original_and_corrected_exits_by_variant": {
+        "base": [
+          -11,
+          0
+        ],
+        "asan": [
+          1,
+          0
+        ],
+        "msan": [
+          1,
+          0
+        ],
+        "tsan": [
+          66,
+          0
+        ],
+        "ubsan": [
+          1,
+          0
+        ]
+      },
+      "all_five_corrected_spawn_FileCheck_exits": 0,
+      "ASLR_native_read_only_query": {
+        "raw_hex": "80000003",
+        "active_bit": true,
+        "policy": 3,
+        "original_signed_comparison": false,
+        "exact_policy_comparison": true
+      },
+      "remaining_MSan_failure": "Interceptor checks the output-only integer status buffer as initialized input before the real syscall. Test-only ASLR correction correctly remains failing until the runtime is fixed.",
+      "all_source_compiler_runtime_mount_registry_guards_pass": true
+    },
+    "procctl_runtime_change": {
+      "scope": "Correct output-only reaper-status and standard integer-status commands; preserve existing input-control and mixed reaper request paths.",
+      "status_output_input_reads_removed": true,
+      "output_marked_written_only_after_success": true,
+      "new_MSan_regression": "Reaper and available integer statuses produce initialized outputs; failed status queries retain poison; uninitialized control input still produces the original MSan warning.",
+      "new_regression_source_sha256": "8ca0bfe13ad10604e2519c482d245aa1b01bdf1127ab14b7b17f3ea2a4180fbc",
+      "runtime_source_sha256": "2c3d8c93d8acea3db48576209d78e2a02885b5279b07a650cf2b7d8bff27bf78",
+      "old_runtime_new_regression_control": {
+        "positive_query_program_exit": 1,
+        "uninitialized_input_warning_FileCheck_exit": 0
+      }
+    },
+    "fresh_selected_runtime_build_r25": {
+      "original_configure_exit": 0,
+      "original_do_build_exit": 0,
+      "all_default_components_options_and_normalized_configuration_preserved": true,
+      "named_build_targets": [
+        "clang_rt.msan-x86_64",
+        "clang_rt.msan_cxx-x86_64",
+        "compiler-rt-headers"
+      ],
+      "actor_uid": 65534,
+      "build_jobs": 1,
+      "priority_nice": 15,
+      "source_and_all_SDK140_rawdb_ports_base_registry_mount_data_guards_pass": true,
+      "warm_source_or_root_installation_changed": false,
+      "controller_exit": 1,
+      "controller_failure": "Arbitrary100000byte minimum rejects legitimate62338byte CXX archive; prior archive is62466bytes. The failed controller result is retained; no rebuild or rewriting of results.",
+      "core_archive": {
+        "bytes": 3784394,
+        "sha256": "045c9c3724cd963eceb57051fb4b11cf63bc8df267a6422589439ea3cd564212"
+      },
+      "CXX_archive": {
+        "bytes": 62338,
+        "sha256": "e53038d9eab9acb60135204bba5b0d55853aa0e312293dc1a21ec340f71bdd85"
+      }
+    },
+    "independent_native_consumers_r27_r28": {
+      "standard_archive_format_and_nonempty_object_member_lists": "pass",
+      "CXX_link_uses_both_fresh_archives": true,
+      "new_regression_origins0": {
+        "program_exit": 0,
+        "uninitialized_input_exit": 1,
+        "warning_FileCheck_exit": 0
+      },
+      "new_regression_origins2": {
+        "program_exit": 0,
+        "uninitialized_input_exit": 1,
+        "warning_FileCheck_exit": 0
+      },
+      "corrected_common_procctl_MSan_program_exit": 0,
+      "unchanged_original_common_procctl_MSan_program_exit": 0,
+      "C_spawn_program_exit": 0,
+      "C_spawn_original_FileCheck_exit": 0,
+      "C_link_uses_only_fresh_core_archive": true,
+      "first_consumer_controller_exit": 1,
+      "first_consumer_controller_failure": "Overstrict routing check requires CXX archive for C source. Four CXX executions and negative controls completed; C body was compiled but not run. Failed result retained.",
+      "continuation": "Independently verify C routing and run the same already compiled C product; no recompilation. Program/FileCheck0, all input body guards pass.",
+      "all_source_compiler_header_runtime_program_input_guards_pass": true,
+      "R27_mount_guard_pass": true
+    },
+    "retention": {
+      "status": "Complete before/after-equal cold source/work/products/ports, R20/R21/R23-R28 fixtures/controls/logs, and hash-verified actual input bodies independently verified on both physical filesystems.",
+      "archive_bytes": 461303302,
+      "archive_sha256": "fdc99e6f711d70aed33defa72ed96e6d4c6981751beadc109943beb4b7ded46e",
+      "inventory_sha256": "9803305f16ad1b44c2ba04166402520ba52d4122d0e402fb9eae61e568114f36",
+      "nodes": 400902,
+      "regular_files": 332798,
+      "directories": 68088,
+      "symlinks": 16,
+      "hardlink_groups": 0,
+      "complete_gzip_decode_bytes": 2623979520,
+      "preceding_failed_full_R22_source_not_mutated": true
+    },
+    "not_yet_qualified": [
+      "Original full upstream target with these additional API changes",
+      "Other sanitizer runtimes rebuilt with this additional interceptor change",
+      "Fresh complete LLVM revision6 package and installed consumers",
+      "arm64/final CURRENT hardware and native qualification",
+      "Complete TCB/source ownership and canonical Component/SDK/lifecycle admission",
+      "Full1.6 release acceptance"
+    ]
+  },
+  "huge_allocation_termination_diagnosis": {
+    "status": "Read-only guarded original-binary replays and per-process allocator-option causal control; no production fix or complete original-target acceptance yet.",
+    "original_options": "allocator_may_return_null=1:hard_rss_limit_mb=50:quarantine_size_mb=1",
+    "original_supported_variants": {
+      "asan": {
+        "program_exit": 0,
+        "peak_sampled_RSS_KiB": 4412
+      },
+      "msan": {
+        "program_exit": 0,
+        "peak_sampled_RSS_KiB": 5068
+      },
+      "ubsan": {
+        "ordinary_case_completed": false,
+        "external_diagnostic_RSS_stop": true,
+        "peak_sampled_RSS_KiB": 358872,
+        "trace": "libc memset, through libc frames, from main free(p)",
+        "diagnostic_not_a_pass": true
+      }
+    },
+    "tsan": "Already unsupported by the unchanged original upstream testcase; not a new exclusion.",
+    "external_diagnostic_inspection_limits": {
+      "RSS_KiB": 262144,
+      "seconds": 2
+    },
+    "LLDB_note": "Backtrace acquired and debugger exits0, but kill command prints failed-send-k-packet; owned process/group/jail cleanup completes with observedSIGKILL9. No ordinary-program success is inferred.",
+    "all_selected_source_binary_debugger_library_and_mount_guards_pass": true,
+    "guarded_diagnostic_retention": {
+      "archive_sha256": "970a7a75dffa41cdc5f4d08dffdad613770ffbbc3577885d8bbc821915068387",
+      "archive_bytes": 8627,
+      "inventory_sha256": "dde52a0e62f9221c132761e4610f23d355c1c6a8fdbe31ea714cddc5f0601265",
+      "nodes": 28,
+      "both_physical_filesystems_verified": true
+    },
+    "native_read_only_base_allocator_probe": {
+      "jemalloc_version": "5.3.0-0-g54eaed1d8b56b1aa528be3bdd1877e59c56fa90c",
+      "config_debug": true,
+      "config_fill": true,
+      "opt_junk": "true",
+      "opt_retain": true,
+      "opt_zero": false,
+      "opt_abort": true,
+      "MALLOC_CONF_in_environment": false,
+      "etc_malloc_conf_exists": false,
+      "source_base_compiler_libc_header_and_mount_guards_pass": true
+    },
+    "per_process_causal_control": {
+      "same_original_UBSan_binary": true,
+      "same_original_UBSAN_OPTIONS": true,
+      "one_added_environment_override": "MALLOC_CONF=junk:false",
+      "program_exit": 0,
+      "all_original_64_iterations_observed": true,
+      "external_guard_triggered": false,
+      "positive_RSS_sample_obtained": false,
+      "not_an_original_option_pass_or_release_fix": true,
+      "global_allocator_kernel_SDK_source_configuration_changed": false
+    },
+    "next": "Source review confirms upstream-world/debug-malloc defaults are intended. The following explicit one-process testcase precondition is now separately qualified; no global allocator change or full-suite acceptance."
+  },
+  "huge_allocation_fixture_correction": {
+    "status": "Fresh original checksum/patch R32 exits0/0 without fuzz. Original ports do-test/check-all R33 exits0 with an explicit temporary four-case filter; JSON records3PASS/1originalUNSUPPORTED. Full original suite and current combined API/runtime generation remain unqualified.",
+    "patch": "devel/llvm19/files/patch-compiler-rt_test_sanitizer__common_TestCases_Posix_huge_malloc.c",
+    "patch_sha256": "39624d6f5ee0d12ca0e4966404003280da6c9ffc1620006cbce190b7bce1f9ea",
+    "source_before_sha256": "712e667e52a349dedf8d13e915dd4eb6b7bf58c2a7133c63948f9fb8f2af1e00",
+    "source_after_sha256": "47995df341d22cd2b14f5722e5e8e1464c7621a5a98da2e0e7ccce31caac9d02",
+    "source_profile_review": {
+      "source_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
+      "src_conf": "Explicitly retains upstream world defaults.",
+      "src_options": "MALLOC_PRODUCTION defaults to no.",
+      "native_debug_allocator_defaults_are_expected": true,
+      "profile_or_global_configuration_change": false
+    },
+    "testcase_precondition": "Add env MALLOC_CONF=junk:false only to the huge-allocation program invocation, avoiding debug jemalloc touching enormous freed blocks in a virtual-allocation regression.",
+    "all_64_original_allocation_sizes_calls_and_sanitizer_options_preserved": true,
+    "skip_or_expectation_annotations_changed": false,
+    "persistent_test_filter_added": false,
+    "temporary_validation_filter": "Posix/huge_malloc[.]c",
+    "selected_case_results": {
+      "asan": "PASS",
+      "msan": "PASS",
+      "ubsan": "PASS",
+      "tsan": "UNSUPPORTED by unchanged original annotation"
+    },
+    "upstream_header_entries": 87563,
+    "upstream_final_discovered_entries_after_postprocessing": 86020,
+    "excluded_entries_in_this_explicitly_scoped_validation": 86016,
+    "excluded_entries_not_claimed_as_executed": true,
+    "make_target": "Original do-test/check-all; avoid earning a complete-suite meta-target cookie from filtered execution.",
+    "source_integration_scope": "Only this fixture is overlaid on retained R22 warm source under frozen ports19. Additional R24 API/runtime patches remain separately cold-qualified and are not yet integrated into this warm generation.",
+    "all_final_SDK140_rawdb_source_except_declared_fixture_ports_registry_base_mount_data_guards_pass": true,
+    "full_test_completion_cookies_unchanged": true,
+    "root_LLVM_package_installed": false,
+    "json_report": {
+      "bytes": 14306,
+      "sha256": "b8e69d13180faa75786e4c6257f9c9503ad99b956339b1df056734ddac492c7c"
+    },
+    "xunit_report": {
+      "bytes": 14186213,
+      "sha256": "87767aa382476e3ca7bb4d1fa918e1894bff118cdf1a820339f3bacf2d2f1e8c"
+    },
+    "fresh_full_package_or_release_acceptance": false,
+    "independent_retention": {
+      "archive_bytes": 419126573,
+      "archive_sha256": "4ec743979b4001d391259d4f9a1c42a82a07bab052603daf6e87974995d2d2df",
+      "inventory_sha256": "e970ecbbef486c92631f37ec33a2fbb2fc909230b0d764a33cbc7d9aa858d41b",
+      "nodes": 393529,
+      "before_after_complete_frontier_equal": true,
+      "scope": "Complete new R30-R33 cold source/work/ports/fixtures/controls/products/reports plus selected warm huge-allocation products/source and LIT/Ninja state. Other warm nodes remain bound to complete R22 archive; not a complete new warm frontier.",
+      "both_physical_filesystems_all_nodes_and_complete_gzip_verified": true,
+      "includes_actual_JSON_and_xUnit_report_bodies": true
+    }
+  },
+  "TSan_thread_exit_scope_correction": {
+    "status": "Fresh original checksum/patch R41 exits0/0 without fuzz; full default configure and named TSan/CXX/header build R42 exit0. Independent R43 original ignored-library and threaded-fork scripts pass. Compare_exchange and deadlock stress scripts still fail original runtime assertions; the four-case consumer controller remains failed. Negative original unbalanced user-ignore consumer R44 passes. No full original target, warm integration or complete package acceptance.",
+    "patch": "devel/llvm19/files/patch-compiler-rt_lib_tsan_rtl_tsan__interceptors__posix.cpp",
+    "patch_sha256": "18bcd4e6a6365c4b86ef3cba130582dfa7124adab2315e5514a6018cd65de672",
+    "source_before_sha256": "6b859fe57318b70dfa9e43367bc43d9c4c6fdeec02b43d0a1d75cca8250c67de",
+    "source_after_sha256": "aa0cd49d8643ad460c6655142b0166f849eabda75c8be376a967c2b8e028597b",
+    "change": "End the FreeBSD thr_exit ScopedInterceptor lifetime before DestroyThreadState, balancing its own ignores while preserving real user-ignore checks and releasing fork-child state. Keep initialized/not-dead guard.",
+    "original_sources_assertions_options_and_deflake_helpers_unchanged": true,
+    "preceding_diagnostics": {
+      "R38": "Unchanged archived original R22 ignored-library executable exits66; original FileCheck1 with ignore_noninstrumented_modules=1. All input/mount guards pass.",
+      "R36_R37_R39": "Fast-path-only candidate full patch/configure/build pass, but ignored-library script still fails. Not the accepted scope-balanced candidate. R39 additionally stops before fork execution on invalid CXX archive requirement for C. Failed results/products preserved.",
+      "R40": "Correct C routing allows fork script to pass. Both other consumers fail compilation because the diagnostic isystem header injection changes libc++ search order; these do not diagnose original R22 runtime failures. Failed controller preserved.",
+      "R43_resource_correction": "Private resource directory links original warm builtin include tree and fresh cold runtime lib tree, retaining normal header order without injected isystem. Actual driver link targets resolve exactly to required fresh archives for C/CXX."
+    },
+    "original_build_phase_exits": [
+      0,
+      0
+    ],
+    "build_selected_jobs": 4,
+    "all_default_components_options_normalized_configuration_and_dependencies_retained": true,
+    "runtime_archives": {
+      "libclang_rt.tsan.a": {
+        "bytes": 5698158,
+        "sha256": "1df502d19bd9f173c1a23a270e294e8a1ef78a3e95dd2c74f653e89943d1fdfa"
+      },
+      "libclang_rt.tsan_cxx.a": {
+        "bytes": 73912,
+        "sha256": "93a37e176bcec31a07ffb50aaaa3f4d6f7a0ffa78b8e4f4dd4874313741beafc"
+      }
+    },
+    "original_script_consumers": {
+      "ignore-lib0": {
+        "exit": 0,
+        "inspection_stop": false,
+        "source_sha256": "214a88bd006ed619fa4419744d9d8a6a6d2357ec7bd0f88384ea90b1cd63b768",
+        "original_script_sha256": "39d8617d7a9ce468b408b6acaf0bb85582ed96f1860c7975d20fd1e904222c00"
+      },
+      "threaded-fork": {
+        "exit": 0,
+        "inspection_stop": false,
+        "source_sha256": "31696c924d5c87d2cc6ebd3093b24e0d8caa9ff3e48f549d2beffe9146c40626",
+        "original_script_sha256": "26fdde5265aefd7e99f5b83867a7bd397ad8a02cea24eb54d2d8d47527595d97"
+      },
+      "compare-exchange": {
+        "exit": 1,
+        "inspection_stop": false,
+        "source_sha256": "dde5bc7f288c7deb5b9ee4dcf9a98714a678f0b9eeec0302b340bf37fe8d2d86",
+        "original_script_sha256": "dafe92780431a327a4e19fa637817de77c380fe3ebb3d8b7b77682f316711367"
+      },
+      "deadlock-stress": {
+        "exit": 1,
+        "inspection_stop": false,
+        "source_sha256": "014f53a99f6ac00e91b996d6fe78711755ed896dfa11704d037b5cc6a363e9ce",
+        "original_script_sha256": "3de5ad21a75516b5749285d11e1b3ecbbc07e2c202038d09178c91f3a7caf876"
+      }
+    },
+    "R43_controller_exit": 1,
+    "R43_failed_original_cases": [
+      "compare-exchange",
+      "deadlock-stress"
+    ],
+    "remaining_diagnostics": {
+      "compare_exchange": "Original expects four race warnings; actual reports five, matching preceding full R22.",
+      "deadlock_stress": "Original ordering assertion still fails with additional race report in native libthr, matching preceding full R22."
+    },
+    "negative_unbalanced_user_ignore": {
+      "source": "compiler-rt/test/tsan/thread_end_with_ignore.cpp",
+      "original_deflake_exit": 0,
+      "original_FileCheck_exit": 0,
+      "explicit_user_ignore_diagnostic_retained": true
+    },
+    "all_final_build_source_SDK140_rawdb_ports_registry_base_mount_and_stopped_data_guards_pass": true,
+    "all_bound_consumer_inputs_and_literal_resource_links_unchanged": true,
+    "complete_cold_frontier_independent_both_host_retention": {
+      "archive_bytes": 862845561,
+      "archive_sha256": "70a87f4029a41b21da329c15777ee4aa23af6b82379ffb8ab1a85d80d023575c",
+      "inventory_sha256": "40f8d07d0b8176dd768e014568ed92f0a193caabf4b89220a1b2e23820534983",
+      "nodes": 801282,
+      "before_after_complete_frontier_equal": true,
+      "scope": "Complete separate R36/R41 cold source/work/build/products/ports plus all R36-R44 diagnostic fixtures/controls/logs, literal resource links and failed results; other warm original inputs remain bound to complete R22 archive. Not a replacement complete warm frontier.",
+      "both_physical_filesystems_all_nodes_and_complete_gzip_verified": true,
+      "regular_files": 665120,
+      "directories": 136126,
+      "literal_symlinks": 36,
+      "complete_gzip_decode_bytes": 5059481600
+    },
+    "warm_source_or_runtime_modified": false,
+    "full_original_test_target_or_fresh_complete_package_qualified": false,
+    "canonical_lifecycle_or_release_acceptance": false,
+    "historical_candidate_commit": "ae3edbf4555d6038dabda96d7daa0f04fb07afbd",
+    "superseded_by": "TSan_native_private_allocator_correction"
+  },
+  "TSan_native_private_allocator_correction": {
+    "status": "Fresh original checksum/full patch R51 and R57 pass without fuzz. Full default configure/named TSan/CXX/header build R52 passes. Original ignore-lib0, threaded-fork and compare_exchange scripts pass in R54; its original deadlock source fails a separate alias spelling check. With six precise portable symbol checks, all nine original deadlock RUN commands pass in R58. New positive/API, real application memset-race and original unbalanced user-ignore consumers pass. Full original target/package qualification remains open.",
+    "patch_sha256": {
+      "devel/llvm19/files/patch-compiler-rt_lib_tsan_rtl_tsan__interceptors__posix.cpp": "8da0011467d1b1a919b555eb3da887d67525c9134a9aa7b7b7bb026eacf89114",
+      "devel/llvm19/files/patch-compiler-rt_test_tsan_freebsd-pthread-private-allocator.cpp": "56a6d56c8e79ba768b24125b6414dca913ed8b82bd2285bba8e758f78a6ba7a4",
+      "devel/llvm19/files/patch-compiler-rt_test_tsan_deadlock__detector__stress__test.cpp": "c1f73d1060cac9d58819c00836737ad36ff7935e783aa144b1a76c8fd54a0561"
+    },
+    "runtime_source_sha256": "f89061e21a85f26db6603e65a5dbdba40761f25ff6396edc9d5ac27c750227e3",
+    "new_regression_source_sha256": "946977f2f2c71fac26de4f3f0d12939c4dfd5c9ce02f234b2309c9e867ac3489",
+    "native_causal_diagnosis": "Nobody LLDB actual ReportRace stack in R48 identifies libthr private allocator memset reached through pthread_setspecific from libc++ TLS setup. Preserve ASLR and original process options. R47 unresolved named breakpoint/exec stop and R50 intentional sanitizer-report stop remain failed diagnostics.",
+    "change": "FreeBSD-only pthread_setspecific interceptor/private alias and registration. Scope nested-interceptor ignoring to native setterspecific and mutex-init implementation calls, whose private allocator uses uninstrumented locks/reused storage. MutexCreate and application accesses remain outside the native call guard; no global sanitizer flag or suppression file. Retain balanced thread-exit scope.",
+    "global_sanitizer_allocator_kernel_configuration_changed": false,
+    "old_runtime_new_regression": {
+      "positive_program_exit": 66,
+      "CLEAN_FileCheck_exit": 1,
+      "true_application_race_FileCheck_exit": 0
+    },
+    "new_runtime_new_regression": {
+      "positive_program_exit": 0,
+      "CLEAN_FileCheck_exit": 0,
+      "true_application_race_deflake_exit": 0,
+      "true_application_race_FileCheck_exit": 0,
+      "API_checks": "Valid key roundtrip, invalid key EINVAL without changing stored value, non-dereferenced pointer value, private mutex create/lock/unlock/destroy; concurrent thread pairs."
+    },
+    "original_user_ignore_negative_FileCheck_exit": 0,
+    "R54_original_script_exits": {
+      "ignore-lib0": 0,
+      "threaded-fork": 0,
+      "compare-exchange": 0,
+      "deadlock-stress": 1
+    },
+    "R54_controller_remains_failed": true,
+    "portable_deadlock_test": {
+      "original_source_sha256": "014f53a99f6ac00e91b996d6fe78711755ed896dfa11704d037b5cc6a363e9ce",
+      "corrected_source_sha256": "74b46182d42a914ede7621d5cc3a7e13cf2617dc5b1212459e18ac080c156dcf",
+      "exact_frame_zero_spelling_checks_changed": 6,
+      "includes_negative_stack_checks": 2,
+      "change": "Allow only an optional leading underscore before literal pthread_ at frame zero, accepting FreeBSD private aliases. Preserve all warning/cycle/stack/order expectations, original RUN lines and C++ test body.",
+      "original_RUN_commands": 9,
+      "execution_modes": [
+        "mutex default",
+        "mutex second_deadlock_stack",
+        "spin lock",
+        "read/write lock",
+        "recursive mutex"
+      ],
+      "complete_script_exit": 0,
+      "external_inspection_stop": false
+    },
+    "runtime_archives": {
+      "libclang_rt.tsan.a": {
+        "bytes": 5708182,
+        "sha256": "749cde183eb600f15df5800d91855c37818cb050a1025d54442cb46f88da95c6"
+      },
+      "libclang_rt.tsan_cxx.a": {
+        "bytes": 74080,
+        "sha256": "9cc29e21f5fb18578d70ab7c5537f1043c80ad89d9d680f8ac8225339cdf21c4"
+      }
+    },
+    "all_build_and_bound_consumer_integrity_guards_pass": true,
+    "complete_cold_and_diagnostic_retention": {
+      "nodes": 794218,
+      "archive_bytes": 846951858,
+      "archive_sha256": "843fecc7a24f62e66dd6f3e72923568c2c1c3972bd2e93463264ad993d0d7f37",
+      "inventory_sha256": "53a1167be7f5233ef8130986eab2c3de677d51f097b0a1eaa13a5e21f6c0a280",
+      "before_after_complete_frontier_equal": true,
+      "both_physical_filesystems_all_nodes_and_complete_gzip_verified": true,
+      "regular_files": 663160,
+      "directories": 131016,
+      "literal_symlinks": 42,
+      "complete_gzip_decode_bytes": 4878950400,
+      "scope": "Complete separate R51/R57 source/work/ports, R52 products, all R47-R58 controls/fixtures/results and failed records. Other original warm inputs remain bound to preceding full R22 and R36-R44 archives; not the integrated R59 frontier."
+    },
+    "full_original_suite_or_complete_package_qualified": false,
+    "canonical_lifecycle_or_release_acceptance": false
+  },
+  "integrated_default_build_followup": {
+    "status": "R59 original default all do-build exits0 with all selected default components/options and four jobs. Five existing source files and two new regression sources integrated from fresh R57 source; prior sole huge-allocation fixture retained. All other source nodes, historical backups/cache and SDK140/rawDB/ports/base/mount/registry/stopped data guards pass. Original target tests, fresh stage/package and installed consumers remain pending.",
+    "original_ALL_TARGET": "all",
+    "original_phase_exits": [
+      0
+    ],
+    "default_selected_jobs": 4,
+    "complete_source_nodes_before_integration": 160682,
+    "complete_source_after_inventory_sha256": "1c0955f6e6004fe17e3d742fb0f7e60e96c0208e20d9092a8c14c12f68b22eef",
+    "existing_source_changes": {
+      "compiler-rt/lib/sanitizer_common/sanitizer_common_interceptors.inc": [
+        "f937579236379f97c2506bfeefcd3e6da961c0b905ff1ee5d688fbe615527020",
+        "2c3d8c93d8acea3db48576209d78e2a02885b5279b07a650cf2b7d8bff27bf78"
+      ],
+      "compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp": [
+        "6b859fe57318b70dfa9e43367bc43d9c4c6fdeec02b43d0a1d75cca8250c67de",
+        "f89061e21a85f26db6603e65a5dbdba40761f25ff6396edc9d5ac27c750227e3"
+      ],
+      "compiler-rt/test/sanitizer_common/TestCases/FreeBSD/procctl.cpp": [
+        "2e0f6e273fb966851153fde388fb2e254a141e03d0c498f435bf825b08d1f275",
+        "29df46554b9b7a3f5a51323bccaaf57341b1eae270971cbc8c652a8a34a75678"
+      ],
+      "compiler-rt/test/sanitizer_common/TestCases/Posix/posix_spawn.c": [
+        "9cee89fa91e6c2af63c727d632abb7c56ca1f0d1cf35c3afa4bb86841eb738be",
+        "7eb5aee867bc40d9f3b57daac692acaaf779f92a7a7b2af1b87a48f4c05a8977"
+      ],
+      "compiler-rt/test/tsan/deadlock_detector_stress_test.cpp": [
+        "014f53a99f6ac00e91b996d6fe78711755ed896dfa11704d037b5cc6a363e9ce",
+        "74b46182d42a914ede7621d5cc3a7e13cf2617dc5b1212459e18ac080c156dcf"
+      ]
+    },
+    "new_regression_sources": {
+      "compiler-rt/test/msan/procctl.cpp": "8ca0bfe13ad10604e2519c482d245aa1b01bdf1127ab14b7b17f3ea2a4180fbc",
+      "compiler-rt/test/tsan/freebsd-pthread-private-allocator.cpp": "946977f2f2c71fac26de4f3f0d12939c4dfd5c9ce02f234b2309c9e867ac3489"
+    },
+    "same_default_configuration_and_dependencies_after_test_group_only_recipe_change": true,
+    "all_final_source_SDK140_rawdb_ports_base_mount_registry_data_guards_pass": true,
+    "runtime_product_files_hashed": 40,
+    "complete_integrated_frontier_retention": {
+      "nodes": 551059,
+      "archive_bytes": 3656565919,
+      "archive_sha256": "47716c47cbf2806b02d968ce251d0384df0d28b8edc7f37afdc7d7f1438ee179",
+      "inventory_sha256": "475b5517287c201caa151b631c6b3c87ee109d66fd9fba245eef18e7aaa76539",
+      "before_after_complete_frontier_equal": true,
+      "both_physical_filesystems_all_nodes_and_complete_gzip_verified": true,
+      "sockets": 12,
+      "fifos": 6,
+      "hardlink_groups": 5,
+      "complete_gzip_decode_bytes": 14573946880
+    },
+    "fresh_stage_or_complete_package_qualified": false,
+    "full_original_tests_or_release_qualified": false
+  },
+  "unprivileged_test_group_correction": {
+    "change": "Original do-test chown retains -Rh and sets nobody:nobody instead of owner alone. FreeBSD inherits child file group from the parent; match the actual unprivileged actor group for setgid permission checks. No test/expectation edits or actor privilege/group-membership change.",
+    "Makefile_sha256": "c999babe9555d4470a9cc07180c11def3264f7727159bbbc41b52e3524d78530",
+    "causal_original_case": "FileSystemTest.permissions from unchanged original R22 SupportTests",
+    "actor_uid": 65534,
+    "actor_gid": 65534,
+    "variants": [
+      {
+        "temporary_directory_gid": 0,
+        "original_program_exit": 1,
+        "original_test_failures": 1
+      },
+      {
+        "temporary_directory_gid": 65534,
+        "original_program_exit": 0,
+        "original_test_failures": 0
+      }
+    ],
+    "both_single_original_cases_RUN_COMPLETED_and_not_disabled": true,
+    "all_bound_inputs_and_mounts_unchanged": true,
+    "frozen_corrected_recipe_in_integrated_build": true,
+    "original_do_test_after_group_correction_qualified": false,
+    "full_suite_or_release_acceptance": false,
+    "original_recipe_selected_scope_executed": true,
+    "original_do_test_exit": 1,
+    "actual_test_directory_groups": [
+      65534,
+      65534,
+      65534
+    ],
+    "unchanged_original_permissions_cases": [
+      {
+        "name": "LLVM :: tools/llvm-dwarfutil/ELF/X86/mirror-permissions-unix.test",
+        "code": "PASS"
+      },
+      {
+        "name": "LLVM :: tools/llvm-objcopy/ELF/mirror-permissions-unix.test",
+        "code": "PASS"
+      },
+      {
+        "name": "LLVM-Unit :: Support/./SupportTests/FileSystemTest/permissions",
+        "code": "PASS"
+      },
+      {
+        "name": "LLVM-Unit :: Support/./SupportTests/FileSystemTest/RemoveDirectoriesNoExePerm",
+        "code": "PASS"
+      }
+    ]
+  },
+  "integrated_original_target_followup": {
+    "status": "Original ports do-test/check-all R63 completes selected cases with original make1 and complete JSON/xUnit reports:1435PASS,2FAIL,1unchanged original UNSUPPORTED. All final source/SDK140/rawDB/ports/base/mount/registry/stopped-data guards pass. Correct actor group and repaired API/TSan/fork/allocation plus original permissions/mirror cases pass. This remains a failed selected target, not complete unfiltered suite/package qualification.",
+    "original_target": "do-test/check-all",
+    "disclosed_temporary_filter": "SupportTests|TsanRtlTest|mirror-permissions-unix|procctl[.]cpp|posix_spawn[.]c|fork_threaded[.]c|huge_malloc[.]c|ignore_lib0[.]cpp|compare_exchange[.]cpp|deadlock_detector_stress_test[.]cpp|freebsd-pthread-private-allocator[.]cpp|thread_end_with_ignore",
+    "persistent_filter_added": false,
+    "original_make_exit": 1,
+    "initial_LIT_entries": 87566,
+    "initial_selected_LIT_entries_including_GTest_shards": 74,
+    "per_case_JSON_counts": {
+      "PASS": 1435,
+      "UNSUPPORTED": 1,
+      "FAIL": 2
+    },
+    "remaining_selected_failed_cases": [
+      "LLVM-Unit :: Support/./SupportTests/SignalsTest/PrintsSymbolizerMarkup",
+      "ThreadSanitizer-Unit :: rtl/./TsanRtlTest-x86_64-Test/Posix/ThreadSpecificDtors"
+    ],
+    "json_report": {
+      "sha256": "36fccb6c734185aa15d8663c416d2ab3609fa668d94cff1a89a8fafe4690a262",
+      "bytes": 335112
+    },
+    "xunit_report": {
+      "sha256": "3c379a1d4e8af0123bb951950b201d61d439821400ed98c97dafb62d4862b9fd",
+      "bytes": 14345104
+    },
+    "unselected_cases_not_claimed_as_executed_or_passed": true,
+    "all_final_integrity_guards_pass": true,
+    "test_completion_cookies_unchanged": true,
+    "actual_build_HOME_TMPDIR_groups": [
+      65534,
+      65534,
+      65534
+    ],
+    "launch_preparation_failure_preserved": "First bootstrap rejected a valid long-form SDK140 review status before native producer creation. Input preparation continued using already accepted review status and exact archive/inventory digest checks; initial failed stdout/stderr and native sidecar retained. No test was restarted.",
+    "complete_failed_frontier_retention": {
+      "archive_sha256": "61ce916a194efdb4aa4fb22055b3dc413e8cde287a11c076a25c0c3b70a05a49",
+      "archive_bytes": 3654711860,
+      "inventory_sha256": "ad794cef9aed14332e2531936c1e4a739f76d202a9b3bd89ccd4ad28bd66b2c5",
+      "all_nodes_verified": 551067,
+      "node_kinds": {
+        "directory": 77980,
+        "file": 472829,
+        "symlink": 240,
+        "socket": 12,
+        "fifo": 6
+      },
+      "hardlink_groups_verified": 5,
+      "complete_gzip_decode_bytes": 14563727360,
+      "independent_sparky_review": "pass",
+      "independent_madmax_review": "pass",
+      "complete_frontier_before_after_unchanged": true,
+      "source_runtime_and_failed_test_products_retained": true,
+      "stage_tree_historical_not_fresh_package_qualified": true
+    },
+    "full_original_suite_fresh_stage_package_or_release_acceptance": false
+  },
+  "historical_candidate_makefile_sha256": "7f97b6ec00e81f57e848f12e4038cb839fcad9b55792331370e9b28d2a16d31f",
+  "CMake_unit_dependency_and_build_ID_followup": {
+    "diagnosis": {
+      "symbolizer": "Unchanged SupportTests lacked GNU build ID; original printDSOMarkup intentionally omits module/map context without it. Preserve original module/map/backtrace expectations and add a FreeBSD-only SupportTests link option.",
+      "TSan": "Unit executable remained byte-identical across R22/R59/R63 despite production runtime changes. Correct link command already selected the owned resource directory, but generate_compiler_rt_tests discarded declared dependencies before linking, and aggregate tsan supplied only ordering."
+    },
+    "changes": [
+      "Keep declared compiler-rt dependencies alongside object dependencies on the test link step.",
+      "Bind non-Apple TSan units to both concrete architecture-specific TSan/CXX archive targets so runtime updates invalidate their executable.",
+      "Set LINKER:--build-id only on FreeBSD SupportTests; no runtime, original case or expectation changes."
+    ],
+    "changed_source_hashes": {
+      "compiler-rt/cmake/Modules/AddCompilerRT.cmake": {
+        "before": "54d7f3f1e23ec8da711a009c9f020babfb0962b4a410b4900614b485738e0d22",
+        "after": "914ead38109f86be07c203307e687f684ea9cde0bd6d9d84252f3e11a3228938"
+      },
+      "compiler-rt/lib/tsan/tests/CMakeLists.txt": {
+        "before": "6a85fec7f87ec29c1f2de72786549058733de4ca914902b115c6d8c9343e38f6",
+        "after": "cf809f02712f3b9fb75ea0ad37053fa793ad5ef70cc237d41299b4f6cebecd41"
+      },
+      "llvm/unittests/Support/CMakeLists.txt": {
+        "before": "aecfb29c1031ac3c735ca85138d27449038e59dd1ec15d7669fc02c6fc7ab0e3",
+        "after": "de63d1008ba744c7a7fedda8ae64a98d749ec147fb74db3f04bed97de1e90ee7"
+      }
+    },
+    "fresh_original_checksum_and_full_patch_exit": [
+      0,
+      0
+    ],
+    "patch_fuzz": false,
+    "original_default_all_do_build_exit": 0,
+    "original_named_SupportTests_TsanUnitTests_do_build_exit": 0,
+    "default_components_options_dependencies_and_four_jobs_preserved": true,
+    "complete_source_nodes": 160684,
+    "complete_changed_source_inventory_sha256": "a3550d44377ae2b8835366ad8f850af91ebb68dcc5d96d63389bb59e6ebc62c4",
+    "old_TSan_unit_sha256": "bb6a95daebb106fd24db49153f38ea16841ab868ca5277af527dd90dd31c7433",
+    "new_unit_products": {
+      "TsanRtlTest-x86_64-Test": {
+        "sha256": "e2b72087429d2fb8ab68ca35f019ae6efafc90ef5ae519cb7acda9342d2de49a",
+        "bytes": 6577136
+      },
+      "SupportTests": {
+        "sha256": "10fed20f89265f1e18745ca736551d382eedf57f0cb797b99214ee8428d023f2",
+        "bytes": 8985192
+      }
+    },
+    "both_actual_TSan_archives_are_file_dependencies": true,
+    "new_unit_contains_setter_interceptor": true,
+    "SupportTests_has_GNU_build_ID": true,
+    "original_selected_target_exit": 0,
+    "per_case_JSON_counts": {
+      "PASS": 1437,
+      "UNSUPPORTED": 1
+    },
+    "exact_same_case_names_as_failed_R63": true,
+    "original_case_transitions": [
+      {
+        "name": "LLVM-Unit :: Support/./SupportTests/SignalsTest/PrintsSymbolizerMarkup",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "ThreadSanitizer-Unit :: rtl/./TsanRtlTest-x86_64-Test/Posix/ThreadSpecificDtors",
+        "before": "FAIL",
+        "after": "PASS"
+      }
+    ],
+    "json_report": {
+      "sha256": "ac4afc0eb96df0467ac1d1acafc425263c180e946ee17ad9f1250c650a30a77d",
+      "bytes": 333367
+    },
+    "xunit_report": {
+      "sha256": "083893c21e17d9eb2a5a1985b434fdf935e005a8658698313d70bef4ec0420e9",
+      "bytes": 14343397
+    },
+    "all_final_build_and_test_integrity_guards_pass": true,
+    "persistent_filter_added": false,
+    "full_test_completion_cookie_earned": false,
+    "complete_current_frontier_retention": {
+      "archive_sha256": "f4bd0f48c6edb3efa89bdc724f1e779c727cd133577747351febc178251a7e0b",
+      "archive_bytes": 3948778372,
+      "inventory_sha256": "851798c1ad560e4d9e65ce3babbfc41e70948ebae8f714e2a65f8176de9a42d6",
+      "all_nodes_verified": 711782,
+      "node_kinds": {
+        "directory": 92264,
+        "file": 619244,
+        "symlink": 256,
+        "socket": 12,
+        "fifo": 6
+      },
+      "hardlink_groups_verified": 5,
+      "complete_gzip_decode_bytes": 16298301440,
+      "independent_sparky_review": "pass",
+      "independent_madmax_review": "pass",
+      "complete_frontier_before_after_unchanged": true,
+      "cold_original_source_and_integrated_warm_source_build_stage_tests_reports_controls_retained": true,
+      "stage_tree_historical_not_fresh_package_qualified": true
+    },
+    "full_unfiltered_suite_fresh_stage_package_installed_or_release_acceptance": false
+  },
+  "unfiltered_original_target_after_unit_fixes": {
+    "status": "complete-original-target-exit1-structured-reports-retained-failures-open",
+    "original_target": "do-test/check-all",
+    "temporary_filter": null,
+    "persistent_filter_added": false,
+    "workers": 4,
+    "default_components_and_options_preserved": true,
+    "preceding_complete_current_frontier_independently_verified_both_physical_filesystems": true,
+    "full_original_tests_or_release_acceptance": false,
+    "original_make_exit": 1,
+    "initial_LIT_entries": 87566,
+    "structured_report_entries": 117174,
+    "report_granularity": "Structured report entries include expanded GTest cases; do not equate the initial LIT inventory, console shard lines and final report entries.",
+    "per_entry_JSON_counts": {
+      "PASS": 111246,
+      "UNSUPPORTED": 5410,
+      "XFAIL": 269,
+      "XPASS": 3,
+      "FAIL": 239,
+      "UNRESOLVED": 4,
+      "TIMEOUT": 3
+    },
+    "unexpected_report_entries": 249,
+    "unexpected_by_suite": {
+      "AddressSanitizer-x86_64-freebsd-dynamic": 1,
+      "MemorySanitizer-X86_64": 8,
+      "MemorySanitizer-lld-X86_64": 8,
+      "OMPT multiplex": 2,
+      "SanitizerCommon-asan-x86_64-FreeBSD": 1,
+      "SanitizerCommon-msan-x86_64-FreeBSD": 5,
+      "SanitizerCommon-tsan-x86_64-FreeBSD": 1,
+      "SanitizerCommon-ubsan-x86_64-FreeBSD": 1,
+      "ThreadSanitizer-x86_64": 14,
+      "cfi-devirt-lld-thinlto-x86_64": 2,
+      "cfi-devirt-lld-x86_64": 2,
+      "cfi-standalone-lld-thinlto-x86_64": 2,
+      "cfi-standalone-lld-x86_64": 2,
+      "libFuzzer-x86_64-default-FreeBSD": 5,
+      "libomp": 2,
+      "lldb-api": 175,
+      "lldb-shell": 18
+    },
+    "XPASS": [
+      "AddressSanitizer-x86_64-freebsd-dynamic :: TestCases/interception_failure_test.cpp",
+      "MemorySanitizer-X86_64 :: dtls_test.c",
+      "MemorySanitizer-lld-X86_64 :: dtls_test.c"
+    ],
+    "UNRESOLVED": [
+      "lldb-api :: commands/gui/spawn-threads/TestGuiSpawnThreads.py",
+      "lldb-api :: functionalities/rerun_and_expr/TestRerunAndExpr.py",
+      "lldb-api :: lua_api/TestLuaAPI.py",
+      "lldb-api :: tools/lldb-dap/variables/TestDAP_variables.py"
+    ],
+    "TIMEOUT": [
+      "lldb-api :: tools/lldb-dap/attach/TestDAP_attach.py",
+      "lldb-api :: tools/lldb-dap/attach/TestDAP_attachByPortNum.py",
+      "lldb-api :: tools/lldb-dap/disconnect/TestDAP_disconnect.py"
+    ],
+    "all_final_integrity_guards_pass": true,
+    "full_test_completion_cookies_unchanged": true,
+    "json_report": {
+      "sha256": "57754eca62bb4b48ace5a35e2f2280839f3f774282afe0a6320e7be01e067e1e",
+      "bytes": 471945501
+    },
+    "xunit_report": {
+      "sha256": "06fec4fe580f023630bb441051237e7dc4ba611c88b6944d29aa462d95239256",
+      "bytes": 14390942
+    },
+    "complete_failed_frontier_retention": {
+      "archive_sha256": "c1149accaeddb048bfc0c35c85e2177b91ddba6491c73026f11b06f97451f59d",
+      "archive_bytes": 4754030063,
+      "inventory_sha256": "953d8db0e5e63904311a20a3c2606dff0aa4978c669f3d978458932021a9d7f6",
+      "all_nodes_verified": 589383,
+      "node_kinds": {
+        "directory": 83517,
+        "file": 505582,
+        "symlink": 260,
+        "socket": 12,
+        "fifo": 12
+      },
+      "hardlink_groups_verified": 6,
+      "complete_gzip_decode_bytes": 25206374400,
+      "independent_sparky_review": "pass",
+      "independent_madmax_review": "pass",
+      "complete_frontier_before_after_unchanged": true,
+      "stage_tree_historical_not_fresh_package_qualified": true
+    },
+    "fresh_stage_package_installed_canonical_lifecycle_or_release_qualified": false
+  },
+  "nine_fixture_corrections_followup": {
+    "scope": "Forward configured shell into both LLDB LIT environments, use built-in FreeBSD debugserver for DAP, correct CFI anonymous mmap fd, select exact platform OMPT loader diagnostics, and require success for observed passing ASan/MSan variants. Preserve every original compile/program execution and behavioral check; the CFI body corrects its anonymous mmap fd and the OMPT FileCheck invocation selects platform diagnostic prefixes. One new local OMPT config.",
+    "patch_sha256": {
+      "devel/llvm19/files/patch-compiler-rt_test_asan_TestCases_interception__failure__test.cpp": "b7b62ea6b939c0a2952c03780eaa13cb4880605ea2696904cffefbcb10111ede",
+      "devel/llvm19/files/patch-compiler-rt_test_cfi_cross-dso_shadow__is__read__only.cpp": "bf3304c8c8821a95217da78fce95abca63259d7475a1dc111640700d1bea9cc6",
+      "devel/llvm19/files/patch-compiler-rt_test_msan_dtls__test.c": "5a6a627f641a53d821660a1474a31f3ceb70a107b974612f61f98ee8284265f0",
+      "devel/llvm19/files/patch-lldb_packages_Python_lldbsuite_test_tools_lldb-dap_lldbdap__testcase.py": "7da587e77436fcf1c63d849ccaa79f2cb90c86aa5c78bb409eab2df45cae7540",
+      "devel/llvm19/files/patch-lldb_test_API_lit.cfg.py": "6aa16db4ed5124481a3705507b2ef5d136ea611f34906428b80e3f36ea788afb",
+      "devel/llvm19/files/patch-lldb_test_API_tools_lldb-dap_attach_TestDAP__attachByPortNum.py": "20de91aeff638d446c783d582fe51ece7e5c79511df95d7029871243eaf4b374",
+      "devel/llvm19/files/patch-lldb_test_Shell_lit.cfg.py": "6147d18d6d4ea45f105b87eed5f1604b56335d67f1bb17e4de05922423a21bef",
+      "devel/llvm19/files/patch-openmp_runtime_test_ompt_loadtool_tool__available__search_lit.local.cfg": "63f3c7ce9734f90f6465cda55ef0c7ddcb194bee0fd7d30c1c90b1cd4a140951",
+      "devel/llvm19/files/patch-openmp_runtime_test_ompt_loadtool_tool__available__search_tool__available__search.c": "9b728850351f01ab9ffbb6eac09c43d639e1ffc0e87810a708f9b9cb3c73588f"
+    },
+    "fresh_original_checksum_and_full_patch_exit": [
+      0,
+      0
+    ],
+    "patch_fuzz": false,
+    "original_target": "do-test/check-all",
+    "original_make_exit": 1,
+    "explicit_temporary_filter": "(interception_failure_test|dtls_test|shadow_is_read_only|tool_available_search|lldb-api|lldb-shell)",
+    "persistent_filter_added": false,
+    "default_components_options_dependencies_and_four_workers_preserved": true,
+    "selected_LIT_and_report_entries": 1747,
+    "same1747_names_in_previous_full_R74": true,
+    "R74_same_scope_counts": {
+      "TIMEOUT": 3,
+      "UNRESOLVED": 4,
+      "FAIL": 191,
+      "XPASS": 3,
+      "PASS": 1022,
+      "XFAIL": 28,
+      "UNSUPPORTED": 496
+    },
+    "R100_counts": {
+      "PASS": 1040,
+      "UNRESOLVED": 4,
+      "FAIL": 179,
+      "XFAIL": 28,
+      "UNSUPPORTED": 496
+    },
+    "unexpected_entries": 183,
+    "case_transitions": [
+      {
+        "name": "lldb-api :: tools/lldb-dap/attach/TestDAP_attachByPortNum.py",
+        "before": "TIMEOUT",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: tools/lldb-dap/attach/TestDAP_attach.py",
+        "before": "TIMEOUT",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: tools/lldb-dap/disconnect/TestDAP_disconnect.py",
+        "before": "TIMEOUT",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: tools/lldb-server/attach-wait/TestGdbRemoteAttachWait.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: python_api/hello_world/TestHelloWorld.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: functionalities/deleted-executable/TestDeletedExecutable.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: tools/lldb-server/TestGdbRemoteCompletion.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: commands/platform/process/list/TestProcessList.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: functionalities/load_after_attach/TestLoadAfterAttach.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: commands/target/auto-install-main-executable/TestAutoInstallMainExecutable.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: commands/process/attach/attach_denied/TestAttachDenied.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: commands/platform/connect/TestPlatformConnect.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: tools/lldb-dap/launch/TestDAP_launch.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: commands/platform/basic/TestPlatformCommand.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "libomp :: ompt/loadtool/tool_available_search/tool_available_search.c",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: python_api/sbplatform/TestSBPlatform.py",
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      {
+        "name": "AddressSanitizer-x86_64-freebsd-dynamic :: TestCases/interception_failure_test.cpp",
+        "before": "XPASS",
+        "after": "PASS"
+      },
+      {
+        "name": "MemorySanitizer-X86_64 :: dtls_test.c",
+        "before": "XPASS",
+        "after": "PASS"
+      },
+      {
+        "name": "MemorySanitizer-lld-X86_64 :: dtls_test.c",
+        "before": "XPASS",
+        "after": "PASS"
+      },
+      {
+        "name": "lldb-api :: functionalities/thread/exit_during_step/TestExitDuringStep.py",
+        "before": "PASS",
+        "after": "FAIL"
+      }
+    ],
+    "previously_passing_case_now_failed": "lldb-api :: functionalities/thread/exit_during_step/TestExitDuringStep.py",
+    "new_failure_discarded_or_classified_as_flaky": false,
+    "json_report": {
+      "bytes": 8136039,
+      "sha256": "da38d1c36b71e64070d3f3bab9fd9950fedb257ebb28ca9328e7c699c4b95c11"
+    },
+    "xunit_report": {
+      "bytes": 15790875,
+      "sha256": "eab650709e3481fda3dbe67fb6717cd713e1ccd11c25ce726341c98aa896feb1"
+    },
+    "all_final_source_SDK140_rawdb_ports_base_registry_mount_data_guards_pass": true,
+    "test_completion_cookies_unchanged": true,
+    "static_ASan_interception_retains_original_XFAIL": true,
+    "dynamic_ASan_and_both_x86_64_MSan_DTLS_variants_now_required_PASS": true,
+    "CFI_scope": "All four supported original shadow tests complete start and corrected mmap RUNs, then remain FAIL on the later dlopen RUN before its expected crash marker. Four other variants retain original UNSUPPORTED. No complete CFI success claimed.",
+    "complete_failed_frontier_retention": {
+      "archive_sha256": "50c1fc213dea965038ed63a26e078582f139f0961c686ba94845abc6b6554fd1",
+      "archive_bytes": 5029479116,
+      "inventory_sha256": "a9c682045f12954c56516dba24be42cf4b96a8f6da2eccde03863f02f7572cb3",
+      "all_nodes_verified": 749919,
+      "node_kinds": {
+        "directory": 97745,
+        "file": 651873,
+        "symlink": 277,
+        "socket": 12,
+        "fifo": 12
+      },
+      "hardlink_groups_verified": 6,
+      "complete_gzip_decode_bytes": 26549637120
+    },
+    "complete_frontier_before_after_equal": true,
+    "independent_sparky_review": "pass",
+    "independent_madmax_review": "pass",
+    "R108_diagnostic_limitation": "Expression failure reproduced, but expressions was an invalid logging category and command success alone did not detect its error string. Later separate diagnosis uses expr; this original record remains retained.",
+    "complete_unfiltered_fresh_package_installed_canonical_lifecycle_or_release_acceptance": false
+  }
+}

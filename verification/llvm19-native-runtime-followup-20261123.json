@@ -1,0 +1,1802 @@
+{
+  "schema_version": 1,
+  "kind": "native-progress-observations",
+  "status": "partial-full-qualification-open",
+  "origin": "devel/llvm19",
+  "review_base_commit": "54ca58533362bc32da68383503a9f4e700e7a30d",
+  "candidate": {
+    "pkgname": "llvm19-19.1.7_7",
+    "PORTREVISION": 7,
+    "new_package_published": false,
+    "changed_recipe_package_qualified": false,
+    "origin_git_representable_files": {
+      "pkg-descr": {
+        "kind": "file",
+        "sha256": "8015180e9fc7f49f50d42fe6497c07a025d3a965e1744adeabea86629a270ab5",
+        "git_mode": "100644"
+      },
+      "Makefile": {
+        "kind": "file",
+        "sha256": "93b8b8a3d3fdb5bf1e2658bf8fb6e1fbaef35bdd722a46c6532396db505094e7",
+        "git_mode": "100644"
+      },
+      "pkg-plist": {
+        "kind": "file",
+        "sha256": "56af1b70f340bcb1ee828e5046386fb339e203857fddbdf12a99f45fd73258d8",
+        "git_mode": "100644"
+      },
+      "Makefile.MAN1SRCS": {
+        "kind": "file",
+        "sha256": "c0a1073dd38aea0aae3404466fdb12fb160c369e23c5f23a0a4b202c3458eb2b",
+        "git_mode": "100644"
+      },
+      "distinfo": {
+        "kind": "file",
+        "sha256": "a07b870149986db320738778bf7d962a901055152a2fc351dc2bfb3b755fc93b",
+        "git_mode": "100644"
+      },
+      "Makefile.RUNTIMES": {
+        "kind": "file",
+        "sha256": "2900f85a3a55ef78fbd5609eb2ad3b190f3a4d8063e8d4e891f28512e5caaf1f",
+        "git_mode": "100644"
+      },
+      "Makefile.COMMANDS": {
+        "kind": "file",
+        "sha256": "0568760c099d4e9422d8775effd3856c1e9847d327731c05a8930d1772b2887f",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_API_functionalities_data-formatter_data-formatter-stl_libcxx-simulators_unique__ptr_TestDataFormatterLibcxxUniquePtrSimulator.py": {
+        "kind": "file",
+        "sha256": "1c7a7002a04ec21a4dae401beb3892e1a276dcf05fa4c704183a5de81e26adf7",
+        "git_mode": "100644"
+      },
+      "files/patch-openmp_runtime_test_ompt_loadtool_tool__available__search_tool__available__search.c": {
+        "kind": "file",
+        "sha256": "9b728850351f01ab9ffbb6eac09c43d639e1ffc0e87810a708f9b9cb3c73588f",
+        "git_mode": "100644"
+      },
+      "files/patch-backport-3b10e31d3a4a": {
+        "kind": "file",
+        "sha256": "2c117d777dc955dfbaeb5e10cdb1facc64262de7591d55786e77ab59be9ca8ca",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_Language_CPlusPlus_LibCxx.cpp": {
+        "kind": "file",
+        "sha256": "e6a27e2e51fa3ae2da57c7973a57d85a06ea3760ac14a8a144fa18b491264d9f",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_lib_Interpreter_Interpreter.cpp": {
+        "kind": "file",
+        "sha256": "da35cdd92642fd73a01aa0ce829e7f5d5581a936e79026ab591e8eddccb7eca9",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_Language_CPlusPlus_LibCxxVector.cpp": {
+        "kind": "file",
+        "sha256": "2c09264d01f4c1e5702eb147ebba06314e1492aeead3f4eaffd89c2784322089",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_ObjectFile_ELF_ObjectFileELF.h": {
+        "kind": "file",
+        "sha256": "3094741d73ad7e7fa17a448eb8db195457c9d2f00573b8941afa2db2813902f3",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_msan_procctl.cpp": {
+        "kind": "file",
+        "sha256": "afe11c0143bf5169722880dca713e1c49755e0f40c34fa8972257c65f1582578",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_lib_sanitizer__common_sanitizer__linux__libcdep.cpp": {
+        "kind": "file",
+        "sha256": "2d84e5042a1775e0f9ba9a9a270a6845398165cfaed6f35d82d45933df42bdf0",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_lib_sanitizer__common_sanitizer__platform__limits__freebsd.h": {
+        "kind": "file",
+        "sha256": "978d90573b05d5a2a5e4f5ae2923f998d02220ba6909ba8c4281a60a3580baca",
+        "git_mode": "100644"
+      },
+      "files/patch-mlir_unittests_Target_LLVM_CMakeLists.txt": {
+        "kind": "file",
+        "sha256": "a4f2c350d09e02dfe06db3b5f55f7295ed7fe884a913ac88d74ef4842da8641b",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_include_lldb_Symbol_ObjectFile.h": {
+        "kind": "file",
+        "sha256": "643f264f2d514c3a8d49e7ac2c3022f968006f8851b8ff0015cb2af773e24ec2",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_lib_sanitizer__common_sanitizer__platform__limits__freebsd.cpp": {
+        "kind": "file",
+        "sha256": "a98174efa94902e1de2441491ff094924556535544ba4765cb84e4f8d6de4aa5",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutex__lock__destroyed.cpp": {
+        "kind": "file",
+        "sha256": "47a2aec5b1d8ab3d496589e771bb10c8dce5221b764b34cb04cba2b2ec95f5cd",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_Language_CPlusPlus_LibCxxMap.cpp": {
+        "kind": "file",
+        "sha256": "dae7f457069d7a4a8cc0d995abfbea6337a63f574cb61f00d3e0adba12fcfdaa",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_ObjectFile_ELF_ObjectFileELF.cpp": {
+        "kind": "file",
+        "sha256": "952f2d2fd518cbaa3883b1bf989e59affaa09015c92b20c172cfcd95cfe6ee66",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutexset7.cpp": {
+        "kind": "file",
+        "sha256": "aa32d0e59fe506dbbda4ac625831b5a7837bac40dc4291aebb9367e301e2e033",
+        "git_mode": "100644"
+      },
+      "files/patch-openmp_runtime_test_ompt_loadtool_tool__available__search_lit.local.cfg": {
+        "kind": "file",
+        "sha256": "63f3c7ce9734f90f6465cda55ef0c7ddcb194bee0fd7d30c1c90b1cd4a140951",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutexset8.cpp": {
+        "kind": "file",
+        "sha256": "072219bb699561f7c02a96c8b9b23e9a82f8f630178c44918745f1fedd8e7dc0",
+        "git_mode": "100644"
+      },
+      "files/patch-cmake_modules_AddSphinxTarget.cmake": {
+        "kind": "file",
+        "sha256": "3653d036865d677f12de4dc2583fcfc70e218fabda8b7ab9974da86c73197f00",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Core_ModuleList.cpp": {
+        "kind": "file",
+        "sha256": "696c36f9813e759fdf89d52550eccffd6a679fc1f6fab58a5ebd83768abd0ef1",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_cmake_Modules_AddCompilerRT.cmake": {
+        "kind": "file",
+        "sha256": "3b13cb36b64e7a73e5c3b70faf71f6179d99d51a90d89efbae3f4648402047d7",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_bindings_lua_lua-typemaps.swig": {
+        "kind": "file",
+        "sha256": "6d836462ff8f1a07dbed7c0aee5e45fa10684b1d2ebccf47552a2ec65f3d6625",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_Language_CPlusPlus_LibCxxUnorderedMap.cpp": {
+        "kind": "file",
+        "sha256": "db88c8e794951fc6cc11029c14e065fa665b298c9829eade82485af459cfb996",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_Language_CPlusPlus_LibCxxList.cpp": {
+        "kind": "file",
+        "sha256": "43e4af9a8a8921430a4acee1802ec11e241ca861a3605004db1ac2abec19abd9",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_sanitizer__common_TestCases_FreeBSD_capsicum-msan.cpp": {
+        "kind": "file",
+        "sha256": "a2311d32fc54259a0481406e212f1c6f269bc5e48525e8cf669e4c04944e2ff1",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_lib_tsan_tests_CMakeLists.txt": {
+        "kind": "file",
+        "sha256": "33da48312cbbaf95262f135fcfaf85b6cb5a759e7129317b64a37f4a323faf3b",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_tools_clang-format_clang-format.py": {
+        "kind": "file",
+        "sha256": "9dd867da0eb44250d2d4c44a37aeda9d790d7c92ffb1fd8aaaaf4d4f47442505",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_cfi_cross-dso_shadow__is__read__only.cpp": {
+        "kind": "file",
+        "sha256": "bf3304c8c8821a95217da78fce95abca63259d7475a1dc111640700d1bea9cc6",
+        "git_mode": "100644"
+      },
+      "files/patch-llvm_tools_CMakeLists.txt": {
+        "kind": "file",
+        "sha256": "89d99708f7555d6f65a189f7fefdf274521057fe8d2345415347bba2be806800",
+        "git_mode": "100644"
+      },
+      "files/patch-revert-6d7e428df611": {
+        "kind": "file",
+        "sha256": "f0a60f4244734494ee07c08c8c3609473b6e76a05482db729f876eb557758cb9",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutex__destroy__locked2.cpp": {
+        "kind": "file",
+        "sha256": "e2342311105951aafeb2336aaaae1ba707a8bb4a4dac80676f76e626f63b12f7",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_docs_resources_lldbgdbremote.md": {
+        "kind": "file",
+        "sha256": "f03dfcd4cc1a01e0affbc9d8cbce13ac4c93e8671e3b3e8083fcfb5d4ea6b1d2",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_API_tools_lldb-dap_attach_TestDAP__attachByPortNum.py": {
+        "kind": "file",
+        "sha256": "20de91aeff638d446c783d582fe51ece7e5c79511df95d7029871243eaf4b374",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutexset4.cpp": {
+        "kind": "file",
+        "sha256": "31c9fd98b5090976a1c1b7497d33d878f84898b48ae6d3a2c54ea39b42ce30ca",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_sanitizer__common_TestCases_Posix_huge_malloc.c": {
+        "kind": "file",
+        "sha256": "39624d6f5ee0d12ca0e4966404003280da6c9ffc1620006cbce190b7bce1f9ea",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_lib_Driver_ToolChain.cpp": {
+        "kind": "file",
+        "sha256": "9d7fb2bfa5ad734c93365d533b4cbb84a38c1936d1c7c7f19f7378381fa091a2",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_longjmp4.cpp": {
+        "kind": "file",
+        "sha256": "3ce25730aafabbf33296ab723fc22040912023e67f11cdc587ad1def4ad84e6d",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_sanitizer__common_TestCases_FreeBSD_procctl.cpp": {
+        "kind": "file",
+        "sha256": "25034f9c5153874d943fd51ca008fcf46c4b595fa02044c70ebb3dae7f02d1fb",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutexset3.cpp": {
+        "kind": "file",
+        "sha256": "965b183f01c6d2c8a1d9d5bfd6aec68081bfe9abf7b636b9e0ceae2583145730",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutexset1.cpp": {
+        "kind": "file",
+        "sha256": "618de2dfdc2330b202e12fbdb1f623571d27f11fc137224adaa0d2e44626b932",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_lib_tsan_rtl_tsan__interceptors__posix.cpp": {
+        "kind": "file",
+        "sha256": "8da0011467d1b1a919b555eb3da887d67525c9134a9aa7b7b7bb026eacf89114",
+        "git_mode": "100644"
+      },
+      "files/patch-flang_runtime_Float128Math_math-entries.h": {
+        "kind": "file",
+        "sha256": "43de4047d74712a53556807defc44b3c25af7bc822b68d1927ba6cbc3eba4b4e",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_sanitizer__common_TestCases_FreeBSD_capsicum.cpp": {
+        "kind": "file",
+        "sha256": "0aa3ef24b5466517865533d8756cf7ddd10c3e35b1733104dc59a002a6624611",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_API_lit.cfg.py": {
+        "kind": "file",
+        "sha256": "6aa16db4ed5124481a3705507b2ef5d136ea611f34906428b80e3f36ea788afb",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_API_functionalities_memory-region_TestMemoryRegion.py": {
+        "kind": "file",
+        "sha256": "062cebcfa1483d4c33d22c92bc3635bc6dc827aac4dfed1320b8fb9ea7d2c788",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_lib_sanitizer__common_sanitizer__common__interceptors.inc": {
+        "kind": "file",
+        "sha256": "dbe93f0f48996c7d83ea4548b651649e2b4a1cbdaa278f939c9351a275d001eb",
+        "git_mode": "100644"
+      },
+      "files/libc++21-flang_runtime_io-api-minimal.cpp": {
+        "kind": "file",
+        "sha256": "e1d130c0f54915c9851dbbf4f90154dc49316c6053f832252a3ff6183490c2fe",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_lib_Basic_Targets_PPC.h": {
+        "kind": "file",
+        "sha256": "bde111331984db64c139869acd3b7e3e53e556ccadbba6c44799f2f9652a01f7",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_packages_Python_lldbsuite_test_tools_lldb-dap_lldbdap__testcase.py": {
+        "kind": "file",
+        "sha256": "7da587e77436fcf1c63d849ccaa79f2cb90c86aa5c78bb409eab2df45cae7540",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_packages_Python_lldbsuite_test_make_libcxx-simulators-common_compressed__pair.h": {
+        "kind": "file",
+        "sha256": "c1c1b09be1f1ae0ef70145418a01de397d318c452494369879ef5b79fe4c05ce",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_lib_Driver_ToolChains_FreeBSD.cpp": {
+        "kind": "file",
+        "sha256": "2036cfe799d9dd848669c974bb5e5a823411b6caabb0fba298ed0f500ff8f721",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_API_functionalities_memory-region_main.cpp": {
+        "kind": "file",
+        "sha256": "5b23724982cf660a1128f4b31af52e97ba58a252cfb9fb08b8a719d0d8c0bfdc",
+        "git_mode": "100644"
+      },
+      "files/patch-llvm_unittests_Support_CMakeLists.txt": {
+        "kind": "file",
+        "sha256": "570ae7380bc315ef336e38a10ffda01501612ab985b8f7df616908d4ada4c471",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_longjmp3.cpp": {
+        "kind": "file",
+        "sha256": "2041765ca6c1859b3a4c1d8bc60e1ece9e578a929e42458cd048de0f09e6b1f4",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_API_lua__api_TestFileHandle.lua": {
+        "kind": "file",
+        "sha256": "58f7b8cdffd523eb4ec36070cb3890948a0e9b367d1eefc01b1dd7abf2d21604",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_API_functionalities_data-formatter_data-formatter-stl_libcxx-simulators_unique__ptr_main.cpp": {
+        "kind": "file",
+        "sha256": "6d0415fd1b9b8597a96620161c56267ef1780fbc3f31d39d23dbc953a9ad1b04",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_Shell_lit.cfg.py": {
+        "kind": "file",
+        "sha256": "6147d18d6d4ea45f105b87eed5f1604b56335d67f1bb17e4de05922423a21bef",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_API_functionalities_data-formatter_data-formatter-stl_libcxx-simulators_string_TestDataFormatterLibcxxStringSimulator.py": {
+        "kind": "file",
+        "sha256": "a2a9e2a968274f254e87fc00ff5a01624b0dee87e60c6cabc3dbeabe3fae73fa",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_lib_profile_InstrProfilingPlatformLinux.c": {
+        "kind": "file",
+        "sha256": "893b98fd180ad7678fe2e812734185925e8eeeaff60ff67ea380ec2632a62099",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_Language_CPlusPlus_LibCxx.h": {
+        "kind": "file",
+        "sha256": "39eaa6753d9d5b7ae3786d80f132d115c02a780b44e2cfd225ed69fd86620409",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_freebsd-pthread-private-allocator.cpp": {
+        "kind": "file",
+        "sha256": "56a6d56c8e79ba768b24125b6414dca913ed8b82bd2285bba8e758f78a6ba7a4",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutexset2.cpp": {
+        "kind": "file",
+        "sha256": "876be0990242c9dc9da4653ff131554e8d562ed21ab9b557fc1d59182e5acfa8",
+        "git_mode": "100644"
+      },
+      "files/patch-fopenmp.diff": {
+        "kind": "file",
+        "sha256": "7d65cc0feedce7b2e5f9122edafdbcddff60d1e0eb17f96c7a29d1bf80821b4b",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_Process_FreeBSD_NativeProcessFreeBSD.cpp": {
+        "kind": "file",
+        "sha256": "4b1e6424af3504f597dd6362a2ff321a86cf8443be07a8c706d38e081eee0514",
+        "git_mode": "100644"
+      },
+      "files/llvm-wrapper.sh.in": {
+        "kind": "file",
+        "sha256": "18c5b1162c04e24a3509ecd722d341029f3ee26d6d35d4bfb6d4812c97737378",
+        "git_mode": "100644"
+      },
+      "files/xtoolchain.mk.in": {
+        "kind": "file",
+        "sha256": "f9258f96b4b40f3d4c11a7c52cbda077073338f99eb3133635d58329f78aa4c6",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_asan_TestCases_interception__failure__test.cpp": {
+        "kind": "file",
+        "sha256": "b7b62ea6b939c0a2952c03780eaa13cb4880605ea2696904cffefbcb10111ede",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_deadlock__detector__stress__test.cpp": {
+        "kind": "file",
+        "sha256": "c1f73d1060cac9d58819c00836737ad36ff7935e783aa144b1a76c8fd54a0561",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_sanitizer__common_TestCases_Posix_posix_spawn.c": {
+        "kind": "file",
+        "sha256": "11eda552233f4f85923b80b374529e8903e8dacd0b1aa67814cbf72b248027df",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_race__on__mutex.c": {
+        "kind": "file",
+        "sha256": "9b6863c744204ceb4d9a140e809a18ab9c41143dc511a9df4837a5dc43913c08",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_examples_synthetic_libcxx.py": {
+        "kind": "file",
+        "sha256": "7e3b96c5fdd7fd484c83f359305be9194be0612ffd4f19997aa073c85238a0d8",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutexset5.cpp": {
+        "kind": "file",
+        "sha256": "da7e66eddd1c02872a950732bb1fd0caaa016ab962e359b2ad93eb841da96e4b",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Target_Process.cpp": {
+        "kind": "file",
+        "sha256": "03727621c49a2c89bc1f2f918a634f94774f04b50739e2f4853fb34a9aec3e62",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_lib_sanitizer__common_sanitizer__procmaps__bsd.cpp": {
+        "kind": "file",
+        "sha256": "75d46bb8c2f4602853076677b07c060d7e4dd13b6435508065fdbf1411ddf683",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_Process_FreeBSD_NativeProcessFreeBSD.h": {
+        "kind": "file",
+        "sha256": "cfbc310ce697b9ade5b03790b7fba8d88c90d7cf05885adb4d8e782067470784",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_CMakeLists.txt": {
+        "kind": "file",
+        "sha256": "9e02acc1cc04996ab4fe26fde606a534d512ae9d7eebb03b2cd666fc5172f301",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_lib_CodeGen_CGBuiltin.cpp": {
+        "kind": "file",
+        "sha256": "b8f8e244646c2d248c95beab2f85f8c3886aa4f9469e94c888191f27445e70b7",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_tsan_mutex__destroy__locked.cpp": {
+        "kind": "file",
+        "sha256": "078d365cbc232a69fd59dd11ebd5db913f92a1b582d21ca080bdf921d947c1e5",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_API_python__api_event_TestEvents.py": {
+        "kind": "file",
+        "sha256": "8b5326dcd6d7308db01d5f2fcd8e233a845843c29071413a3a55ea37b54a50b8",
+        "git_mode": "100644"
+      },
+      "files/patch-compiler-rt_test_msan_dtls__test.c": {
+        "kind": "file",
+        "sha256": "5a6a627f641a53d821660a1474a31f3ceb70a107b974612f61f98ee8284265f0",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_Shell_ObjectFile_ELF_auxiliary-lookup.test": {
+        "kind": "file",
+        "sha256": "aeff9edd04cfb934dde976f789fe057d4041948ce1f5e50e7ad324807d13d990",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_tools_clang-format_git-clang-format": {
+        "kind": "file",
+        "sha256": "86c1048775129a50d1c0492a55b9cc7bbab47b71b0070f9395dc10523cda1f60",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_test_API_functionalities_data-formatter_data-formatter-stl_libcxx-simulators_string_main.cpp": {
+        "kind": "file",
+        "sha256": "cb8f13955ce413d7f15aea30aa279a6ce789e9345cb426aafa67d39170876cda",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_test_Driver_freebsd-shared-asan.c": {
+        "kind": "file",
+        "sha256": "f3d25790589f08a6a21775b429ed18849ce3b6bba5bd582df64b0c92aa66f8a4",
+        "git_mode": "100644"
+      },
+      "files/patch-lldb_source_Plugins_Process_gdb-remote_GDBRemoteCommunicationServerLLGS.cpp": {
+        "kind": "file",
+        "sha256": "961daf1202972c7e972960777af099bfa44184c9ea3f24efd88eece102f9cacf",
+        "git_mode": "100644"
+      },
+      "files/patch-clang_tools_clang-format_clang-format-sublime.py": {
+        "kind": "file",
+        "sha256": "a173ac8beddfb54eee2502c9825722f997374dc190e4d2b91806594d52901bca",
+        "git_mode": "100644"
+      }
+    },
+    "identity_scope": "All94 current origin Git bodies/types/literal links/executable bits match native R419 full-patch view. Previous93-file R382 identity remains historical. Full native owner/mode/flags metadata is checked separately from Git projection.",
+    "latest_normal_qualification_scope": "Current94-file origin: R421 normal configure/default all build and R427 actual normal CLI/Python/search/formatter/server runtime pass. R428 original selected target is running with no result claimed. Latest completed R387 predates newest one-line patch and retains7 unsuccessful outcomes; no package/installed qualification."
+  },
+  "native_boundary": {
+    "platform": "FreeBSD16.0-amd64",
+    "observed_dependency_packages": 140,
+    "native_recipe_pkgname": "llvm19-19.1.7_6",
+    "root_llvm_package_installed": false,
+    "make_jobs": 4,
+    "full_original_options_and_dependencies_preserved": true,
+    "canonical_Component_or_SDK_admission": false,
+    "lifecycle_receipt": false,
+    "complete_toolchain_provenance_admitted": false,
+    "native_recipe_pkgname_scope": "Historical R164/R228 used revision6. Normal R421 build, R427 runtime and completed R428 failed original selected target use revision7 with frozen pre-synchronization source/SDK/ports views. Six unsuccessful outcomes remain. No fresh matching-CURRENT/shared-framework/package/installed acceptance."
+  },
+  "default_build": {
+    "producer": "R222",
+    "original_default_and_named_unit_build_exits": [
+      0,
+      0
+    ],
+    "all_final_integrity_guards_pass": true,
+    "source_inventory_sha256": "d2640b04e0fcb8405851784a5a7de4cb54ac9a33fb30335d2d259ca3820bd68f"
+  },
+  "ELF_auxiliary_TSan_and_dlopen_selected_target": {
+    "producer": "R164",
+    "original_make_exit": 1,
+    "entries": 1761,
+    "counts": {
+      "UNRESOLVED": 4,
+      "FAIL": 15,
+      "PASS": 1223,
+      "XFAIL": 27,
+      "UNSUPPORTED": 492
+    },
+    "FAIL_to_PASS": 161,
+    "PASS_to_FAIL": 1,
+    "new_failure": "lldb-api :: python_api/event/TestEvents.py",
+    "new_ELF_auxiliary_lookup_regression": "PASS",
+    "all_fourteen_selected_TSan_originals_including_neighbor": "PASS",
+    "original_MSan_dlerror_and_dlopen_executable_controls": "PASS",
+    "full_original_Lldb_name_set_preserved": true,
+    "all_final_integrity_guards_pass": true,
+    "json_report_sha256": "510d92879c35e166c42c4430e2207ccf7e339c7336128710867b898456406955",
+    "shared_names_with_R100": 1734
+  },
+  "Capsicum_selected_original_target": {
+    "producer": "R228",
+    "original_make_exit": 0,
+    "counts": {
+      "PASS": 17,
+      "UNSUPPORTED": 3
+    },
+    "all_four_original_Capsicum_names": "PASS",
+    "new_MSan_regression": "PASS",
+    "new_non_MSan_variants": "UNSUPPORTED: Missing required feature(s): msan",
+    "json_report_sha256": "55533f757d330bfedbf085a31e3a8943e1af340637577f998d5bf0618caf3e4b",
+    "xunit_report_sha256": "91f6192b035ff24c571bb042fbdafed76a947a950d85f132e818e55dc821c0c0",
+    "xunit_filter_exclusions_not_executed": 86008,
+    "all_final_integrity_guards_pass": true
+  },
+  "shadow_listener_regression": {
+    "producer_original": "R241",
+    "original_methods": "3PASS1FAIL",
+    "original_failure": "stdout notification with stopped payload counted as a stop-hook event; actual state-change event had not yet been consumed",
+    "producer_negative": "R265",
+    "negative_original_helper_exit": 1,
+    "required_negative_assertion_observed": true,
+    "producer_positive": "R266",
+    "positive_corrected_helper_exit": 0,
+    "PASS_methods": [
+      "test_add_listener_to_broadcaster",
+      "test_listen_for_and_print_event",
+      "test_shadow_listener",
+      "test_shadow_listener_ignores_stdout",
+      "test_wait_for_event"
+    ],
+    "all_four_original_method_ASTs_preserved": true,
+    "all_original_helper_assertion_ASTs_and_timeout_values_preserved": true,
+    "new_regression_AST_identical_between_negative_and_positive": true,
+    "compiler_debugger_SDK_base_registry_mount_source_and_cookie_guards_pass": true,
+    "positive_source_sha256": "97f1ad9cb107395a012a544faefa0ec355fb6c58779cdde7ade2f74116c6cd13",
+    "positive_source_inventory_sha256": "5b0c82bac54df0000301f3d755c4eaf0ccbf3a5a712f2577127912f3c5d1b984",
+    "earlier_failed_fixtures_and_parent_gates_retained": true,
+    "normal_ports_target_after_correction_qualified": false
+  },
+  "Lua_executable_and_remaining_failure": {
+    "producer": "R267",
+    "original_unresolved_input": "Lua_EXECUTABLE-NOTFOUND; upstream searches lua5.3 while existing FreeBSD dependency provides lua53",
+    "candidate_CMake_binding": "-DLua_EXECUTABLE=${LUA_BASE}/bin/${LUA_CMD}",
+    "observed_interpreter_sha256": "8966f5b8417c67829a26b2d68ecd0d643c9d2b877383db246374b8747269d618",
+    "original_Lua_API_case": "FAIL",
+    "completed_original_scripts": [
+      "TestBreakpointAPI.lua",
+      "TestComprehensive.lua"
+    ],
+    "crashed_original_script": "TestFileHandle.lua",
+    "crashed_group_first_case": "TestLegacyFileErr",
+    "Lua_subprocess_returncode": -11,
+    "not_reached": [
+      "TestProcessAPI.lua"
+    ],
+    "all_final_integrity_guards_pass": true,
+    "no_complete_Lua_API_success_claimed": true
+  },
+  "fresh_original_patch": {
+    "producer": "R268",
+    "original_checksum_patch_exits": [
+      0,
+      0
+    ],
+    "zero_fuzz": true,
+    "complete_fresh_source_nodes": 160706,
+    "complete_fresh_source_inventory_sha256": "6db3bfe2c537f55b2e2b885c0bb0fc97946f450f03bea231db5919f8986cd20d",
+    "reference_fresh_source_nodes": 160705,
+    "only_source_changes": [
+      "lldb/test/API/python_api/event/TestEvents.py",
+      "lldb/test/API/python_api/event/TestEvents.py.orig exact original backup"
+    ],
+    "all_other_body_type_owner_mode_flag_and_literal_link_entries_equal": true,
+    "actual_Lua_binding": "-DLua_EXECUTABLE=/usr/local/bin/lua53",
+    "default_options_dependencies_jobs_and_test_settings_preserved": true,
+    "original_view_and_cold_source_registry_base_mount_guards_pass": true,
+    "new_recipe_configure_build_package_qualified": false
+  },
+  "retained_complete_frontiers": [
+    {
+      "producer": "R194",
+      "scope": "Complete failed R164 selected-test frontier",
+      "nodes": 589230,
+      "archive_sha256": "52db664aa420e8425c1dda112b45c94162a1dad61a7e7a57ee895b2f1ffd687b",
+      "independent_two_physical_host_verification": "PASS"
+    },
+    {
+      "producer": "R216",
+      "scope": "Cold Capsicum source, failed setups and eight original object compiles",
+      "nodes": 393614,
+      "archive_sha256": "315fa1677640e3b7728fcabdfe1e858bd093f1e33b716d7d89ef56d0f6549637",
+      "independent_two_physical_host_verification": "PASS"
+    },
+    {
+      "producer": "R238",
+      "scope": "Complete post-R228 tested build before event-helper correction",
+      "nodes": 589235,
+      "archive_sha256": "c7dc2028c99313559b47d9caa806b3ce03711a503faca82bd8fae8409909c286",
+      "independent_two_physical_host_verification": "PASS"
+    },
+    {
+      "producer": "R284",
+      "scope": "Full event/Lua failed frontier including source/build, R184/R268 ports, fresh source, complete SDK140 prefix/raw database and original failed controls; predates isolated Lua candidate probes.",
+      "nodes": 1065921,
+      "archive_sha256": "c3c9afa3d1eb4c5a5ac62bd40e071a560f6b6974bcadf04a1cead3f682d371bb",
+      "inventory_sha256": "843dd31f074c380b1be5900c164a08c69a67601c2e8ddae65b992735e9883b33",
+      "independent_two_physical_host_verification": "PASS",
+      "source_and_SDK_before_after_equality": true
+    },
+    {
+      "producer": "R325",
+      "scope": "Complete normally configured revision7 warm source/build/historical stage, untouched original cookies, full SDK140 prefix/raw database, frozen ports/cold sources and all twenty Lua controls. Predates R327 normal selected tests and libc++ compatibility probes.",
+      "nodes": 1620278,
+      "archive_bytes": 6434106847,
+      "archive_sha256": "bb02021b19038fecad556733977703ffe18034a5237700c75e4d12c2c5637e95",
+      "inventory_sha256": "fd0dafbd1e8c9b3a8779370a4abe17502f2993fad022cd6659b13fcd26beec29",
+      "independent_two_physical_host_verification": "PASS",
+      "source_and_SDK_before_after_equality": true,
+      "recovery_sidecar_and_original_helpers_verified_both_hosts": true
+    },
+    {
+      "producer": "R347",
+      "scope": "Complete failed normal R327 source/build/historical stage, original cookies, full SDK140 prefix/raw database, frozen views/cold sources/Lua controls, current-libc++ baselines and initial private candidate with failed diagnostics. Later corrected candidate/current-layout/legacy matrix and R350/R360 cold trees remain separate.",
+      "nodes": 1620504,
+      "archive_bytes": 6445199318,
+      "archive_sha256": "3b67cf68656a66dd8c3e22474b11a7ca5ff82fd42092b45a0acd2f878dfae7e9",
+      "inventory_sha256": "fd9f1eb3788816fdf072dc2514e215798223e460cf52159e03bb54101e47eb9a",
+      "independent_two_physical_host_verification": "PASS",
+      "source_and_SDK_before_after_equality": true,
+      "recovery_sidecar_and_original_helpers_verified_both_hosts": true
+    },
+    {
+      "producer": "R378",
+      "scope": "Complete R365 failed normal selected frontier and R355 normally configured warmsource/build/historicalstage, fullSDK140, frozenviews/coldsource and controls throughR373; laterR377/R379/R382 remain separately retained. All7failed/unresolved original outcomes and original report-review error plus independent corrected review retained.",
+      "nodes": 2408651,
+      "archive_bytes": 7406193277,
+      "archive_sha256": "d116927604e0ed73938f0a516250a6fab8a648a03929ee8e87503fe9d9f6b75e",
+      "inventory_sha256": "bbc35277788914e9cf1aa3c66579f5a00f53a110fca6177eca6b906a97f13e75",
+      "hardlink_groups": 14,
+      "independent_two_physical_host_verification": "PASS",
+      "source_and_SDK_before_after_equality": true,
+      "recovery_sidecar_and_original_helpers_verified_both_hosts": true,
+      "extraction_or_overlay_performed": false
+    }
+  ],
+  "remaining_gates": [
+    "Resolve the six retained R428 unsuccessful outcomes, including the original thread-exit PASS-to-FAIL change. Both memory-search files now PASS all17 original methods; all1769 prior names and original assertions/skips remain. Preserve the complete new tested frontier before any warm source/product/SDK mutation.",
+    "Full unfiltered original suite after all repairs; retained R74 full run remains failed with249 unexpected entries.",
+    "Remaining LLDB, sanitizer, GNU libatomic, CFI, libFuzzer and OpenMP defects.",
+    "Fresh stage, license/SBOM hooks, check-plist/package and installed compiler consumers after final repairs.",
+    "Independent sealed-product and disposable VM install/update/reboot/rollback acceptance.",
+    "Matching CURRENT source/toolchain and full ARM platform qualification.",
+    "Canonical per-unit Component/SDK/provenance/lifecycle and complete1.6 release acceptance."
+  ],
+  "raw_native_evidence": "Retained privately; this JSON summarizes observed commands and results and is not a canonical execution receipt.",
+  "Lua_file_dispatch_followup": {
+    "original_crash_producer": "R280",
+    "original_Lua_SIGSEGV_reproduced": true,
+    "original_backtrace": [
+      "libc string comparison with null name",
+      "SWIG_TypeCheck(char const*, swig_type_info*)",
+      "_wrap_SBDebugger_SetErrorFile(lua_State*)"
+    ],
+    "cause": "Generic SBFile conversion interprets native Lua FILE userdata as SWIG userdata before exact FileSP branch.",
+    "candidate": "Initial priority-only candidate: retain original generic conversion/null checks with lower priority than exact native FILE typecheck.",
+    "generated_dispatchers_producer": "R291",
+    "all_three_setters_exact_FILE_before_generic_SBFile": true,
+    "isolated_original_compile_and_link_producer": "R293",
+    "original_compile_and_link_exits": [
+      0,
+      0
+    ],
+    "all_original_link_inputs_and_warm_products_unchanged": true,
+    "private_liblldb_sha256": "b9104e474a6fd46026e8741da07334c48780e56219c1fe6d0a21852115e6546f",
+    "original_unchanged_Lua_scripts_producer": "R297",
+    "original_script_results": [
+      {
+        "script": "TestBreakpointAPI.lua",
+        "exit": 0,
+        "PASS_methods": [
+          "TestBreakpointFrame",
+          "TestBreakpointHitCount",
+          "TestBreakpointIsValid",
+          "TestTargetDelete"
+        ]
+      },
+      {
+        "script": "TestComprehensive.lua",
+        "exit": 0,
+        "PASS_methods": [
+          "Test0_CreateTarget",
+          "Test1_Breakpoint",
+          "Test2_Launch",
+          "Test3_BreakpointFindVariables",
+          "Test3_RawData",
+          "Test4_ProcessExit",
+          "Test5_FileOutput"
+        ]
+      },
+      {
+        "script": "TestFileHandle.lua",
+        "exit": 0,
+        "PASS_methods": [
+          "TestLegacyFileErr",
+          "TestLegacyFileOut",
+          "TestLegacyFileOutScript"
+        ]
+      },
+      {
+        "script": "TestProcessAPI.lua",
+        "exit": 0,
+        "PASS_methods": [
+          "TestProcessLaunch",
+          "TestProcessLaunchSimple"
+        ]
+      }
+    ],
+    "original_methods_observed": 16,
+    "all_final_integrity_guards_pass": true,
+    "new_file_contract_regression_runtime_qualified": false,
+    "normal_original_ports_target_qualified": false,
+    "isolated_controller_failures_retained": [
+      "R295: method-name parser captured final newline; first original script itself exits0.",
+      "R298: literal shlib directory comparison rejects expected trailing slash before file-contract execution.",
+      "R302: required R298 parent-success gate rejects; no test fixture or test execution.",
+      "R304: corrected directory check passes; native/wrapped input and six invalid values pass, then required closed-file rejection fails. All final guards pass."
+    ]
+  },
+  "Lua_closed_handle_followup": {
+    "required_negative_contract_producer": "R304",
+    "explicit_API_status_probe_producer": "R309",
+    "all_three_closed_Lua_file_setters_return_success": true,
+    "underlying_Lua_contract_source": "https://www.lua.org/source/5.3/liolib.c.html",
+    "cause": "Lua closes a stream by clearing closef; FILE pointer may remain non-null. NativeFile validity alone does not reject the closed Lua handle.",
+    "candidate": "Check closef before constructing NativeFile, retaining existing Invalid file Lua error.",
+    "generation_producer": "R308",
+    "closed_input_checks_generated": 20,
+    "private_original_compile_link_producer": "R310",
+    "private_compile_and_link_exits": [
+      0,
+      0
+    ],
+    "private_liblldb_sha256": "482914cf8d3bdbf803fa84e34683274b210419ecebb73a7362412f8e0e68de4d",
+    "all_original_link_inputs_warm_products_and_dependency_outputs_unchanged": true,
+    "original_methods_plus_added_regression_qualified": true,
+    "earlier_API_probe_controller_failure_retained": "R307 expected nil return, but setters return SBError; raw pcall true results retained. R309 explicitly checks SBError.Success() for all three setters.",
+    "runtime_qualification_scope": "Private original-command link candidate only; normal ports target/package still open.",
+    "runtime_producer": "R312",
+    "original_methods_retained": 16,
+    "added_contract_methods": 1,
+    "methods_observed": 17,
+    "original_script_results": [
+      {
+        "script": "TestBreakpointAPI.lua",
+        "exit": 0,
+        "PASS_methods": [
+          "TestBreakpointFrame",
+          "TestBreakpointHitCount",
+          "TestBreakpointIsValid",
+          "TestTargetDelete"
+        ]
+      },
+      {
+        "script": "TestComprehensive.lua",
+        "exit": 0,
+        "PASS_methods": [
+          "Test0_CreateTarget",
+          "Test1_Breakpoint",
+          "Test2_Launch",
+          "Test3_BreakpointFindVariables",
+          "Test3_RawData",
+          "Test4_ProcessExit",
+          "Test5_FileOutput"
+        ]
+      },
+      {
+        "script": "TestFileHandle.lua",
+        "exit": 0,
+        "PASS_methods": [
+          "TestFileOverloadContracts",
+          "TestLegacyFileErr",
+          "TestLegacyFileOut",
+          "TestLegacyFileOutScript"
+        ]
+      },
+      {
+        "script": "TestProcessAPI.lua",
+        "exit": 0,
+        "PASS_methods": [
+          "TestProcessLaunch",
+          "TestProcessLaunchSimple"
+        ]
+      }
+    ],
+    "Lua_and_Python_resolve_same_candidate_library": true,
+    "all_final_integrity_guards_pass": true,
+    "new_regression_source_sha256": "4d98a982c3df11831aa974f6a6b0fb54f83748ff1ffb57ce727ae6fa279bfc8f"
+  },
+  "Lua_binding_fresh_original_patch": {
+    "producer": "R313",
+    "pkgname": "llvm19-19.1.7_7",
+    "original_checksum_patch_exits": [
+      0,
+      0
+    ],
+    "zero_fuzz": true,
+    "complete_fresh_source_nodes": 160708,
+    "complete_fresh_source_inventory_sha256": "ea2f7ef397c914e2d95c888ffc80af14f8541e60c3b65c44ef6040eaeeda9f37",
+    "reference": "R268 complete160706-node fresh source",
+    "only_source_changes": [
+      "lldb/bindings/lua/lua-typemaps.swig",
+      "lldb/test/API/lua_api/TestFileHandle.lua",
+      "exact original .orig backups for those two files"
+    ],
+    "all_other_full_source_bodies_types_owners_modes_flags_and_literal_links_equal": true,
+    "complete_public_origin_Git_file_identity_matches": true,
+    "default_options_dependencies_jobs_and_test_settings_preserved": true,
+    "all_final_integrity_guards_pass": true,
+    "normal_configure_build_test_package_qualified": false
+  },
+  "normal_revision7_configure_build": {
+    "producer": "R323",
+    "pkgname": "llvm19-19.1.7_7",
+    "original_make_configure_build_exits": [
+      0,
+      0
+    ],
+    "make_jobs": 4,
+    "default_options_dependencies_preserved": true,
+    "fresh_owned_configure_build_cookies": true,
+    "all_original_top_level_completion_cookies_preserved": true,
+    "generated_SUB_FILES_actor_ownership_scope": "Only private WRKDIR and actual metadata-selected llvm-wrapper.sh/xtoolchain.mk; original mode/flags/body preserved before normal regeneration. R316/R319 permission failures retained.",
+    "configured_and_generated_LIT_Lua_executable": "/usr/local/bin/lua53",
+    "normal_liblldb_sha256": "482914cf8d3bdbf803fa84e34683274b210419ecebb73a7362412f8e0e68de4d",
+    "complete_source_inventory_sha256": "b02d04b35d38e4681c58288f3a91437f4278f8696968f676a7b793a4f8bfb0fe",
+    "all_final_integrity_guards_pass": true,
+    "candidate_scope": "Historical R323/R327 revision7 before twelve libc++ additions. Later R355/R365 cover those additions; R385/R386 cover all six newer memory-region additions in normal build/runtime. New original selected tests and package acceptance remain pending."
+  },
+  "normal_revision7_selected_target": {
+    "producer": "R327",
+    "original_make_exit": 1,
+    "entries": 1769,
+    "counts": {
+      "UNRESOLVED": 3,
+      "FAIL": 14,
+      "PASS": 1230,
+      "XFAIL": 27,
+      "UNSUPPORTED": 495
+    },
+    "all_1761_original_names_retained": true,
+    "additional_Capsicum_variants": {
+      "SanitizerCommon-asan-x86_64-FreeBSD :: FreeBSD/capsicum-msan.cpp": "UNSUPPORTED",
+      "SanitizerCommon-asan-x86_64-FreeBSD :: FreeBSD/capsicum.cpp": "PASS",
+      "SanitizerCommon-msan-x86_64-FreeBSD :: FreeBSD/capsicum-msan.cpp": "PASS",
+      "SanitizerCommon-msan-x86_64-FreeBSD :: FreeBSD/capsicum.cpp": "PASS",
+      "SanitizerCommon-tsan-x86_64-FreeBSD :: FreeBSD/capsicum-msan.cpp": "UNSUPPORTED",
+      "SanitizerCommon-tsan-x86_64-FreeBSD :: FreeBSD/capsicum.cpp": "PASS",
+      "SanitizerCommon-ubsan-x86_64-FreeBSD :: FreeBSD/capsicum-msan.cpp": "UNSUPPORTED",
+      "SanitizerCommon-ubsan-x86_64-FreeBSD :: FreeBSD/capsicum.cpp": "PASS"
+    },
+    "shared_status_changes": {
+      "lldb-api :: lua_api/TestLuaAPI.py": {
+        "before": "UNRESOLVED",
+        "after": "PASS"
+      },
+      "lldb-api :: python_api/event/TestEvents.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      }
+    },
+    "remaining_unexpected": {
+      "lldb-api :: commands/gui/spawn-threads/TestGuiSpawnThreads.py": "UNRESOLVED",
+      "lldb-api :: qemu/TestQemuLaunch.py": "FAIL",
+      "lldb-api :: commands/process/detach-resumes/TestDetachResumes.py": "FAIL",
+      "lldb-api :: tools/lldb-dap/evaluate/TestDAP_evaluate.py": "FAIL",
+      "lldb-api :: tools/lldb-dap/variables/TestDAP_variables.py": "UNRESOLVED",
+      "lldb-api :: python_api/find_in_memory/TestFindRangesInMemory.py": "FAIL",
+      "lldb-api :: functionalities/thread/exit_during_step/TestExitDuringStep.py": "FAIL",
+      "lldb-api :: python_api/find_in_memory/TestFindInMemory.py": "FAIL",
+      "lldb-api :: tools/lldb-server/TestGdbRemoteSaveCore.py": "FAIL",
+      "lldb-api :: functionalities/data-formatter/data-formatter-disabling/TestDataFormatterDisabling.py": "FAIL",
+      "lldb-api :: functionalities/data-formatter/data-formatter-advanced/TestDataFormatterAdv.py": "FAIL",
+      "lldb-api :: functionalities/data-formatter/stringprinter/TestStringPrinter.py": "FAIL",
+      "lldb-api :: commands/expression/call-function/TestCallStdStringFunction.py": "FAIL",
+      "lldb-api :: functionalities/data-formatter/data-formatter-skip-summary/TestDataFormatterSkipSummary.py": "FAIL",
+      "lldb-api :: functionalities/rerun_and_expr/TestRerunAndExpr.py": "UNRESOLVED",
+      "lldb-api :: python_api/sbvalue_persist/TestSBValuePersist.py": "FAIL",
+      "lldb-shell :: Expr/TestObjCInCXXContext.test": "FAIL"
+    },
+    "json_report_sha256": "a537fe9b8814644c8519531a2a6dfa3e9af3a8f0877a04fb6aebc48618da943f",
+    "xunit_report_sha256": "e49bdeecd9472726ada9e5f66c66ce00f71b7ef4df784c62a11b5a5993298072",
+    "independent_JSON_XML_body_review": "PASS; all1769 selected names and status families match;84259 explicitly filtered XML cases remain excluded. XFAIL uses successful xunit encoding and is distinguished by original lit JSON.",
+    "all_final_integrity_guards_pass": true,
+    "full_unfiltered_suite_qualified": false,
+    "candidate_scope": "Historical R323/R327 revision7 before twelve libc++ additions. Later R355/R365 cover those additions; R385/R386 cover all six newer memory-region additions in normal build/runtime. New original selected tests and package acceptance remain pending."
+  },
+  "private_current_libcxx_layout_followup": {
+    "baseline_producers": [
+      "R326",
+      "R330"
+    ],
+    "baseline": "Actual normal R323 LLDB fails current base string summaries and multiple container counts. Same R330 program self-checks its constructed data successfully; native raw string/vector memory independently agrees.",
+    "source_candidate_publicly_integrated": true,
+    "private_build_producer": "R345",
+    "original_five_object_compiles_archive_shared_and_CLI_link_exits": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "all_other_archive_members_and_original_ELF_dependency_contracts_preserved": true,
+    "current_layout_runtime_producer": "R346",
+    "unchanged_baseline_executable_sha256": "2d7dc074e60978cbe36d1897d6e272497e52e23d87c99d5c348723cd9335a958",
+    "actual_private_CLI_mapped_library_and_Python_binding_identity": "PASS",
+    "all_eleven_values_summaries_counts_and_typed_payloads": "PASS",
+    "unordered_map_initial_private_candidate_failure": "R342 size2 exposed empty wrapper values; revised R345 uses actual table value_type instead of an obsolete forward-declared __hash_value_type. Original failed evidence retained.",
+    "legacy_matrix_producer": "R348",
+    "string_layout_combinations": 60,
+    "unique_pointer_pair_layouts": 5,
+    "legacy_matrix_passed": 65,
+    "legacy_matrix_failed": 0,
+    "original_simulator_assertions_retained": true,
+    "both_unique_pointer_contents_and_stateful_deleter_additionally_checked": true,
+    "all_selected_original_sources_headers_products_and_build_metadata_unchanged": true,
+    "owned_runtime_jails_removed": true,
+    "upstream_references": [
+      "https://github.com/llvm/llvm-project/pull/155153",
+      "https://github.com/llvm/llvm-project/commit/d5e610a6dc8491a9fd6908fb10e4fae65691ed95"
+    ],
+    "upstream_source_bytes_and_Git_blobs_bound_to_commit": "d5e610a6dc8491a9fd6908fb10e4fae65691ed95",
+    "normal_original_ports_patch_build_test_package_acceptance": false,
+    "integration_scope": "Twelve proposed port patches; no merge/package or normal build/test qualification from private runtime proof."
+  },
+  "libcxx_layout_fresh_original_patch": {
+    "producer": "R350",
+    "original_checksum_patch_exits": [
+      0,
+      0
+    ],
+    "zero_fuzz": true,
+    "complete_fresh_source_nodes": 160720,
+    "complete_fresh_source_inventory_sha256": "cec684f4e9e1a227566433bb40f5fdbf2974ec651f04964d6b747372d930511c",
+    "reference": "R313 complete160708-node fresh source",
+    "only_source_changes": {
+      "lldb/test/API/functionalities/data-formatter/data-formatter-stl/libcxx-simulators/string/main.cpp": {
+        "patch_name": "patch-lldb_test_API_functionalities_data-formatter_data-formatter-stl_libcxx-simulators_string_main.cpp",
+        "patch_sha256": "cb8f13955ce413d7f15aea30aa279a6ce789e9345cb426aafa67d39170876cda",
+        "original_source_sha256": "64586eef789f4d86c13034c5b4acbc4399063af064291f05a71bcce3faa2cc3c",
+        "candidate_source_sha256": "b300c45a693052fac4db3d59289a0ebd1ceb05eb938673c79566513e0ad09e78"
+      },
+      "lldb/test/API/functionalities/data-formatter/data-formatter-stl/libcxx-simulators/string/TestDataFormatterLibcxxStringSimulator.py": {
+        "patch_name": "patch-lldb_test_API_functionalities_data-formatter_data-formatter-stl_libcxx-simulators_string_TestDataFormatterLibcxxStringSimulator.py",
+        "patch_sha256": "a2a9e2a968274f254e87fc00ff5a01624b0dee87e60c6cabc3dbeabe3fae73fa",
+        "original_source_sha256": "4672dc64090c8f3a84907030f1b9133525f01c14b96285853ccc6e41f31d2132",
+        "candidate_source_sha256": "ef340bf10889891f114c7aab2f18392a8f8aad5e5459bd58516bfc3e3e99894a"
+      },
+      "lldb/test/API/functionalities/data-formatter/data-formatter-stl/libcxx-simulators/unique_ptr/main.cpp": {
+        "patch_name": "patch-lldb_test_API_functionalities_data-formatter_data-formatter-stl_libcxx-simulators_unique__ptr_main.cpp",
+        "patch_sha256": "6d0415fd1b9b8597a96620161c56267ef1780fbc3f31d39d23dbc953a9ad1b04",
+        "original_source_sha256": "4ac1c686174b95f7259f4a6308fa2917683c171b4266751e3962ca167314d87b",
+        "candidate_source_sha256": "d0480e869506bf0d48dcc6996e07b7277b369ecef1501da36d8fb98acb2461fb"
+      },
+      "lldb/test/API/functionalities/data-formatter/data-formatter-stl/libcxx-simulators/unique_ptr/TestDataFormatterLibcxxUniquePtrSimulator.py": {
+        "patch_name": "patch-lldb_test_API_functionalities_data-formatter_data-formatter-stl_libcxx-simulators_unique__ptr_TestDataFormatterLibcxxUniquePtrSimulator.py",
+        "patch_sha256": "1c7a7002a04ec21a4dae401beb3892e1a276dcf05fa4c704183a5de81e26adf7",
+        "original_source_sha256": "c8a64cb7333553fe285b3d15b3509f45ba3efc6045f524c55384aec77ef7f5de",
+        "candidate_source_sha256": "08e62e8c319700ba441d50b31cdfa872cd5401fb71b32d5fa33ddd9bbf2d3be1"
+      },
+      "lldb/examples/synthetic/libcxx.py": {
+        "patch_name": "patch-lldb_examples_synthetic_libcxx.py",
+        "patch_sha256": "7e3b96c5fdd7fd484c83f359305be9194be0612ffd4f19997aa073c85238a0d8",
+        "original_source_sha256": "aa7fbc267ca7231badec651ceab63adf8472290a5581125c48a1f0e881d8220f",
+        "candidate_source_sha256": "389bfdc243bba50fd77380c687c27130802df9123e4174d9deddf7be503b305b"
+      },
+      "lldb/source/Plugins/Language/CPlusPlus/LibCxx.h": {
+        "patch_name": "patch-lldb_source_Plugins_Language_CPlusPlus_LibCxx.h",
+        "patch_sha256": "39eaa6753d9d5b7ae3786d80f132d115c02a780b44e2cfd225ed69fd86620409",
+        "original_source_sha256": "307ea4ad96312c338210a42b8953c417d9095be72a317a12af8377c6f538a793",
+        "candidate_source_sha256": "325d248f0a82e3a77a13b6faea7490a65e4380705fcaa2014466444399a06c52"
+      },
+      "lldb/source/Plugins/Language/CPlusPlus/LibCxxVector.cpp": {
+        "patch_name": "patch-lldb_source_Plugins_Language_CPlusPlus_LibCxxVector.cpp",
+        "patch_sha256": "2c09264d01f4c1e5702eb147ebba06314e1492aeead3f4eaffd89c2784322089",
+        "original_source_sha256": "622011fbc1d306d28457142a44a8bffab12e161f68ad1cd6a19356051e2d69ba",
+        "candidate_source_sha256": "2e3cf69a5a778b89bfaee543c69d823658de3045a1cfa9bf3e4cc3a621d6042a"
+      },
+      "lldb/source/Plugins/Language/CPlusPlus/LibCxxList.cpp": {
+        "patch_name": "patch-lldb_source_Plugins_Language_CPlusPlus_LibCxxList.cpp",
+        "patch_sha256": "43e4af9a8a8921430a4acee1802ec11e241ca861a3605004db1ac2abec19abd9",
+        "original_source_sha256": "4d7b4455300f3a560f19d0092f57f4ab77c24313c2fba34aee0cdfe62e858e2b",
+        "candidate_source_sha256": "43c02f4ba44ad33e08da278c3997f6031b8bc9eada1f3d4924f5c56c34c768e3"
+      },
+      "lldb/source/Plugins/Language/CPlusPlus/LibCxx.cpp": {
+        "patch_name": "patch-lldb_source_Plugins_Language_CPlusPlus_LibCxx.cpp",
+        "patch_sha256": "e6a27e2e51fa3ae2da57c7973a57d85a06ea3760ac14a8a144fa18b491264d9f",
+        "original_source_sha256": "32a159d24878bf9fe3544a2630d531caa5e73cb4904a9aa528052fece7bf5c96",
+        "candidate_source_sha256": "57cc18085239e906add281742468387850084fd6155f7f9fc029cddbbd6dfd03"
+      },
+      "lldb/source/Plugins/Language/CPlusPlus/LibCxxMap.cpp": {
+        "patch_name": "patch-lldb_source_Plugins_Language_CPlusPlus_LibCxxMap.cpp",
+        "patch_sha256": "dae7f457069d7a4a8cc0d995abfbea6337a63f574cb61f00d3e0adba12fcfdaa",
+        "original_source_sha256": "2025dbf04f8b8b36d07ab3023329340218300f375d42b7e61460eae36819faa8",
+        "candidate_source_sha256": "ad7ea9401302a724c89467334802da4e8d4c062c0015aae24827f23b1ed52266"
+      },
+      "lldb/source/Plugins/Language/CPlusPlus/LibCxxUnorderedMap.cpp": {
+        "patch_name": "patch-lldb_source_Plugins_Language_CPlusPlus_LibCxxUnorderedMap.cpp",
+        "patch_sha256": "db88c8e794951fc6cc11029c14e065fa665b298c9829eade82485af459cfb996",
+        "original_source_sha256": "caeb5e81edb5bd97005d164c10922f078d99b68e1c8aabfba471148a4bd1cc5b",
+        "candidate_source_sha256": "401cafd929e757521b4744927a00a3c718bff3e063280989ca8d9f5a5d1791ea"
+      },
+      "lldb/packages/Python/lldbsuite/test/make/libcxx-simulators-common/compressed_pair.h": {
+        "patch_name": "patch-lldb_packages_Python_lldbsuite_test_make_libcxx-simulators-common_compressed__pair.h",
+        "patch_sha256": "c1c1b09be1f1ae0ef70145418a01de397d318c452494369879ef5b79fe4c05ce",
+        "original_source_sha256": "44cb53b042297015928d9975814a367402bc06627b06a7db23dcbdd2a7af6008",
+        "candidate_source_sha256": "9223ab74c4c0a26800a29be94f3fe124838f1be70856dc6f6b29fa90cf36900c"
+      }
+    },
+    "only_additions": "Exact original .orig backups for twelve changed source files. All other full metadata/bodies/types/links equal.",
+    "complete87_file_public_origin_Git_identity_matches": true,
+    "default_options_dependencies_jobs_and_test_settings_preserved": true,
+    "prior_R313_ports_and_cold_source_unchanged": true,
+    "all_final_integrity_guards_pass": true,
+    "normal_build_test_package_qualified": false,
+    "candidate_scope": "R350 before the short test-TMPDIR recipe; same twelve libc++ source patches as current candidate."
+  },
+  "current_fresh_original_patch": {
+    "producer": "R419",
+    "checksum_and_full_patch_exits": [
+      0,
+      0
+    ],
+    "zero_fuzz": true,
+    "all94_origin_Git_identities_match": true,
+    "fresh_source_nodes": 160727,
+    "strict_comparison_baseline": "R313160708nodes",
+    "only19_declared_bodies_and_exact_original_backups_differ": true,
+    "every_other_recorded_native_metadata_body_type_link_equal": true,
+    "fresh_source_inventory_sha256": "fd43d137bb6bf1eb7d2b74086a2347c0bcea2b51b426fee922fa40dc99b3a2ca",
+    "all_default_options_dependencies_four_jobs_and_established_short_TMPDIR_recipe_preserved": true,
+    "all_final_guards_pass": true,
+    "new_normal_build_original_target_package_and_installed_acceptance": false
+  },
+  "Qemu_LIT_socket_length_followup": {
+    "original_failed_target": "R327; eight of nine original QEMU methods fail Failed to set socket address.",
+    "direct_configured_TMPDIR_diagnostic": "R357: same66-byte configured TMPDIR produces98-byte socket and succeeds. Deliberate144-byte socket fails. Direct configured length alone did not reproduce original failure.",
+    "actual_LIT_nesting_causal_producer": "R358",
+    "actual_upstream_LIT_main_source_sha256": "ce699a9d6b3689e17a5d10586149b436ce75e34c9ecdd173dc57ff59d78233ba",
+    "actual_LIT_behavior": "tempfile.mkdtemp(prefix=lit-tmp-) replaces TMPDIR/TMP/TEMP/TEMPDIR for the run.",
+    "native_sun_path_capacity": 104,
+    "failing_configured_TMPDIR_bytes": 66,
+    "failing_actual_LIT_TMPDIR_bytes": 83,
+    "failing_actual_socket_bytes": 115,
+    "failing_actual_error": "Failed to set socket address",
+    "shorter_base_with_identical_LIT_nesting_actual_socket_bytes": 100,
+    "shorter_base_original_mock_exit_and_argument_assertions": "PASS",
+    "candidate": "Original do-test allocates a fresh private short /tmp root per run, exports LLVM_TEST_TMPDIR through both actor branches, preserves primary-group semantics and cleans on exit. Original test options, dependencies, cases, assertions and timeouts retained.",
+    "actual_recipe_control_producer": "R361",
+    "recipe_control_scope": "Actual original do-test recipe on private TEST_WRKSRC, with a controlled child instead of upstream Ninja. This is branch/permission/socket/cleanup evidence; not original upstream test acceptance.",
+    "recipe_controls": {
+      "root-0": {
+        "uid": 65534,
+        "gid": 65534,
+        "root_mode": 448,
+        "root_uid": 65534,
+        "root_gid": 65534,
+        "LIT_nested_actual_socket_bytes": 74,
+        "native_AF_UNIX_bind_pass": true,
+        "requested_exit": 0,
+        "actual_make_exit": 0,
+        "allocated_temp_root_removed": true
+      },
+      "root-47": {
+        "uid": 65534,
+        "gid": 65534,
+        "root_mode": 448,
+        "root_uid": 65534,
+        "root_gid": 65534,
+        "LIT_nested_actual_socket_bytes": 74,
+        "native_AF_UNIX_bind_pass": true,
+        "requested_exit": 47,
+        "actual_make_exit": 1,
+        "allocated_temp_root_removed": true
+      },
+      "nobody-0": {
+        "uid": 65534,
+        "gid": 65534,
+        "root_mode": 448,
+        "root_uid": 65534,
+        "root_gid": 65534,
+        "LIT_nested_actual_socket_bytes": 74,
+        "native_AF_UNIX_bind_pass": true,
+        "requested_exit": 0,
+        "actual_make_exit": 0,
+        "allocated_temp_root_removed": true
+      },
+      "nobody-47": {
+        "uid": 65534,
+        "gid": 65534,
+        "root_mode": 448,
+        "root_uid": 65534,
+        "root_gid": 65534,
+        "LIT_nested_actual_socket_bytes": 74,
+        "native_AF_UNIX_bind_pass": true,
+        "requested_exit": 47,
+        "actual_make_exit": 1,
+        "allocated_temp_root_removed": true
+      }
+    },
+    "original_failure47_reaches_make_as_failure1": true,
+    "all_selected_original_products_headers_build_metadata_unchanged": true,
+    "owned_diagnostic_jails_removed": true,
+    "original_normal_Qemu_nine_methods_with_current_recipe_qualified": true,
+    "normal_qualification_producer": "R365 before six memory-region additions; same short-TMPDIR recipe remains current."
+  },
+  "normal_libcxx_and_short_TMPDIR_configure_build": {
+    "producer": "R355",
+    "candidate_scope": "Before six memory-region additions",
+    "original_configure_and_default_all_build_exits": [
+      0,
+      0
+    ],
+    "normal_build_actions": 49,
+    "make_jobs": 4,
+    "all_default_options_dependencies_build_arguments_preserved": true,
+    "complete_preceding_failed_warm_nodes_and_hardlink_groups_match_verified_R347_archive_before_integration": true,
+    "only_warm_source_changes": "Twelve declared source bodies plus twelve exact original backups; all other source metadata/bodies/links preserved.",
+    "complete_source_nodes": 160699,
+    "complete_source_inventory_sha256": "1b912c5a4f3631627d659004f2e0448d896955d9a36564a182c5e684191c13ca",
+    "new_normal_liblldb_sha256": "602d5e659e0213b370ef24d61326dd97ce4ef15d86044492d526004e0a8ba0d6",
+    "actual_cache_and_LIT_Lua_executable": "/usr/local/bin/lua53",
+    "fresh_owned_configure_and_build_cookies": true,
+    "original_top_level_completion_cookies_preserved": true,
+    "all_final_source_SDK_cold_view_base_registry_stopped_data_mount_cookie_and_jail_guards_pass": true
+  },
+  "normal_libcxx_current_layout_runtime": {
+    "producer": "R364",
+    "candidate_scope": "Actual normal R355 products before six memory-region additions",
+    "same_unchanged_R330_executable_sha256": "2d7dc074e60978cbe36d1897d6e272497e52e23d87c99d5c348723cd9335a958",
+    "actual_normal_CLI_mapped_library_and_Python_binding_identity": "PASS",
+    "private_library_substitution": false,
+    "LD_LIBRARY_PATH_override": false,
+    "all_eleven_summaries_counts_and_typed_payloads": "PASS",
+    "original_raw_string_vector_data_checks": "PASS",
+    "all_selected_products_headers_build_metadata_unchanged": true,
+    "owned_jail_removed": true
+  },
+  "normal_libcxx_and_short_TMPDIR_selected_target": {
+    "producer": "R365",
+    "candidate_scope": "Before six memory-region additions",
+    "original_make_exit": 1,
+    "entries": 1769,
+    "counts": {
+      "UNRESOLVED": 2,
+      "PASS": 1240,
+      "FAIL": 5,
+      "XFAIL": 27,
+      "UNSUPPORTED": 495
+    },
+    "all1769_prior_names_retained": true,
+    "shared_status_changes": {
+      "lldb-api :: qemu/TestQemuLaunch.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      "lldb-api :: tools/lldb-dap/evaluate/TestDAP_evaluate.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      "lldb-api :: tools/lldb-dap/variables/TestDAP_variables.py": {
+        "before": "UNRESOLVED",
+        "after": "PASS"
+      },
+      "lldb-api :: functionalities/thread/exit_during_step/TestExitDuringStep.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      "lldb-api :: functionalities/data-formatter/data-formatter-disabling/TestDataFormatterDisabling.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      "lldb-api :: functionalities/data-formatter/data-formatter-advanced/TestDataFormatterAdv.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      "lldb-api :: functionalities/data-formatter/stringprinter/TestStringPrinter.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      "lldb-api :: commands/expression/call-function/TestCallStdStringFunction.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      "lldb-api :: functionalities/data-formatter/data-formatter-skip-summary/TestDataFormatterSkipSummary.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      },
+      "lldb-api :: python_api/sbvalue_persist/TestSBValuePersist.py": {
+        "before": "FAIL",
+        "after": "PASS"
+      }
+    },
+    "shared_regressions": [],
+    "thread_exit_status_change_cause_not_established": true,
+    "remaining_unexpected": {
+      "lldb-api :: commands/gui/spawn-threads/TestGuiSpawnThreads.py": "UNRESOLVED",
+      "lldb-api :: commands/process/detach-resumes/TestDetachResumes.py": "FAIL",
+      "lldb-api :: python_api/find_in_memory/TestFindRangesInMemory.py": "FAIL",
+      "lldb-api :: python_api/find_in_memory/TestFindInMemory.py": "FAIL",
+      "lldb-api :: tools/lldb-server/TestGdbRemoteSaveCore.py": "FAIL",
+      "lldb-api :: functionalities/rerun_and_expr/TestRerunAndExpr.py": "UNRESOLVED",
+      "lldb-shell :: Expr/TestObjCInCXXContext.test": "FAIL"
+    },
+    "original_method_counts": {
+      "lldb-api :: functionalities/data-formatter/data-formatter-stl/libcxx-simulators/string/TestDataFormatterLibcxxStringSimulator.py": 60,
+      "lldb-api :: functionalities/data-formatter/data-formatter-stl/libcxx-simulators/unique_ptr/TestDataFormatterLibcxxUniquePtrSimulator.py": 5,
+      "lldb-api :: qemu/TestQemuLaunch.py": 9
+    },
+    "Lua_event_and_expected_Capsicum_contracts": "PASS",
+    "json_report_sha256": "0b0aec1e95851b3a8b614f957549128387bd9b932a70f0e97df26cdd9d478d22",
+    "xunit_report_sha256": "d0fbff0ac233666b44bccefa38ba4524ad8757f3421ab6a1aab28796ab28a3c8",
+    "independent_actual_JSON_XML_body_hash_name_status_review": "PASS",
+    "XML_selected_entries": 1769,
+    "XML_explicit_filter_exclusions": 84259,
+    "original_controller_cleanup_review_error_retained": true,
+    "independent_review_correction": "Upstream emulator state retains standard TMPDIR while omitting the launcher-private variable. Eight current-run state files identify one short allocated root, all actual sockets are within104 bytes, and that root is absent after make1. No upstream test rerun or original result rewrite.",
+    "actual_upstream_Qemu_state_files": 8,
+    "actual_Qemu_socket_byte_lengths": [
+      74
+    ],
+    "actual_allocated_private_test_root_removed_after_failed_make": true,
+    "all_original_final_integrity_guards_pass": true,
+    "exact_normal_product_and_build_metadata_copies_sealed_before_tests_and_unchanged_after": true,
+    "retention_scope": "Complete R378 R365 tested frontier now independently verifies on both hosts, including2408651 nodes,14hardlink groups/full archive decode and matching recovery helpers. R365 products were separately sealed before tests and remain retained."
+  },
+  "short_TMPDIR_fresh_original_patch": {
+    "producer": "R360",
+    "original_checksum_patch_exits": [
+      0,
+      0
+    ],
+    "zero_fuzz": true,
+    "complete_fresh_source_nodes": 160720,
+    "complete_fresh_source_inventory_sha256": "0be00d39c06c17511ad04dc7b915b19915cc47e7cb9a04edc3bebc298844d2ff",
+    "reference": "R313 complete160708-node fresh source",
+    "only_source_changes": "The same twelve libc++ changes and exact original backups recorded by R350. All other full metadata/bodies/types/literal links equal.",
+    "complete87_file_current_origin_Git_identity_matches": true,
+    "candidate_Makefile_sha256": "93b8b8a3d3fdb5bf1e2658bf8fb6e1fbaef35bdd722a46c6532396db505094e7",
+    "default_options_dependencies_build_arguments_and_four_jobs_preserved": true,
+    "only_declared_TEST_ENV_change": "TMPDIR is expanded from per-run LLVM_TEST_TMPDIR instead of a deep build-directory path.",
+    "all_final_integrity_guards_pass": true,
+    "normal_current_build_test_package_qualified": false
+  },
+  "private_memory_region_followup": {
+    "native_original_fixture_baseline": "R366 actual normal client and original server read all heap data and expressions correctly but report three heap addresses unmapped/unreadable; stack positive control passes.",
+    "cache_only_private_build_producer": "R370",
+    "cache_only_private_server_sha256": "3b0d9181e4d9bf120afafd6f0b2dfd3e39d4789584d1f6f0c9d5e1a1f18bac9c",
+    "cache_only_original_fixture_runtime_producer": "R371",
+    "same_original_fixture_and_normal_client_heap_stack_contracts": "PASS with actual kernel-reported private inferior-parent server identity",
+    "four_stop_original_and_cache_only_failure_retained": "R373: original fails mapped-none/RW/RO; cache-only still fails PROT_NONE mapped identity. R372 earlier function-name diagnostic assumption also remains recorded. No mapping assertion was removed.",
+    "second_cause": "Common native server omits permissions tuple when all rwx flags are false. Existing client uses tuple presence to identify mapped ranges and already supports an empty value. Emit permissions:; for mapped no-access regions and clarify existing protocol documentation.",
+    "combined_private_build_producer": "R377",
+    "combined_private_compile_archive_link_exits": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "combined_private_server_sha256": "2208ebb969d8f324f16fb39a0178fa6cac181b324eca42489a01b5b11c871912",
+    "unchanged_archive_members_original_inputs_dependency_outputs_and_ELF_contracts": "PASS",
+    "three_variant_causal_runtime_producer": "R379",
+    "same_compiled_fixture_sha256": "d1fec44c4341c902d9d886304465e281af572993ff9cf8e74b4b3a8950d12516",
+    "unchanged_normal_client_liblldb_sha256": "602d5e659e0213b370ef24d61326dd97ce4ef15d86044492d526004e0a8ba0d6",
+    "actual_kernel_reported_server_executable_identity_each_variant": "PASS",
+    "contract_mismatches": {
+      "original": [
+        "stop_none",
+        "stop_rw",
+        "stop_ro"
+      ],
+      "cache_only": [
+        "stop_none"
+      ],
+      "candidate": []
+    },
+    "all_four_original_mapping_expectations_retained": true,
+    "actual_mmap_mprotect_RW_written42_mprotect_RO_munmap_and_program_exit_checks": "PASS",
+    "selected_original_products_headers_build_metadata_unchanged_and_owned_jails_removed": true,
+    "new_upstream_regression": "MemoryCommandRegion.test_memory_region_refresh_after_resume with the same four mapping states and actual breakpoint identities. All original Python method ASTs and the full old C++ body retained; only new POSIX method excludes Windows.",
+    "actual_authored_new_upstream_method_normal_qualification": true,
+    "private_experiment_scope": "Private controls alone remain diagnostic. R385/R386 normal full/header-dependent build/runtime and R387 original authored mapping method pass separately; complete original selected target still fails on7 outcomes.",
+    "existing_upstream_fix_backport_claimed": false,
+    "actual_authored_new_upstream_method_normal_producer": "R387"
+  },
+  "normal_memory_region_configure_build": {
+    "producer": "R385",
+    "original_configure_and_default_all_build_exits": [
+      0,
+      0
+    ],
+    "normal_build_actions": 38,
+    "normal_full_Ninja_dependency_graph_including_header_dependents": true,
+    "complete_closed_warm_nodes_and_hardlinks_equal_before_integration": true,
+    "exact_six_changes_and_original_backups_only": true,
+    "source_nodes": 160705,
+    "source_inventory_sha256": "dbc7b6ee3527eb52628cf668d3cbbba98b64c74c87018ae8a089e0cd6000170f",
+    "normal_server_sha256": "634e3029e08de7d9bc96d42af4c75eb5b7cae56aabf34305c47ebd982d21fa4f",
+    "normal_DLL_sha256": "602d5e659e0213b370ef24d61326dd97ce4ef15d86044492d526004e0a8ba0d6",
+    "normal_server_changed_and_DLL_unchanged": true,
+    "fresh_owned_cookies_original_top_level_cookies_preserved": true,
+    "all_default_options_dependencies_and_four_jobs_retained": true,
+    "all_final_integrity_guards_pass": true,
+    "test_package_installed_release_acceptance_implied": false
+  },
+  "normal_memory_region_runtime": {
+    "producer": "R386",
+    "normal_server_sha256": "634e3029e08de7d9bc96d42af4c75eb5b7cae56aabf34305c47ebd982d21fa4f",
+    "normal_DLL_sha256": "602d5e659e0213b370ef24d61326dd97ce4ef15d86044492d526004e0a8ba0d6",
+    "identical_four_stop_executable_sha256": "d1fec44c4341c902d9d886304465e281af572993ff9cf8e74b4b3a8950d12516",
+    "identical_original_find_executable_sha256": "067268ad66236491a6968e52563ec007aed73b5362dbe881c69ad0eb503e4b51",
+    "actual_kernel_server_identity_both_runs": "PASS",
+    "private_server_or_DLL_or_LD_LIBRARY_PATH_substitution": false,
+    "four_stop_mapping_contracts": "PASS",
+    "actual_target_written_byte42_RO_read_unmapped_read_failure_and_exit0": "PASS",
+    "original_three_heap_and_stack_find_helper_contracts": "PASS",
+    "all_original_fixture_raw_strings_correct": true,
+    "all_products_fixtures_headers_and_build_metadata_unchanged": true,
+    "owned_jail_removed": true,
+    "new_authored_upstream_method_qualified": false
+  },
+  "current_original_selected_tests": {
+    "producer": "R428",
+    "state": "terminal-original-selected-target-failed-independent-report-integrity-pass",
+    "original_target": "do-test/check-all",
+    "original_make_exit": 1,
+    "entries": 1769,
+    "counts": {
+      "PASS": 1241,
+      "UNRESOLVED": 2,
+      "FAIL": 4,
+      "XFAIL": 27,
+      "UNSUPPORTED": 495
+    },
+    "all_prior_1769_names_retained": true,
+    "added_names": [],
+    "shared_status_changes": {
+      "lldb-api :: python_api/find_in_memory/TestFindRangesInMemory.py": {
+        "before": "TIMEOUT",
+        "after": "PASS"
+      },
+      "lldb-api :: python_api/find_in_memory/TestFindInMemory.py": {
+        "before": "TIMEOUT",
+        "after": "PASS"
+      },
+      "lldb-api :: functionalities/thread/exit_during_step/TestExitDuringStep.py": {
+        "before": "PASS",
+        "after": "FAIL"
+      }
+    },
+    "remaining_unexpected": {
+      "lldb-api :: commands/gui/spawn-threads/TestGuiSpawnThreads.py": "UNRESOLVED",
+      "lldb-api :: commands/process/detach-resumes/TestDetachResumes.py": "FAIL",
+      "lldb-api :: tools/lldb-server/TestGdbRemoteSaveCore.py": "FAIL",
+      "lldb-api :: functionalities/rerun_and_expr/TestRerunAndExpr.py": "UNRESOLVED",
+      "lldb-shell :: Expr/TestObjCInCXXContext.test": "FAIL",
+      "lldb-api :: functionalities/thread/exit_during_step/TestExitDuringStep.py": "FAIL"
+    },
+    "normal_original_find_memory_methods": {
+      "lldb-api :: python_api/find_in_memory/TestFindRangesInMemory.py": {
+        "code": "PASS",
+        "actual_PASS_methods": [
+          "test_find_in_memory_unaligned",
+          "test_find_ranges_in_memory_empty_ranges",
+          "test_find_ranges_in_memory_invalid_alignment",
+          "test_find_ranges_in_memory_invalid_buffer",
+          "test_find_ranges_in_memory_invalid_max_matches",
+          "test_find_ranges_in_memory_invalid_range",
+          "test_find_ranges_in_memory_one_match",
+          "test_find_ranges_in_memory_one_match_max",
+          "test_find_ranges_in_memory_one_match_multiple_ranges",
+          "test_find_ranges_in_memory_two_matches"
+        ],
+        "all_original_methods_PASS": true
+      },
+      "lldb-api :: python_api/find_in_memory/TestFindInMemory.py": {
+        "code": "PASS",
+        "actual_PASS_methods": [
+          "test_check_stack_pointer",
+          "test_find_in_memory_double_instance_ok",
+          "test_find_in_memory_invalid_address_range",
+          "test_find_in_memory_invalid_alignment",
+          "test_find_in_memory_invalid_buffer",
+          "test_find_in_memory_ok",
+          "test_find_in_memory_unaligned"
+        ],
+        "all_original_methods_PASS": true
+      }
+    },
+    "new_authored_memory_region_method_pass": true,
+    "all_previous65_simulator9Qemu_Lua_event_Capsicum_contracts_pass": true,
+    "independent_reviewer": "R429",
+    "JSON_SHA256": "9cc51d97f5a6be92bc15b2e58520caecc3604a7225be341e0baa2600f1b9f5e7",
+    "XML_SHA256": "3090a1a5ae84eba83af1a00e3e4a236733bc6bbb6f08bd9eac64378b67fefc09",
+    "all_selected_XML_names_and_status_families_match_JSON": true,
+    "explicit_XML_filter_exclusions": 84259,
+    "actual_short_TMPDIR_cleanup_and_all_final_integrity_guards_and_sealed_copies_pass": true,
+    "thread_exit_regression_cause_established": false,
+    "package_installed_or_full_unfiltered_acceptance": false
+  },
+  "unaligned_search_followup": {
+    "source_analysis_producer": "R408",
+    "primary_upstream_proposal": "https://github.com/llvm/llvm-project/pull/189950",
+    "proposal_head": "29cd5097556a1c3f00407508327b0c651155f187",
+    "upstream_state": "OPEN-not-merged",
+    "candidate_change": "Advance from actual rejected unaligned found_addr, preserving all original validation/alignment/result assertions.",
+    "private_build_producer": "R411",
+    "private_original_compiler_archive_shared_and_CLI_command_exits": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "private_build_pass": true,
+    "private_liblldb_sha256": "6f942c50f24cc2195ed0cfbc7e40e0860e593a3b0aa4599204871137315989b7",
+    "private_CLI_sha256": "8ea21f01be8fb51f7417becb508cfc354ec0cc2af8befa5f17dd5416c4fa3cb3",
+    "all_other_archive_members_and_original_inputs_products_metadata_and_dependency_outputs_unchanged": true,
+    "original_guarded_nodes": 1383,
+    "normal_object_header_and_source_dependencies": 1080,
+    "both_ELF_dependency_SONAME_rpath_contracts_preserved": true,
+    "private_runtime_qualified": true,
+    "new_port_patch": "files/patch-lldb_source_Target_Process.cpp",
+    "new_port_patch_sha256": "03727621c49a2c89bc1f2f918a634f94774f04b50739e2f4853fb34a9aec3e62",
+    "private_native_pair_producer": "R416",
+    "actual_same_original_executable_and_kernel_verified_normal_server": true,
+    "original_alignment1_pass_then_alignment8_diagnostic20second_deadline": true,
+    "candidate_all4_original_unaligned_FindInMemory_FindRangesInMemory_contracts_pass": true,
+    "candidate_each_contract_under_one_second": true,
+    "diagnostic_deadline_not_original_test_timeout": true,
+    "original_driver_private_runtime_producer": "R417",
+    "private_original_methods": {
+      "TestFindRangesInMemory": {
+        "exit": 0,
+        "actual_original_methods": [
+          "test_find_in_memory_unaligned",
+          "test_find_ranges_in_memory_empty_ranges",
+          "test_find_ranges_in_memory_invalid_alignment",
+          "test_find_ranges_in_memory_invalid_buffer",
+          "test_find_ranges_in_memory_invalid_max_matches",
+          "test_find_ranges_in_memory_invalid_range",
+          "test_find_ranges_in_memory_one_match",
+          "test_find_ranges_in_memory_one_match_max",
+          "test_find_ranges_in_memory_one_match_multiple_ranges",
+          "test_find_ranges_in_memory_two_matches"
+        ],
+        "count": 10,
+        "actual_driver_mapped_DLL_verified": true,
+        "actual_normal_server_executable_verified": true,
+        "source_sha256": "b289b7fb41ece1cd5e35e653995b33ecd699d7a6f6bfe09964ef678527b39d1f",
+        "stdout_sha256": "86786de21ccc027d9d514e080b212082246d8df894ba40fbd778c5f39dfb945a",
+        "stderr_sha256": "6efe0904d202cc04f7c14a64f50574a1242141379a2c2680e7f9b74ca64cfe83"
+      },
+      "TestFindInMemory": {
+        "exit": 0,
+        "actual_original_methods": [
+          "test_check_stack_pointer",
+          "test_find_in_memory_double_instance_ok",
+          "test_find_in_memory_invalid_address_range",
+          "test_find_in_memory_invalid_alignment",
+          "test_find_in_memory_invalid_buffer",
+          "test_find_in_memory_ok",
+          "test_find_in_memory_unaligned"
+        ],
+        "count": 7,
+        "actual_driver_mapped_DLL_verified": true,
+        "actual_normal_server_executable_verified": true,
+        "source_sha256": "a110e9b1c62cd4520c969f68d66b47d795d5648a30354e18fad88e0d154ada40",
+        "stdout_sha256": "86786de21ccc027d9d514e080b212082246d8df894ba40fbd778c5f39dfb945a",
+        "stderr_sha256": "c7afb2ac4f5124c61c673c883b25ffe0573d26c160b552d87c3c2fce70e17949"
+      }
+    },
+    "all17_original_methods_pass": true,
+    "actual_driver_mapped_DLL_and_kernel_server_identity_verified": true,
+    "all_original_source_product_metadata_private_module_guards_and_TMPDIR_cleanup_jail_removal_pass": true,
+    "independent_actual_original_output_hash_body_method_review_producer": "R418",
+    "fresh_source_validation_producer": "R419",
+    "warm_source_modified": true,
+    "normal_default_all_changed_input_build_qualified": true,
+    "normal_actual_CLI_binding_search_formatter_runtime_qualified": true,
+    "normal_original_selected_target_qualified": false,
+    "upstream_merge_acceptance_claimed": false
+  },
+  "direct_native_ptrace_core_control": {
+    "producer": "R404",
+    "matching_kernel_sha256": "83690f1f4fa3001a1e77852c44e9234ff6f9c4b6fa3e11cf7cf2a6e0c504ef35",
+    "matching_source_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
+    "actual_base_compiler_one_private_source_three_distinct_invocations": true,
+    "trace_me_raw_savecore_result": 0,
+    "trace_me_core_ELF_bytes": 12181504,
+    "normal_binding_exact_core_PID_and_thread_acceptance": "PASS",
+    "attached_running_and_confirmed_sleeping_raw_savecore_errno": 16,
+    "attached_zero_byte_files_rejected_as_cores": true,
+    "documented_post_core_waitpid_WNOHANG_and_all_three_detaches": "PASS",
+    "manual_reference": "https://cgit.freebsd.org/src/tree/lib/libsys/ptrace.2?id=3ff56f81a1a58d708d0101d601e88c289cfc5882",
+    "original_failed_controls_R398_R400_R401_retained": true,
+    "all_selected_kernel_compiler_headers_products_metadata_and_global_setting_guards_pass": true,
+    "owned_jail_removed": true,
+    "exact_kernel_branch_or_fix_or_original_savecore_test_qualified": false
+  },
+  "current_tested_frontier_custody": {
+    "producer": "R399",
+    "state": "pass-independent-both-host-full-archive-and-recovery-review",
+    "current_source_nodes": 160705,
+    "complete_warm_build_source_SDK140_rawdb_views_cold_sources_controls_and_failed_original_reports_retained": true,
+    "two_host_or_recovery_pass_claimed": true,
+    "no_warm_mutation_until_complete_custody_and_recovery_review": true,
+    "archive_sha256": "4d35efbe3bf0f0b7abec75975722d462bc1cb8b7d7dcc76f8069e873c3bb5832",
+    "archive_bytes": 7936886455,
+    "inventory_sha256": "0c63ace0023cf456eaa4a1e7717ba239ae8e1bb88997759b27faaa9e8547a65f",
+    "nodes": 2802519,
+    "node_types": {
+      "directory": 419426,
+      "file": 2382400,
+      "symlink": 666,
+      "socket": 15,
+      "fifo": 12
+    },
+    "hardlink_groups": 14,
+    "complete_decoded_bytes": 40907212800,
+    "both_host_verification_pass": true,
+    "recovery_document_and_original_helper_digests_match_both_hosts": true,
+    "no_extraction_or_overlay_performed": true,
+    "scope": "Complete preceding R387 tested source/build/SDK140/view/cold/control frontier before newest one-line client-search patch; later R411/R416/R417/R419/R421/R427/R428 outputs remain separate."
+  },
+  "memory_region_fresh_original_patch_R382": {
+    "producer": "R382",
+    "original_checksum_patch_exits": [
+      0,
+      0
+    ],
+    "zero_fuzz": true,
+    "complete_fresh_source_nodes": 160726,
+    "complete_fresh_source_inventory_sha256": "716650fac356ebe6dc05424c73eb7834ebac2e33a9107b3aef31c83204987a46",
+    "reference": "R313 complete160708-node fresh source",
+    "only_source_changes": "Eighteen declared source/doc/test bodies and eighteen exact original backups. All other recorded full metadata/bodies/types/literal links match.",
+    "complete93_file_current_origin_Git_identity_matches": true,
+    "default_options_dependencies_build_arguments_and_four_jobs_preserved": true,
+    "only_declared_TEST_ENV_delta_from_R313": "Existing short private per-run TMPDIR recipe",
+    "new_memory_region_source_patches": {
+      "lldb/source/Plugins/Process/FreeBSD/NativeProcessFreeBSD.cpp": {
+        "original_sha256": "d90d1761686fffe8522b7b240b19fe5e8ffe2d29abbe134180dd0d03af43de17",
+        "candidate_sha256": "10a1f6932b068ea374309ce2b17f3fc40bd2a29274f3dee2263c7ec33be11372",
+        "patch_name": "patch-lldb_source_Plugins_Process_FreeBSD_NativeProcessFreeBSD.cpp",
+        "patch_sha256": "4b1e6424af3504f597dd6362a2ff321a86cf8443be07a8c706d38e081eee0514"
+      },
+      "lldb/source/Plugins/Process/FreeBSD/NativeProcessFreeBSD.h": {
+        "original_sha256": "e0a551815a83c979571cd798addd229dca60e44fc7cee3fb001cc7850fc8e03d",
+        "candidate_sha256": "4e86365a52aa282e1d901aa621b5ac787008ac4f1c1ec7e20bac731aa8bbf795",
+        "patch_name": "patch-lldb_source_Plugins_Process_FreeBSD_NativeProcessFreeBSD.h",
+        "patch_sha256": "cfbc310ce697b9ade5b03790b7fba8d88c90d7cf05885adb4d8e782067470784"
+      },
+      "lldb/source/Plugins/Process/gdb-remote/GDBRemoteCommunicationServerLLGS.cpp": {
+        "original_sha256": "634ce2e441f959555ae6cbb32e25c5a7c1d66bef01290cb479a71b3ecf3e9e87",
+        "candidate_sha256": "c52a197dc29aac3374156597f0541b7fb048ee5b7888523ba12ecefacbde53c4",
+        "patch_name": "patch-lldb_source_Plugins_Process_gdb-remote_GDBRemoteCommunicationServerLLGS.cpp",
+        "patch_sha256": "961daf1202972c7e972960777af099bfa44184c9ea3f24efd88eece102f9cacf"
+      },
+      "lldb/docs/resources/lldbgdbremote.md": {
+        "original_sha256": "0186eac06737505b0eb42fe63dbe21d95299a3f2c1d9f364d0f60dd46eab8af2",
+        "candidate_sha256": "8d97197e07d5872c6a9c806d8a16971d91155024bef21481838190d01469339f",
+        "patch_name": "patch-lldb_docs_resources_lldbgdbremote.md",
+        "patch_sha256": "f03dfcd4cc1a01e0affbc9d8cbce13ac4c93e8671e3b3e8083fcfb5d4ea6b1d2"
+      },
+      "lldb/test/API/functionalities/memory-region/main.cpp": {
+        "original_sha256": "5fde8cd1afa9773459a991958612d2f3a7446e5b49660436ced3cf65dc72530a",
+        "candidate_sha256": "9aa1297e19b5400ce5c46b682765d695824e08028df525c047b0ca60e1854f39",
+        "patch_name": "patch-lldb_test_API_functionalities_memory-region_main.cpp",
+        "patch_sha256": "5b23724982cf660a1128f4b31af52e97ba58a252cfb9fb08b8a719d0d8c0bfdc"
+      },
+      "lldb/test/API/functionalities/memory-region/TestMemoryRegion.py": {
+        "original_sha256": "ed4d5b4ae658a16c0142f60ce918027fbfb6013e9b150a993e23d39f5465df7d",
+        "candidate_sha256": "5cae80bde530d846c2d8102863a9e4089d0c664beac34e31bb79be33103592a8",
+        "patch_name": "patch-lldb_test_API_functionalities_memory-region_TestMemoryRegion.py",
+        "patch_sha256": "062cebcfa1483d4c33d22c92bc3635bc6dc827aac4dfed1320b8fb9ea7d2c788"
+      }
+    },
+    "all_final_integrity_guards_pass": true,
+    "normal_current_build_test_package_qualified": false
+  },
+  "completed_original_selected_tests_R387": {
+    "producer": "R387",
+    "state": "terminal-original-selected-target-failed",
+    "original_target": "do-test/check-all",
+    "original_make_exit": 1,
+    "entries": 1769,
+    "counts": {
+      "UNRESOLVED": 2,
+      "FAIL": 3,
+      "TIMEOUT": 2,
+      "PASS": 1240,
+      "XFAIL": 27,
+      "UNSUPPORTED": 495
+    },
+    "all_prior_1769_names_retained": true,
+    "added_names": [],
+    "shared_status_changes": {
+      "lldb-api :: python_api/find_in_memory/TestFindRangesInMemory.py": {
+        "before": "FAIL",
+        "after": "TIMEOUT"
+      },
+      "lldb-api :: python_api/find_in_memory/TestFindInMemory.py": {
+        "before": "FAIL",
+        "after": "TIMEOUT"
+      }
+    },
+    "remaining_unexpected": {
+      "lldb-api :: commands/gui/spawn-threads/TestGuiSpawnThreads.py": "UNRESOLVED",
+      "lldb-api :: commands/process/detach-resumes/TestDetachResumes.py": "FAIL",
+      "lldb-api :: python_api/find_in_memory/TestFindRangesInMemory.py": "TIMEOUT",
+      "lldb-api :: python_api/find_in_memory/TestFindInMemory.py": "TIMEOUT",
+      "lldb-api :: tools/lldb-server/TestGdbRemoteSaveCore.py": "FAIL",
+      "lldb-api :: functionalities/rerun_and_expr/TestRerunAndExpr.py": "UNRESOLVED",
+      "lldb-shell :: Expr/TestObjCInCXXContext.test": "FAIL"
+    },
+    "JSON_sha256": "ab1f0220a260e04315fc87123a4614aeff98c0da48d3611622440f1f16855d98",
+    "XML_sha256": "07ae57e1c138656c79111fbc2942b955064e69c45154d3163de126b37ef62c47",
+    "explicit_XML_filter_exclusions": 84259,
+    "independent_actual_JSON_XML_body_name_status_method_and_cleanup_review": "PASS",
+    "new_authored_memory_region_method_normal_original_execution": "PASS",
+    "original_simulator_and_Qemu_method_results": {
+      "lldb-api :: functionalities/data-formatter/data-formatter-stl/libcxx-simulators/string/TestDataFormatterLibcxxStringSimulator.py": {
+        "code": "PASS",
+        "actual_PASS_methods": [
+          "test_r0",
+          "test_r0_ALTERNATE_LAYOUT",
+          "test_r0_c1",
+          "test_r0_c1_ALTERNATE_LAYOUT",
+          "test_r0_c2",
+          "test_r0_c2_ALTERNATE_LAYOUT",
+          "test_r0_c3",
+          "test_r0_c3_ALTERNATE_LAYOUT",
+          "test_r0_c4",
+          "test_r0_c4_ALTERNATE_LAYOUT",
+          "test_r1",
+          "test_r1_ALTERNATE_LAYOUT",
+          "test_r1_c1",
+          "test_r1_c1_ALTERNATE_LAYOUT",
+          "test_r1_c2",
+          "test_r1_c2_ALTERNATE_LAYOUT",
+          "test_r1_c3",
+          "test_r1_c3_ALTERNATE_LAYOUT",
+          "test_r1_c4",
+          "test_r1_c4_ALTERNATE_LAYOUT",
+          "test_r2",
+          "test_r2_ALTERNATE_LAYOUT",
+          "test_r2_c1",
+          "test_r2_c1_ALTERNATE_LAYOUT",
+          "test_r2_c2",
+          "test_r2_c2_ALTERNATE_LAYOUT",
+          "test_r2_c3",
+          "test_r2_c3_ALTERNATE_LAYOUT",
+          "test_r2_c4",
+          "test_r2_c4_ALTERNATE_LAYOUT",
+          "test_r3",
+          "test_r3_ALTERNATE_LAYOUT",
+          "test_r3_c1",
+          "test_r3_c1_ALTERNATE_LAYOUT",
+          "test_r3_c2",
+          "test_r3_c2_ALTERNATE_LAYOUT",
+          "test_r3_c3",
+          "test_r3_c3_ALTERNATE_LAYOUT",
+          "test_r3_c4",
+          "test_r3_c4_ALTERNATE_LAYOUT",
+          "test_r4",
+          "test_r4_ALTERNATE_LAYOUT",
+          "test_r4_c1",
+          "test_r4_c1_ALTERNATE_LAYOUT",
+          "test_r4_c2",
+          "test_r4_c2_ALTERNATE_LAYOUT",
+          "test_r4_c3",
+          "test_r4_c3_ALTERNATE_LAYOUT",
+          "test_r4_c4",
+          "test_r4_c4_ALTERNATE_LAYOUT",
+          "test_r5",
+          "test_r5_ALTERNATE_LAYOUT",
+          "test_r5_c1",
+          "test_r5_c1_ALTERNATE_LAYOUT",
+          "test_r5_c2",
+          "test_r5_c2_ALTERNATE_LAYOUT",
+          "test_r5_c3",
+          "test_r5_c3_ALTERNATE_LAYOUT",
+          "test_r5_c4",
+          "test_r5_c4_ALTERNATE_LAYOUT"
+        ],
+        "all_previous_methods_PASS": true
+      },
+      "lldb-api :: functionalities/data-formatter/data-formatter-stl/libcxx-simulators/unique_ptr/TestDataFormatterLibcxxUniquePtrSimulator.py": {
+        "code": "PASS",
+        "actual_PASS_methods": [
+          "test",
+          "test_compressed_pair_revision_1",
+          "test_compressed_pair_revision_2",
+          "test_compressed_pair_revision_3",
+          "test_compressed_pair_revision_4"
+        ],
+        "all_previous_methods_PASS": true
+      },
+      "lldb-api :: qemu/TestQemuLaunch.py": {
+        "code": "PASS",
+        "actual_PASS_methods": [
+          "test_arg0",
+          "test_bad_emulator_path",
+          "test_basic_launch",
+          "test_env_vars",
+          "test_extra_args",
+          "test_find_in_PATH",
+          "test_stdio_pty",
+          "test_stdio_redirect",
+          "test_sysroot"
+        ],
+        "all_previous_methods_PASS": true
+      }
+    },
+    "Lua_event_Capsicum_contracts": "PASS",
+    "original_controller_assertion_requiring_both_find_memory_cases_PASS": "FAIL-retained-actual-TIMEOUT",
+    "actual_short_standard_TMPDIR_cleanup": "PASS",
+    "all_final_source_SDK_products_ports_base_registry_data_mount_guards_and_jail_removal": true,
+    "sealed_normal_product_copies_unchanged": true,
+    "full_unfiltered_or_package_acceptance_implied": false
+  },
+  "normal_unaligned_search_configure_build": {
+    "producer": "R421",
+    "original_configure_and_default_all_build_exits": [
+      0,
+      0
+    ],
+    "all_closed_warm_nodes_and_hardlinks_equal_before_exact_one_change_and_backup": true,
+    "source_nodes": 160706,
+    "source_inventory_sha256": "4062f6a9ba837fae182b77104f1c627302a34f8cb797b20671e2d510ee4854c6",
+    "actual_original_Process_cpp_compile_action_observed": true,
+    "normal_DLL_sha256": "e93701092cfbbe9232d1e61bf0c2b50a681d3c3884ea4d068d7ec2d02aec9a21",
+    "normal_server_sha256": "634e3029e08de7d9bc96d42af4c75eb5b7cae56aabf34305c47ebd982d21fa4f",
+    "normal_DLL_changed_server_unchanged": true,
+    "all_default_options_dependencies_and_four_jobs_retained": true,
+    "original_completion_cookies_preserved_fresh_owned_cookies_used": true,
+    "all_final_source_SDK_ports_cold_base_registry_stopped_data_mount_guards_and_jail_removal_pass": true,
+    "original_selected_target_or_package_qualification_implied": false
+  },
+  "normal_unaligned_search_runtime": {
+    "producer": "R427",
+    "actual_normal_CLI_mapped_DLL_and_Python_binding_identity": "PASS",
+    "normal_DLL_sha256": "e93701092cfbbe9232d1e61bf0c2b50a681d3c3884ea4d068d7ec2d02aec9a21",
+    "normal_server_sha256": "634e3029e08de7d9bc96d42af4c75eb5b7cae56aabf34305c47ebd982d21fa4f",
+    "actual_kernel_normal_server_executable_identity": "PASS",
+    "private_library_server_or_LD_LIBRARY_PATH_substitution": false,
+    "all4_original_unaligned_search_contracts": "PASS",
+    "all11_current_formatter_summaries_counts_typed_payloads_and_raw_program_data": "PASS",
+    "original_formatter_module_body_unchanged": true,
+    "all_original_products_headers_build_metadata_unchanged_and_owned_jail_removed": true,
+    "full_original_target_package_installed_or_release_acceptance_implied": false
+  },
+  "post_upstream_sync_origin_identity": {
+    "producer": "R437",
+    "origin_files": 94,
+    "all_actual_Git_blob_bodies_types_and_modes_equal_tested_R419_native_view": true,
+    "new_owned_main_ancestor": "e6b24255020e080668e527d54cea197d6897de60",
+    "frozen_native_result_does_not_qualify_new_shared_framework_or_current_base": true
+  }
+}
