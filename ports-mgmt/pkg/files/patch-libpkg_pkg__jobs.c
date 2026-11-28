@@ -1,6 +1,9 @@
 --- libpkg/pkg_jobs.c.orig
 +++ libpkg/pkg_jobs.c
-@@ -1011,0 +1012,14 @@
+@@ -1009,6 +1009,20 @@
+ 				    "%s is not installed, therefore upgrade is impossible",
+ 				    pkg->name);
+ 				return (EPKG_NOTINSTALLED);
 +			}
 +			/* File candidates need the installed package in the universe too. */
 +			if (j->type == PKG_JOBS_INSTALL || j->type == PKG_JOBS_UPGRADE) {
@@ -15,3 +18,6 @@
 +						return (rc);
 +					}
 +				}
+ 			}
+ 			pkg->type = PKG_FILE;
+ 			pkg_jobs_add_req(j, pkg);
