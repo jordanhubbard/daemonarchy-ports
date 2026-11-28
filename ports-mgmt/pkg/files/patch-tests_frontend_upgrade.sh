@@ -1,17 +1,18 @@
 --- tests/frontend/upgrade.sh.orig
 +++ tests/frontend/upgrade.sh
-@@ -33,7 +33,9 @@
+@@ -33,7 +33,10 @@
  	confirm_removal \
  	hold_back \
  	hold_back_force \
 -	removal_automatic
 +	removal_automatic \
 +	preloaded_shlib_incompatible_upgrade \
-+	preloaded_shlib_coherent_upgrade
++	preloaded_shlib_coherent_upgrade \
++	local_archive_upgrade
  
  # bar-1.0 owns ${TMPDIR}/file1 and is installed, either explicitly or, when no
  # is passed as first argument, as an automatic package.  The repository then
-@@ -1360,3 +1362,86 @@
+@@ -1360,3 +1363,126 @@
  		pkg -o REPOS_DIR="${TMPDIR}/repoconf" \
  		-o PKG_CACHEDIR="${TMPDIR}" upgrade -n
  }
@@ -97,4 +98,44 @@
 +	atf_check -o match:'^libpreloaded\.so\.2$' -e empty -s exit:0 pkg query '%B' consumer
 +	atf_check -o inline:"libpreloaded.so.2\n" -e empty -s exit:0 pkg query '%b' provider
 +	atf_check -o not-match:"missing or unregistered" -e empty -s exit:0 pkg check -d -a
++}
++
++# Archive candidates must retain the installed version in the solver universe.
++local_archive_upgrade_body() {
++	prefix="$(pwd)/archive-prefix"
++	for version in 1 2; do
++		mkdir -p "stage${version}${prefix}/licenses/v${version}"
++		echo "payload-${version}" > "stage${version}${prefix}/common"
++		echo "license-${version}" > "stage${version}${prefix}/licenses/v${version}/LICENSE"
++		atf_check -s exit:0 sh "${RESOURCEDIR}/test_subr.sh" \
++		    new_pkg archive archive-control "${version}" "${prefix}"
++		cat << EOF >> archive.ucl
++files: {
++	"${prefix}/common": "",
++	"${prefix}/licenses/v${version}/LICENSE": "",
++}
++directories: { "${prefix}/licenses/v${version}": false }
++scripts: {
++	post-install: "echo install-${version} >> ${prefix}/hooks",
++	pre-deinstall: "echo deinstall-${version} >> ${prefix}/hooks",
++}
++EOF
++		atf_check -o ignore -e empty -s exit:0 pkg create \
++		    -r "$(pwd)/stage${version}" -M archive.ucl -o "repo${version}"
++	done
++	atf_check -o ignore -e empty -s exit:0 pkg add repo1/archive-control-1.pkg
++	atf_check -o inline:"payload-1\n" cat "${prefix}/common"
++	atf_check -o match:'1 -> 2' -e empty -s exit:1 \
++	    pkg install -l -n "$(pwd)/repo2/archive-control-2.pkg"
++	atf_check -o inline:"payload-1\n" cat "${prefix}/common"
++	atf_check -o ignore -e empty -s exit:0 \
++	    pkg install -l -y "$(pwd)/repo2/archive-control-2.pkg"
++	atf_check -o inline:"archive-control|2\n" -e empty -s exit:0 pkg query '%n|%v'
++	atf_check -o inline:"payload-2\n" cat "${prefix}/common"
++	atf_check -o inline:"license-2\n" cat "${prefix}/licenses/v2/LICENSE"
++	atf_check -s exit:1 test -e "${prefix}/licenses/v1/LICENSE"
++	atf_check -s exit:1 test -e "${prefix}/licenses/v1"
++	atf_check -o match:'deinstall-1' grep deinstall-1 "${prefix}/hooks"
++	atf_check -o match:'install-2' grep install-2 "${prefix}/hooks"
++	atf_check -o ignore -e empty -s exit:0 pkg check -s -a
 +}
