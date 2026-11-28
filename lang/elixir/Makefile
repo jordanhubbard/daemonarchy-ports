@@ -14,6 +14,7 @@ WWW=		https://elixir-lang.org/
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	erlang>26:lang/erlang
+RUN_DEPENDS=	erlang>26:lang/erlang
 
 USES=		cpe gmake
 CPE_VENDOR=	elixir-lang
