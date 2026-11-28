@@ -1,6 +1,6 @@
 PORTNAME=	xmlcatmgr
 PORTVERSION=	2.2
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -10,6 +10,8 @@ WWW=		https://xmlcatmgr.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+TEST_TARGET=	check
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
@@ -38,5 +40,8 @@ CATALOG_PORTS_XML?=	${PREFIX}/share/xml/catalog.ports
 OPTIONS_DEFINE=	DOCS
 
 DOCS_CONFIGURE_OFF=	--disable-docs
+
+post-test:
+	@${SH} ${FILESDIR}/attribute-regression.sh ${WRKSRC}/xmlcatmgr ${WRKDIR}
 
 .include <bsd.port.mk>
