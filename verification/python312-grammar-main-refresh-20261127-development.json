@@ -1,0 +1,29 @@
+{
+  "schema": "daemonarchy/upstream-import-audit@2",
+  "observed": "2026-11-27T19:34:52.599950+00:00",
+  "repository": "daemonarchy-ports",
+  "previous_owned_main": "c28c7d783b000b74e87516377d899d385a13a5b7",
+  "upstream_reference": "origin/main",
+  "upstream_commit": "f2eeba2346e1cea33697d173f079c0d3d1378a66",
+  "merge_base": "1370ce77dd1539ac7c3ca301efaabac764814a07",
+  "import_tree_before_this_evidence_file": "07905d410004448c278cbfc0887bd34fc3204328",
+  "complete_tree_file_entries": 184507,
+  "upstream_changed_paths": 4155,
+  "fork_changed_paths": 4,
+  "path_inventory_includes_both_sides_of_renames": true,
+  "shared_changed_paths": [
+    "docs/roadmap/active-work.md",
+    "lang/python312/Makefile"
+  ],
+  "upstream_bytes_modes_and_deletions_exact_outside_fork_delta": true,
+  "fork_bytes_modes_and_deletions_exact_outside_upstream_delta": true,
+  "native_build_and_runtime_qualified": false,
+  "qualification_scope": "Complete source-tree import and preservation audit. Previous native receipts remain bound to original commits; native build/runtime, per-unit ownership/provenance, SDK and release acceptance remain open.",
+  "resolution": {
+    "queue": "Preserved full current main text and exact grammar-qualification appendix",
+    "Makefile": "Retain qualified grammar revision5 after mail-validation revision2; entire Python port now byte/mode exact to native ee5 source",
+    "all_python_port_inputs_identical_to_native_source": "ee5dbbc99b46c70ed9333a0f17551048460645b2",
+    "mail_dependency_pr": 84,
+    "scope": "Original full-suite, sealed, lifecycle and normal observations remain bound to their exact source, artifacts and runtime. Unreconciled252aggregate skips and fractional timestamp rollback remain unqualified. No current recovered-SDK/canonical/release admission."
+  }
+}
