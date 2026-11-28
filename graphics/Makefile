@@ -176,6 +176,7 @@
     SUBDIR += dust3d
     SUBDIR += dynamechs
     SUBDIR += ebsynth
+    SUBDIR += ect
     SUBDIR += edje_viewer
     SUBDIR += egl-wayland
     SUBDIR += egl-wayland2
@@ -1204,6 +1205,7 @@
     SUBDIR += rubygem-svg_optimizer
     SUBDIR += rubygem-svg_sprite
     SUBDIR += rubygem-tanuki_emoji
+    SUBDIR += rustgis
     SUBDIR += rx
     SUBDIR += s10sh
     SUBDIR += s2
