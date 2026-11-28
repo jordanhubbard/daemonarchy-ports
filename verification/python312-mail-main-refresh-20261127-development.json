@@ -1,0 +1,32 @@
+{
+  "schema": "daemonarchy/upstream-import-audit@2",
+  "observed": "2026-11-27T19:33:54.739220+00:00",
+  "repository": "daemonarchy-ports",
+  "previous_owned_main": "7e09f1589650dc02f971c2927aa97424cf20f968",
+  "upstream_reference": "origin/main",
+  "upstream_commit": "3938f15110154b12216ec9cedba0959427fcf1a7",
+  "merge_base": "aef72724d2a2000dcafe6d7523223eaa523188d5",
+  "import_tree_before_this_evidence_file": "5158f668ceede4792d0192c3eff56a35e6146dfa",
+  "complete_tree_file_entries": 184504,
+  "upstream_changed_paths": 4154,
+  "fork_changed_paths": 6,
+  "path_inventory_includes_both_sides_of_renames": true,
+  "shared_changed_paths": [
+    "lang/python312/Makefile",
+    "security/vuxml/vuln/2026.xml"
+  ],
+  "upstream_bytes_modes_and_deletions_exact_outside_fork_delta": true,
+  "fork_bytes_modes_and_deletions_exact_outside_upstream_delta": true,
+  "native_build_and_runtime_qualified": false,
+  "qualification_scope": "Complete source-tree import and preservation audit. Previous native receipts remain bound to original commits; native build/runtime, per-unit ownership/provenance, SDK and release acceptance remain open.",
+  "resolution": {
+    "Makefile": "Feature revision2 replaces upstream CPE revision1; all other Makefile bytes identical",
+    "advisory_changed_records": [
+      "0be929a5-2e0f-11f1-88c7-00a098b42aeb",
+      "6d3488ae-2e0f-11f1-88c7-00a098b42aeb"
+    ],
+    "all_other_current_main_advisory_records_exact": true,
+    "four_mail_patch_inputs_exact_to_later_native_qualified_source": "ee5dbbc99b46c70ed9333a0f17551048460645b2",
+    "scope": "Original dual-architecture controls and combined builds retain QA source identities. Grammar PR122 later source has identical four mail patches and full original arm64 suite. No current recovered-SDK, feed publication, canonical or release admission."
+  }
+}
