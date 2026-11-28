@@ -1,6 +1,6 @@
 PORTNAME=	xhtml-modularization
 PORTVERSION=	1.0.${RECDATE}
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.w3.org/TR/2001/REC-xhtml-modularization-${RECDATE}/
 DISTNAME=	xhtml-modularization

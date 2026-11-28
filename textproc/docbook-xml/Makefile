@@ -1,6 +1,6 @@
 PORTNAME=	docbook
 PORTVERSION=	5.0
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	${DBFILES:C,(.*):(.*),https://docbook.org/xml/\1/:\2,:C,:docbook-xml-([0-9]+).([0-9]+).?([0-9]*),:db\1\2\3,:C,:docbook-([0-9]+).([0-9]+).?([0-9]*),:db\1\2\3,}
 PKGNAMESUFFIX=	-xml
@@ -22,6 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/xml/xmlcharent/catalog.xml:textproc/xmlcharent \
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+
+PATCH_WRKSRC=	${WRKDIR}
 
 DBFILES=4.1.2:docbkx412 4.2:docbook-xml-4.2 4.3:docbook-xml-4.3 \
 	4.4:docbook-xml-4.4 4.5:docbook-xml-4.5 5.0:docbook-5.0

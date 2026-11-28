@@ -1,6 +1,6 @@
 PORTNAME=	xmlcharent
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.oasis-open.org/docbook/${PORTNAME}/${PORTVERSION}/ \
 		https://library.syr.edu/digital/guides/lavender/
@@ -15,6 +15,7 @@ LICENSE_TEXT=	License text is available in all .ent files installed by this port
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
+TEST_DEPENDS=	xmllint:textproc/libxml2
 
 USES=		zip
 NO_WRKSUBDIR=	yes
@@ -27,5 +28,9 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${XMLDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ent \
 		${FILESDIR}/catalog ${FILESDIR}/catalog.xml ${STAGEDIR}${XMLDIR}
+
+do-test:
+	${SH} ${FILESDIR}/catalog-test.sh ${FILESDIR}/catalog.xml \
+		${WRKSRC} ${WRKDIR}/catalog-tests
 
 .include <bsd.port.mk>

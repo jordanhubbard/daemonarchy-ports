@@ -1,6 +1,6 @@
 PORTNAME=	dsssl-docbook-modular
 PORTVERSION=	1.79
-PORTREVISION=	1
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/docbook/docbook-dsssl/${PORTVERSION}:1 \

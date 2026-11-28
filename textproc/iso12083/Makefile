@@ -1,6 +1,6 @@
 PORTNAME=	iso12083
 PORTVERSION=	1993
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/kuriyama/iso12083
 DISTFILES=	article.dtd book.dtd maths.dtd serial.dtd

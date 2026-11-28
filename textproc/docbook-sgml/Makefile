@@ -1,6 +1,6 @@
 PORTNAME=	docbook
 PORTVERSION=	4.5
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	${DBFILES:C,(.*):(.*),https://www.oasis-open.org/docbook/sgml/\1/:\2,:C,:docbook-([0-9]+).([0-9]+),:db\1\2,}
 PKGNAMESUFFIX=	-sgml
@@ -17,6 +17,8 @@ RUN_DEPENDS=	${LOCALBASE}/${ISOCAT}:textproc/iso8879 \
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+PATCH_WRKSRC=	${WRKDIR}
 
 DBFILES=2.4.1:docbk241	3.0:docbk30	3.1:docbk31 \
 	4.0:docbk40	4.1:docbk41	4.2:docbook-4.2 \
