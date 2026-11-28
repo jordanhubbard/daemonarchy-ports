@@ -1,0 +1,922 @@
+{
+  "observed_utc": "2026-11-26T09:36:35.882984+00:00",
+  "status": "all16programs-OK-nested21PASS28SKIP-18configuration-cases-await-json-c-and-xxd",
+  "current_code_commit": "1c38241b2e4a06c2df013f736c0a2e7fbe56fdfc",
+  "current_native_source_composition": "82752667e9214aa089bc88be560a9201989a0a5e",
+  "baseline_native_source": "fadd8b8b2e4bdd2a4a9c1af6deb6472bec9e4231",
+  "scope": "Direct native FreeBSD aarch64 source/configuration/test observations only; package/normal/canonical/AMD64/fullrelease qualification remains pending.",
+  "problems": [
+    "With TEST selected, TEST_MESON_ARGS names the intended -Dtests-external-fonts=disabled argument, but the framework does not append that helper to MESON_ARGS. Original eight construction targets pass; actual Meson features show tests=enabled and tests-external-fonts=enabled. The observer stops before running the original TEST target.",
+    "After forwarding the declared external-font disable, all16original Meson programs execute:15Cprograms pass; the original Pytest program exits4 because --tap is unrecognized. Its TAP plugin is undeclared and absent. Meson discovers pytest during configuration, but the ports test-depends phase occurs after stage."
+  ],
+  "changes": [
+    "Use supported TEST_MESON_ON for the existing tests-external-fonts=disabled argument.",
+    "Declare the TAP plugin as a TEST build dependency so Meson discovers the complete test runner before configuration.",
+    "Add checksum-bound source ports for pytest-tap and tap.py, retain all original tests/runtime constraints, and patch confirmed tap.py malformed-plan/result-prefix false passes; retain generated patch backup outside the Hatch wheel source.",
+    "Add staged Python site-packages to PyYAML TEST_ENV so original test collection finds the built LibYAML extension; retain original LIBYAML default, all test cases and upstream assertions.",
+    "Expose pytest-tap staged distribution/entry-point metadata to original pytester subprocesses through TEST_ENV=${MAKE_ENV} plus staged PYTHONPATH, preserving original tests and fixture behavior.",
+    "Declare json-c before Fontconfig TEST configuration so all18 original JSON configuration cases get their executable.",
+    "Declare xxd for json-c original CLI regression fixture generation; preserve all original scripts/assertions/goldens/invalid-UTF8 input."
+  ],
+  "new_upstream_ports": {
+    "devel/py-tap.py": {
+      "version": "3.2.1",
+      "source": "https://files.pythonhosted.org/packages/37/d0/28b0c6c7fe464f70664f123e9f64f36acaf92767af98c1a82df6e2b49f41/tap_py-3.2.1.tar.gz",
+      "bytes": 125390,
+      "sha256": "d03c9e6af0a56fad994f1c69f14041e676811d73eeeef20bf4077c43d621d608",
+      "license": "BSD2CLAUSE, verified from original LICENSE",
+      "runtime_requirements": [
+        "more-itertools; extra == \"yaml\"",
+        "pyyaml>=5.1; extra == \"yaml\""
+      ],
+      "new_FreeBSD_package_base": "py312-tap-py",
+      "original_upstream_distribution_name": "tap.py",
+      "original_wheel_and_dist_info_name": "tap_py",
+      "distribution_normalization_reference": "https://packaging.python.org/en/latest/specifications/binary-distribution-format/",
+      "upstream_source_import_and_console_entry_points_unchanged": [
+        "tap",
+        "tappy"
+      ]
+    },
+    "devel/py-pytest-tap": {
+      "version": "3.6",
+      "source": "https://files.pythonhosted.org/packages/25/a6/46d219596f689e954396bfd9d0b46968f80ce49782b156dd2560d2a969ae/pytest_tap-3.6.tar.gz",
+      "bytes": 8295,
+      "sha256": "eb511bbeea66c2dbd4449ef35d3a8d5dc44255f85229d78f2abc8c1950eaa327",
+      "license": "BSD2CLAUSE, verified from original LICENSE",
+      "runtime_requirements": [
+        "pytest>=3.0",
+        "tap-py<4.0,>=3.2"
+      ],
+      "staged_test_entry_point_visibility": "Original source dev group depends on the package itself; pytester subprocesses need its pytest11 distribution entry point. Preserve original MAKE_ENV and add staged site-packages. Native qualification pending.",
+      "FreeBSD_runtime_provider": "py312-tap-py>=3.2<4.0:devel/py-tap.py@py312"
+    }
+  },
+  "initial_helper_only_regression": {
+    "owned_code_commit": "30975c70f332aceb6aff02a15365d7d11a41b279",
+    "native_source_composition": "2b5ac9a77db3956379a833c7bf25eebc2e6906a6",
+    "scope": "This earlier checkpoint changes only the helper spelling; its unchanged TEST dependency observation predates the newly declared TAP dependency.",
+    "native_regression": {
+      "full_virtual_source_members_verified": 184381,
+      "full_tree_delta_paths": [
+        "x11-fonts/fontconfig/Makefile"
+      ],
+      "source_layout": "Separate seven-file Git-bound port override plus retained original full source/Mk/Templates; exact MASTERDIR/PATCHDIR/distinfo/plist paths verified by native make. Original source remains unchanged.",
+      "queries_run_as_uid": 65534,
+      "metadata": {
+        "original_default": {
+          "PKGNAME": "fontconfig-2.18.3,1",
+          "SELECTED_OPTIONS": "BITMAPS DOCS HINTING_SLIGHT NLS",
+          "MESON_ARGS": "-Dadditional-fonts-dirs=/usr/local/lib/X11/fonts  -Dcache-build=disabled  -Dcache-dir=/var/db/fontconfig  -Ddefault_library=both  -Ddefault-fonts-dirs=/usr/local/share/fonts  -Ddoc=disabled  -Dtemplate-dir=/usr/local/etc/fonts/conf.avail  -Dxml-dir=/usr/local/etc/fonts -Dbitmap-conf=yes -Ddefault-hinting=slight -Dnls=enabled -Dtests=disabled",
+          "BUILD_DEPENDS": "/usr/local/bin/gperf:devel/gperf meson:devel/meson ninja:devel/ninja pkgconf>=1.3.0_1:devel/pkgconf /usr/local/bin/python3.12:lang/python312 gettext-runtime>=0.26:devel/gettext-runtime gettext-tools>=0.26:devel/gettext-tools ",
+          "LIB_DEPENDS": "libfreetype.so:print/freetype2  libexpat.so:textproc/expat2 libintl.so:devel/gettext-runtime",
+          "RUN_DEPENDS": "",
+          "TEST_DEPENDS": "",
+          "TEST_TARGET": "test"
+        },
+        "fixed_default": {
+          "PKGNAME": "fontconfig-2.18.3,1",
+          "SELECTED_OPTIONS": "BITMAPS DOCS HINTING_SLIGHT NLS",
+          "MESON_ARGS": "-Dadditional-fonts-dirs=/usr/local/lib/X11/fonts  -Dcache-build=disabled  -Dcache-dir=/var/db/fontconfig  -Ddefault_library=both  -Ddefault-fonts-dirs=/usr/local/share/fonts  -Ddoc=disabled  -Dtemplate-dir=/usr/local/etc/fonts/conf.avail  -Dxml-dir=/usr/local/etc/fonts -Dbitmap-conf=yes -Ddefault-hinting=slight -Dnls=enabled -Dtests=disabled",
+          "BUILD_DEPENDS": "/usr/local/bin/gperf:devel/gperf meson:devel/meson ninja:devel/ninja pkgconf>=1.3.0_1:devel/pkgconf /usr/local/bin/python3.12:lang/python312 gettext-runtime>=0.26:devel/gettext-runtime gettext-tools>=0.26:devel/gettext-tools ",
+          "LIB_DEPENDS": "libfreetype.so:print/freetype2  libexpat.so:textproc/expat2 libintl.so:devel/gettext-runtime",
+          "RUN_DEPENDS": "",
+          "TEST_DEPENDS": "",
+          "TEST_TARGET": "test"
+        },
+        "original_TEST": {
+          "PKGNAME": "fontconfig-2.18.3,1",
+          "SELECTED_OPTIONS": "BITMAPS DOCS HINTING_SLIGHT NLS TEST",
+          "MESON_ARGS": "-Dadditional-fonts-dirs=/usr/local/lib/X11/fonts  -Dcache-build=disabled  -Dcache-dir=/var/db/fontconfig  -Ddefault_library=both  -Ddefault-fonts-dirs=/usr/local/share/fonts  -Ddoc=disabled  -Dtemplate-dir=/usr/local/etc/fonts/conf.avail  -Dxml-dir=/usr/local/etc/fonts -Dbitmap-conf=yes -Ddefault-hinting=slight -Dnls=enabled -Dtests=enabled",
+          "BUILD_DEPENDS": "/usr/local/bin/gperf:devel/gperf meson:devel/meson ninja:devel/ninja pkgconf>=1.3.0_1:devel/pkgconf /usr/local/bin/python3.12:lang/python312 gettext-runtime>=0.26:devel/gettext-runtime gettext-tools>=0.26:devel/gettext-tools ",
+          "LIB_DEPENDS": "libfreetype.so:print/freetype2  libexpat.so:textproc/expat2 libintl.so:devel/gettext-runtime",
+          "RUN_DEPENDS": "",
+          "TEST_DEPENDS": "bash:shells/bash",
+          "TEST_TARGET": "test"
+        },
+        "fixed_TEST": {
+          "PKGNAME": "fontconfig-2.18.3,1",
+          "SELECTED_OPTIONS": "BITMAPS DOCS HINTING_SLIGHT NLS TEST",
+          "MESON_ARGS": "-Dadditional-fonts-dirs=/usr/local/lib/X11/fonts  -Dcache-build=disabled  -Dcache-dir=/var/db/fontconfig  -Ddefault_library=both  -Ddefault-fonts-dirs=/usr/local/share/fonts  -Ddoc=disabled  -Dtemplate-dir=/usr/local/etc/fonts/conf.avail  -Dxml-dir=/usr/local/etc/fonts -Dbitmap-conf=yes -Ddefault-hinting=slight -Dnls=enabled -Dtests=enabled -Dtests-external-fonts=disabled",
+          "BUILD_DEPENDS": "/usr/local/bin/gperf:devel/gperf meson:devel/meson ninja:devel/ninja pkgconf>=1.3.0_1:devel/pkgconf /usr/local/bin/python3.12:lang/python312 gettext-runtime>=0.26:devel/gettext-runtime gettext-tools>=0.26:devel/gettext-tools ",
+          "LIB_DEPENDS": "libfreetype.so:print/freetype2  libexpat.so:textproc/expat2 libintl.so:devel/gettext-runtime",
+          "RUN_DEPENDS": "",
+          "TEST_DEPENDS": "bash:shells/bash",
+          "TEST_TARGET": "test"
+        }
+      },
+      "default_effective_arguments_options_and_all_dependencies_exactly_unchanged": true,
+      "TEST_effective_arguments_gain_exactly_original_declared_external_font_disable": true,
+      "TEST_selected_options_and_dependencies_unchanged": true,
+      "fresh_whole_SDK116_raw_database_frozen17_base_accounts_loader_cache_mounts_and250_selected_inputs_preserved": true
+    }
+  },
+  "original_default_evidence": {
+    "eight_original_construction_targets_pass": true,
+    "original_bitmap_combo_yes_observer_and_wrong_two_choice_schema_failures_retained": true,
+    "corrected_readonly_features_then_original_default_make_test_exit": 0,
+    "actual_default_discovered_test_programs": 0,
+    "zero_program_bridge_not_a_selfsuite_pass": true,
+    "candidate_normally_installed": false
+  },
+  "helper_fixed_original_TEST_suite": {
+    "discovered_programs": 16,
+    "completed_programs": 16,
+    "all_names_and_actual_argv_match_original_discovery": true,
+    "results": {
+      "OK": 15,
+      "ERROR": 1
+    },
+    "Pytest_exit": 4,
+    "Pytest_error": "unrecognized arguments: --tap",
+    "source_discovery_sha256": "f93364e0fd502506570c99e93d0273106ef7b7aa15a37fa2c99221447fd90c53",
+    "original_Meson_testlog_json_sha256": "c29b622aeb1e5af71c6c326c3b0a41cacc87adf552f17277ee3aea7190b3bbcc",
+    "original_Meson_testlog_txt_sha256": "a065574b74b7d403a57b55ec73dee8efbc04ae6b26b14ee436a76bac3b0274a5",
+    "original_native_producer_result_sha256": "9e0a806cde2b3be1393f6f45e348cc3cee50c1d3855ac2467a867e34a9c4d45d",
+    "candidate_package_bytes": 489008,
+    "candidate_package_sha256": "5d43557adccb48c0e8b0d876584fd07ba67aa4ab5d7a3ca2803345191eb17e67",
+    "candidate_package_body_unchanged_after_failed_suite": true,
+    "complete_source_suite_pass": false,
+    "whole_SDK116_frozen17_base_accounts_cache_mounts_and_selected_source_guards_pass": true
+  },
+  "retained_preflight_diagnostics": {
+    "original_strict_preflight_mismatch_retained": true,
+    "actual_difference": "Only idle-period SQLite SHM mtime changed; bodies, type, size, mode, numeric IDs, flags, hardlinks and all other nodes equal. Exact responsible operation not established.",
+    "completion": "Existing typed metadata-query preflight transition records that delta, then holds a fresh complete SDK snapshot exactly through native execution. No timestamp restoration, data exclusion or in-flight guard relaxation."
+  },
+  "current_source_preparation": {
+    "full_Git_members": 184388,
+    "changed_or_added_paths_from_retained_fadd": 11,
+    "removed_paths": 0,
+    "prior_e11626_complete_native_source_preparation": "pass-all184387bodies/modes/links-and-allSDK117/system/sourceguards; original source retained",
+    "prior_preparation_receipt_sha256": "35fc72cbfa15974d13a6e5f3b4dffdcbd4fa0d7546ca41f1ca12e93e77880c5c",
+    "current_27dd3d_complete_native_source_preparation": "pass; all184387bodies/modes/links, exactGit tree, unchangedoriginalsource andwholeSDK117/rawDB/frozen/base/accounts/cache/mount guards",
+    "current_native_source_member_manifest_reconstructs_exact_Git_tree": true,
+    "scope": "Current82752667 source adds Fontconfig configure-time json-c test dependency and json-c originalCLI xxd test dependency. Older qualifiedTappy/Pytest/source artifacts keepactualsourcepins993a2a10 andearlier; no repinning.",
+    "latest_source_tree": "a91b5e451d80d28237470a26389894fb56c75322",
+    "qualified_PyYAML_source_tree": "20d8296ce9634f34099890eb8fcd7d553a5e215b",
+    "qualified_PyYAML_native_preparation_receipt_sha256": "4f7f7264540468c6a882f1fa06e0d18b2cf17ccdf4c85f6ef0562cf88b224e6c",
+    "latest_native_source_preparation": "pass-all184388Gitbodies-modes-links-SDK121-frozen-base-accounts-cache-mount-oldsource-guards",
+    "last_verified_source_tree": "a91b5e451d80d28237470a26389894fb56c75322",
+    "last_verified_native_preparation_receipt_sha256": "84fa86d32926b3a3ea496f7c1442b46dc7aeeafeba54f4ce982ea0f40b64b66a",
+    "last_verified_source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+    "current_source_tree": "a91b5e451d80d28237470a26389894fb56c75322",
+    "current_native_source_preparation": "pass-all184388Gitbodies-modes-links-SDK121-frozen-base-accounts-cache-mount-oldsource-guards",
+    "current_native_preparation_receipt_sha256": "84fa86d32926b3a3ea496f7c1442b46dc7aeeafeba54f4ce982ea0f40b64b66a"
+  },
+  "remaining": [
+    "The repaired Fontconfig revision1 now qualifies at bounded development count124; retain actual older-cache baseline and original network/Linux-bwrap skip scope.",
+    "Complete canonical Component/SDK/TCB, matched source/kernel/AMD64, desktop/application/hardware and all wider 1.6 gates."
+  ],
+  "operational_metadata_reconciliation": {
+    "scope": "Between controlled native jobs, official vulnerability feed refreshed; original failing preflight retained. Independent official FreeBSD HTTPS download and Last-Modified match exact new body/mtime. Preserve both feeds, fresh complete SDK seal and raw package database. No service/timer changes or timestamp restoration.",
+    "software_packages_added": 0,
+    "all_software_and_main_package_database_unchanged": true,
+    "prior_feed_sha256": "bccd2aa7e09f865e1718708445eded736462a25c18559440353d8bd7b2b2db62",
+    "current_feed_sha256": "83f707368cbe497f6c09f6aceddb54145a04b19ebce96b7e78e6512ee86773d5",
+    "source": "https://vuxml.freebsd.org/freebsd/vuln.xml.xz",
+    "records_before": 6876,
+    "records_after": 6888,
+    "responsible_background_operation": "not established",
+    "native_ARM_and_physical_Intel_all_archived_nodes_verified": 26,
+    "archive_sha256": "69c27ad78820e7cfa49e71f7876964223fd8d11b222bcb059bc70916579fe31a",
+    "normal_accepted_count_unchanged": 116
+  },
+  "test_dependency_qualification": {
+    "full_original_build_and_test_graph": "pass",
+    "nodes_including_Fontconfig": 6,
+    "LibYAML": {
+      "observed_utc": "2026-11-26T05:13:09.956179+00:00",
+      "status": "pass-bounded-native-ARM-original-default-LibYAML-normal117",
+      "scope": "Bounded native development admission only; full release and canonical qualification remain open.",
+      "original_origin": "textproc/libyaml",
+      "version": "0.2.5",
+      "source_revision": "3f9d8a0447226e2240056ac7d6058c3bd8dc1c0f",
+      "package": {
+        "bytes": 67302,
+        "sha256": "ece921a02ca8c8476fce3eebf3097fbdb2d139b475d329092911fbc6f30c9f7f"
+      },
+      "original_construction_targets": [
+        [
+          "checksum",
+          0
+        ],
+        [
+          "extract",
+          0
+        ],
+        [
+          "patch",
+          0
+        ],
+        [
+          "configure",
+          0
+        ],
+        [
+          "build",
+          0
+        ],
+        [
+          "stage",
+          0
+        ],
+        [
+          "check-plist",
+          0
+        ],
+        [
+          "package",
+          0
+        ],
+        [
+          "test",
+          0
+        ]
+      ],
+      "original_selfsuite": {
+        "discovered": 2,
+        "completed": 2,
+        "PASS": 2,
+        "SKIP": 0,
+        "ERROR": 0,
+        "FAIL": 0,
+        "names": [
+          "test-version",
+          "test-reader"
+        ],
+        "suite_log_sha256": "b04a863f01b55e247fd9b2ccd6b8f2add645651a1519ecfb72904ea4996c6a52"
+      },
+      "independent_parser_emitter_matrix": {
+        "UTF8_UTF16LE_UTF16BE_times_plain_and_canonical": 6,
+        "documents_each": 2,
+        "negative_error_categories": [
+          "reader",
+          "scanner",
+          "parser",
+          "composer"
+        ],
+        "negative_cases": 5,
+        "fresh_valid_recovery": true,
+        "semantic_comparison": "All composed node types/tags/scalar lengths and bytes/sequence item IDs/mapping key-value IDs including shared alias identity; styles intentionally vary during re-emission."
+      },
+      "shared_static_outputs_identical": true,
+      "private_client_sha256": "4a80485e3d0aff0ef7da88ef1ef7c6ab70723521081aa68193d449013e9b970e",
+      "lifecycle": {
+        "original_package_transactions": 6,
+        "real_ldconfig_install_delete_reinstall_hooks_verified": true,
+        "readonly_base_devfs_locked_accounts_and_final_unmount_verified": true
+      },
+      "normal": {
+        "accepted_normal_count": 117,
+        "exact_new_payloads": 10,
+        "inherited_package_prefixes_preserved": 116,
+        "exact_registry_old116_plus_LibYAML": true,
+        "default_pkgconf_and_shared_loader_static_link_no_private_overrides": true,
+        "shared_static_outputs_equal_private": true,
+        "all_preexisting_loader_candidate_priorities_preserved": true,
+        "new_shared_providers": 1,
+        "full_SDK117_raw_database_frozen17_base_accounts_cache_mounts_and247_source_guards_pass": true
+      },
+      "source_private_lifecycle_custody": {
+        "nodes": 1237,
+        "archive_bytes": 15522358,
+        "archive_sha256": "44da2df11eee83558b765906c50705c0337da29c59c6164de9296764463f9457",
+        "inventory_sha256": "60aa38899cf52291865c948b578c324a4d24dcb3356d3e470928f05e79fe3fa0",
+        "all_bodies_metadata_links_hardlinks_and_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
+      },
+      "normal_custody": {
+        "nodes": 44,
+        "archive_bytes": 18044080,
+        "archive_sha256": "b4c24d83b3d11d07334b24061364e8ef8f5f1968890ed556fe1d652ba9f0caa2",
+        "inventory_sha256": "16846764b794c361f903cf319ded21e816149021168edda909380f3b04300bd7",
+        "all_bodies_metadata_links_hardlinks_and_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
+      },
+      "remaining": "More-itertools normal/lifecycle/custody, PyYAML and new TAP tools, complete original Fontconfig suite and private/default integration; matching source/SDK/kernel and AMD64, canonical Component/ownership/provenance/lifecycle/SDK/TCB, desktop, physical matrix, installer/update/rollback/media/freeze/signing/publication."
+    },
+    "more_itertools": {
+      "original_discovered_cases": 929,
+      "all_original_case_ids_order_and_completions_match": true,
+      "OK": 929,
+      "SKIP": 0,
+      "FAIL": 0,
+      "ERROR": 0,
+      "independent_private_checks": 245,
+      "retained_audit_parser_failure": "Parent class doctest and method doctest collided in initial header parser; corrected exact method ID composition, preserving original test case identities/order/completions and all failed audit evidence.",
+      "original_package_lifecycle_transactions": 6,
+      "source_failure_private_lifecycle_two_host_custody": {
+        "nodes": 1062,
+        "source_revision": "3f9d8a0447226e2240056ac7d6058c3bd8dc1c0f",
+        "archive_bytes": 15071463,
+        "archive_sha256": "5b4fbf84f7d15cd32dd4766fce65da48a5a309cd46cbb460ff364f8da2063edd",
+        "inventory_sha256": "107f77dc143f3c849737c2ef4aa1757fd843f1dcafa1c3e2a425eefe54aa1d78",
+        "all_native_bodies_metadata_links_hardlinks_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
+      },
+      "normal_acceptance_pending": false,
+      "actual_normal_qualification": {
+        "observed_utc": "2026-11-26T06:08:44.866293+00:00",
+        "status": "pass-bounded-native-ARM-MoreItertools-normal118",
+        "scope": "Original upstream implementation/tests retained; native bounded development acceptance only, canonical/SDK/TCB/matchingAMD64/source/kernel/desktop/physical/fullrelease open.",
+        "source_revision": "3f9d8a0447226e2240056ac7d6058c3bd8dc1c0f",
+        "package": {
+          "bytes": 123370,
+          "sha256": "47f82119a0f4ef6e4a20cda608604afd39e4db962a928561075d567df35baf7f"
+        },
+        "original_selfsuite": {
+          "discovered": 929,
+          "completed": 929,
+          "OK": 929,
+          "SKIP": 0,
+          "FAIL": 0,
+          "ERROR": 0,
+          "all_original_ids_and_order_match": true,
+          "original_stderr_sha256": "fde21de0d4920fe396346fa2cfe0273a1c8b0d91b1795ddfc3095c562ba91d00",
+          "discovery_sha256": "7adfe01d841413a2ecae262c409f123782cdbdc2d134d7e558742ad279dd61e5"
+        },
+        "independent_private_consumer": {
+          "independent_checks": 245,
+          "seed": 626116,
+          "strict_negative_and_fresh_valid_recovery": true,
+          "version": "11.2.1"
+        },
+        "actual_default_consumer_identical_to_private": true,
+        "actual_default_no_private_LD_or_PYTHONPATH_override": true,
+        "original_lifecycle": {
+          "real_package_transactions": 6,
+          "no_original_scripts_Lua_or_shared_providers": true,
+          "no_declared_hooks_suppressed_or_invented": true,
+          "private_dependency_package_delivery_or_solver_claimed": false,
+          "readonly_base_devfs_locked_accounts_and_final_unmount_verified": true
+        },
+        "normal": {
+          "accepted_bounded_development_count": 118,
+          "exact_payload_count": 21,
+          "inherited_package_prefixes_preserved": 117,
+          "original_dependencies_resolved_offline_and_pkg_integrity_pass": true,
+          "actual_normal_module_metadata_binding": {
+            "module": "/usr/local/lib/python3.12/site-packages/more_itertools/__init__.py",
+            "metadata_version": "11.2.1"
+          },
+          "all_preexisting_loader_candidate_priorities_preserved": true,
+          "loader_cache_bytes_and_metadata_exactly_unchanged": true,
+          "new_shared_providers": 0,
+          "whole_SDK_raw_database_frozen17_base_accounts_cache_mounts_and_selected_source_guards_pass": true
+        },
+        "source_failure_private_lifecycle_custody": {
+          "nodes": 1062,
+          "archive_bytes": 15071463,
+          "archive_sha256": "5b4fbf84f7d15cd32dd4766fce65da48a5a309cd46cbb460ff364f8da2063edd",
+          "inventory_sha256": "107f77dc143f3c849737c2ef4aa1757fd843f1dcafa1c3e2a425eefe54aa1d78",
+          "all_bodies_metadata_links_hardlinks_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
+        },
+        "normal_custody": {
+          "nodes": 30,
+          "archive_bytes": 17996210,
+          "archive_sha256": "7bfdbf5f70bc0554002476e9785987cf6f5efea038e6287ca3999a70671c98a3",
+          "inventory_sha256": "baf4955607bd94ef5b3153fc8a4875b2ed6ac6d6804e996f382ace00e10d937f",
+          "all_bodies_metadata_links_hardlinks_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
+        },
+        "remaining": "TAP source ports, complete original Fontconfig suite and actual font/cache/XML/CLI/shared/static/Lua/sample/trigger/lifecycle/normal delivery; matching source/SDK/kernel and AMD64, canonical per-unit ownership/provenance/lifecycle/SDK/TCB, complete desktop/apps/physical/installer/update/rollback/media/freeze/signing/publication.",
+        "retained_observer_correction": "Initial doctest method header collided with its parent class doctest ID. Failed observation/readonly diagnostic retained; exact corrected929case identities/order/completions verified, no test/assertion/source changes."
+      }
+    },
+    "PyYAML": {
+      "original_construction_targets_pass": 8,
+      "original_test_collection_error_retained": true,
+      "actual_staged_compiled_extension_present": true,
+      "explicit_staged_import_path_probe_exit": 0,
+      "reported_cases_passed": 2608,
+      "reported_warnings": 1,
+      "all_original_suite_inputs_and_assertions_unchanged": true,
+      "whole_SDK117_raw_database_frozen_base_accounts_cache_mounts_and248_source_inputs_preserved": true,
+      "probe_native_result_sha256": "bf560d4a8c00111772c49cb6b4129e0ab5ab9a84297789d2f494437e77f41b7b",
+      "source_fix": "TEST_ENV= ${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}",
+      "native_corrected_source_and_per_case_discovery_audit_pending": false,
+      "retained_corrected_source_metadata_failure": {
+        "source_revision": "e11626aac235788195349cbb0fdc88dc40069421",
+        "build_targets_executed": 0,
+        "finding": "TEST_ENV+= suppresses framework TEST_ENV?=${MAKE_ENV}, losing original environment including PYYAML_FORCE_LIBYAML=1. Native metadata guard stops before any construction. TEST_ARGS contains framework DESTDIR, which the pytest bridge removes; observer accepts only that original argument while requiring no skipped-test expressions.",
+        "remedy": "Explicitly preserve deferred MAKE_ENV and add staged PYTHONPATH; require the effective TEST_ENV token sequence to equal original MAKE_ENV plus exactly the staged path.",
+        "failure_result_sha256": "cb0f89f8dc2b9e4aad330a02b4bd11eca01a547cdea43b32924f1caeb90c9b33",
+        "source_frozen_base_accounts_cache_mount_guards_pass": true,
+        "normal_accepted_count_unchanged": 117
+      },
+      "corrected_source_case_audit_plan": "Original make test with built-in JUnit file/line output only; independently collect original function and fixture identities. All2608 completions must match unique nodeid/file/line signatures, including three cases sharing one display ID. Original assertions/corpus/selection stay unchanged.",
+      "independent_client_preflight": {
+        "retained_original3f_stage_only": true,
+        "checks": 62,
+        "encoding_backend_matrices": 6,
+        "token_semantics_and_event_semantics_pure_compiled_identical": true,
+        "safe_constructor_malformed_input_negatives_and_fresh_recovery": true,
+        "actual_new_candidate_must_repeat_acceptance": true,
+        "client_sha256": "f86f17d764cf74b0d1c2af24bde2def764db2a47770d67ac9ba60181813f25f6"
+      },
+      "native_corrected_source_case_audit_pending": false,
+      "corrected_source_native_result": {
+        "source_revision": "27dd3d763c011d8a4a5c7b2e40d47947bfb918de",
+        "package": {
+          "bytes": 178892,
+          "sha256": "bfb79e767fbe38dec6fbf1e0d4decd8869e50a1ec674529ac753ea893420f243"
+        },
+        "original_construction_targets": 8,
+        "original_suite": {
+          "discovered": 2608,
+          "completed": 2608,
+          "PASS": 2608,
+          "SKIP": 0,
+          "FAIL": 0,
+          "ERROR": 0,
+          "duplicate_display_ids": 2,
+          "all_case_file_line_id_signatures_unique_and_ordered_completions_match": true,
+          "discovery_includes_function_and_all_fixture_arguments": true,
+          "native_junit_xml_sha256": "2f4cfcda34b0607d97d7ec9563b152ad247405f2b082c9d934937a2c2fb2a640",
+          "native_discovery_sha256": "d9eac95a7b5eb30676f5baca17b90c3961de1623535ccf952b1b7a0589ad637f"
+        },
+        "all_original_test_and_data_files_match_verified_distfile": 598,
+        "corrected_source_TEST_ENV_exactly_preserves_original_MAKE_ENV_and_adds_only_staged_PYTHONPATH": true,
+        "sealed_candidate_independent_yaml_consumer": {
+          "authored_scalar_types_aliases_cycles_streams_custom_types_and_recovery": true,
+          "encoding_backend_matrices": [
+            [
+              "pure",
+              "utf-8",
+              true
+            ],
+            [
+              "pure",
+              "utf-16-le",
+              true
+            ],
+            [
+              "pure",
+              "utf-16-be",
+              true
+            ],
+            [
+              "compiled",
+              "utf-8",
+              true
+            ],
+            [
+              "compiled",
+              "utf-16-le",
+              true
+            ],
+            [
+              "compiled",
+              "utf-16-be",
+              true
+            ]
+          ],
+          "event_count": 33,
+          "event_semantics_sha256": "52516817fd055a098e76639343ec3b7816fcba26056d82623428ec8714d290ef",
+          "independent_checks": 62,
+          "libyaml_version": "0.2.5",
+          "negative_error_results": [
+            [
+              "pure",
+              "ParserError"
+            ],
+            [
+              "pure",
+              "ScannerError"
+            ],
+            [
+              "pure",
+              "ComposerError"
+            ],
+            [
+              "pure",
+              "ConstructorError"
+            ],
+            [
+              "pure",
+              "ReaderError"
+            ],
+            [
+              "compiled",
+              "ParserError"
+            ],
+            [
+              "compiled",
+              "ScannerError"
+            ],
+            [
+              "compiled",
+              "ComposerError"
+            ],
+            [
+              "compiled",
+              "ConstructorError"
+            ],
+            [
+              "compiled",
+              "ReaderError"
+            ]
+          ],
+          "token_count": 57,
+          "token_semantics_sha256": "95ea704e224811713dbee17a5ef42047dd9aec304e64c78fae235169e07b998e",
+          "version": "6.0.3"
+        },
+        "private_client_sha256": "f86f17d764cf74b0d1c2af24bde2def764db2a47770d67ac9ba60181813f25f6",
+        "original_package_lifecycle_transactions": 6,
+        "original_scripts_Lua_or_shared_providers_declared": false,
+        "no_declared_hooks_suppressed_or_invented": true,
+        "original_mounts_restored_finally": true,
+        "whole_SDK117_frozen_base_accounts_cache_mounts_and248_source_guards_pass": true,
+        "complete_source_failure_private_lifecycle_custody_and_normal_acceptance_pending": false
+      },
+      "original_package_lifecycle_transactions": 6,
+      "source_failure_private_lifecycle_two_host_custody": {
+        "nodes": 3283,
+        "source_revision": "27dd3d763c011d8a4a5c7b2e40d47947bfb918de",
+        "archive_bytes": 32819591,
+        "archive_sha256": "506f60c42e19fdf51b1d3a91964bef005d7cf37a752bb261534c6a88372dd963",
+        "inventory_sha256": "aa63e557fec1898e0a6c01ced7fad77e3dc9e83fd90662df84a40ee4896cbdc7",
+        "all_native_bodies_metadata_links_hardlinks_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
+      },
+      "normal_acceptance_pending": false,
+      "actual_normal_qualification": {
+        "observed_utc": "2026-11-26T06:08:44.866293+00:00",
+        "status": "pass-bounded-native-ARM-PyYAML-normal119",
+        "scope": "Original upstream implementation/tests retained; native bounded development acceptance only, canonical/SDK/TCB/matchingAMD64/source/kernel/desktop/physical/fullrelease open.",
+        "source_revision": "27dd3d763c011d8a4a5c7b2e40d47947bfb918de",
+        "package": {
+          "bytes": 178892,
+          "sha256": "bfb79e767fbe38dec6fbf1e0d4decd8869e50a1ec674529ac753ea893420f243"
+        },
+        "original_selfsuite": {
+          "discovered": 2608,
+          "completed": 2608,
+          "PASS": 2608,
+          "SKIP": 0,
+          "FAIL": 0,
+          "ERROR": 0,
+          "duplicate_display_ids": 2,
+          "all_case_file_line_id_signatures_unique_and_ordered_completions_match": true,
+          "discovery_includes_function_and_all_fixture_arguments": true,
+          "native_junit_xml_sha256": "2f4cfcda34b0607d97d7ec9563b152ad247405f2b082c9d934937a2c2fb2a640",
+          "native_discovery_sha256": "d9eac95a7b5eb30676f5baca17b90c3961de1623535ccf952b1b7a0589ad637f"
+        },
+        "independent_private_consumer": {
+          "authored_scalar_types_aliases_cycles_streams_custom_types_and_recovery": true,
+          "encoding_backend_matrices": [
+            [
+              "pure",
+              "utf-8",
+              true
+            ],
+            [
+              "pure",
+              "utf-16-le",
+              true
+            ],
+            [
+              "pure",
+              "utf-16-be",
+              true
+            ],
+            [
+              "compiled",
+              "utf-8",
+              true
+            ],
+            [
+              "compiled",
+              "utf-16-le",
+              true
+            ],
+            [
+              "compiled",
+              "utf-16-be",
+              true
+            ]
+          ],
+          "event_count": 33,
+          "event_semantics_sha256": "52516817fd055a098e76639343ec3b7816fcba26056d82623428ec8714d290ef",
+          "independent_checks": 62,
+          "libyaml_version": "0.2.5",
+          "negative_error_results": [
+            [
+              "pure",
+              "ParserError"
+            ],
+            [
+              "pure",
+              "ScannerError"
+            ],
+            [
+              "pure",
+              "ComposerError"
+            ],
+            [
+              "pure",
+              "ConstructorError"
+            ],
+            [
+              "pure",
+              "ReaderError"
+            ],
+            [
+              "compiled",
+              "ParserError"
+            ],
+            [
+              "compiled",
+              "ScannerError"
+            ],
+            [
+              "compiled",
+              "ComposerError"
+            ],
+            [
+              "compiled",
+              "ConstructorError"
+            ],
+            [
+              "compiled",
+              "ReaderError"
+            ]
+          ],
+          "token_count": 57,
+          "token_semantics_sha256": "95ea704e224811713dbee17a5ef42047dd9aec304e64c78fae235169e07b998e",
+          "version": "6.0.3"
+        },
+        "actual_default_consumer_identical_to_private": true,
+        "actual_default_no_private_LD_or_PYTHONPATH_override": true,
+        "original_lifecycle": {
+          "real_package_transactions": 6,
+          "no_original_scripts_Lua_or_shared_providers": true,
+          "no_declared_hooks_suppressed_or_invented": true,
+          "private_dependency_package_delivery_or_solver_claimed": false,
+          "readonly_base_devfs_locked_accounts_and_final_unmount_verified": true
+        },
+        "normal": {
+          "accepted_bounded_development_count": 119,
+          "exact_payload_count": 68,
+          "inherited_package_prefixes_preserved": 118,
+          "original_dependencies_resolved_offline_and_pkg_integrity_pass": true,
+          "actual_normal_module_metadata_binding": {
+            "module": "/usr/local/lib/python3.12/site-packages/yaml/__init__.py",
+            "metadata_version": "6.0.3",
+            "extension": "/usr/local/lib/python3.12/site-packages/yaml/_yaml.cpython-312.so",
+            "libyaml_version": "0.2.5"
+          },
+          "all_preexisting_loader_candidate_priorities_preserved": true,
+          "loader_cache_bytes_and_metadata_exactly_unchanged": true,
+          "new_shared_providers": 0,
+          "whole_SDK_raw_database_frozen17_base_accounts_cache_mounts_and_selected_source_guards_pass": true
+        },
+        "source_failure_private_lifecycle_custody": {
+          "nodes": 3283,
+          "archive_bytes": 32819591,
+          "archive_sha256": "506f60c42e19fdf51b1d3a91964bef005d7cf37a752bb261534c6a88372dd963",
+          "inventory_sha256": "aa63e557fec1898e0a6c01ced7fad77e3dc9e83fd90662df84a40ee4896cbdc7",
+          "all_bodies_metadata_links_hardlinks_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
+        },
+        "normal_custody": {
+          "nodes": 34,
+          "archive_bytes": 18013496,
+          "archive_sha256": "65442c6568bd636e173d9775ab242fe4d053ddaef081314b1533ec234fa7c34a",
+          "inventory_sha256": "87ab47566f94694ee5b2f6a7a3578c348d5d955bd1c63fade314fb966cb6b351",
+          "all_bodies_metadata_links_hardlinks_gzip_CRC_verified_on_native_ARM_and_physical_Intel": true
+        },
+        "remaining": "TAP source ports, complete original Fontconfig suite and actual font/cache/XML/CLI/shared/static/Lua/sample/trigger/lifecycle/normal delivery; matching source/SDK/kernel and AMD64, canonical per-unit ownership/provenance/lifecycle/SDK/TCB, complete desktop/apps/physical/installer/update/rollback/media/freeze/signing/publication.",
+        "original_test_and_data_files_equal_verified_distfile": 598,
+        "original_options": [
+          "EXAMPLES",
+          "LIBYAML"
+        ],
+        "source_fix": "TEST_ENV=${MAKE_ENV} plus staged PYTHONPATH; retain original PYYAML_FORCE_LIBYAML and all original environment variables.",
+        "retained_failures_and_probes": [
+          "Original3f construction passes, test collection cannot import compiled extension; actual staged extension present.",
+          "One-off staged-path probe reports2608passes; no source qualification inferred.",
+          "First e116 port TEST_ENV+= suppresses framework MAKE_ENV default; native metadata guard stops before all construction. Original metadata failure retained.",
+          "Corrected27dd source preserves MAKE_ENV, all8constructiontargets and original2608case/function/fixture/file/line audit pass; two duplicate display IDs disambiguated by actual source locations."
+        ],
+        "default_missing_Loader_negative_and_valid_recovery": {
+          "missing_Loader_requires_TypeError": true,
+          "message": "load() missing 1 required positional argument: 'Loader'",
+          "fresh_valid_safe_load": true
+        },
+        "original_test_warning": "Inherited always-true assert tuple retained. Default actual yaml.load missing-Loader TypeError and safe-load recovery independently checked.",
+        "source117_to_prior_normal118_chain_explicitly_verified": true
+      }
+    },
+    "tap_py_and_pytest_tap": "Both new source ports qualified through actualnormal120/121 with fulloriginalsuites, sealed/defaultindependentchecks, pkgtransactions andbothhostcustody; Fontconfig fullTEST/default/lifecycle/normal remains pending.",
+    "tap_py": {
+      "native_metadata_observer_failure_retained": "First source-count assumption247 waswrong: newport3files+Mk211+Templates32=246. No targetran; verifier-definition failurealso retained. Correctedobserverdeclaresverifierbeforepreflight andchecks246actualinputs.",
+      "native_construction_stage_failure_retained": {
+        "source_revision": "d8825ff08eb18991ff7a1809fb4b00ed49908d1a",
+        "commands": [
+          {
+            "target": "checksum",
+            "exit": 0
+          },
+          {
+            "target": "extract",
+            "exit": 0
+          },
+          {
+            "target": "patch",
+            "exit": 0
+          },
+          {
+            "target": "configure",
+            "exit": 0
+          },
+          {
+            "target": "build",
+            "exit": 0
+          },
+          {
+            "target": "stage",
+            "exit": 1
+          }
+        ],
+        "actual_built_wheel": {
+          "scope": "Retained originald882wheel fromfailednative stage; no package/install acceptance.",
+          "wheel_filename": "tap_py-3.2.1-py3-none-any.whl",
+          "bytes": 19262,
+          "sha256": "34847d3f41b66c582414806504fe56da60898621f23313538cdad24e46ece63c",
+          "dist_info_directory": "tap_py-3.2.1.dist-info",
+          "metadata_name": "tap.py",
+          "metadata_version": "3.2.1",
+          "original_console_entry_points": "[console_scripts]\ntap = tap.main:main\ntappy = tap.main:main\n"
+        },
+        "finding": "Framework PEP517 staging derives wheel/dist-info paths from PORTNAME, normalizinghyphens/underscores butnotdots; proposedtap.pyidentity incorrectlyseekstap.pyfilename whileactualupstreamwheelusescanonicaltap_py.",
+        "source_fix": "Choosecanonicaltap-pyidentity fornewFreeBSDportanddependentdeclaration, retainingupstreamsource/import/CLIs/constraints/selectedtests.",
+        "native_source_fix_and_full_qualification_pending": false,
+        "allSDK119_frozen_base_accounts_cache_mounts_and246source_guards_pass_after_stage_failure": true,
+        "historical_source_fix_native_construction_and116cases_pass_full_private_lifecycle_custody_normal_pending_at_original_checkpoint": true,
+        "current_disposition": "Original candidate/failure retained; superseded by qualified clean parser-boundary source in tap-py-parser-boundaries-20261126.json."
+      },
+      "canonical_identity_native_construction_and_upstream_suite": {
+        "source_revision": "622cca27dcc8bde9288288a2945da8d8ed6fcf29",
+        "package": {
+          "bytes": 38197,
+          "sha256": "8df6505d38ebb560ffec6b06e7dc1a6130ef255ece897fed49cfa487e45df0f9"
+        },
+        "construction_targets": [
+          {
+            "target": "checksum",
+            "exit": 0
+          },
+          {
+            "target": "extract",
+            "exit": 0
+          },
+          {
+            "target": "patch",
+            "exit": 0
+          },
+          {
+            "target": "configure",
+            "exit": 0
+          },
+          {
+            "target": "build",
+            "exit": 0
+          },
+          {
+            "target": "stage",
+            "exit": 0
+          },
+          {
+            "target": "check-plist",
+            "exit": 0
+          },
+          {
+            "target": "package",
+            "exit": 0
+          }
+        ],
+        "native_original_checksum_matches_untouched_official_sdist": true,
+        "original_suite": {
+          "discovered": 116,
+          "completed": 116,
+          "PASS": 116,
+          "SKIP": 0,
+          "FAIL": 0,
+          "ERROR": 0,
+          "duplicate_display_ids": 0,
+          "all_case_file_line_id_signatures_unique_and_ordered_completions_match": true,
+          "discovery_includes_function_source_locations_and_item_types": true,
+          "native_junit_xml_sha256": "ece493914aff2f8395e3adb0eef4c29b2a4750384b531195371f26f67216e652",
+          "native_discovery_sha256": "4dee6c10ebc07ef6ee53f4de9e621c663cd9a77bfc9d91cb53439c22f5047dfb"
+        },
+        "all_original_test_and_data_files_match_verified_distfile": 16,
+        "actual_wheel_and_dist_info_staging_succeeds": true,
+        "whole_SDK119_raw_database_frozen_base_accounts_cache_mounts_and246_source_guards_pass": true,
+        "historical_independent_TAP_library_CLI_optional_dependency_absence_lifecycle_custody_normal_pending_at_original_checkpoint": true,
+        "current_disposition": "Original candidate/failure retained; superseded by qualified clean parser-boundary source in tap-py-parser-boundaries-20261126.json."
+      },
+      "qualification_status": "retained-unpatched-source-suite-pass-candidate-rejected-six-malformed-input-false-passes"
+    },
+    "tap_py_clean_parser_boundaries": {
+      "report": "tap-py-parser-boundaries-20261126.json",
+      "source_revision": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
+      "original_PASS": 116,
+      "private_library_checks": 177,
+      "private_CLI_checks": 48,
+      "lifecycle_transactions": 6,
+      "default_library_checks": 90,
+      "default_CLI_checks": 48,
+      "accepted_normal_count": 120
+    },
+    "pytest_tap_original_source_suite": {
+      "observed_utc": "2026-11-26T06:59:25.590375+00:00",
+      "status": "pass-original-source-suite-independent-package-qualification-pending",
+      "origin": "devel/py-pytest-tap",
+      "version": "3.6",
+      "source_revision": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
+      "package": {
+        "bytes": 11421,
+        "sha256": "c79fa3fbc2cdd52e197524ec3b8ca65788a3d40b9e25220cfaa20cfa7c67e246"
+      },
+      "construction_targets_passed": 8,
+      "original_selfsuite": {
+        "discovered": 17,
+        "completed": 17,
+        "PASS": 17,
+        "SKIP": 0,
+        "FAIL": 0,
+        "ERROR": 0,
+        "duplicate_display_ids": 0,
+        "all_case_file_line_id_signatures_unique_and_ordered_completions_match": true,
+        "discovery_includes_function_source_locations_and_item_types": true,
+        "native_junit_xml_sha256": "976a40aaa75ed35b7b93f2d2a3535255c34b72ed6ce0a936de2c79768a96151e",
+        "native_discovery_sha256": "efbc40f118b8d924097a3ea0219151613ddd5b7030a9fa5868c92e13c18fb2fc"
+      },
+      "original_test_and_conftest_files_byte_equal_verified_sdist": 5,
+      "all_original_nested_pytester_captured_output_retained_sha256": "b869b9384c1e5fdff6b1240f23a04a70723424f3580065b293093029cc66b8e5",
+      "staged_distribution_entry_point_visible_to_actual_pytester_subprocesses": true,
+      "xdist_scope": "Three original mock hook-contract cases only; actual xdist transport not qualified.",
+      "selected_origin_Mk_Templates_Git_inputs": 246,
+      "normal_development_count_unchanged": 120,
+      "normal_installation": false,
+      "whole_SDK120_raw_database_frozen_base_accounts_cache_mounts_source_guards_pass": true,
+      "receipt_sha256": "ab655b64f015399dda215c8b7cec94a193735010fa59d147139499e4cbf3a7f6",
+      "remaining": [
+        "Independent sealed plugin/global entrypoint/CLI and nested TAP/status oracles.",
+        "Original actual package lifecycle, both-host source/private/failure custody and normal delivery/custody.",
+        "Complete Fontconfig original16program suite/nestedTAP, freshdefaultfont/cache/XML/CLI/shared/static and original Lua/sample/cache-trigger lifecycle.",
+        "Canonical/SDK/TCB/matching source/kernel/AMD64/desktop/physical/fullrelease gates."
+      ]
+    },
+    "pytest_tap_normal_qualification": {
+      "report": "pytest-tap-qualified-20261126.json",
+      "source_revision": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
+      "original_PASS": 17,
+      "private_and_default_checks_each": 172,
+      "actual_child_commands_each": 25,
+      "TAP_documents_each": 22,
+      "TAP_points_each": 48,
+      "real_Meson_status_gate": [
+        {
+          "name": "authored-pytest-tap-status:pass",
+          "result": "OK",
+          "returncode": 0
+        },
+        {
+          "name": "authored-pytest-tap-status:teardown-error",
+          "result": "ERROR",
+          "returncode": 1
+        },
+        {
+          "name": "authored-pytest-tap-status:failure",
+          "result": "FAIL",
+          "returncode": 1
+        }
+      ],
+      "lifecycle_transactions": 6,
+      "accepted_normal_count": 121
+    },
+    "xxd_normal_qualification": {
+      "report": "xxd-original-default-20261126.json",
+      "source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+      "private_and_default_checks_each": 211,
+      "CLI_commands_each": 69,
+      "actual_pkg_transactions": 6,
+      "normal_count": 122,
+      "original_Vim_selfsuite_claimed": false
+    },
+    "json_c_original_suite_report": "json-c-original-suite-20261126.json",
+    "json_c_qualified_report": "json-c-qualified-20261126.json"
+  },
+  "current_original_TEST_selection_case_audit": {
+    "report": "fontconfig-json-c-test-coverage-20261126.json",
+    "original_Meson_programs_OK": 16,
+    "original_Pytest_selected_completed": 49,
+    "PASS": 21,
+    "SKIP": 28,
+    "original_network_marker_deselections": 2,
+    "all_unique_case_identities_order_and_numbers_match": true,
+    "missing_json_c_configuration_cases": 18,
+    "full_TEST_qualification": false
+  },
+  "subsequent_fresh_TEST_report": "fontconfig-json-c-TEST-20261126.json",
+  "subsequent_fresh_default_report": "fontconfig-fresh-default-20261126.json",
+  "subsequent_nested_font_trigger_repair_report": "fontconfig-nested-trigger-repair-20261126.json",
+  "subsequent_qualified_repaired_report": "fontconfig-trigger-fixed-qualified-20261126.json"
+}

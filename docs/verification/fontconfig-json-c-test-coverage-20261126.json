@@ -1,0 +1,280 @@
+{
+  "observed_utc": "2026-11-26T08:25:10.877057+00:00",
+  "status": "all16originalprograms-OK-full-case-audit-identifies18missing-json-c-configuration-cases",
+  "scope": "Actual original TEST option observations; not full selected-test qualification, default-artifact acceptance, normal Fontconfig installation, canonical/SDK/TCB/AMD64 or release acceptance.",
+  "source_revision": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
+  "package": {
+    "bytes": 489047,
+    "sha256": "6c57d5aa70b6697ede092bdea78228824c16ce192ea3e69ec364b9e630302eed"
+  },
+  "all8_original_construction_targets_pass": true,
+  "original_Meson_programs": {
+    "discovered": 16,
+    "completed": 16,
+    "OK": 16,
+    "all_names_argv_match": true,
+    "all_actual_exit_codes_zero": true,
+    "testlog_json_sha256": "8b027df6b4d9289597bba117f04da48e469f4d23a46a9d005053836ce5b159e6",
+    "testlog_txt_sha256": "5daac78cc3f648aaf12af334fe9bf0aef46bb131a53c0620d091dca4e4241459"
+  },
+  "nested_original_Pytest_TAP": {
+    "selected_and_completed_unique_identity_order_match": 49,
+    "PASS": 21,
+    "SKIP": 28,
+    "FAIL": 0,
+    "ERROR": 0,
+    "original_network_marker_deselections": 2,
+    "all_skips_retained": [
+      {
+        "number": 16,
+        "ok": true,
+        "description": "test_cache_cross_version.py::test_binary_format_forward_compat",
+        "directive": "SKIP FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set"
+      },
+      {
+        "number": 17,
+        "ok": true,
+        "description": "test_cache_cross_version.py::test_discovery_backward_compat",
+        "directive": "SKIP FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set"
+      },
+      {
+        "number": 18,
+        "ok": true,
+        "description": "test_cache_cross_version.py::test_discovery_forward_compat",
+        "directive": "SKIP FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set"
+      },
+      {
+        "number": 20,
+        "ok": true,
+        "description": "test_conf.py::test_pair_of_conf_and_json[45-generic.conf-test-45-generic.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 21,
+        "ok": true,
+        "description": "test_conf.py::test_pair_of_conf_and_json[48-guessfamily.conf-test-48-guessfamily.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 22,
+        "ok": true,
+        "description": "test_conf.py::test_pair_of_conf_and_json[49-sansserif.conf-test-49-sansserif.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 23,
+        "ok": true,
+        "description": "test_conf.py::test_pair_of_conf_and_json[60-generic.conf-test-60-generic.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 24,
+        "ok": true,
+        "description": "test_conf.py::test_pair_of_conf_and_json[60-latin.conf-test-60-latin.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 25,
+        "ok": true,
+        "description": "test_conf.py::test_pair_of_conf_and_json[70-no-bitmaps-and-emoji.conf-test-70-no-bitmaps-and-emoji.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 26,
+        "ok": true,
+        "description": "test_conf.py::test_pair_of_conf_and_json[70-no-bitmaps-except-emoji.conf-test-70-no-bitmaps-except-emoji.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 27,
+        "ok": true,
+        "description": "test_conf.py::test_pair_of_conf_and_json[90-synthetic.conf-test-90-synthetic.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 28,
+        "ok": true,
+        "description": "test_conf.py::test_json[test-appfont.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 29,
+        "ok": true,
+        "description": "test_conf.py::test_json[test-filter.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 30,
+        "ok": true,
+        "description": "test_conf.py::test_json[test-genericfamily.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 31,
+        "ok": true,
+        "description": "test_conf.py::test_json[test-issue-286.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 32,
+        "ok": true,
+        "description": "test_conf.py::test_json[test-issue-525-2.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 33,
+        "ok": true,
+        "description": "test_conf.py::test_json[test-issue-525.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 34,
+        "ok": true,
+        "description": "test_conf.py::test_json[test-issue-539.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 35,
+        "ok": true,
+        "description": "test_conf.py::test_json[test-locale.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 36,
+        "ok": true,
+        "description": "test_conf.py::test_json[test-namedinstance.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 37,
+        "ok": true,
+        "description": "test_conf.py::test_json[test-style-match.json]",
+        "directive": "SKIP No test executable. maybe missing json-c dependency?"
+      },
+      {
+        "number": 38,
+        "ok": true,
+        "description": "test_fontations_ft_query.py::test_fontations_freetype_fcquery_equal[None]",
+        "directive": "SKIP Skipped: Network access diabled"
+      },
+      {
+        "number": 42,
+        "ok": true,
+        "description": "test_genconf.py::test_genconf[None]",
+        "directive": "SKIP Skipped: Network access diabled"
+      },
+      {
+        "number": 44,
+        "ok": true,
+        "description": "test_sandbox.py::test_bz106618",
+        "directive": "SKIP No bwrap installed or not executable"
+      },
+      {
+        "number": 45,
+        "ok": true,
+        "description": "test_sandbox.py::test_different_content",
+        "directive": "SKIP No bwrap installed or not executable"
+      },
+      {
+        "number": 46,
+        "ok": true,
+        "description": "test_sandbox.py::test_md5_consistency",
+        "directive": "SKIP No bwrap installed or not executable"
+      },
+      {
+        "number": 47,
+        "ok": true,
+        "description": "test_sandbox.py::test_gen_testcache",
+        "directive": "SKIP No bwrap installed or not executable"
+      },
+      {
+        "number": 48,
+        "ok": true,
+        "description": "test_sandbox.py::test_gen_testcache_no_check",
+        "directive": "SKIP No bwrap installed or not executable"
+      }
+    ],
+    "skip_reasons": {
+      "FC_BASELINE_BUILDDIR or FC_BASELINE_TAG not set": 3,
+      "No test executable. maybe missing json-c dependency?": 18,
+      "Skipped: Network access diabled": 2,
+      "No bwrap installed or not executable": 5
+    },
+    "discovery_sha256": "56a00038b5856e654369ad7a4be58d30a1d128374aa6b5cba1931ec26d9dc9e4",
+    "actual_TAP_sha256": "b82f16df01bb79e9717151a9c781a76a24309b865e7a646eaebf6e2c8800f532"
+  },
+  "all_original_test_data_inputs_bound": 71,
+  "declared_framework_shebang_only_changes": {
+    "test/test_fontations_ft_query.py": {
+      "original_sha256": "0a7b6ff7992aebda5b6e44544bdb9ae1073b2c30b689b865848b6ac0bfb10238",
+      "actual_sha256": "5947da66c667dd17627157147572e4e2e401999cc7417973eccb885b61f14b45",
+      "only_declared_shebang_rewritten": true
+    },
+    "test/test_issue431.py": {
+      "original_sha256": "c9932827f083089916901b1eb47a01219c2015a3db44dd6f12d215feee71deaf",
+      "actual_sha256": "9fc331074524258130883f485631b86f5eca3024cd699c909787268c976343bc",
+      "only_declared_shebang_rewritten": true
+    },
+    "test/test_issue547.py": {
+      "original_sha256": "bf11f284cd5bf1e6cc78908c2e540e4bafab5121534a104684f58690ea47896b",
+      "actual_sha256": "8d2a159a0f2e8c313ec79e82c43b0d1738a8509ee6e7cf34dcfd1d6703afa42a",
+      "only_declared_shebang_rewritten": true
+    }
+  },
+  "assertions_and_test_data_bodies_preserved": true,
+  "original_producer_JUnit_observer_failure": {
+    "original_result_retained_sha256": "8f01a5f8832d7f45e069101006998a91dfea957e32c6537e066e55552e9ec03c",
+    "all_original_commands_exit_zero": true,
+    "requested_XML_not_produced": true,
+    "cause": "Ambient PYTEST_ADDOPTS not passed through the ports SETENVI(-i) environment boundary. Future observation must explicitly preserve TEST_ENV and append the report-only variable.",
+    "read_only_completion_uses_actual_TAP_and_independent_discovery": true,
+    "original_tests_not_rerun_to_repair_observer": true
+  },
+  "full_TEST_qualification": false,
+  "normal_Fontconfig_installation": false,
+  "missing_dependency_fix": {
+    "current_review_code_commit": "1c38241b2e4a06c2df013f736c0a2e7fbe56fdfc",
+    "current_native_composition": "82752667e9214aa089bc88be560a9201989a0a5e",
+    "Fontconfig_TEST_BUILD_DEPENDS": "json-c>=0:devel/json-c",
+    "reason": "Original test/meson.build creates test-conf only when jsonc_dep is found;18 original configuration cases otherwise skip.",
+    "default_options_and_arguments_unchanged": true,
+    "no_test_assertion_or_golden_changed": true
+  },
+  "json_c_prerequisite": {
+    "origin": "devel/json-c",
+    "version": "0.19_1",
+    "source_revision": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
+    "package": {
+      "bytes": 77750,
+      "sha256": "c7d2455a00b607234b79553107ebfb659f1147f5acec1577c5483f035686410b"
+    },
+    "all8original_construction_targets_pass": true,
+    "original_CTest_selected_completed": 28,
+    "PASS": 27,
+    "FAIL": 1,
+    "failed_case": "test_json_parse_cli",
+    "observed_missing_tool": "xxd: not found",
+    "fixed_TEST_DEPENDS": "xxd:sysutils/xxd",
+    "all_original_scripts_assertions_golden_canary_UTF8_tail_inputs_retained": true,
+    "normal_installation": false,
+    "remaining": "Earlier missing-xxd failure retained. Fresh json-c now qualifies normally at count 123; fresh Fontconfig coverage follows.",
+    "subsequent_original_suite_report": "json-c-original-suite-20261126.json",
+    "subsequent_qualified_report": "json-c-qualified-20261126.json"
+  },
+  "current_full_native_source": {
+    "revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+    "tree": "a91b5e451d80d28237470a26389894fb56c75322",
+    "Git_members_verified": 184388,
+    "changed_or_added_from_fadd": 11,
+    "removed": 0,
+    "whole_SDK121_frozen_base_accounts_cache_mount_old_source_guards_pass": true,
+    "older_qualified_package_receipts_retain_actual_source_revisions": true
+  },
+  "remaining": [
+    "All 18 missing JSON configuration cases now execute and pass in the fresh source-bound TEST report.",
+    "Fresh TEST has 39 passes and 10 explicit skips, with all 49 identities/outcomes matched across discovery/TAP/JUnit. Older baseline/network/bwrap gates remain.",
+    "Actual older cache-version baseline remains a distinct release gate; do not substitute another build of the same version.",
+    "Fresh default font/cache/XML/CLI/shared/static and actual Lua/sample/font-cache-trigger lifecycle/custody/normal; all wider1.6 gates."
+  ],
+  "subsequent_fresh_TEST_report": "fontconfig-json-c-TEST-20261126.json"
+}

@@ -1,0 +1,200 @@
+{
+  "observed_utc": "2026-11-26T06:57:38.210200+00:00",
+  "status": "pass-bounded-native-ARM-Tappy-parser-boundaries-normal120",
+  "scope": "Native development acceptance only; canonical Component/provenance/lifecycle/SDK/TCB, matching source/kernel/AMD64, complete desktop/apps/all47platform/physical/installer/update/rollback/media/signing/release remain open.",
+  "origin": "devel/py-tap.py",
+  "package_name": "py312-tap-py",
+  "upstream_distribution": "tap.py",
+  "version": "3.2.1",
+  "default_runtime_options": {
+    "YAML": "off",
+    "declared_runtime_provider": "python312",
+    "TAP13_opportunistically_available_with_existing_optional_dependencies": true,
+    "actual_absence_of_optional_dependencies_qualified": true
+  },
+  "current_review_code_commit": "b0d9bf84a48238f56923b03ae1289e89d33c2ae4",
+  "source_revision": "993a2a1021e8a1fff56cfe5483558d67e98a91b6",
+  "source_tree": "f4b4fc4c6d26e9558b5f62efc53a035b58456097",
+  "full_native_Git_members": 184388,
+  "changed_or_added_paths_from_fadd": 10,
+  "removed_paths": 0,
+  "source_preparation_receipt_sha256": "5284ec215e3e1c45092c9b33d90246da5e522126dae63e5598cbc6fa077d347d",
+  "selected_origin_Mk_and_Templates_inputs": 247,
+  "package": {
+    "bytes": 38191,
+    "sha256": "803016644a737afa1f972d1f0c094323cc6e4e507bcff344051366c967f4348b"
+  },
+  "original_upstream_suite": {
+    "discovered": 116,
+    "completed": 116,
+    "PASS": 116,
+    "SKIP": 0,
+    "FAIL": 0,
+    "ERROR": 0,
+    "duplicate_display_ids": 0,
+    "all_case_file_line_id_signatures_unique_and_ordered_completions_match": true,
+    "discovery_includes_function_source_locations_and_item_types": true,
+    "native_junit_xml_sha256": "3d335c13c9728cc4a389e992ea4c7d334b988a993c342e71690058999168d940",
+    "native_discovery_sha256": "325905794cdd7a14c826a2a272ce8b0a325dddf24075bef89f128cab682f193a"
+  },
+  "original_test_and_data_files_byte_equal_verified_sdist": 16,
+  "eight_construction_targets_pass": true,
+  "unpatched_candidate_retained_and_rejected": {
+    "source_revision": "622cca27dcc8bde9288288a2945da8d8ed6fcf29",
+    "package": {
+      "bytes": 38197,
+      "sha256": "8df6505d38ebb560ffec6b06e7dc1a6130ef255ece897fed49cfa487e45df0f9"
+    },
+    "original_suite_PASS": 116,
+    "real_sealed_tap_and_tappy_false_passes": 6,
+    "malformed_examples": [
+      "1xx2\nok 1 first\nok 2 second\n",
+      "1..1\nokay 1 spurious\n",
+      "1..1\nnot okay 1 spurious # SKIP bogus\n"
+    ],
+    "original_exit": 0,
+    "corrected_exit": 1,
+    "normal_installation": false,
+    "probe_receipt_sha256": "a1e2151f031f968db6c655043128831beb7d4466408afbe37deb56b80c2a9463"
+  },
+  "parser_repair": {
+    "specified_word_boundaries_after_ok_and_not_ok": true,
+    "literal_plan_dot_separators": true,
+    "reference": "https://testanything.org/tap-version-13-specification.html",
+    "all_original_tests_and_assertions_retained": true
+  },
+  "first_patched_candidate_retained_and_rejected": {
+    "source_revision": "38d99cff84be19f1f7a5d7312fbc1cbe7340545d",
+    "package": {
+      "bytes": 38391,
+      "sha256": "1a53a500171ec786d707c6a4b54ce8e211cfee6254fd3cae3bb6dbafdd33b8ad"
+    },
+    "original_PASS": 116,
+    "independent_library_checks": 177,
+    "CLI_checks": 48,
+    "isolated_pkg_transactions": 6,
+    "unexpected_payload": "/usr/local/lib/python3.12/site-packages/tap/parser.py.orig",
+    "payload_count": 63,
+    "normal_installation": false,
+    "rejection_receipt_sha256": "84fae9b38299ef4a88187019512ddfbc94208b10a9c84be9e6a85d3b291c46af"
+  },
+  "backup_repair": {
+    "exact_original_parser_backup_retained_outside_upstream_wheel_project": true,
+    "backup_sha256": "ba8c3dec5d7a662872347111ed28b97882316205d4edc7b001a58e979a5b9849",
+    "exact_original_62_payload_names_preserved": true,
+    "generated_backups_in_package": 0
+  },
+  "private_consumers": {
+    "actual_optional_YAML_present_checks": 90,
+    "actual_optional_dependencies_absent_checks": 87,
+    "optional_absence_method": "Fresh Python -S process plus only sealed candidate import path; standard third-party site-packages actually absent.",
+    "real_CLI_checks": [
+      "tap-pass-file",
+      "tap-pass-stdin",
+      "tap-fail-file",
+      "tap-fail-stdin",
+      "tap-skip-todo-file",
+      "tap-skip-todo-stdin",
+      "tap-bail-file",
+      "tap-bail-stdin",
+      "tap-bad-plan-file",
+      "tap-bad-plan-stdin",
+      "tap-bad-ok-file",
+      "tap-bad-ok-stdin",
+      "tap-bad-not-ok-skip-file",
+      "tap-bad-not-ok-skip-stdin",
+      "tap-missing-test-file",
+      "tap-missing-test-stdin",
+      "tap-extra-test-file",
+      "tap-extra-test-stdin",
+      "tap-empty-file",
+      "tap-empty-stdin",
+      "tap-implicit-stdin",
+      "tap-help",
+      "tap-unknown-argument",
+      "tap-missing-file",
+      "tappy-pass-file",
+      "tappy-pass-stdin",
+      "tappy-fail-file",
+      "tappy-fail-stdin",
+      "tappy-skip-todo-file",
+      "tappy-skip-todo-stdin",
+      "tappy-bail-file",
+      "tappy-bail-stdin",
+      "tappy-bad-plan-file",
+      "tappy-bad-plan-stdin",
+      "tappy-bad-ok-file",
+      "tappy-bad-ok-stdin",
+      "tappy-bad-not-ok-skip-file",
+      "tappy-bad-not-ok-skip-stdin",
+      "tappy-missing-test-file",
+      "tappy-missing-test-stdin",
+      "tappy-extra-test-file",
+      "tappy-extra-test-stdin",
+      "tappy-empty-file",
+      "tappy-empty-stdin",
+      "tappy-implicit-stdin",
+      "tappy-help",
+      "tappy-unknown-argument",
+      "tappy-missing-file"
+    ],
+    "parser_loader_producer_independent_oracles_and_failure_recovery": true,
+    "source_receipt_sha256": "e8010bc73cac603252e6892b501033463c04dd604c25f68a21bc9ae131804f43"
+  },
+  "isolated_lifecycle": {
+    "actual_pkg_add_force_delete_readd_transactions": 6,
+    "exact_payloads": 62,
+    "original_scripts_Lua_shared_providers_declared": false,
+    "no_declared_hooks_suppressed_or_invented": true,
+    "locked_accounts_readonly_base_private_devfs_full_unmount": true,
+    "Python_runtime_or_dependency_solver_inside_fixture_claimed": false,
+    "receipt_sha256": "261e7d0e63508fcd9a0cc30f575312de05682b1b654ab56cff9943bb0f1c234c"
+  },
+  "normal_installation": {
+    "actual_offline_dependency_solver_and_package_integrity": true,
+    "previous_count": 119,
+    "accepted_bounded_development_count": 120,
+    "exact_new_payloads": 62,
+    "inherited_package_prefixes_preserved": 119,
+    "default_library_checks": 90,
+    "default_real_CLI_checks": 48,
+    "default_completed_library_checks_equal_private": true,
+    "private_LD_or_PYTHONPATH_overrides": false,
+    "loader_cache_bytes_metadata_and_provider_priorities_unchanged": true,
+    "whole_SDK120_prefix_raw_database_preserved_through_consumers": true,
+    "receipt_sha256": "363df40d470531f523d1c6ec455c065d9531eceecf28ade4b3b7a998cb6d4031"
+  },
+  "normal_observer_completion": {
+    "original_failed_result_sha256": "f287c8f0b1f47cdaadb57c70aa828bca8ce3222528ba7552d67aff65f1f213fc",
+    "original_expected_variable_shadow_failure_retained": true,
+    "all_default_checks_passed_before_observer_failure": true,
+    "fresh_readonly_exact_payload_inherited_prefix_and_system_completion": true,
+    "reinstall_or_consumer_rerun": false
+  },
+  "two_host_custody": {
+    "source_failures_private_lifecycle": {
+      "nodes": 3978,
+      "archive_bytes": 41405337,
+      "archive_sha256": "9aa263b5941174ec611009e602b3bf7b8a76a8e8b1e0a69e450566fcace5de0c",
+      "inventory_sha256": "6bc76076fedb8efa284bc1701232d091de5508cbe916864e3c4c781e3c9f5205",
+      "every_archived_node_verified_on_native_ARM_and_physical_Intel": true
+    },
+    "normal": {
+      "nodes": 169,
+      "archive_bytes": 18053634,
+      "archive_sha256": "170750d02e260c3accfe6e2b2b8cf88394ba99eb92bcd530af5d382af2ec6ea7",
+      "inventory_sha256": "6c9a8470daf0fa4a9caaa32225278a40ee0c3640b713c5abbe93b45db064bbb2",
+      "every_archived_node_verified_on_native_ARM_and_physical_Intel": true
+    }
+  },
+  "failure_evidence_notes": [
+    "Early wrong selected-input count/finally NameError and original dotted-wheel staging failure remain retained.",
+    "Original boundary-patched builder retains an inherited all246 field label; actual selected-input inventory and verification loop contain247. Clean builder uses the corrected field label.",
+    "Original malformed-input probe scope text retains its older YAML-template description; actual sealed Tappy commands, package identity, input/output bytes and postguards establish the documented result."
+  ],
+  "remaining": [
+    "Complete pytest-tap original/nested suite and independent plugin/CLI/lifecycle/custody/normal qualification.",
+    "Complete Fontconfig original16program TEST selection/nestedTAP, default font/cache/XML/CLI/shared/static and actual Lua/sample/cache-trigger lifecycle.",
+    "Full release gates remain open."
+  ]
+}

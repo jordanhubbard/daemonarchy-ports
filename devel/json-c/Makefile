@@ -13,6 +13,8 @@ WWW=		https://github.com/json-c/json-c/wiki \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+TEST_DEPENDS=	xxd:sysutils/xxd
+
 USES=		cmake:testing compiler:c11 cpe
 
 CMAKE_OFF=	BUILD_TESTING \

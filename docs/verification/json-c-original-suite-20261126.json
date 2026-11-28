@@ -1,0 +1,229 @@
+{
+  "observed_utc": "2026-11-26T08:14:51.086314+00:00",
+  "status": "pass-original-native-suite-independent-package-qualification-pending",
+  "scope": "Original-suite checkpoint, followed by independent package qualification in json-c-qualified-20261126.json; wider release gates remain open.",
+  "origin": "devel/json-c",
+  "version": "0.19_1",
+  "source_revision": "82752667e9214aa089bc88be560a9201989a0a5e",
+  "official_source": {
+    "GitHub_commit": "81092b3",
+    "bytes": 226672,
+    "sha256": "8c32ce99327465c73b5f81d0b719b6604ddc8e57ca56add5b43c2f6873b2a211"
+  },
+  "package": {
+    "bytes": 77781,
+    "sha256": "86e79f71985e45e3ad5059ab60fcf6457fb84d6305f1ca82af9631272eee658f"
+  },
+  "selected_original_Git_inputs": 248,
+  "all_eight_original_construction_targets_pass": true,
+  "default_BUILD_TESTING_off_original_testing_bridge_on_after_packaging": true,
+  "original_make_test_exit": 0,
+  "original_CTest": {
+    "selected": 28,
+    "completed": 28,
+    "PASS": 28,
+    "FAIL": 0,
+    "SKIP": 0,
+    "all_unique_names_native_argv_workdirs_and_completion_match_original_discovery": true,
+    "runtime_log_sha256": "e2de0b90340c3b12ce633b850a7158931213709e4c7af23369f6f2bf9be4e4ef",
+    "cases": [
+      {
+        "number": 1,
+        "name": "test_json_parse_cli",
+        "result": "PASS",
+        "complete_original_output_sha256": "107fcfc64e121ee5cd0bc783e5dddc9d73fa69a97b488555a2930fc06e5bd94f"
+      },
+      {
+        "number": 2,
+        "name": "test1",
+        "result": "PASS",
+        "complete_original_output_sha256": "cbb25c09850da33f4031ae622ebfc7d2fb89e7e24f5faaf45316fdcf2812c8db"
+      },
+      {
+        "number": 3,
+        "name": "test2",
+        "result": "PASS",
+        "complete_original_output_sha256": "3a29a6b1ca923ef334cf56ff457f4c7a0e855bbfdcd1da9f21dba4416cfdf240"
+      },
+      {
+        "number": 4,
+        "name": "test4",
+        "result": "PASS",
+        "complete_original_output_sha256": "fb88f32d2b28043b40a19bd938ccade45ae3776ccaf6f6db10b275fbcc05fb9c"
+      },
+      {
+        "number": 5,
+        "name": "testReplaceExisting",
+        "result": "PASS",
+        "complete_original_output_sha256": "b3d25b68bbbf37e5a35ce382e041679b96660875eeb276c7cda45b332f05e3ed"
+      },
+      {
+        "number": 6,
+        "name": "test_cast",
+        "result": "PASS",
+        "complete_original_output_sha256": "436bc2fe3172715b7988f412dd5cb1720a16567595c61ace25e6f708d96a6b22"
+      },
+      {
+        "number": 7,
+        "name": "test_charcase",
+        "result": "PASS",
+        "complete_original_output_sha256": "0c1baa4dae1c5f328886b0fad31326cb95c041bb17a6f9f4e25dd27bb63f35f0"
+      },
+      {
+        "number": 8,
+        "name": "test_compare",
+        "result": "PASS",
+        "complete_original_output_sha256": "bfcde78b653579ca84b06a92000bd66cd2397c72791d710a41a42825f0d6b9da"
+      },
+      {
+        "number": 9,
+        "name": "test_deep_copy",
+        "result": "PASS",
+        "complete_original_output_sha256": "709e82597e728b505fcbf79d8a28548df3df09876f3e705833572c8b77d31d60"
+      },
+      {
+        "number": 10,
+        "name": "test_deep_nesting",
+        "result": "PASS",
+        "complete_original_output_sha256": "6d1051d06b30e97aaa825a0ec5b0b462127f140c71b60cddc06ede78094b87ab"
+      },
+      {
+        "number": 11,
+        "name": "test_double_serializer",
+        "result": "PASS",
+        "complete_original_output_sha256": "43f88311fb5f4d207db63d2adc5aa02f4921b1754bd2d640d11a4b9a80c5470d"
+      },
+      {
+        "number": 12,
+        "name": "test_float",
+        "result": "PASS",
+        "complete_original_output_sha256": "973f4b6a37b23d03058061c7b44d9427f24341087c806f5c8ea1fcfc04e363f8"
+      },
+      {
+        "number": 13,
+        "name": "test_int_add",
+        "result": "PASS",
+        "complete_original_output_sha256": "fcebd29d47fc82692f48aab06e5cc7b7574aca8ebde82847b03b93d3dc7bc5ac"
+      },
+      {
+        "number": 14,
+        "name": "test_int_get",
+        "result": "PASS",
+        "complete_original_output_sha256": "1c04ab53c6a3f73735f9ca434f9afb8abd0cb1a7acbc8ed1505e7430cb2eaa8e"
+      },
+      {
+        "number": 15,
+        "name": "test_locale",
+        "result": "PASS",
+        "complete_original_output_sha256": "4637eafeab5ac45a98ff10d916140ee35337f7c7300f1bcc33ebfaf3a834a85f"
+      },
+      {
+        "number": 16,
+        "name": "test_null",
+        "result": "PASS",
+        "complete_original_output_sha256": "dfcd61bb368c524e74d3dc196c6aaf14cf0752b6273c3f9f419493981141d171"
+      },
+      {
+        "number": 17,
+        "name": "test_parse",
+        "result": "PASS",
+        "complete_original_output_sha256": "d39ccd3c5d11eab4dbae62164a706a405b3626357b56e20f6585bbf9eff8cee5"
+      },
+      {
+        "number": 18,
+        "name": "test_parse_int64",
+        "result": "PASS",
+        "complete_original_output_sha256": "f92e7237fd0c97ea9dbf2bac32b1e494269054bdace789e9747b52aaa80a1f8e"
+      },
+      {
+        "number": 19,
+        "name": "test_printbuf",
+        "result": "PASS",
+        "complete_original_output_sha256": "c9b007f224fa92db375ef6445cc82b96fc55a4cc751f2ece2e4df3a484e38f6e"
+      },
+      {
+        "number": 20,
+        "name": "test_set_serializer",
+        "result": "PASS",
+        "complete_original_output_sha256": "a4f3307df5329a535bb962cb1675841be968e4317038019ec74d7b5ad136fb8c"
+      },
+      {
+        "number": 21,
+        "name": "test_set_value",
+        "result": "PASS",
+        "complete_original_output_sha256": "18d17d423187b0b8701fe24b7939daf09edc308a4703d6b943249b8df4862bbd"
+      },
+      {
+        "number": 22,
+        "name": "test_strerror",
+        "result": "PASS",
+        "complete_original_output_sha256": "d0927eebdfb9d055aa6f185b110a48ea34ede31064eee95e6a0aeff1c3fe562c"
+      },
+      {
+        "number": 23,
+        "name": "test_util_file",
+        "result": "PASS",
+        "complete_original_output_sha256": "aa94e97235b6a7187ce39a40949a502a43382daac167760304da93af71f8570a"
+      },
+      {
+        "number": 24,
+        "name": "test_visit",
+        "result": "PASS",
+        "complete_original_output_sha256": "fc70518b322a8de1dff19c1299af98d155980c05232f878f516d920ae0f01802"
+      },
+      {
+        "number": 25,
+        "name": "test_object_iterator",
+        "result": "PASS",
+        "complete_original_output_sha256": "690c03e2c61335b3bcd49787d670fdcdca80bbc8830a7ab044f7fa975c1a37df"
+      },
+      {
+        "number": 26,
+        "name": "test_json_pointer",
+        "result": "PASS",
+        "complete_original_output_sha256": "f8ffae5b549c6588b873fc9052c36ac8875eb4f1fb5db92e89f9db5db06c1987"
+      },
+      {
+        "number": 27,
+        "name": "test_safe_json_pointer_set",
+        "result": "PASS",
+        "complete_original_output_sha256": "eaed8e2ebb025e5777e439f38534077baaca196270f29f0ad92980129552bc19"
+      },
+      {
+        "number": 28,
+        "name": "test_json_patch",
+        "result": "PASS",
+        "complete_original_output_sha256": "cb420225433aed67a9e3d6670ae6057b34d7515408add4f416080f39a9f5bae1"
+      }
+    ]
+  },
+  "all_original_test_C_scripts_fixtures_and_golden_bodies_equal_official_archive": 79,
+  "source_test_body_audit_sha256": "3fd74dc17973731ea3674adc7a709fe7d3b076c45178e1da89729e2c72abb7df",
+  "production_libraries_app_and_package_unchanged_through_original_tests": true,
+  "actual_xxd_prerequisite": "Qualified normal xxd 9.2.1302; declared TEST_DEPENDS=xxd:sysutils/xxd before the original suite.",
+  "earlier_original_missing_xxd_failure_retained": {
+    "PASS": 27,
+    "FAIL": 1,
+    "failed_case": "test_json_parse_cli",
+    "assertions_golden_canary_and_invalid_UTF8_input_unchanged": true
+  },
+  "observer_trace_recovery": {
+    "original_error": "CTest discovery truncated LastTest.log to 121 bytes before the producer saved it.",
+    "first_healthy_run_stdout_all_28_pass": true,
+    "first_healthy_complete_build_and_test_outputs_preserved_before_replay": true,
+    "original_full_28_case_make_test_replayed_once_to_capture_trace": true,
+    "compiled_production_and_test_binaries_unchanged": 100,
+    "no_selection_assertion_or_golden_change": true,
+    "first_healthy_stdout_sha256": "f00ee55ad47e96d03aecfbf0a7fbe644326986ae14fedbca41a5b371075d6b6a",
+    "trace_recovery_result_sha256": "4d5365c180fba1c9e54584e4e663dd0f8ef407959738f453c78f1533a7b773e8"
+  },
+  "whole_SDK122_raw_database_frozen_SDK_base_accounts_loader_cache_mounts_and_selected_source_guards_pass": true,
+  "normal_installation": false,
+  "remaining": [
+    "Independent sealed C API, actual shared/static bindings, pkgconf and CMake consumers.",
+    "Actual original loader-cache package lifecycle, full source/failure/private/lifecycle custody on both hosts, then normal dependency/integrity/API acceptance.",
+    "Fresh Fontconfig TEST must execute its 18 missing JSON configuration cases; fresh default runtime and Lua/sample/font-cache-trigger acceptance remain separate.",
+    "All canonical Component, SDK, TCB, matched source/kernel/AMD64, desktop, physical hardware, installer, update/rollback and full release gates."
+  ],
+  "subsequent_independent_and_normal_qualification_report": "json-c-qualified-20261126.json"
+}

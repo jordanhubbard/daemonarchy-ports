@@ -6083,6 +6083,7 @@
     SUBDIR += py-pytest-subprocess
     SUBDIR += py-pytest-subtests
     SUBDIR += py-pytest-sugar
+    SUBDIR += py-pytest-tap
     SUBDIR += py-pytest-timeout
     SUBDIR += py-pytest-tornado
     SUBDIR += py-pytest-tornasync
@@ -6368,6 +6369,7 @@
     SUBDIR += py-tabulate2
     SUBDIR += py-tabulator
     SUBDIR += py-tailer
+    SUBDIR += py-tap.py
     SUBDIR += py-tapi
     SUBDIR += py-tarantool-queue
     SUBDIR += py-tartiflette
