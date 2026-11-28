@@ -1,0 +1,29 @@
+{
+  "schema": "daemonarchy/upstream-import-audit@2",
+  "observed": "2026-11-27T18:38:37.688090+00:00",
+  "repository": "daemonarchy-ports",
+  "previous_owned_main": "3653192556b588644d9e80c913f12943bda01f82",
+  "upstream_reference": "origin/main",
+  "upstream_commit": "b6a7ad4c532be23758bd9348ff510ac6bbb73ac6",
+  "merge_base": "1370ce77dd1539ac7c3ca301efaabac764814a07",
+  "import_tree_before_this_evidence_file": "3f6a75c0dc2be1861c635131db892f9251ee70f8",
+  "complete_tree_file_entries": 184486,
+  "upstream_changed_paths": 4126,
+  "fork_changed_paths": 6,
+  "path_inventory_includes_both_sides_of_renames": true,
+  "shared_changed_paths": [],
+  "upstream_bytes_modes_and_deletions_exact_outside_fork_delta": true,
+  "fork_bytes_modes_and_deletions_exact_outside_upstream_delta": true,
+  "native_build_and_runtime_qualified": false,
+  "qualification_scope": "Review branch synchronization with reviewed owned main. Three GDBM implementation/control blobs exactly match original qualified native source and prior review head; native results stay bound to original source, dependencies and f4eb world. No new-current-closure or canonical admission.",
+  "previous_review_head": "3653192556b588644d9e80c913f12943bda01f82",
+  "qualified_native_source": "a11415e8a4e92fa6c88b82368abf9cbbc2ea3ae2",
+  "implementation_and_control_paths_unchanged": {
+    "databases/gdbm/Makefile": "100644 blob a4fe4641fc3336ce21a2a07f0b8879d9f64421ea\tdatabases/gdbm/Makefile",
+    "databases/gdbm/files/patch-src_gdbmopen.c": "100644 blob ac399c6d4a914dffa63179cd5dd6805eaead789f\tdatabases/gdbm/files/patch-src_gdbmopen.c",
+    "Tools/daemonarchy/verification/check_gdbm_cloexec.c": "100644 blob 47e8c62da57cc0b49d02a1b4616070e2ea6c3899\tTools/daemonarchy/verification/check_gdbm_cloexec.c"
+  },
+  "original_native_observation": "docs/verification/gdbm-cloexec-native-20261126.json",
+  "human_documentation_authority_review": "still stale; not fabricated",
+  "canonical_receipt": "missing"
+}
