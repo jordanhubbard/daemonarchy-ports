@@ -1,0 +1,90 @@
+{
+  "schema": "daemonarchy-native-development-observation@1",
+  "date": "2026-11-24",
+  "planned_release": "1.6",
+  "source_revision": "511743d7327c93e9ff0117d04f0176ebc572f444",
+  "scope": "Native FreeBSD ARM64 original port construction and independent sealed-package real backend acceptance. Development candidate; not full original upstream pytest, AMD64, canonical lifecycle/SDK or release acceptance.",
+  "upstream_candidate": {
+    "URL": "https://github.com/pypa/hatch/pull/2445",
+    "merged": false,
+    "base": "740565ac2929597cb9def8d46338cbef6493fc8d",
+    "head": "4a8bd728cad2a99d95e2e6814ddd852b3c4e5a23",
+    "complete_three_commit_diff_sha256": "b915a7cebd0b856ea9ed7e2bed829f48d8dd436fc422e9693a3effbc7bc9e260",
+    "five_native_production_files_match_pinned_PR_head_Git_blobs": {
+      "pyproject.toml": "723bd53685043ae2e757484e0704f1c0417dc8ea",
+      "src/hatchling/builders/config.py": "e917c88970a501a8379d13d0f163dc5dff7a183c",
+      "src/hatchling/builders/sdist.py": "82cbb12b2094381796bdf259129ca6c2d5f30f56",
+      "src/hatchling/metadata/core.py": "dbbcf8a9ec3333b015087ddaa026bad198ea89bc",
+      "src/hatchling/utils/vcs.py": "3a27309c46a3e4725eef50ff0c786595ad674a1c"
+    },
+    "behavior": "Scoped ancestor/local/nested ignore files, ignored-parent and extracted-sdist boundaries, project-local rule retention across repeated source archives. Parent-only ignore files are intentionally not copied into sdists. Original metadata and ports Pathspec floors both raised to0.12.1."
+  },
+  "package": {
+    "name": "py312-hatchling-1.33.0_1.pkg",
+    "bytes": 172906,
+    "sha256": "3a1766f3d7423aa09449c3261b593ac056552a1748b8bdf6d335d4b24067b8ee",
+    "all_sealed_payloads_exact": 220
+  },
+  "original_construction_targets": {
+    "checksum": "exit0",
+    "extract": "exit0",
+    "patch": "exit0",
+    "configure": "exit0",
+    "build": "exit0",
+    "stage": "exit0",
+    "check-plist": "exit0",
+    "package": "exit0"
+  },
+  "original_counterexample": "Unchanged backend assertion fails baseline: /build ancestor suppresses local build/ and !keep.py, including native_probe/build/keep.py in wheel. Independent real Git excludes it. Full candidate passes unchanged assertion.",
+  "actual_backend_checks": [
+    "Metadata and wheel construction, every RECORD entry/hash and execution of code from produced wheel",
+    "Source archive body, invalid version ValueError, changed source and successful rebuilt wheel execution",
+    "31 own real backend cases pass on fresh original port source and sealed package",
+    "28 cases each preserve complete wheel entry byte identities across two source archives and two relocated wheel rebuilds",
+    "Inherited Git/Hg patterns, ignored parent directories, local/nested/self-excluded ignore files, hostile extraction parent rules/configuration",
+    "ignore-vcs, explicit exclusion/artifact precedence and explicit external inputs"
+  ],
+  "observer_correction": {
+    "initial_observer": "Rejected every duplicate archive entry; second source archive repeats identical root PKG-INFO. Failure retained.",
+    "unmodified_baseline_control": "Original Hatchling repeats the same PKG-INFO body/mode on its second source archive too; no new candidate regression.",
+    "current_checks": "Preserve original upstream ignore-file uniqueness requirement. Only repeated PKG-INFO entries with identical body/mode/owners/size are permitted; differing duplicate bodies or other duplicate paths fail. Full rebuilt wheel entry bytes must still match."
+  },
+  "preservation": [
+    "Original source and observed normal64 complete development prefix/raw package database unchanged through private acceptance",
+    "Base/kernel/shells/mounts preserved",
+    "No original upstream test filters/assertions changed; full source suite remains pending actual pytest/test dependencies"
+  ],
+  "remaining": [
+    "Full original upstream test source/tool closure and suite",
+    "AMD64",
+    "Canonical per-unit lifecycle/SDK and release qualification"
+  ],
+  "two_host_source_build_test_private_evidence": {
+    "nodes": 4231,
+    "archive_bytes": 7431940,
+    "archive_sha256": "f4d5797458f11b96b5fb0f7c9a5df69d4164a5ba9584ff9863523b1bf26c5176",
+    "all_nodes_independently_verified_on_both_hosts": true
+  },
+  "normal_development_integration": {
+    "original_dependencies_and_scripts_enforced": true,
+    "all220_sealed_payloads_exact": true,
+    "all64_inherited_packages_preserved": true,
+    "actual_default_unchanged_counterexample_and31_case_backend_matrix_pass": true,
+    "observed_development_packages_after": 65,
+    "frozen_bootstrap_base_kernel_shells_mounts_advisory_preserved": true,
+    "two_host_transaction_evidence": {
+      "nodes": 1346,
+      "archive_bytes": 7929642,
+      "archive_sha256": "bb3f8014b1ac3b7f4b31ae705d4185238afb605dc3043ad80e767b6eac0cf169",
+      "all_nodes_verified_on_both_hosts": true
+    }
+  },
+  "full_original_upstream_test_source": {
+    "head": "4a8bd728cad2a99d95e2e6814ddd852b3c4e5a23",
+    "all_Git_source_members": 549,
+    "backend_Python_test_modules": 33,
+    "source_archive_sha256": "20ec129e1888b43b3f8737c7f880c6384d4ac9b738d0dbc2add65acdcf30efd5",
+    "all_bodies_links_modes_membership_independently_verified_two_hosts": true,
+    "original_pytest_execution": "Pending source-built pytest and complete original test dependency closure; no upstream-reported test counts claimed as local."
+  }
+}
