@@ -1,0 +1,104 @@
+{
+  "record_kind": "Native development observation; not a canonical Component or SDK receipt",
+  "date": "2026-11-24",
+  "origin": "devel/ninja",
+  "version": "1.13.2,4",
+  "tested_source_commit": "766b4e99ae0a7b42d9576622ec861ac4df7a8ce1",
+  "base_main": "aef72724d2a2000dcafe6d7523223eaa523188d5",
+  "problem": [
+    "Original port test target requests ninja_test without supplying the GoogleTest sources required by configure.py.",
+    "The newly enabled test runner must link pthreads on FreeBSD; libc pthread stubs otherwise abort at pthread_key_create with ENOSYS."
+  ],
+  "change": [
+    "Fetch GoogleTest 1.16.0 as a checksummed distfile, matching upstream Ninja CMake selection.",
+    "Regenerate the build plan for tests with --gtest-source-dir and pthread linkage, then run the unchanged complete upstream test executable.",
+    "Keep the production build and BASH/DOCS/ZSH defaults unchanged."
+  ],
+  "GoogleTest_source": {
+    "version": "1.16.0",
+    "sha256": "78c676fc63881529bf97bf9d45948d905a66833fbfa5318ea2cd7478cb98f399",
+    "bytes": 876245
+  },
+  "native": {
+    "arm64": {
+      "actor_uid": 65534,
+      "source_targets_exit_zero": [
+        "checksum",
+        "extract",
+        "patch",
+        "configure",
+        "build",
+        "test",
+        "stage",
+        "check-plist",
+        "package"
+      ],
+      "original_unit_tests": {
+        "run": 403,
+        "passed": 403,
+        "failed": 0,
+        "skipped": 0,
+        "suites": 30,
+        "source_modified": false,
+        "filters_applied": false
+      },
+      "package": {
+        "sha256": "d1a794ec26ad14c52251bce972248a1476639f250c44cf7022c872be32378040",
+        "bytes": 128583,
+        "payloads": 9
+      },
+      "test_runner_links_libthr": true,
+      "production_executable_links_libthr": false,
+      "production_executable_matches_original_unmodified_port_bytes": true,
+      "production_executable_sha256": "6007810cc3274b0361bb2a0d8e71516acbda3129bd81cbae1097ac191df8d9fe"
+    },
+    "amd64": {
+      "actor_uid": 65534,
+      "source_targets_exit_zero": [
+        "checksum",
+        "extract",
+        "patch",
+        "configure",
+        "build",
+        "test",
+        "stage",
+        "check-plist",
+        "package"
+      ],
+      "original_unit_tests": {
+        "run": 403,
+        "passed": 403,
+        "failed": 0,
+        "skipped": 0,
+        "suites": 30,
+        "source_modified": false,
+        "filters_applied": false
+      },
+      "package": {
+        "sha256": "d2cd620263b45593f4ddb64780d5fd48d5f81f1695f62ae809b33932e178be22",
+        "bytes": 137590,
+        "payloads": 9
+      },
+      "test_runner_links_libthr": true,
+      "production_executable_links_libthr": false
+    }
+  },
+  "sealed_ARM_Ninja_acceptance": {
+    "all9_package_payloads_exact": true,
+    "native_C_compile_and_execution": true,
+    "warm_invocation_does_not_recompile": true,
+    "depfile_header_change_recompiles_and_changes_executed_output": true,
+    "actual_compiler_failure_propagates_exit1": true,
+    "failure_recovery_recompiles_and_changes_executed_output": true,
+    "recovered_warm_invocation_does_not_recompile": true,
+    "actual_private_executable_and_base_compiler_paths_traced": true,
+    "normal_observed_environment_unchanged": true
+  },
+  "authority_scope": {
+    "project_validation_exit": 0,
+    "lifecycle_verification_exit": 1,
+    "lifecycle_reason": "Configured current test receipt is missing. Native ordinary port observations do not create it.",
+    "bootstrap_provenance": "Observed native FreeBSD toolchains, not admitted canonical SDKs.",
+    "release_or_canonical_Component_acceptance": false
+  }
+}
