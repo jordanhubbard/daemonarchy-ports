@@ -1,6 +1,6 @@
 PORTNAME=	tuwunel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
+DISTVERSION=	2.1.0
 CATEGORIES=	net-im
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -10,8 +10,8 @@ WWW=		https://tuwunel.chat/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	upstream supports aarch64 and amd64 only
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	not ported to other architectures
 
 BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
 LIB_DEPENDS=	libzstd.so:archivers/zstd
@@ -45,6 +45,7 @@ CARGO_FEATURES=	--no-default-features \
 		jemalloc_conf \
 		jwt_login \
 		ldap \
+		livekit \
 		lz4_compression \
 		markdown \
 		mas \
@@ -69,6 +70,12 @@ PLIST_FILES=	bin/tuwunel \
 		"@sample(root,${GROUPS},0640) etc/${PORTNAME}/${PORTNAME}.toml.sample" \
 		"@dir(${USERS},${GROUPS},0750) /var/db/${PORTNAME}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Mpowerpc64*}
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-rust-rocksdb_librocksdb-sys_rocksdb_utilities_fault__injection__fs.h
+.endif
+
 post-extract:
 	@${RMDIR} ${RUST_ROCKSDB_SRC}/librocksdb-sys/rocksdb
 	@${MV} ${WRKDIR}/rocksdb-${ROCKSDB_HASH} \
@@ -86,4 +93,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-example.toml \
 		${STAGEDIR}${ETCDIR}/${PORTNAME}.toml.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
