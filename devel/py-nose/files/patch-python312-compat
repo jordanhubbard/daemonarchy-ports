@@ -1,0 +1,75 @@
+--- nose/result.py.orig
++++ nose/result.py
+@@ -11,7 +11,7 @@
+ import logging
+ try:
+     # 2.7+
+-    from unittest.runner import _TextTestResult
++    from unittest.runner import TextTestResult as _TextTestResult
+ except ImportError:
+     from unittest import _TextTestResult
+ from nose.config import Config
+--- nose/pyversion.py.orig
++++ nose/pyversion.py
+@@ -7,6 +7,13 @@
+ import types
+ import inspect
+ import nose.util
++
++
++def _getargspec(func):
++    # Keep the legacy four fields, including self for bound methods.
++    if hasattr(inspect, 'getfullargspec'):
++        return inspect.getfullargspec(func)[:4]
++    return inspect.getargspec(func)
+ 
+ __all__ = ['make_instancemethod', 'cmp_to_key', 'sort_list', 'ClassType',
+            'TypeType', 'UNICODE_STRINGS', 'unbound_method', 'ismethod',
+--- nose/util.py.orig
++++ nose/util.py
+@@ -9,7 +9,7 @@
+ import sys
+ import types
+ import unittest
+-from nose.pyversion import ClassType, TypeType, isgenerator, ismethod
++from nose.pyversion import ClassType, TypeType, isgenerator, ismethod, _getargspec
+ 
+ 
+ log = logging.getLogger('nose')
+@@ -450,14 +450,14 @@
+                 # py.test compatibility
+                 if isinstance(func, types.FunctionType):
+                     args, varargs, varkw, defaults = \
+-                        inspect.getargspec(func)
++                        _getargspec(func)
+                 else:
+                     # Not a function. If it's callable, call it anyway
+                     if hasattr(func, '__call__') and not inspect.ismethod(func):
+                         func = func.__call__
+                     try:
+                         args, varargs, varkw, defaults = \
+-                            inspect.getargspec(func)
++                            _getargspec(func)
+                         args.pop(0) # pop the self off
+                     except TypeError:
+                         raise TypeError("Attribute %s of %r is not a python "
+--- nose/plugins/manager.py.orig
++++ nose/plugins/manager.py
+@@ -57,7 +57,7 @@
+ import nose.config
+ from nose.failure import Failure
+ from nose.plugins.base import IPluginInterface
+-from nose.pyversion import sort_list
++from nose.pyversion import sort_list, _getargspec
+ 
+ try:
+     import cPickle as pickle
+@@ -105,7 +105,7 @@
+         meth = getattr(plugin, call, None)
+         if meth is not None:
+             if call == 'loadTestsFromModule' and \
+-                    len(inspect.getargspec(meth)[0]) == 2:
++                    len(_getargspec(meth)[0]) == 2:
+                 orig_meth = meth
+                 meth = lambda module, path, **kwargs: orig_meth(module)
+             self.plugins.append((plugin, meth))

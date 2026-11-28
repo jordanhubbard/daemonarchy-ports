@@ -1,0 +1,741 @@
+{
+  "schema_version": 1,
+  "work_id": "PORT-PY312-GRAMMAR-001",
+  "product_release": "1.6",
+  "status": "normal-development-Python5-grammar-native-API-package-lifecycle-and-custody-pass-canonical-SDK-and-release-gates-open",
+  "recipe_change": {
+    "package": "python312-3.12.16_5",
+    "mode": "0644",
+    "only_staged_paths": [
+      "lib/python3.12/lib2to3/Grammar3.12.16.final.0.pickle",
+      "lib/python3.12/lib2to3/PatternGrammar3.12.16.final.0.pickle"
+    ],
+    "precondition": "Retain PR84 security backports and scoped advisory ranges, original selected options/dependencies/seven prior patches and unmodified tests. Add the configure/configure.ac literal-dollar replay repair.",
+    "additional_repair": "Keep LIBPC relative to lowercase prefix after pathfix; preserve GNU man prefix and literal directory expressions through configure/Makefile/sysconfig replay. Default /usr/local destinations remain unchanged."
+  },
+  "original_registered_package": {
+    "version": "3.12.16",
+    "bytes": 40533820,
+    "sha256": "3436996127141576dc3f282cb15fe0696f5f0930ce1f5c611f89f12008687be7",
+    "grammar_modes": "0600 root:wheel",
+    "actual_unprivileged_import": "PermissionError",
+    "source_build_provenance": "unproven"
+  },
+  "isolated_native_control": {
+    "source_revision": "0abf4f871460685fdd82c7966b57cba6389b292f",
+    "original_lib2to3_payloads": 296,
+    "before_exit": 1,
+    "after_exits": [
+      0,
+      0
+    ],
+    "uid": 65534,
+    "umasks": [
+      "022",
+      "077"
+    ],
+    "conversion_cases": 8,
+    "semantic_checks_per_run": 16,
+    "source_emitted_staging_command_only": true,
+    "only_two_modes_changed": true,
+    "all_bytes_owners_flags_nsmtime_and_other_nodes_unchanged": true,
+    "live_SDK128_frozen17_accounts_base_loader_fontcache_mounts_preserved": true
+  },
+  "fresh_original_construction_attempt": {
+    "source_revision": "0abf4f871460685fdd82c7966b57cba6389b292f",
+    "version": "3.12.16_1",
+    "original_checksum_exit": 1,
+    "reason": "Original vulnerability gate reports CVE-2025-15366 and CVE-2025-15367; unpatched mail validation. No bypass used.",
+    "phases_after_checksum_executed": false,
+    "original_upstream_cases_executed": 0
+  },
+  "combined_qualification_source": {
+    "revision": "904ae48e8a59dfed1ed11b2910378b2cd288ac53",
+    "tree": "897d79414842a289a90933d71e3f8816b0a55f92",
+    "retained_security_source_commit": "9836f7748c87d4f4c46ae59aa0633425496ba17b",
+    "Git_members": 184394,
+    "changed_since_grammar_control": 6,
+    "state": "Source3 completed original build/package and full default suite; suiteFAIL retained. Candidate4 corrects LIBPC, native source-command controlPASS; fresh source4 construction/full suite remains pending.",
+    "all_native_Git_members_verified": 184394,
+    "all4581_original_regular_source_bodies_after_seven_original_port_patches_verified": true,
+    "scope": "Historical package3 source/advisory composition and failures retained. Candidate5 exact-source execution and terminal results are recorded separately below."
+  },
+  "custody": {
+    "nodes": 621,
+    "archive": {
+      "bytes": 30382305,
+      "sha256": "6ee8ee22636f78a08e64be98b030d213e1e48f4252fa0b8cec6c9b2e4fdf1d90"
+    },
+    "inventory_sha256": "b307a4759a529d34e3ee8d465162d5b63d2b005ca471e6cf11c783cbef98fe26",
+    "all_nodes_bodies_types_modes_numeric_owners_flags_nsmtime_links_and_gzip_CRC_verified_on": [
+      "native ARM worker",
+      "Intel tester"
+    ],
+    "additional_Linux_root_archive": false
+  },
+  "acceptance_boundaries": {
+    "repaired_source_built_package": true,
+    "original_full_suite": true,
+    "independent_fresh_package_runtime": true,
+    "retained_lifecycle": false,
+    "normal_upgrade_or_grammar_repair": true,
+    "normal_installed_count": 128,
+    "normal_python_feature_hold": false,
+    "Nose_installed": false,
+    "canonical_Component_SDK_or_release": false,
+    "repaired_source_built_package3": true,
+    "proposed_recipe4_source_built_package": true,
+    "bounded_package3_grammar_and_actual_interpreter_binding_pass": true,
+    "complete_per_case_aggregate_skip_reason_receipt": false,
+    "real_original_package_hooks_and_artifact_lifecycle": true,
+    "exact_initial_SDK_fractional_timestamp_rollback": false
+  },
+  "private_advisory_controls": {
+    "only_two_source_bound_python312_affected_ranges_changed": true,
+    "all_other_global_feed_bytes_preserved": true,
+    "negative_original_vulnerable_version_exit": 1,
+    "positive_retained_backport_version_exit": 0,
+    "global_feed_and_installed_registry_preserved": true,
+    "not_package_or_security_acceptance": true,
+    "configuration_failure_retained": "Initial private DB used build-user ownership and pkg rejected it. Fresh private root-owned DB passed supported configuration and logical128-package registry equality. No original make phase had executed in the failed private configuration."
+  },
+  "observed_utc": "2026-11-26T18:24:25.581061+00:00",
+  "review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/122",
+  "staging_recovery": {
+    "original_stage_exit": 0,
+    "actual_ignored_compileall_errors": 2,
+    "cause": "Native multiprocessing AF_UNIX path limit exceeded with 81-byte harness TMPDIR.",
+    "initial_check_plist_missing_bytecodes": 5252,
+    "exact_original_failed_compileall_commands_recovered_once": [
+      0,
+      0
+    ],
+    "original_options_source_filters_optimization_levels_jobs_or_assertions_changed": false,
+    "passed_original_compilation_or_install_copy_work_replayed": false,
+    "new_bytecode_files": 5255,
+    "next_check_plist_result": "Only3 orphanpython-config bytecodes; source helper was installed after originalcompileall commands.",
+    "orphan_handling": "After17nodeARM/Intelcustody, atomically retained newcacheandthreefiles inownedevidence. Originalsource untouched. Files preserveallbody/mode/owner/flags/nsmtime; observedUFSdirectoryreparentmtime is separatelyrecorded. No timestamp rewrite or rename replay.",
+    "original_upstream_suite_cases_run": false,
+    "package_or_normal_upgrade_claimed": false
+  },
+  "complete_staging_failure_and_Nose_control_custody": {
+    "nodes": 9403,
+    "parts": 9,
+    "complete_inventory_sha256": "2268bb2e19cc67aa084b501b9d44ab38f2970ea47c2e71cf639c05ac1d5f7588",
+    "all_source_objects_stage_logs_failed_controls_and_original_body_refs_retained": true,
+    "all_nodes_once_no_cross_partition_hardlinks": true,
+    "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_and_gzip_CRC_verified_on_ARM_and_Intel": true,
+    "each_source_capsule_limit_bytes": 134217728,
+    "total_archive_bytes": 241791332,
+    "Linux_root_extra_archive_bytes": 0
+  },
+  "Nose_followup_review": "https://github.com/jordanhubbard/daemonarchy-ports/pull/123",
+  "fresh_source_built_package3": {
+    "bytes": 40541290,
+    "sha256": "9e43d82a1585dd4507583fce48023bdd79fa5cdd3eb23d6ee13c610a89d64e23",
+    "version": "3.12.16_3"
+  },
+  "sealed_package3_runtime": {
+    "payloads": 8031,
+    "native_aarch64_ELF_payloads": 77,
+    "all_payload_bodies_modes_resolved_account_owners_flags_nsmtime_and_private_prefix_unchanged": true,
+    "archive_numeric_header_ids": {
+      "65534:65534": 8031
+    },
+    "declared_archive_names_and_actual_private_extraction_owner_mapping": "root:wheel names, actual pkg extraction root0:wheel0; numeric archive header IDs retained separately.",
+    "fresh_unprivileged_interpreter_stdlib_native_extensions_actual_Py_GetVersion_libpython_symbol_binding": true,
+    "grammar_conversion_cases": 8,
+    "grammar_semantic_checks": 16,
+    "weekly_logging_authored_probe_exit": 1,
+    "normal_install_performed": false
+  },
+  "original_full_suite_package3": {
+    "source_revision": "904ae48e8a59dfed1ed11b2910378b2cd288ac53",
+    "original_make_target": "buildbottest",
+    "original_options": "-j1 -u all -W --slowest --fail-env-changed --timeout=1200 TESTOPTS=-j4",
+    "actual_make_test_exit": 1,
+    "declared_programs": 492,
+    "reported_total_tests": 42377,
+    "reported_failures": 4,
+    "reported_skipped": 1651,
+    "reported_test_files_run": "493/492",
+    "passed_programs": 459,
+    "failed_programs": [
+      "test_logging",
+      "test_tools"
+    ],
+    "skipped_programs": 30,
+    "resource_denied_programs": 1,
+    "original_builtin_rerun_programs": 2,
+    "duration": "16 min 50 sec",
+    "all_initial_and_builtin_rerun_outcomes_retained": true,
+    "external_suite_retry": false,
+    "all4581_original_source_bodies_and_test_assertions_preserved": true,
+    "per_case_complete_skip_reason_observability": "Not admitted; original raw reasons retained where emitted. Aggregate totals do not establish complete per-case receipts."
+  },
+  "known_failure_causes": {
+    "logging": "Package3 on the former runtime reproduced Friday for a known POSIX-rule Sunday. Current matching f4eb runtime reports Sunday, and the candidate5 original test_logging and all three authored weekly probes pass. Original failed outputs and existing source PR130 are retained.",
+    "freeze_install": "Generic pathfix makes LIBPC use uppercase PREFIX while Python configures lowercase prefix. Original freeze helper changes configured prefix; pkg-config install still targets /usr/local/libdata/pkgconfig and receives Permission denied."
+  },
+  "candidate4_prefix_source_control": {
+    "source_code_commit": "0111e5b509f93c50e6cdb6894085ba53da2d2c0f",
+    "candidate_recipe_sha256": "766345b56b0d294497ace2006ab39ae85f002de29d754b43ea4eaaf2d078c930",
+    "actual_source_emitted_native_post_patch_command": true,
+    "only_LIBPC_assignment_changes_in_independent_original_source_copy": true,
+    "default_prefix_preserved": true,
+    "configured_private_prefixes_installed_unprivileged": 2,
+    "original_python_pc_body_exact_at_both_destinations": true,
+    "whole_live_SDK128_frozen_base_accounts_loader_fontcache_mounts_preserved": true,
+    "subsequent_candidate4_package_constructed": true,
+    "valid_complete_candidate4_suite_or_canonical_acceptance": false
+  },
+  "complete_package3_suite_and_prefix_evidence_custody": {
+    "nodes": 25249,
+    "parts": 14,
+    "complete_inventory_sha256": "989eefbfedb627a385ca0b42c58ce38703b6ef50ebdc28a34876743a3724d4ff",
+    "all_nodes_once_no_cross_partition_hardlinks": true,
+    "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_and_gzip_CRC_verified_ARM_and_Intel": true,
+    "each_source_capsule_limit_bytes": 134217728,
+    "total_archive_bytes": 412767823,
+    "extra_Linux_root_archive_bytes": 0
+  },
+  "matching_runtime_followup": {
+    "existing_source_fix": "https://github.com/jordanhubbard/daemonarchy-src/pull/130",
+    "source_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
+    "retained_matching_base_kernel_tests_set_hashes_verified": true,
+    "existing_immutable_private_image_sha256": "fe678ce019e4ee5677602c3a4a976cf1da5c9c424ba4f9a592e8150f2ec020c2",
+    "existing_image_current_full_sha256_verified": true,
+    "same_allocated_worker_transition_profile_prepared": true,
+    "new_VM_created_or_started": false,
+    "worker_stopped_or_restarted": true,
+    "normal_data_volume_frozen_SDK_and_original_root_preserved": true,
+    "matching_kernel_world_current_boot_acceptance": false,
+    "exact_boot_profile_and_core_sysroot_observed": true,
+    "original_allocation_cleanly_stopped_and_reused": true,
+    "core_base_members_verified": 6159,
+    "core_base_inventory_sha256": "f1e1b5fcdeefefd13b169f8f30495b4b62e5d5007d6440682f9486d0692b31c9",
+    "native_POSIX_TZ_weekday": "2012-03-04 23:59:59 weekday=0 Sun\n",
+    "SDK18_original_SDK19_clone_frozen17_complete_preserved_across_boot": true,
+    "SDK19_clone_nodes": 50521,
+    "SDK19_clone_original_regular_inodes_disjoint": true,
+    "clone_initial_mode_omission_retained_and_corrected": "266 symlink modes omitted by private clone helper; full failed preimage retained, only copy symlink modes corrected; originals unchanged.",
+    "runtime_and_loader_control_files_verified_on_ARM_and_Intel": 8,
+    "runtime_result_sha256": "cdaa948478bb13d479371b4b48b7c4108578fc67e8e72530e62fb3011109cd95",
+    "runtime_scope": "Scoped actual matching-f4eb boot/core-sysroot and causal weekday observation. Canonical kernel/world lifecycle/release admission remains pending. SDK19 independent clone retains installed128 and original Python feature hold; no package upgrade or normal acceptance. New overlay loader cache only registered; new base fontconfig hooks and all desktop consumers require requalification.",
+    "original_root_overlay_after_clean_shutdown_sha256": "821de169d11f2ae7e6730a18f4c48d55b9dc3d13d9b853678242ba37eeda6c9f",
+    "fresh_original_stdtime": {
+      "source_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
+      "tests_archive_sha256": "1dca58afaebfe12eaec91b1b863c038e2ad2f43ee6891942b4de532fa9076a4c",
+      "actual_original_cases_passed": 9,
+      "original_assertions_selection_and_default_deadlines_preserved": true,
+      "original_case_execution_replayed": false,
+      "actual_cases": [
+        "detect_tz_changes_test:setugid",
+        "detect_tz_changes_test:thin_jail",
+        "detect_tz_changes_test:tz_default",
+        "detect_tz_changes_test:tz_env",
+        "detect_tz_changes_test:tz_env_setugid",
+        "detect_tz_changes_test:tz_invalid_env",
+        "detect_tz_changes_test:tz_invalid_file",
+        "localtime_test:posix_rule_weekday",
+        "strptime_test:dayofweek"
+      ],
+      "first_setup_failure": "SDK-only snapshot helper on extracted test tree; only extraction ran, zero discovery/cases. Corrected generic snapshot reuses exact original extraction. Failed setup retained.",
+      "all_source_SDK_base_accounts_loader_timezone_fontcache_mount_guards_pass": true,
+      "custody": {
+        "nodes": 42,
+        "parts": 1,
+        "all_nodes_verified_ARM_and_Intel": 42,
+        "complete_inventory_sha256": "577bfc878a45148c68779abd6ca336c51e71639087e0104b70537398c7e5b716",
+        "archive_total_bytes": 21561585,
+        "largest_archive_bytes": 21561585,
+        "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_hardlinks_gzip_CRC_verified": true,
+        "extra_Linux_root_archive_bytes": 0
+      },
+      "scope": "Current matching-f4eb allocated ARM profile only; not complete source/libc/kernel/hardware/canonical acceptance."
+    }
+  },
+  "candidate4_complete_native_source": {
+    "revision": "81c00f97fbabd7cc7157feabd9967f9800a1b2be",
+    "tree": "cf4012a031d33828a5e070b20dba173acdf1bc1c",
+    "Git_members_verified": 184395,
+    "changed_since_package3_source": 3,
+    "removed": 0,
+    "source_changes": "Python LIBPC configured prefix and Nose conversion repair; all other Git bodies retained.",
+    "all_original_SDK128_frozen17_base_accounts_loader_fontcache_mount_postguards_pass": true
+  },
+  "fresh_candidate4_matching_runtime_construction": {
+    "state": "terminal-original-eight-construction-commands-pass-suite-intentionally-aborted-invalid-launcher-genuine-mandir-replay-defect-retained",
+    "candidate_version": "3.12.16_4",
+    "matching_source_base_revision": "f4eb2cff7f8b5c511c448f0158f071105d19aaf5",
+    "source_revision": "81c00f97fbabd7cc7157feabd9967f9800a1b2be",
+    "independent_original_source_references": 4581,
+    "independent_reference_sha256": "1964a9f939e1451e5435ae729f16a131fbf9df17edb6a51fe8fa7fe04ac5ee6c",
+    "short_TMPDIR_bytes": 15,
+    "original_options_jobs_resources_builtin_W_assertions_and_1200second_test_deadline_preserved": true,
+    "reporting_only_addition": "Original buildbottest retains TESTOPTS=-j4 plus upstream --junit-xml output. Actual per-case discovery/outcomes/skip reasons require audit after terminal completion.",
+    "fresh_package_full_suite_sealed_runtime_lifecycle_normal_upgrade_pending": true,
+    "original_SDK18_and_frozen17_protected": true,
+    "installed_clone128_not_healthy_or_release_admitted": true,
+    "first_attempt": {
+      "stage": "original configure",
+      "original_command_exits": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "fullsuite_started": false,
+      "build_started": false,
+      "cause": "PKG_DBDIR pointed through SDK19 root0700, inaccessible to uid65534; original dependency check misdetected installed pkgconf, recursively built it and inherited shared explicit WRKDIR. Dependency clean displaced temporary extracted Python tree.",
+      "all4581_original_patch_effect_bodies_had_matched_before_configure": true,
+      "temporary_extracted_Python_source_preservation_postguard": "FAIL; displaced files are not claimed retained",
+      "canonical_Git_and_original_source_archives_and_independent4581references_intact": true,
+      "SDK19_SDK18_frozen17_base_accounts_loader_fontcache_mount_guards_pass": true,
+      "remaining_failed_workspace_custody": {
+        "nodes": 1669,
+        "parts": 1,
+        "archive_bytes": 28203441,
+        "archive_sha256": "16f7b922b25d36280bf457ec41bb9b89c5a296eca6113d4409cb92c11cedc90e",
+        "all_bodies_types_modes_owners_flags_nsmtime_symlinks_hardlinks_gzipCRC_verified_ARM_and_Intel": true
+      },
+      "repair": "Fresh root-owned private registry copy beneath a traversable job directory, supported build-user pkg-static registry/config and declared dependency checks before construction. Use per-origin WRKDIRPREFIX alone so unexpected nested dependencies cannot share a unit work directory. Preserve all original constraints/tests and failed outputs."
+    },
+    "unprivileged_advisory_control": "Exact retained source-bound two-range private overlay; require original vulnerable revision1 rejection and repaired revision4 acceptance before original construction; preserve global feed.",
+    "full_suite_qualified": false
+  },
+  "candidate5_configure_replay_repair": {
+    "implementation_commit": "af521f4b79e491dcf0c73ca0821132745cfab8e1",
+    "qualification_source": "ee5dbbc99b46c70ed9333a0f17551048460645b2",
+    "qualification_tree": "d880d7a259358f5d4e4bf4136703b2bfa7f87d06",
+    "candidate_version": "3.12.16_5",
+    "source_changes": [
+      "Keep GNU man prefix relative to lowercase configure prefix.",
+      "Escape literal dollar signs in generated configure and authored configure.ac CONFIG_ARGS before Makefile/sysconfig parsing."
+    ],
+    "original_tests_modified": false,
+    "original_options_dependencies_and_seven_prior_patches_retained": true,
+    "additional_configure_patch_files": [
+      "configure",
+      "configure.ac"
+    ],
+    "native_original_framework_command_control": "Original4 --mandir=/usr/local/share/man; candidate5 --mandir=${prefix}/share/man; all other emitted arguments equal. Initial fixture failed because original env -i intentionally stripped a private capture variable; outcome retained, fixture corrected without product command changes.",
+    "native_actual_configure_and_sysconfig_control": {
+      "original_source_regular_files_verified": 4581,
+      "commands": 15,
+      "all_commands_exit0": true,
+      "actual_configure_runs": 5,
+      "default_MANDIR_unchanged": "/usr/local/share/man",
+      "naive_relative_mandir_alone_loses_literal_prefix_in_CONFIG_ARGS": true,
+      "fixed_CONFIG_ARGS_preserves_literal_prefix_across_two_replays": true,
+      "real_original_man_installs_under_two_private_prefixes_as_uid65534": true,
+      "all_original_and_candidate_source_inputs_preserved": true
+    },
+    "complete_control_custody": {
+      "nodes": 10156,
+      "parts": 2,
+      "both_hosts_all_nodes_verified": 10156,
+      "complete_inventory_sha256": "75db614ccad1f427c05b1705ab455481f89275b560d5ae052cc32281790d7ee4"
+    },
+    "full_source_export_Git_members": 184396,
+    "full_native_Git_member_verification": "PASS all184396 original Git members, bytes/modes and reconstructed tree; protected SDK19,old18,frozen17,matchingbase/accounts/loader/cache/mount postguards pass.",
+    "native_reference": {
+      "regular_original_sources": 4581,
+      "port_patches": 8,
+      "sha256": "ebd5f026cbdd3d9a24414189860e8863dd053286111a7066c74f8e4c8c29bc05"
+    },
+    "remaining": "Canonical per-unit execution/ownership, both BOMs and complete TCB/provenance/SDK/release admission; AMD64 and wider physical matrix. Actual original fullsuite, sealed APIs, artifact lifecycle and working normal upgrade now pass. Exact initial SDK fractional timestamp rollback and252 aggregate skip attribution remain unqualified."
+  },
+  "source_built_package4": {
+    "source_revision": "81c00f97fbabd7cc7157feabd9967f9800a1b2be",
+    "version": "3.12.16_4",
+    "bytes": 40538166,
+    "sha256": "b370c12226d6cccf0c90585031a3921e28e01727cb6fb7cda4168faa1c6e83ae",
+    "original_checksum_extract_patch_configure_build_stage_check_plist_package_exits": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "all4581_original_patch_and_configure_source_bodies_verified_and_preserved": true,
+    "stage_bytecode_recovery_needed": false,
+    "original_IPv6_LIBMPDEC_LTO_NLS_PYMALLOC_all_preserved": true
+  },
+  "package4_partial_sealed_runtime": {
+    "payloads": 8031,
+    "AArch64_ELF": 77,
+    "explicit_directories": 0,
+    "pkg_registered_payload_checksums_exit": 0,
+    "actual_unprivileged_interpreter_stdlib_extensions_and_libpython_binding_pass": true,
+    "grammar_cases": 8,
+    "grammar_checks": 16,
+    "weekly_logging_cases": 3,
+    "weekly_logging_cases_all_pass": true,
+    "native_embedding_compile_exit": 0,
+    "native_embedding_first_observer_exit": 1,
+    "observer_diagnosis": "Direct function address in non-PIC executable names linker trampoline; independently observed dynamic-symbol definition names the exact sealed libpython. Initial diagnostic lacked stat import before execution; retained. Corrected diagnostic proves both addresses; old failing binary/source/results preserved. New observer resolves definition with dlsym, retaining origin and all semantic assertions.",
+    "all_shipped_native_extension_and_stable_ABI_consumer_execution": "Not reached in this package4 attempt; required for final candidate.",
+    "all_private_payload_bytes_metadata_and_SDK19_old18_frozen17_base_accounts_cache_mounts_preserved": true,
+    "normal_install_performed": false,
+    "full_API_contract_or_canonical_acceptance": false
+  },
+  "package4_original_suite_invalid_launcher": {
+    "declared_programs": 492,
+    "highest_completed_counter": 491,
+    "failed_program_outcomes": [
+      {
+        "completed": 110,
+        "declared": 492,
+        "program": "test_generators",
+        "reported": "failed (1 failure) -- running (1): test.test_multiprocessing_fork.test_processes (56.0 sec)"
+      },
+      {
+        "completed": 121,
+        "declared": 492,
+        "program": "test_regrtest",
+        "reported": "failed (3 failures) -- running (1): test.test_multiprocessing_fork.test_processes (1 min)"
+      },
+      {
+        "completed": 167,
+        "declared": 492,
+        "program": "test.test_multiprocessing_fork.test_processes",
+        "reported": "failed (2 failures) (1 min 28 sec)"
+      },
+      {
+        "completed": 307,
+        "declared": 492,
+        "program": "test.test_multiprocessing_forkserver.test_processes",
+        "reported": "failed (2 failures) (1 min 38 sec) -- running (1): test_tools (1 min 3 sec)"
+      },
+      {
+        "completed": 363,
+        "declared": 492,
+        "program": "test_signal",
+        "reported": "failed (2 failures) (1 min 18 sec) -- running (2): test_tools (2 min 31 sec), test.test_multiprocessing_spawn.test_processes (1 min 22 sec)"
+      },
+      {
+        "completed": 391,
+        "declared": 492,
+        "program": "test.test_multiprocessing_spawn.test_processes",
+        "reported": "failed (2 failures) (1 min 44 sec) -- running (1): test_tools (2 min 53 sec)"
+      },
+      {
+        "completed": 405,
+        "declared": 492,
+        "program": "test_pdb",
+        "reported": "failed (1 failure) -- running (2): test_threading (31.1 sec), test_tools (3 min 2 sec)"
+      },
+      {
+        "completed": 490,
+        "declared": 492,
+        "program": "test.test_asyncio.test_runners",
+        "reported": "worker non-zero exit code (Exit code -9 (SIGKILL)) -- running (2): test_threading (3 min 25 sec), test_tools (5 min 56 sec)"
+      },
+      {
+        "completed": 491,
+        "declared": 492,
+        "program": "test_tools",
+        "reported": "failed (1 error) (7 min 28 sec) -- running (1): test_threading (4 min 56 sec)"
+      }
+    ],
+    "original_logging_program": [
+      {
+        "completed": 284,
+        "declared": 492,
+        "program": "test_logging",
+        "reported": "passed -- running (1): test.test_multiprocessing_forkserver.test_processes (50.5 sec)"
+      }
+    ],
+    "original_tools_program": [
+      {
+        "completed": 491,
+        "declared": 492,
+        "program": "test_tools",
+        "reported": "failed (1 error) (7 min 28 sec) -- running (1): test_threading (4 min 56 sec)"
+      }
+    ],
+    "full_suite_completed": false,
+    "XML_file_exists": false,
+    "scope": "Partial observed progress only; aborted invalid SIGINT profile; no completed suite/per-case receipt.",
+    "child_make_test_exit": -15,
+    "intentional_controlled_abort": true,
+    "capacity_guard_triggered": false,
+    "original_deadline_not_shortened_as_an_acceptance_rule": true,
+    "no_completed_suite_or_per_case_XML_receipt_claimed": true,
+    "launcher_defect": "nohup/background supervisor inherited ignored SIGINT and SIGQUIT into original child commands. Actual procstat audit confirms ignored INT; signal-based programs fail or hang.",
+    "same_sealed_product_causal_control": {
+      "ignored_SIGINT_self_interrupt_raised_KeyboardInterrupt": false,
+      "restored_default_self_interrupt_raised_KeyboardInterrupt": true
+    },
+    "separate_kernel_observation": "PID30389 Python killed: failed to reclaim memory; retained as an OOM observation, not excused as passing.",
+    "genuine_prefix_defect": "test_tools installation replay still writes absolute /usr/local/share/man/man1 despite new prefix; this remains a real configure-metadata defect and is addressed in candidate5 source, without changing the original test.",
+    "exclusive_original_test_process_groups_stopped_with_SIGTERM": [
+      15857,
+      29513
+    ],
+    "all_original_and_failed_outputs_preserved": "Complete selected source/objects/stage/package/temporary work/private sealed prefix/consumers/diagnostics archived in13parts; 25177nodes verified on both hosts.",
+    "source_and_all_protected_SDK_base_account_loader_fontcache_mount_guards_pass": true,
+    "external_retry_of_unchanged_valid_profile": false,
+    "fresh_candidate5_execution_profile": "Changed implementation plus explicit child HUP/INT/QUIT defaults, verified uid65534 interrupt behavior before original commands. Original 492-program selection, assertions, all resources,4jobs,builtin-W,1200-second deadline retained; full original run remains required."
+  },
+  "complete_package4_invalid_suite_and_consumer_custody": {
+    "nodes": 25177,
+    "parts": 13,
+    "all_nodes_verified_ARM_and_Intel": 25177,
+    "complete_inventory_sha256": "0faffadbe09d272ade7cb12c5453adbe0c5bbc3807514a0598ad9fdb3429f9b4",
+    "archive_total_bytes": 403052081,
+    "largest_archive_bytes": 48972970,
+    "no_Linux_root_extra_archives": true
+  },
+  "candidate5_original_construction_progress": {
+    "state": "terminal-original-nine-phases-pass-including-complete-original-suite",
+    "source_revision": "ee5dbbc99b46c70ed9333a0f17551048460645b2",
+    "finished_utc": "2026-11-26T17:15:25.927406+00:00",
+    "original_command_exits": [
+      [
+        "original-checksum",
+        0
+      ],
+      [
+        "original-extract",
+        0
+      ],
+      [
+        "original-patch",
+        0
+      ],
+      [
+        "original-configure",
+        0
+      ],
+      [
+        "original-build",
+        0
+      ],
+      [
+        "original-stage",
+        0
+      ],
+      [
+        "original-check-plist",
+        0
+      ],
+      [
+        "original-package",
+        0
+      ],
+      [
+        "original-make-test-buildbottest-with-upstream-junit-report",
+        0
+      ]
+    ],
+    "all4581_original_sources_preserved": true,
+    "all_SDK19_old18_frozen17_base_accounts_loader_fontcache_mount_source_and_private_advisory_guards_pass": true,
+    "original_options_dependencies_assertions_resources_jobs_builtin_W_and_1200second_deadline_preserved": true,
+    "reporting_only_addition": "Upstream --junit-xml; no test/assertion/selection change or external retry of unchanged valid profile.",
+    "actual_child_signal_guard": {
+      "uid": 65534,
+      "SIGINT_handler": "default_int_handler",
+      "SIGHUP": 0,
+      "SIGQUIT": 0,
+      "self_SIGINT_raised_KeyboardInterrupt": true
+    }
+  },
+  "native_execution_profile_followup": {
+    "background_signal_inheritance_defect_confirmed": true,
+    "new_producer_restores_and_measures_original_command_child_dispositions": true,
+    "prior_background_qualification_reuse": "Audit child signal dispositions before reusing previous background-launched results. Original assertions and outcomes remain retained; no aggregate SDK health/native Component admission is inferred."
+  },
+  "source_built_package5": {
+    "version": "3.12.16_5",
+    "bytes": 40537630,
+    "sha256": "2502aa401ca32d299524750984a538143e6ce48dfc6b55fd4adc283ed72db7a9",
+    "fresh_short_TMPDIR_used_from_start": true,
+    "stage_recovery_needed": false
+  },
+  "original_full_suite_package5": {
+    "original_make_test_exit": 0,
+    "actual_all492_unique_program_outcomes": true,
+    "passed_programs": 461,
+    "skipped_programs": 30,
+    "resource_denied_programs": 1,
+    "resource_denied_program": "test_zipfile64",
+    "original_reported_total_tests_run": 42374,
+    "original_reported_total_tests_skipped": 1656,
+    "original_reported_test_files_run": "491/492",
+    "original_reported_duration": "9 min 56 sec",
+    "XML_skips_match_original_aggregate": false,
+    "XML_case_nodes_match_original_tests_run": true,
+    "every_actual_XML_skip_has_explicit_reason": true,
+    "skip_count_discrepancy": {
+      "original_aggregate": 1656,
+      "explicit_XML_skipped_case_nodes": 1404,
+      "difference": 252,
+      "fully_reconciled": false,
+      "source_observation": "Original RegressionTestResult emits XML only after startTest and only for first _add_result of that testcase. Class/module skip and subtest callbacks can enter unittest skipped list without independent XML nodes. This is an explanation of reporter limits, not attribution of the 252 unrepresented aggregate skips. No missing identities or reasons invented."
+    },
+    "original_result": "SUCCESS",
+    "XML": {
+      "bytes": 5682337,
+      "sha256": "a8b82495d8a44f59d77f7ea9f405a8e94bf61734f51f01d328aac0371e435bc1",
+      "root_tag": "testsuites",
+      "root_attributes": {
+        "tests": "42374",
+        "errors": "0",
+        "failures": "0"
+      },
+      "suite_count": 461,
+      "testcase_nodes": 42374,
+      "result_counts": {
+        "skipped": 1404,
+        "passed": 40963,
+        "expected_failure": 7
+      },
+      "skipped_cases_missing_explicit_reason": 0,
+      "duplicate_case_identity_occurrences": 56
+    },
+    "case_inventory": {
+      "bytes": 788885,
+      "sha256": "2d1f5244799517d71ff618ceee5ad5df3fa456e5cedaf71ae17af4f5e601a156"
+    },
+    "audit_observer_correction": "R1 classified seven expected failures as passed; R2 retains every original XML attribute/child and classifies 40,963 passed, 1,404 explicit skipped, seven expected-failure case occurrences. R1 and all original bytes preserved; no suite replay. All 56 duplicate identity occurrences retained."
+  },
+  "sealed_package5_runtime": {
+    "payloads": 8031,
+    "AArch64_ELF": 77,
+    "explicit_directories": 0,
+    "pkg_registered_payload_checksums_exit": 0,
+    "actual_uid65534_own_interpreter_stdlib_native_extensions_and_dynamic_libpython_definition_binding_pass": true,
+    "grammar_cases": 8,
+    "grammar_checks": 16,
+    "weekly_logging_cases": 3,
+    "embedding_checks": 36,
+    "stable_ABI_and_all_native_extensions_checks": 164,
+    "native_extension_imports": 75,
+    "limited_API_hex": "0x030c0000",
+    "capsule_destructors_each_native_client": 1,
+    "packaged_sysconfig_literal_mandir_and_four_private_installation_schemes_pass": true,
+    "all_payload_bodies_metadata_and_private_prefix_frozen_across_probes": true,
+    "all_SDK19_old18_frozen17_base_accounts_loader_fontcache_mount_source_package_guards_pass": true,
+    "fixture_scope": "pkg -r -IM scripts/dependency-solver-disabled sealed fixture only. No real lifecycle, normal installation or full C API contract/canonical/release acceptance claimed."
+  },
+  "complete_package5_original_suite_and_native_API_custody": {
+    "nodes": 25179,
+    "parts": 13,
+    "all_nodes_verified_ARM_and_Intel": 25179,
+    "complete_inventory_sha256": "8cf756e0ff76aa85f0c2d751a18aa35a7b47a04dd5f6c73067f55a1492d6abf3",
+    "archive_total_bytes": 404756025,
+    "largest_archive_bytes": 48971872,
+    "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_hardlinks_gzip_CRC_verified": true,
+    "every_node_once_no_cross_partition_hardlinks": true,
+    "extra_Linux_root_archive_bytes": 0,
+    "prior_failed_and_invalid_runs_preserved_separately": true
+  },
+  "real_original_package_hook_lifecycle_package5": {
+    "real_transactions": 8,
+    "all_original_command_exits": 0,
+    "add_operations": 6,
+    "all_add_direct_dependency_checks_and_original_scripts_enabled": true,
+    "forced_private_delete_operations": 2,
+    "forced_delete_scope": "Intentional isolated reverse-dependency-protection overrides while removing Python, followed by fresh reinstall; no complete dependency solver closure claimed. Raw helper blanket no-bypass boolean is overbroad and qualified by these actual flags.",
+    "actual_candidate_default_namespace_API_states": 5,
+    "all_states_grammar16_weekly3_embedding36_native75_and_ABI3_164_pass": true,
+    "delete_removes_all_candidate_payloads_and_causes_actual_noRPATH_loader_failure": true,
+    "rollback_actual8031_original_archive_payload_bodies_types_modes_accounts_flags_nsmtime_links_exact": true,
+    "exact_initial_SDK_metadata_rollback_qualified": false,
+    "initial_SDK_fractional_timestamps_absent_from_original_archive": 8029,
+    "initial_SDK_original_metadata_preserved": true,
+    "retained_failed_observations": [
+      "R1 expected inventory kind link versus observer symlink; every actual payload field and native type matched. Successful original upgrade retained without replay.",
+      "R2 compared rollback archive timestamps to initial SDK fractions; original artifact is whole-second at8029paths. Exact archive metadata remains asserted, no rounding or timestamp rewrite. Successful reinstall and rollback retained without replay."
+    ],
+    "whole_failed_fixtures_and_closed_custody_preserved": true,
+    "normal_host_install_in_private_fixture": false,
+    "canonical_literate_lifecycle_receipt_earned": false
+  },
+  "complete_package5_real_lifecycle_custody": {
+    "nodes": 151956,
+    "parts": 69,
+    "all_nodes_verified_ARM_and_Intel": 151956,
+    "complete_inventory_sha256": "f612b68845854993f2fdebdc7ac40b65c350f26ea68918bd25e1a734440fccb7",
+    "archive_total_bytes": 1063852166,
+    "largest_archive_bytes": 42800917,
+    "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_hardlinks_gzip_CRC_verified": true,
+    "extra_Linux_root_archive_bytes": 0
+  },
+  "normal_loader_profile_followup": {
+    "normal_initial_unique_provider_keys": 257,
+    "same_provider_keys_after_original_hook": 257,
+    "all_original_candidate_paths_and_priorities_retained": true,
+    "additional_lower_priority_legacy_bootstrap_candidate_entries": 7,
+    "native_causal_control_fresh_unprivileged_processes": 14,
+    "all7_actual_selected_default_libraries_and_body_hashes_equal_before_and_under_real_hook_hints": true,
+    "actual_noRPATH_dlinfo_LINKMAP_ORIGIN_and_issetugid0_honored_hint_override_proven": true,
+    "actual_after_normal_upgrade_default_no_override_binding_checks": 7,
+    "all_actual_after_normal_GLib_GI_libraries_and_bytes_equal_prior_defaults": true,
+    "no_global_loader_or_configuration_changes_during_diagnostic": true,
+    "legacy_bootstrap_full_source_provenance_and_global_SDK_hold_remain": true,
+    "custody": {
+      "nodes": 49,
+      "parts": 1,
+      "all_nodes_verified_ARM_and_Intel": 49,
+      "complete_inventory_sha256": "512b95c877b0108651a5982489b486299cd55837cd4efd8994175ad461e7eaaa",
+      "archive_total_bytes": 2275415,
+      "largest_archive_bytes": 2275415,
+      "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_hardlinks_gzip_CRC_verified": true,
+      "extra_Linux_root_archive_bytes": 0
+    }
+  },
+  "normal_package5_delivery": {
+    "state": "terminal-pass-bounded-development-normal-upgrade",
+    "finished_utc": "2026-11-26T18:17:13.732415+00:00",
+    "package": {
+      "bytes": 40537630,
+      "sha256": "2502aa401ca32d299524750984a538143e6ce48dfc6b55fd4adc283ed72db7a9"
+    },
+    "from_version": "3.12.16",
+    "to_version": "3.12.16_5",
+    "actual_normal_package_add_executions": 1,
+    "original_pkg_hooks_and_direct_dependency_checks_enabled": true,
+    "no_pkg_script_dependency_or_force_flags_used": true,
+    "exact_actual_default_namespace_payloads": 8031,
+    "other_inherited_providers_preserved": 127,
+    "installed_registry_count_observed": 128,
+    "old_license_records_preserved": 3,
+    "new_versioned_license_records_added": 3,
+    "old_and_new_versioned_license_directories_retained": true,
+    "same_actual_unprivileged_interpreter_stdlib_libpython_definition_binding_pass": true,
+    "grammar_cases": 8,
+    "grammar_checks": 16,
+    "weekly_logging_cases": 3,
+    "embedding_checks": 36,
+    "all_native_extensions": 75,
+    "native_extensions_and_ABI3_checks": 164,
+    "actual_seven_default_GLib_GI_bindings_unchanged": true,
+    "all16_normal_commands_exit0": true,
+    "all8031_payloads_and_whole_postupgrade_SDK_raw_database_loader_frozen_across_consumers": true,
+    "old_SDK18_frozen17_base_accounts_fontcache_mounts_and_selected_original_source_preserved": true,
+    "normal_python_conversion_feature_hold": false,
+    "Nose_installed": false,
+    "canonical_Component_SDK_release_admitted": false,
+    "preflight_corrections_retained": "R1 identical path assumption rejected correct versioned-license addition; no commands. R2 missing re import in borrowed loader parser; three successful read-only commands retained. R3 reuses those observations and performs one actual normal upgrade. Old license metadata preserved, not deleted.",
+    "custody": {
+      "nodes": 8121,
+      "parts": 7,
+      "all_nodes_verified_ARM_and_Intel": 8121,
+      "complete_inventory_sha256": "d16dc6812962c9dc0f3537bc533155cc382db4d6d3461127062cd5421adee24a",
+      "archive_total_bytes": 97887232,
+      "largest_archive_bytes": 22275613,
+      "all_bodies_types_modes_numeric_owners_flags_nsmtime_links_hardlinks_gzip_CRC_verified": true,
+      "extra_Linux_root_archive_bytes": 0
+    }
+  },
+  "later_worker_storage_revalidation": {
+    "observed": "2026-11-27",
+    "scope": "PR84 mail patches are integrated before the grammar repair. The entire merged Python port is byte/mode identical to qualified native source ee5dbbc99b46c70ed9333a0f17551048460645b2. Current worker filesystem recovery is still active; independent accepted SDK/source/prior-work readback is required before further package qualification. Historical Nose-uninstalled/registry128 observations retain their original time and are not current SDK state. No current SDK integrity, full skip attribution, canonical admission or release acceptance follows from integration."
+  }
+}
