@@ -1,0 +1,14 @@
+--- tests/meson.build.orig
++++ tests/meson.build
+@@ -5,4 +5,9 @@
+ test('intent-cache', intent_cache_test,
+   depends: update_desktop_database,
+   env: [f'BUILD_ROOT=@build_root@'],
+-)
+\ No newline at end of file
++)
++
++test('implements-terminator', find_program('implements-terminator.sh'),
++  depends: [desktop_file_validate, desktop_file_install],
++  env: [f'BUILD_ROOT=@build_root@'],
++)

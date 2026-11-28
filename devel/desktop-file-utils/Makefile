@@ -1,5 +1,6 @@
 PORTNAME=	desktop-file-utils
 PORTVERSION=	0.29
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/releases/
 
@@ -17,11 +18,14 @@ USES=		compiler:c11 gettext-runtime meson gnome pkgconfig shebangfix \
 
 USE_GNOME=	glib20
 
-SHEBANG_FILES=	tests/intent-cache.sh
+SHEBANG_FILES=	tests/intent-cache.sh tests/implements-terminator.sh
 MIMEDIRS=	share/applications
 SUB_FILES=	pkg-post-install.lua
 SUB_LIST=	MIMEDIRS="${MIMEDIRS}"
 PKGPOSTINSTALL=	${WRKDIR}/pkg-post-install
+
+post-extract:
+	${CP} ${FILESDIR}/implements-terminator.sh ${WRKSRC}/tests/
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/misc/desktop-entry-mode.el \
