@@ -37,8 +37,9 @@ The complete Standard policy is bound to the installed framework wheel from
 `5b9afcd7c9016341620695b9110ec073809d239c`, distribution identity
 `sha256:01c193fa8e09bfd5c38eee2d5aaa71594421c1e67840fad46d40b1740c4a8bc9`.
 
-With that exact installed CLI, `litai project validate .` and
-`litai lock . --target freebsd --check` pass. `litai verify .` fails because
+At the recorded binding checkpoint, that exact installed CLI passed
+`litai project validate .` and `litai lock . --target freebsd --check`.
+The current documentation review is stale; both locks remain current. `litai verify .` fails because
 `verification/current.json` has not been earned. A source/ports build command
 requires the reviewed retained manifest and executable profile, exact toolchain
 closure, explicit plan authorization and actual native acceptance; those remain
