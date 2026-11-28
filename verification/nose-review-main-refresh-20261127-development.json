@@ -1,0 +1,24 @@
+{
+  "schema": "daemonarchy/upstream-import-audit@2",
+  "observed": "2026-11-27T19:18:17.786779+00:00",
+  "repository": "daemonarchy-ports",
+  "previous_owned_main": "0ea726f8fc3cf1ebfaff5755db9636f8e676ee1d",
+  "upstream_reference": "origin/main",
+  "upstream_commit": "983ca5ed4efe26bb1467aac2a01c436f562e1b46",
+  "merge_base": "1370ce77dd1539ac7c3ca301efaabac764814a07",
+  "import_tree_before_this_evidence_file": "b661161c390a1430cf2f5baea1913288bc2d80fc",
+  "complete_tree_file_entries": 184493,
+  "upstream_changed_paths": 4135,
+  "fork_changed_paths": 8,
+  "path_inventory_includes_both_sides_of_renames": true,
+  "shared_changed_paths": [
+    "docs/roadmap/active-work.md"
+  ],
+  "upstream_bytes_modes_and_deletions_exact_outside_fork_delta": true,
+  "fork_bytes_modes_and_deletions_exact_outside_upstream_delta": true,
+  "native_build_and_runtime_qualified": false,
+  "qualification_scope": "Review synchronization only. Historical native evidence stays bound to original source/dependency/world/artifact identities; worker recovery and SDK revalidation remain pending. No canonical admission.",
+  "qualified_native_source": "a11415e8a4e92fa6c88b82368abf9cbbc2ea3ae2",
+  "all10Noseport_inputs_exactly_unchanged": true,
+  "manual_resolution": "Retain complete current-main active queue including GDBM and binding/storage corrections; append the complete disjoint Nose observation history, proven to be an exact suffix of the original review queue. No source conflict or native assertion/test deadline changed."
+}

@@ -1,0 +1,14 @@
+--- deps/rabbitmq_cli/test/fixtures/plugins/plugins_with_version_requirements/mock_rabbitmq_plugin_for_3_8-0.1.0/ebin/mock_rabbitmq_plugin_for_3_8.app
++++ deps/rabbitmq_cli/test/fixtures/plugins/plugins_with_version_requirements/mock_rabbitmq_plugin_for_3_8-0.1.0/ebin/mock_rabbitmq_plugin_for_3_8.app
+@@ -1,3 +1,4 @@
++%% This compatible fixture supports release series, not exact patch versions.
+ {application, mock_rabbitmq_plugin_for_3_9, [
+ 	{description, "New project"},
+ 	{vsn, "0.1.0"},
+@@ -6,5 +7,5 @@
+ 	{applications, [kernel,stdlib,rabbit]},
+ 	{mod, {mock_rabbitmq_plugins_01_app, []}},
+ 	{env, []},
+-	{broker_version_requirements, ["3.9.0", "3.10.0", "3.11.0", "3.12.0", "3.13.0", "4.0.0", "4.1.0", "4.2.0", "4.3.0", "4.4.0"]}
++	{broker_version_requirements, ["3.9", "3.10", "3.11", "3.12", "3.13", "4.0", "4.1", "4.2", "4.3", "4.4"]}
+ ]}.

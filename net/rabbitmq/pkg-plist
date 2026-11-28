@@ -1639,7 +1639,6 @@ lib/rabbitmq_server-%%VERSION%%/plugins/systemd-0.6.1/ebin/systemd_sup.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/systemd-0.6.1/ebin/systemd_watchdog.beam
 lib/rabbitmq_server-%%VERSION%%/plugins/systemd-0.6.1/include/systemd.hrl
 lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-defaults
-lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-defaults.orig
 lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-diagnostics
 lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-env
 lib/rabbitmq_server-%%VERSION%%/sbin/rabbitmq-plugins
