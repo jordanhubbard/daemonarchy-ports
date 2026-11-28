@@ -1,0 +1,5 @@
+TIMESTAMP = 1795660042
+SHA256 (go/misc_anthropic-cli/anthropic-cli-v2.14.0/v2.14.0.mod) = 4bf51f83f8ebe17dfdde546f94eac4aae010a86c8e406b89c2bfc7fc5fd929c0
+SIZE (go/misc_anthropic-cli/anthropic-cli-v2.14.0/v2.14.0.mod) = 4353
+SHA256 (go/misc_anthropic-cli/anthropic-cli-v2.14.0/v2.14.0.zip) = ff5e4ef0e0ed88b1e98bda6678512e1e25574ad537b0a8c0ab6866071babbbf0
+SIZE (go/misc_anthropic-cli/anthropic-cli-v2.14.0/v2.14.0.zip) = 3034050
