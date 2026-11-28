@@ -1,5 +1,5 @@
 PORTNAME=	libansilove
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.7
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
