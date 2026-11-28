@@ -9857,7 +9857,15 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
 	<name>py39-setuptools</name>
 	<name>py310-setuptools</name>
 	<name>py311-setuptools</name>
+	<name>py312-setuptools</name>
+	<name>py313-setuptools</name>
+	<name>py313t-setuptools</name>
+	<name>py314-setuptools</name>
+	<name>py314t-setuptools</name>
+	<name>py315-setuptools</name>
 	<range><lt>63.1.0_1</lt></range>
+	<range><ge>63.1.0_3</ge><lt>63.1.0_5</lt></range>
+	<range><ge>63.1.1</ge><lt>65.5.1</lt></range>
       </package>
       <package>
 	<name>py37-setuptools58</name>
@@ -9865,6 +9873,12 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
 	<name>py39-setuptools58</name>
 	<name>py310-setuptools58</name>
 	<name>py311-setuptools58</name>
+	<name>py312-setuptools58</name>
+	<name>py313-setuptools58</name>
+	<name>py313t-setuptools58</name>
+	<name>py314-setuptools58</name>
+	<name>py314t-setuptools58</name>
+	<name>py315-setuptools58</name>
 	<range><lt>58.5.3_3</lt></range>
       </package>
       <package>
@@ -9880,6 +9894,9 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
       <p>Setuptools version 65.5.0 and earlier could allow remote attackers to cause a denial of service by fetching malicious HTML from a PyPI package or custom PackageIndex page due to a vulnerable Regular Expression in `package_index`.</p>
       <p>This has been patched in version 65.5.1. The patch backported to the revision 63.1.0_1.</p>
     </blockquote>
+    <p>The retained 63.1.0_3 source lacks the earlier regular-expression
+      backport. It is restored in 63.1.0_5; the regressed revisions are
+      included above without changing the historical 63.1.0_1 fix.</p>
       </body>
     </description>
     <references>
@@ -9889,7 +9906,7 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
     <dates>
       <discovery>2022-12-23</discovery>
       <entry>2023-04-09</entry>
-      <modified>2026-10-31</modified>
+      <modified>2026-11-22</modified>
     </dates>
   </vuln>
 
