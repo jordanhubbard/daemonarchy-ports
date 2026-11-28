@@ -1,0 +1,25 @@
+The original upstream archive and all nine downstream patches remain selected.
+The aarch64 build enables development of the native SDIO frontend; it does not
+establish physical radio operation or replace the existing PCIe controls.
+
+For a selected custom kernel, supply SRC_BASE and KERNBUILDDIR together. The
+latter must identify that kernel's completed build directory, including its
+generated option headers. Preserve source, generated headers, compiler resources,
+actual kernel bytes and package identities in the native qualification record.
+The build forwards KERNBUILDDIR to the original module Makefile when provided.
+
+WITH_CTF and DEBUG_FLAGS select the original FreeBSD CTF conversion/merge rules.
+MK_SPLIT_KERNEL_DEBUG=no keeps a single module payload. The kmod strip command
+removes DWARF after installation while preserving CTF. Package consumers must
+verify the installed module's CTF and actual kernel loading, not just compilation.
+
+Upstream does not provide an executable test suite in this archive. Native
+checksum/patch/build/stage/package checks and independent module consumers remain
+distinct from original tests. Do not report the ports no-op test target as a
+passing upstream suite.
+
+Before enabling Pi Wi-Fi in a product image, qualify firmware property access,
+power/pin sequencing, ACPI SDIO enumeration, board firmware/NVRAM/CLM selection,
+association, traffic, recovery and native SD/Ethernet regression. Preserve the
+existing amd64 PCIe path and qualify it when shared build flags change. Complete
+source/toolchain/SDK and canonical Component/lifecycle admission remain separate.

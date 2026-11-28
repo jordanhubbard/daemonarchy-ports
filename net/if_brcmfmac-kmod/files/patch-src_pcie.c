@@ -202,6 +202,19 @@
  	    &sc->irq_handle);
  	if (error != 0) {
  		device_printf(sc->dev, "failed to setup interrupt: %d\n",
+@@ -877,10 +939,10 @@
+ 			*dst++ = '\0';
+ 		}
+ 
++		/* Comments must advance too, including an unterminated last line. */
++		src = line_end;
+ 		while (src < end && (*src == '\n' || *src == '\r'))
+ 			src++;
+-		if (line_end < end)
+-			src = line_end + 1;
+ 	}
+ 
+ 	len = dst - buf;
 @@ -1037,18 +1099,43 @@
  
  	resetintr = *(const uint32_t *)fw->data;

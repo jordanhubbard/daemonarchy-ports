@@ -6,6 +6,7 @@ their native tests remain implementation authority.
 - [Initial origin and shared framework](user/ports-units.md)
 - [Authority and acceptance map](architecture/design-traceability.md)
 - [Active native work](roadmap/active-work.md)
+- [Broadcom native module package qualification](user/brcmfmac-native-packages.md)
 - [Ninja upstream test setup and native observations](verification/ninja-unit-tests-20261124.json)
 
 Use explicit `--repo jordanhubbard/daemonarchy-ports` for GitHub commands; the

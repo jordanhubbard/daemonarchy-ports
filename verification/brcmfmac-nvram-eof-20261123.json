@@ -1,0 +1,117 @@
+{
+  "schema": "daemonarchy/brcmfmac-nvram-development-evidence@1",
+  "status": "native-arm64-and-amd64-parser-and-package-consumers-checked",
+  "upstream_revision": "9adbe774d3be91827d628fbd811daf63512acb6d",
+  "upstream_archive_sha256": "2eeb83e170328a884f976ae5d906ea42c28a124a017959f1ce10cadb665c106b",
+  "port": "net/if_brcmfmac-kmod",
+  "port_revision": 5,
+  "change": "Advance the NVRAM parser past ignored final comments even without a line terminator.",
+  "source": {
+    "original_patched_pcie_sha256": "f6ef47374f47083847f3d7f818016b8f406d3063bc0ebc17a2c64b9aba4e51cd",
+    "corrected_pcie_sha256": "343c73683ed9395b4701d9af0dbde9112eefca415435e697cd4614a1741efbd3",
+    "corrected_parser_sha256": "23208be60d694c908811e8cedac93cc662dd0c49f3a9df8537f4e8f04678ed42",
+    "existing_downstream_patches_retained": 9,
+    "patch_fuzz": 0,
+    "independently_matched_patched_files": 55
+  },
+  "parser_regression": {
+    "runner": "Tools/daemonarchy/native-probes/test-brcmfmac-nvram.py",
+    "implementation": "Verbatim production function with kernel allocation replaced by calloc",
+    "cases": 13,
+    "original_final_comment_timeouts": 4,
+    "per_case_timeout_seconds": 2,
+    "native_freebsd_arm64_corrected_passed": 13,
+    "native_freebsd_amd64_corrected_passed": 13,
+    "linux_gcc_corrected_passed": 13,
+    "linux_clang_asan_ubsan_corrected_passed": 13
+  },
+  "native_package": {
+    "name": "if_brcmfmac-kmod-20260402.1600031_5.pkg",
+    "bytes": 72846,
+    "sha256": "27e6389c5a4ad7cef31f430d77038c5b29aeaaec3d90b0ddcd8cec7ea0b8d6b7",
+    "installed_module_sha256": "0b428cdc657bf18a1e9c71161f26ca421631510cd24f7a439aaa8deba221eec8",
+    "original_targets_passed": ["checksum", "patch", "build", "stage", "check-plist", "stage-qa", "package"],
+    "upstream_executable_suite": "Not declared; the successful ports test target is not an upstream suite pass",
+    "actual_patched_source_parser_regression_passed": true,
+    "source_kernel_capsule_and_observed_host_guards_passed": true,
+    "ctf_preserved_and_dwarf_removed": true
+  },
+  "independent_consumer": {
+    "platform": "Fresh generic ARM64 UEFI FreeBSD VM without a Broadcom radio",
+    "development_kernel_sha256": "34e923c631d645cc8cbc211031af0a7f41bd6f07d30a89738a92e7d44402fac6",
+    "original_install_delete_reinstall_scripts_passed": true,
+    "payload_files_bytes_modes_and_root_ownership_checked": 5,
+    "package_checksums_passed": true,
+    "installed_driver_load_unload_cycles": 2,
+    "pcie_and_sdio_frontends_registered": true,
+    "original_modules_and_interfaces_restored": true,
+    "normal_shutdown_actual_process_exit_observed": true,
+    "immutable_backing_image_unchanged": true,
+    "initial_harness_failure": "QMP socket path exceeded the Unix socket path limit before guest boot; retained, then corrected with a short socket path and a fresh overlay"
+  },
+  "native_amd64_package": {
+    "name": "if_brcmfmac-kmod-20260402.1600031_5.pkg",
+    "bytes": 73319,
+    "sha256": "cb3a4b98c9efd64c27e3a8875adf4201fbd074589de137ca487d9584a782072f",
+    "installed_module_bytes": 177504,
+    "installed_module_sha256": "646a064bce46b0851b8a083d4d02993a172ebbab0f6f485c5c3dc5f9b6188d5a",
+    "original_targets_passed": ["checksum", "patch", "build", "stage", "check-plist", "stage-qa", "package"],
+    "actual_patched_source_parser_regression_passed": true,
+    "ports_inputs_before_and_after": 406,
+    "kernel_source_entries_before_and_after": 36893,
+    "patched_source_files_before_and_after": 55,
+    "observed_host_unchanged": true,
+    "ctf_preserved_and_dwarf_removed": true
+  },
+  "independent_amd64_consumer": {
+    "platform": "Fresh generic amd64 UEFI FreeBSD VM without a Broadcom radio",
+    "development_kernel_sha256": "83690f1f4fa3001a1e77852c44e9234ff6f9c4b6fa3e11cf7cf2a6e0c504ef35",
+    "original_install_delete_reinstall_scripts_passed": true,
+    "payload_files_bytes_modes_and_root_ownership_checked": 5,
+    "package_checksums_passed": true,
+    "installed_driver_load_unload_cycles": 2,
+    "pcie_and_sdio_frontends_registered": true,
+    "original_base_sdio_normal_unload_refusal": "EOPNOTSUPP",
+    "forced_unload_used": false,
+    "actual_same_COW_reboot_restored_baseline_modules": true,
+    "package_registry_and_all_five_payloads_absent_after_reboot": true,
+    "interfaces_unchanged": true,
+    "both_owned_QEMU_process_exits_observed_with_pidfd": true,
+    "normal_final_shutdown_passed": true,
+    "immutable_backing_image_unchanged": true
+  },
+  "retention": {
+    "complete_native_source_work_stage_packages_inputs_and_logs": {
+      "bytes": 158289473,
+      "sha256": "eb2dbecbf3b05de5dfcfd5f02683069b62d9600f91007e5149b12faaef243d74",
+      "entries_independently_reopened_on_second_physical_filesystem": 41607
+    },
+    "consumer_var_excluding_separate_filesystems_sha256": "afd555e1793b4a32b529b7b09f804715ca3fdf6b0e439ff59ee2f1752b83368d",
+    "consumer_separate_installed_root_tmpfs_sha256": "1c9e4c6ef7644001b218a97d6b4017f855284f849f2ce3a79f0d7d99cf296e3b",
+    "complete_amd64_native_source_work_stage_packages_inputs_and_logs": {
+      "bytes": 276889600,
+      "sha256": "a76395c6c3cbc1e4b7d3a3cd6158b67074de0382d4f230c9b7e0dbf95b0644fb",
+      "entries_independently_reopened_on_second_physical_filesystem": 41299
+    },
+    "complete_closed_amd64_consumer_controls_and_immutable_base": {
+      "bytes": 441067345,
+      "sha256": "af053db950b0aba3818e652955ee4ae60b371f8bc89059cd6f94f7351923d1dd",
+      "inventory_sha256": "d990b3b31b709b181d64f6b78bfd88741887f1d7a1ece6b1c8947099039ed091",
+      "nodes_independently_verified_on_both_filesystems": 214,
+      "regular_file_bodies_independently_verified": 200,
+      "complete_gzip_decode_bytes": 6580131840
+    },
+    "raw_lab_evidence": "Retained privately; not published"
+  },
+  "remaining": [
+    "Physical Pi ACPI SDIO enumeration and power/pin sequencing",
+    "Board-specific firmware, NVRAM, CLM and MAC identity integration",
+    "WiFi association, traffic, recovery and SD/Ethernet regression",
+    "Final matching CURRENT kernel and release image qualification",
+    "Complete toolchain provenance and canonical Component/SDK/lifecycle admission",
+    "Documentation authority review and current lifecycle receipt",
+    "Product installation/update/rollback and signed 1.6 release acceptance"
+  ],
+  "delivered_pi_test_image_changed": false,
+  "release_acceptance": false
+}

@@ -2,3 +2,7 @@ Native FreeBSD kernel driver for Broadcom FullMAC Wi-Fi devices. This build
 includes the BCM4364 PCIe bring-up and scan bounds changes exercised on a
 MacBookPro16,1 hardware preview. Device and board firmware are separate and
 must be obtained through a verified acquisition path.
+
+The aarch64 SDIO path requires a matching MMCCAM kernel, working board power
+and pin configuration, and the correct firmware/NVRAM/CLM files. Installing
+the module does not supply those prerequisites or establish Pi Wi-Fi acceptance.
