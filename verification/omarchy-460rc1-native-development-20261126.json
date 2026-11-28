@@ -1,0 +1,149 @@
+{
+  "schema": "daemonarchy/omarchy-rc1-sync-development-observation@1",
+  "observed_at": "2026-11-27T07:00:00.543002+00:00",
+  "scope": "Exact upstream RC1 import and original FreeBSD port construction with development tests. No canonical receipt, matched current-world, installed desktop or release qualification.",
+  "upstream": {
+    "release": "v4.6.0-rc1",
+    "url": "https://github.com/omacom/omarchy/releases/tag/v4.6.0-rc1",
+    "tag_object": "309b74a28363fca9328ebd050fcca9dee6a71849",
+    "peeled_commit": "745271ccd293fc2e7a233b269004a9926a5c6cb4",
+    "owned_commit": "1fae8ac7713369857246d13515e1ee3467b37301",
+    "owned_PR": 7,
+    "owned_main_and_quattro": "19abafa0b12560a7946b1e37444d3e6b2fc9f755",
+    "compatibility_commit": "1923ffefc9fb5328e7d2054a01433e7cb77551eb"
+  },
+  "native_inputs": {
+    "ports_framework_commit": "eb45235219531ce3f28254df71e56b82e8929720",
+    "ports_framework_tree": "5f444ce4e0351cb8f0a861b36adb17a213d0c63b",
+    "full_source_members_verified_and_preserved": 184481,
+    "port_snapshot_commit": "fdbb80e627be228253bddb3f5ae63def3c055e9d",
+    "port_members_verified_and_preserved": 17,
+    "environment": "existing FreeBSD 16 amd64 cb38d6498a24 release 1.5.1 world; user 65534; original dependency and option constraints; immutable copied installed-provider registry; no dependency installation",
+    "bootstrap_source_build_provenance_admitted": false,
+    "all_declared_dependencies_present": true,
+    "native_tests_require_root": false
+  },
+  "port_changes": [
+    "Adopt relevant pending PR99 patch-backup exclusion, scaffold path, plist and network-status repairs without changing that branch.",
+    "Pin actual RC1 integration and current compatibility source with measured archive hashes.",
+    "Refresh native Node installer patch and preserve FreeBSD adapter dispatch across RC1 Linux Wi-Fi CLI migration.",
+    "Static plist: 138 additions and 101 removals, all independently mapped to upstream source additions/removals."
+  ],
+  "original_native_targets": [
+    {
+      "label": "original-metadata",
+      "exit": 0
+    },
+    {
+      "label": "original-do-test-dryrun",
+      "exit": 2
+    },
+    {
+      "label": "original-checksum",
+      "exit": 0
+    },
+    {
+      "label": "original-extract",
+      "exit": 0
+    },
+    {
+      "label": "original-patch",
+      "exit": 0
+    },
+    {
+      "label": "original-configure",
+      "exit": 0
+    },
+    {
+      "label": "original-build",
+      "exit": 0
+    },
+    {
+      "label": "original-stage",
+      "exit": 0
+    },
+    {
+      "label": "original-check-plist",
+      "exit": 0
+    },
+    {
+      "label": "original-package",
+      "exit": 0
+    }
+  ],
+  "independent_zero_fuzz_controls": {
+    "total": 12,
+    "passed": 12
+  },
+  "original_port_test_target": "No do-test target declared; dry-run exit2 retained and not counted as test acceptance.",
+  "tests": {
+    "portable_original_profile": {
+      "cli": "pass",
+      "noncomp_shell_files_passed": 246,
+      "noncomp_shell_files_total": 260,
+      "remaining_failures": 14,
+      "baseline": "All14 reproduce on unchanged owned base with complete tracked inputs and source-specific private ImageMagick font maps. Earlier incomplete-input and missing-font failures retained. No test assertions or deadlines changed."
+    },
+    "compatibility_original_tests": {
+      "discovered": 42,
+      "aggregate_passed": 40,
+      "explicit_skips": 2,
+      "skip_details": [
+        "test_firmware_request_failure_and_rejected_reboot_preserve_prior_state (test_desktop_defaults.DesktopDefaults.test_firmware_request_failure_and_rejected_reboot_preserve_prior_state) ... skipped 'root-only native firmware helper control'",
+        "test_installer_cli_transfers_private_material (test_wifi_enterprise.EnterpriseWifi.test_installer_cli_transfers_private_material) ... skipped 'Run as root to exercise installer credential transfer'"
+      ],
+      "runs": [
+        "First full42 run retained:38pass,2fail,2skip. Incorrectly supplied already-adapted upstream inputs.",
+        "Corrected pristine exact-archive desktop18 run retained:16pass,1fail,1skip. Native live compat PATH preceded the test fake.",
+        "Only remaining firmware fixture rerun with native gnubin present on PATH, preserving the original fake-command interception;1pass. All original assertions/deadlines unchanged."
+      ],
+      "session_helpers": "Original procctl parent-death, signal forwarding, descendant cleanup, unrelated sibling preservation and invalid invocation controls passed on native FreeBSD.",
+      "limits": "Original runtime tests compile helpers themselves; these controls are development observations, not sealed package runtime acceptance."
+    },
+    "qml_dispatch": {
+      "passed": 12,
+      "scope": "Actual patched function bodies executed in JavaScript VM with fake Linux/FreeBSD backend objects; no running QML UI."
+    }
+  },
+  "package": {
+    "name": "omarchy-4.6.0.r1.pkg",
+    "bytes": 13212716,
+    "sha256": "017d1e792e8fff8f709732799d83bd5d1ac6f0b30be03f55f16b98048ece652a",
+    "native_pkg_query": "omarchy|4.6.0.r1|x11-wm/omarchy",
+    "archive_members": 3924,
+    "patch_backups_installed": false,
+    "independent_second_copy_verified": true,
+    "normal_installed": false
+  },
+  "preservation": {
+    "exact_port_overlay_members_preserved": 17,
+    "all_prior_metadata_and_immutable_copied_registry_preserved": true,
+    "normal_pkgdb_exact_bytes_metadata_preserved": true,
+    "normal_accounts_loader_preserved": true,
+    "mounts_preserved": true,
+    "all_original_Git_source_members_preserved": 184481
+  },
+  "authority": {
+    "project_validate": "pass",
+    "locks": "2 current",
+    "canonical_receipt": "missing",
+    "hosted_CI": "No reported checks; do not interpret as a passing CI run."
+  },
+  "prior_failures": "Keep all native source-preparation, registry-ownership, fetch-group comparison, stale-patch, stale-plist and test-fixture failures and their sources. Each subsequent run changed the failed input or profile; no original result overwritten.",
+  "remaining": [
+    "Matched latest source kernel/world and module builds for both architectures.",
+    "Installed desktop, compositor, visual/native network/hardware acceptance.",
+    "Canonical Components, complete ownership, per-unit provenance, TCB/SDK and release closure."
+  ],
+  "private_evidence_sha256": {
+    "intel-original-r1-current.json": "bb390a09dc46792af06fe63ac300a7fcd5783229f7571f25e4fc157092778a8d",
+    "intel-original-r2-current.json": "dbdd89ed40f840498712d737c40e0da8e33663537688b73f6a162631a81ecc60",
+    "intel-original-r3-current.json": "510e1a49fbbd18cbf959d5f7b4b7189b74deeb533250c63b124406400d68b052",
+    "intel-compat-tests-r3-current.json": "fd5f3bbf45cdd9b8250894ed6ebd8e2b2a19dc12eeb0a4b425e01b4ccbdf5d8f",
+    "network-dispatch-result.json": "9edbd3cda1b72e4f8f9eee2a5c00260503aa3d28eac6aa1ad8a678098944dfbc",
+    "plist-source-adjudication-r3.json": "5bc7f961cc96ec334bb0e97b96e25d8282966c3b4d37e2928b0d51b1797187e9",
+    "native-package-format.stdout": "f2f80b88e2e86788c80e8075ecd842a82100a893246bb56bde61bb6b8467da08",
+    "native-package-independent-copy.json": "3d48ec3e322523d5f8e8dbd95dc47c8ff0ed9b6c43011b18218165ac6421c419",
+    "port-rc1-litai-verify.log": "51af01e0713c9bf7020e2d20d9ee9ca8e8633f166b0d52cd88f1d810585b5bc8"
+  }
+}
